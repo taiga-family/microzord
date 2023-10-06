@@ -25,8 +25,16 @@ module.exports = {
     new ModuleFederationPlugin({
       remotes: {
         remote: 'remote@http://localhost:4201/remoteEntry.js',
+        remoteReact: 'remoteReact@http://localhost:4203/remoteEntry.js',
         demo: 'demo@http://localhost:4202/remoteEntry.js',
       },
+      // shared: mf.share({
+      //   '@angular/core': {singleton: true, strictVersion: true, requiredVersion: 'auto'},
+      //   '@angular/common': {singleton: true, strictVersion: true, requiredVersion: 'auto'},
+      //   '@angular/common/http': {singleton: true, strictVersion: true, requiredVersion: 'auto'},
+      //   '@angular/router': {singleton: true, strictVersion: true, requiredVersion: 'auto'},
+      //   ...sharedMappings.getDescriptors(),
+      // }),
       shared: {
         '@angular/core': {singleton: true, strictVersion: true},
         '@angular/common': {singleton: true, strictVersion: true},

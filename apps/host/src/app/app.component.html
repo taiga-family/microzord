@@ -1,7 +1,16 @@
 <h1>Host App</h1>
 
-<button (click)="click()">click</button>
+<div class="modules-container">
+  <h1>Module</h1>
+  <ng-container [microzordNgModule]="moduleName$$ | async"></ng-container>
+</div>
 
-<ng-container [microzordNgModule]="moduleName$$ | async"></ng-container>
-<div #container></div>
-<router-outlet></router-outlet>
+<div class="apps-container">
+  <h1>Apps</h1>
+  <div
+    *ngFor="let app of apps$ | async"
+    [microzordApp]="app"
+    (application)="appLoaded($event)"
+    (hook)="appHook($event)"
+  ></div>
+</div>
