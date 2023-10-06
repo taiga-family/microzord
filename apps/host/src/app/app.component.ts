@@ -12,10 +12,10 @@ export class AppComponent {
   apps$ = new BehaviorSubject<string[]>(['remote-app', 'remote-react']);
 
   appLoaded(event: Application<Record<string, unknown>> | null): void {
-    console.log(event);
+    console.log('App loaded: ', {event});
   }
 
   appHook(event: MicrozordLifecycleEvent) {
-    console.log(event);
+    console.log('Hook:', {event});
   }
 }
