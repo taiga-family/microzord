@@ -29,29 +29,25 @@ module.exports = {
         './remote-module': 'apps/remote/src/app/remote-module.ts',
         './remote-app-bootstrap': 'apps/remote/src/app/remote-app-bootstrap.ts',
       },
-      // shared: mf.share({
-      //   '@angular/core': {singleton: true, strictVersion: true, requiredVersion: 'auto'},
-      //   '@angular/common': {singleton: true, strictVersion: true, requiredVersion: 'auto'},
-      //   '@angular/common/http': {singleton: true, strictVersion: true, requiredVersion: 'auto'},
-      //   '@angular/router': {singleton: true, strictVersion: true, requiredVersion: 'auto'},
-      //   ...sharedMappings.getDescriptors(),
-      // }),
-      shared: {
-        '@angular/core': {singleton: true, strictVersion: true},
+      shared: mf.share({
+        '@angular/core': {singleton: true, strictVersion: true, requiredVersion: 'auto'},
         '@angular/common': {
           singleton: true,
           strictVersion: true,
+          requiredVersion: 'auto',
         },
         '@angular/common/http': {
           singleton: true,
           strictVersion: true,
+          requiredVersion: 'auto',
         },
         '@angular/router': {
           singleton: true,
           strictVersion: true,
+          requiredVersion: 'auto',
         },
         ...sharedMappings.getDescriptors(),
-      },
+      }),
     }),
     sharedMappings.getPlugin(),
   ],

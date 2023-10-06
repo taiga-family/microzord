@@ -5,14 +5,12 @@ import star from './star.svg';
 export function App() {
   const [count, setCount] = useState(0);
   return (
-    <>
-      <h3>
+    <div className={styles.container}>
+      <h3 className={styles.header}>
         Remote react app <img src={star} alt="star" />{' '}
       </h3>
-      <button className={styles.button} onClick={() => setCount(count + 1)}>
-        {count}
-      </button>
-    </>
+      <button onClick={() => setCount(count + 1)}>Counter: {count}</button>
+    </div>
   );
 }
 

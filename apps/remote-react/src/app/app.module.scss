@@ -1,6 +1,8 @@
-.button {
-  background-color: #4caf50; /* Green */
-  border: none;
-  color: white;
-  padding: 16px 32px;
+.container {
+  padding: 0 1rem 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
 }
