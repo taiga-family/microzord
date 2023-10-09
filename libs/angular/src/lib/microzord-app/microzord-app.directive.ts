@@ -42,21 +42,16 @@ export class MicrozordAppDirective implements OnDestroy {
   ) {
     const app$ = this.name$.pipe(
       tap(() => NgZone.assertNotInAngularZone()),
-      switchMap(name =>
-        name
-          ? constructApp(name).pipe(
-              complete(app => {
-                app.destroy();
-              }),
-            )
-          : of(null),
-      ),
+      switchMap(name => (name ? constructApp(name) : of(null))),
       catchError(error => this.handleError(error)),
-      shareReplay(1),
       takeUntil(this.destroy$),
+      shareReplay(1),
     );
 
     this.application = app$.pipe(
+      complete(app => {
+        app?.destroy();
+      }),
       switchMap(name =>
         name
           ? bootstrapApp(name, this.elementRef.nativeElement).pipe(
@@ -65,6 +60,7 @@ export class MicrozordAppDirective implements OnDestroy {
           : of(null),
       ),
       takeUntil(this.destroy$),
+      shareReplay(1),
     );
 
     this.hook = app$.pipe(
@@ -77,7 +73,7 @@ export class MicrozordAppDirective implements OnDestroy {
       ),
     );
 
-    app$.subscribe();
+    this.application.subscribe();
   }
 
   ngOnDestroy() {
