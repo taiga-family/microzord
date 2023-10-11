@@ -33,28 +33,22 @@ let ReactChildComponent = /*#__PURE__*/(() => {
   ReactChildComponent.ɵcmp = /*@__PURE__*/core_js_["ɵɵdefineComponent"]({
     type: ReactChildComponent,
     selectors: [["react-child"]],
-    decls: 13,
+    decls: 9,
     vars: 0,
-    consts: [["header", "React Child"], ["tuiLink", "", "routerLink", "/react-host"], ["tuiLink", "", "routerLink", "/react-installation"]],
+    consts: [["header", "React Child"], ["tuiLink", "", "routerLink", "/react-installation"]],
     template: function ReactChildComponent_Template(rf, ctx) {
       if (rf & 1) {
         core_js_["ɵɵelementStart"](0, "tui-doc-page", 0);
         core_js_["ɵɵelementStart"](1, "p");
         core_js_["ɵɵtext"](2, "Here you can read how to setup your application to be inserted into another app.");
         core_js_["ɵɵelementEnd"]();
-        core_js_["ɵɵelementStart"](3, "p");
-        core_js_["ɵɵtext"](4, " If you want to make your React application a host of other applications, see ");
-        core_js_["ɵɵelementStart"](5, "a", 1);
-        core_js_["ɵɵtext"](6, "React as a host");
+        core_js_["ɵɵelementStart"](3, "section");
+        core_js_["ɵɵelementStart"](4, "h2");
+        core_js_["ɵɵtext"](5, "Installation");
         core_js_["ɵɵelementEnd"]();
-        core_js_["ɵɵelementEnd"]();
-        core_js_["ɵɵelementStart"](7, "section");
-        core_js_["ɵɵelementStart"](8, "h2");
-        core_js_["ɵɵtext"](9, "Installation");
-        core_js_["ɵɵelementEnd"]();
-        core_js_["ɵɵtext"](10, " See ");
-        core_js_["ɵɵelementStart"](11, "a", 2);
-        core_js_["ɵɵtext"](12, "React package installation");
+        core_js_["ɵɵtext"](6, " See ");
+        core_js_["ɵɵelementStart"](7, "a", 1);
+        core_js_["ɵɵtext"](8, "React package installation");
         core_js_["ɵɵelementEnd"]();
         core_js_["ɵɵelementEnd"]();
         core_js_["ɵɵelementEnd"]();

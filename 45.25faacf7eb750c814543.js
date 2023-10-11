@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[738],{
+(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[45],{
 
-/***/ 9738:
+/***/ 6045:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -22,8 +22,34 @@ var taiga_ui_core_components_link = __webpack_require__(2847);
 var host_child_warning_module = __webpack_require__(6099);
 // EXTERNAL MODULE: consume shared module (default) @angular/core@=12.2.17 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2015/core.js)
 var core_js_ = __webpack_require__(8312);
-// EXTERNAL MODULE: ./apps/demo/src/app/shared/host-child-warning/host-child-warning.component.ts
-var host_child_warning_component = __webpack_require__(5773);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-notification.js
+var taiga_ui_core_components_notification = __webpack_require__(885);
+;// CONCATENATED MODULE: ./apps/demo/src/app/shared/host-child-warning/host-child-warning.component.ts
+
+
+let HostChildWarningComponent = /*#__PURE__*/(() => {
+  class HostChildWarningComponent {}
+  HostChildWarningComponent.ɵfac = function HostChildWarningComponent_Factory(t) {
+    return new (t || HostChildWarningComponent)();
+  };
+  HostChildWarningComponent.ɵcmp = /*@__PURE__*/core_js_["ɵɵdefineComponent"]({
+    type: HostChildWarningComponent,
+    selectors: [["host-child-warning"]],
+    decls: 2,
+    vars: 0,
+    template: function HostChildWarningComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_js_["ɵɵelementStart"](0, "tui-notification");
+        core_js_["ɵɵtext"](1, " The application can be a host and a child at the same time\n");
+        core_js_["ɵɵelementEnd"]();
+      }
+    },
+    directives: [taiga_ui_core_components_notification/* TuiNotificationComponent */.Ls],
+    styles: ["[_nghost-%COMP%] {\n  display: block;\n}"],
+    changeDetection: 0
+  });
+  return HostChildWarningComponent;
+})();
 ;// CONCATENATED MODULE: ./apps/demo/src/app/modules/angular-installation/angular-installation.component.ts
 
 
@@ -40,7 +66,7 @@ let AngularInstallationComponent = /*#__PURE__*/(() => {
     selectors: [["angular-installation"]],
     decls: 34,
     vars: 0,
-    consts: [["header", "Angular Installation"], ["tuiLink", "", "routerLink", "/angular-host"], ["tuiLink", "", "routerLink", "/angular-child"], [1, "tui-space_top-4"], ["tuiLink", "", "target", "_blank", "href", "https://github.com/TinkoffCreditSystems/microzord/tree/alpha/libs/angular"]],
+    consts: [["header", "Angular Installation"], ["tuiLink", "", "routerLink", "/angular-host"], ["tuiLink", "", "routerLink", "/angular-child"], [1, "tui-space_top-4"], ["tuiLink", "", "target", "_blank", "href", "https://github.com/taiga-family/microzord/tree/main/libs/angular"]],
     template: function AngularInstallationComponent_Template(rf, ctx) {
       if (rf & 1) {
         core_js_["ɵɵelementStart"](0, "tui-doc-page", 0);
@@ -99,7 +125,7 @@ let AngularInstallationComponent = /*#__PURE__*/(() => {
         core_js_["ɵɵelementEnd"]();
       }
     },
-    directives: [taiga_ui_addon_doc/* TuiDocPageComponent */.qo, taiga_ui_core_components_link/* TuiLinkComponent */.V, router_js_.RouterLinkWithHref, host_child_warning_component/* HostChildWarningComponent */.v],
+    directives: [taiga_ui_addon_doc/* TuiDocPageComponent */.qo, taiga_ui_core_components_link/* TuiLinkComponent */.V, router_js_.RouterLinkWithHref, HostChildWarningComponent],
     styles: [""],
     changeDetection: 0
   });

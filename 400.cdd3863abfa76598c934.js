@@ -25,24 +25,19 @@ var core_js_ = __webpack_require__(8312);
 
 
 
-const REPLACING_PLATFORM = `import {platformMicrozordChild} from '@microzord/angular/child';
-import {enableProdMode} from '@microzord/angular/child';
+const CODE = `import {createApp} from '@microzord/angular/child';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {AppModule} from './app.module';
 
-import {AppModule} from './app/app.module';
-import {environment} from './environments/environment';
-
-if (environment.production) {
-  enableProdMode();
-}
-
-platformMicrozordChild('microzord-app-name', 'app-root-tag')
-  .bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+export const myRemoteApp = createApp(
+  opts => platformBrowserDynamic().bootstrapModule(AppModule, opts),
+  'my-remote-app',
+);
 `;
 let AngularChildComponent = /*#__PURE__*/(() => {
   class AngularChildComponent {
     constructor() {
-      this.replacingPlatform = REPLACING_PLATFORM;
+      this.code = CODE;
     }
   }
   AngularChildComponent.ɵfac = function AngularChildComponent_Factory(t) {
@@ -51,9 +46,9 @@ let AngularChildComponent = /*#__PURE__*/(() => {
   AngularChildComponent.ɵcmp = /*@__PURE__*/core_js_["ɵɵdefineComponent"]({
     type: AngularChildComponent,
     selectors: [["angular-child"]],
-    decls: 36,
+    decls: 27,
     vars: 1,
-    consts: [["header", "Angular Child"], ["tuiLink", "", "routerLink", "/angular-host"], ["tuiLink", "", "routerLink", "/angular-installation"], ["tuiLink", "", "target", "_blank", "routerLink", "/asset-map"], ["filename", "app.module.ts", 3, "code"], [1, "tui-list", "tui-list_large"], [1, "tui-list__item"]],
+    consts: [["header", "Angular Child"], ["tuiLink", "", "routerLink", "/angular-host"], ["tuiLink", "", "routerLink", "/angular-installation"], ["filename", "my-remote-app.ts", 3, "code"]],
     template: function AngularChildComponent_Template(rf, ctx) {
       if (rf & 1) {
         core_js_["ɵɵelementStart"](0, "tui-doc-page", 0);
@@ -80,40 +75,26 @@ let AngularChildComponent = /*#__PURE__*/(() => {
         core_js_["ɵɵtext"](15, "Replace the platform");
         core_js_["ɵɵelementEnd"]();
         core_js_["ɵɵelementStart"](16, "p");
-        core_js_["ɵɵtext"](17, " Microzord provides its own Angular platform and ");
+        core_js_["ɵɵtext"](17, " You should create file with an application and expose it via module federation. Microzord provides ");
         core_js_["ɵɵelementStart"](18, "code");
-        core_js_["ɵɵtext"](19, "enableProdMode");
+        core_js_["ɵɵtext"](19, "createApp");
         core_js_["ɵɵelementEnd"]();
-        core_js_["ɵɵtext"](20, " functions. It does not change default platform behaviour, so you can still build and use your application separately, but adds ");
-        core_js_["ɵɵelementStart"](21, "a", 3);
-        core_js_["ɵɵtext"](22, "asset maps");
+        core_js_["ɵɵtext"](20, " helper to convert your application to microzord child application. ");
         core_js_["ɵɵelementEnd"]();
-        core_js_["ɵɵtext"](23, " for microzord. ");
+        core_js_["ɵɵelement"](21, "tui-doc-code", 3);
+        core_js_["ɵɵelementStart"](22, "p");
+        core_js_["ɵɵtext"](23, " Now you can build your application as usual and dist folder of your app will contain ");
+        core_js_["ɵɵelementStart"](24, "strong");
+        core_js_["ɵɵtext"](25, "microzord.json");
         core_js_["ɵɵelementEnd"]();
-        core_js_["ɵɵelement"](24, "tui-doc-code", 4);
-        core_js_["ɵɵelementStart"](25, "p");
-        core_js_["ɵɵtext"](26, " Now you can build your application as usual and dist folder of your app will contain ");
-        core_js_["ɵɵelementStart"](27, "strong");
-        core_js_["ɵɵtext"](28, "microzord.json");
-        core_js_["ɵɵelementEnd"]();
-        core_js_["ɵɵtext"](29, " assets map. ");
-        core_js_["ɵɵelementEnd"]();
-        core_js_["ɵɵelementEnd"]();
-        core_js_["ɵɵelementStart"](30, "section");
-        core_js_["ɵɵelementStart"](31, "h2");
-        core_js_["ɵɵtext"](32, "What to do with the map");
-        core_js_["ɵɵelementEnd"]();
-        core_js_["ɵɵelementStart"](33, "ul", 5);
-        core_js_["ɵɵelementStart"](34, "li", 6);
-        core_js_["ɵɵtext"](35, "You can integrate a child app ...");
-        core_js_["ɵɵelementEnd"]();
+        core_js_["ɵɵtext"](26, " assets map. ");
         core_js_["ɵɵelementEnd"]();
         core_js_["ɵɵelementEnd"]();
         core_js_["ɵɵelementEnd"]();
       }
       if (rf & 2) {
-        core_js_["ɵɵadvance"](24);
-        core_js_["ɵɵproperty"]("code", ctx.replacingPlatform);
+        core_js_["ɵɵadvance"](21);
+        core_js_["ɵɵproperty"]("code", ctx.code);
       }
     },
     directives: [taiga_ui_addon_doc/* TuiDocPageComponent */.qo, taiga_ui_core_components_link/* TuiLinkComponent */.V, router_js_.RouterLinkWithHref, taiga_ui_addon_doc/* TuiDocCodeComponent */.c0],

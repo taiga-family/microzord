@@ -645,7 +645,7 @@ let AppComponent = /*#__PURE__*/(() => {
     selectors: [["microzord-root"]],
     decls: 5,
     vars: 0,
-    consts: [["ngProjectAs", "tuiDocHeader", 5, ["tuiDocHeader"]], ["tuiLink", "", "tuiMode", "onLight", "href", "https://github.com/TinkoffCreditSystems/microzord", "target", "_blank", 1, "link"], ["src", "assets/images/github.svg", "alt", "", 1, "github"]],
+    consts: [["ngProjectAs", "tuiDocHeader", 5, ["tuiDocHeader"]], ["tuiLink", "", "tuiMode", "onLight", "href", "https://github.com/taiga-family/microzord", "target", "_blank", 1, "link"], ["src", "assets/images/github.svg", "alt", "", 1, "github"]],
     template: function AppComponent_Template(rf, ctx) {
       if (rf & 1) {
         core_js_["ɵɵelementStart"](0, "tui-doc-main");
@@ -701,11 +701,6 @@ const pages = [{
   title: `Getting started`,
   keywords: 'intro, how to, guide, main, главная, начало, инструкция',
   route: 'getting-started'
-}, {
-  section: `Starting`,
-  title: `What is an asset map`,
-  keywords: 'intro, how to, guide, main, source, child, host, главная, начало, инструкция, карта',
-  route: 'asset-map'
 }, {
   section: `Starting`,
   title: `Application entity`,
@@ -902,9 +897,9 @@ let GettingStartedComponent = /*#__PURE__*/(() => {
   GettingStartedComponent.ɵcmp = /*@__PURE__*/core_js_["ɵɵdefineComponent"]({
     type: GettingStartedComponent,
     selectors: [["getting-started"]],
-    decls: 60,
+    decls: 57,
     vars: 0,
-    consts: [["header", "Getting started"], [1, "about"], [1, "about__benefit"], [1, "tui-island__title"], [1, "tui-island__paragraph"], [1, "tui-space_top-4"], ["tuiLink", "", "routerLink", "/asset-map"], ["tuiLink", "", "routerLink", "/application"], ["tuiLink", "", "routerLink", "/todo"], ["tuiLink", "", "routerLink", "/angular-installation"]],
+    consts: [["header", "Getting started"], [1, "about"], [1, "about__benefit"], [1, "tui-island__title"], [1, "tui-island__paragraph"], [1, "tui-space_top-4"], ["tuiLink", "", "routerLink", "/application"], ["tuiLink", "", "routerLink", "/todo"], ["tuiLink", "", "routerLink", "/angular-installation"]],
     template: function GettingStartedComponent_Template(rf, ctx) {
       if (rf & 1) {
         core_js_["ɵɵelementStart"](0, "tui-doc-page", 0);
@@ -973,32 +968,27 @@ let GettingStartedComponent = /*#__PURE__*/(() => {
         core_js_["ɵɵelementStart"](41, "ul");
         core_js_["ɵɵelementStart"](42, "li");
         core_js_["ɵɵelementStart"](43, "a", 6);
-        core_js_["ɵɵtext"](44, "What is an asset map");
-        core_js_["ɵɵelementEnd"]();
-        core_js_["ɵɵelementEnd"]();
-        core_js_["ɵɵelementStart"](45, "li");
-        core_js_["ɵɵelementStart"](46, "a", 7);
-        core_js_["ɵɵtext"](47, "Application entity");
+        core_js_["ɵɵtext"](44, "Application entity");
         core_js_["ɵɵelementEnd"]();
         core_js_["ɵɵelementEnd"]();
         core_js_["ɵɵelementEnd"]();
-        core_js_["ɵɵelementStart"](48, "p");
-        core_js_["ɵɵtext"](49, "Or you can just choose your framework and figure it out in the process:");
+        core_js_["ɵɵelementStart"](45, "p");
+        core_js_["ɵɵtext"](46, "Or you can just choose your framework and figure it out in the process:");
         core_js_["ɵɵelementEnd"]();
-        core_js_["ɵɵelementStart"](50, "ul");
+        core_js_["ɵɵelementStart"](47, "ul");
+        core_js_["ɵɵelementStart"](48, "li");
+        core_js_["ɵɵelementStart"](49, "a", 7);
+        core_js_["ɵɵtext"](50, "Native JS installation");
+        core_js_["ɵɵelementEnd"]();
+        core_js_["ɵɵelementEnd"]();
         core_js_["ɵɵelementStart"](51, "li");
-        core_js_["ɵɵelementStart"](52, "a", 8);
-        core_js_["ɵɵtext"](53, "Native JS installation");
+        core_js_["ɵɵelementStart"](52, "a", 7);
+        core_js_["ɵɵtext"](53, "React installation");
         core_js_["ɵɵelementEnd"]();
         core_js_["ɵɵelementEnd"]();
         core_js_["ɵɵelementStart"](54, "li");
         core_js_["ɵɵelementStart"](55, "a", 8);
-        core_js_["ɵɵtext"](56, "React installation");
-        core_js_["ɵɵelementEnd"]();
-        core_js_["ɵɵelementEnd"]();
-        core_js_["ɵɵelementStart"](57, "li");
-        core_js_["ɵɵelementStart"](58, "a", 9);
-        core_js_["ɵɵtext"](59, "Angular installation");
+        core_js_["ɵɵtext"](56, "Angular installation");
         core_js_["ɵɵelementEnd"]();
         core_js_["ɵɵelementEnd"]();
         core_js_["ɵɵelementEnd"]();
@@ -1019,12 +1009,6 @@ const ROUTES = [{
   component: GettingStartedComponent,
   data: {
     title: `Getting started`
-  }
-}, {
-  path: 'asset-map',
-  loadChildren: () => Promise.all(/* import() */[__webpack_require__.e(592), __webpack_require__.e(199)]).then(__webpack_require__.bind(__webpack_require__, 8727)).then(m => m.AssetMapModule),
-  data: {
-    title: `What is an asset map`
   }
 }, {
   path: 'application',
@@ -1052,7 +1036,7 @@ const ROUTES = [{
   }
 }, {
   path: 'angular-installation',
-  loadChildren: () => Promise.all(/* import() */[__webpack_require__.e(592), __webpack_require__.e(738)]).then(__webpack_require__.bind(__webpack_require__, 9738)).then(m => m.AngularInstallationModule),
+  loadChildren: () => __webpack_require__.e(/* import() */ 45).then(__webpack_require__.bind(__webpack_require__, 6045)).then(m => m.AngularInstallationModule),
   data: {
     title: `Angular Installation`
   }
