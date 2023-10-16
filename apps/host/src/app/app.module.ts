@@ -15,7 +15,7 @@ import {AppComponent} from './app.component';
     RouterModule.forRoot([], {initialNavigation: 'enabledBlocking'}),
     HttpClientModule,
     TuiRootModule,
-    TuiAlertModule,
+    //TuiAlertModule,
     MicrozordHostModule.register({
       modules: [
         {
@@ -32,7 +32,7 @@ import {AppComponent} from './app.component';
         },
         {
           name: 'remote-react',
-          load: () => import('remoteReact/remote-react-app').then(x => x.default),
+          load: () => import('remote-react/remote-react-app').then(x => x.default),
         },
       ],
     }),
