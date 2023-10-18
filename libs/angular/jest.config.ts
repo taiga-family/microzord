@@ -1,17 +1,18 @@
-/* eslint-disable */
-export default {
+import type {Config} from 'jest';
+
+const config: Config = {
   displayName: 'angular',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  globals: {},
-  coverageDirectory: '../../coverage/libs/angular',
+  coverageDirectory: '../../coverage/libs/core',
+  transformIgnorePatterns: ['node_modules/(?!.*\\.mjs$)'],
   snapshotSerializers: [
     'jest-preset-angular/build/serializers/no-ng-attributes',
     'jest-preset-angular/build/serializers/ng-snapshot',
     'jest-preset-angular/build/serializers/html-comment',
   ],
   transform: {
-    '^.+\\.(ts|js|html)$': [
+    '^.+\\.(ts|js|mjs|html)$': [
       'jest-preset-angular',
       {
         stringifyContentPathRegex: '\\.(html|svg)$',
@@ -21,3 +22,5 @@ export default {
     ],
   },
 };
+
+export default config;
