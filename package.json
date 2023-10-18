@@ -22,7 +22,7 @@
     "ng": "nx",
     "nx": "nx",
     "start": "nx run demo:serve",
-    "build": "nx affected --target build --configuration production --with-deps",
+    "build": "nx affected --target build --configuration production",
     "release": "nx run-many --target release --all",
     "release:package": "nx build ${npm_config_package} --configuration production && npm run sync-readmes ${npm_config_package} && nx semrel ${npm_config_package}",
     "sync-readmes": "node scripts/sync-readmes",
