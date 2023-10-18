@@ -15,10 +15,10 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.0
+      - uses: actions/checkout@v4.1.1
         with:
           fetch-depth: 0
-      - uses: taiga-family/ci/actions/setup/node@v1.32.2
+      - uses: taiga-family/ci/actions/setup/node@v1.33.4
       - run: npm run build
         env:
           NODE_OPTIONS: --openssl-legacy-provider
@@ -27,10 +27,10 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.0
+      - uses: actions/checkout@v4.1.1
         with:
           fetch-depth: 0
-      - uses: taiga-family/ci/actions/setup/node@v1.32.2
+      - uses: taiga-family/ci/actions/setup/node@v1.33.4
       - run: npm run lint
       - run: npm run prettier -- --check
 
@@ -38,10 +38,10 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.0
+      - uses: actions/checkout@v4.1.1
         with:
           fetch-depth: 0
-      - uses: taiga-family/ci/actions/setup/node@v1.32.2
+      - uses: taiga-family/ci/actions/setup/node@v1.33.4
       - run: npm run test --coverage --coverageReporters lcov
       - run: echo "::set-output name=projectMatrix::$(npx nx print-affected --target test --select tasks.target.project)"
         id: set-project-matrix

@@ -11,11 +11,11 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.0
+      - uses: actions/checkout@v4.1.1
         with:
           fetch-depth: 0
-      - uses: taiga-family/ci/actions/setup/node@v1.32.2
-      - uses: taiga-family/ci/actions/setup/config/npm@v1.32.2
+      - uses: taiga-family/ci/actions/setup/node@v1.33.4
+      - uses: taiga-family/ci/actions/setup/config/npm@v1.33.4
         with: 
           token: ${{ secrets.NPM_TOKEN }}
       - run: npm run release
@@ -25,10 +25,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.0
+      - uses: actions/checkout@v4.1.1
         with:
           fetch-depth: 0
-      - uses: taiga-family/ci/actions/setup/node@v1.32.2
+      - uses: taiga-family/ci/actions/setup/node@v1.33.4
       - run: npx nx run-many --target test --all --coverage --coverageReporters lcov
       - uses: actions/upload-artifact@v3
         with:
