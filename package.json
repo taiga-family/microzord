@@ -163,5 +163,8 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx,html,md,less,scss,json}": ["npm run format:write"],
     "*.{js,jsx,ts,tsx}": ["eslint --fix"]
+  },
+  "engines": {
+    "node": "18.x.x"
   }
 }
