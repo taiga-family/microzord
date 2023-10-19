@@ -15,7 +15,7 @@ import {AppComponent} from './app.component';
     RouterModule.forRoot([], {initialNavigation: 'enabledBlocking'}),
     HttpClientModule,
     TuiRootModule,
-    //TuiAlertModule,
+    TuiAlertModule,
     MicrozordHostModule.register({
       modules: [
         {

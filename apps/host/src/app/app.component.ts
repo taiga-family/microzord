@@ -13,7 +13,7 @@ export class AppComponent {
   moduleName$$ = new BehaviorSubject<string | null>('remote-module');
   apps$ = new BehaviorSubject<string[]>(['remote-app', 'remote-react']);
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef, private alertService: TuiAlertService) {}
 
   toggleApps(): void {
     this.apps$.next(this.apps$.value.length ? [] : ['remote-app', 'remote-react']);
@@ -25,13 +25,13 @@ export class AppComponent {
 
   appHook(event: MicrozordLifecycleEvent) {
     console.log(`${event.target?.name}: ${event.type}`);
-    // this.alertService
-    //   .open(event.type, {
-    //     hasIcon: false,
-    //     label: event.target?.name,
-    //     status: 'info'
-    //   })
-    //   .subscribe();
+    this.alertService
+      .open(event.type, {
+        hasIcon: false,
+        label: event.target?.name,
+        status: 'info',
+      })
+      .subscribe();
     this.cdr.detectChanges();
   }
 }
