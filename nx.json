@@ -7,15 +7,13 @@
         "cacheableOperations": ["lint", "e2e", "build", "test"],
         "accessToken": "MWJjNTg4MTItOGM4YS00M2ZlLTgzZWEtN2M1ZGU0YWI3NWFjfHJlYWQtd3JpdGU=",
         "canTrackAnalytics": false,
-        "showUsageWarnings": true,
-        "parallel": 3
+        "showUsageWarnings": true
       }
     }
   },
   "affected": {
     "defaultBase": "origin/main"
   },
-  "npmScope": "microzord",
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
@@ -53,22 +51,5 @@
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/src/test-setup.[jt]s"
     ]
-  },
-  "generators": {
-    "@nx/react": {
-      "application": {
-        "style": "css",
-        "linter": "eslint",
-        "bundler": "webpack",
-        "babel": true
-      },
-      "component": {
-        "style": "css"
-      },
-      "library": {
-        "style": "css",
-        "linter": "eslint"
-      }
-    }
   }
 }
