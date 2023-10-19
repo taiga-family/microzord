@@ -6,7 +6,6 @@ import {
 } from '@microzord/core';
 import {Root, createRoot} from 'react-dom/client';
 import {ReactElement} from 'react';
-import * as ReactDOM from 'react-dom';
 
 export function createApp<P>(
   name: string,
