@@ -46606,7 +46606,7 @@ function forkJoin(...args) {
 var map = __webpack_require__(7398);
 ;// CONCATENATED MODULE: ./node_modules/@angular/forms/fesm2022/forms.mjs
 /**
- * @license Angular v16.2.8
+ * @license Angular v16.2.10
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -49478,7 +49478,7 @@ class FormGroup extends AbstractControl {
    */
   reset(value = {}, options = {}) {
     this._forEachChild((control, name) => {
-      control.reset(value[name], {
+      control.reset(value ? value[name] : null, {
         onlySelf: true,
         emitEvent: options.emitEvent
       });
@@ -53876,7 +53876,7 @@ let UntypedFormBuilder = /*#__PURE__*/(/* unused pure expression or super */ nul
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new core_mjs_.Version('16.2.8');
+const VERSION = /*#__PURE__*/new core_mjs_.Version('16.2.10');
 
 /**
  * Exports the required providers and directives for template-driven forms,
