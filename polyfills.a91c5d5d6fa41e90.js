@@ -2807,7 +2807,7 @@ Zone.__load_patch('queueMicrotask', (global, Zone, api) => {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + (chunkId === 592 ? "common" : chunkId) + "." + {"272":"a5c2162d2bebca93","361":"0ac2501d39cf350b","444":"e42a4326ecc4b783","474":"042ce859865e2237","542":"a72db9572f95bb22","586":"0462e0a743b7eb52","592":"66bee8a7a6f85683","609":"e9b0f331a0920799","814":"bcf61bb2f817a491","913":"b7f35617a4693d6b"}[chunkId] + ".js";
+/******/ 			return "" + (chunkId === 592 ? "common" : chunkId) + "." + {"272":"a5c2162d2bebca93","361":"28b90d29a81f7ac8","444":"e42a4326ecc4b783","474":"042ce859865e2237","542":"a72db9572f95bb22","586":"73d9e48610511fd3","592":"7d49323e893449c5","609":"e9b0f331a0920799","814":"bcf61bb2f817a491","913":"b7f35617a4693d6b"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -2931,7 +2931,7 @@ Zone.__load_patch('queueMicrotask', (global, Zone, api) => {
 /******/ 					register("@angular/common/http", "16.2.8", () => (Promise.all([__webpack_require__.e(444), __webpack_require__.e(609), __webpack_require__.e(913), __webpack_require__.e(474), __webpack_require__.e(542)]).then(() => (() => (__webpack_require__(1474))))));
 /******/ 					register("@angular/common", "16.2.8", () => (Promise.all([__webpack_require__.e(609), __webpack_require__.e(814)]).then(() => (() => (__webpack_require__(6814))))));
 /******/ 					register("@angular/core", "16.2.8", () => (Promise.all([__webpack_require__.e(444), __webpack_require__.e(592), __webpack_require__.e(272)]).then(() => (() => (__webpack_require__(5879))))));
-/******/ 					register("@angular/router", "16.2.8", () => (Promise.all([__webpack_require__.e(444), __webpack_require__.e(609), __webpack_require__.e(913), __webpack_require__.e(586), __webpack_require__.e(361)]).then(() => (() => (__webpack_require__(7586))))));
+/******/ 					register("@angular/router", "16.2.10", () => (Promise.all([__webpack_require__.e(444), __webpack_require__.e(609), __webpack_require__.e(913), __webpack_require__.e(586), __webpack_require__.e(361)]).then(() => (() => (__webpack_require__(7586))))));
 /******/ 				}
 /******/ 				break;
 /******/ 			}

@@ -418,7 +418,7 @@ var mergeAll = __webpack_require__(7537);
 var platform_browser = __webpack_require__(6593);
 ;// CONCATENATED MODULE: ./node_modules/@angular/router/fesm2022/router.mjs
 /**
- * @license Angular v16.2.8
+ * @license Angular v16.2.10
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -7501,7 +7501,7 @@ function mapToResolve(provider) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new core_mjs_.Version('16.2.8');
+const VERSION = /*#__PURE__*/new core_mjs_.Version('16.2.10');
 
 /**
  * @module

@@ -116,7 +116,7 @@ Promise.all(/* import() */[__webpack_require__.e(444), __webpack_require__.e(609
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + (chunkId === 592 ? "common" : chunkId) + "." + {"35":"8c6a01919e85967d","117":"43e2510405bd53e0","227":"1d41e8b0d0d32846","266":"e44c6ccf3c90efab","272":"a5c2162d2bebca93","302":"5359f98fe0b07d7f","322":"ae45415553c1ff6b","361":"0ac2501d39cf350b","373":"9baa2cb4625f2de6","444":"e42a4326ecc4b783","474":"042ce859865e2237","476":"5e5c782eb8af2c9b","542":"a72db9572f95bb22","586":"0462e0a743b7eb52","592":"66bee8a7a6f85683","609":"e9b0f331a0920799","631":"a2860c46bc0f3a87","668":"bbed00dfddf4420a","814":"bcf61bb2f817a491","825":"c86fade37842ae92","845":"b06461a574bec185","853":"48fdbc555cce8afa","913":"b7f35617a4693d6b"}[chunkId] + ".js";
+/******/ 			return "" + (chunkId === 592 ? "common" : chunkId) + "." + {"35":"8c6a01919e85967d","117":"cc2961785a682f66","227":"4de3ba4fc7895807","266":"e44c6ccf3c90efab","272":"a5c2162d2bebca93","302":"8c34558e18b3b4b9","322":"ae45415553c1ff6b","361":"28b90d29a81f7ac8","373":"9baa2cb4625f2de6","444":"e42a4326ecc4b783","474":"042ce859865e2237","476":"485836ff27ac7c55","542":"a72db9572f95bb22","586":"73d9e48610511fd3","592":"7d49323e893449c5","609":"e9b0f331a0920799","631":"6bfecf6fe2f1e561","668":"bbed00dfddf4420a","814":"bcf61bb2f817a491","825":"2862504b630f75d3","845":"fbfd08d7b81aaf9f","853":"6a8331f10584daee","913":"b7f35617a4693d6b"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -240,7 +240,7 @@ Promise.all(/* import() */[__webpack_require__.e(444), __webpack_require__.e(609
 /******/ 					register("@angular/common/http", "16.2.8", () => (Promise.all([__webpack_require__.e(444), __webpack_require__.e(609), __webpack_require__.e(913), __webpack_require__.e(474), __webpack_require__.e(542)]).then(() => (() => (__webpack_require__(1474))))));
 /******/ 					register("@angular/common", "16.2.8", () => (Promise.all([__webpack_require__.e(609), __webpack_require__.e(814)]).then(() => (() => (__webpack_require__(6814))))));
 /******/ 					register("@angular/core", "16.2.8", () => (Promise.all([__webpack_require__.e(444), __webpack_require__.e(592), __webpack_require__.e(272)]).then(() => (() => (__webpack_require__(5879))))));
-/******/ 					register("@angular/router", "16.2.8", () => (Promise.all([__webpack_require__.e(444), __webpack_require__.e(609), __webpack_require__.e(913), __webpack_require__.e(586), __webpack_require__.e(361)]).then(() => (() => (__webpack_require__(7586))))));
+/******/ 					register("@angular/router", "16.2.10", () => (Promise.all([__webpack_require__.e(444), __webpack_require__.e(609), __webpack_require__.e(913), __webpack_require__.e(586), __webpack_require__.e(361)]).then(() => (() => (__webpack_require__(7586))))));
 /******/ 				}
 /******/ 				break;
 /******/ 			}
@@ -423,12 +423,12 @@ Promise.all(/* import() */[__webpack_require__.e(444), __webpack_require__.e(609
 /******/ 			6609: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/core", [4,16,2,8], () => (Promise.all([__webpack_require__.e(444), __webpack_require__.e(592), __webpack_require__.e(272)]).then(() => (() => (__webpack_require__(5879))))))),
 /******/ 			6913: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/common", [4,16,2,8], () => (__webpack_require__.e(814).then(() => (() => (__webpack_require__(6814))))))),
 /******/ 			5450: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/common/http", [4,16,2,8], () => (__webpack_require__.e(474).then(() => (() => (__webpack_require__(1474))))))),
-/******/ 			3042: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/router", [4,16,2,8], () => (__webpack_require__.e(586).then(() => (() => (__webpack_require__(7586)))))))
+/******/ 			4503: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/router", [4,16,2,10], () => (__webpack_require__.e(586).then(() => (() => (__webpack_require__(7586)))))))
 /******/ 		};
 /******/ 		// no consumes in initial chunks
 /******/ 		var chunkMapping = {
 /******/ 			"227": [
-/******/ 				3042
+/******/ 				4503
 /******/ 			],
 /******/ 			"361": [
 /******/ 				5450

@@ -179,7 +179,7 @@ var browser = __webpack_require__(6108);
 var common_mjs_ = __webpack_require__(6913);
 ;// CONCATENATED MODULE: ./node_modules/@angular/platform-browser/fesm2022/animations.mjs
 /**
- * @license Angular v16.2.8
+ * @license Angular v16.2.10
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -767,8 +767,8 @@ function provideNoopAnimations() {
 //# sourceMappingURL=animations.mjs.map
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-tokens.js + 1 modules
 var taiga_ui_addon_doc_tokens = __webpack_require__(8747);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-components.js + 112 modules
-var taiga_ui_addon_doc_components = __webpack_require__(1909);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-components.js + 113 modules
+var taiga_ui_addon_doc_components = __webpack_require__(5470);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-link.js
 var taiga_ui_core_components_link = __webpack_require__(2114);
 ;// CONCATENATED MODULE: ./apps/demo/src/app/app.component.ts
@@ -805,8 +805,8 @@ let AppComponent = /*#__PURE__*/(() => {
   }
   return AppComponent;
 })();
-// EXTERNAL MODULE: consume shared module (default) @angular/router@=16.2.8 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
-var router_mjs_ = __webpack_require__(3042);
+// EXTERNAL MODULE: consume shared module (default) @angular/router@=16.2.10 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
+var router_mjs_ = __webpack_require__(4503);
 // EXTERNAL MODULE: ./node_modules/@tinkoff/ng-polymorpheus/fesm2015/tinkoff-ng-polymorpheus.js
 var tinkoff_ng_polymorpheus = __webpack_require__(2549);
 ;// CONCATENATED MODULE: ./apps/demo/src/app/logo/logo.component.ts
@@ -1212,7 +1212,7 @@ platform_browser/* platformBrowser */.q6().bootstrapModule(AppModule).catch(err 
 
 /***/ }),
 
-/***/ 1909:
+/***/ 5470:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2142,7 +2142,7 @@ function tuiCoerceBooleanProperty(value) {
 
 //# sourceMappingURL=taiga-ui-cdk-coercion.js.map
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-services.js + 2 modules
-var taiga_ui_cdk_services = __webpack_require__(7446);
+var taiga_ui_cdk_services = __webpack_require__(5423);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Observable.js
 var internal_Observable = __webpack_require__(5592);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/innerFrom.js
@@ -15558,8 +15558,8 @@ let TuiTagModule = /*#__PURE__*/(() => {
 
 
 //# sourceMappingURL=taiga-ui-kit-components-tag.js.map
-// EXTERNAL MODULE: consume shared module (default) @angular/router@=16.2.8 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
-var router_mjs_ = __webpack_require__(3042);
+// EXTERNAL MODULE: consume shared module (default) @angular/router@=16.2.10 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
+var router_mjs_ = __webpack_require__(4503);
 ;// CONCATENATED MODULE: ./node_modules/@ng-web-apis/mutation-observer/fesm2015/ng-web-apis-mutation-observer.js
 
 
@@ -17416,6 +17416,200 @@ let TuiFocusTrapModule = /*#__PURE__*/(() => {
 
 
 //# sourceMappingURL=taiga-ui-cdk-directives-focus-trap.js.map
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/node_modules/@tinkoff/ng-polymorpheus/fesm2015/tinkoff-ng-polymorpheus.js
+
+
+
+/**
+ * Use this token to access context within your components when
+ * instantiating them through {@link PolymorpheusOutletDirective}
+ */
+const POLYMORPHEUS_CONTEXT = new core_mjs_.InjectionToken('POLYMORPHEUS_CONTEXT');
+
+/**
+ * Wrapper class for a component that will be used as content for {@link PolymorpheusOutletDirective}
+ *
+ * @param component — an Angular component to be dynamically created
+ * @param injector — optional {@link Injector} for lazy loaded module case
+ *
+ * TODO: Remove second generic as it is irrelevant, remove `null` from injector type
+ */
+class PolymorpheusComponent {
+  constructor(component, i) {
+    this.component = component;
+    this.i = i;
+  }
+  createInjector(injector, useValue) {
+    return core_mjs_.Injector.create({
+      parent: this.i || injector,
+      providers: [{
+        provide: POLYMORPHEUS_CONTEXT,
+        useValue
+      }]
+    });
+  }
+}
+
+/**
+ * ng-template wrapper directive also stores {@link ChangeDetectorRef} to properly handle change detection.
+ */
+let PolymorpheusTemplate = /*#__PURE__*/(() => {
+  class PolymorpheusTemplate {
+    constructor(template, cdr) {
+      this.template = template;
+      this.cdr = cdr;
+      this.polymorpheus = '';
+    }
+    check() {
+      this.cdr.markForCheck();
+    }
+    static ngTemplateContextGuard(_dir, _ctx) {
+      return true;
+    }
+  }
+  /** @nocollapse */
+  /** @nocollapse */PolymorpheusTemplate.ɵfac = function PolymorpheusTemplate_Factory(t) {
+    return new (t || PolymorpheusTemplate)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.TemplateRef, 2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ChangeDetectorRef));
+  };
+  PolymorpheusTemplate.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: PolymorpheusTemplate,
+    selectors: [["ng-template", "polymorpheus", ""]],
+    inputs: {
+      polymorpheus: "polymorpheus"
+    },
+    exportAs: ["polymorpheus"]
+  });
+  return PolymorpheusTemplate;
+})();
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+class PolymorpheusContext {
+  constructor($implicit) {
+    this.$implicit = $implicit;
+  }
+  get polymorpheusOutlet() {
+    return this.$implicit;
+  }
+}
+/**
+ * @deprecated: use {@link PolymorpheusContext} instead
+ * Primitive types used as content by {@link PolymorpheusOutletDirective}
+ */
+class PrimitiveContext extends (/* unused pure expression or super */ null && (PolymorpheusContext)) {}
+let PolymorpheusOutletDirective = /*#__PURE__*/(() => {
+  class PolymorpheusOutletDirective {
+    constructor(vcr, i, t) {
+      this.vcr = vcr;
+      this.i = i;
+      this.t = t;
+      this.content = '';
+    }
+    get template() {
+      if (isDirective(this.content)) {
+        return this.content.template;
+      }
+      return this.content instanceof core_mjs_.TemplateRef ? this.content : this.t;
+    }
+    ngOnChanges({
+      content
+    }) {
+      var _a;
+      const context = this.getContext();
+      if (this.v) {
+        this.v.context = context;
+      }
+      (_a = this.c) === null || _a === void 0 ? void 0 : _a.injector.get(core_mjs_.ChangeDetectorRef).markForCheck();
+      if (!content) {
+        return;
+      }
+      this.vcr.clear();
+      if (isComponent(this.content)) {
+        this.process(this.content);
+      } else if (
+      // tslint:disable-next-line:triple-equals
+      (context instanceof PolymorpheusContext && context.$implicit) != null) {
+        this.v = this.vcr.createEmbeddedView(this.template, context);
+      }
+    }
+    ngDoCheck() {
+      if (isDirective(this.content)) {
+        this.content.check();
+      }
+    }
+    static ngTemplateContextGuard(_dir, _ctx) {
+      return true;
+    }
+    getContext() {
+      if (isTemplate(this.content) || isComponent(this.content)) {
+        return this.context;
+      }
+      return new PolymorpheusContext(typeof this.content === 'function' ? this.content(this.context) : this.content);
+    }
+    process(content) {
+      const injector = content.createInjector(this.i, this.context && new Proxy(this.context, {
+        get: (_, key) => {
+          var _a;
+          return (_a = this.context) === null || _a === void 0 ? void 0 : _a[key];
+        }
+      }));
+      this.c = this.vcr.createComponent(injector.get(core_mjs_.ComponentFactoryResolver).resolveComponentFactory(content.component), 0, injector);
+    }
+  }
+  /** @nocollapse */
+  /** @nocollapse */PolymorpheusOutletDirective.ɵfac = function PolymorpheusOutletDirective_Factory(t) {
+    return new (t || PolymorpheusOutletDirective)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ViewContainerRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Injector), core_mjs_["ɵɵdirectiveInject"](core_mjs_.TemplateRef));
+  };
+  PolymorpheusOutletDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: PolymorpheusOutletDirective,
+    selectors: [["", "polymorpheusOutlet", ""]],
+    inputs: {
+      content: ["polymorpheusOutlet", "content"],
+      context: ["polymorpheusOutletContext", "context"]
+    },
+    features: [core_mjs_["ɵɵNgOnChangesFeature"]]
+  });
+  return PolymorpheusOutletDirective;
+})();
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+function isDirective(content) {
+  return content instanceof PolymorpheusTemplate;
+}
+function isComponent(content) {
+  return content instanceof PolymorpheusComponent;
+}
+function isTemplate(content) {
+  return isDirective(content) || content instanceof core_mjs_.TemplateRef;
+}
+let PolymorpheusModule = /*#__PURE__*/(() => {
+  class PolymorpheusModule {}
+  /** @nocollapse */
+  /** @nocollapse */
+  /** @nocollapse */PolymorpheusModule.ɵfac = function PolymorpheusModule_Factory(t) {
+    return new (t || PolymorpheusModule)();
+  };
+  PolymorpheusModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: PolymorpheusModule
+  });
+  PolymorpheusModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+  return PolymorpheusModule;
+})();
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Public API Surface of ng-polymorpheus
+ */
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=tinkoff-ng-polymorpheus.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-components-dialog-host.js
 
 
@@ -17567,7 +17761,7 @@ let TuiDialogHostComponent = /*#__PURE__*/(() => {
         core_mjs_["ɵɵproperty"]("tuiLet", core_mjs_["ɵɵpipeBind1"](2, 2, ctx.isDialogClosesOnBack$));
       }
     },
-    dependencies: [TuiScrollControlsComponent, common_mjs_.NgForOf, TuiFocusTrapDirective, TuiOverscrollDirective, TuiScrollRefDirective, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li, common_mjs_.NgIf, taiga_ui_cdk_directives_let/* TuiLetDirective */.Ls, common_mjs_.AsyncPipe],
+    dependencies: [TuiScrollControlsComponent, common_mjs_.NgForOf, TuiFocusTrapDirective, TuiOverscrollDirective, TuiScrollRefDirective, PolymorpheusOutletDirective, common_mjs_.NgIf, taiga_ui_cdk_directives_let/* TuiLetDirective */.Ls, common_mjs_.AsyncPipe],
     styles: ["[_nghost-%COMP%]{position:fixed;left:0;bottom:0;width:100%;height:0}.t-overlay[_ngcontent-%COMP%], .t-dialog[_ngcontent-%COMP%]{position:fixed;top:0;left:0;right:0;bottom:0;display:flex;align-items:flex-start;outline:none;overflow:auto;scrollbar-width:none;-ms-overflow-style:none}.t-overlay.ng-animating[_ngcontent-%COMP%], .t-dialog.ng-animating[_ngcontent-%COMP%]{overflow:clip}.t-overlay[_ngcontent-%COMP%]::-webkit-scrollbar, .t-dialog[_ngcontent-%COMP%]::-webkit-scrollbar, .t-overlay[_ngcontent-%COMP%]::-webkit-scrollbar-thumb, .t-dialog[_ngcontent-%COMP%]::-webkit-scrollbar-thumb{background:transparent;width:0;height:0}.t-dialog[_ngcontent-%COMP%]{bottom:auto;height:100%}.t-overlay[_ngcontent-%COMP%]{height:100%;pointer-events:none;touch-action:none;opacity:0;letter-spacing:normal;transition:opacity var(--tui-duration, .3s),letter-spacing .01s;background:rgba(0,0,0,.75);-webkit-backdrop-filter:var(--tui-backdrop, none);backdrop-filter:var(--tui-backdrop, none)}.t-overlay_visible[_ngcontent-%COMP%]{opacity:1;letter-spacing:1px}.t-dialog[_ngcontent-%COMP%]:last-of-type{z-index:1}.t-scrollbars[_ngcontent-%COMP%]{position:fixed;top:0;left:0;right:0;bottom:0;margin:0;color:#747474}"],
     data: {
       animation: [(0,animations/* trigger */.X$)('host', [(0,animations/* transition */.eR)(':enter', [(0,animations/* style */.oB)({
@@ -17595,7 +17789,7 @@ let TuiDialogHostModule = /*#__PURE__*/(() => {
     type: TuiDialogHostModule
   });
   TuiDialogHostModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-    imports: [[common_mjs_.CommonModule, tinkoff_ng_polymorpheus/* PolymorpheusModule */.wq, TuiOverscrollModule, TuiFocusTrapModule, taiga_ui_cdk_directives_let/* TuiLetModule */.WD, TuiScrollControlsModule]]
+    imports: [[common_mjs_.CommonModule, PolymorpheusModule, TuiOverscrollModule, TuiFocusTrapModule, taiga_ui_cdk_directives_let/* TuiLetModule */.WD, TuiScrollControlsModule]]
   });
   return TuiDialogHostModule;
 })();
@@ -17658,7 +17852,7 @@ let TuiAlertHostComponent = /*#__PURE__*/(() => {
       this.trackBy = index => index;
       this.mapper = useValue => core_mjs_.Injector.create({
         providers: [{
-          provide: tinkoff_ng_polymorpheus/* POLYMORPHEUS_CONTEXT */.yf,
+          provide: POLYMORPHEUS_CONTEXT,
           useValue
         }],
         parent: this.injector
@@ -24911,7 +25105,7 @@ const subscribeToArray = array => subscriber => {
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(3997);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(4664);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(9773);
-/* harmony import */ var _taiga_ui_cdk_services__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(7446);
+/* harmony import */ var _taiga_ui_cdk_services__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(5423);
 /* harmony import */ var _taiga_ui_cdk_exceptions__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(7122);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6913);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
@@ -26378,7 +26572,7 @@ function tuiZoneOptimized(zone) {
 
 /***/ }),
 
-/***/ 7446:
+/***/ 5423:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -28436,7 +28630,7 @@ function setFallbackForGradientFill(svg, fallback) {
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6609);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7446);
+/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5423);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(2461);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5592);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3019);
@@ -28597,7 +28791,7 @@ function tuiAsRectAccessor(useExisting) {
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2461);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(756);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(2918);
-/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(7446);
+/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(5423);
 /* harmony import */ var _taiga_ui_core_directives__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(6371);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6232);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7921);
@@ -28846,7 +29040,7 @@ let TuiButtonModule = /*#__PURE__*/(() => {
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5213);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6141);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(756);
-/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(7446);
+/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(5423);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(2918);
 /* harmony import */ var _taiga_ui_core_providers__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(1379);
 /* harmony import */ var _taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(4862);
@@ -29389,7 +29583,7 @@ let TuiNotificationModule = /*#__PURE__*/(() => {
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8937);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(7178);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(7995);
-/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(7446);
+/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(5423);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(2918);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(1800);
 /* harmony import */ var _taiga_ui_core_constants__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(8103);
@@ -30136,7 +30330,7 @@ function tuiWatchedControllerFactory(controller, cdr, destroy$) {
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5213);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(6141);
-/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(7446);
+/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(5423);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(7178);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(2918);
 /* harmony import */ var _taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(4862);
@@ -30151,7 +30345,7 @@ function tuiWatchedControllerFactory(controller, cdr, destroy$) {
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(9773);
 /* harmony import */ var _ng_web_apis_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(229);
 /* harmony import */ var _taiga_ui_core_abstract__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(9315);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3042);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4503);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_router__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(6593);
 /* harmony import */ var _taiga_ui_core_utils_dom__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(2103);
@@ -40834,7 +41028,7 @@ module.exports = /[\0-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD80
 /* harmony export */ });
 /* unused harmony exports animation, group, keyframes, state, useAnimation */
 /**
- * @license Angular v16.2.8
+ * @license Angular v16.2.10
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -42077,7 +42271,7 @@ const ɵPRE_STYLE = '!';
 /* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6825);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6609);
 /**
- * @license Angular v16.2.8
+ * @license Angular v16.2.10
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */

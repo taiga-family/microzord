@@ -672,7 +672,7 @@ function mapOneOrManyArgs(fn) {
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6913);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5450);
 /**
- * @license Angular v16.2.8
+ * @license Angular v16.2.10
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -2796,7 +2796,7 @@ function provideClientHydration(...features) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('16.2.8');
+const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('16.2.10');
 
 // Re-export TransferState to the public API of the `platform-browser` for backwards-compatibility.
 /**
