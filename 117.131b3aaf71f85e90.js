@@ -20,8 +20,8 @@ var taiga_ui_addon_doc = __webpack_require__(5322);
 var taiga_ui_addon_doc_utils = __webpack_require__(8836);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-link.js
 var taiga_ui_core_components_link = __webpack_require__(2114);
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=16.2.8 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(6609);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=16.2.10 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(8719);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-components.js + 113 modules
 var taiga_ui_addon_doc_components = __webpack_require__(5470);
 ;// CONCATENATED MODULE: ./apps/demo/src/app/modules/angular-child/angular-child.component.ts

@@ -740,7 +740,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(3997);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(1374);
 /**
- * @license Angular v16.2.8
+ * @license Angular v16.2.10
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -10738,7 +10738,7 @@ class Version {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new Version('16.2.8');
+const VERSION = /*#__PURE__*/new Version('16.2.10');
 
 // This default value is when checking the hierarchy for a token.
 //
@@ -12146,10 +12146,6 @@ function getExpressionChangedErrorDetails(lView, bindingIndex, oldValue, newValu
   };
 }
 let currentConsumer = null;
-function setLViewForConsumer(node, lView) {
-  (typeof ngDevMode === 'undefined' || ngDevMode) && assertEqual(node.lView, null, 'Consumer already associated with a view.');
-  node.lView = lView;
-}
 /**
  * Create a new template consumer pointing at the specified LView.
  * Sometimes, a previously created consumer may be reused, in order to save on allocations. In that
@@ -26551,7 +26547,7 @@ const ITS_JUST_ANGULAR = true;
  *
  * The following example illustrates how to configure a multi-provider using `APP_INITIALIZER` token
  * and a function returning a promise.
- *
+ * ### Example with NgModule-based application
  * ```
  *  function initializeApp(): Promise<any> {
  *    return new Promise((resolve, reject) => {
@@ -26573,11 +26569,38 @@ const ITS_JUST_ANGULAR = true;
  *  export class AppModule {}
  * ```
  *
+ * ### Example with standalone application
+ * ```
+ * export function initializeApp(http: HttpClient) {
+ *   return (): Promise<any> =>
+ *     firstValueFrom(
+ *       http
+ *         .get("https://someUrl.com/api/user")
+ *         .pipe(tap(user => { ... }))
+ *     );
+ * }
+ *
+ * bootstrapApplication(App, {
+ *   providers: [
+ *     provideHttpClient(),
+ *     {
+ *       provide: APP_INITIALIZER,
+ *       useFactory: initializeApp,
+ *       multi: true,
+ *       deps: [HttpClient],
+ *     },
+ *   ],
+ * });
+
+ * ```
+ *
+ *
  * It's also possible to configure a multi-provider using `APP_INITIALIZER` token and a function
  * returning an observable, see an example below. Note: the `HttpClient` in this example is used for
  * demo purposes to illustrate how the factory function can work with other providers available
  * through DI.
  *
+ * ### Example with NgModule-based application
  * ```
  *  function initializeAppFactory(httpClient: HttpClient): () => Observable<any> {
  *   return () => httpClient.get("https://someUrl.com/api/user")
@@ -26599,6 +26622,27 @@ const ITS_JUST_ANGULAR = true;
  *  })
  *  export class AppModule {}
  * ```
+ *
+ * ### Example with standalone application
+ *
+ *  function initializeAppFactory(httpClient: HttpClient): () => Observable<any> {
+ *   return () => httpClient.get("https://someUrl.com/api/user")
+ *     .pipe(
+ *        tap(user => { ... })
+ *     );
+ *  }
+ *
+ * bootstrapApplication(App, {
+ *   providers: [
+ *     provideHttpClient(),
+ *     {
+ *       provide: APP_INITIALIZER,
+ *       useFactory: initializeApp,
+ *       multi: true,
+ *       deps: [HttpClient],
+ *     },
+ *   ],
+ * });
  *
  * @publicApi
  */
