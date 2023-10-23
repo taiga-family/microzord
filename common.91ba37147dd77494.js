@@ -48,11 +48,6 @@ function tuiGetDocModules(type) {
   return [TuiAddonDocModule, RouterModule.forChild(tuiGenerateRoutes(type))];
 }
 
-/**
- * Generated bundle index. Do not edit.
- */
-
-
 //# sourceMappingURL=taiga-ui-addon-doc.js.map
 
 /***/ }),
