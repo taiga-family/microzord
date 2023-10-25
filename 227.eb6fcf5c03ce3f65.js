@@ -17003,15 +17003,16 @@ const taiga_ui_core_components_root_c0 = ["*", [["tuiOverContent"]], [["tuiOverD
 const taiga_ui_core_components_root_c1 = ["*", "tuiOverContent", "tuiOverDialogs", "tuiOverAlerts", "tuiOverPortals", "tuiOverHints"];
 let TuiRootComponent = /*#__PURE__*/(() => {
   class TuiRootComponent {
-    constructor(duration, dialogs, isMobile, isMobileRes$, isIOS, isAndroid, {
+    constructor(duration, dialogs, isMobile, breakpoint, isIOS, isAndroid, {
       body
     }, theme) {
       this.duration = duration;
       this.dialogs = dialogs;
       this.isMobile = isMobile;
-      this.isMobileRes$ = isMobileRes$;
+      this.breakpoint = breakpoint;
       this.isIOS = isIOS;
       this.isAndroid = isAndroid;
+      this.isMobileRes$ = this.breakpoint.pipe((0,internal_operators_map/* map */.U)(breakpoint => breakpoint === 'mobile'));
       this.scrollbars$ = this.dialogs.length && !this.isMobile ? (0,observable_combineLatest/* combineLatest */.a)([...this.dialogs]).pipe((0,internal_operators_map/* map */.U)(dialogs => !dialogs.some(({
         length
       }) => length)), (0,debounceTime/* debounceTime */.b)(0)) : (0,observable_of.of)(!this.isMobile);
@@ -17019,13 +17020,13 @@ let TuiRootComponent = /*#__PURE__*/(() => {
     }
   }
   TuiRootComponent.ɵfac = function TuiRootComponent_Factory(t) {
-    return new (t || TuiRootComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_ANIMATIONS_DURATION */.dx), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_DIALOGS */.qY), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_MOBILE */.fL), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_IS_MOBILE_RES */.rL), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_IOS */.FA), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_ANDROID */.XG), core_mjs_["ɵɵdirectiveInject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_THEME */.r2));
+    return new (t || TuiRootComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_ANIMATIONS_DURATION */.dx), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_DIALOGS */.qY), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_MOBILE */.fL), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiBreakpointService */.zE), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_IOS */.FA), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_ANDROID */.XG), core_mjs_["ɵɵdirectiveInject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_THEME */.r2));
   };
   TuiRootComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiRootComponent,
     selectors: [["tui-root"]],
-    hostAttrs: ["data-tui-version", "3.50.0"],
-    hostVars: 6,
+    hostAttrs: ["data-tui-version", "3.51.0"],
+    hostVars: 7,
     hostBindings: function TuiRootComponent_HostBindings(rf, ctx) {
       if (rf & 1) {
         core_mjs_["ɵɵlistener"]("$.class._mobile", function TuiRootComponent___class__mobile_HostBindingHandler() {
@@ -17033,11 +17034,11 @@ let TuiRootComponent = /*#__PURE__*/(() => {
         });
       }
       if (rf & 2) {
+        core_mjs_["ɵɵhostProperty"]("$.class._mobile", ctx.isMobileRes$);
         core_mjs_["ɵɵstyleProp"]("--tui-duration", ctx.duration, "ms");
         core_mjs_["ɵɵclassProp"]("_ios", ctx.isIOS)("_android", ctx.isAndroid);
       }
     },
-    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_core_providers/* TUI_IS_MOBILE_RES_PROVIDER */.yI])],
     ngContentSelectors: taiga_ui_core_components_root_c1,
     decls: 14,
     vars: 3,
@@ -24370,8 +24371,8 @@ const CHAR_BULLET = (/* unused pure expression or super */ null && (`\u2022`));
 const CHAR_ELLIPSIS = (/* unused pure expression or super */ null && (`\u2026`));
 const CHAR_CURRENCY_SIGN = (/* unused pure expression or super */ null && (`\u00A4`));
 const CHAR_ZERO_WIDTH_SPACE = (/* unused pure expression or super */ null && (`\u200B`));
-const TUI_USED_ICONS = (/* unused pure expression or super */ null && ([`tuiIconMir`, `tuiIconVisaMono`, `tuiIconElectronMono`, `tuiIconMastercard`, `tuiIconMaestro`, `tuiIconAmex`, `tuiIconDinersClub`, `tuiIconDiscover`, `tuiIconHumo`, `tuiIconJCB`, `tuiIconRuPay`, `tuiIconUnionPay`, `tuiIconUzcard`, `tuiIconVerve`, `tuiIconLink`, `tuiIconSearch`, `tuiIconSun`, `tuiIconMoon`, `tuiIconCode`, `tuiIconMenuLarge`, `tuiIconRotate`, `tuiIconArrowLeft`, `tuiIconArrowRight`, `tuiIconPlus`, `tuiIconMinus`, `tuiIconMinimize`, `tuiIconEye`, `tuiIconEyeOff`, `tuiIconDrag`, `tuiIconSortAscending`, `tuiIconSortDescending`, `tuiIconSortOff`, `tuiIconCheck`, `tuiIconCheckLarge`, `tuiIconMinusLarge`, `tuiIconChevronUp`, `tuiIconHelpCircle`, `tuiIconClose`, `tuiIconAlertCircle`, `tuiIconChevronRight`, `tuiIconInfo`, `tuiIconCheckCircle`, `tuiIconXCircle`, `tuiIconChevronLeft`, `tuiIconStarLarge`, `tuiIconChevronDown`, `tuiIconChevronDownLarge`, `tuiIconFileLarge`, `tuiIconTrashLarge`, `tuiIconAlertCircleLarge`, `tuiIconCheckCircleLarge`, `tuiIconCopy`, `tuiIconCopyLarge`, `tuiIconEyeOffLarge`, `tuiIconEyeLarge`, `tuiIconClock`, `tuiIconClockLarge`, `tuiIconToggleOff`, `tuiIconToggleOffLarge`, `tuiIconToggleOn`, `tuiIconToggleOnLarge`, `tuiIconCalendar`, `tuiIconCalendarLarge`]));
-const TUI_VERSION = `3.50.0`;
+const TUI_USED_ICONS = (/* unused pure expression or super */ null && ([`tuiIconMirMono`, `tuiIconVisaMono`, `tuiIconElectronMono`, `tuiIconMastercard`, `tuiIconMaestro`, `tuiIconAmex`, `tuiIconDinersClub`, `tuiIconDiscover`, `tuiIconHumo`, `tuiIconJCB`, `tuiIconRuPay`, `tuiIconUnionPay`, `tuiIconUzcard`, `tuiIconVerve`, `tuiIconLink`, `tuiIconSearch`, `tuiIconSun`, `tuiIconMoon`, `tuiIconCode`, `tuiIconMenuLarge`, `tuiIconRotate`, `tuiIconArrowLeft`, `tuiIconArrowRight`, `tuiIconPlus`, `tuiIconMinus`, `tuiIconMinimize`, `tuiIconEye`, `tuiIconEyeOff`, `tuiIconDrag`, `tuiIconSortAscending`, `tuiIconSortDescending`, `tuiIconSortOff`, `tuiIconCheck`, `tuiIconCheckLarge`, `tuiIconMinusLarge`, `tuiIconChevronUp`, `tuiIconHelpCircle`, `tuiIconClose`, `tuiIconAlertCircle`, `tuiIconChevronRight`, `tuiIconInfo`, `tuiIconCheckCircle`, `tuiIconXCircle`, `tuiIconChevronLeft`, `tuiIconStarLarge`, `tuiIconChevronDown`, `tuiIconChevronDownLarge`, `tuiIconFileLarge`, `tuiIconTrashLarge`, `tuiIconAlertCircleLarge`, `tuiIconCheckCircleLarge`, `tuiIconCopy`, `tuiIconCopyLarge`, `tuiIconEyeOffLarge`, `tuiIconEyeLarge`, `tuiIconClock`, `tuiIconClockLarge`, `tuiIconToggleOff`, `tuiIconToggleOffLarge`, `tuiIconToggleOn`, `tuiIconToggleOnLarge`, `tuiIconCalendar`, `tuiIconCalendarLarge`]));
+const TUI_VERSION = `3.51.0`;
 
 //# sourceMappingURL=taiga-ui-cdk-constants.js.map
 
@@ -25608,12 +25609,13 @@ __webpack_require__.d(__webpack_exports__, {
   jF: () => (/* binding */ TUI_IS_WEBKIT),
   $_: () => (/* binding */ TUI_SCROLL_REF),
   s6: () => (/* binding */ TUI_SWIPE_OPTIONS),
+  fM: () => (/* binding */ TUI_WINDOW_SIZE),
   XH: () => (/* binding */ tuiAsAlerts),
   Q: () => (/* binding */ tuiAsDialog),
   FT: () => (/* binding */ tuiAsFocusableItemAccessor)
 });
 
-// UNUSED EXPORTS: TUI_DEFAULT_RENDERER, TUI_ENSURE_BASE_HREF, TUI_IS_APPLE, TUI_IS_CHROMIUM, TUI_IS_CYPRESS, TUI_IS_FIREFOX, TUI_IS_PLAYWRIGHT, TUI_IS_STACKBLITZ, TUI_PLATFORM, TUI_RANGE, TUI_REMOVED_ELEMENT, TUI_TAKE_ONLY_TRUSTED_EVENTS, TUI_TOUCH_SUPPORTED, TUI_WINDOW_HEIGHT, TUI_WINDOW_SIZE, TUI_ZOOM_OPTIONS, tuiPlatformFactory
+// UNUSED EXPORTS: TUI_DEFAULT_RENDERER, TUI_ENSURE_BASE_HREF, TUI_IS_APPLE, TUI_IS_CHROMIUM, TUI_IS_CYPRESS, TUI_IS_FIREFOX, TUI_IS_PLAYWRIGHT, TUI_IS_STACKBLITZ, TUI_PLATFORM, TUI_RANGE, TUI_REMOVED_ELEMENT, TUI_TAKE_ONLY_TRUSTED_EVENTS, TUI_TOUCH_SUPPORTED, TUI_WINDOW_HEIGHT, TUI_ZOOM_OPTIONS, tuiPlatformFactory
 
 // EXTERNAL MODULE: consume shared module (default) @angular/common@=16.2.10 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
 var common_mjs_ = __webpack_require__(6591);
@@ -28187,10 +28189,9 @@ var TuiRangeState = /*#__PURE__*/function (TuiRangeState) {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   CV: () => (/* binding */ MODE_PROVIDER),
-/* harmony export */   yI: () => (/* binding */ TUI_IS_MOBILE_RES_PROVIDER)
+/* harmony export */   CV: () => (/* binding */ MODE_PROVIDER)
 /* harmony export */ });
-/* unused harmony export tuiWatchedControllerFactory */
+/* unused harmony exports TUI_IS_MOBILE_RES_PROVIDER, tuiWatchedControllerFactory */
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8719);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4862);
@@ -28243,32 +28244,34 @@ function tuiWatchedControllerFactory(controller, cdr, destroy$) {
 /* harmony export */   K5: () => (/* binding */ TuiSvgService),
 /* harmony export */   KG: () => (/* binding */ TuiPositionService),
 /* harmony export */   Lp: () => (/* binding */ TuiVisualViewportService),
-/* harmony export */   Ok: () => (/* binding */ TuiRouterLinkActiveService)
+/* harmony export */   Ok: () => (/* binding */ TuiRouterLinkActiveService),
+/* harmony export */   zE: () => (/* binding */ TuiBreakpointService)
 /* harmony export */ });
-/* unused harmony exports TuiBreakpointService, TuiFormatDateService, TuiNightThemeService */
+/* unused harmony exports TuiFormatDateService, TuiNightThemeService */
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8719);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5213);
-/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(6141);
-/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(5423);
-/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(7178);
-/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(2918);
-/* harmony import */ var _taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(4862);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5619);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5592);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(3019);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(4825);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(6232);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7398);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4716);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(3997);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(9773);
-/* harmony import */ var _ng_web_apis_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(229);
-/* harmony import */ var _taiga_ui_core_abstract__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(9315);
+/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(2918);
+/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(6141);
+/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(5423);
+/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(7178);
+/* harmony import */ var _taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(4862);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5592);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(5619);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(3019);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(4825);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(6232);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7398);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3997);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7081);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(4716);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(9773);
+/* harmony import */ var _ng_web_apis_common__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(229);
+/* harmony import */ var _taiga_ui_core_abstract__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(9315);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4503);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_router__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(6593);
-/* harmony import */ var _taiga_ui_core_utils_dom__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(2103);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(6593);
+/* harmony import */ var _taiga_ui_core_utils_dom__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(2103);
 
 
 
@@ -28285,34 +28288,35 @@ function tuiWatchedControllerFactory(controller, cdr, destroy$) {
 
 
 
-let TuiBreakpointService = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
-  class TuiBreakpointService extends Observable {
-    constructor(media, size$) {
+let TuiBreakpointService = /*#__PURE__*/(() => {
+  class TuiBreakpointService extends rxjs__WEBPACK_IMPORTED_MODULE_2__/* .Observable */ .y {
+    constructor(media, ngZone, size$) {
       super(subscriber => this.stream$.subscribe(subscriber));
       this.media = media;
+      this.ngZone = ngZone;
       this.size$ = size$;
       this.sorted = Object.values(this.media).sort((a, b) => a - b);
       this.invert = Object.keys(this.media).reduce((ret, key) => Object.assign(Object.assign({}, ret), {
         [this.media[key]]: key
       }), {});
-      this.stream$ = this.size$.pipe(map(({
+      this.stream$ = this.size$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__/* .map */ .U)(({
         width
-      }) => this.sorted.find(size => size > width)), map(key => this.invert[key || this.sorted[this.sorted.length - 1]]), distinctUntilChanged(), shareReplay({
+      }) => this.sorted.find(size => size > width)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__/* .map */ .U)(key => this.invert[key || this.sorted[this.sorted.length - 1]]), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__/* .distinctUntilChanged */ .x)(), (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__/* .tuiZoneOptimized */ .Yr)(this.ngZone), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__/* .shareReplay */ .d)({
         bufferSize: 1,
         refCount: true
       }));
     }
   }
   TuiBreakpointService.ɵfac = function TuiBreakpointService_Factory(t) {
-    return new (t || TuiBreakpointService)(i0.ɵɵinject(TUI_MEDIA), i0.ɵɵinject(TUI_WINDOW_SIZE));
+    return new (t || TuiBreakpointService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_7__/* .TUI_MEDIA */ .J_), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_8__/* .TUI_WINDOW_SIZE */ .fM));
   };
-  TuiBreakpointService.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+  TuiBreakpointService.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
     token: TuiBreakpointService,
     factory: TuiBreakpointService.ɵfac,
     providedIn: `root`
   });
   return TuiBreakpointService;
-})()));
+})();
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
@@ -28342,7 +28346,7 @@ let TuiFormatDateService = /*#__PURE__*/(/* unused pure expression or super */ n
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 let TuiHintService = /*#__PURE__*/(() => {
-  class TuiHintService extends rxjs__WEBPACK_IMPORTED_MODULE_2__/* .BehaviorSubject */ .X {
+  class TuiHintService extends rxjs__WEBPACK_IMPORTED_MODULE_9__/* .BehaviorSubject */ .X {
     constructor() {
       super([]);
     }
@@ -28390,13 +28394,13 @@ let TuiNightThemeService = /*#__PURE__*/(/* unused pure expression or super */ n
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 let TuiPositionService = /*#__PURE__*/(() => {
-  class TuiPositionService extends rxjs__WEBPACK_IMPORTED_MODULE_3__/* .Observable */ .y {
+  class TuiPositionService extends rxjs__WEBPACK_IMPORTED_MODULE_2__/* .Observable */ .y {
     constructor(el, animationFrame, zone, accessor) {
-      super(subscriber => animationFrame.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__/* .map */ .U)(() => el.nativeElement.getBoundingClientRect()), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__/* .map */ .U)(rect => accessor.getPosition(rect)), (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__/* .tuiZonefree */ .fL)(zone), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__/* .finalize */ .x)(() => accessor.getPosition(_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_7__/* .EMPTY_CLIENT_RECT */ .Jy))).subscribe(subscriber));
+      super(subscriber => animationFrame.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__/* .map */ .U)(() => el.nativeElement.getBoundingClientRect()), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__/* .map */ .U)(rect => accessor.getPosition(rect)), (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__/* .tuiZonefree */ .fL)(zone), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__/* .finalize */ .x)(() => accessor.getPosition(_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_11__/* .EMPTY_CLIENT_RECT */ .Jy))).subscribe(subscriber));
     }
   }
   TuiPositionService.ɵfac = function TuiPositionService_Factory(t) {
-    return new (t || TuiPositionService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_ng_web_apis_common__WEBPACK_IMPORTED_MODULE_8__/* .ANIMATION_FRAME */ .L1), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_taiga_ui_core_abstract__WEBPACK_IMPORTED_MODULE_9__/* .TuiPositionAccessor */ .uG));
+    return new (t || TuiPositionService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_ng_web_apis_common__WEBPACK_IMPORTED_MODULE_12__/* .ANIMATION_FRAME */ .L1), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_taiga_ui_core_abstract__WEBPACK_IMPORTED_MODULE_13__/* .TuiPositionAccessor */ .uG));
   };
   TuiPositionService.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
     token: TuiPositionService,
@@ -28408,14 +28412,14 @@ let TuiPositionService = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 let TuiRouterLinkActiveService = /*#__PURE__*/(() => {
-  class TuiRouterLinkActiveService extends rxjs__WEBPACK_IMPORTED_MODULE_3__/* .Observable */ .y {
+  class TuiRouterLinkActiveService extends rxjs__WEBPACK_IMPORTED_MODULE_2__/* .Observable */ .y {
     constructor(routerLinkActive, zone, animationFrame$, destroy$) {
-      const stream$ = routerLinkActive ? (0,rxjs__WEBPACK_IMPORTED_MODULE_10__/* .merge */ .T)((0,rxjs__WEBPACK_IMPORTED_MODULE_11__/* .timer */ .H)(0), animationFrame$).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__/* .map */ .U)(() => routerLinkActive.isActive), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_12__/* .distinctUntilChanged */ .x)(), (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__/* .tuiZoneOptimized */ .Yr)(zone), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__/* .takeUntil */ .R)(destroy$)) : rxjs__WEBPACK_IMPORTED_MODULE_14__/* .EMPTY */ .E;
+      const stream$ = routerLinkActive ? (0,rxjs__WEBPACK_IMPORTED_MODULE_14__/* .merge */ .T)((0,rxjs__WEBPACK_IMPORTED_MODULE_15__/* .timer */ .H)(0), animationFrame$).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__/* .map */ .U)(() => routerLinkActive.isActive), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__/* .distinctUntilChanged */ .x)(), (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__/* .tuiZoneOptimized */ .Yr)(zone), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_16__/* .takeUntil */ .R)(destroy$)) : rxjs__WEBPACK_IMPORTED_MODULE_17__/* .EMPTY */ .E;
       super(subscriber => stream$.subscribe(subscriber));
     }
   }
   TuiRouterLinkActiveService.ɵfac = function TuiRouterLinkActiveService_Factory(t) {
-    return new (t || TuiRouterLinkActiveService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__.RouterLinkActive, 8), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_ng_web_apis_common__WEBPACK_IMPORTED_MODULE_8__/* .ANIMATION_FRAME */ .L1), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_15__/* .TuiDestroyService */ .a3, 2));
+    return new (t || TuiRouterLinkActiveService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__.RouterLinkActive, 8), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_ng_web_apis_common__WEBPACK_IMPORTED_MODULE_12__/* .ANIMATION_FRAME */ .L1), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_18__/* .TuiDestroyService */ .a3, 2));
   };
   TuiRouterLinkActiveService.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
     token: TuiRouterLinkActiveService,
@@ -28432,7 +28436,7 @@ let TuiSvgService = /*#__PURE__*/(() => {
       this.tuiSanitizer = tuiSanitizer;
       this.sanitizer = sanitizer;
       this.originals = {};
-      this.items$ = new rxjs__WEBPACK_IMPORTED_MODULE_2__/* .BehaviorSubject */ .X(new Map());
+      this.items$ = new rxjs__WEBPACK_IMPORTED_MODULE_9__/* .BehaviorSubject */ .X(new Map());
       this.define(icons);
     }
     define(icons) {
@@ -28453,7 +28457,7 @@ let TuiSvgService = /*#__PURE__*/(() => {
       }
       const parsed = this.parseSrc(name, src);
       if (!parsed) {
-        ngDevMode && _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_16__/* .tuiAssert */ .z.assert(false, `Unable to parse given SVG src`);
+        ngDevMode && _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_19__/* .tuiAssert */ .z.assert(false, `Unable to parse given SVG src`);
         return;
       }
       map.set(name, parsed);
@@ -28462,14 +28466,14 @@ let TuiSvgService = /*#__PURE__*/(() => {
       });
     }
     parseSrc(name, src) {
-      return this.sanitize((0,_taiga_ui_core_utils_dom__WEBPACK_IMPORTED_MODULE_17__/* .tuiProcessIcon */ .NK)(src, name));
+      return this.sanitize((0,_taiga_ui_core_utils_dom__WEBPACK_IMPORTED_MODULE_20__/* .tuiProcessIcon */ .NK)(src, name));
     }
     sanitize(src) {
       return this.sanitizer.bypassSecurityTrustHtml((this.tuiSanitizer ? this.tuiSanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_0__.SecurityContext.HTML, src) : this.sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_0__.SecurityContext.HTML, src)) || ``);
     }
   }
   TuiSvgService.ɵfac = function TuiSvgService_Factory(t) {
-    return new (t || TuiSvgService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_18__/* .TUI_SANITIZER */ .hm, 8), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_19__/* .DomSanitizer */ .H7), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_18__/* .TUI_ICONS */ .It));
+    return new (t || TuiSvgService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_7__/* .TUI_SANITIZER */ .hm, 8), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_21__/* .DomSanitizer */ .H7), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_7__/* .TUI_ICONS */ .It));
   };
   TuiSvgService.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
     token: TuiSvgService,
@@ -28493,7 +28497,7 @@ let TuiVisualViewportService = /*#__PURE__*/(() => {
     }
   }
   TuiVisualViewportService.ɵfac = function TuiVisualViewportService_Factory(t) {
-    return new (t || TuiVisualViewportService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_ng_web_apis_common__WEBPACK_IMPORTED_MODULE_8__/* .WINDOW */ .m9), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_20__/* .TUI_IS_WEBKIT */ .jF));
+    return new (t || TuiVisualViewportService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_ng_web_apis_common__WEBPACK_IMPORTED_MODULE_12__/* .WINDOW */ .m9), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_8__/* .TUI_IS_WEBKIT */ .jF));
   };
   TuiVisualViewportService.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
     token: TuiVisualViewportService,
@@ -28528,6 +28532,7 @@ __webpack_require__.d(__webpack_exports__, {
   AA: () => (/* binding */ TUI_ICONS_PLACE),
   rL: () => (/* binding */ TUI_IS_MOBILE_RES),
   sf: () => (/* binding */ TUI_LEGACY_MASK),
+  J_: () => (/* binding */ TUI_MEDIA),
   Au: () => (/* binding */ TUI_MODE),
   $R: () => (/* binding */ TUI_MONTHS),
   PH: () => (/* binding */ TUI_NOTHING_FOUND_MESSAGE),
@@ -28549,7 +28554,7 @@ __webpack_require__.d(__webpack_exports__, {
   cp: () => (/* binding */ tuiAsTextfieldHost)
 });
 
-// UNUSED EXPORTS: STATUS_ICON, TUI_ANIMATIONS_DEFAULT_DURATION, TUI_ASSERT_ENABLED, TUI_DATA_LIST_ACCESSOR, TUI_DAY_TYPE_HANDLER, TUI_DEFAULT_ERROR_MESSAGE, TUI_DOCUMENT_OR_SHADOW_ROOT, TUI_ELEMENT_REF, TUI_FIRST_DAY_OF_WEEK, TUI_MEDIA, TUI_NOTIFICATION_DEFAULT_OPTIONS, TUI_ORDERED_SHORT_WEEK_DAYS, TUI_SCROLL_REF, TUI_SELECTION_STREAM, TUI_SHORT_WEEK_DAYS, TUI_SPIN_ICONS, TUI_SPIN_TEXTS, tuiAsViewport, tuiCommonIconsProvider, tuiNotificationOptionsProvider, tuiNumberFormatProvider
+// UNUSED EXPORTS: STATUS_ICON, TUI_ANIMATIONS_DEFAULT_DURATION, TUI_ASSERT_ENABLED, TUI_DATA_LIST_ACCESSOR, TUI_DAY_TYPE_HANDLER, TUI_DEFAULT_ERROR_MESSAGE, TUI_DOCUMENT_OR_SHADOW_ROOT, TUI_ELEMENT_REF, TUI_FIRST_DAY_OF_WEEK, TUI_NOTIFICATION_DEFAULT_OPTIONS, TUI_ORDERED_SHORT_WEEK_DAYS, TUI_SCROLL_REF, TUI_SELECTION_STREAM, TUI_SHORT_WEEK_DAYS, TUI_SPIN_ICONS, TUI_SPIN_TEXTS, tuiAsViewport, tuiCommonIconsProvider, tuiNotificationOptionsProvider, tuiNumberFormatProvider
 
 // EXTERNAL MODULE: consume shared module (default) @angular/core@=16.2.10 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
 var core_mjs_ = __webpack_require__(8719);
