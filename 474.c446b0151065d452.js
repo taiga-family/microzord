@@ -193,8 +193,8 @@ function _asyncToGenerator(fn) {
     });
   };
 }
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=16.2.10 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(8719);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=16.2.11 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(2368);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/of.js
 var of = __webpack_require__(2096);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Observable.js
@@ -215,12 +215,12 @@ var switchMap = __webpack_require__(4664);
 var tap = __webpack_require__(9397);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/first.js
 var first = __webpack_require__(1374);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=16.2.10 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(6591);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=16.2.11 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(4917);
 ;// CONCATENATED MODULE: ./node_modules/@angular/common/fesm2022/http.mjs
 
 /**
- * @license Angular v16.2.10
+ * @license Angular v16.2.11
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
