@@ -94,7 +94,7 @@
     "@ng-builders/semrel": "1.5.0",
     "@ngneat/spectator": "15.0.1",
     "@nx/cypress": "17.0.2",
-    "@nx/eslint-plugin": "16.10.0",
+    "@nx/eslint-plugin": "17.0.2",
     "@nx/jest": "16.10.0",
     "@nx/js": "16.10.0",
     "@nx/linter": "16.10.0",
