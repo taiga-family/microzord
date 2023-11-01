@@ -7,11 +7,13 @@
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   H3: () => (/* binding */ LOCAL_STORAGE),
 /* harmony export */   L1: () => (/* binding */ ANIMATION_FRAME),
+/* harmony export */   UA: () => (/* binding */ HISTORY),
 /* harmony export */   m9: () => (/* binding */ WINDOW),
+/* harmony export */   s5: () => (/* binding */ NAVIGATOR),
 /* harmony export */   ux: () => (/* binding */ CSS),
 /* harmony export */   yZ: () => (/* binding */ USER_AGENT)
 /* harmony export */ });
-/* unused harmony exports CACHES, CRYPTO, HISTORY, LOCATION, MEDIA_DEVICES, NAVIGATOR, NETWORK_INFORMATION, PAGE_VISIBILITY, PERFORMANCE, SCREEN, SESSION_STORAGE, SPEECH_RECOGNITION, SPEECH_SYNTHESIS */
+/* unused harmony exports CACHES, CRYPTO, LOCATION, MEDIA_DEVICES, NETWORK_INFORMATION, PAGE_VISIBILITY, PERFORMANCE, SCREEN, SESSION_STORAGE, SPEECH_RECOGNITION, SPEECH_SYNTHESIS */
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2368);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5592);
@@ -763,10 +765,10 @@ function provideNoopAnimations() {
 
 
 //# sourceMappingURL=animations.mjs.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-tokens.js + 1 modules
-var taiga_ui_addon_doc_tokens = __webpack_require__(8747);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-components.js + 112 modules
-var taiga_ui_addon_doc_components = __webpack_require__(1909);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-tokens.js
+var taiga_ui_addon_doc_tokens = __webpack_require__(3594);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-components.js + 85 modules
+var taiga_ui_addon_doc_components = __webpack_require__(2406);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-link.js
 var taiga_ui_core_components_link = __webpack_require__(2114);
 ;// CONCATENATED MODULE: ./apps/demo/src/app/app.component.ts
@@ -963,6 +965,11 @@ let TuiIslandModule = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-kit-components-island.js.map
 // EXTERNAL MODULE: ./apps/demo/src/app/shared/host-child-warning/host-child-warning.module.ts
@@ -1205,7 +1212,7 @@ platform_browser/* platformBrowser */.q6().bootstrapModule(AppModule).catch(err 
 
 /***/ }),
 
-/***/ 1909:
+/***/ 2406:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1230,848 +1237,36 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: consume shared module (default) @angular/core@=16.2.11 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
 var core_mjs_ = __webpack_require__(2368);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-tokens.js + 1 modules
-var taiga_ui_addon_doc_tokens = __webpack_require__(8747);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-tokens.js
+var taiga_ui_addon_doc_tokens = __webpack_require__(3594);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-utils.js
 var taiga_ui_addon_doc_utils = __webpack_require__(8836);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/Observable.js + 3 modules
-var Observable = __webpack_require__(3303);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/Subscriber.js
-var internal_Subscriber = __webpack_require__(9744);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/Subscription.js + 1 modules
-var Subscription = __webpack_require__(1115);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/ObjectUnsubscribedError.js
-const ObjectUnsubscribedErrorImpl = (() => {
-  function ObjectUnsubscribedErrorImpl() {
-    Error.call(this);
-    this.message = 'object unsubscribed';
-    this.name = 'ObjectUnsubscribedError';
-    return this;
-  }
-  ObjectUnsubscribedErrorImpl.prototype = Object.create(Error.prototype);
-  return ObjectUnsubscribedErrorImpl;
-})();
-const ObjectUnsubscribedError = ObjectUnsubscribedErrorImpl;
-//# sourceMappingURL=ObjectUnsubscribedError.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/SubjectSubscription.js
-
-class SubjectSubscription extends Subscription/* Subscription */.w {
-  constructor(subject, subscriber) {
-    super();
-    this.subject = subject;
-    this.subscriber = subscriber;
-    this.closed = false;
-  }
-  unsubscribe() {
-    if (this.closed) {
-      return;
-    }
-    this.closed = true;
-    const subject = this.subject;
-    const observers = subject.observers;
-    this.subject = null;
-    if (!observers || observers.length === 0 || subject.isStopped || subject.closed) {
-      return;
-    }
-    const subscriberIndex = observers.indexOf(this.subscriber);
-    if (subscriberIndex !== -1) {
-      observers.splice(subscriberIndex, 1);
-    }
-  }
-}
-//# sourceMappingURL=SubjectSubscription.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/symbol/rxSubscriber.js
-var rxSubscriber = __webpack_require__(6725);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/Subject.js
-
-
-
-
-
-
-class SubjectSubscriber extends internal_Subscriber/* Subscriber */.L {
-  constructor(destination) {
-    super(destination);
-    this.destination = destination;
-  }
-}
-let Subject_Subject = /*#__PURE__*/(() => {
-  class Subject extends Observable/* Observable */.y {
-    constructor() {
-      super();
-      this.observers = [];
-      this.closed = false;
-      this.isStopped = false;
-      this.hasError = false;
-      this.thrownError = null;
-    }
-    [rxSubscriber/* rxSubscriber */.b]() {
-      return new SubjectSubscriber(this);
-    }
-    lift(operator) {
-      const subject = new AnonymousSubject(this, this);
-      subject.operator = operator;
-      return subject;
-    }
-    next(value) {
-      if (this.closed) {
-        throw new ObjectUnsubscribedError();
-      }
-      if (!this.isStopped) {
-        const {
-          observers
-        } = this;
-        const len = observers.length;
-        const copy = observers.slice();
-        for (let i = 0; i < len; i++) {
-          copy[i].next(value);
-        }
-      }
-    }
-    error(err) {
-      if (this.closed) {
-        throw new ObjectUnsubscribedError();
-      }
-      this.hasError = true;
-      this.thrownError = err;
-      this.isStopped = true;
-      const {
-        observers
-      } = this;
-      const len = observers.length;
-      const copy = observers.slice();
-      for (let i = 0; i < len; i++) {
-        copy[i].error(err);
-      }
-      this.observers.length = 0;
-    }
-    complete() {
-      if (this.closed) {
-        throw new ObjectUnsubscribedError();
-      }
-      this.isStopped = true;
-      const {
-        observers
-      } = this;
-      const len = observers.length;
-      const copy = observers.slice();
-      for (let i = 0; i < len; i++) {
-        copy[i].complete();
-      }
-      this.observers.length = 0;
-    }
-    unsubscribe() {
-      this.isStopped = true;
-      this.closed = true;
-      this.observers = null;
-    }
-    _trySubscribe(subscriber) {
-      if (this.closed) {
-        throw new ObjectUnsubscribedError();
-      } else {
-        return super._trySubscribe(subscriber);
-      }
-    }
-    _subscribe(subscriber) {
-      if (this.closed) {
-        throw new ObjectUnsubscribedError();
-      } else if (this.hasError) {
-        subscriber.error(this.thrownError);
-        return Subscription/* Subscription */.w.EMPTY;
-      } else if (this.isStopped) {
-        subscriber.complete();
-        return Subscription/* Subscription */.w.EMPTY;
-      } else {
-        this.observers.push(subscriber);
-        return new SubjectSubscription(this, subscriber);
-      }
-    }
-    asObservable() {
-      const observable = new Observable/* Observable */.y();
-      observable.source = this;
-      return observable;
-    }
-  }
-  Subject.create = (destination, source) => {
-    return new AnonymousSubject(destination, source);
-  };
-  return Subject;
-})();
-class AnonymousSubject extends Subject_Subject {
-  constructor(destination, source) {
-    super();
-    this.destination = destination;
-    this.source = source;
-  }
-  next(value) {
-    const {
-      destination
-    } = this;
-    if (destination && destination.next) {
-      destination.next(value);
-    }
-  }
-  error(err) {
-    const {
-      destination
-    } = this;
-    if (destination && destination.error) {
-      this.destination.error(err);
-    }
-  }
-  complete() {
-    const {
-      destination
-    } = this;
-    if (destination && destination.complete) {
-      this.destination.complete();
-    }
-  }
-  _subscribe(subscriber) {
-    const {
-      source
-    } = this;
-    if (source) {
-      return this.source.subscribe(subscriber);
-    } else {
-      return Subscription/* Subscription */.w.EMPTY;
-    }
-  }
-}
-//# sourceMappingURL=Subject.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/observable/timer.js + 1 modules
-var timer = __webpack_require__(6797);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/BehaviorSubject.js
-
-
-class BehaviorSubject_BehaviorSubject extends Subject_Subject {
-  constructor(_value) {
-    super();
-    this._value = _value;
-  }
-  get value() {
-    return this.getValue();
-  }
-  _subscribe(subscriber) {
-    const subscription = super._subscribe(subscriber);
-    if (subscription && !subscription.closed) {
-      subscriber.next(this._value);
-    }
-    return subscription;
-  }
-  getValue() {
-    if (this.hasError) {
-      throw this.thrownError;
-    } else if (this.closed) {
-      throw new ObjectUnsubscribedError();
-    } else {
-      return this._value;
-    }
-  }
-  next(value) {
-    super.next(this._value = value);
-  }
-}
-//# sourceMappingURL=BehaviorSubject.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/isScheduler.js
-var isScheduler = __webpack_require__(4890);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/operators/map.js
-var operators_map = __webpack_require__(9575);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/observable/from.js + 6 modules
-var from = __webpack_require__(3116);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/innerSubscribe.js
-var innerSubscribe = __webpack_require__(8195);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/operators/mergeMap.js
-
-
-
-function mergeMap(project, resultSelector, concurrent = Number.POSITIVE_INFINITY) {
-  if (typeof resultSelector === 'function') {
-    return source => source.pipe(mergeMap((a, i) => (0,from/* from */.D)(project(a, i)).pipe((0,operators_map/* map */.U)((b, ii) => resultSelector(a, b, i, ii))), concurrent));
-  } else if (typeof resultSelector === 'number') {
-    concurrent = resultSelector;
-  }
-  return source => source.lift(new MergeMapOperator(project, concurrent));
-}
-class MergeMapOperator {
-  constructor(project, concurrent = Number.POSITIVE_INFINITY) {
-    this.project = project;
-    this.concurrent = concurrent;
-  }
-  call(observer, source) {
-    return source.subscribe(new MergeMapSubscriber(observer, this.project, this.concurrent));
-  }
-}
-class MergeMapSubscriber extends innerSubscribe/* SimpleOuterSubscriber */.Ds {
-  constructor(destination, project, concurrent = Number.POSITIVE_INFINITY) {
-    super(destination);
-    this.project = project;
-    this.concurrent = concurrent;
-    this.hasCompleted = false;
-    this.buffer = [];
-    this.active = 0;
-    this.index = 0;
-  }
-  _next(value) {
-    if (this.active < this.concurrent) {
-      this._tryNext(value);
-    } else {
-      this.buffer.push(value);
-    }
-  }
-  _tryNext(value) {
-    let result;
-    const index = this.index++;
-    try {
-      result = this.project(value, index);
-    } catch (err) {
-      this.destination.error(err);
-      return;
-    }
-    this.active++;
-    this._innerSub(result);
-  }
-  _innerSub(ish) {
-    const innerSubscriber = new innerSubscribe/* SimpleInnerSubscriber */.IY(this);
-    const destination = this.destination;
-    destination.add(innerSubscriber);
-    const innerSubscription = (0,innerSubscribe/* innerSubscribe */.ft)(ish, innerSubscriber);
-    if (innerSubscription !== innerSubscriber) {
-      destination.add(innerSubscription);
-    }
-  }
-  _complete() {
-    this.hasCompleted = true;
-    if (this.active === 0 && this.buffer.length === 0) {
-      this.destination.complete();
-    }
-    this.unsubscribe();
-  }
-  notifyNext(innerValue) {
-    this.destination.next(innerValue);
-  }
-  notifyComplete() {
-    const buffer = this.buffer;
-    this.active--;
-    if (buffer.length > 0) {
-      this._next(buffer.shift());
-    } else if (this.active === 0 && this.hasCompleted) {
-      this.destination.complete();
-    }
-  }
-}
-const flatMap = (/* unused pure expression or super */ null && (mergeMap));
-//# sourceMappingURL=mergeMap.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/identity.js
-var identity = __webpack_require__(2966);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/operators/mergeAll.js
-
-
-function mergeAll(concurrent = Number.POSITIVE_INFINITY) {
-  return mergeMap(identity/* identity */.y, concurrent);
-}
-//# sourceMappingURL=mergeAll.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/observable/fromArray.js
-var fromArray = __webpack_require__(2878);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/observable/merge.js
-
-
-
-
-function merge(...observables) {
-  let concurrent = Number.POSITIVE_INFINITY;
-  let scheduler = null;
-  let last = observables[observables.length - 1];
-  if ((0,isScheduler/* isScheduler */.K)(last)) {
-    scheduler = observables.pop();
-    if (observables.length > 1 && typeof observables[observables.length - 1] === 'number') {
-      concurrent = observables.pop();
-    }
-  } else if (typeof last === 'number') {
-    concurrent = observables.pop();
-  }
-  if (scheduler === null && observables.length === 1 && observables[0] instanceof Observable/* Observable */.y) {
-    return observables[0];
-  }
-  return mergeAll(concurrent)((0,fromArray/* fromArray */.n)(observables, scheduler));
-}
-//# sourceMappingURL=merge.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/operators/switchMap.js
-var operators_switchMap = __webpack_require__(8478);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/observable/of.js
-var of = __webpack_require__(9986);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/operators/concatAll.js
-
-function concatAll() {
-  return mergeAll(1);
-}
-//# sourceMappingURL=concatAll.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/observable/concat.js
-
-
-function concat(...observables) {
-  return concatAll()((0,of.of)(...observables));
-}
-//# sourceMappingURL=concat.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/operators/startWith.js
-
-
-function startWith(...array) {
-  const scheduler = array[array.length - 1];
-  if ((0,isScheduler/* isScheduler */.K)(scheduler)) {
-    array.pop();
-    return source => concat(array, source, scheduler);
-  } else {
-    return source => concat(array, source);
-  }
-}
-//# sourceMappingURL=startWith.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/operators/takeUntil.js
-
-function takeUntil(notifier) {
-  return source => source.lift(new TakeUntilOperator(notifier));
-}
-class TakeUntilOperator {
-  constructor(notifier) {
-    this.notifier = notifier;
-  }
-  call(subscriber, source) {
-    const takeUntilSubscriber = new TakeUntilSubscriber(subscriber);
-    const notifierSubscription = (0,innerSubscribe/* innerSubscribe */.ft)(this.notifier, new innerSubscribe/* SimpleInnerSubscriber */.IY(takeUntilSubscriber));
-    if (notifierSubscription && !takeUntilSubscriber.seenValue) {
-      takeUntilSubscriber.add(notifierSubscription);
-      return source.subscribe(takeUntilSubscriber);
-    }
-    return takeUntilSubscriber;
-  }
-}
-class TakeUntilSubscriber extends innerSubscribe/* SimpleOuterSubscriber */.Ds {
-  constructor(destination) {
-    super(destination);
-    this.seenValue = false;
-  }
-  notifyNext() {
-    this.seenValue = true;
-    this.complete();
-  }
-  notifyComplete() {}
-}
-//# sourceMappingURL=takeUntil.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/operators/filter.js
-
-function filter(predicate, thisArg) {
-  return function filterOperatorFunction(source) {
-    return source.lift(new FilterOperator(predicate, thisArg));
-  };
-}
-class FilterOperator {
-  constructor(predicate, thisArg) {
-    this.predicate = predicate;
-    this.thisArg = thisArg;
-  }
-  call(subscriber, source) {
-    return source.subscribe(new FilterSubscriber(subscriber, this.predicate, this.thisArg));
-  }
-}
-class FilterSubscriber extends internal_Subscriber/* Subscriber */.L {
-  constructor(destination, predicate, thisArg) {
-    super(destination);
-    this.predicate = predicate;
-    this.thisArg = thisArg;
-    this.count = 0;
-  }
-  _next(value) {
-    let result;
-    try {
-      result = this.predicate.call(this.thisArg, value, this.count++);
-    } catch (err) {
-      this.destination.error(err);
-      return;
-    }
-    if (result) {
-      this.destination.next(value);
-    }
-  }
-}
-//# sourceMappingURL=filter.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/ArgumentOutOfRangeError.js
-const ArgumentOutOfRangeErrorImpl = (() => {
-  function ArgumentOutOfRangeErrorImpl() {
-    Error.call(this);
-    this.message = 'argument out of range';
-    this.name = 'ArgumentOutOfRangeError';
-    return this;
-  }
-  ArgumentOutOfRangeErrorImpl.prototype = Object.create(Error.prototype);
-  return ArgumentOutOfRangeErrorImpl;
-})();
-const ArgumentOutOfRangeError = ArgumentOutOfRangeErrorImpl;
-//# sourceMappingURL=ArgumentOutOfRangeError.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/observable/empty.js
-var empty = __webpack_require__(8291);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/operators/take.js
-
-
-
-function take(count) {
-  return source => {
-    if (count === 0) {
-      return (0,empty/* empty */.c)();
-    } else {
-      return source.lift(new TakeOperator(count));
-    }
-  };
-}
-class TakeOperator {
-  constructor(total) {
-    this.total = total;
-    if (this.total < 0) {
-      throw new ArgumentOutOfRangeError();
-    }
-  }
-  call(subscriber, source) {
-    return source.subscribe(new TakeSubscriber(subscriber, this.total));
-  }
-}
-class TakeSubscriber extends internal_Subscriber/* Subscriber */.L {
-  constructor(destination, total) {
-    super(destination);
-    this.total = total;
-    this.count = 0;
-  }
-  _next(value) {
-    const total = this.total;
-    const count = ++this.count;
-    if (count <= total) {
-      this.destination.next(value);
-      if (count === total) {
-        this.destination.complete();
-        this.unsubscribe();
-      }
-    }
-  }
-}
-//# sourceMappingURL=take.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/operators/distinctUntilChanged.js
-
-function distinctUntilChanged_distinctUntilChanged(compare, keySelector) {
-  return source => source.lift(new DistinctUntilChangedOperator(compare, keySelector));
-}
-class DistinctUntilChangedOperator {
-  constructor(compare, keySelector) {
-    this.compare = compare;
-    this.keySelector = keySelector;
-  }
-  call(subscriber, source) {
-    return source.subscribe(new DistinctUntilChangedSubscriber(subscriber, this.compare, this.keySelector));
-  }
-}
-class DistinctUntilChangedSubscriber extends internal_Subscriber/* Subscriber */.L {
-  constructor(destination, compare, keySelector) {
-    super(destination);
-    this.keySelector = keySelector;
-    this.hasKey = false;
-    if (typeof compare === 'function') {
-      this.compare = compare;
-    }
-  }
-  compare(x, y) {
-    return x === y;
-  }
-  _next(value) {
-    let key;
-    try {
-      const {
-        keySelector
-      } = this;
-      key = keySelector ? keySelector(value) : value;
-    } catch (err) {
-      return this.destination.error(err);
-    }
-    let result = false;
-    if (this.hasKey) {
-      try {
-        const {
-          compare
-        } = this;
-        result = compare(this.key, key);
-      } catch (err) {
-        return this.destination.error(err);
-      }
-    } else {
-      this.hasKey = true;
-    }
-    if (!result) {
-      this.key = key;
-      this.destination.next(value);
-    }
-  }
-}
-//# sourceMappingURL=distinctUntilChanged.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/operators/refCount.js
-
-function refCount() {
-  return function refCountOperatorFunction(source) {
-    return source.lift(new RefCountOperator(source));
-  };
-}
-class RefCountOperator {
-  constructor(connectable) {
-    this.connectable = connectable;
-  }
-  call(subscriber, source) {
-    const {
-      connectable
-    } = this;
-    connectable._refCount++;
-    const refCounter = new RefCountSubscriber(subscriber, connectable);
-    const subscription = source.subscribe(refCounter);
-    if (!refCounter.closed) {
-      refCounter.connection = connectable.connect();
-    }
-    return subscription;
-  }
-}
-class RefCountSubscriber extends internal_Subscriber/* Subscriber */.L {
-  constructor(destination, connectable) {
-    super(destination);
-    this.connectable = connectable;
-  }
-  _unsubscribe() {
-    const {
-      connectable
-    } = this;
-    if (!connectable) {
-      this.connection = null;
-      return;
-    }
-    this.connectable = null;
-    const refCount = connectable._refCount;
-    if (refCount <= 0) {
-      this.connection = null;
-      return;
-    }
-    connectable._refCount = refCount - 1;
-    if (refCount > 1) {
-      this.connection = null;
-      return;
-    }
-    const {
-      connection
-    } = this;
-    const sharedConnection = connectable._connection;
-    this.connection = null;
-    if (sharedConnection && (!connection || sharedConnection === connection)) {
-      sharedConnection.unsubscribe();
-    }
-  }
-}
-//# sourceMappingURL=refCount.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/observable/ConnectableObservable.js
-
-
-
-
-
-class ConnectableObservable extends Observable/* Observable */.y {
-  constructor(source, subjectFactory) {
-    super();
-    this.source = source;
-    this.subjectFactory = subjectFactory;
-    this._refCount = 0;
-    this._isComplete = false;
-  }
-  _subscribe(subscriber) {
-    return this.getSubject().subscribe(subscriber);
-  }
-  getSubject() {
-    const subject = this._subject;
-    if (!subject || subject.isStopped) {
-      this._subject = this.subjectFactory();
-    }
-    return this._subject;
-  }
-  connect() {
-    let connection = this._connection;
-    if (!connection) {
-      this._isComplete = false;
-      connection = this._connection = new Subscription/* Subscription */.w();
-      connection.add(this.source.subscribe(new ConnectableSubscriber(this.getSubject(), this)));
-      if (connection.closed) {
-        this._connection = null;
-        connection = Subscription/* Subscription */.w.EMPTY;
-      }
-    }
-    return connection;
-  }
-  refCount() {
-    return refCount()(this);
-  }
-}
-const connectableObservableDescriptor = (() => {
-  const connectableProto = ConnectableObservable.prototype;
-  return {
-    operator: {
-      value: null
-    },
-    _refCount: {
-      value: 0,
-      writable: true
-    },
-    _subject: {
-      value: null,
-      writable: true
-    },
-    _connection: {
-      value: null,
-      writable: true
-    },
-    _subscribe: {
-      value: connectableProto._subscribe
-    },
-    _isComplete: {
-      value: connectableProto._isComplete,
-      writable: true
-    },
-    getSubject: {
-      value: connectableProto.getSubject
-    },
-    connect: {
-      value: connectableProto.connect
-    },
-    refCount: {
-      value: connectableProto.refCount
-    }
-  };
-})();
-class ConnectableSubscriber extends SubjectSubscriber {
-  constructor(destination, connectable) {
-    super(destination);
-    this.connectable = connectable;
-  }
-  _error(err) {
-    this._unsubscribe();
-    super._error(err);
-  }
-  _complete() {
-    this.connectable._isComplete = true;
-    this._unsubscribe();
-    super._complete();
-  }
-  _unsubscribe() {
-    const connectable = this.connectable;
-    if (connectable) {
-      this.connectable = null;
-      const connection = connectable._connection;
-      connectable._refCount = 0;
-      connectable._subject = null;
-      connectable._connection = null;
-      if (connection) {
-        connection.unsubscribe();
-      }
-    }
-  }
-}
-class ConnectableObservable_RefCountOperator {
-  constructor(connectable) {
-    this.connectable = connectable;
-  }
-  call(subscriber, source) {
-    const {
-      connectable
-    } = this;
-    connectable._refCount++;
-    const refCounter = new ConnectableObservable_RefCountSubscriber(subscriber, connectable);
-    const subscription = source.subscribe(refCounter);
-    if (!refCounter.closed) {
-      refCounter.connection = connectable.connect();
-    }
-    return subscription;
-  }
-}
-class ConnectableObservable_RefCountSubscriber extends (/* unused pure expression or super */ null && (Subscriber)) {
-  constructor(destination, connectable) {
-    super(destination);
-    this.connectable = connectable;
-  }
-  _unsubscribe() {
-    const {
-      connectable
-    } = this;
-    if (!connectable) {
-      this.connection = null;
-      return;
-    }
-    this.connectable = null;
-    const refCount = connectable._refCount;
-    if (refCount <= 0) {
-      this.connection = null;
-      return;
-    }
-    connectable._refCount = refCount - 1;
-    if (refCount > 1) {
-      this.connection = null;
-      return;
-    }
-    const {
-      connection
-    } = this;
-    const sharedConnection = connectable._connection;
-    this.connection = null;
-    if (sharedConnection && (!connection || sharedConnection === connection)) {
-      sharedConnection.unsubscribe();
-    }
-  }
-}
-//# sourceMappingURL=ConnectableObservable.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/operators/multicast.js
-
-function multicast(subjectOrSubjectFactory, selector) {
-  return function multicastOperatorFunction(source) {
-    let subjectFactory;
-    if (typeof subjectOrSubjectFactory === 'function') {
-      subjectFactory = subjectOrSubjectFactory;
-    } else {
-      subjectFactory = function subjectFactory() {
-        return subjectOrSubjectFactory;
-      };
-    }
-    if (typeof selector === 'function') {
-      return source.lift(new MulticastOperator(subjectFactory, selector));
-    }
-    const connectable = Object.create(source, connectableObservableDescriptor);
-    connectable.source = source;
-    connectable.subjectFactory = subjectFactory;
-    return connectable;
-  };
-}
-class MulticastOperator {
-  constructor(subjectFactory, selector) {
-    this.subjectFactory = subjectFactory;
-    this.selector = selector;
-  }
-  call(subscriber, source) {
-    const {
-      selector
-    } = this;
-    const subject = this.subjectFactory();
-    const subscription = selector(subject).subscribe(subscriber);
-    subscription.add(source.subscribe(subject));
-    return subscription;
-  }
-}
-//# sourceMappingURL=multicast.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/operators/share.js
-
-
-
-function shareSubjectFactory() {
-  return new Subject_Subject();
-}
-function share() {
-  return source => refCount()(multicast(shareSubjectFactory)(source));
-}
-//# sourceMappingURL=share.js.map
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Subject.js + 1 modules
+var internal_Subject = __webpack_require__(8645);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/timer.js + 1 modules
+var timer = __webpack_require__(4825);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/BehaviorSubject.js
+var internal_BehaviorSubject = __webpack_require__(5619);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/merge.js
+var merge = __webpack_require__(3019);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/switchMap.js
+var operators_switchMap = __webpack_require__(4664);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/map.js
+var operators_map = __webpack_require__(7398);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/startWith.js
+var startWith = __webpack_require__(7921);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/takeUntil.js
+var takeUntil = __webpack_require__(9773);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/filter.js
+var filter = __webpack_require__(2181);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/mergeMap.js + 1 modules
+var mergeMap = __webpack_require__(1631);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/take.js
+var take = __webpack_require__(8180);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/distinctUntilChanged.js
+var operators_distinctUntilChanged = __webpack_require__(3997);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/share.js
+var share = __webpack_require__(3020);
 // EXTERNAL MODULE: ./node_modules/tslib/tslib.es6.mjs
 var tslib_es6 = __webpack_require__(7582);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-pipes-filter.js
@@ -2111,17 +1306,33 @@ let TuiFilterPipeModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-pipes-filter.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-coercion.js
+/**
+ * Coerces a data-bound value (typically a string) to a boolean.
+ * @example {@link https://material.angular.io/cdk/coercion/api#functions}
+ */
 function tuiCoerceBooleanProperty(value) {
+  // If you don't mind "[object Object]" in your strings, then you will not need this rule.
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
   return value !== null && typeof value !== `undefined` && `${value}` !== `false`;
 }
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-cdk-coercion.js.map
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-services.js + 2 modules
 var taiga_ui_cdk_services = __webpack_require__(5423);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Observable.js
-var internal_Observable = __webpack_require__(5592);
+var Observable = __webpack_require__(5592);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/innerFrom.js
 var innerFrom = __webpack_require__(4829);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/argsOrArgArray.js
@@ -2135,7 +1346,7 @@ var OperatorSubscriber = __webpack_require__(8251);
 
 function race(...sources) {
   sources = (0,argsOrArgArray/* argsOrArgArray */.k)(sources);
-  return sources.length === 1 ? (0,innerFrom/* innerFrom */.Xf)(sources[0]) : new internal_Observable/* Observable */.y(raceInit(sources));
+  return sources.length === 1 ? (0,innerFrom/* innerFrom */.Xf)(sources[0]) : new Observable/* Observable */.y(raceInit(sources));
 }
 function raceInit(sources) {
   return subscriber => {
@@ -2154,12 +1365,8 @@ function raceInit(sources) {
   };
 }
 //# sourceMappingURL=race.js.map
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/timer.js + 1 modules
-var observable_timer = __webpack_require__(4825);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/throttleTime.js + 1 modules
 var throttleTime = __webpack_require__(8753);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/map.js
-var internal_operators_map = __webpack_require__(7398);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/lift.js
 var lift = __webpack_require__(9360);
 ;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/operators/skipWhile.js
@@ -2173,12 +1380,8 @@ function skipWhile(predicate) {
   });
 }
 //# sourceMappingURL=skipWhile.js.map
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/take.js
-var operators_take = __webpack_require__(8180);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/takeUntil.js
-var operators_takeUntil = __webpack_require__(9773);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
-var ng_web_apis_common = __webpack_require__(9570);
+// EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
+var ng_web_apis_common = __webpack_require__(229);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-tokens.js + 1 modules
 var taiga_ui_cdk_tokens = __webpack_require__(2918);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-miscellaneous.js
@@ -2189,10 +1392,19 @@ var taiga_ui_cdk_constants = __webpack_require__(6141);
 var taiga_ui_cdk_classes = __webpack_require__(7178);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-format.js
 
+
+/**
+ * Adds 'px' to the number and turns it into a string
+ */
 function taiga_ui_cdk_utils_format_tuiPx(value) {
   ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert(Number.isFinite(value), `Value must be finite number`);
   return `${value}px`;
 }
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-cdk-utils-format.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-auto-focus.js
@@ -2244,7 +1456,7 @@ let TuiDefaultAutofocusHandler = /*#__PURE__*/(() => {
     }
     setFocus() {
       if (this.isTextFieldElement) {
-        race((0,observable_timer/* timer */.H)(TIMEOUT), this.animationFrame$.pipe((0,throttleTime/* throttleTime */.p)(taiga_ui_cdk_constants/* POLLING_TIME */.Yg), (0,internal_operators_map/* map */.U)(() => this.element.closest(NG_ANIMATION_SELECTOR)), skipWhile(Boolean), (0,operators_take/* take */.q)(1))).subscribe(() => this.element.focus({
+        race((0,timer/* timer */.H)(TIMEOUT), this.animationFrame$.pipe((0,throttleTime/* throttleTime */.p)(taiga_ui_cdk_constants/* POLLING_TIME */.Yg), (0,operators_map/* map */.U)(() => this.element.closest(NG_ANIMATION_SELECTOR)), skipWhile(Boolean), (0,take/* take */.q)(1))).subscribe(() => this.element.focus({
           preventScroll: true
         }));
       } else {
@@ -2321,6 +1533,24 @@ let TuiIosAutofocusHandler = /*#__PURE__*/(() => {
         preventScroll: true
       });
     }
+    /**
+     * @note:
+     * emulate textfield position in layout with cursor
+     * before focus to real textfield element
+     *
+     * required note:
+     * [fakeInput.readOnly = true] ~
+     * don't use {readOnly: true} value, it's doesn't work for emulate autofill
+     *
+     * [fakeInput.style.opacity = 0] ~
+     * don't use {opacity: 0}, sometimes it's doesn't work for emulate real input
+     *
+     * [fakeInput.style.fontSize = 16px] ~
+     * disable possible auto zoom
+     *
+     * [fakeInput.style.top/left] ~
+     * emulate position cursor before focus to real textfield element
+     */
     makeFakeInput() {
       const fakeInput = this.renderer.createElement(`input`);
       const rect = this.element.getBoundingClientRect();
@@ -2343,9 +1573,24 @@ let TuiIosAutofocusHandler = /*#__PURE__*/(() => {
     getDurationTimeBeforeFocus() {
       return parseFloat(this.win.getComputedStyle(this.element).getPropertyValue(`--tui-duration`)) || 0;
     }
+    /**
+     * @note:
+     * unfortunately, in older versions of iOS
+     * there is a bug that the fake input cursor
+     * will move along with the dialog animation
+     * and then that dialog will be shaking
+     */
     insideDialog() {
       return !!this.element.closest(`tui-dialog`);
     }
+    /**
+     * @note:
+     * This is necessary so that the viewport isn't recalculated
+     * and then the dialogs don't shake.
+     *
+     * Also, we need to fixed height viewport,
+     * so that when focusing the dialogs don't shake
+     */
     patchCssStyles() {
       const doc = this.win.document;
       for (const element of [doc.documentElement, doc.body]) {
@@ -2353,6 +1598,12 @@ let TuiIosAutofocusHandler = /*#__PURE__*/(() => {
         element.style.setProperty(`height`, `100%`);
       }
     }
+    /**
+     * @note:
+     * inherit basic attributes values from real input
+     * for help iOS detect what do you want see on keyboard,
+     * for example [inputMode=numeric, autocomplete=cc-number]
+     */
     patchFakeInputFromFocusableElement(fakeInput) {
       TEXTFIELD_ATTRS.forEach(attr => {
         const value = this.element.getAttribute(attr);
@@ -2375,8 +1626,9 @@ let TuiIosAutofocusHandler = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 const TUI_AUTOFOCUS_DEFAULT_OPTIONS = {
-  delay: NaN
+  delay: NaN // NaN = no delay/sync
 };
+
 const TUI_AUTOFOCUS_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_AUTOFOCUS_DEFAULT_OPTIONS);
 function tuiAutoFocusOptionsProvider(options) {
   return tuiProvideOptions(TUI_AUTOFOCUS_OPTIONS, options, TUI_AUTOFOCUS_DEFAULT_OPTIONS);
@@ -2404,7 +1656,7 @@ let TuiAutoFocusDirective = /*#__PURE__*/(() => {
       if (Number.isNaN(this.options.delay)) {
         void Promise.resolve().then(() => this.handler.setFocus());
       } else {
-        (0,observable_timer/* timer */.H)(this.options.delay).pipe((0,operators_takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(() => this.handler.setFocus());
+        (0,timer/* timer */.H)(this.options.delay).pipe((0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(() => this.handler.setFocus());
       }
     }
   }
@@ -2462,21 +1714,20 @@ let TuiSynchronousAutofocusHandler = /*#__PURE__*/(/* unused pure expression or 
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-directives-auto-focus.js.map
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-decorators.js
 var taiga_ui_cdk_decorators = __webpack_require__(1800);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-observables.js
 var taiga_ui_cdk_observables = __webpack_require__(5213);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/startWith.js
-var operators_startWith = __webpack_require__(7921);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/distinctUntilChanged.js
-var operators_distinctUntilChanged = __webpack_require__(3997);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/filter.js
-var operators_filter = __webpack_require__(2181);
 ;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/operators/skip.js
 
 function skip(count) {
-  return (0,operators_filter/* filter */.h)((_, index) => count <= index);
+  return (0,filter/* filter */.h)((_, index) => count <= index);
 }
 //# sourceMappingURL=skip.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-active-zone.js
@@ -2499,7 +1750,7 @@ let taiga_ui_cdk_directives_active_zone_TuiActiveZoneDirective = /*#__PURE__*/((
       this.directParentActiveZone = directParentActiveZone;
       this.subActiveZones = [];
       this.tuiActiveZoneParent = null;
-      this.tuiActiveZoneChange = this.active$.pipe((0,internal_operators_map/* map */.U)(element => !!element && this.contains(element)), (0,operators_startWith/* startWith */.O)(false), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), skip(1), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(this.zone));
+      this.tuiActiveZoneChange = this.active$.pipe((0,operators_map/* map */.U)(element => !!element && this.contains(element)), (0,startWith/* startWith */.O)(false), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), skip(1), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(this.zone));
       (_a = this.directParentActiveZone) === null || _a === void 0 ? void 0 : _a.addSubActiveZone(this);
     }
     set tuiActiveZoneParentSetter(zone) {
@@ -2561,10 +1812,19 @@ let TuiActiveZoneModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-directives-active-zone.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-item.js
 
 
+
+/**
+ * Blank directive for queries via `@ContentChildren` / `@ViewChildren` / `querySelector`
+ */
 let TuiItemDirective = /*#__PURE__*/(() => {
   class TuiItemDirective {}
   TuiItemDirective.ɵfac = function TuiItemDirective_Factory(t) {
@@ -2594,6 +1854,11 @@ let TuiItemModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-directives-item.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-pipes-replace.js
 
@@ -2602,7 +1867,9 @@ let TuiReplacePipe = /*#__PURE__*/(() => {
   class TuiReplacePipe {
     transform(value, search, replaceValue) {
       var _a;
-      return (_a = value === null || value === void 0 ? void 0 : value.replace(search, replaceValue)) !== null && _a !== void 0 ? _a : ``;
+      return (_a = value === null || value === void 0 ? void 0 : value.replace(search,
+      // TS bug: https://github.com/microsoft/TypeScript/issues/22378
+      replaceValue)) !== null && _a !== void 0 ? _a : ``;
     }
   }
   TuiReplacePipe.ɵfac = function TuiReplacePipe_Factory(t) {
@@ -2633,6 +1900,11 @@ let TuiReplacePipeModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-pipes-replace.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-resizer.js
 
@@ -2657,6 +1929,8 @@ let taiga_ui_cdk_directives_resizer_TuiResizeableDirective = /*#__PURE__*/(/* un
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+// TODO: Migrate to PointerEvent in 4.0
 let TuiResizerDirective = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
   class TuiResizerDirective {
     constructor(resizeable) {
@@ -2781,6 +2055,11 @@ let TuiResizerModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-directives-resizer.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-color.js
 function tuiHexToRgb(hex) {
@@ -2792,6 +2071,7 @@ function tuiHexToRGBA(hex, alpha) {
   return a < 1 ? `rgba(${r}, ${g}, ${b}, ${a})` : `rgb(${r}, ${g}, ${b})`;
 }
 function tuiIsValidHex(hex) {
+  // eslint-disable-next-line unicorn/no-unsafe-regex
   return /^#([A-Fa-f0-9]{3,4}){1,2}$/.test(hex);
 }
 const getChunksFromString = (hex, chunkSize) => hex.match(new RegExp(`.{${chunkSize}}`, `g`));
@@ -2816,6 +2096,10 @@ function tuiParseHex(hex, alpha) {
   const floatAlpha = getAlphaFloat(a, alpha);
   return [r, g, b, floatAlpha];
 }
+
+/**
+ * https://stackoverflow.com/a/54024653/2706426
+ */
 function tuiHsvToRgb(h, s, v) {
   return [hsvToColor(h, s, v, 5), hsvToColor(h, s, v, 3), hsvToColor(h, s, v, 1)];
 }
@@ -2846,6 +2130,7 @@ function tuiRgbToHex(r, g, b) {
 function tuiRgbToHsv(r, g, b) {
   const v = Math.max(r, g, b);
   const n = v - Math.min(r, g, b);
+  // eslint-disable-next-line no-nested-ternary
   const h = n && (v === r ? (g - b) / n : v === g ? 2 + (b - r) / n : 4 + (r - g) / n);
   return [60 * (h < 0 ? h + 6 : h), v && n / v, v];
 }
@@ -2854,7 +2139,9 @@ function tuiRgbaToHex(color) {
   if (!tuiIsValidRgba(color)) {
     throw new Error(`Invalid RGBa`);
   }
-  const rgb = (_a = color.replace(/\s/g, ``).match(/^rgba?\((\d+),(\d+),(\d+),?([^,\s)]+)?/i)) !== null && _a !== void 0 ? _a : [];
+  const rgb = (_a = color.replace(/\s/g, ``)
+  // eslint-disable-next-line unicorn/no-unsafe-regex
+  .match(/^rgba?\((\d+),(\d+),(\d+),?([^,\s)]+)?/i)) !== null && _a !== void 0 ? _a : [];
   let alpha = ((_b = rgb === null || rgb === void 0 ? void 0 : rgb[4]) !== null && _b !== void 0 ? _b : ``).toString().trim();
   let hex = rgb ? (rgb[1] | 1 << 8).toString(16).slice(1) + (rgb[2] | 1 << 8).toString(16).slice(1) + (rgb[3] | 1 << 8).toString(16).slice(1) : color;
   alpha = alpha !== `` ? alpha : 0o1;
@@ -2867,6 +2154,11 @@ function tuiIsValidRgba(rgba) {
   const alpha = `([01]|0?\\.\\d+)`;
   return new RegExp(`^(?:rgb\\(\\s*${range}\\s*,\\s*${range}\\s*,\\s*${range}\\s*\\)|rgba\\(\\s*${range}\\s*,\\s*${range}\\s*,\\s*${range}\\s*,\\s*${alpha}\\s*\\))$`).test(rgba);
 }
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-cdk-utils-color.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-pipes-mapper.js
@@ -2905,6 +2197,11 @@ let TuiMapperPipeModule = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-cdk-pipes-mapper.js.map
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-let.js
@@ -3031,11 +2328,14 @@ let TuiBadgeModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-kit-components-badge.js.map
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-abstract.js
 var taiga_ui_core_abstract = __webpack_require__(9315);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Subject.js + 1 modules
-var internal_Subject = __webpack_require__(8645);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-obscured.js
 
 
@@ -3046,11 +2346,15 @@ var internal_Subject = __webpack_require__(8645);
 
 
 
+
+/**
+ * Directive that monitors element visibility
+ */
 let TuiObscuredDirective = /*#__PURE__*/(() => {
   class TuiObscuredDirective {
     constructor(activeZone, obscured$) {
       this.enabled$ = new internal_Subject/* Subject */.x();
-      const mapped$ = obscured$.pipe((0,internal_operators_map/* map */.U)(obscuredBy => !!obscuredBy && (!activeZone || !obscuredBy.length || obscuredBy.every(element => !activeZone.contains(element)))));
+      const mapped$ = obscured$.pipe((0,operators_map/* map */.U)(obscuredBy => !!obscuredBy && (!activeZone || !obscuredBy.length || obscuredBy.every(element => !activeZone.contains(element)))));
       this.tuiObscured = this.enabled$.pipe((0,taiga_ui_cdk_observables/* tuiIfMap */.Xd)(() => mapped$));
     }
     set tuiObscuredEnabled(enabled) {
@@ -3091,15 +2395,16 @@ let TuiObscuredModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-directives-obscured.js.map
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-dom.js
 var taiga_ui_cdk_utils_dom = __webpack_require__(7995);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-focus.js
 var taiga_ui_cdk_utils_focus = __webpack_require__(756);
-// EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
-var fesm2015_ng_web_apis_common = __webpack_require__(229);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/switchMap.js
-var internal_operators_switchMap = __webpack_require__(4664);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/tap.js
 var tap = __webpack_require__(9397);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-overscroll.js
@@ -3110,6 +2415,10 @@ var tap = __webpack_require__(9397);
 
 
 
+
+/**
+ * Directive to isolate scrolling, i.e. prevent body scroll behind modal dialog
+ */
 let TuiOverscrollDirective = /*#__PURE__*/(() => {
   class TuiOverscrollDirective {
     constructor({
@@ -3118,12 +2427,12 @@ let TuiOverscrollDirective = /*#__PURE__*/(() => {
       this.mode = 'scroll';
       (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, 'wheel', {
         passive: false
-      }).pipe((0,operators_filter/* filter */.h)(() => this.enabled), (0,taiga_ui_cdk_observables/* tuiZonefree */.fL)(zone), (0,operators_takeUntil/* takeUntil */.R)(destroy$)).subscribe(event => {
+      }).pipe((0,filter/* filter */.h)(() => this.enabled), (0,taiga_ui_cdk_observables/* tuiZonefree */.fL)(zone), (0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(event => {
         this.processEvent(event, !!event.deltaY, event.deltaY ? event.deltaY < 0 : event.deltaX < 0);
       });
       (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, 'touchstart', {
         passive: true
-      }).pipe((0,internal_operators_switchMap/* switchMap */.w)(({
+      }).pipe((0,operators_switchMap/* switchMap */.w)(({
         touches
       }) => {
         let {
@@ -3135,7 +2444,8 @@ let TuiOverscrollDirective = /*#__PURE__*/(() => {
         let vertical;
         return (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, 'touchmove', {
           passive: false
-        }).pipe((0,operators_filter/* filter */.h)(() => this.enabled), (0,tap/* tap */.b)(event => {
+        }).pipe((0,filter/* filter */.h)(() => this.enabled), (0,tap/* tap */.b)(event => {
+          // We have to have it in tap instead of subscribe due to variables in closure
           const changedTouch = event.changedTouches[0];
           deltaX = clientX - changedTouch.clientX;
           deltaY = clientY - changedTouch.clientY;
@@ -3146,7 +2456,7 @@ let TuiOverscrollDirective = /*#__PURE__*/(() => {
           }
           this.processEvent(event, vertical, vertical ? deltaY < 0 : deltaX < 0);
         }));
-      }), (0,taiga_ui_cdk_observables/* tuiZonefree */.fL)(zone), (0,operators_takeUntil/* takeUntil */.R)(destroy$)).subscribe();
+      }), (0,taiga_ui_cdk_observables/* tuiZonefree */.fL)(zone), (0,takeUntil/* takeUntil */.R)(destroy$)).subscribe();
     }
     get enabled() {
       return this.mode !== 'none';
@@ -3164,10 +2474,12 @@ let TuiOverscrollDirective = /*#__PURE__*/(() => {
       if (!cancelable || !(0,taiga_ui_cdk_utils_dom/* tuiIsElement */.ve)(target) || ((_a = target) === null || _a === void 0 ? void 0 : _a.type) === 'range') {
         return;
       }
+      // This is all what's needed in Chrome/Firefox thanks to CSS overscroll-behavior
       if (this.mode === 'all' && (vertical && !currentTarget.contains((0,taiga_ui_cdk_utils_dom/* tuiGetScrollParent */.Hs)(target)) || !vertical && !currentTarget.contains((0,taiga_ui_cdk_utils_dom/* tuiGetScrollParent */.Hs)(target, false)))) {
         event.preventDefault();
         return;
       }
+      // This is Safari/IE/Edge fallback
       if (vertical && (negative && !(0,taiga_ui_cdk_utils_dom/* tuiCanScroll */.ty)(target, currentTarget, true, false) || !negative && !(0,taiga_ui_cdk_utils_dom/* tuiCanScroll */.ty)(target, currentTarget, true, true))) {
         event.preventDefault();
         return;
@@ -3214,9 +2526,12 @@ let TuiOverscrollModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-directives-overscroll.js.map
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/merge.js
-var observable_merge = __webpack_require__(3019);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-hovered.js
 
 
@@ -3233,12 +2548,14 @@ function movedOut({
   return !(0,taiga_ui_cdk_utils_dom/* tuiIsElement */.ve)(relatedTarget) || !(0,taiga_ui_cdk_utils_dom/* tuiIsElement */.ve)(currentTarget) || !currentTarget.contains(relatedTarget);
 }
 let TuiHoveredService = /*#__PURE__*/(() => {
-  class TuiHoveredService extends internal_Observable/* Observable */.y {
+  class TuiHoveredService extends Observable/* Observable */.y {
     constructor(el, zone) {
       super(subscriber => this.stream$.subscribe(subscriber));
       this.el = el;
       this.zone = zone;
-      this.stream$ = (0,observable_merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.el.nativeElement, `mouseenter`).pipe((0,internal_operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_TRUE_HANDLER */.Ye)), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.el.nativeElement, `mouseleave`).pipe((0,internal_operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_FALSE_HANDLER */.Iy)), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.el.nativeElement, `mouseout`).pipe((0,operators_filter/* filter */.h)(movedOut), (0,internal_operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_FALSE_HANDLER */.Iy))).pipe((0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(this.zone));
+      this.stream$ = (0,merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.el.nativeElement, `mouseenter`).pipe((0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_TRUE_HANDLER */.Ye)), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.el.nativeElement, `mouseleave`).pipe((0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_FALSE_HANDLER */.Iy)),
+      // Hello, Safari
+      (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.el.nativeElement, `mouseout`).pipe((0,filter/* filter */.h)(movedOut), (0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_FALSE_HANDLER */.Iy))).pipe((0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(this.zone));
     }
   }
   TuiHoveredService.ɵfac = function TuiHoveredService_Factory(t) {
@@ -3290,6 +2607,11 @@ let TuiHoveredModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-directives-hovered.js.map
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-abstract.js
 var taiga_ui_cdk_abstract = __webpack_require__(2461);
@@ -3297,6 +2619,10 @@ var taiga_ui_cdk_abstract = __webpack_require__(2461);
 
 
 
+
+/**
+ * Service for displaying dropdown portals
+ */
 const taiga_ui_cdk_components_dropdown_host_c0 = ["*"];
 let TuiDropdownPortalService = /*#__PURE__*/(() => {
   class TuiDropdownPortalService extends taiga_ui_cdk_abstract/* AbstractTuiPortalService */.N9 {}
@@ -3316,6 +2642,10 @@ let TuiDropdownPortalService = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Host element for dynamically created portals, for example using {@link TuiDropdownDirective}.
+ */
 let TuiDropdownHostComponent = /*#__PURE__*/(() => {
   class TuiDropdownHostComponent extends taiga_ui_cdk_abstract/* AbstractTuiPortalHostComponent */.Er {}
   TuiDropdownHostComponent.ɵfac = /* @__PURE__ */function () {
@@ -3330,7 +2660,9 @@ let TuiDropdownHostComponent = /*#__PURE__*/(() => {
     features: [core_mjs_["ɵɵProvidersFeature"]([{
       provide: taiga_ui_cdk_abstract/* AbstractTuiPortalService */.N9,
       useExisting: TuiDropdownPortalService
-    }, {
+    },
+    // TODO: Remove in 4.0
+    {
       provide: taiga_ui_cdk_abstract/* AbstractTuiPortalHostComponent */.Er,
       useExisting: TuiDropdownHostComponent
     }]), core_mjs_["ɵɵInheritDefinitionFeature"]],
@@ -3367,6 +2699,11 @@ let TuiDropdownHostModule = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-cdk-components-dropdown-host.js.map
 // EXTERNAL MODULE: ./node_modules/@angular/animations/fesm2022/animations.mjs
@@ -3638,13 +2975,16 @@ const tuiSlideInBottomList = (0,animations/* trigger */.X$)(`tuiSlideInBottomLis
   optional: true
 })], DURATION)]);
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-animations.js.map
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-services.js
 var taiga_ui_core_services = __webpack_require__(8542);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/delay.js + 1 modules
 var delay = __webpack_require__(932);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/share.js
-var operators_share = __webpack_require__(3020);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-utils-dom.js
 var taiga_ui_core_utils_dom = __webpack_require__(2103);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-utils-miscellaneous.js
@@ -3652,9 +2992,7 @@ var taiga_ui_core_utils_miscellaneous = __webpack_require__(5863);
 // EXTERNAL MODULE: ./node_modules/@tinkoff/ng-polymorpheus/fesm2015/tinkoff-ng-polymorpheus.js
 var tinkoff_ng_polymorpheus = __webpack_require__(2549);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/of.js
-var observable_of = __webpack_require__(2096);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/BehaviorSubject.js
-var internal_BehaviorSubject = __webpack_require__(5619);
+var of = __webpack_require__(2096);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-components-scroll-controls.js
 
 
@@ -3720,19 +3058,19 @@ let TuiScrollbarDirective = /*#__PURE__*/(() => {
       const mousemove$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, 'mousemove');
       const mouseup$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, 'mouseup');
       const mousedownWrapper$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.wrapper, 'mousedown');
-      (0,observable_merge/* merge */.T)(mousedownWrapper$.pipe((0,internal_operators_map/* map */.U)(event => this.getScrolled(event, 0.5, 0.5))), mousedown$.pipe((0,taiga_ui_cdk_observables/* tuiStopPropagation */.vm)(), (0,internal_operators_switchMap/* switchMap */.w)(event => {
+      (0,merge/* merge */.T)(mousedownWrapper$.pipe((0,operators_map/* map */.U)(event => this.getScrolled(event, 0.5, 0.5))), mousedown$.pipe((0,taiga_ui_cdk_observables/* tuiStopPropagation */.vm)(), (0,operators_switchMap/* switchMap */.w)(event => {
         const rect = nativeElement.getBoundingClientRect();
         const vertical = getOffsetVertical(event, rect);
         const horizontal = getOffsetHorizontal(event, rect);
-        return mousemove$.pipe((0,internal_operators_map/* map */.U)(event => this.getScrolled(event, vertical, horizontal)), (0,operators_takeUntil/* takeUntil */.R)(mouseup$));
-      }))).pipe((0,taiga_ui_cdk_observables/* tuiZonefree */.fL)(zone), (0,operators_takeUntil/* takeUntil */.R)(destroy$)).subscribe(([scrollTop, scrollLeft]) => {
+        return mousemove$.pipe((0,operators_map/* map */.U)(event => this.getScrolled(event, vertical, horizontal)), (0,takeUntil/* takeUntil */.R)(mouseup$));
+      }))).pipe((0,taiga_ui_cdk_observables/* tuiZonefree */.fL)(zone), (0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(([scrollTop, scrollLeft]) => {
         if (this.tuiScrollbar === 'vertical') {
           this.element.scrollTop = scrollTop;
         } else {
           this.element.scrollLeft = scrollLeft;
         }
       });
-      (0,observable_merge/* merge */.T)(animationFrame$.pipe((0,throttleTime/* throttleTime */.p)(taiga_ui_cdk_constants/* POLLING_TIME */.Yg)), (0,taiga_ui_cdk_observables/* tuiScrollFrom */.pt)(this.element)).pipe((0,taiga_ui_cdk_observables/* tuiZonefree */.fL)(zone), (0,operators_takeUntil/* takeUntil */.R)(destroy$)).subscribe(() => {
+      (0,merge/* merge */.T)(animationFrame$.pipe((0,throttleTime/* throttleTime */.p)(taiga_ui_cdk_constants/* POLLING_TIME */.Yg)), (0,taiga_ui_cdk_observables/* tuiScrollFrom */.pt)(this.element)).pipe((0,taiga_ui_cdk_observables/* tuiZonefree */.fL)(zone), (0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(() => {
         if (this.tuiScrollbar === 'vertical') {
           nativeElement.style.top = `${this.thumb * 100}%`;
           nativeElement.style.height = `${this.view * 100}%`;
@@ -3843,7 +3181,7 @@ let TuiScrollControlsComponent = /*#__PURE__*/(() => {
       this.zone = zone;
       this.scrollRef = scrollRef;
       this.animationFrame$ = animationFrame$;
-      this.refresh$ = this.animationFrame$.pipe((0,throttleTime/* throttleTime */.p)(300), (0,internal_operators_map/* map */.U)(() => this.scrollbars), (0,operators_startWith/* startWith */.O)([false, false]), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)((a, b) => a[0] === b[0] && a[1] === b[1]), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(this.zone));
+      this.refresh$ = this.animationFrame$.pipe((0,throttleTime/* throttleTime */.p)(300), (0,operators_map/* map */.U)(() => this.scrollbars), (0,startWith/* startWith */.O)([false, false]), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)((a, b) => a[0] === b[0] && a[1] === b[1]), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(this.zone));
     }
     get scrollbars() {
       const {
@@ -3918,6 +3256,11 @@ let TuiScrollControlsModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-components-scroll-controls.js.map
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-browser.js
 var taiga_ui_cdk_utils_browser = __webpack_require__(2310);
@@ -3930,6 +3273,8 @@ var taiga_ui_cdk_utils_browser = __webpack_require__(2310);
 
 
 
+
+/** @deprecated import from `@taiga-ui/cdk` instead */
 function TuiScrollbarComponent_tui_scroll_controls_0_Template(rf, ctx) {
   if (rf & 1) {
     core_mjs_["ɵɵelement"](0, "tui-scroll-controls", 2);
@@ -3937,6 +3282,7 @@ function TuiScrollbarComponent_tui_scroll_controls_0_Template(rf, ctx) {
 }
 const taiga_ui_core_components_scrollbar_c0 = ["*"];
 const taiga_ui_core_components_scrollbar_SCROLL_REF_SELECTOR = '[tuiScrollRef]';
+/** @deprecated import from `@taiga-ui/cdk` instead */
 let taiga_ui_core_components_scrollbar_TuiScrollRefDirective = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
   class TuiScrollRefDirective {}
   TuiScrollRefDirective.ɵfac = function TuiScrollRefDirective_Factory(t) {
@@ -3979,6 +3325,8 @@ let TuiScrollableDirective = /*#__PURE__*/(/* unused pure expression or super */
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+// TODO: Remove all legacy code in 4.0
 let TuiScrollbarComponent = /*#__PURE__*/(() => {
   class TuiScrollbarComponent {
     constructor(cssRef, el, userAgent, isIos) {
@@ -4023,11 +3371,12 @@ let TuiScrollbarComponent = /*#__PURE__*/(() => {
       } = detail;
       const scrollTop = offsetTop + offsetHeight / 2 - clientHeight / 2;
       const scrollLeft = offsetLeft + offsetWidth / 2 - clientWidth / 2;
+      // ?. for our clients on Windows XP and Chrome 49
       (_a = nativeElement.scrollTo) === null || _a === void 0 ? void 0 : _a.call(nativeElement, scrollLeft, scrollTop);
     }
   }
   TuiScrollbarComponent.ɵfac = function TuiScrollbarComponent_Factory(t) {
-    return new (t || TuiScrollbarComponent)(core_mjs_["ɵɵdirectiveInject"](fesm2015_ng_web_apis_common/* CSS */.ux), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](fesm2015_ng_web_apis_common/* USER_AGENT */.yZ), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_IOS */.FA));
+    return new (t || TuiScrollbarComponent)(core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* CSS */.ux), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* USER_AGENT */.yZ), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_IOS */.FA));
   };
   TuiScrollbarComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiScrollbarComponent,
@@ -4097,6 +3446,11 @@ let TuiScrollbarModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-components-scrollbar.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-directives-dropdown.js
 
@@ -4122,6 +3476,10 @@ let TuiScrollbarModule = /*#__PURE__*/(() => {
 
 
 
+
+/**
+ * A component to display a dropdown
+ */
 function TuiDropdownComponent_div_3_Template(rf, ctx) {
   if (rf & 1) {
     core_mjs_["ɵɵelementStart"](0, "div", 4);
@@ -4185,7 +3543,8 @@ let TuiDropdownDirective = /*#__PURE__*/(() => {
       } else {
         this.open = null;
       }
-      this.refresh$.pipe((0,throttleTime/* throttleTime */.p)(0), (0,operators_takeUntil/* takeUntil */.R)(destroy$)).subscribe(() => {
+      // Ignore multiple change detection triggers at the same frame
+      this.refresh$.pipe((0,throttleTime/* throttleTime */.p)(0), (0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(() => {
         var _a, _b;
         (_a = this.dropdownBoxRef) === null || _a === void 0 ? void 0 : _a.changeDetectorRef.detectChanges();
         (_b = this.dropdownBoxRef) === null || _b === void 0 ? void 0 : _b.changeDetectorRef.markForCheck();
@@ -4241,10 +3600,15 @@ let TuiDropdownDirective = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/** Default values for hint options */
 const TUI_DROPDOWN_HOVER_DEFAULT_OPTIONS = {
   showDelay: 200,
   hideDelay: 500
 };
+/**
+ * Default parameters for dropdown hover directive
+ */
 const TUI_DROPDOWN_HOVER_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_DROPDOWN_HOVER_DEFAULT_OPTIONS);
 function tuiDropdownHoverOptionsProvider(options) {
   return tuiProvideOptions(TUI_DROPDOWN_HOVER_OPTIONS, options, TUI_DROPDOWN_HOVER_DEFAULT_OPTIONS);
@@ -4257,9 +3621,9 @@ let TuiDropdownHoverDirective = /*#__PURE__*/(() => {
       this.options = options;
       this.parentHover = parentHover;
       this.toggle$ = new internal_Subject/* Subject */.x();
-      this.stream$ = (0,observable_merge/* merge */.T)(this.toggle$, this.hovered$).pipe((0,internal_operators_switchMap/* switchMap */.w)(visible => (0,observable_of.of)(visible).pipe((0,delay/* delay */.g)(visible ? this.showDelay : this.hideDelay))), (0,tap/* tap */.b)(visible => {
+      this.stream$ = (0,merge/* merge */.T)(this.toggle$, this.hovered$).pipe((0,operators_switchMap/* switchMap */.w)(visible => (0,of.of)(visible).pipe((0,delay/* delay */.g)(visible ? this.showDelay : this.hideDelay))), (0,tap/* tap */.b)(visible => {
         this.hovered = visible;
-      }), (0,operators_share/* share */.B)());
+      }), (0,share/* share */.B)());
       this.showDelay = this.options.showDelay;
       this.hideDelay = this.options.hideDelay;
       this.hovered = false;
@@ -4288,6 +3652,8 @@ let TuiDropdownHoverDirective = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/** Default values for dropdown options */
 const TUI_DROPDOWN_DEFAULT_OPTIONS = {
   align: 'left',
   direction: null,
@@ -4297,6 +3663,9 @@ const TUI_DROPDOWN_DEFAULT_OPTIONS = {
   offset: 4,
   appearance: ''
 };
+/**
+ * Default parameters for dropdown directive
+ */
 const TUI_DROPDOWN_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_DROPDOWN_DEFAULT_OPTIONS);
 const tuiDropdownOptionsProvider = override => ({
   provide: TUI_DROPDOWN_OPTIONS,
@@ -4341,6 +3710,12 @@ let TuiDropdownOptionsDirective = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * @description:
+ * This component is used to show template in a portal
+ * using default style of white rounded box with a shadow
+ */
 let TuiDropdownComponent = /*#__PURE__*/(() => {
   class TuiDropdownComponent {
     constructor(visualViewportService, position$, destroy$, directive, animation, el, accessor, win, mode$, options, hoverDirective) {
@@ -4352,7 +3727,7 @@ let TuiDropdownComponent = /*#__PURE__*/(() => {
       this.mode$ = mode$;
       this.options = options;
       this.hoverDirective = hoverDirective;
-      position$.pipe((0,internal_operators_map/* map */.U)(point => this.directive.position === 'fixed' ? visualViewportService.correct(point) : point), (0,operators_takeUntil/* takeUntil */.R)(destroy$)).subscribe(([top, left]) => {
+      position$.pipe((0,operators_map/* map */.U)(point => this.directive.position === 'fixed' ? visualViewportService.correct(point) : point), (0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(([top, left]) => {
         this.update(top, left);
       });
       this.updateWidth(this.accessor.getClientRect().width);
@@ -4441,7 +3816,7 @@ let TuiDropdownComponent = /*#__PURE__*/(() => {
     }
   }
   TuiDropdownComponent.ɵfac = function TuiDropdownComponent_Factory(t) {
-    return new (t || TuiDropdownComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiVisualViewportService */.Lp), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiPositionService */.KG), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](TuiDropdownDirective), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_ANIMATION_OPTIONS */.Pw), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_abstract/* TuiRectAccessor */.O4), core_mjs_["ɵɵdirectiveInject"](fesm2015_ng_web_apis_common/* WINDOW */.m9), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_MODE */.Au), core_mjs_["ɵɵdirectiveInject"](TUI_DROPDOWN_OPTIONS), core_mjs_["ɵɵdirectiveInject"](TuiDropdownHoverDirective, 8));
+    return new (t || TuiDropdownComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiVisualViewportService */.Lp), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiPositionService */.KG), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](TuiDropdownDirective), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_ANIMATION_OPTIONS */.Pw), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_abstract/* TuiRectAccessor */.O4), core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* WINDOW */.m9), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_MODE */.Au), core_mjs_["ɵɵdirectiveInject"](TUI_DROPDOWN_OPTIONS), core_mjs_["ɵɵdirectiveInject"](TuiDropdownHoverDirective, 8));
   };
   TuiDropdownComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiDropdownComponent,
@@ -4549,6 +3924,7 @@ let TuiDropdownContextDirective = /*#__PURE__*/(/* unused pure expression or sup
 })();
 let TuiDropdownDriverDirective = /*#__PURE__*/(() => {
   class TuiDropdownDriverDirective extends taiga_ui_core_abstract/* AbstractTuiDriverDirective */.FP {
+    // TODO: Figure out why this is necessary under nx test runner
     constructor(destroy$, drivers, vehicles) {
       super(destroy$, drivers, vehicles);
       this.type = 'dropdown';
@@ -4735,8 +4111,9 @@ let TuiDropdownPositionSidedDirective = /*#__PURE__*/(() => {
         top: hostRect.bottom - height + this.tuiDropdownSidedOffset + 1,
         left: hostRect.left - width - offset,
         right: hostRect.right + offset,
-        bottom: hostRect.top - this.tuiDropdownSidedOffset - 1
+        bottom: hostRect.top - this.tuiDropdownSidedOffset - 1 // 1 for border
       };
+
       const better = available.top > available.bottom ? 'top' : 'bottom';
       const maxLeft = available.left > available.right ? position.left : position.right;
       const left = available[align] > width ? position[align] : maxLeft;
@@ -4817,10 +4194,16 @@ let TuiDropdownSelectionDirective = /*#__PURE__*/(/* unused pure expression or s
       }
       return (selection === null || selection === void 0 ? void 0 : selection.rangeCount) ? selection.getRangeAt(0) : this.range;
     }
+    /**
+     * Check if Node is inside dropdown
+     */
     boxContains(node) {
       var _a;
       return !!((_a = this.dropdown.dropdownBoxRef) === null || _a === void 0 ? void 0 : _a.location.nativeElement.contains(node));
     }
+    /**
+     * Check if given range is at least partially inside dropdown
+     */
     inDropdown(range) {
       const {
         startContainer,
@@ -4860,6 +4243,9 @@ let TuiDropdownSelectionDirective = /*#__PURE__*/(/* unused pure expression or s
       range.setEnd(ghost.firstChild, selectionEnd || 0);
       return range;
     }
+    /**
+     * Create an invisible DIV styled exactly like input/textarea element inside directive
+     */
     initGhost(element) {
       const ghost = this.doc.createElement('div');
       const {
@@ -4915,15 +4301,20 @@ let TuiDropdownModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-directives-dropdown.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/combineLatest.js
 var observable_combineLatest = __webpack_require__(2572);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/empty.js
-var observable_empty = __webpack_require__(6232);
+var empty = __webpack_require__(6232);
 // EXTERNAL MODULE: ./node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
 var platform_browser = __webpack_require__(6593);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/concat.js + 1 modules
-var observable_concat = __webpack_require__(5211);
+var concat = __webpack_require__(5211);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/defer.js
 var defer = __webpack_require__(4911);
 ;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/operators/takeWhile.js
@@ -4970,10 +4361,10 @@ let BindEventPlugin = /*#__PURE__*/(() => {
       this.modifier = '$';
     }
     addEventListener(element, event) {
-      element[event] = element[event] || observable_empty/* EMPTY */.E;
+      element[event] = element[event] || empty/* EMPTY */.E;
       const method = this.getMethod(element, event);
       const zone$ = this.manager.getZone().onStable;
-      const sub = (0,observable_concat/* concat */.z)(zone$.pipe(takeWhile(() => element[event] === observable_empty/* EMPTY */.E)), (0,defer/* defer */.P)(() => element[event])).subscribe(method);
+      const sub = (0,concat/* concat */.z)(zone$.pipe(takeWhile(() => element[event] === empty/* EMPTY */.E)), (0,defer/* defer */.P)(() => element[event])).subscribe(method);
       return () => sub.unsubscribe();
     }
     getMethod(element, event) {
@@ -5374,7 +4765,7 @@ const TUI_HOSTED_DROPDOWN_COMPONENT = new core_mjs_.InjectionToken(`[TUI_HOSTED_
 let TuiDropdownOpenMonitorDirective = /*#__PURE__*/(() => {
   class TuiDropdownOpenMonitorDirective {
     constructor(destroy$, hosted, dropdown, open) {
-      open === null || open === void 0 ? void 0 : open.tuiDropdownOpenChange.pipe((0,operators_filter/* filter */.h)(value => value && open.dropdown === dropdown && !hosted.focused), (0,operators_takeUntil/* takeUntil */.R)(destroy$)).subscribe(() => {
+      open === null || open === void 0 ? void 0 : open.tuiDropdownOpenChange.pipe((0,filter/* filter */.h)(value => value && open.dropdown === dropdown && !hosted.focused), (0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(() => {
         var _a;
         (_a = hosted.nativeFocusableElement) === null || _a === void 0 ? void 0 : _a.focus();
         hosted.updateOpen(true);
@@ -5412,19 +4803,21 @@ function shouldClose(event) {
   var _a;
   return 'key' in event && event.key.toLowerCase() === 'escape' && this.canOpen && this.open && !((_a = this.dropdown) === null || _a === void 0 ? void 0 : _a.nextElementSibling);
 }
+/* eslint-disable @typescript-eslint/member-ordering */
 let TuiHostedDropdownComponent = /*#__PURE__*/(() => {
   class TuiHostedDropdownComponent {
     constructor(hover$, el) {
       this.hover$ = hover$;
       this.el = el;
+      /** TODO: rename in 4.0 */
       this.openChange = new internal_BehaviorSubject/* BehaviorSubject */.X(false);
       this.sided = false;
       this.canOpen = true;
-      this.hostHover$ = (0,observable_combineLatest/* combineLatest */.a)([(0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.el.nativeElement, 'mouseover').pipe((0,internal_operators_map/* map */.U)(e => this.computedHost.contains((0,taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA)(e))), (0,internal_operators_switchMap/* switchMap */.w)(visible => {
+      this.hostHover$ = (0,observable_combineLatest/* combineLatest */.a)([(0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.el.nativeElement, 'mouseover').pipe((0,operators_map/* map */.U)(e => this.computedHost.contains((0,taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA)(e))), (0,operators_switchMap/* switchMap */.w)(visible => {
         var _a, _b;
-        return (0,observable_of.of)(visible).pipe((0,delay/* delay */.g)((visible ? (_a = this.hover$) === null || _a === void 0 ? void 0 : _a.showDelay : (_b = this.hover$) === null || _b === void 0 ? void 0 : _b.hideDelay) || 0));
-      })), this.hover$ || observable_empty/* EMPTY */.E]).pipe((0,internal_operators_map/* map */.U)(([visible, hovered]) => visible && hovered));
-      this.open$ = (0,observable_merge/* merge */.T)(this.openChange, this.hostHover$).pipe(skip(1), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), (0,operators_share/* share */.B)());
+        return (0,of.of)(visible).pipe((0,delay/* delay */.g)((visible ? (_a = this.hover$) === null || _a === void 0 ? void 0 : _a.showDelay : (_b = this.hover$) === null || _b === void 0 ? void 0 : _b.hideDelay) || 0));
+      })), this.hover$ || empty/* EMPTY */.E]).pipe((0,operators_map/* map */.U)(([visible, hovered]) => visible && hovered));
+      this.open$ = (0,merge/* merge */.T)(this.openChange, this.hostHover$).pipe(skip(1), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), (0,share/* share */.B)());
       this.focusedChange = new core_mjs_.EventEmitter();
       this.close = () => this.updateOpen(false);
     }
@@ -5650,6 +5043,11 @@ let TuiHostedDropdownModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-components-hosted-dropdown.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-autofilled.js
 
@@ -5738,13 +5136,25 @@ let TuiAutofilledModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-directives-autofilled.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-focusable.js
 
 
+
+/**
+ * Abstraction over `tabindex`
+ */
 let TuiFocusableDirective = /*#__PURE__*/(() => {
   class TuiFocusableDirective {
     constructor() {
+      /**
+       * Element can be focused with keyboard
+       */
       this.focusable = true;
     }
     get tabIndex() {
@@ -5786,6 +5196,11 @@ let TuiFocusableModule = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-cdk-directives-focusable.js.map
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-math.js
@@ -5857,6 +5272,10 @@ var taiga_ui_core_constants = __webpack_require__(8103);
 
 
 
+
+/**
+ * A component to display a hint
+ */
 function TuiHintComponent_span_0_Template(rf, ctx) {
   if (rf & 1) {
     core_mjs_["ɵɵelement"](0, "span", 1);
@@ -5867,6 +5286,8 @@ function TuiHintComponent_span_0_Template(rf, ctx) {
   }
 }
 const TUI_HINT_COMPONENT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => TuiHintComponent);
+
+/** Default values for hint options */
 const TUI_HINT_DEFAULT_OPTIONS = {
   direction: 'bottom-left',
   showDelay: 500,
@@ -5874,6 +5295,9 @@ const TUI_HINT_DEFAULT_OPTIONS = {
   appearance: '',
   icon: 'tuiIconHelpCircle'
 };
+/**
+ * Default parameters for hint directive
+ */
 const TUI_HINT_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_HINT_DEFAULT_OPTIONS);
 const tuiHintOptionsProvider = override => ({
   provide: TUI_HINT_OPTIONS,
@@ -5971,6 +5395,8 @@ let TuiHintDirective = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/* eslint-disable rxjs/no-unsafe-takeuntil */
 let TuiHintHoverDirective = /*#__PURE__*/(() => {
   class TuiHintHoverDirective extends taiga_ui_core_abstract/* TuiDriver */.kk {
     constructor(hovered$, options, el) {
@@ -5980,7 +5406,7 @@ let TuiHintHoverDirective = /*#__PURE__*/(() => {
       this.el = el;
       this.visible = false;
       this.toggle$ = new internal_Subject/* Subject */.x();
-      this.stream$ = (0,observable_merge/* merge */.T)(this.toggle$.pipe((0,internal_operators_switchMap/* switchMap */.w)(visible => (0,observable_of.of)(visible).pipe((0,delay/* delay */.g)(visible ? 0 : this.hideDelay))), (0,operators_takeUntil/* takeUntil */.R)(this.hovered$), (0,repeat/* repeat */.r)()), this.hovered$.pipe((0,internal_operators_switchMap/* switchMap */.w)(visible => (0,observable_of.of)(visible).pipe((0,delay/* delay */.g)(visible ? this.showDelay : this.hideDelay))), (0,operators_takeUntil/* takeUntil */.R)(this.toggle$), (0,repeat/* repeat */.r)())).pipe((0,operators_filter/* filter */.h)(() => this.enabled), (0,internal_operators_map/* map */.U)(value => value && !(0,taiga_ui_core_utils_miscellaneous/* tuiIsObscured */.mn)(this.el.nativeElement)), (0,tap/* tap */.b)(visible => {
+      this.stream$ = (0,merge/* merge */.T)(this.toggle$.pipe((0,operators_switchMap/* switchMap */.w)(visible => (0,of.of)(visible).pipe((0,delay/* delay */.g)(visible ? 0 : this.hideDelay))), (0,takeUntil/* takeUntil */.R)(this.hovered$), (0,repeat/* repeat */.r)()), this.hovered$.pipe((0,operators_switchMap/* switchMap */.w)(visible => (0,of.of)(visible).pipe((0,delay/* delay */.g)(visible ? this.showDelay : this.hideDelay))), (0,takeUntil/* takeUntil */.R)(this.toggle$), (0,repeat/* repeat */.r)())).pipe((0,filter/* filter */.h)(() => this.enabled), (0,operators_map/* map */.U)(value => value && !(0,taiga_ui_core_utils_miscellaneous/* tuiIsObscured */.mn)(this.el.nativeElement)), (0,tap/* tap */.b)(visible => {
         this.visible = visible;
       }));
       this.showDelay = this.options.showDelay;
@@ -6064,10 +5490,10 @@ let TuiHintComponent = /*#__PURE__*/(() => {
       this.visualViewportService = visualViewportService;
       this.viewport = viewport;
       this.appearance = this.polymorpheus.$implicit.appearance || ((_a = this.mode) === null || _a === void 0 ? void 0 : _a.mode);
-      position$.pipe((0,internal_operators_map/* map */.U)(point => this.visualViewportService.correct(point)), (0,operators_takeUntil/* takeUntil */.R)(destroy$)).subscribe(([top, left]) => {
+      position$.pipe((0,operators_map/* map */.U)(point => this.visualViewportService.correct(point)), (0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(([top, left]) => {
         this.update(top, left);
       });
-      hovered$.pipe((0,operators_takeUntil/* takeUntil */.R)(destroy$)).subscribe(hover => this.hover.toggle(hover));
+      hovered$.pipe((0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(hover => this.hover.toggle(hover));
     }
     get content() {
       return this.polymorpheus.$implicit.content;
@@ -6155,7 +5581,7 @@ let TuiHintDescribeDirective = /*#__PURE__*/(() => {
       this.id$ = new ReplaySubject/* ReplaySubject */.t(1);
       this.stream$ = this.id$.pipe((0,taiga_ui_cdk_observables/* tuiIfMap */.Xd)(() => (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, 'keydown', {
         capture: true
-      }), taiga_ui_cdk_utils_miscellaneous/* tuiIsPresent */.Pc), (0,internal_operators_switchMap/* switchMap */.w)(() => this.focused ? (0,observable_of.of)(false) : (0,observable_merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, 'keyup'), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.element, 'blur')).pipe((0,internal_operators_map/* map */.U)(() => this.focused))), debounce(visible => visible ? (0,observable_timer/* timer */.H)(1000) : (0,observable_of.of)(null)), (0,operators_startWith/* startWith */.O)(false), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), skip(1), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(this.zone));
+      }), taiga_ui_cdk_utils_miscellaneous/* tuiIsPresent */.Pc), (0,operators_switchMap/* switchMap */.w)(() => this.focused ? (0,of.of)(false) : (0,merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, 'keyup'), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.element, 'blur')).pipe((0,operators_map/* map */.U)(() => this.focused))), debounce(visible => visible ? (0,timer/* timer */.H)(1000) : (0,of.of)(null)), (0,startWith/* startWith */.O)(false), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), skip(1), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(this.zone));
       this.tuiHintDescribe = '';
       this.type = 'hint';
     }
@@ -6188,6 +5614,7 @@ let TuiHintDescribeDirective = /*#__PURE__*/(() => {
 })();
 let TuiHintDriverDirective = /*#__PURE__*/(() => {
   class TuiHintDriverDirective extends taiga_ui_core_abstract/* AbstractTuiDriverDirective */.FP {
+    // TODO: Figure out why this is necessary under nx test runner
     constructor(destroy$, drivers, vehicles) {
       super(destroy$, drivers, vehicles);
       this.type = 'hint';
@@ -6283,6 +5710,7 @@ let TuiHintPositionDirective = /*#__PURE__*/(() => {
       this.direction = this.options.direction;
       this.type = 'hint';
     }
+    // eslint-disable-next-line max-statements
     getPosition({
       width,
       height
@@ -6366,11 +5794,16 @@ let TuiHintModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-directives-hint.js.map
 ;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/observable/never.js
 
 
-const NEVER = new internal_Observable/* Observable */.y(noop/* noop */.Z);
+const NEVER = new Observable/* Observable */.y(noop/* noop */.Z);
 function never() {
   return NEVER;
 }
@@ -6429,19 +5862,28 @@ class TuiTextfieldController {
     return this.fillerDirective.filler;
   }
 }
+
+/** Default values for primitive textfield options */
 const taiga_ui_core_directives_textfield_controller_TUI_TEXTFIELD_DEFAULT_OPTIONS = {
   iconCleaner: `tuiIconClose`,
   hintOnDisabled: false
 };
+/**
+ * Default parameters for textfield
+ */
 const TUI_TEXTFIELD_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(taiga_ui_core_directives_textfield_controller_TUI_TEXTFIELD_DEFAULT_OPTIONS);
 function taiga_ui_core_directives_textfield_controller_tuiTextfieldOptionsProvider(options) {
   return tuiProvideOptions(TUI_TEXTFIELD_OPTIONS, options, taiga_ui_core_directives_textfield_controller_TUI_TEXTFIELD_DEFAULT_OPTIONS);
 }
+
+// TODO: rename to TUI_TEXTFIELD_APPEARANCE in v4
 const TUI_TEXTFIELD_APPEARANCE_DIRECTIVE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new TuiTextfieldAppearanceDirective());
 let TuiTextfieldAppearanceDirective = /*#__PURE__*/(() => {
   class TuiTextfieldAppearanceDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {
     constructor() {
       super(...arguments);
+      // it's an empty string by default for backward compatibility
+      // (see comment https://github.com/taiga-family/taiga-ui/pull/3007#issuecomment-1315179508)
       this.appearance = '';
     }
   }
@@ -6741,13 +6183,18 @@ const TEXTFIELD_CONTROLLER_PROVIDER = [taiga_ui_cdk_services/* TuiDestroyService
   provide: TUI_TEXTFIELD_WATCHED_CONTROLLER,
   deps: [core_mjs_.ChangeDetectorRef, taiga_ui_cdk_services/* TuiDestroyService */.a3, TUI_TEXTFIELD_OPTIONS, taiga_ui_core_tokens/* TUI_TEXTFIELD_APPEARANCE */.jt, TUI_TEXTFIELD_APPEARANCE_DIRECTIVE, TUI_TEXTFIELD_CLEANER, TUI_TEXTFIELD_CUSTOM_CONTENT, TUI_TEXTFIELD_ICON, TUI_TEXTFIELD_ICON_LEFT, TUI_TEXTFIELD_LABEL_OUTSIDE, TUI_TEXTFIELD_SIZE, TUI_TEXTFIELD_PREFIX, TUI_TEXTFIELD_POSTFIX, TUI_TEXTFIELD_FILLER],
   useFactory: (cdr, destroy$, options, legacyAppearance, ...controllers) => {
-    const change$ = (0,observable_merge/* merge */.T)(...controllers.map(({
+    const change$ = (0,merge/* merge */.T)(...controllers.map(({
       change$
-    }) => change$ || NEVER)).pipe((0,taiga_ui_cdk_observables/* tuiWatch */.NA)(cdr), (0,operators_takeUntil/* takeUntil */.R)(destroy$));
+    }) => change$ || NEVER)).pipe((0,taiga_ui_cdk_observables/* tuiWatch */.NA)(cdr), (0,takeUntil/* takeUntil */.R)(destroy$));
     change$.subscribe();
     return new TuiTextfieldController(change$, options, legacyAppearance, ...controllers);
   }
 }];
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-core-directives-textfield-controller.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/fromEvent.js
@@ -6793,7 +6240,7 @@ let TuiTooltipComponent = /*#__PURE__*/(() => {
       this.isMobile = isMobile;
       this.mode = null;
       this.describeId = '';
-      mode$.pipe((0,operators_takeUntil/* takeUntil */.R)(destroy$)).subscribe(mode => {
+      mode$.pipe((0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(mode => {
         this.mode = mode;
       });
     }
@@ -6888,6 +6335,11 @@ let TuiTooltipModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-components-tooltip.js.map
 // EXTERNAL MODULE: ./node_modules/@angular/forms/fesm2022/forms.mjs + 1 modules
 var fesm2022_forms = __webpack_require__(95);
@@ -6916,6 +6368,10 @@ let TuiMaskAccessorDirective = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * @internal
+ */
 let TuiMaskAccessorModule = /*#__PURE__*/(() => {
   class TuiMaskAccessorModule {}
   TuiMaskAccessorModule.ɵfac = function TuiMaskAccessorModule_Factory(t) {
@@ -6930,6 +6386,11 @@ let TuiMaskAccessorModule = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-core-directives-mask-accessor.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-primitive-textfield.js
@@ -7108,10 +6569,10 @@ let TuiValueDecorationComponent = /*#__PURE__*/(() => {
       this.textfield = textfield;
       this.fontsReady$ = fontsReady$;
       this.prefix$ = new internal_BehaviorSubject/* BehaviorSubject */.X('');
-      this.pre$ = (0,observable_merge/* merge */.T)(this.fontsReady$, this.prefix$).pipe((0,delay/* delay */.g)(0), (0,operators_filter/* filter */.h)(() => {
+      this.pre$ = (0,merge/* merge */.T)(this.fontsReady$, this.prefix$).pipe((0,delay/* delay */.g)(0), (0,filter/* filter */.h)(() => {
         var _a;
         return !!((_a = this.pre) === null || _a === void 0 ? void 0 : _a.nativeElement.isConnected);
-      }), (0,internal_operators_map/* map */.U)(() => {
+      }), (0,operators_map/* map */.U)(() => {
         var _a;
         return ((_a = this.pre) === null || _a === void 0 ? void 0 : _a.nativeElement.offsetWidth) || 0;
       }), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)());
@@ -7225,12 +6686,19 @@ let TuiPrimitiveTextfieldComponent = /*#__PURE__*/(() => {
       this.options = options;
       this.el = el;
       this.editable = true;
+      /** @deprecated use `tuiTextfieldFiller` from {@link TuiTextfieldControllerModule} instead */
       this.textfieldFiller = '';
+      /**
+       * @deprecated:
+       * use `tuiTextfieldOptionsProvider({iconCleaner: `tuiIconChevronUp`})`
+       */
       this.iconCleaner = this.options.iconCleaner;
       this.readOnly = false;
       this.invalid = false;
       this.disabled = false;
+      /** @deprecated use `tuiTextfieldPrefix` from {@link TuiTextfieldControllerModule} instead */
       this.textfieldPrefix = '';
+      /** @deprecated use `tuiTextfieldPostfix` from {@link TuiTextfieldControllerModule} instead */
       this.textfieldPostfix = '';
       this.value = '';
       this.valueChange = new core_mjs_.EventEmitter();
@@ -7311,6 +6779,7 @@ let TuiPrimitiveTextfieldComponent = /*#__PURE__*/(() => {
       var _a;
       return !!((_a = this.hintOptions) === null || _a === void 0 ? void 0 : _a.content) && (this.options.hintOnDisabled || !this.computedDisabled);
     }
+    // Safari expiration date autofill workaround
     get name() {
       var _a;
       return ((_a = this.nativeFocusableElement) === null || _a === void 0 ? void 0 : _a.autocomplete) === 'cc-exp' ? 'ccexpiryyear' : null;
@@ -7323,7 +6792,7 @@ let TuiPrimitiveTextfieldComponent = /*#__PURE__*/(() => {
       this.updateFocused(focused);
     }
     getIndent$(element) {
-      return (0,fromEvent/* fromEvent */.R)(element, 'scroll').pipe((0,internal_operators_map/* map */.U)(() => -1 * Math.max(element.scrollLeft, 0)));
+      return (0,fromEvent/* fromEvent */.R)(element, 'scroll').pipe((0,operators_map/* map */.U)(() => -1 * Math.max(element.scrollLeft, 0)));
     }
     clear() {
       if (this.nativeFocusableElement) {
@@ -7509,6 +6978,11 @@ let TuiPrimitiveTextfieldComponent = /*#__PURE__*/(() => {
 let TuiPrimitiveTextfieldDirective = /*#__PURE__*/(() => {
   class TuiPrimitiveTextfieldDirective extends taiga_ui_core_abstract/* AbstractTuiTextfieldHost */.D1 {
     constructor(textfield) {
+      /**
+       * TuiPrimitiveTextfieldComponent satisfies all required parts of
+       * AbstractTuiControl interface. A new interface is not introduced
+       * so AbstractTuiControl is automatically injected for all other controls.
+       */
       super(textfield);
       this.textfield = textfield;
     }
@@ -7597,9 +7071,27 @@ let TuiPrimitiveTextfieldModule = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * @deprecated:
+ * use {@link TUI_TEXTFIELD_DEFAULT_OPTIONS}
+ */
 const TUI_PRIMITIVE_TEXTFIELD_DEFAULT_OPTIONS = (/* unused pure expression or super */ null && (TUI_TEXTFIELD_DEFAULT_OPTIONS));
+/**
+ * @deprecated:
+ * use {@link TUI_TEXTFIELD_OPTIONS}
+ */
 const TUI_PRIMITIVE_TEXTFIELD_OPTIONS = (/* unused pure expression or super */ null && (TUI_TEXTFIELD_OPTIONS$1));
+/**
+ * @deprecated:
+ * use {@link tuiTextfieldOptionsProvider}
+ */
 const tuiPrimitiveTextfieldOptionsProvider = (/* unused pure expression or super */ null && (tuiTextfieldOptionsProvider));
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-core-components-primitive-textfield.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-data-list.js
@@ -7690,6 +7182,7 @@ function shouldFocus({
 }) {
   return !(0,taiga_ui_cdk_utils_focus/* tuiIsNativeFocused */.V8)(currentTarget);
 }
+// TODO: Consider all use cases for aria roles
 let TuiOptionComponent = /*#__PURE__*/(() => {
   class TuiOptionComponent {
     constructor(content, dataList, el, host, dropdown, icons) {
@@ -7699,6 +7192,7 @@ let TuiOptionComponent = /*#__PURE__*/(() => {
       this.host = host;
       this.dropdown = dropdown;
       this.icons = icons;
+      /** @deprecated use size on {@link TuiDataListComponent} instead */
       this.size = null;
       this.role = 'option';
       this.disabled = false;
@@ -7711,6 +7205,7 @@ let TuiOptionComponent = /*#__PURE__*/(() => {
         this.host.handleOption(this.value);
       }
     }
+    // @bad TODO: Consider aria-activedescendant for proper accessibility implementation
     onMouseMove({
       currentTarget
     }) {
@@ -7718,6 +7213,7 @@ let TuiOptionComponent = /*#__PURE__*/(() => {
         preventScroll: true
       });
     }
+    // Preventing focus loss upon focused option removal
     ngOnDestroy() {
       var _a;
       (_a = this.dataList) === null || _a === void 0 ? void 0 : _a.handleFocusLossIfNecessary(this.el.nativeElement);
@@ -7776,6 +7272,8 @@ let TuiOptionComponent = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+// TODO: Consider aria-activedescendant for proper accessibility implementation
 let TuiDataListComponent = /*#__PURE__*/(() => {
   class TuiDataListComponent {
     constructor(controller, el, defaultEmptyContent$) {
@@ -7788,7 +7286,7 @@ let TuiDataListComponent = /*#__PURE__*/(() => {
       this.size = ((_a = this.controller) === null || _a === void 0 ? void 0 : _a.size) || 'm';
     }
     get empty$() {
-      return (0,taiga_ui_cdk_observables/* tuiQueryListChanges */.ll)(this.options).pipe((0,internal_operators_map/* map */.U)(({
+      return (0,taiga_ui_cdk_observables/* tuiQueryListChanges */.ll)(this.options).pipe((0,operators_map/* map */.U)(({
         length
       }) => !length));
     }
@@ -7804,6 +7302,7 @@ let TuiDataListComponent = /*#__PURE__*/(() => {
       } = this;
       (0,taiga_ui_cdk_utils_focus/* tuiMoveFocus */.VR)(elements.indexOf(current), elements, step);
     }
+    // TODO: Consider aria-activedescendant for proper accessibility implementation
     handleFocusLossIfNecessary(element = this.el.nativeElement) {
       if (this.origin && (0,taiga_ui_cdk_utils_focus/* tuiIsNativeFocusedIn */.zb)(element)) {
         (0,taiga_ui_cdk_utils_focus/* tuiSetNativeMouseFocused */.Pg)(this.origin, true, true);
@@ -7972,6 +7471,11 @@ let taiga_ui_core_components_data_list_TuiDataListModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-components-data-list.js.map
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-enums.js
 var taiga_ui_cdk_enums = __webpack_require__(7344);
@@ -8010,23 +7514,57 @@ const HOURS_IN_DAY = 24;
 const MILLISECONDS_IN_MINUTE = MILLISECONDS_IN_SECOND * SECONDS_IN_MINUTE;
 const MILLISECONDS_IN_HOUR = MILLISECONDS_IN_MINUTE * MINUTES_IN_HOUR;
 const MILLISECONDS_IN_DAY = MILLISECONDS_IN_HOUR * HOURS_IN_DAY;
+
+/**
+ * @internal 'dd.mm.yyyy'.length
+ * Used in:
+ * - {@link TuiInputDateComponent}
+ * - {@link TuiInputDateRangeComponent}
+ * - {@link TuiInputDateTimeComponent}
+ */
 const DATE_FILLER_LENGTH = 10;
+/**
+ * @internal
+ * Used in {@link TuiInputDateRangeComponent}
+ */
 const DATE_RANGE_FILLER_LENGTH = 2 * DATE_FILLER_LENGTH + RANGE_SEPARATOR_CHAR.length;
+
+/**
+ * Active date format for Taiga UI
+ */
 const TUI_DATE_FORMAT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(`DMY`);
+
+/**
+ * Date separator for Taiga UI components
+ */
 const TUI_DATE_SEPARATOR = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(`.`);
 const changeDateSeparator = (dateString, newDateSeparator) => dateString.replace(/[^0-9A-Za-zА-Яа-я]/gi, newDateSeparator);
+
+/**
+ * Immutable year object
+ * @nosideeffects
+ */
 class TuiYear {
   constructor(year) {
     this.year = year;
     ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert(TuiYear.isValidYear(year));
   }
+  /**
+   * Checks year for validity
+   */
   static isValidYear(year) {
     return Number.isInteger(year) && (0,taiga_ui_cdk_utils_math/* tuiInRange */.wf)(year, MIN_YEAR, MAX_YEAR + 1);
   }
+  /**
+   * Check if passed year is a leap year
+   */
   static isLeapYear(year) {
     ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert(TuiYear.isValidYear(year));
     return year % 400 === 0 || year % 4 === 0 && year % 100 !== 0;
   }
+  /**
+   * Returns amount of leap years from year 0 to the passed one
+   */
   static getAbsoluteLeapYears(year) {
     ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert(TuiYear.isValidYear(year));
     return Math.ceil(year / 400) + (Math.ceil(year / 4) - Math.ceil(year / 100));
@@ -8034,6 +7572,9 @@ class TuiYear {
   static lengthBetween(from, to) {
     return to.year - from.year;
   }
+  /**
+   * Normalizes year by clamping it between min and max years
+   */
   static normalizeYearPart(year) {
     return (0,taiga_ui_cdk_utils_math/* tuiNormalizeToIntNumber */.G1)(year, MIN_YEAR, MAX_YEAR);
   }
@@ -8043,34 +7584,55 @@ class TuiYear {
   get isLeapYear() {
     return TuiYear.isLeapYear(this.year);
   }
+  /**
+   * Returns amount of leap years from year 0 to current
+   */
   get absoluteLeapYears() {
     return TuiYear.getAbsoluteLeapYears(this.year);
   }
+  /**
+   * Passed year is after current
+   */
   yearBefore({
     year
   }) {
     return this.year < year;
   }
+  /**
+   * Passed year is the same or after current
+   */
   yearSameOrBefore({
     year
   }) {
     return this.year <= year;
   }
+  /**
+   * Passed year is the same as current
+   */
   yearSame({
     year
   }) {
     return this.year === year;
   }
+  /**
+   * Passed year is either the same of before the current
+   */
   yearSameOrAfter({
     year
   }) {
     return this.year >= year;
   }
+  /**
+   * Passed year is before current
+   */
   yearAfter({
     year
   }) {
     return this.year > year;
   }
+  /**
+   * Immutably offsets year
+   */
   append({
     year = 0
   }) {
@@ -8085,6 +7647,11 @@ class TuiYear {
   valueOf() {
     return this.year;
   }
+  /**
+   * Returns the primitive value of the given Date object.
+   * Depending on the argument, the method can return either a string or a number.
+   * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/@@toPrimitive
+   */
   [Symbol.toPrimitive](hint) {
     return Date.prototype[Symbol.toPrimitive].call(this, hint);
   }
@@ -8092,15 +7659,29 @@ class TuiYear {
     return this.formattedYear;
   }
 }
+
+/**
+ * Immutable object consisting of year and month
+ */
 class TuiMonth extends TuiYear {
+  /**
+   * @param year
+   * @param month (starting with 0)
+   */
   constructor(year, month) {
     super(year);
     this.month = month;
     ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert(TuiMonth.isValidMonth(year, month));
   }
+  /**
+   * Tests month and year for validity
+   */
   static isValidMonth(year, month) {
     return TuiYear.isValidYear(year) && TuiMonth.isValidMonthPart(month);
   }
+  /**
+   * Returns number of days in a month
+   */
   static getMonthDaysCount(month, isLeapYear) {
     ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert(TuiMonth.isValidMonthPart(month));
     switch (month) {
@@ -8115,10 +7696,17 @@ class TuiMonth extends TuiYear {
         return 31;
     }
   }
+  /**
+   * Returns current month and year based on local time zone
+   * @nosideeffects
+   */
   static currentLocal() {
     const nativeDate = new Date();
     return new TuiMonth(nativeDate.getFullYear(), nativeDate.getMonth());
   }
+  /**
+   * Returns current month and year based on UTC
+   */
   static currentUtc() {
     const nativeDate = new Date();
     return new TuiMonth(nativeDate.getUTCFullYear(), nativeDate.getUTCMonth());
@@ -8128,33 +7716,63 @@ class TuiMonth extends TuiYear {
     const absoluteTo = to.month + to.year * 12;
     return absoluteTo - absoluteFrom;
   }
+  /**
+   * Normalizes number by clamping it between min and max month
+   */
   static normalizeMonthPart(month) {
     return (0,taiga_ui_cdk_utils_math/* tuiNormalizeToIntNumber */.G1)(month, MIN_MONTH, MAX_MONTH);
   }
+  /**
+   * Tests month for validity
+   */
   static isValidMonthPart(month) {
     return Number.isInteger(month) && (0,taiga_ui_cdk_utils_math/* tuiInRange */.wf)(month, MIN_MONTH, MAX_MONTH + 1);
   }
   get formattedMonthPart() {
     return String(this.month + 1).padStart(2, `0`);
   }
+  /**
+   * Returns days in a month
+   */
   get daysCount() {
     return TuiMonth.getMonthDaysCount(this.month, this.isLeapYear);
   }
+  /**
+   * Passed month and year are after current
+   */
   monthBefore(another) {
     return this.yearBefore(another) || this.yearSame(another) && this.month < another.month;
   }
+  /**
+   * Passed month and year are after or the same as current
+   */
   monthSameOrBefore(another) {
     return this.yearBefore(another) || this.yearSame(another) && this.month <= another.month;
   }
+  /**
+   * Passed month and year are the same as current
+   */
   monthSame(another) {
     return this.yearSame(another) && this.month === another.month;
   }
+  /**
+   * Passed month and year are either before or equal to current
+   */
   monthSameOrAfter(another) {
     return this.yearAfter(another) || this.yearSame(another) && this.month >= another.month;
   }
+  /**
+   * Passed month and year are before current
+   */
   monthAfter(another) {
     return this.yearAfter(another) || this.yearSame(another) && this.month > another.month;
   }
+  /**
+   * Immutably alters current month and year by passed offset
+   *
+   * @param offset
+   * @return new month and year object as a result of offsetting current
+   */
   append({
     year = 0,
     month = 0
@@ -8171,28 +7789,56 @@ class TuiMonth extends TuiYear {
   toJSON() {
     return `${super.toJSON()}-${this.formattedMonthPart}`;
   }
+  /**
+   * Returns native {@link Date} based on local time zone
+   */
   toLocalNativeDate() {
     return new Date(this.year, this.month);
   }
+  /**
+   * Returns native {@link Date} based on UTC
+   */
   toUtcNativeDate() {
     return new Date(Date.UTC(this.year, this.month));
   }
 }
+
+// TODO: Localized formatting
+/**
+ * Immutable date object, consisting of day, month and year
+ */
 class TuiDay extends TuiMonth {
   constructor(year, month, day) {
     super(year, month);
     this.day = day;
     ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert(TuiDay.isValidDay(year, month, day));
   }
+  /**
+   * Creates {@link TuiDay} from native {@link Date} based on local time zone
+   */
   static fromLocalNativeDate(date) {
     return new TuiDay(date.getFullYear(), date.getMonth(), date.getDate());
   }
+  /**
+   * Creates {@link TuiDay} from native {@link Date} using UTC
+   */
   static fromUtcNativeDate(date) {
     return new TuiDay(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
   }
+  /**
+   * Check validity of year, month and day
+   *
+   * @param year
+   * @param month
+   * @param day
+   * @return boolean validity
+   */
   static isValidDay(year, month, day) {
     return TuiMonth.isValidMonth(year, month) && Number.isInteger(day) && (0,taiga_ui_cdk_utils_math/* tuiInRange */.wf)(day, MIN_DAY, TuiMonth.getMonthDaysCount(month, TuiYear.isLeapYear(year)) + 1);
   }
+  /**
+   * Current day based on local time zone
+   */
   static currentLocal() {
     const nativeDate = new Date();
     const year = nativeDate.getFullYear();
@@ -8200,6 +7846,9 @@ class TuiDay extends TuiMonth {
     const day = nativeDate.getDate();
     return new TuiDay(year, month, day);
   }
+  /**
+   * Returns current day based on UTC
+   */
   static currentUtc() {
     const nativeDate = new Date();
     const year = nativeDate.getUTCFullYear();
@@ -8207,6 +7856,14 @@ class TuiDay extends TuiMonth {
     const day = nativeDate.getUTCDate();
     return new TuiDay(year, month, day);
   }
+  /**
+   * Calculates {@link TuiDay} normalizing year, month and day. {@link NaN} is turned into minimal value.
+   *
+   * @param year any year value, including invalid
+   * @param month any month value, including invalid (months start with 0)
+   * @param day any day value, including invalid
+   * @return normalized date
+   */
   static normalizeOf(year, month, day) {
     const normalizedYear = TuiYear.normalizeYearPart(year);
     const normalizedMonth = TuiMonth.normalizeMonthPart(month);
@@ -8240,6 +7897,14 @@ class TuiDay extends TuiMonth {
         };
     }
   }
+  // TODO: Move month and year related code corresponding classes
+  /**
+   * Parsing a string with date with normalization
+   *
+   * @param rawDate date string
+   * @param dateMode date format of the date string (DMY | MDY | YMD)
+   * @return normalized date
+   */
   static normalizeParse(rawDate, dateMode = `DMY`) {
     const {
       day,
@@ -8248,6 +7913,12 @@ class TuiDay extends TuiMonth {
     } = this.parseRawDateString(rawDate, dateMode);
     return TuiDay.normalizeOf(year, month, day);
   }
+  /**
+   * Parsing a date stringified in a toJSON format
+   * @param yearMonthDayString date string in format of YYYY-MM-DD
+   * @return date
+   * @throws exceptions if any part of the date is invalid
+   */
   static jsonParse(yearMonthDayString) {
     const {
       day,
@@ -8277,25 +7948,53 @@ class TuiDay extends TuiMonth {
     const dayOfWeek = this.dayOfWeek(false);
     return dayOfWeek === taiga_ui_cdk_enums/* TuiDayOfWeek */.L.Saturday || dayOfWeek === taiga_ui_cdk_enums/* TuiDayOfWeek */.L.Sunday;
   }
+  /**
+   * Returns day of week
+   *
+   * @param startFromMonday whether week starts from Monday and not from Sunday
+   * @return day of week (from 0 to 6)
+   */
   dayOfWeek(startFromMonday = true) {
     const dayOfWeek = startFromMonday ? this.toLocalNativeDate().getDay() - 1 : this.toLocalNativeDate().getDay();
     return dayOfWeek < 0 ? 6 : dayOfWeek;
   }
+  /**
+   * Passed date is after current
+   */
   dayBefore(another) {
     return this.monthBefore(another) || this.monthSame(another) && this.day < another.day;
   }
+  /**
+   * Passed date is after or equals to current
+   */
   daySameOrBefore(another) {
     return this.monthBefore(another) || this.monthSame(another) && this.day <= another.day;
   }
+  /**
+   * Passed date is the same as current
+   */
   daySame(another) {
     return this.monthSame(another) && this.day === another.day;
   }
+  /**
+   * Passed date is either before or the same as current
+   */
   daySameOrAfter(another) {
     return this.monthAfter(another) || this.monthSame(another) && this.day >= another.day;
   }
+  /**
+   * Passed date is before current
+   */
   dayAfter(another) {
     return this.monthAfter(another) || this.monthSame(another) && this.day > another.day;
   }
+  /**
+   * Clamping date between two limits
+   *
+   * @param min
+   * @param max
+   * @return clamped date
+   */
   dayLimit(min, max) {
     if (min !== null && this.dayBefore(min)) {
       return min;
@@ -8305,6 +8004,16 @@ class TuiDay extends TuiMonth {
     }
     return this;
   }
+  /**
+   * Immutably alters current day by passed offset
+   *
+   * If resulting month has more days than original one, date is rounded to the maximum day
+   * in the resulting month. Offset of days will be calculated based on the resulted year and month
+   * to not interfere with parent classes methods
+   *
+   * @param offset
+   * @return new date object as a result of offsetting current
+   */
   append({
     year = 0,
     month = 0,
@@ -8334,6 +8043,9 @@ class TuiDay extends TuiMonth {
     }
     return new TuiDay(years, months, days);
   }
+  /**
+   * Returns formatted whole date
+   */
   getFormattedDay(dateFormat, separator) {
     ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert(separator.length === 1, `Separator should consist of only 1 symbol`);
     const dd = this.formattedDayPart;
@@ -8355,13 +8067,23 @@ class TuiDay extends TuiMonth {
   toJSON() {
     return `${super.toJSON()}-${this.formattedDayPart}`;
   }
+  /**
+   * Returns native {@link Date} based on local time zone
+   */
   toLocalNativeDate() {
     return new Date(this.year, this.month, this.day);
   }
+  /**
+   * Returns native {@link Date} based on UTC
+   */
   toUtcNativeDate() {
     return new Date(Date.UTC(this.year, this.month, this.day));
   }
 }
+
+/**
+ * An immutable range of two {@link TuiMonth} objects
+ */
 class TuiMonthRange {
   constructor(from, to) {
     this.from = from;
@@ -8381,6 +8103,10 @@ class TuiMonthRange {
     return `${this.from}${RANGE_SEPARATOR_CHAR}${this.to}`;
   }
 }
+
+/**
+ * An immutable range of two {@link TuiDay} objects
+ */
 class TuiDayRange extends (/* unused pure expression or super */ null && (TuiMonthRange)) {
   constructor(from, to) {
     super(from, to);
@@ -8388,9 +8114,23 @@ class TuiDayRange extends (/* unused pure expression or super */ null && (TuiMon
     this.to = to;
     ngDevMode && tuiAssert.assert(from.daySameOrBefore(to));
   }
+  /**
+   * Creates range from two days after sorting them
+   *
+   * @param day1
+   * @param day2
+   * @return new range with sorted days
+   */
   static sort(day1, day2) {
     return day1.daySameOrBefore(day2) ? new TuiDayRange(day1, day2) : new TuiDayRange(day2, day1);
   }
+  /**
+   * Parse and correct a day range in string format
+   *
+   * @param rangeString a string of dates in a format dd.mm.yyyy - dd.mm.yyyy
+   * @param dateMode {@link TuiDateMode}
+   * @return normalized day range object
+   */
   static normalizeParse(rangeString, dateMode = `DMY`) {
     const leftDay = TuiDay.normalizeParse(rangeString.slice(0, DATE_FILLER_LENGTH), dateMode);
     if (rangeString.length < DATE_RANGE_FILLER_LENGTH) {
@@ -8401,12 +8141,28 @@ class TuiDayRange extends (/* unused pure expression or super */ null && (TuiMon
   get isSingleDay() {
     return this.from.daySame(this.to);
   }
+  /**
+   * Tests ranges for identity
+   *
+   * @param another second range to test against current
+   * @return `true` if days are identical
+   */
   daySame(another) {
     return this.from.daySame(another.from) && this.to.daySame(another.to);
   }
+  /**
+   * Locks range between two days included, or limits from one side if the other is null
+   *
+   * @param min
+   * @param max
+   * @return range — clamped range
+   */
   dayLimit(min, max) {
     return new TuiDayRange(this.from.dayLimit(min, max), this.to.dayLimit(min, max));
   }
+  /**
+   * Human readable format.
+   */
   getFormattedDayRange(dateFormat, dateSeparator) {
     const from = this.from.getFormattedDay(dateFormat, dateSeparator);
     const to = this.to.getFormattedDay(dateFormat, dateSeparator);
@@ -8420,6 +8176,10 @@ class TuiDayRange extends (/* unused pure expression or super */ null && (TuiMon
 }
 const TUI_FIRST_DAY = new TuiDay(MIN_YEAR, MIN_MONTH, MIN_DAY);
 const TUI_LAST_DAY = new TuiDay(MAX_YEAR, MAX_MONTH, 31);
+
+/**
+ * Immutable time object with hours, minutes, seconds and ms
+ */
 class TuiTime {
   constructor(hours, minutes, seconds = 0, ms = 0) {
     this.hours = hours;
@@ -8428,16 +8188,28 @@ class TuiTime {
     this.ms = ms;
     ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert(TuiTime.isValidTime(hours, minutes, seconds, ms), `Time must be real, but got:`, hours, minutes, seconds, ms);
   }
+  /**
+   * Checks if time is valid
+   */
   static isValidTime(hours, minutes, seconds = 0, ms = 0) {
     return Number.isInteger(hours) && (0,taiga_ui_cdk_utils_math/* tuiInRange */.wf)(hours, 0, HOURS_IN_DAY) && Number.isInteger(minutes) && (0,taiga_ui_cdk_utils_math/* tuiInRange */.wf)(minutes, 0, MINUTES_IN_HOUR) && Number.isInteger(seconds) && (0,taiga_ui_cdk_utils_math/* tuiInRange */.wf)(seconds, 0, SECONDS_IN_MINUTE) && Number.isInteger(ms) && (0,taiga_ui_cdk_utils_math/* tuiInRange */.wf)(ms, 0, 1000);
   }
+  /**
+   * Current UTC time.
+   */
   static current() {
     return TuiTime.fromAbsoluteMilliseconds(Date.now() % MILLISECONDS_IN_DAY);
   }
+  /**
+   * Current time in local timezone
+   */
   static currentLocal() {
     const date = new Date();
     return TuiTime.fromAbsoluteMilliseconds((Date.now() - date.getTimezoneOffset() * MILLISECONDS_IN_MINUTE) % MILLISECONDS_IN_DAY);
   }
+  /**
+   * Calculates TuiTime from milliseconds
+   */
   static fromAbsoluteMilliseconds(milliseconds) {
     ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert(Number.isInteger(milliseconds));
     ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert((0,taiga_ui_cdk_utils_math/* tuiInRange */.wf)(milliseconds, 0, MILLISECONDS_IN_DAY), `Milliseconds must be below ${MILLISECONDS_IN_DAY} (milliseconds in a day).`);
@@ -8447,6 +8219,9 @@ class TuiTime {
     const ms = Math.floor(milliseconds % MILLISECONDS_IN_HOUR % MILLISECONDS_IN_MINUTE % 1000) || 0;
     return new TuiTime(hours, minutes, seconds, ms);
   }
+  /**
+   * Parses string into TuiTime object
+   */
   static fromString(time) {
     const hours = Number(time.slice(0, 2));
     const minutes = Number(time.slice(3, 5));
@@ -8454,9 +8229,16 @@ class TuiTime {
     const ms = Number(time.slice(9, 12)) || 0;
     return new TuiTime(hours, minutes, seconds, ms);
   }
+  /**
+   * Converts Date object into TuiTime
+   * @param date
+   */
   static fromLocalNativeDate(date) {
     return new TuiTime(date.getHours(), date.getMinutes(), date.getSeconds(), date.getMilliseconds());
   }
+  /**
+   * Shifts time by hours and minutes
+   */
   shift({
     hours = 0,
     minutes = 0,
@@ -8475,6 +8257,9 @@ class TuiTime {
     const newHours = (24 + this.hours + hoursToAdd % 24) % 24;
     return new TuiTime(newHours, newMinutes, newSeconds, newMs);
   }
+  /**
+   * Converts TuiTime to string
+   */
   toString(mode) {
     const needAddMs = mode === `HH:MM:SS.MSS` || !mode && this.ms > 0;
     const needAddSeconds = needAddMs || mode === `HH:MM:SS` || !mode && this.seconds > 0;
@@ -8483,9 +8268,17 @@ class TuiTime {
   valueOf() {
     return this.toAbsoluteMilliseconds();
   }
+  /**
+   * Returns the primitive value of the given Date object.
+   * Depending on the argument, the method can return either a string or a number.
+   * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/@@toPrimitive
+   */
   [Symbol.toPrimitive](hint) {
     return Date.prototype[Symbol.toPrimitive].call(this, hint);
   }
+  /**
+   * Converts TuiTime to milliseconds
+   */
   toAbsoluteMilliseconds() {
     return this.hours * MILLISECONDS_IN_HOUR + this.minutes * MILLISECONDS_IN_MINUTE + this.seconds * 1000 + this.ms;
   }
@@ -8493,6 +8286,11 @@ class TuiTime {
     return String(time).padStart(digits, `0`);
   }
 }
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-cdk-date-time.js.map
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/i18n/fesm2015/taiga-ui-i18n-enums.js
@@ -8505,6 +8303,10 @@ var taiga_ui_i18n_tools = __webpack_require__(7042);
 
 
 
+
+/**
+ * Stream that emits calendar data change
+ */
 const TUI_CALENDAR_DATE_STREAM = new core_mjs_.InjectionToken(`[TUI_CALENDAR_DATE_STREAM]`);
 function tuiDateStreamWithTransformer(transformer) {
   return {
@@ -8730,8 +8532,19 @@ const TUI_COUNTRIES_MASKS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken
   [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ZM]: `+260##-###-####`,
   [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ZW]: `+263#-######`
 });
+
+// TODO: Refactor to use `AbstractTuiValueTransformer` and add ability to provide it for all controls
+/**
+ * Control value transformer of TuiDay to custom value format for InputDate* components
+ */
 const TUI_DATE_VALUE_TRANSFORMER = new core_mjs_.InjectionToken(`[TUI_DATE_VALUE_TRANSFORMER]`);
+/**
+ * Control value transformer for InputDateRange component
+ */
 const TUI_DATE_RANGE_VALUE_TRANSFORMER = new core_mjs_.InjectionToken(`[TUI_DATE_RANGE_VALUE_TRANSFORMER]`);
+/**
+ * Control value transformer for InputDateTime component
+ */
 const TUI_DATE_TIME_VALUE_TRANSFORMER = new core_mjs_.InjectionToken(`[TUI_DATE_TIME_VALUE_TRANSFORMER]`);
 const TUI_PROMPT_WORDS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`prompt`));
 const TUI_CANCEL_WORD = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`cancel`));
@@ -8762,6 +8575,9 @@ const TUI_INPUT_DATE_DEFAULT_OPTIONS = {
   max: TUI_LAST_DAY,
   nativePicker: false
 };
+/**
+ * Default parameters for InputDate component
+ */
 const TUI_INPUT_DATE_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_INPUT_DATE_DEFAULT_OPTIONS);
 function tuiInputDateOptionsProvider(options) {
   return tuiProvideOptions(TUI_INPUT_DATE_OPTIONS, options, TUI_INPUT_DATE_DEFAULT_OPTIONS);
@@ -8771,14 +8587,38 @@ const TUI_DEFAULT_ITEMS_HANDLERS = {
   identityMatcher: taiga_ui_cdk_constants/* TUI_DEFAULT_IDENTITY_MATCHER */.bg,
   disabledItemHandler: taiga_ui_cdk_constants/* ALWAYS_FALSE_HANDLER */.Iy
 };
+/**
+ * Default items handlers for components
+ */
 const taiga_ui_kit_tokens_TUI_ITEMS_HANDLERS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_DEFAULT_ITEMS_HANDLERS);
 function tuiItemsHandlersProvider(options) {
   return tuiProvideOptions(taiga_ui_kit_tokens_TUI_ITEMS_HANDLERS, options, TUI_DEFAULT_ITEMS_HANDLERS);
 }
+
+/**
+ * A component for mobile data picker
+ */
 const TUI_MOBILE_CALENDAR = new core_mjs_.InjectionToken(`[TUI_MOBILE_CALENDAR]`);
+
+/**
+ * A function to get localized formatted month
+ */
 const TUI_MONTH_FORMATTER = new core_mjs_.InjectionToken(`[TUI_MONTH_FORMATTER]`);
+
+/**
+ * Margin between tabs
+ */
 const TUI_TAB_MARGIN = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(24);
+
+/**
+ * Validation errors
+ */
 const TUI_VALIDATION_ERRORS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)({});
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-kit-tokens.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-abstract.js
@@ -8833,6 +8673,11 @@ let taiga_ui_kit_abstract_AbstractTuiNativeSelect = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-kit-abstract.js.map
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-loader.js
 var taiga_ui_core_components_loader = __webpack_require__(63);
@@ -8844,6 +8689,20 @@ let taiga_ui_cdk_directives_element_TuiElementDirective = /*#__PURE__*/(() => {
     constructor({
       nativeElement
     }) {
+      /**
+       * @note:
+       * Typically, when your constructor is invoked with new,
+       * an object is created, its constructor is assigned to
+       * the invoked constructor and the object is then assigned
+       * to this before executing any operations specified
+       * in your constructor method.
+       *
+       * ERROR TypeError: Class constructor ElementRef cannot be invoked without 'new'
+       * https://github.com/taiga-family/taiga-ui/issues/3072
+       *
+       * This way we can instantiate object creation
+       * without additional prototype chain for possible fix bug.
+       */
       return new core_mjs_.ElementRef(nativeElement);
     }
   }
@@ -8875,6 +8734,11 @@ let TuiElementModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-directives-element.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-components-data-list-wrapper.js
 
@@ -8903,7 +8767,14 @@ function TuiDataListGroupWrapperComponent_tui_data_list_0_tui_opt_group_1_button
 }
 function TuiDataListGroupWrapperComponent_tui_data_list_0_tui_opt_group_1_button_1_Template(rf, ctx) {
   if (rf & 1) {
+    const _r12 = i0.ɵɵgetCurrentView();
     i0.ɵɵelementStart(0, "button", 6, 7);
+    i0.ɵɵlistener("click", function TuiDataListGroupWrapperComponent_tui_data_list_0_tui_opt_group_1_button_1_Template_button_click_0_listener() {
+      const restoredCtx = i0.ɵɵrestoreView(_r12);
+      const item_r7 = restoredCtx.$implicit;
+      const ctx_r11 = i0.ɵɵnextContext(3);
+      return i0.ɵɵresetView(ctx_r11.itemClick.emit(item_r7));
+    });
     i0.ɵɵtemplate(2, TuiDataListGroupWrapperComponent_tui_data_list_0_tui_opt_group_1_button_1_ng_container_2_Template, 2, 1, "ng-container", 8);
     i0.ɵɵelementEnd();
   }
@@ -8963,7 +8834,15 @@ function TuiDataListWrapperComponent_tui_data_list_0_button_1_ng_container_3_Tem
 }
 function TuiDataListWrapperComponent_tui_data_list_0_button_1_Template(rf, ctx) {
   if (rf & 1) {
-    core_mjs_["ɵɵelementStart"](0, "button", 4, 5)(2, "span", 6);
+    const _r9 = core_mjs_["ɵɵgetCurrentView"]();
+    core_mjs_["ɵɵelementStart"](0, "button", 4, 5);
+    core_mjs_["ɵɵlistener"]("click", function TuiDataListWrapperComponent_tui_data_list_0_button_1_Template_button_click_0_listener() {
+      const restoredCtx = core_mjs_["ɵɵrestoreView"](_r9);
+      const item_r4 = restoredCtx.$implicit;
+      const ctx_r8 = core_mjs_["ɵɵnextContext"](2);
+      return core_mjs_["ɵɵresetView"](ctx_r8.itemClick.emit(item_r4));
+    });
+    core_mjs_["ɵɵelementStart"](2, "span", 6);
     core_mjs_["ɵɵtemplate"](3, TuiDataListWrapperComponent_tui_data_list_0_button_1_ng_container_3_Template, 2, 1, "ng-container", 7);
     core_mjs_["ɵɵelementEnd"]()();
   }
@@ -9003,6 +8882,7 @@ let AbstractTuiDataListWrapper = /*#__PURE__*/(() => {
       this.optionsQuery = taiga_ui_cdk_constants/* EMPTY_QUERY */.Mm;
       this.disabledItemHandler = this.itemsHandlers.disabledItemHandler;
       this.size = this.defaultSize;
+      this.itemClick = new core_mjs_.EventEmitter();
       this.itemContent = ({
         $implicit
       }) => this.itemsHandlers.stringify($implicit);
@@ -9042,6 +8922,9 @@ let AbstractTuiDataListWrapper = /*#__PURE__*/(() => {
       emptyContent: "emptyContent",
       size: "size",
       itemContent: "itemContent"
+    },
+    outputs: {
+      itemClick: "itemClick"
     }
   });
   return AbstractTuiDataListWrapper;
@@ -9071,7 +8954,7 @@ let TuiDataListGroupWrapperComponent = /*#__PURE__*/(/* unused pure expression o
     attrs: taiga_ui_kit_components_data_list_wrapper_c0,
     decls: 3,
     vars: 2,
-    consts: [[3, "emptyContent", "size", 4, "ngIf", "ngIfElse"], ["loading", ""], [3, "emptyContent", "size"], [3, "label", 4, "ngFor", "ngForOf"], [3, "label"], ["automation-id", "tui-data-list-wrapper__option", "tuiElement", "", "tuiOption", "", 3, "disabled", "value", 4, "ngFor", "ngForOf"], ["automation-id", "tui-data-list-wrapper__option", "tuiElement", "", "tuiOption", "", 3, "disabled", "value"], ["elementRef", "elementRef"], [4, "polymorpheusOutlet", "polymorpheusOutletContext"], [1, "t-loader"]],
+    consts: [[3, "emptyContent", "size", 4, "ngIf", "ngIfElse"], ["loading", ""], [3, "emptyContent", "size"], [3, "label", 4, "ngFor", "ngForOf"], [3, "label"], ["automation-id", "tui-data-list-wrapper__option", "tuiElement", "", "tuiOption", "", 3, "disabled", "value", "click", 4, "ngFor", "ngForOf"], ["automation-id", "tui-data-list-wrapper__option", "tuiElement", "", "tuiOption", "", 3, "disabled", "value", "click"], ["elementRef", "elementRef"], [4, "polymorpheusOutlet", "polymorpheusOutletContext"], [1, "t-loader"]],
     template: function TuiDataListGroupWrapperComponent_Template(rf, ctx) {
       if (rf & 1) {
         i0.ɵɵtemplate(0, TuiDataListGroupWrapperComponent_tui_data_list_0_Template, 2, 3, "tui-data-list", 0);
@@ -9110,7 +8993,7 @@ let TuiDataListWrapperComponent = /*#__PURE__*/(() => {
     features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_tokens/* tuiAsDataListAccessor */.RB)(TuiDataListWrapperComponent), TEXTFIELD_CONTROLLER_PROVIDER]), core_mjs_["ɵɵInheritDefinitionFeature"]],
     decls: 3,
     vars: 2,
-    consts: [[3, "emptyContent", "size", 4, "ngIf", "ngIfElse"], ["loading", ""], [3, "emptyContent", "size"], ["automation-id", "tui-data-list-wrapper__option", "tuiElement", "", "tuiOption", "", 3, "disabled", "value", 4, "ngFor", "ngForOf"], ["automation-id", "tui-data-list-wrapper__option", "tuiElement", "", "tuiOption", "", 3, "disabled", "value"], ["elementRef", "elementRef"], [1, "t-content"], [4, "polymorpheusOutlet", "polymorpheusOutletContext"], ["automation-id", "tui-data-list-wrapper__loader", 1, "t-loader"]],
+    consts: [[3, "emptyContent", "size", 4, "ngIf", "ngIfElse"], ["loading", ""], [3, "emptyContent", "size"], ["automation-id", "tui-data-list-wrapper__option", "tuiElement", "", "tuiOption", "", 3, "disabled", "value", "click", 4, "ngFor", "ngForOf"], ["automation-id", "tui-data-list-wrapper__option", "tuiElement", "", "tuiOption", "", 3, "disabled", "value", "click"], ["elementRef", "elementRef"], [1, "t-content"], [4, "polymorpheusOutlet", "polymorpheusOutletContext"], ["automation-id", "tui-data-list-wrapper__loader", 1, "t-loader"]],
     template: function TuiDataListWrapperComponent_Template(rf, ctx) {
       if (rf & 1) {
         core_mjs_["ɵɵtemplate"](0, TuiDataListWrapperComponent_tui_data_list_0_Template, 2, 3, "tui-data-list", 0);
@@ -9146,6 +9029,11 @@ let TuiDataListWrapperModule = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-kit-components-data-list-wrapper.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-pipes-stringify-content.js
@@ -9187,6 +9075,11 @@ let TuiStringifyContentPipeModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-kit-pipes-stringify-content.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-components-arrow.js
 
@@ -9198,6 +9091,8 @@ let TuiStringifyContentPipeModule = /*#__PURE__*/(() => {
 
 
 
+
+/** Default values for arrow options */
 function TuiArrowComponent_tui_svg_0_Template(rf, ctx) {
   if (rf & 1) {
     core_mjs_["ɵɵelement"](0, "tui-svg", 2);
@@ -9216,6 +9111,9 @@ const TUI_ARROW_DEFAULT_OPTIONS = {
   iconSmall: `tuiIconChevronDown`,
   iconLarge: `tuiIconChevronDownLarge`
 };
+/**
+ * Default parameters for arrow component
+ */
 const taiga_ui_kit_components_arrow_TUI_ARROW_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_ARROW_DEFAULT_OPTIONS);
 function tuiArrowOptionsProvider(options) {
   return tuiProvideOptions(taiga_ui_kit_components_arrow_TUI_ARROW_OPTIONS, options, TUI_ARROW_DEFAULT_OPTIONS);
@@ -9291,10 +9189,18 @@ const TUI_ARROW_DEFAULT_MODE = {
   interactive: TUI_ARROW,
   disabled: TUI_ARROW
 };
+/**
+ * Type of icon in dropdowns for interactive or disable mode
+ */
 const TUI_ARROW_MODE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_ARROW_DEFAULT_MODE);
 function tuiArrowModeProvider(options) {
   return tuiProvideOptions(TUI_ARROW_MODE, options, TUI_ARROW_DEFAULT_MODE);
 }
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-kit-components-arrow.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-directives-scroll-into-view.js
@@ -9305,6 +9211,10 @@ function tuiArrowModeProvider(options) {
 
 
 
+
+/**
+ * Directive scrolls element into view inside tui-scrollbar
+ */
 let TuiScrollIntoViewDirective = /*#__PURE__*/(() => {
   class TuiScrollIntoViewDirective {
     constructor(el, destroy$) {
@@ -9315,7 +9225,9 @@ let TuiScrollIntoViewDirective = /*#__PURE__*/(() => {
       if (!scroll) {
         return;
       }
-      (0,observable_timer/* timer */.H)(0).pipe((0,operators_takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(() => {
+      // Timeout is necessary in order to give element render cycle to get into its final spot
+      // (for example if it is inside dropdown box which has to be positioned first)
+      (0,timer/* timer */.H)(0).pipe((0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(() => {
         this.el.nativeElement.dispatchEvent(new CustomEvent(taiga_ui_core_constants/* TUI_SCROLL_INTO_VIEW */.fe, {
           bubbles: true,
           detail: this.el.nativeElement
@@ -9353,6 +9265,11 @@ let TuiScrollIntoViewModule = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-core-directives-scroll-into-view.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-components-select-option.js
@@ -9395,7 +9312,7 @@ let TuiSelectOptionComponent = /*#__PURE__*/(() => {
       this.control = control;
       this.abstractControl = abstractControl;
       this.changeDetection$ = new internal_Subject/* Subject */.x();
-      this.selected$ = (0,observable_merge/* merge */.T)(this.changeDetection$, this.control.valueChanges || observable_empty/* EMPTY */.E, (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.el.nativeElement, 'animationstart')).pipe((0,operators_startWith/* startWith */.O)(null), (0,internal_operators_map/* map */.U)(() => this.selected), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)());
+      this.selected$ = (0,merge/* merge */.T)(this.changeDetection$, this.control.valueChanges || empty/* EMPTY */.E, (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.el.nativeElement, 'animationstart')).pipe((0,startWith/* startWith */.O)(null), (0,operators_map/* map */.U)(() => this.selected), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)());
     }
     get matcher() {
       return this.host.identityMatcher || taiga_ui_cdk_constants/* TUI_DEFAULT_IDENTITY_MATCHER */.bg;
@@ -9404,6 +9321,13 @@ let TuiSelectOptionComponent = /*#__PURE__*/(() => {
       this.changeDetection$.next();
     }
     ngOnInit() {
+      /**
+       * This would cause changes inside already checked parent component (during the same change detection cycle),
+       * and it might cause ExpressionChanged error due to potential HostBinding
+       * (for example, inside {@link https://github.com/angular/angular/blob/main/packages/forms/src/directives/ng_control_status.ts#L99 NgControlStatus}).
+       * Microtask keeps it in the same frame but allows change detection to run.
+       */
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       Promise.resolve().then(() => {
         if ((0,taiga_ui_cdk_utils_miscellaneous/* tuiIsPresent */.Pc)(this.option.value) && this.host.checkOption) {
           this.host.checkOption(this.option.value);
@@ -9468,6 +9392,11 @@ let TuiSelectOptionModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-kit-components-select-option.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-pipes-month.js
 
@@ -9483,7 +9412,7 @@ let TuiMonthPipe = /*#__PURE__*/(() => {
     transform({
       month
     }) {
-      return this.months$.pipe((0,internal_operators_map/* map */.U)(months => months[month]));
+      return this.months$.pipe((0,operators_map/* map */.U)(months => months[month]));
     }
   }
   TuiMonthPipe.ɵfac = function TuiMonthPipe_Factory(t) {
@@ -9514,9 +9443,14 @@ let TuiMonthPipeModule = /*#__PURE__*/(/* unused pure expression or super */ nul
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-pipes-month.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/identity.js
-var util_identity = __webpack_require__(2737);
+var identity = __webpack_require__(2737);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-providers.js
 
 
@@ -9527,7 +9461,7 @@ var util_identity = __webpack_require__(2737);
 const TUI_MONTH_FORMATTER_PROVIDER = {
   provide: TUI_MONTH_FORMATTER,
   deps: [TuiMonthPipe],
-  useFactory: pipe => month => month ? pipe.transform(month).pipe((0,internal_operators_map/* map */.U)(formatted => `${formatted} ${month.formattedYear}`)) : (0,observable_of.of)(``)
+  useFactory: pipe => month => month ? pipe.transform(month).pipe((0,operators_map/* map */.U)(formatted => `${formatted} ${month.formattedYear}`)) : (0,of.of)(``)
 };
 const FIXED_DROPDOWN_CONTROLLER_PROVIDER = tuiDropdownOptionsProvider({
   limitWidth: `fixed`,
@@ -9536,8 +9470,13 @@ const FIXED_DROPDOWN_CONTROLLER_PROVIDER = tuiDropdownOptionsProvider({
 const TUI_VALUE_ACCESSOR_PROVIDER = {
   provide: taiga_ui_core_tokens/* TUI_VALUE_ACCESSOR */.sE,
   deps: [[new core_mjs_.Optional(), new core_mjs_.Self(), fesm2022_forms/* NG_VALUE_ACCESSOR */.JU]],
-  useFactory: util_identity/* identity */.y
+  useFactory: identity/* identity */.y
 };
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-kit-providers.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-components-select.js
@@ -9847,6 +9786,9 @@ let TuiNativeSelectGroupComponent = /*#__PURE__*/(/* unused pure expression or s
 const TUI_SELECT_DEFAULT_OPTIONS = {
   valueContent: ``
 };
+/**
+ * Default parameters for Select component
+ */
 const TUI_SELECT_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_SELECT_DEFAULT_OPTIONS);
 function tuiSelectOptionsProvider(options) {
   return tuiProvideOptions(TUI_SELECT_OPTIONS, options, TUI_SELECT_DEFAULT_OPTIONS);
@@ -10048,6 +9990,11 @@ let taiga_ui_kit_components_select_TuiSelectModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-kit-components-select.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-checked.js
 
@@ -10121,6 +10068,11 @@ let TuiCheckedModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-directives-checked.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-focused.js
 
@@ -10129,12 +10081,18 @@ let TuiCheckedModule = /*#__PURE__*/(() => {
 
 
 
+
+/**
+ * Directive to monitor focus/blur status, works with focusIn/focus-out
+ * instead of focus/blur to sync events order with Internet Explorer and
+ * other focus related directives that require bubbling
+ */
 let TuiFocusedDirective = /*#__PURE__*/(() => {
   class TuiFocusedDirective {
     constructor({
       nativeElement
     }, zone) {
-      this.tuiFocusedChange = (0,observable_merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, 'focusin'), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, 'focusout')).pipe((0,internal_operators_map/* map */.U)(() => (0,taiga_ui_cdk_utils_focus/* tuiIsNativeFocused */.V8)(nativeElement)), (0,operators_startWith/* startWith */.O)(false), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), skip(1), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(zone));
+      this.tuiFocusedChange = (0,merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, 'focusin'), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, 'focusout')).pipe((0,operators_map/* map */.U)(() => (0,taiga_ui_cdk_utils_focus/* tuiIsNativeFocused */.V8)(nativeElement)), (0,startWith/* startWith */.O)(false), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), skip(1), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(zone));
     }
   }
   TuiFocusedDirective.ɵfac = function TuiFocusedDirective_Factory(t) {
@@ -10167,12 +10125,23 @@ let TuiFocusedModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-directives-focused.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-focus-visible.js
 
 
 
 
+
+/**
+ * Directive to imitate :focus-visible
+ * (https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)
+ * in browsers that do not support it
+ */
 let TuiFocusVisibleDirective = /*#__PURE__*/(() => {
   class TuiFocusVisibleDirective {
     constructor(tuiFocusVisibleChange) {
@@ -10209,6 +10178,11 @@ let TuiFocusVisibleModule = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-cdk-directives-focus-visible.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-pressed.js
@@ -10256,6 +10230,11 @@ let TuiPressedModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-directives-pressed.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-components-toggle.js
 
@@ -10270,6 +10249,8 @@ let TuiPressedModule = /*#__PURE__*/(() => {
 
 
 
+
+/** Default values for the toggle options. */
 const taiga_ui_kit_components_toggle_c0 = ["focusableElement"];
 function TuiToggleComponent_tui_loader_2_Template(rf, ctx) {
   if (rf & 1) {
@@ -10357,6 +10338,9 @@ const TUI_TOGGLE_DEFAULT_OPTIONS = {
   showIcons: false,
   size: `m`
 };
+/**
+ * Default parameters for Toggle component
+ */
 const TUI_TOGGLE_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_TOGGLE_DEFAULT_OPTIONS);
 function tuiToggleOptionsProvider(options) {
   return tuiProvideOptions(TUI_TOGGLE_OPTIONS, options, TUI_TOGGLE_DEFAULT_OPTIONS);
@@ -10396,6 +10380,7 @@ let TuiToggleComponent = /*#__PURE__*/(() => {
     get hostMode() {
       return this.modeDirective ? this.modeDirective.mode : null;
     }
+    /** @deprecated use 'value' setter */
     onChecked(checked) {
       this.value = checked;
     }
@@ -10500,6 +10485,11 @@ let TuiToggleModule = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-kit-components-toggle.js.map
 ;// CONCATENATED MODULE: ./node_modules/@maskito/core/index.esm.js
@@ -12842,12 +12832,27 @@ var taiga_ui_core_components_button = __webpack_require__(631);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-utils-format.js
 
 
+
+/**
+ * Capitalizes a given string, replacing it with a lowercase string and making
+ * the first letter of each word uppercase.
+ *
+ * @param value the input string
+ * @return the capitalized string
+ */
 function tuiCapitalize(value) {
   return value.toLowerCase().replace(/(?:^|\s)\S/g, char => char.toUpperCase());
 }
 function taiga_ui_core_utils_format_tuiCapitalizeFirstLetter(value) {
   return `${value.charAt(0).toUpperCase()}${value.slice(1)}`;
 }
+
+/**
+ * Convert number to string with replacing exponent part on decimals
+ *
+ * @param value the number
+ * @return string representation of a number
+ */
 function tuiNumberToStringWithoutExp(value) {
   const valueAsString = String(value);
   const [numberPart, expPart] = valueAsString.split(`e-`);
@@ -12859,10 +12864,27 @@ function tuiNumberToStringWithoutExp(value) {
   }
   return valueWithoutExp;
 }
+
+/**
+ * Return fractional part of number
+ *
+ * @param value the number
+ * @param precision number of digits of decimal part, null to keep untouched
+ * @return the fractional part of number
+ */
 function tuiGetFractionPartPadded(value, precision) {
   const [, fractionPartPadded = ``] = tuiNumberToStringWithoutExp(value).split(`.`);
   return (0,taiga_ui_cdk_utils_miscellaneous/* tuiIsNumber */.dt)(precision) ? fractionPartPadded.slice(0, Math.max(0, precision)) : fractionPartPadded;
 }
+
+/**
+ * Formats number adding a thousand separators and correct decimal separator
+ * padding decimal part with zeroes to given length
+ *
+ * @param value the input number
+ * @param settings See {@link TuiNumberFormatSettings}
+ * @return the formatted string
+ */
 function tuiFormatNumber(value, settings = {}) {
   const {
     decimalLimit,
@@ -12898,6 +12920,26 @@ function tuiFormatNumber(value, settings = {}) {
   }
   return fractionPartPadded ? result + decimalSeparator + fractionPartPadded : result;
 }
+
+/**
+ * TODO: delete in v4.0
+ * @deprecated Use {@link https://maskito.dev/core-concepts/transformer maskitoTransform} instead<br/>
+ * @example
+ * import {maskitoTransform} from '@maskito/core';
+ *
+ * const mask = {
+ *     mask: ['+', '1', ' ', /\d/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
+ * };
+ * maskitoTransform('12125552368', mask); // +1 (212) 555-2368
+ * ___
+ * Formats a string with the phone format +7XXXXXXXXXXXX or XXXXXXXXXXXX,
+ * adding parentheses and hyphens.
+ *
+ * @param value the input string
+ * @param countryCode a country code
+ * @param phoneMask a phone number mask
+ * @return the formatted phone string of the form +7 XXX XXX-XX-XX
+ */
 function tuiFormatPhone(value, countryCode, phoneMask) {
   if (!value) {
     return ``;
@@ -12929,6 +12971,11 @@ function tuiFormatPhone(value, countryCode, phoneMask) {
 function tuiOtherDecimalSymbol(symbol) {
   return symbol === `.` ? `,` : `.`;
 }
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-core-utils-format.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-directives-value-accessor.js
@@ -12964,6 +13011,11 @@ let TuiValueAccessorModule = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-kit-directives-value-accessor.js.map
 ;// CONCATENATED MODULE: ./node_modules/@maskito/angular/fesm2015/maskito-angular.js
@@ -13125,6 +13177,8 @@ let MaskitoModule = /*#__PURE__*/(() => {
 
 
 
+
+/** Default values for the input number options. */
 function TuiInputNumberComponent_div_4_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     core_mjs_["ɵɵelementContainerStart"](0);
@@ -13210,6 +13264,9 @@ const TUI_INPUT_NUMBER_DEFAULT_OPTIONS = {
   decimal: `not-zero`,
   precision: 2
 };
+/**
+ * Default parameters for input count component
+ */
 const TUI_INPUT_NUMBER_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_INPUT_NUMBER_DEFAULT_OPTIONS);
 function tuiInputNumberOptionsProvider(options) {
   return tuiProvideOptions(TUI_INPUT_NUMBER_OPTIONS, options, TUI_INPUT_NUMBER_DEFAULT_OPTIONS);
@@ -13231,7 +13288,9 @@ let TuiInputNumberComponent = /*#__PURE__*/(() => {
       this.decimal = this.options.decimal;
       this.precision = this.options.precision;
       this.step = this.options.step;
+      /** @deprecated use `tuiTextfieldPrefix` from {@link TuiTextfieldControllerModule} instead */
       this.prefix = '';
+      /** @deprecated use `tuiTextfieldPostfix` from {@link TuiTextfieldControllerModule} instead */
       this.postfix = '';
       this.polymorpheusValueContent = taiga_ui_cdk_constants/* EMPTY_QUERY */.Mm;
     }
@@ -13256,6 +13315,7 @@ let TuiInputNumberComponent = /*#__PURE__*/(() => {
     }
     get inputMode() {
       if (this.isIOS && this.isNegativeAllowed) {
+        // iPhone does not have minus sign if inputMode is equal to 'numeric' / 'decimal'
         return 'text';
       }
       return this.decimal === 'never' ? 'numeric' : 'decimal';
@@ -13527,6 +13587,11 @@ let TuiInputNumberModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-kit-components-input-number.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-components-input.js
 
@@ -13697,6 +13762,11 @@ let TuiInputModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-kit-components-input.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/pairwise.js
 var pairwise = __webpack_require__(9384);
@@ -13821,6 +13891,7 @@ let TuiExpandComponent = /*#__PURE__*/(() => {
     }
     retrigger(state) {
       this.state = State.Prepared;
+      // We need delay to re-trigger CSS height transition from the correct number
       setTimeout(() => {
         if (this.state !== State.Prepared) {
           return;
@@ -13919,6 +13990,11 @@ let TuiExpandModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-components-expand.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-group.js
 
@@ -14009,6 +14085,11 @@ let TuiGroupModule = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-core-components-group.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-components-accordion.js
@@ -14293,8 +14374,8 @@ let TuiAccordionComponent = /*#__PURE__*/(() => {
         accordionItems
       } = this;
       const rows$ = (0,taiga_ui_cdk_observables/* tuiQueryListChanges */.ll)(accordionItems);
-      const newOpenRow$ = rows$.pipe((0,pairwise/* pairwise */.G)(), (0,internal_operators_map/* map */.U)(([previous, current]) => current.find(item => !previous.includes(item) && item.open)), (0,operators_filter/* filter */.h)(taiga_ui_cdk_utils_miscellaneous/* tuiIsPresent */.Pc));
-      const rowsOpen$ = (0,observable_merge/* merge */.T)(rows$.pipe((0,internal_operators_switchMap/* switchMap */.w)(rows => (0,observable_merge/* merge */.T)(...rows.map(row => row.openChange.pipe((0,operators_filter/* filter */.h)(util_identity/* identity */.y), (0,internal_operators_map/* map */.U)(() => row)))))), newOpenRow$).pipe((0,operators_filter/* filter */.h)(() => this.closeOthers), (0,operators_takeUntil/* takeUntil */.R)(this.destroy$));
+      const newOpenRow$ = rows$.pipe((0,pairwise/* pairwise */.G)(), (0,operators_map/* map */.U)(([previous, current]) => current.find(item => !previous.includes(item) && item.open)), (0,filter/* filter */.h)(taiga_ui_cdk_utils_miscellaneous/* tuiIsPresent */.Pc));
+      const rowsOpen$ = (0,merge/* merge */.T)(rows$.pipe((0,operators_switchMap/* switchMap */.w)(rows => (0,merge/* merge */.T)(...rows.map(row => row.openChange.pipe((0,filter/* filter */.h)(identity/* identity */.y), (0,operators_map/* map */.U)(() => row)))))), newOpenRow$).pipe((0,filter/* filter */.h)(() => this.closeOthers), (0,takeUntil/* takeUntil */.R)(this.destroy$));
       rowsOpen$.subscribe(currentRow => {
         accordionItems.forEach(row => {
           if (currentRow !== row) {
@@ -14365,8 +14446,19 @@ let TuiAccordionModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-kit-components-accordion.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-utils-format.js
+/**
+ * Converts a string to an HSL color
+ * @param value string to convert
+ * @return HSL color string
+ */
+// @bad TODO: convert stringHashToHsl to stringHashToRgb
 function tuiStringHashToHsl(value) {
   if (value === ``) {
     return ``;
@@ -14381,6 +14473,11 @@ function tuiStringHashToHsl(value) {
   const lightness = 80 + hash % 5;
   return `hsl(${hue},${saturation}%,${lightness}%)`;
 }
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-kit-utils-format.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-components-tag.js
@@ -14397,6 +14494,8 @@ function tuiStringHashToHsl(value) {
 
 
 
+
+/** Default values for the tag options. */
 const taiga_ui_kit_components_tag_c0 = ["input"];
 function TuiTagComponent_div_1_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
@@ -14479,6 +14578,9 @@ const TUI_TAG_DEFAULT_OPTIONS = {
   status: `default`,
   autoColor: false
 };
+/**
+ * Default parameters for Tag component
+ */
 const TUI_TAG_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_TAG_DEFAULT_OPTIONS);
 function tuiTagOptionsProvider(options) {
   return tuiProvideOptions(TUI_TAG_OPTIONS, options, TUI_TAG_DEFAULT_OPTIONS);
@@ -14490,6 +14592,7 @@ let TuiTagComponent = /*#__PURE__*/(() => {
       this.mode$ = mode$;
       this.options = options;
       this.icons = icons;
+      // TODO: Possibly implement standard focus mechanisms and outline
       this.value = '';
       this.editable = false;
       this.separator = ',';
@@ -14687,6 +14790,11 @@ let TuiTagModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-kit-components-tag.js.map
 // EXTERNAL MODULE: consume shared module (default) @angular/router@=16.2.11 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
 var router_mjs_ = __webpack_require__(7250);
@@ -14749,7 +14857,7 @@ let MutationObserverDirective = /*#__PURE__*/(/* unused pure expression or super
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 let MutationObserverService = /*#__PURE__*/(() => {
-  class MutationObserverService extends internal_Observable/* Observable */.y {
+  class MutationObserverService extends Observable/* Observable */.y {
     constructor({
       nativeElement
     }, config) {
@@ -14825,6 +14933,10 @@ var debounceTime = __webpack_require__(3620);
 
 
 
+
+/**
+ * Stream of tab activation events
+ */
 const taiga_ui_kit_components_tabs_c0 = ["tuiTab", ""];
 function TuiTabComponent_ng_container_0_Template(rf, ctx) {
   if (rf & 1) {
@@ -14988,8 +15100,8 @@ const TUI_TAB_PROVIDERS = [taiga_ui_cdk_services/* TuiDestroyService */.a3, taig
   useFactory: ({
     nativeElement
   }, routerLinkActiveService, mutationObserverService, routerLinkActive) => {
-    const mutationObserver = routerLinkActive && mutationObserverService ? mutationObserverService.pipe((0,operators_filter/* filter */.h)(() => routerLinkActive.isActive)) : observable_empty/* EMPTY */.E;
-    return (0,observable_merge/* merge */.T)(mutationObserver, routerLinkActiveService.pipe((0,operators_filter/* filter */.h)(util_identity/* identity */.y)), nativeElement.matches(`button`) ? (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, `click`) : observable_empty/* EMPTY */.E).pipe((0,internal_operators_map/* map */.U)(() => nativeElement.dispatchEvent(new CustomEvent(TUI_TAB_ACTIVATE, {
+    const mutationObserver = routerLinkActive && mutationObserverService ? mutationObserverService.pipe((0,filter/* filter */.h)(() => routerLinkActive.isActive)) : empty/* EMPTY */.E;
+    return (0,merge/* merge */.T)(mutationObserver, routerLinkActiveService.pipe((0,filter/* filter */.h)(identity/* identity */.y)), nativeElement.matches(`button`) ? (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, `click`) : empty/* EMPTY */.E).pipe((0,operators_map/* map */.U)(() => nativeElement.dispatchEvent(new CustomEvent(TUI_TAB_ACTIVATE, {
       bubbles: true
     }))));
   }
@@ -15134,6 +15246,9 @@ const TUI_TABS_DEFAULT_OPTIONS = {
   itemsLimit: Infinity,
   minMoreWidth: 0
 };
+/**
+ * Default parameters for Tabs component
+ */
 const TUI_TABS_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_TABS_DEFAULT_OPTIONS);
 function tuiTabsOptionsProvider(options) {
   return tuiProvideOptions(TUI_TABS_OPTIONS, options, TUI_TABS_DEFAULT_OPTIONS);
@@ -15147,10 +15262,10 @@ let TuiUnderlineComponent = /*#__PURE__*/(() => {
       this.animationFrame$ = animationFrame$;
       this.mode$ = mode$;
       this.el$ = new ReplaySubject/* ReplaySubject */.t(1);
-      this.refresh$ = this.el$.pipe((0,internal_operators_switchMap/* switchMap */.w)(element => element ? this.animationFrame$.pipe((0,internal_operators_map/* map */.U)(() => element), (0,taiga_ui_cdk_observables/* tuiZonefree */.fL)(this.zone)) : (0,observable_of.of)(null)), (0,operators_share/* share */.B)());
-      this.transition$ = asCallable(this.el$.pipe((0,internal_operators_map/* map */.U)(element => element && 'all'), (0,debounceTime/* debounceTime */.b)(50)));
-      this.transform$ = asCallable(this.refresh$.pipe((0,internal_operators_map/* map */.U)(element => element ? `translate3d(${element.offsetLeft}px, 0, 0)` : null)));
-      this.width$ = asCallable(this.refresh$.pipe((0,internal_operators_map/* map */.U)(element => (element === null || element === void 0 ? void 0 : element.clientWidth) || 0)));
+      this.refresh$ = this.el$.pipe((0,operators_switchMap/* switchMap */.w)(element => element ? this.animationFrame$.pipe((0,operators_map/* map */.U)(() => element), (0,taiga_ui_cdk_observables/* tuiZonefree */.fL)(this.zone)) : (0,of.of)(null)), (0,share/* share */.B)());
+      this.transition$ = asCallable(this.el$.pipe((0,operators_map/* map */.U)(element => element && 'all'), (0,debounceTime/* debounceTime */.b)(50)));
+      this.transform$ = asCallable(this.refresh$.pipe((0,operators_map/* map */.U)(element => element ? `translate3d(${element.offsetLeft}px, 0, 0)` : null)));
+      this.width$ = asCallable(this.refresh$.pipe((0,operators_map/* map */.U)(element => (element === null || element === void 0 ? void 0 : element.clientWidth) || 0)));
       nativeElement['$.style.transitionProperty'] = this.transition$;
       nativeElement['$.style.transform'] = this.transform$;
       nativeElement['$.style.width.px'] = this.width$;
@@ -15160,7 +15275,7 @@ let TuiUnderlineComponent = /*#__PURE__*/(() => {
     }
   }
   TuiUnderlineComponent.ɵfac = function TuiUnderlineComponent_Factory(t) {
-    return new (t || TuiUnderlineComponent)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.NgZone), core_mjs_["ɵɵdirectiveInject"](fesm2015_ng_web_apis_common/* ANIMATION_FRAME */.L1), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_MODE */.Au));
+    return new (t || TuiUnderlineComponent)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.NgZone), core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* ANIMATION_FRAME */.L1), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_MODE */.Au));
   };
   TuiUnderlineComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiUnderlineComponent,
@@ -15201,13 +15316,15 @@ let TuiTabsComponent = /*#__PURE__*/(() => {
       this.tabs = tabs;
       this.children = taiga_ui_cdk_constants/* EMPTY_QUERY */.Mm;
       this.underline = this.options.underline;
-      resize$.pipe((0,operators_filter/* filter */.h)(() => this.underline)).subscribe(() => {
+      resize$.pipe((0,filter/* filter */.h)(() => this.underline)).subscribe(() => {
         cdr.detectChanges();
       });
     }
+    /** @deprecated use `activeItemIndex` from {@link TuiTabsDirective} instead */
     get activeItemIndex() {
       return this.tabs.activeItemIndex;
     }
+    /** @deprecated use `activeItemIndex` from {@link TuiTabsDirective} instead */
     set activeItemIndex(index) {
       this.tabs.activeItemIndex = index;
     }
@@ -15372,7 +15489,9 @@ const TUI_TABS_PROVIDERS = [taiga_ui_cdk_services/* TuiResizeService */.tl, taig
     body
   }, {
     nativeElement
-  }, cdr) => (0,observable_merge/* merge */.T)(resize$, mutations$.pipe((0,tap/* tap */.b)(() => cdr.detectChanges()))).pipe((0,operators_filter/* filter */.h)(() => body.contains(nativeElement)), (0,debounceTime/* debounceTime */.b)(0), (0,operators_startWith/* startWith */.O)(null), (0,operators_takeUntil/* takeUntil */.R)(destroy$))
+  }, cdr) => (0,merge/* merge */.T)(resize$, mutations$.pipe((0,tap/* tap */.b)(() => cdr.detectChanges()))).pipe(
+  // Ignoring cases when host is detached from DOM
+  (0,filter/* filter */.h)(() => body.contains(nativeElement)), (0,debounceTime/* debounceTime */.b)(0), (0,startWith/* startWith */.O)(null), (0,takeUntil/* takeUntil */.R)(destroy$))
 }];
 let TuiTabsWithMoreComponent = /*#__PURE__*/(() => {
   class TuiTabsWithMoreComponent {
@@ -15396,6 +15515,7 @@ let TuiTabsWithMoreComponent = /*#__PURE__*/(() => {
       this.activeItemIndex = activeItemIndex;
       this.maxIndex = this.getMaxIndex();
     }
+    // TODO: Improve performance
     get tabs() {
       return Array.from(this.el.nativeElement.querySelectorAll('[tuiTab]'));
     }
@@ -15427,7 +15547,7 @@ let TuiTabsWithMoreComponent = /*#__PURE__*/(() => {
       return Math.min(this.itemsLimit - offset, this.maxIndex);
     }
     ngAfterViewInit() {
-      this.refresh$.pipe((0,internal_operators_map/* map */.U)(() => this.getMaxIndex()), (0,operators_filter/* filter */.h)(maxIndex => this.maxIndex !== maxIndex)).subscribe(maxIndex => {
+      this.refresh$.pipe((0,operators_map/* map */.U)(() => this.getMaxIndex()), (0,filter/* filter */.h)(maxIndex => this.maxIndex !== maxIndex)).subscribe(maxIndex => {
         this.maxIndex = maxIndex;
         this.cdr.detectChanges();
       });
@@ -15511,6 +15631,7 @@ let TuiTabsWithMoreComponent = /*#__PURE__*/(() => {
         const activeDisplaced = exposeActive && activeItemIndex > maxIndex;
         const activeOffset = activeDisplaced ? activeWidth + margin : 0;
         const currentWidth = total + activeOffset + moreWidth + margin;
+        // Needed for different rounding of visible and hidden elements scrollWidth
         const safetyOffset = (0,taiga_ui_cdk_utils_math/* tuiToInt */.HW)(this.maxIndex === maxIndex - 1);
         if (currentWidth + safetyOffset < clientWidth) {
           return maxIndex;
@@ -15641,6 +15762,11 @@ let TuiTabsModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-kit-components-tabs.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-components-radio.js
 
@@ -15655,6 +15781,8 @@ let TuiTabsModule = /*#__PURE__*/(() => {
 
 
 
+
+/** Default values for the checkbox options. */
 const taiga_ui_kit_components_radio_c0 = (/* unused pure expression or super */ null && (["focusableElement"]));
 function TuiRadioComponent_div_1_Template(rf, ctx) {
   if (rf & 1) {
@@ -15672,6 +15800,9 @@ const TUI_RADIO_DEFAULT_OPTIONS = {
     checked: taiga_ui_core_enums/* TuiAppearance */.Nm.Primary
   }
 };
+/**
+ * Default parameters for Radio component
+ */
 const TUI_RADIO_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_RADIO_DEFAULT_OPTIONS);
 function tuiRadioOptionsProvider(options) {
   return tuiProvideOptions(TUI_RADIO_OPTIONS, options, TUI_RADIO_DEFAULT_OPTIONS);
@@ -15809,6 +15940,11 @@ let TuiRadioModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-kit-components-radio.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-components-radio-block.js
 
@@ -15868,6 +16004,7 @@ let TuiRadioBlockComponent = /*#__PURE__*/(/* unused pure expression or super */
     onFocusVisible(focusVisible) {
       this.updateFocusVisible(focusVisible);
     }
+    /** @deprecated use 'value' setter */
     onModelChange(value) {
       this.value = value;
     }
@@ -15959,6 +16096,11 @@ let TuiRadioBlockModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-kit-components-radio-block.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-primitive-checkbox.js
 
@@ -15971,6 +16113,8 @@ let TuiRadioBlockModule = /*#__PURE__*/(() => {
 
 
 
+
+/** Default values for the checkbox options. */
 function TuiPrimitiveCheckboxComponent_tui_svg_1_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelement(0, "tui-svg", 2);
@@ -16004,6 +16148,9 @@ const TUI_CHECKBOX_DEFAULT_OPTIONS = {
     }) => $implicit === `m` ? `tuiIconMinus` : `tuiIconMinusLarge`
   }
 };
+/**
+ * Default parameters for checkbox component
+ */
 const taiga_ui_core_components_primitive_checkbox_TUI_CHECKBOX_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_CHECKBOX_DEFAULT_OPTIONS);
 function tuiCheckboxOptionsProvider(options) {
   return tuiProvideOptions(taiga_ui_core_components_primitive_checkbox_TUI_CHECKBOX_OPTIONS, options, TUI_CHECKBOX_DEFAULT_OPTIONS);
@@ -16109,6 +16256,11 @@ let TuiPrimitiveCheckboxModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-components-primitive-checkbox.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-components-checkbox.js
 
@@ -16137,6 +16289,7 @@ let taiga_ui_kit_components_checkbox_TuiCheckboxComponent = /*#__PURE__*/(/* unu
     get computedFocusable() {
       return this.interactive && this.focusable;
     }
+    /** @deprecated use 'value' setter */
     onChecked(checked) {
       this.value = checked;
     }
@@ -16219,6 +16372,11 @@ let TuiCheckboxModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-kit-components-checkbox.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-components-checkbox-labeled.js
 
@@ -16249,6 +16407,7 @@ let TuiCheckboxLabeledComponent = /*#__PURE__*/(/* unused pure expression or sup
     onFocused(focused) {
       this.updateFocused(focused);
     }
+    /** @deprecated use 'value' setter */
     onModelChange(value) {
       this.value = value;
     }
@@ -16334,6 +16493,11 @@ let TuiCheckboxLabeledModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-kit-components-checkbox-labeled.js.map
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-link.js
 var taiga_ui_core_components_link = __webpack_require__(2114);
@@ -16382,6 +16546,11 @@ let TuiThemeNightModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-components-theme-night.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-focus-trap.js
 
@@ -16396,6 +16565,12 @@ let TuiFocusTrapDirective = /*#__PURE__*/(() => {
       this.el = el;
       this.renderer = renderer;
       this.activeElement = (0,taiga_ui_cdk_utils_focus/* tuiGetNativeFocused */.ie)(this.doc);
+      /**
+       * This would cause currently focused element to lose focus,
+       * but it might cause ExpressionChanged error due to potential HostBinding.
+       * Microtask keeps it in the same frame but allows change detection to run
+       */
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       Promise.resolve().then(() => {
         this.el.nativeElement.focus();
       });
@@ -16420,6 +16595,13 @@ let TuiFocusTrapDirective = /*#__PURE__*/(() => {
     }
     ngOnDestroy() {
       (0,taiga_ui_cdk_utils_focus/* tuiBlurNativeFocused */.hp)(this.doc);
+      /**
+       * HostListeners are triggered even after ngOnDestroy
+       * {@link https://github.com/angular/angular/issues/38100}
+       * so we need to delay it but stay in the same sync cycle,
+       * therefore using Promise instead of setTimeout
+       */
+      // eslint-disable-next-line
       Promise.resolve().then(() => {
         if ((0,taiga_ui_cdk_utils_dom/* tuiIsHTMLElement */.dW)(this.activeElement)) {
           this.activeElement.focus();
@@ -16464,6 +16646,11 @@ let TuiFocusTrapModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-directives-focus-trap.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-components-dialog-host.js
 
@@ -16486,6 +16673,10 @@ let TuiFocusTrapModule = /*#__PURE__*/(() => {
 
 
 
+
+/**
+ * Is closing dialog on browser backward navigation enabled
+ */
 function TuiDialogHostComponent_section_0_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     core_mjs_["ɵɵelementContainer"](0);
@@ -16536,7 +16727,7 @@ function TuiDialogHostComponent_div_1_Template(rf, ctx) {
     core_mjs_["ɵɵclassProp"]("t-overlay_visible", ctx_r1.dialogs.length);
   }
 }
-const TUI_DIALOG_CLOSES_ON_BACK = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)((0,observable_of.of)(false));
+const TUI_DIALOG_CLOSES_ON_BACK = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)((0,of.of)(false));
 const FAKE_HISTORY_STATE = {
   label: 'ignoreMe'
 };
@@ -16555,7 +16746,9 @@ let TuiDialogHostComponent = /*#__PURE__*/(() => {
       this.dialogs = [];
     }
     ngOnInit() {
-      (0,observable_combineLatest/* combineLatest */.a)(this.dialogsByType).pipe((0,internal_operators_map/* map */.U)(arr => [].concat(...arr).sort((a, b) => a.createdAt - b.createdAt)), (0,operators_takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(dialogs => {
+      // Due to this view being parallel to app content, `markForCheck` from `async` pipe
+      // can happen after view was checked, so calling `detectChanges` instead
+      (0,observable_combineLatest/* combineLatest */.a)(this.dialogsByType).pipe((0,operators_map/* map */.U)(arr => [].concat(...arr).sort((a, b) => a.createdAt - b.createdAt)), (0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(dialogs => {
         this.dialogs = dialogs;
         this.cdr.markForCheck();
         this.doc.documentElement.classList.toggle('t-overscroll-none', !!dialogs.length);
@@ -16645,6 +16838,11 @@ let TuiDialogHostModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-components-dialog-host.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-components-alert-host.js
 
@@ -16702,7 +16900,9 @@ let TuiAlertHostComponent = /*#__PURE__*/(() => {
       });
     }
     ngOnInit() {
-      (0,observable_combineLatest/* combineLatest */.a)(this.allAlerts).pipe((0,operators_takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(alerts => {
+      // Due to this view being parallel to app content, `markForCheck` from `async` pipe
+      // can happen after view was checked, so calling `detectChanges` instead
+      (0,observable_combineLatest/* combineLatest */.a)(this.allAlerts).pipe((0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(alerts => {
         this.alerts = alerts;
         this.cdr.detectChanges();
       });
@@ -16754,6 +16954,11 @@ let TuiAlertHostModule = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-cdk-components-alert-host.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-internal-svg-defs-host.js
@@ -16821,8 +17026,9 @@ let TuiSvgDefsHostComponent = /*#__PURE__*/(() => {
       this.isBrowser = true;
       this.isBrowser = !(0,common_mjs_.isPlatformServer)(platformId);
     }
+    // @bad TODO: Looks like it could be async piped but it was probably written like that for a reason
     ngOnInit() {
-      this.svgService.items$.pipe((0,operators_takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(defsMap => {
+      this.svgService.items$.pipe((0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(defsMap => {
         this.items = defsMap.values();
         this.cdr.detectChanges();
       });
@@ -16878,6 +17084,11 @@ let TuiSvgDefsHostModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-internal-svg-defs-host.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-hints-host.js
 
@@ -16923,7 +17134,9 @@ let TuiHintsHostComponent = /*#__PURE__*/(() => {
       this.hints = [];
     }
     ngOnInit() {
-      this.hints$.pipe((0,operators_takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(hints => {
+      // Due to this view being parallel to app content, `markForCheck` from `async` pipe
+      // can happen after view was checked, so calling `detectChanges` instead
+      this.hints$.pipe((0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(hints => {
         this.hints = hints;
         this.cdr.detectChanges();
       });
@@ -16976,6 +17189,11 @@ let TuiHintsHostModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-components-hints-host.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-root.js
 
@@ -17012,10 +17230,10 @@ let TuiRootComponent = /*#__PURE__*/(() => {
       this.breakpoint = breakpoint;
       this.isIOS = isIOS;
       this.isAndroid = isAndroid;
-      this.isMobileRes$ = this.breakpoint.pipe((0,internal_operators_map/* map */.U)(breakpoint => breakpoint === 'mobile'));
-      this.scrollbars$ = this.dialogs.length && !this.isMobile ? (0,observable_combineLatest/* combineLatest */.a)([...this.dialogs]).pipe((0,internal_operators_map/* map */.U)(dialogs => !dialogs.some(({
+      this.isMobileRes$ = this.breakpoint.pipe((0,operators_map/* map */.U)(breakpoint => breakpoint === 'mobile'));
+      this.scrollbars$ = this.dialogs.length && !this.isMobile ? (0,observable_combineLatest/* combineLatest */.a)([...this.dialogs]).pipe((0,operators_map/* map */.U)(dialogs => !dialogs.some(({
         length
-      }) => length)), (0,debounceTime/* debounceTime */.b)(0)) : (0,observable_of.of)(!this.isMobile);
+      }) => length)), (0,debounceTime/* debounceTime */.b)(0)) : (0,of.of)(!this.isMobile);
       body.setAttribute('data-tui-theme', theme.toLowerCase());
     }
   }
@@ -17025,7 +17243,7 @@ let TuiRootComponent = /*#__PURE__*/(() => {
   TuiRootComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiRootComponent,
     selectors: [["tui-root"]],
-    hostAttrs: ["data-tui-version", "3.51.0"],
+    hostAttrs: ["data-tui-version", "3.52.0"],
     hostVars: 7,
     hostBindings: function TuiRootComponent_HostBindings(rf, ctx) {
       if (rf & 1) {
@@ -17091,6 +17309,11 @@ let TuiRootModule = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-core-components-root.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/isObservable.js
@@ -17190,24 +17413,30 @@ const TUI_DIALOG_DEFAULT_OPTIONS = {
   label: ``,
   header: ``
 };
-const TUI_DIALOGS_CLOSE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(observable_empty/* EMPTY */.E);
+/**
+ * A stream to close dialogs
+ */
+const TUI_DIALOGS_CLOSE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(empty/* EMPTY */.E);
+/**
+ * Default parameters for dialog component
+ */
 const TUI_DIALOG_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_DIALOG_DEFAULT_OPTIONS);
 function tuiDialogOptionsProvider(options) {
   return tuiProvideOptions(TUI_DIALOG_OPTIONS, options, TUI_DIALOG_DEFAULT_OPTIONS);
 }
 const SCROLLBAR_PLACEHOLDER = 17;
 let TuiDialogCloseService = /*#__PURE__*/(() => {
-  class TuiDialogCloseService extends internal_Observable/* Observable */.y {
+  class TuiDialogCloseService extends Observable/* Observable */.y {
     constructor(win, doc, el) {
-      super(subscriber => (0,observable_merge/* merge */.T)(this.esc$, this.mousedown$).subscribe(subscriber));
+      super(subscriber => (0,merge/* merge */.T)(this.esc$, this.mousedown$).subscribe(subscriber));
       this.win = win;
       this.doc = doc;
       this.el = el;
-      this.esc$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, `keydown`).pipe((0,operators_filter/* filter */.h)(event => {
+      this.esc$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, `keydown`).pipe((0,filter/* filter */.h)(event => {
         const target = (0,taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA)(event);
         return event.key === `Escape` && !event.defaultPrevented && (this.element.contains(target) || this.isOutside(target));
       }));
-      this.mousedown$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, `mousedown`).pipe((0,operators_filter/* filter */.h)(event => (0,taiga_ui_core_utils_dom/* tuiGetViewportWidth */.ic)(this.win) - event.clientX > SCROLLBAR_PLACEHOLDER && this.isOutside((0,taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA)(event))), (0,internal_operators_switchMap/* switchMap */.w)(() => (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, `mouseup`).pipe((0,operators_take/* take */.q)(1), (0,internal_operators_map/* map */.U)(taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA), (0,operators_filter/* filter */.h)(target => this.isOutside(target)))));
+      this.mousedown$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, `mousedown`).pipe((0,filter/* filter */.h)(event => (0,taiga_ui_core_utils_dom/* tuiGetViewportWidth */.ic)(this.win) - event.clientX > SCROLLBAR_PLACEHOLDER && this.isOutside((0,taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA)(event))), (0,operators_switchMap/* switchMap */.w)(() => (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, `mouseup`).pipe((0,take/* take */.q)(1), (0,operators_map/* map */.U)(taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA), (0,filter/* filter */.h)(target => this.isOutside(target)))));
     }
     get element() {
       return this.el.nativeElement;
@@ -17217,7 +17446,7 @@ let TuiDialogCloseService = /*#__PURE__*/(() => {
     }
   }
   TuiDialogCloseService.ɵfac = function TuiDialogCloseService_Factory(t) {
-    return new (t || TuiDialogCloseService)(core_mjs_["ɵɵinject"](fesm2015_ng_web_apis_common/* WINDOW */.m9), core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵinject"](core_mjs_.ElementRef));
+    return new (t || TuiDialogCloseService)(core_mjs_["ɵɵinject"](ng_web_apis_common/* WINDOW */.m9), core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵinject"](core_mjs_.ElementRef));
   };
   TuiDialogCloseService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
     token: TuiDialogCloseService,
@@ -17252,7 +17481,7 @@ let TuiDialogComponent = /*#__PURE__*/(() => {
         }
       };
       this.close$ = new internal_Subject/* Subject */.x();
-      (0,observable_merge/* merge */.T)(this.close$.pipe((0,internal_operators_switchMap/* switchMap */.w)(() => toObservable(context.closeable))), dialogClose$.pipe((0,internal_operators_switchMap/* switchMap */.w)(() => toObservable(context.dismissible))), close$.pipe((0,internal_operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_TRUE_HANDLER */.Ye))).pipe((0,operators_filter/* filter */.h)(Boolean), (0,operators_takeUntil/* takeUntil */.R)(destroy$)).subscribe(() => {
+      (0,merge/* merge */.T)(this.close$.pipe((0,operators_switchMap/* switchMap */.w)(() => toObservable(context.closeable))), dialogClose$.pipe((0,operators_switchMap/* switchMap */.w)(() => toObservable(context.dismissible))), close$.pipe((0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_TRUE_HANDLER */.Ye))).pipe((0,filter/* filter */.h)(Boolean), (0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(() => {
         this.close();
       });
     }
@@ -17327,7 +17556,7 @@ let TuiDialogComponent = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 function toObservable(valueOrStream) {
-  return (0,isObservable/* isObservable */.b)(valueOrStream) ? valueOrStream : (0,observable_of.of)(valueOrStream);
+  return (0,isObservable/* isObservable */.b)(valueOrStream) ? valueOrStream : (0,of.of)(valueOrStream);
 }
 const DIALOG = new tinkoff_ng_polymorpheus/* PolymorpheusComponent */.Al(TuiDialogComponent);
 let TuiDialogService = /*#__PURE__*/(() => {
@@ -17402,6 +17631,11 @@ let TuiDialogModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-components-dialog.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/repeatWhen.js
 var repeatWhen = __webpack_require__(2077);
@@ -17454,6 +17688,8 @@ function TuiAlertComponent_div_3_Template(rf, ctx) {
   }
 }
 const TUI_ALERT_POSITION = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,core_mjs_.inject)(taiga_ui_cdk_tokens/* TUI_IS_MOBILE */.fL) ? `1rem 1rem 0 auto` : `2rem 3rem 0 auto`);
+
+// TODO: get rid of $any in template
 let TuiAlertComponent = /*#__PURE__*/(() => {
   class TuiAlertComponent {
     constructor(el, destroy$, position, options, item) {
@@ -17479,7 +17715,17 @@ let TuiAlertComponent = /*#__PURE__*/(() => {
       if (!this.autoClose) {
         return;
       }
-      (0,observable_timer/* timer */.H)((0,taiga_ui_cdk_utils_miscellaneous/* tuiIsNumber */.dt)(this.autoClose) ? this.autoClose : 3000).pipe((0,operators_takeUntil/* takeUntil */.R)((0,fromEvent/* fromEvent */.R)(this.el.nativeElement, 'mouseenter')), (0,repeatWhen/* repeatWhen */.a)(() => (0,fromEvent/* fromEvent */.R)(this.el.nativeElement, 'mouseleave')), (0,operators_takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(() => this.close());
+      (0,timer/* timer */.H)((0,taiga_ui_cdk_utils_miscellaneous/* tuiIsNumber */.dt)(this.autoClose) ? this.autoClose : 3000).pipe((0,takeUntil/* takeUntil */.R)((0,fromEvent/* fromEvent */.R)(this.el.nativeElement, 'mouseenter')),
+      /**
+       * TODO: replace to
+       * repeat({
+       *    delay: () => fromEvent(this.el.nativeElement, 'mouseleave'),
+       * })
+       *
+       * in RxJS 7
+       */
+      // eslint-disable-next-line rxjs/no-ignored-notifier
+      (0,repeatWhen/* repeatWhen */.a)(() => (0,fromEvent/* fromEvent */.R)(this.el.nativeElement, 'mouseleave')), (0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(() => this.close());
     }
   }
   TuiAlertComponent.ɵfac = function TuiAlertComponent_Factory(t) {
@@ -17597,6 +17843,11 @@ let TuiAlertModule = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-core-components-alert.js.map
 // EXTERNAL MODULE: ./node_modules/ngx-highlightjs/fesm2020/ngx-highlightjs.mjs + 5 modules
@@ -17832,6 +18083,11 @@ const TUI_EXAMPLE_PRIMARY_FILE_NAME = {
   HTML: `HTML`
 };
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-addon-doc-interfaces.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-mobile/fesm2015/taiga-ui-addon-mobile-directives-sidebar.js
 
@@ -17998,359 +18254,12 @@ let TuiSidebarModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-addon-mobile-directives-sidebar.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/scheduler/AsyncAction.js + 1 modules
-var AsyncAction = __webpack_require__(27);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/scheduler/QueueAction.js
-
-class QueueAction extends AsyncAction/* AsyncAction */.o {
-  constructor(scheduler, work) {
-    super(scheduler, work);
-    this.scheduler = scheduler;
-    this.work = work;
-  }
-  schedule(state, delay = 0) {
-    if (delay > 0) {
-      return super.schedule(state, delay);
-    }
-    this.delay = delay;
-    this.state = state;
-    this.scheduler.flush(this);
-    return this;
-  }
-  execute(state, delay) {
-    return delay > 0 || this.closed ? super.execute(state, delay) : this._execute(state, delay);
-  }
-  requestAsyncId(scheduler, id, delay = 0) {
-    if (delay !== null && delay > 0 || delay === null && this.delay > 0) {
-      return super.requestAsyncId(scheduler, id, delay);
-    }
-    return scheduler.flush(this);
-  }
-}
-//# sourceMappingURL=QueueAction.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/scheduler/AsyncScheduler.js + 1 modules
-var AsyncScheduler = __webpack_require__(1661);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/scheduler/QueueScheduler.js
-
-class QueueScheduler extends AsyncScheduler/* AsyncScheduler */.v {}
-//# sourceMappingURL=QueueScheduler.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/scheduler/queue.js
-
-
-const queueScheduler = new QueueScheduler(QueueAction);
-const queue = queueScheduler;
-//# sourceMappingURL=queue.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/observable/throwError.js
-
-function throwError(error, scheduler) {
-  if (!scheduler) {
-    return new Observable/* Observable */.y(subscriber => subscriber.error(error));
-  } else {
-    return new Observable/* Observable */.y(subscriber => scheduler.schedule(dispatch, 0, {
-      error,
-      subscriber
-    }));
-  }
-}
-function dispatch({
-  error,
-  subscriber
-}) {
-  subscriber.error(error);
-}
-//# sourceMappingURL=throwError.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/Notification.js
-
-
-
-var NotificationKind = /*#__PURE__*/function (NotificationKind) {
-  NotificationKind["NEXT"] = "N";
-  NotificationKind["ERROR"] = "E";
-  NotificationKind["COMPLETE"] = "C";
-  return NotificationKind;
-}(NotificationKind || {});
-class Notification {
-  constructor(kind, value, error) {
-    this.kind = kind;
-    this.value = value;
-    this.error = error;
-    this.hasValue = kind === 'N';
-  }
-  observe(observer) {
-    switch (this.kind) {
-      case 'N':
-        return observer.next && observer.next(this.value);
-      case 'E':
-        return observer.error && observer.error(this.error);
-      case 'C':
-        return observer.complete && observer.complete();
-    }
-  }
-  do(next, error, complete) {
-    const kind = this.kind;
-    switch (kind) {
-      case 'N':
-        return next && next(this.value);
-      case 'E':
-        return error && error(this.error);
-      case 'C':
-        return complete && complete();
-    }
-  }
-  accept(nextOrObserver, error, complete) {
-    if (nextOrObserver && typeof nextOrObserver.next === 'function') {
-      return this.observe(nextOrObserver);
-    } else {
-      return this.do(nextOrObserver, error, complete);
-    }
-  }
-  toObservable() {
-    const kind = this.kind;
-    switch (kind) {
-      case 'N':
-        return (0,of.of)(this.value);
-      case 'E':
-        return throwError(this.error);
-      case 'C':
-        return (0,empty/* empty */.c)();
-    }
-    throw new Error('unexpected notification kind value');
-  }
-  static createNext(value) {
-    if (typeof value !== 'undefined') {
-      return new Notification('N', value);
-    }
-    return Notification.undefinedValueNotification;
-  }
-  static createError(err) {
-    return new Notification('E', undefined, err);
-  }
-  static createComplete() {
-    return Notification.completeNotification;
-  }
-}
-Notification.completeNotification = new Notification('C');
-Notification.undefinedValueNotification = new Notification('N', undefined);
-//# sourceMappingURL=Notification.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/operators/observeOn.js
-
-
-function observeOn(scheduler, delay = 0) {
-  return function observeOnOperatorFunction(source) {
-    return source.lift(new ObserveOnOperator(scheduler, delay));
-  };
-}
-class ObserveOnOperator {
-  constructor(scheduler, delay = 0) {
-    this.scheduler = scheduler;
-    this.delay = delay;
-  }
-  call(subscriber, source) {
-    return source.subscribe(new ObserveOnSubscriber(subscriber, this.scheduler, this.delay));
-  }
-}
-class ObserveOnSubscriber extends internal_Subscriber/* Subscriber */.L {
-  constructor(destination, scheduler, delay = 0) {
-    super(destination);
-    this.scheduler = scheduler;
-    this.delay = delay;
-  }
-  static dispatch(arg) {
-    const {
-      notification,
-      destination
-    } = arg;
-    notification.observe(destination);
-    this.unsubscribe();
-  }
-  scheduleMessage(notification) {
-    const destination = this.destination;
-    destination.add(this.scheduler.schedule(ObserveOnSubscriber.dispatch, this.delay, new ObserveOnMessage(notification, this.destination)));
-  }
-  _next(value) {
-    this.scheduleMessage(Notification.createNext(value));
-  }
-  _error(err) {
-    this.scheduleMessage(Notification.createError(err));
-    this.unsubscribe();
-  }
-  _complete() {
-    this.scheduleMessage(Notification.createComplete());
-    this.unsubscribe();
-  }
-}
-class ObserveOnMessage {
-  constructor(notification, destination) {
-    this.notification = notification;
-    this.destination = destination;
-  }
-}
-//# sourceMappingURL=observeOn.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/ReplaySubject.js
-
-
-
-
-
-
-class ReplaySubject_ReplaySubject extends Subject_Subject {
-  constructor(bufferSize = Number.POSITIVE_INFINITY, windowTime = Number.POSITIVE_INFINITY, scheduler) {
-    super();
-    this.scheduler = scheduler;
-    this._events = [];
-    this._infiniteTimeWindow = false;
-    this._bufferSize = bufferSize < 1 ? 1 : bufferSize;
-    this._windowTime = windowTime < 1 ? 1 : windowTime;
-    if (windowTime === Number.POSITIVE_INFINITY) {
-      this._infiniteTimeWindow = true;
-      this.next = this.nextInfiniteTimeWindow;
-    } else {
-      this.next = this.nextTimeWindow;
-    }
-  }
-  nextInfiniteTimeWindow(value) {
-    if (!this.isStopped) {
-      const _events = this._events;
-      _events.push(value);
-      if (_events.length > this._bufferSize) {
-        _events.shift();
-      }
-    }
-    super.next(value);
-  }
-  nextTimeWindow(value) {
-    if (!this.isStopped) {
-      this._events.push(new ReplayEvent(this._getNow(), value));
-      this._trimBufferThenGetEvents();
-    }
-    super.next(value);
-  }
-  _subscribe(subscriber) {
-    const _infiniteTimeWindow = this._infiniteTimeWindow;
-    const _events = _infiniteTimeWindow ? this._events : this._trimBufferThenGetEvents();
-    const scheduler = this.scheduler;
-    const len = _events.length;
-    let subscription;
-    if (this.closed) {
-      throw new ObjectUnsubscribedError();
-    } else if (this.isStopped || this.hasError) {
-      subscription = Subscription/* Subscription */.w.EMPTY;
-    } else {
-      this.observers.push(subscriber);
-      subscription = new SubjectSubscription(this, subscriber);
-    }
-    if (scheduler) {
-      subscriber.add(subscriber = new ObserveOnSubscriber(subscriber, scheduler));
-    }
-    if (_infiniteTimeWindow) {
-      for (let i = 0; i < len && !subscriber.closed; i++) {
-        subscriber.next(_events[i]);
-      }
-    } else {
-      for (let i = 0; i < len && !subscriber.closed; i++) {
-        subscriber.next(_events[i].value);
-      }
-    }
-    if (this.hasError) {
-      subscriber.error(this.thrownError);
-    } else if (this.isStopped) {
-      subscriber.complete();
-    }
-    return subscription;
-  }
-  _getNow() {
-    return (this.scheduler || queue).now();
-  }
-  _trimBufferThenGetEvents() {
-    const now = this._getNow();
-    const _bufferSize = this._bufferSize;
-    const _windowTime = this._windowTime;
-    const _events = this._events;
-    const eventsCount = _events.length;
-    let spliceCount = 0;
-    while (spliceCount < eventsCount) {
-      if (now - _events[spliceCount].time < _windowTime) {
-        break;
-      }
-      spliceCount++;
-    }
-    if (eventsCount > _bufferSize) {
-      spliceCount = Math.max(spliceCount, eventsCount - _bufferSize);
-    }
-    if (spliceCount > 0) {
-      _events.splice(0, spliceCount);
-    }
-    return _events;
-  }
-}
-class ReplayEvent {
-  constructor(time, value) {
-    this.time = time;
-    this.value = value;
-  }
-}
-//# sourceMappingURL=ReplaySubject.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/scheduler/async.js
-var scheduler_async = __webpack_require__(715);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/operators/debounceTime.js
-
-
-function debounceTime_debounceTime(dueTime, scheduler = scheduler_async/* async */.P) {
-  return source => source.lift(new DebounceTimeOperator(dueTime, scheduler));
-}
-class DebounceTimeOperator {
-  constructor(dueTime, scheduler) {
-    this.dueTime = dueTime;
-    this.scheduler = scheduler;
-  }
-  call(subscriber, source) {
-    return source.subscribe(new DebounceTimeSubscriber(subscriber, this.dueTime, this.scheduler));
-  }
-}
-class DebounceTimeSubscriber extends internal_Subscriber/* Subscriber */.L {
-  constructor(destination, dueTime, scheduler) {
-    super(destination);
-    this.dueTime = dueTime;
-    this.scheduler = scheduler;
-    this.debouncedSubscription = null;
-    this.lastValue = null;
-    this.hasValue = false;
-  }
-  _next(value) {
-    this.clearDebounce();
-    this.lastValue = value;
-    this.hasValue = true;
-    this.add(this.debouncedSubscription = this.scheduler.schedule(dispatchNext, this.dueTime, this));
-  }
-  _complete() {
-    this.debouncedNext();
-    this.destination.complete();
-  }
-  debouncedNext() {
-    this.clearDebounce();
-    if (this.hasValue) {
-      const {
-        lastValue
-      } = this;
-      this.lastValue = null;
-      this.hasValue = false;
-      this.destination.next(lastValue);
-    }
-  }
-  clearDebounce() {
-    const debouncedSubscription = this.debouncedSubscription;
-    if (debouncedSubscription !== null) {
-      this.remove(debouncedSubscription);
-      debouncedSubscription.unsubscribe();
-      this.debouncedSubscription = null;
-    }
-  }
-}
-function dispatchNext(subscriber) {
-  subscriber.debouncedNext();
-}
-//# sourceMappingURL=debounceTime.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-directives.js
 
 
@@ -18366,8 +18275,8 @@ let TuiScrollIntoViewLinkDirective = /*#__PURE__*/(() => {
       nativeElement
     }, readyToScroll$) {
       this.readyToScroll$ = readyToScroll$;
-      this.scroll$ = new ReplaySubject_ReplaySubject(1);
-      this.readyToScroll$.pipe(filter(Boolean), (0,operators_switchMap/* switchMap */.w)(() => this.scroll$), debounceTime_debounceTime(750), filter(shallWe => shallWe && !!(0,taiga_ui_cdk_utils_dom/* tuiGetElementObscures */.PU)(nativeElement)), takeUntil(destroy$)).subscribe(() => {
+      this.scroll$ = new ReplaySubject/* ReplaySubject */.t(1);
+      this.readyToScroll$.pipe((0,filter/* filter */.h)(Boolean), (0,operators_switchMap/* switchMap */.w)(() => this.scroll$), (0,debounceTime/* debounceTime */.b)(750), (0,filter/* filter */.h)(shallWe => shallWe && !!(0,taiga_ui_cdk_utils_dom/* tuiGetElementObscures */.PU)(nativeElement)), (0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(() => {
         nativeElement.scrollIntoView();
       });
     }
@@ -18447,6 +18356,11 @@ let TuiTextCodeModule = /*#__PURE__*/(/* unused pure expression or super */ null
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-addon-doc-directives.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-services.js
 
@@ -18459,7 +18373,7 @@ const TUI_THEME_DEFAULT_NAME = `Taiga UI`;
 const TUI_THEME_STORAGE_KEY = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_THEME_STORAGE_DEFAULT_KEY);
 const TUI_THEME_NAME = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_THEME_DEFAULT_NAME);
 let TuiThemeService = /*#__PURE__*/(() => {
-  class TuiThemeService extends BehaviorSubject_BehaviorSubject {
+  class TuiThemeService extends internal_BehaviorSubject/* BehaviorSubject */.X {
     constructor(initialTheme, key, storage) {
       super(storage.getItem(key) || initialTheme);
       this.initialTheme = initialTheme;
@@ -18475,7 +18389,7 @@ let TuiThemeService = /*#__PURE__*/(() => {
     }
   }
   TuiThemeService.ɵfac = function TuiThemeService_Factory(t) {
-    return new (t || TuiThemeService)(core_mjs_["ɵɵinject"](TUI_THEME_NAME), core_mjs_["ɵɵinject"](TUI_THEME_STORAGE_KEY), core_mjs_["ɵɵinject"](fesm2015_ng_web_apis_common/* LOCAL_STORAGE */.H3));
+    return new (t || TuiThemeService)(core_mjs_["ɵɵinject"](TUI_THEME_NAME), core_mjs_["ɵɵinject"](TUI_THEME_STORAGE_KEY), core_mjs_["ɵɵinject"](ng_web_apis_common/* LOCAL_STORAGE */.H3));
   };
   TuiThemeService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
     token: TuiThemeService,
@@ -18491,7 +18405,7 @@ const TUI_THEME_NIGHT_STORAGE_DEFAULT_KEY = `tuiNight`;
 const TUI_THEME_NIGHT_STORAGE_KEY = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_THEME_NIGHT_STORAGE_DEFAULT_KEY);
 const TUI_USE_DEFAULT_NIGHT_THEME = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(true);
 let TuiThemeNightService = /*#__PURE__*/(() => {
-  class TuiThemeNightService extends BehaviorSubject_BehaviorSubject {
+  class TuiThemeNightService extends internal_BehaviorSubject/* BehaviorSubject */.X {
     constructor(win, storage, key, useDefaultNightTheme) {
       super(storage.getItem(key) === `true` || storage.getItem(key) === null && win.matchMedia(`(prefers-color-scheme: dark)`).matches);
       this.win = win;
@@ -18508,7 +18422,7 @@ let TuiThemeNightService = /*#__PURE__*/(() => {
     }
   }
   TuiThemeNightService.ɵfac = function TuiThemeNightService_Factory(t) {
-    return new (t || TuiThemeNightService)(core_mjs_["ɵɵinject"](fesm2015_ng_web_apis_common/* WINDOW */.m9), core_mjs_["ɵɵinject"](fesm2015_ng_web_apis_common/* LOCAL_STORAGE */.H3), core_mjs_["ɵɵinject"](TUI_THEME_NIGHT_STORAGE_KEY), core_mjs_["ɵɵinject"](TUI_USE_DEFAULT_NIGHT_THEME));
+    return new (t || TuiThemeNightService)(core_mjs_["ɵɵinject"](ng_web_apis_common/* WINDOW */.m9), core_mjs_["ɵɵinject"](ng_web_apis_common/* LOCAL_STORAGE */.H3), core_mjs_["ɵɵinject"](TUI_THEME_NIGHT_STORAGE_KEY), core_mjs_["ɵɵinject"](TUI_USE_DEFAULT_NIGHT_THEME));
   };
   TuiThemeNightService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
     token: TuiThemeNightService,
@@ -18520,6 +18434,11 @@ let TuiThemeNightService = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-addon-doc-services.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-components.js
@@ -19960,10 +19879,10 @@ let TuiDocCopyComponent = /*#__PURE__*/(() => {
   class TuiDocCopyComponent {
     constructor(texts$) {
       this.texts$ = texts$;
-      this.copy$ = new Subject_Subject();
+      this.copy$ = new internal_Subject/* Subject */.x();
     }
     get copied$() {
-      return this.copy$.pipe((0,operators_switchMap/* switchMap */.w)(() => (0,timer/* timer */.H)(COPIED_TIMEOUT).pipe((0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_FALSE_HANDLER */.Iy), startWith(true))));
+      return this.copy$.pipe((0,operators_switchMap/* switchMap */.w)(() => (0,timer/* timer */.H)(COPIED_TIMEOUT).pipe((0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_FALSE_HANDLER */.Iy), (0,startWith/* startWith */.O)(true))));
     }
     onClick() {
       this.copy$.next();
@@ -20004,7 +19923,7 @@ let TuiDocCodeComponent = /*#__PURE__*/(() => {
   class TuiDocCodeComponent {
     constructor(markdownCodeProcessor) {
       this.markdownCodeProcessor = markdownCodeProcessor;
-      this.rawLoader$$ = new BehaviorSubject_BehaviorSubject('');
+      this.rawLoader$$ = new internal_BehaviorSubject/* BehaviorSubject */.X('');
       this.filename = '';
       this.processor$ = this.rawLoader$$.pipe((0,operators_switchMap/* switchMap */.w)(taiga_ui_addon_doc_utils/* tuiRawLoad */.JQ), (0,operators_map/* map */.U)(value => this.markdownCodeProcessor(value)));
     }
@@ -20319,6 +20238,7 @@ let TuiDocDemoModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 const SERIALIZED_SUFFIX = '$';
+// @bad TODO: refactor output and value sync
 let TuiDocDocumentationPropertyConnectorDirective = /*#__PURE__*/(() => {
   class TuiDocDocumentationPropertyConnectorDirective {
     constructor(template, locationRef, activatedRoute, urlSerializer, urlStateHandler) {
@@ -20333,8 +20253,8 @@ let TuiDocDocumentationPropertyConnectorDirective = /*#__PURE__*/(() => {
       this.documentationPropertyDeprecated = false;
       this.documentationPropertyValues = null;
       this.documentationPropertyValueChange = new core_mjs_.EventEmitter();
-      this.changed$ = new Subject_Subject();
-      this.emits$ = new BehaviorSubject_BehaviorSubject(1);
+      this.changed$ = new internal_Subject/* Subject */.x();
+      this.emits$ = new internal_BehaviorSubject/* BehaviorSubject */.X(1);
     }
     ngOnInit() {
       this.parseParams(this.activatedRoute.snapshot.queryParams);
@@ -20366,6 +20286,7 @@ let TuiDocDocumentationPropertyConnectorDirective = /*#__PURE__*/(() => {
       this.setQueryParam(value);
     }
     emitEvent(event) {
+      // For more convenient debugging
       console.info(this.attrName, event);
       this.emits$.next(this.emits$.value + 1);
     }
@@ -20587,6 +20508,13 @@ let TuiInspectPipe = /*#__PURE__*/(() => {
     }
     transform(value, depth = 2) {
       if (this.isE2E && typeof value === `function`) {
+        /**
+         * @description:
+         * When developing in production mode the webpack bundler minify
+         * functions in different ways, then due to which the string content
+         * of the function may differ from build to build, which can be to
+         * various problems when screenshot testing on e2e.
+         */
         return `λ(x) => y`;
       }
       return (0,taiga_ui_addon_doc_utils/* tuiInspectAny */.sj)(value, depth);
@@ -20624,6 +20552,9 @@ let TuiIsPrimitivePolymorpheusContentPipe = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+// @bad TODO subscribe propertiesConnectors changes
+// @bad TODO refactor to make more flexible
 let TuiDocDocumentationComponent = /*#__PURE__*/(() => {
   class TuiDocDocumentationComponent {
     constructor(cdr, texts, excludedProperties, destroy$, getColor, getOpacity) {
@@ -20641,9 +20572,9 @@ let TuiDocDocumentationComponent = /*#__PURE__*/(() => {
       this.matcher = (item, exclusions) => !exclusions.has(item.documentationPropertyName);
     }
     ngAfterContentInit() {
-      (0,taiga_ui_cdk_observables/* tuiQueryListChanges */.ll)(this.propertiesConnectors).pipe((0,operators_switchMap/* switchMap */.w)(items => merge(...items.map(({
+      (0,taiga_ui_cdk_observables/* tuiQueryListChanges */.ll)(this.propertiesConnectors).pipe((0,operators_switchMap/* switchMap */.w)(items => (0,merge/* merge */.T)(...items.map(({
         changed$
-      }) => changed$))), (0,taiga_ui_cdk_observables/* tuiWatch */.NA)(this.cdr), takeUntil(this.destroy$)).subscribe();
+      }) => changed$))), (0,taiga_ui_cdk_observables/* tuiWatch */.NA)(this.cdr), (0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe();
     }
     get type() {
       return this.isAPI ? this.texts[0] : this.texts[1];
@@ -20754,6 +20685,9 @@ const TUI_DOC_EXAMPLE_DEFAULT_OPTIONS = {
   fullsize: true,
   linkIcon: `tuiIconLink`
 };
+/**
+ * Default parameters for DocExample component
+ */
 const TUI_DOC_EXAMPLE_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_DOC_EXAMPLE_DEFAULT_OPTIONS);
 function tuiDocExampleOptionsProvider(options) {
   return tuiProvideOptions(TUI_DOC_EXAMPLE_OPTIONS, options, TUI_DOC_EXAMPLE_DEFAULT_OPTIONS);
@@ -20921,17 +20855,27 @@ let TuiDocExampleModule = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Page title
+ */
 const NAVIGATION_TITLE = new core_mjs_.InjectionToken(`[NAVIGATION_TITLE]`);
+/**
+ * Navigation sections labels for search
+ */
 const NAVIGATION_LABELS = new core_mjs_.InjectionToken(`[NAVIGATION_LABELS]`);
+/**
+ * Navigation pages
+ */
 const NAVIGATION_ITEMS = new core_mjs_.InjectionToken(`[NAVIGATION_ITEMS]`);
 const NAVIGATION_PROVIDERS = [taiga_ui_cdk_services/* TuiDestroyService */.a3, {
   provide: NAVIGATION_TITLE,
   deps: [router_mjs_.Router, router_mjs_.ActivatedRoute, taiga_ui_addon_doc_tokens/* TUI_DOC_TITLE */.Yx, taiga_ui_cdk_services/* TuiDestroyService */.a3],
-  useFactory: (router, activatedRoute, titlePrefix, destroy$) => router.events.pipe(filter(event => event instanceof router_mjs_.NavigationEnd), (0,operators_map/* map */.U)(() => activatedRoute.firstChild), filter(taiga_ui_cdk_utils_miscellaneous/* tuiIsPresent */.Pc), mergeMap(({
+  useFactory: (router, activatedRoute, titlePrefix, destroy$) => router.events.pipe((0,filter/* filter */.h)(event => event instanceof router_mjs_.NavigationEnd), (0,operators_map/* map */.U)(() => activatedRoute.firstChild), (0,filter/* filter */.h)(taiga_ui_cdk_utils_miscellaneous/* tuiIsPresent */.Pc), (0,mergeMap/* mergeMap */.z)(({
     data
   }) => data), (0,operators_map/* map */.U)(({
     title
-  }) => `${titlePrefix}${title}`), takeUntil(destroy$))
+  }) => `${titlePrefix}${title}`), (0,takeUntil/* takeUntil */.R)(destroy$))
 }, {
   provide: NAVIGATION_LABELS,
   deps: [taiga_ui_addon_doc_tokens/* TUI_DOC_PAGES */.V5],
@@ -20972,8 +20916,10 @@ let TuiDocNavigationComponent = /*#__PURE__*/(() => {
       this.openPagesGroupsArr = [];
       this.active = '';
       this.search = new fesm2022_forms/* FormControl */.NI('');
-      this.filtered$ = (0,taiga_ui_cdk_observables/* tuiControlValue */.EK)(this.search).pipe(filter(search => search.trim().length > 2), (0,operators_map/* map */.U)(search => this.filterItems(this.flattenSubPages(this.items), search)));
-      this.mode$ = this.mode.change$.pipe(startWith(null), (0,operators_map/* map */.U)(() => this.mode.mode || 'onLight'));
+      this.filtered$ = (0,taiga_ui_cdk_observables/* tuiControlValue */.EK)(this.search).pipe((0,filter/* filter */.h)(search => search.trim().length > 2), (0,operators_map/* map */.U)(search => this.filterItems(this.flattenSubPages(this.items), search)));
+      this.mode$ = this.mode.change$.pipe((0,startWith/* startWith */.O)(null), (0,operators_map/* map */.U)(() => this.mode.mode || 'onLight'));
+      // Angular can't navigate no anchor links
+      // https://stackoverflow.com/questions/36101756/angular2-routing-with-hashtag-to-page-anchor
       title$.subscribe(title => {
         cdr.markForCheck();
         titleService.setTitle(title);
@@ -21029,7 +20975,7 @@ let TuiDocNavigationComponent = /*#__PURE__*/(() => {
       });
     }
     handleAnchorLink(hash) {
-      this.readyToScroll$.pipe(filter(Boolean), take(1), takeUntil(this.destroy$)).subscribe(() => this.navigateToAnchorLink(hash));
+      this.readyToScroll$.pipe((0,filter/* filter */.h)(Boolean), (0,take/* take */.q)(1), (0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(() => this.navigateToAnchorLink(hash));
     }
     openActivePageGroup() {
       this.items.forEach((pages, pagesIndex) => {
@@ -21135,8 +21081,8 @@ let TuiDocHeaderComponent = /*#__PURE__*/(() => {
       this.menu = menu;
       this.router = router;
       this.swipes$ = swipes$;
-      this.stream$ = new Subject_Subject();
-      this.open$ = merge(this.router.events.pipe((0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_FALSE_HANDLER */.Iy)), this.stream$, this.swipes$.pipe(filter(swipe => swipe.direction === 'left' || swipe.direction === 'right'), (0,operators_map/* map */.U)(swipe => swipe.direction === 'right'))).pipe(startWith(false), distinctUntilChanged_distinctUntilChanged());
+      this.stream$ = new internal_Subject/* Subject */.x();
+      this.open$ = (0,merge/* merge */.T)(this.router.events.pipe((0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_FALSE_HANDLER */.Iy)), this.stream$, this.swipes$.pipe((0,filter/* filter */.h)(swipe => swipe.direction === 'left' || swipe.direction === 'right'), (0,operators_map/* map */.U)(swipe => swipe.direction === 'right'))).pipe((0,startWith/* startWith */.O)(false), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)());
     }
     onClick() {
       this.stream$.next(true);
@@ -21372,6 +21318,10 @@ let TuiLanguageSwitcherComponent = /*#__PURE__*/(/* unused pure expression or su
       this.flags = new Map([['chinese', TuiCountryIsoCode.CN], ['dutch', TuiCountryIsoCode.NL], ['english', TuiCountryIsoCode.GB], ['french', TuiCountryIsoCode.FR], ['german', TuiCountryIsoCode.DE], ['italian', TuiCountryIsoCode.IT], ['polish', TuiCountryIsoCode.PL], ['portuguese', TuiCountryIsoCode.PT], ['russian', TuiCountryIsoCode.RU], ['spanish', TuiCountryIsoCode.ES], ['turkish', TuiCountryIsoCode.TR], ['ukrainian', TuiCountryIsoCode.UA], ['kazakh', TuiCountryIsoCode.KZ], ['vietnamese', TuiCountryIsoCode.VN]]);
       this.names = Array.from(this.flags.keys());
     }
+    /**
+     * @deprecated use `<img [src]="countryIsoCode | tuiFlagPipe" />`
+     * TODO drop in v4.0
+     */
     getFlagPath(code) {
       return this.flagPipe.transform(code);
     }
@@ -21382,7 +21332,9 @@ let TuiLanguageSwitcherComponent = /*#__PURE__*/(/* unused pure expression or su
   TuiLanguageSwitcherComponent.ɵcmp = /* @__PURE__ */i0.ɵɵdefineComponent({
     type: TuiLanguageSwitcherComponent,
     selectors: [["tui-language-switcher"]],
-    features: [i0.ɵɵProvidersFeature([TuiFlagPipe])],
+    features: [i0.ɵɵProvidersFeature([
+    // TODO: for backward compatibility only. Drop in v4.0
+    TuiFlagPipe])],
     ngContentSelectors: taiga_ui_addon_doc_components_c0,
     decls: 3,
     vars: 1,
@@ -21431,7 +21383,7 @@ let TuiDocMainComponent = /*#__PURE__*/(() => {
       this.theme = theme;
       this.night = night;
       this.change$ = this.night;
-      this.night$ = this.change$.pipe(startWith(null), (0,operators_map/* map */.U)(() => this.night.value), distinctUntilChanged_distinctUntilChanged(), share());
+      this.night$ = this.change$.pipe((0,startWith/* startWith */.O)(null), (0,operators_map/* map */.U)(() => this.night.value), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), (0,share/* share */.B)());
     }
     get mode() {
       return this.night.value ? 'onDark' : null;
@@ -21526,6 +21478,10 @@ let TuiDocMainModule = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Array if related page titles
+ */
 const PAGE_SEE_ALSO = new core_mjs_.InjectionToken(`[PAGE_SEE_ALSO]`);
 const PAGE_PROVIDERS = [{
   provide: PAGE_SEE_ALSO,
@@ -21666,89 +21622,71 @@ let TuiDocPageModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-addon-doc-components.js.map
 
 /***/ }),
 
-/***/ 8747:
+/***/ 3594:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  AC: () => (/* binding */ TUI_DOC_DEFAULT_TABS),
-  IK: () => (/* binding */ TUI_DOC_DOCUMENTATION_TEXTS),
-  Es: () => (/* binding */ TUI_DOC_EXAMPLE_MARKDOWN_CODE_PROCESSOR),
-  et: () => (/* binding */ TUI_DOC_EXCLUDED_PROPERTIES),
-  oq: () => (/* binding */ TUI_DOC_ICONS),
-  Or: () => (/* binding */ TUI_DOC_LOGO),
-  _Z: () => (/* binding */ TUI_DOC_MAP_PAGES),
-  gG: () => (/* binding */ TUI_DOC_MENU_TEXT),
-  V5: () => (/* binding */ TUI_DOC_PAGES),
-  V1: () => (/* binding */ TUI_DOC_PAGE_LOADED),
-  n1: () => (/* binding */ TUI_DOC_SCROLL_BEHAVIOR),
-  EI: () => (/* binding */ TUI_DOC_SEARCH_TEXT),
-  UL: () => (/* binding */ TUI_DOC_SEE_ALSO),
-  VX: () => (/* binding */ TUI_DOC_SEE_ALSO_TEXT),
-  yO: () => (/* binding */ TUI_DOC_SOURCE_CODE),
-  as: () => (/* binding */ TUI_DOC_SOURCE_CODE_TEXT),
-  Yx: () => (/* binding */ TUI_DOC_TITLE),
-  Ii: () => (/* binding */ TUI_DOC_URL_STATE_HANDLER)
-});
-
-// UNUSED EXPORTS: TUI_DOC_CODE_ACTIONS, TUI_DOC_CODE_EDITOR, TUI_DOC_DEFAULT_ICONS, TUI_DOC_DEMO_TEXTS, TUI_DOC_EXAMPLE_CONTENT_PROCESSOR, TUI_DOC_EXAMPLE_TEXTS, tuiDocExcludeProperties, tuiDocIconsProvider
-
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-miscellaneous.js
-var taiga_ui_cdk_utils_miscellaneous = __webpack_require__(8937);
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=16.2.11 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(2368);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-utils.js
-var taiga_ui_addon_doc_utils = __webpack_require__(8836);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/identity.js
-var identity = __webpack_require__(2966);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/Observable.js + 3 modules
-var Observable = __webpack_require__(3303);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/observable/from.js + 6 modules
-var from = __webpack_require__(3116);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/observable/empty.js
-var empty = __webpack_require__(8291);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/observable/defer.js
-
-
-
-function defer(observableFactory) {
-  return new Observable/* Observable */.y(subscriber => {
-    let input;
-    try {
-      input = observableFactory();
-    } catch (err) {
-      subscriber.error(err);
-      return undefined;
-    }
-    const source = input ? (0,from/* from */.D)(input) : (0,empty/* empty */.c)();
-    return source.subscribe(subscriber);
-  });
-}
-//# sourceMappingURL=defer.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/observable/timer.js + 1 modules
-var timer = __webpack_require__(6797);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/observable/of.js
-var of = __webpack_require__(9986);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/operators/switchMap.js
-var switchMap = __webpack_require__(8478);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-tokens.js + 1 modules
-var taiga_ui_core_tokens = __webpack_require__(4862);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-tokens.js
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AC: () => (/* binding */ TUI_DOC_DEFAULT_TABS),
+/* harmony export */   EI: () => (/* binding */ TUI_DOC_SEARCH_TEXT),
+/* harmony export */   Es: () => (/* binding */ TUI_DOC_EXAMPLE_MARKDOWN_CODE_PROCESSOR),
+/* harmony export */   IK: () => (/* binding */ TUI_DOC_DOCUMENTATION_TEXTS),
+/* harmony export */   Ii: () => (/* binding */ TUI_DOC_URL_STATE_HANDLER),
+/* harmony export */   Or: () => (/* binding */ TUI_DOC_LOGO),
+/* harmony export */   UL: () => (/* binding */ TUI_DOC_SEE_ALSO),
+/* harmony export */   V1: () => (/* binding */ TUI_DOC_PAGE_LOADED),
+/* harmony export */   V5: () => (/* binding */ TUI_DOC_PAGES),
+/* harmony export */   VX: () => (/* binding */ TUI_DOC_SEE_ALSO_TEXT),
+/* harmony export */   Yx: () => (/* binding */ TUI_DOC_TITLE),
+/* harmony export */   _Z: () => (/* binding */ TUI_DOC_MAP_PAGES),
+/* harmony export */   as: () => (/* binding */ TUI_DOC_SOURCE_CODE_TEXT),
+/* harmony export */   et: () => (/* binding */ TUI_DOC_EXCLUDED_PROPERTIES),
+/* harmony export */   gG: () => (/* binding */ TUI_DOC_MENU_TEXT),
+/* harmony export */   n1: () => (/* binding */ TUI_DOC_SCROLL_BEHAVIOR),
+/* harmony export */   oq: () => (/* binding */ TUI_DOC_ICONS),
+/* harmony export */   yO: () => (/* binding */ TUI_DOC_SOURCE_CODE)
+/* harmony export */ });
+/* unused harmony exports TUI_DOC_CODE_ACTIONS, TUI_DOC_CODE_EDITOR, TUI_DOC_DEFAULT_ICONS, TUI_DOC_DEMO_TEXTS, TUI_DOC_EXAMPLE_CONTENT_PROCESSOR, TUI_DOC_EXAMPLE_TEXTS, tuiDocExcludeProperties, tuiDocIconsProvider */
+/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8937);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2368);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _taiga_ui_addon_doc_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8836);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2737);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4911);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4825);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(2096);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4664);
+/* harmony import */ var _taiga_ui_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(4862);
 
 
 
 
 
 
-const TUI_DOC_CODE_ACTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(``);
-const TUI_DOC_CODE_EDITOR = new core_mjs_.InjectionToken(`[TUI_DOC_CODE_EDITOR]`);
-const TUI_DOC_DEFAULT_TABS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)([]);
+
+/**
+ * Code actions for the opened tab with code example
+ */
+const TUI_DOC_CODE_ACTIONS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(``);
+
+/**
+ * Service for opening online IDE e.g. Stackblitz
+ */
+const TUI_DOC_CODE_EDITOR = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(`[TUI_DOC_CODE_EDITOR]`);
+
+/**
+ * Array of default tab names
+ */
+const TUI_DOC_DEFAULT_TABS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)([]);
 const TUI_DOC_DEFAULT_ICONS = {
   search: `tuiIconSearch`,
   day: `tuiIconSun`,
@@ -21756,35 +21694,108 @@ const TUI_DOC_DEFAULT_ICONS = {
   code: `tuiIconCode`,
   menu: `tuiIconMenuLarge`
 };
-const TUI_DOC_ICONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_DOC_DEFAULT_ICONS);
+const TUI_DOC_ICONS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(TUI_DOC_DEFAULT_ICONS);
 function tuiDocIconsProvider(icons) {
   return tuiProvideOptions(TUI_DOC_ICONS, icons, TUI_DOC_DEFAULT_ICONS);
 }
-const TUI_DOC_EXAMPLE_CONTENT_PROCESSOR = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(identity/* identity */.y);
-const TUI_DOC_EXAMPLE_MARKDOWN_CODE_PROCESSOR = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(taiga_ui_addon_doc_utils/* tuiTryParseMarkdownCodeBlock */.vi);
-const TUI_DOC_EXCLUDED_PROPERTIES = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(new Set([]));
+
+/**
+ * Processes content in example
+ */
+const TUI_DOC_EXAMPLE_CONTENT_PROCESSOR = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(rxjs__WEBPACK_IMPORTED_MODULE_2__/* .identity */ .y);
+/**
+ * Processes markdown in code block
+ */
+const TUI_DOC_EXAMPLE_MARKDOWN_CODE_PROCESSOR = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(_taiga_ui_addon_doc_utils__WEBPACK_IMPORTED_MODULE_3__/* .tuiTryParseMarkdownCodeBlock */ .vi);
+
+/**
+ * Token to exclude inherited documentation properties
+ */
+const TUI_DOC_EXCLUDED_PROPERTIES = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(new Set([]));
 function tuiDocExcludeProperties(properties) {
   return {
     provide: TUI_DOC_EXCLUDED_PROPERTIES,
     useValue: new Set(properties)
   };
 }
-const TUI_DOC_DEMO_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)([`Read more more about modes: `, `Background`, `Form value`]);
-const TUI_DOC_DOCUMENTATION_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)([`Argument`, `Type`, `Name and description`, `Value`, `Learn about our dynamic templates from `]);
-const TUI_DOC_EXAMPLE_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)([`Preview`, `Link to a sample was successfully copied`, `Done`]);
-const TUI_DOC_MENU_TEXT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(`Menu`);
-const TUI_DOC_SEARCH_TEXT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(`Search`);
-const TUI_DOC_SEE_ALSO_TEXT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(`See also`);
-const TUI_DOC_SOURCE_CODE_TEXT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(`Source code`);
-const TUI_DOC_LOGO = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(``);
-const TUI_DOC_PAGE_LOADED = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(defer(() => (0,timer/* timer */.H)(200).pipe((0,switchMap/* switchMap */.w)(() => (0,of.of)(true)))));
-const TUI_DOC_PAGES = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)([]);
-const TUI_DOC_MAP_PAGES = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,taiga_ui_addon_doc_utils/* tuiToFlatMapPages */.S4)((0,core_mjs_.inject)(TUI_DOC_PAGES)));
-const TUI_DOC_SCROLL_BEHAVIOR = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,core_mjs_.inject)(taiga_ui_core_tokens/* TUI_REDUCED_MOTION */.TK) ? `auto` : `smooth`);
-const TUI_DOC_SEE_ALSO = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)([]);
-const TUI_DOC_SOURCE_CODE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(null);
-const TUI_DOC_TITLE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(``);
-const TUI_DOC_URL_STATE_HANDLER = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(String);
+
+/**
+ * TODO: think about reorganization in @taiga-ui/i18n way
+ */
+/**
+ * tui-doc-demo i18n texts
+ * Works with a tuple
+ * [@string tuiMode tooltip content, @string word 'background', @string 'form value']
+ */
+const TUI_DOC_DEMO_TEXTS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)([`Read more more about modes: `, `Background`, `Form value`]);
+/**
+ * tui-doc-documentation i18n texts
+ * Works with a tuple
+ * [
+ * @string word 'argument',
+ * @string word 'type',
+ * @string 'name and description',
+ * @string word 'value'
+ * @string message for tooltip about ng-polymorpheus
+ * ]
+ */
+const TUI_DOC_DOCUMENTATION_TEXTS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)([`Argument`, `Type`, `Name and description`, `Value`, `Learn about our dynamic templates from `]);
+/**
+ * tui-doc-example i18n texts
+ * Works with a tuple
+ * [
+ * @string default tab name,
+ * @string link to a sample copied message text,
+ * @string link to a sample copied message label
+ * ]
+ */
+const TUI_DOC_EXAMPLE_TEXTS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)([`Preview`, `Link to a sample was successfully copied`, `Done`]);
+const TUI_DOC_MENU_TEXT = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(`Menu`);
+const TUI_DOC_SEARCH_TEXT = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(`Search`);
+const TUI_DOC_SEE_ALSO_TEXT = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(`See also`);
+const TUI_DOC_SOURCE_CODE_TEXT = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(`Source code`);
+
+/**
+ * Main logo
+ */
+const TUI_DOC_LOGO = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(``);
+
+/**
+ * Stream that emits if loading of page is over (for example, to begin scrollIntoView)
+ */
+const TUI_DOC_PAGE_LOADED = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)((0,rxjs__WEBPACK_IMPORTED_MODULE_4__/* .defer */ .P)(() => (0,rxjs__WEBPACK_IMPORTED_MODULE_5__/* .timer */ .H)(200).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__/* .switchMap */ .w)(() => (0,rxjs__WEBPACK_IMPORTED_MODULE_7__.of)(true)))));
+
+/**
+ * Documentation pages
+ */
+const TUI_DOC_PAGES = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)([]);
+const TUI_DOC_MAP_PAGES = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateTokenFromFactory */ .N1)(() => (0,_taiga_ui_addon_doc_utils__WEBPACK_IMPORTED_MODULE_3__/* .tuiToFlatMapPages */ .S4)((0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(TUI_DOC_PAGES)));
+
+/**
+ * Defines the transition animation for scroll
+ */
+const TUI_DOC_SCROLL_BEHAVIOR = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateTokenFromFactory */ .N1)(() => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_taiga_ui_core__WEBPACK_IMPORTED_MODULE_8__/* .TUI_REDUCED_MOTION */ .TK) ? `auto` : `smooth`);
+
+/**
+ * Array of arrays of related pages
+ */
+const TUI_DOC_SEE_ALSO = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)([]);
+
+/**
+ * Source code link
+ */
+const TUI_DOC_SOURCE_CODE = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(null);
+
+/**
+ * Page title prefix
+ */
+const TUI_DOC_TITLE = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(``);
+const TUI_DOC_URL_STATE_HANDLER = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(String);
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-addon-doc-tokens.js.map
 
@@ -21890,6 +21901,12 @@ function inspectObject(object, depth) {
   }
   return `{${result}}`;
 }
+/**
+ * Returns readable JS entity
+ * @param data
+ * @param depth
+ * @return readable JS entity
+ */
 function tuiInspectAny(data, depth) {
   if (data === null) {
     return `null`;
@@ -21994,6 +22011,11 @@ const MAP = {
   ю: `.`,
   я: `z`
 };
+/**
+ * Translates text mistakenly typed in the Russian layout into English
+ * @param string string with Russian layout characters
+ * @return string with English layout characters
+ */
 function tuiTransliterateKeyboardLayout(string) {
   let newStr = ``;
   for (let i = 0; i < string.length; i++) {
@@ -22002,1701 +22024,12 @@ function tuiTransliterateKeyboardLayout(string) {
   return newStr;
 }
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-addon-doc-utils.js.map
-
-/***/ }),
-
-/***/ 3303:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  y: () => (/* binding */ Observable)
-});
-
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/Subscriber.js
-var Subscriber = __webpack_require__(9744);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/canReportError.js
-
-function canReportError(observer) {
-  while (observer) {
-    const {
-      closed,
-      destination,
-      isStopped
-    } = observer;
-    if (closed || isStopped) {
-      return false;
-    } else if (destination && destination instanceof Subscriber/* Subscriber */.L) {
-      observer = destination;
-    } else {
-      observer = null;
-    }
-  }
-  return true;
-}
-//# sourceMappingURL=canReportError.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/symbol/rxSubscriber.js
-var rxSubscriber = __webpack_require__(6725);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/Observer.js
-var Observer = __webpack_require__(8321);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/toSubscriber.js
-
-
-
-function toSubscriber(nextOrObserver, error, complete) {
-  if (nextOrObserver) {
-    if (nextOrObserver instanceof Subscriber/* Subscriber */.L) {
-      return nextOrObserver;
-    }
-    if (nextOrObserver[rxSubscriber/* rxSubscriber */.b]) {
-      return nextOrObserver[rxSubscriber/* rxSubscriber */.b]();
-    }
-  }
-  if (!nextOrObserver && !error && !complete) {
-    return new Subscriber/* Subscriber */.L(Observer/* empty */.c);
-  }
-  return new Subscriber/* Subscriber */.L(nextOrObserver, error, complete);
-}
-//# sourceMappingURL=toSubscriber.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/symbol/observable.js
-var observable = __webpack_require__(693);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/identity.js
-var identity = __webpack_require__(2966);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/pipe.js
-
-function pipe(...fns) {
-  return pipeFromArray(fns);
-}
-function pipeFromArray(fns) {
-  if (fns.length === 0) {
-    return identity/* identity */.y;
-  }
-  if (fns.length === 1) {
-    return fns[0];
-  }
-  return function piped(input) {
-    return fns.reduce((prev, fn) => fn(prev), input);
-  };
-}
-//# sourceMappingURL=pipe.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/config.js
-var config = __webpack_require__(219);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/Observable.js
-
-
-
-
-
-let Observable = /*#__PURE__*/(() => {
-  class Observable {
-    constructor(subscribe) {
-      this._isScalar = false;
-      if (subscribe) {
-        this._subscribe = subscribe;
-      }
-    }
-    lift(operator) {
-      const observable = new Observable();
-      observable.source = this;
-      observable.operator = operator;
-      return observable;
-    }
-    subscribe(observerOrNext, error, complete) {
-      const {
-        operator
-      } = this;
-      const sink = toSubscriber(observerOrNext, error, complete);
-      if (operator) {
-        sink.add(operator.call(sink, this.source));
-      } else {
-        sink.add(this.source || config.config.useDeprecatedSynchronousErrorHandling && !sink.syncErrorThrowable ? this._subscribe(sink) : this._trySubscribe(sink));
-      }
-      if (config.config.useDeprecatedSynchronousErrorHandling) {
-        if (sink.syncErrorThrowable) {
-          sink.syncErrorThrowable = false;
-          if (sink.syncErrorThrown) {
-            throw sink.syncErrorValue;
-          }
-        }
-      }
-      return sink;
-    }
-    _trySubscribe(sink) {
-      try {
-        return this._subscribe(sink);
-      } catch (err) {
-        if (config.config.useDeprecatedSynchronousErrorHandling) {
-          sink.syncErrorThrown = true;
-          sink.syncErrorValue = err;
-        }
-        if (canReportError(sink)) {
-          sink.error(err);
-        } else {
-          console.warn(err);
-        }
-      }
-    }
-    forEach(next, promiseCtor) {
-      promiseCtor = getPromiseCtor(promiseCtor);
-      return new promiseCtor((resolve, reject) => {
-        let subscription;
-        subscription = this.subscribe(value => {
-          try {
-            next(value);
-          } catch (err) {
-            reject(err);
-            if (subscription) {
-              subscription.unsubscribe();
-            }
-          }
-        }, reject, resolve);
-      });
-    }
-    _subscribe(subscriber) {
-      const {
-        source
-      } = this;
-      return source && source.subscribe(subscriber);
-    }
-    [observable/* observable */.L]() {
-      return this;
-    }
-    pipe(...operations) {
-      if (operations.length === 0) {
-        return this;
-      }
-      return pipeFromArray(operations)(this);
-    }
-    toPromise(promiseCtor) {
-      promiseCtor = getPromiseCtor(promiseCtor);
-      return new promiseCtor((resolve, reject) => {
-        let value;
-        this.subscribe(x => value = x, err => reject(err), () => resolve(value));
-      });
-    }
-  }
-  Observable.create = subscribe => {
-    return new Observable(subscribe);
-  };
-  return Observable;
-})();
-function getPromiseCtor(promiseCtor) {
-  if (!promiseCtor) {
-    promiseCtor = config.config.Promise || Promise;
-  }
-  if (!promiseCtor) {
-    throw new Error('no Promise impl found');
-  }
-  return promiseCtor;
-}
-//# sourceMappingURL=Observable.js.map
-
-/***/ }),
-
-/***/ 8321:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   c: () => (/* binding */ empty)
-/* harmony export */ });
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(219);
-/* harmony import */ var _util_hostReportError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(650);
-
-
-const empty = {
-  closed: true,
-  next(value) {},
-  error(err) {
-    if (_config__WEBPACK_IMPORTED_MODULE_0__.config.useDeprecatedSynchronousErrorHandling) {
-      throw err;
-    } else {
-      (0,_util_hostReportError__WEBPACK_IMPORTED_MODULE_1__/* .hostReportError */ .z)(err);
-    }
-  },
-  complete() {}
-};
-//# sourceMappingURL=Observer.js.map
-
-/***/ }),
-
-/***/ 9744:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   L: () => (/* binding */ Subscriber)
-/* harmony export */ });
-/* unused harmony export SafeSubscriber */
-/* harmony import */ var _util_isFunction__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2705);
-/* harmony import */ var _Observer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8321);
-/* harmony import */ var _Subscription__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1115);
-/* harmony import */ var _internal_symbol_rxSubscriber__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6725);
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(219);
-/* harmony import */ var _util_hostReportError__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(650);
-
-
-
-
-
-
-class Subscriber extends _Subscription__WEBPACK_IMPORTED_MODULE_0__/* .Subscription */ .w {
-  constructor(destinationOrNext, error, complete) {
-    super();
-    this.syncErrorValue = null;
-    this.syncErrorThrown = false;
-    this.syncErrorThrowable = false;
-    this.isStopped = false;
-    switch (arguments.length) {
-      case 0:
-        this.destination = _Observer__WEBPACK_IMPORTED_MODULE_1__/* .empty */ .c;
-        break;
-      case 1:
-        if (!destinationOrNext) {
-          this.destination = _Observer__WEBPACK_IMPORTED_MODULE_1__/* .empty */ .c;
-          break;
-        }
-        if (typeof destinationOrNext === 'object') {
-          if (destinationOrNext instanceof Subscriber) {
-            this.syncErrorThrowable = destinationOrNext.syncErrorThrowable;
-            this.destination = destinationOrNext;
-            destinationOrNext.add(this);
-          } else {
-            this.syncErrorThrowable = true;
-            this.destination = new SafeSubscriber(this, destinationOrNext);
-          }
-          break;
-        }
-      default:
-        this.syncErrorThrowable = true;
-        this.destination = new SafeSubscriber(this, destinationOrNext, error, complete);
-        break;
-    }
-  }
-  [_internal_symbol_rxSubscriber__WEBPACK_IMPORTED_MODULE_2__/* .rxSubscriber */ .b]() {
-    return this;
-  }
-  static create(next, error, complete) {
-    const subscriber = new Subscriber(next, error, complete);
-    subscriber.syncErrorThrowable = false;
-    return subscriber;
-  }
-  next(value) {
-    if (!this.isStopped) {
-      this._next(value);
-    }
-  }
-  error(err) {
-    if (!this.isStopped) {
-      this.isStopped = true;
-      this._error(err);
-    }
-  }
-  complete() {
-    if (!this.isStopped) {
-      this.isStopped = true;
-      this._complete();
-    }
-  }
-  unsubscribe() {
-    if (this.closed) {
-      return;
-    }
-    this.isStopped = true;
-    super.unsubscribe();
-  }
-  _next(value) {
-    this.destination.next(value);
-  }
-  _error(err) {
-    this.destination.error(err);
-    this.unsubscribe();
-  }
-  _complete() {
-    this.destination.complete();
-    this.unsubscribe();
-  }
-  _unsubscribeAndRecycle() {
-    const {
-      _parentOrParents
-    } = this;
-    this._parentOrParents = null;
-    this.unsubscribe();
-    this.closed = false;
-    this.isStopped = false;
-    this._parentOrParents = _parentOrParents;
-    return this;
-  }
-}
-class SafeSubscriber extends Subscriber {
-  constructor(_parentSubscriber, observerOrNext, error, complete) {
-    super();
-    this._parentSubscriber = _parentSubscriber;
-    let next;
-    let context = this;
-    if ((0,_util_isFunction__WEBPACK_IMPORTED_MODULE_3__/* .isFunction */ .m)(observerOrNext)) {
-      next = observerOrNext;
-    } else if (observerOrNext) {
-      next = observerOrNext.next;
-      error = observerOrNext.error;
-      complete = observerOrNext.complete;
-      if (observerOrNext !== _Observer__WEBPACK_IMPORTED_MODULE_1__/* .empty */ .c) {
-        context = Object.create(observerOrNext);
-        if ((0,_util_isFunction__WEBPACK_IMPORTED_MODULE_3__/* .isFunction */ .m)(context.unsubscribe)) {
-          this.add(context.unsubscribe.bind(context));
-        }
-        context.unsubscribe = this.unsubscribe.bind(this);
-      }
-    }
-    this._context = context;
-    this._next = next;
-    this._error = error;
-    this._complete = complete;
-  }
-  next(value) {
-    if (!this.isStopped && this._next) {
-      const {
-        _parentSubscriber
-      } = this;
-      if (!_config__WEBPACK_IMPORTED_MODULE_4__.config.useDeprecatedSynchronousErrorHandling || !_parentSubscriber.syncErrorThrowable) {
-        this.__tryOrUnsub(this._next, value);
-      } else if (this.__tryOrSetError(_parentSubscriber, this._next, value)) {
-        this.unsubscribe();
-      }
-    }
-  }
-  error(err) {
-    if (!this.isStopped) {
-      const {
-        _parentSubscriber
-      } = this;
-      const {
-        useDeprecatedSynchronousErrorHandling
-      } = _config__WEBPACK_IMPORTED_MODULE_4__.config;
-      if (this._error) {
-        if (!useDeprecatedSynchronousErrorHandling || !_parentSubscriber.syncErrorThrowable) {
-          this.__tryOrUnsub(this._error, err);
-          this.unsubscribe();
-        } else {
-          this.__tryOrSetError(_parentSubscriber, this._error, err);
-          this.unsubscribe();
-        }
-      } else if (!_parentSubscriber.syncErrorThrowable) {
-        this.unsubscribe();
-        if (useDeprecatedSynchronousErrorHandling) {
-          throw err;
-        }
-        (0,_util_hostReportError__WEBPACK_IMPORTED_MODULE_5__/* .hostReportError */ .z)(err);
-      } else {
-        if (useDeprecatedSynchronousErrorHandling) {
-          _parentSubscriber.syncErrorValue = err;
-          _parentSubscriber.syncErrorThrown = true;
-        } else {
-          (0,_util_hostReportError__WEBPACK_IMPORTED_MODULE_5__/* .hostReportError */ .z)(err);
-        }
-        this.unsubscribe();
-      }
-    }
-  }
-  complete() {
-    if (!this.isStopped) {
-      const {
-        _parentSubscriber
-      } = this;
-      if (this._complete) {
-        const wrappedComplete = () => this._complete.call(this._context);
-        if (!_config__WEBPACK_IMPORTED_MODULE_4__.config.useDeprecatedSynchronousErrorHandling || !_parentSubscriber.syncErrorThrowable) {
-          this.__tryOrUnsub(wrappedComplete);
-          this.unsubscribe();
-        } else {
-          this.__tryOrSetError(_parentSubscriber, wrappedComplete);
-          this.unsubscribe();
-        }
-      } else {
-        this.unsubscribe();
-      }
-    }
-  }
-  __tryOrUnsub(fn, value) {
-    try {
-      fn.call(this._context, value);
-    } catch (err) {
-      this.unsubscribe();
-      if (_config__WEBPACK_IMPORTED_MODULE_4__.config.useDeprecatedSynchronousErrorHandling) {
-        throw err;
-      } else {
-        (0,_util_hostReportError__WEBPACK_IMPORTED_MODULE_5__/* .hostReportError */ .z)(err);
-      }
-    }
-  }
-  __tryOrSetError(parent, fn, value) {
-    if (!_config__WEBPACK_IMPORTED_MODULE_4__.config.useDeprecatedSynchronousErrorHandling) {
-      throw new Error('bad call');
-    }
-    try {
-      fn.call(this._context, value);
-    } catch (err) {
-      if (_config__WEBPACK_IMPORTED_MODULE_4__.config.useDeprecatedSynchronousErrorHandling) {
-        parent.syncErrorValue = err;
-        parent.syncErrorThrown = true;
-        return true;
-      } else {
-        (0,_util_hostReportError__WEBPACK_IMPORTED_MODULE_5__/* .hostReportError */ .z)(err);
-        return true;
-      }
-    }
-    return false;
-  }
-  _unsubscribe() {
-    const {
-      _parentSubscriber
-    } = this;
-    this._context = null;
-    this._parentSubscriber = null;
-    _parentSubscriber.unsubscribe();
-  }
-}
-//# sourceMappingURL=Subscriber.js.map
-
-/***/ }),
-
-/***/ 1115:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  w: () => (/* binding */ Subscription)
-});
-
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/isArray.js
-var isArray = __webpack_require__(8748);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/isObject.js
-var isObject = __webpack_require__(9174);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/isFunction.js
-var isFunction = __webpack_require__(2705);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/UnsubscriptionError.js
-const UnsubscriptionErrorImpl = (() => {
-  function UnsubscriptionErrorImpl(errors) {
-    Error.call(this);
-    this.message = errors ? `${errors.length} errors occurred during unsubscription:
-${errors.map((err, i) => `${i + 1}) ${err.toString()}`).join('\n  ')}` : '';
-    this.name = 'UnsubscriptionError';
-    this.errors = errors;
-    return this;
-  }
-  UnsubscriptionErrorImpl.prototype = Object.create(Error.prototype);
-  return UnsubscriptionErrorImpl;
-})();
-const UnsubscriptionError = UnsubscriptionErrorImpl;
-//# sourceMappingURL=UnsubscriptionError.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/Subscription.js
-
-
-
-
-class Subscription {
-  constructor(unsubscribe) {
-    this.closed = false;
-    this._parentOrParents = null;
-    this._subscriptions = null;
-    if (unsubscribe) {
-      this._ctorUnsubscribe = true;
-      this._unsubscribe = unsubscribe;
-    }
-  }
-  unsubscribe() {
-    let errors;
-    if (this.closed) {
-      return;
-    }
-    let {
-      _parentOrParents,
-      _ctorUnsubscribe,
-      _unsubscribe,
-      _subscriptions
-    } = this;
-    this.closed = true;
-    this._parentOrParents = null;
-    this._subscriptions = null;
-    if (_parentOrParents instanceof Subscription) {
-      _parentOrParents.remove(this);
-    } else if (_parentOrParents !== null) {
-      for (let index = 0; index < _parentOrParents.length; ++index) {
-        const parent = _parentOrParents[index];
-        parent.remove(this);
-      }
-    }
-    if ((0,isFunction/* isFunction */.m)(_unsubscribe)) {
-      if (_ctorUnsubscribe) {
-        this._unsubscribe = undefined;
-      }
-      try {
-        _unsubscribe.call(this);
-      } catch (e) {
-        errors = e instanceof UnsubscriptionError ? flattenUnsubscriptionErrors(e.errors) : [e];
-      }
-    }
-    if ((0,isArray/* isArray */.k)(_subscriptions)) {
-      let index = -1;
-      let len = _subscriptions.length;
-      while (++index < len) {
-        const sub = _subscriptions[index];
-        if ((0,isObject/* isObject */.K)(sub)) {
-          try {
-            sub.unsubscribe();
-          } catch (e) {
-            errors = errors || [];
-            if (e instanceof UnsubscriptionError) {
-              errors = errors.concat(flattenUnsubscriptionErrors(e.errors));
-            } else {
-              errors.push(e);
-            }
-          }
-        }
-      }
-    }
-    if (errors) {
-      throw new UnsubscriptionError(errors);
-    }
-  }
-  add(teardown) {
-    let subscription = teardown;
-    if (!teardown) {
-      return Subscription.EMPTY;
-    }
-    switch (typeof teardown) {
-      case 'function':
-        subscription = new Subscription(teardown);
-      case 'object':
-        if (subscription === this || subscription.closed || typeof subscription.unsubscribe !== 'function') {
-          return subscription;
-        } else if (this.closed) {
-          subscription.unsubscribe();
-          return subscription;
-        } else if (!(subscription instanceof Subscription)) {
-          const tmp = subscription;
-          subscription = new Subscription();
-          subscription._subscriptions = [tmp];
-        }
-        break;
-      default:
-        {
-          throw new Error('unrecognized teardown ' + teardown + ' added to Subscription.');
-        }
-    }
-    let {
-      _parentOrParents
-    } = subscription;
-    if (_parentOrParents === null) {
-      subscription._parentOrParents = this;
-    } else if (_parentOrParents instanceof Subscription) {
-      if (_parentOrParents === this) {
-        return subscription;
-      }
-      subscription._parentOrParents = [_parentOrParents, this];
-    } else if (_parentOrParents.indexOf(this) === -1) {
-      _parentOrParents.push(this);
-    } else {
-      return subscription;
-    }
-    const subscriptions = this._subscriptions;
-    if (subscriptions === null) {
-      this._subscriptions = [subscription];
-    } else {
-      subscriptions.push(subscription);
-    }
-    return subscription;
-  }
-  remove(subscription) {
-    const subscriptions = this._subscriptions;
-    if (subscriptions) {
-      const subscriptionIndex = subscriptions.indexOf(subscription);
-      if (subscriptionIndex !== -1) {
-        subscriptions.splice(subscriptionIndex, 1);
-      }
-    }
-  }
-}
-Subscription.EMPTY = function (empty) {
-  empty.closed = true;
-  return empty;
-}(new Subscription());
-function flattenUnsubscriptionErrors(errors) {
-  return errors.reduce((errs, err) => errs.concat(err instanceof UnsubscriptionError ? err.errors : err), []);
-}
-//# sourceMappingURL=Subscription.js.map
-
-/***/ }),
-
-/***/ 219:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   config: () => (/* binding */ config)
-/* harmony export */ });
-let _enable_super_gross_mode_that_will_cause_bad_things = false;
-const config = {
-  Promise: undefined,
-  set useDeprecatedSynchronousErrorHandling(value) {
-    if (value) {
-      const error = new Error();
-      console.warn('DEPRECATED! RxJS was set to use deprecated synchronous error handling behavior by code at: \n' + error.stack);
-    } else if (_enable_super_gross_mode_that_will_cause_bad_things) {
-      console.log('RxJS: Back to a better error behavior. Thank you. <3');
-    }
-    _enable_super_gross_mode_that_will_cause_bad_things = value;
-  },
-  get useDeprecatedSynchronousErrorHandling() {
-    return _enable_super_gross_mode_that_will_cause_bad_things;
-  }
-};
-//# sourceMappingURL=config.js.map
-
-/***/ }),
-
-/***/ 8195:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Ds: () => (/* binding */ SimpleOuterSubscriber),
-/* harmony export */   IY: () => (/* binding */ SimpleInnerSubscriber),
-/* harmony export */   ft: () => (/* binding */ innerSubscribe)
-/* harmony export */ });
-/* unused harmony exports ComplexInnerSubscriber, ComplexOuterSubscriber */
-/* harmony import */ var _Subscriber__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9744);
-/* harmony import */ var _Observable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3303);
-/* harmony import */ var _util_subscribeTo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(137);
-
-
-
-class SimpleInnerSubscriber extends _Subscriber__WEBPACK_IMPORTED_MODULE_0__/* .Subscriber */ .L {
-  constructor(parent) {
-    super();
-    this.parent = parent;
-  }
-  _next(value) {
-    this.parent.notifyNext(value);
-  }
-  _error(error) {
-    this.parent.notifyError(error);
-    this.unsubscribe();
-  }
-  _complete() {
-    this.parent.notifyComplete();
-    this.unsubscribe();
-  }
-}
-class ComplexInnerSubscriber extends (/* unused pure expression or super */ null && (Subscriber)) {
-  constructor(parent, outerValue, outerIndex) {
-    super();
-    this.parent = parent;
-    this.outerValue = outerValue;
-    this.outerIndex = outerIndex;
-  }
-  _next(value) {
-    this.parent.notifyNext(this.outerValue, value, this.outerIndex, this);
-  }
-  _error(error) {
-    this.parent.notifyError(error);
-    this.unsubscribe();
-  }
-  _complete() {
-    this.parent.notifyComplete(this);
-    this.unsubscribe();
-  }
-}
-class SimpleOuterSubscriber extends _Subscriber__WEBPACK_IMPORTED_MODULE_0__/* .Subscriber */ .L {
-  notifyNext(innerValue) {
-    this.destination.next(innerValue);
-  }
-  notifyError(err) {
-    this.destination.error(err);
-  }
-  notifyComplete() {
-    this.destination.complete();
-  }
-}
-class ComplexOuterSubscriber extends (/* unused pure expression or super */ null && (Subscriber)) {
-  notifyNext(_outerValue, innerValue, _outerIndex, _innerSub) {
-    this.destination.next(innerValue);
-  }
-  notifyError(error) {
-    this.destination.error(error);
-  }
-  notifyComplete(_innerSub) {
-    this.destination.complete();
-  }
-}
-function innerSubscribe(result, innerSubscriber) {
-  if (innerSubscriber.closed) {
-    return undefined;
-  }
-  if (result instanceof _Observable__WEBPACK_IMPORTED_MODULE_1__/* .Observable */ .y) {
-    return result.subscribe(innerSubscriber);
-  }
-  let subscription;
-  try {
-    subscription = (0,_util_subscribeTo__WEBPACK_IMPORTED_MODULE_2__/* .subscribeTo */ .s)(result)(innerSubscriber);
-  } catch (error) {
-    innerSubscriber.error(error);
-  }
-  return subscription;
-}
-//# sourceMappingURL=innerSubscribe.js.map
-
-/***/ }),
-
-/***/ 8291:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   c: () => (/* binding */ empty)
-/* harmony export */ });
-/* unused harmony export EMPTY */
-/* harmony import */ var _Observable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3303);
-
-const EMPTY = new _Observable__WEBPACK_IMPORTED_MODULE_0__/* .Observable */ .y(subscriber => subscriber.complete());
-function empty(scheduler) {
-  return scheduler ? emptyScheduled(scheduler) : EMPTY;
-}
-function emptyScheduled(scheduler) {
-  return new _Observable__WEBPACK_IMPORTED_MODULE_0__/* .Observable */ .y(subscriber => scheduler.schedule(() => subscriber.complete()));
-}
-//# sourceMappingURL=empty.js.map
-
-/***/ }),
-
-/***/ 3116:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  D: () => (/* binding */ from)
-});
-
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/Observable.js + 3 modules
-var Observable = __webpack_require__(3303);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/subscribeTo.js + 3 modules
-var subscribeTo = __webpack_require__(137);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/Subscription.js + 1 modules
-var Subscription = __webpack_require__(1115);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/symbol/observable.js
-var symbol_observable = __webpack_require__(693);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/scheduled/scheduleObservable.js
-
-
-
-function scheduleObservable(input, scheduler) {
-  return new Observable/* Observable */.y(subscriber => {
-    const sub = new Subscription/* Subscription */.w();
-    sub.add(scheduler.schedule(() => {
-      const observable = input[symbol_observable/* observable */.L]();
-      sub.add(observable.subscribe({
-        next(value) {
-          sub.add(scheduler.schedule(() => subscriber.next(value)));
-        },
-        error(err) {
-          sub.add(scheduler.schedule(() => subscriber.error(err)));
-        },
-        complete() {
-          sub.add(scheduler.schedule(() => subscriber.complete()));
-        }
-      }));
-    }));
-    return sub;
-  });
-}
-//# sourceMappingURL=scheduleObservable.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/scheduled/schedulePromise.js
-
-
-function schedulePromise(input, scheduler) {
-  return new Observable/* Observable */.y(subscriber => {
-    const sub = new Subscription/* Subscription */.w();
-    sub.add(scheduler.schedule(() => input.then(value => {
-      sub.add(scheduler.schedule(() => {
-        subscriber.next(value);
-        sub.add(scheduler.schedule(() => subscriber.complete()));
-      }));
-    }, err => {
-      sub.add(scheduler.schedule(() => subscriber.error(err)));
-    })));
-    return sub;
-  });
-}
-//# sourceMappingURL=schedulePromise.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/scheduled/scheduleArray.js
-var scheduleArray = __webpack_require__(3267);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/symbol/iterator.js
-var symbol_iterator = __webpack_require__(1171);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/scheduled/scheduleIterable.js
-
-
-
-function scheduleIterable(input, scheduler) {
-  if (!input) {
-    throw new Error('Iterable cannot be null');
-  }
-  return new Observable/* Observable */.y(subscriber => {
-    const sub = new Subscription/* Subscription */.w();
-    let iterator;
-    sub.add(() => {
-      if (iterator && typeof iterator.return === 'function') {
-        iterator.return();
-      }
-    });
-    sub.add(scheduler.schedule(() => {
-      iterator = input[symbol_iterator/* iterator */.hZ]();
-      sub.add(scheduler.schedule(function () {
-        if (subscriber.closed) {
-          return;
-        }
-        let value;
-        let done;
-        try {
-          const result = iterator.next();
-          value = result.value;
-          done = result.done;
-        } catch (err) {
-          subscriber.error(err);
-          return;
-        }
-        if (done) {
-          subscriber.complete();
-        } else {
-          subscriber.next(value);
-          this.schedule();
-        }
-      }));
-    }));
-    return sub;
-  });
-}
-//# sourceMappingURL=scheduleIterable.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/isInteropObservable.js
-
-function isInteropObservable(input) {
-  return input && typeof input[symbol_observable/* observable */.L] === 'function';
-}
-//# sourceMappingURL=isInteropObservable.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/isPromise.js
-var isPromise = __webpack_require__(9124);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/isArrayLike.js
-var isArrayLike = __webpack_require__(8232);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/isIterable.js
-
-function isIterable(input) {
-  return input && typeof input[symbol_iterator/* iterator */.hZ] === 'function';
-}
-//# sourceMappingURL=isIterable.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/scheduled/scheduled.js
-
-
-
-
-
-
-
-
-function scheduled(input, scheduler) {
-  if (input != null) {
-    if (isInteropObservable(input)) {
-      return scheduleObservable(input, scheduler);
-    } else if ((0,isPromise/* isPromise */.t)(input)) {
-      return schedulePromise(input, scheduler);
-    } else if ((0,isArrayLike/* isArrayLike */.z)(input)) {
-      return (0,scheduleArray/* scheduleArray */.r)(input, scheduler);
-    } else if (isIterable(input) || typeof input === 'string') {
-      return scheduleIterable(input, scheduler);
-    }
-  }
-  throw new TypeError((input !== null && typeof input || input) + ' is not observable');
-}
-//# sourceMappingURL=scheduled.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/observable/from.js
-
-
-
-function from(input, scheduler) {
-  if (!scheduler) {
-    if (input instanceof Observable/* Observable */.y) {
-      return input;
-    }
-    return new Observable/* Observable */.y((0,subscribeTo/* subscribeTo */.s)(input));
-  } else {
-    return scheduled(input, scheduler);
-  }
-}
-//# sourceMappingURL=from.js.map
-
-/***/ }),
-
-/***/ 2878:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   n: () => (/* binding */ fromArray)
-/* harmony export */ });
-/* harmony import */ var _Observable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3303);
-/* harmony import */ var _util_subscribeToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7845);
-/* harmony import */ var _scheduled_scheduleArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3267);
-
-
-
-function fromArray(input, scheduler) {
-  if (!scheduler) {
-    return new _Observable__WEBPACK_IMPORTED_MODULE_0__/* .Observable */ .y((0,_util_subscribeToArray__WEBPACK_IMPORTED_MODULE_1__/* .subscribeToArray */ .V)(input));
-  } else {
-    return (0,_scheduled_scheduleArray__WEBPACK_IMPORTED_MODULE_2__/* .scheduleArray */ .r)(input, scheduler);
-  }
-}
-//# sourceMappingURL=fromArray.js.map
-
-/***/ }),
-
-/***/ 9986:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   of: () => (/* binding */ of)
-/* harmony export */ });
-/* harmony import */ var _util_isScheduler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4890);
-/* harmony import */ var _fromArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2878);
-/* harmony import */ var _scheduled_scheduleArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3267);
-
-
-
-function of(...args) {
-  let scheduler = args[args.length - 1];
-  if ((0,_util_isScheduler__WEBPACK_IMPORTED_MODULE_0__/* .isScheduler */ .K)(scheduler)) {
-    args.pop();
-    return (0,_scheduled_scheduleArray__WEBPACK_IMPORTED_MODULE_1__/* .scheduleArray */ .r)(args, scheduler);
-  } else {
-    return (0,_fromArray__WEBPACK_IMPORTED_MODULE_2__/* .fromArray */ .n)(args);
-  }
-}
-//# sourceMappingURL=of.js.map
-
-/***/ }),
-
-/***/ 6797:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  H: () => (/* binding */ timer)
-});
-
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/Observable.js + 3 modules
-var Observable = __webpack_require__(3303);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/scheduler/async.js
-var scheduler_async = __webpack_require__(715);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/isArray.js
-var isArray = __webpack_require__(8748);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/isNumeric.js
-
-function isNumeric(val) {
-  return !(0,isArray/* isArray */.k)(val) && val - parseFloat(val) + 1 >= 0;
-}
-//# sourceMappingURL=isNumeric.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/isScheduler.js
-var isScheduler = __webpack_require__(4890);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/observable/timer.js
-
-
-
-
-function timer(dueTime = 0, periodOrScheduler, scheduler) {
-  let period = -1;
-  if (isNumeric(periodOrScheduler)) {
-    period = Number(periodOrScheduler) < 1 && 1 || Number(periodOrScheduler);
-  } else if ((0,isScheduler/* isScheduler */.K)(periodOrScheduler)) {
-    scheduler = periodOrScheduler;
-  }
-  if (!(0,isScheduler/* isScheduler */.K)(scheduler)) {
-    scheduler = scheduler_async/* async */.P;
-  }
-  return new Observable/* Observable */.y(subscriber => {
-    const due = isNumeric(dueTime) ? dueTime : +dueTime - scheduler.now();
-    return scheduler.schedule(dispatch, due, {
-      index: 0,
-      period,
-      subscriber
-    });
-  });
-}
-function dispatch(state) {
-  const {
-    index,
-    period,
-    subscriber
-  } = state;
-  subscriber.next(index);
-  if (subscriber.closed) {
-    return;
-  } else if (period === -1) {
-    return subscriber.complete();
-  }
-  state.index = index + 1;
-  this.schedule(state, period);
-}
-//# sourceMappingURL=timer.js.map
-
-/***/ }),
-
-/***/ 9575:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   U: () => (/* binding */ map)
-/* harmony export */ });
-/* unused harmony export MapOperator */
-/* harmony import */ var _Subscriber__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9744);
-
-function map(project, thisArg) {
-  return function mapOperation(source) {
-    if (typeof project !== 'function') {
-      throw new TypeError('argument is not a function. Are you looking for `mapTo()`?');
-    }
-    return source.lift(new MapOperator(project, thisArg));
-  };
-}
-class MapOperator {
-  constructor(project, thisArg) {
-    this.project = project;
-    this.thisArg = thisArg;
-  }
-  call(subscriber, source) {
-    return source.subscribe(new MapSubscriber(subscriber, this.project, this.thisArg));
-  }
-}
-class MapSubscriber extends _Subscriber__WEBPACK_IMPORTED_MODULE_0__/* .Subscriber */ .L {
-  constructor(destination, project, thisArg) {
-    super(destination);
-    this.project = project;
-    this.count = 0;
-    this.thisArg = thisArg || this;
-  }
-  _next(value) {
-    let result;
-    try {
-      result = this.project.call(this.thisArg, value, this.count++);
-    } catch (err) {
-      this.destination.error(err);
-      return;
-    }
-    this.destination.next(result);
-  }
-}
-//# sourceMappingURL=map.js.map
-
-/***/ }),
-
-/***/ 8478:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   w: () => (/* binding */ switchMap)
-/* harmony export */ });
-/* harmony import */ var _map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9575);
-/* harmony import */ var _observable_from__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3116);
-/* harmony import */ var _innerSubscribe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8195);
-
-
-
-function switchMap(project, resultSelector) {
-  if (typeof resultSelector === 'function') {
-    return source => source.pipe(switchMap((a, i) => (0,_observable_from__WEBPACK_IMPORTED_MODULE_0__/* .from */ .D)(project(a, i)).pipe((0,_map__WEBPACK_IMPORTED_MODULE_1__/* .map */ .U)((b, ii) => resultSelector(a, b, i, ii)))));
-  }
-  return source => source.lift(new SwitchMapOperator(project));
-}
-class SwitchMapOperator {
-  constructor(project) {
-    this.project = project;
-  }
-  call(subscriber, source) {
-    return source.subscribe(new SwitchMapSubscriber(subscriber, this.project));
-  }
-}
-class SwitchMapSubscriber extends _innerSubscribe__WEBPACK_IMPORTED_MODULE_2__/* .SimpleOuterSubscriber */ .Ds {
-  constructor(destination, project) {
-    super(destination);
-    this.project = project;
-    this.index = 0;
-  }
-  _next(value) {
-    let result;
-    const index = this.index++;
-    try {
-      result = this.project(value, index);
-    } catch (error) {
-      this.destination.error(error);
-      return;
-    }
-    this._innerSub(result);
-  }
-  _innerSub(result) {
-    const innerSubscription = this.innerSubscription;
-    if (innerSubscription) {
-      innerSubscription.unsubscribe();
-    }
-    const innerSubscriber = new _innerSubscribe__WEBPACK_IMPORTED_MODULE_2__/* .SimpleInnerSubscriber */ .IY(this);
-    const destination = this.destination;
-    destination.add(innerSubscriber);
-    this.innerSubscription = (0,_innerSubscribe__WEBPACK_IMPORTED_MODULE_2__/* .innerSubscribe */ .ft)(result, innerSubscriber);
-    if (this.innerSubscription !== innerSubscriber) {
-      destination.add(this.innerSubscription);
-    }
-  }
-  _complete() {
-    const {
-      innerSubscription
-    } = this;
-    if (!innerSubscription || innerSubscription.closed) {
-      super._complete();
-    }
-    this.unsubscribe();
-  }
-  _unsubscribe() {
-    this.innerSubscription = undefined;
-  }
-  notifyComplete() {
-    this.innerSubscription = undefined;
-    if (this.isStopped) {
-      super._complete();
-    }
-  }
-  notifyNext(innerValue) {
-    this.destination.next(innerValue);
-  }
-}
-//# sourceMappingURL=switchMap.js.map
-
-/***/ }),
-
-/***/ 3267:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   r: () => (/* binding */ scheduleArray)
-/* harmony export */ });
-/* harmony import */ var _Observable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3303);
-/* harmony import */ var _Subscription__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1115);
-
-
-function scheduleArray(input, scheduler) {
-  return new _Observable__WEBPACK_IMPORTED_MODULE_0__/* .Observable */ .y(subscriber => {
-    const sub = new _Subscription__WEBPACK_IMPORTED_MODULE_1__/* .Subscription */ .w();
-    let i = 0;
-    sub.add(scheduler.schedule(function () {
-      if (i === input.length) {
-        subscriber.complete();
-        return;
-      }
-      subscriber.next(input[i++]);
-      if (!subscriber.closed) {
-        sub.add(this.schedule());
-      }
-    }));
-    return sub;
-  });
-}
-//# sourceMappingURL=scheduleArray.js.map
-
-/***/ }),
-
-/***/ 27:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  o: () => (/* binding */ AsyncAction)
-});
-
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/Subscription.js + 1 modules
-var Subscription = __webpack_require__(1115);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/scheduler/Action.js
-
-class Action extends Subscription/* Subscription */.w {
-  constructor(scheduler, work) {
-    super();
-  }
-  schedule(state, delay = 0) {
-    return this;
-  }
-}
-//# sourceMappingURL=Action.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/scheduler/AsyncAction.js
-
-class AsyncAction extends Action {
-  constructor(scheduler, work) {
-    super(scheduler, work);
-    this.scheduler = scheduler;
-    this.work = work;
-    this.pending = false;
-  }
-  schedule(state, delay = 0) {
-    if (this.closed) {
-      return this;
-    }
-    this.state = state;
-    const id = this.id;
-    const scheduler = this.scheduler;
-    if (id != null) {
-      this.id = this.recycleAsyncId(scheduler, id, delay);
-    }
-    this.pending = true;
-    this.delay = delay;
-    this.id = this.id || this.requestAsyncId(scheduler, this.id, delay);
-    return this;
-  }
-  requestAsyncId(scheduler, id, delay = 0) {
-    return setInterval(scheduler.flush.bind(scheduler, this), delay);
-  }
-  recycleAsyncId(scheduler, id, delay = 0) {
-    if (delay !== null && this.delay === delay && this.pending === false) {
-      return id;
-    }
-    clearInterval(id);
-    return undefined;
-  }
-  execute(state, delay) {
-    if (this.closed) {
-      return new Error('executing a cancelled action');
-    }
-    this.pending = false;
-    const error = this._execute(state, delay);
-    if (error) {
-      return error;
-    } else if (this.pending === false && this.id != null) {
-      this.id = this.recycleAsyncId(this.scheduler, this.id, null);
-    }
-  }
-  _execute(state, delay) {
-    let errored = false;
-    let errorValue = undefined;
-    try {
-      this.work(state);
-    } catch (e) {
-      errored = true;
-      errorValue = !!e && e || new Error(e);
-    }
-    if (errored) {
-      this.unsubscribe();
-      return errorValue;
-    }
-  }
-  _unsubscribe() {
-    const id = this.id;
-    const scheduler = this.scheduler;
-    const actions = scheduler.actions;
-    const index = actions.indexOf(this);
-    this.work = null;
-    this.state = null;
-    this.pending = false;
-    this.scheduler = null;
-    if (index !== -1) {
-      actions.splice(index, 1);
-    }
-    if (id != null) {
-      this.id = this.recycleAsyncId(scheduler, id, null);
-    }
-    this.delay = null;
-  }
-}
-//# sourceMappingURL=AsyncAction.js.map
-
-/***/ }),
-
-/***/ 1661:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  v: () => (/* binding */ AsyncScheduler)
-});
-
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/Scheduler.js
-let Scheduler = /*#__PURE__*/(() => {
-  class Scheduler {
-    constructor(SchedulerAction, now = Scheduler.now) {
-      this.SchedulerAction = SchedulerAction;
-      this.now = now;
-    }
-    schedule(work, delay = 0, state) {
-      return new this.SchedulerAction(this, work).schedule(state, delay);
-    }
-  }
-  Scheduler.now = () => Date.now();
-  //# sourceMappingURL=Scheduler.js.map
-  return Scheduler;
-})();
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/scheduler/AsyncScheduler.js
-
-class AsyncScheduler extends Scheduler {
-  constructor(SchedulerAction, now = Scheduler.now) {
-    super(SchedulerAction, () => {
-      if (AsyncScheduler.delegate && AsyncScheduler.delegate !== this) {
-        return AsyncScheduler.delegate.now();
-      } else {
-        return now();
-      }
-    });
-    this.actions = [];
-    this.active = false;
-    this.scheduled = undefined;
-  }
-  schedule(work, delay = 0, state) {
-    if (AsyncScheduler.delegate && AsyncScheduler.delegate !== this) {
-      return AsyncScheduler.delegate.schedule(work, delay, state);
-    } else {
-      return super.schedule(work, delay, state);
-    }
-  }
-  flush(action) {
-    const {
-      actions
-    } = this;
-    if (this.active) {
-      actions.push(action);
-      return;
-    }
-    let error;
-    this.active = true;
-    do {
-      if (error = action.execute(action.state, action.delay)) {
-        break;
-      }
-    } while (action = actions.shift());
-    this.active = false;
-    if (error) {
-      while (action = actions.shift()) {
-        action.unsubscribe();
-      }
-      throw error;
-    }
-  }
-}
-//# sourceMappingURL=AsyncScheduler.js.map
-
-/***/ }),
-
-/***/ 715:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   P: () => (/* binding */ async)
-/* harmony export */ });
-/* unused harmony export asyncScheduler */
-/* harmony import */ var _AsyncAction__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(27);
-/* harmony import */ var _AsyncScheduler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1661);
-
-
-const asyncScheduler = new _AsyncScheduler__WEBPACK_IMPORTED_MODULE_0__/* .AsyncScheduler */ .v(_AsyncAction__WEBPACK_IMPORTED_MODULE_1__/* .AsyncAction */ .o);
-const async = asyncScheduler;
-//# sourceMappingURL=async.js.map
-
-/***/ }),
-
-/***/ 1171:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   hZ: () => (/* binding */ iterator)
-/* harmony export */ });
-/* unused harmony exports getSymbolIterator, $$iterator */
-function getSymbolIterator() {
-  if (typeof Symbol !== 'function' || !Symbol.iterator) {
-    return '@@iterator';
-  }
-  return Symbol.iterator;
-}
-const iterator = getSymbolIterator();
-const $$iterator = (/* unused pure expression or super */ null && (iterator));
-//# sourceMappingURL=iterator.js.map
-
-/***/ }),
-
-/***/ 693:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   L: () => (/* binding */ observable)
-/* harmony export */ });
-const observable = (() => typeof Symbol === 'function' && Symbol.observable || '@@observable')();
-//# sourceMappingURL=observable.js.map
-
-/***/ }),
-
-/***/ 6725:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   b: () => (/* binding */ rxSubscriber)
-/* harmony export */ });
-/* unused harmony export $$rxSubscriber */
-const rxSubscriber = (() => typeof Symbol === 'function' ? Symbol('rxSubscriber') : '@@rxSubscriber_' + Math.random())();
-const $$rxSubscriber = (/* unused pure expression or super */ null && (rxSubscriber));
-//# sourceMappingURL=rxSubscriber.js.map
-
-/***/ }),
-
-/***/ 650:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   z: () => (/* binding */ hostReportError)
-/* harmony export */ });
-function hostReportError(err) {
-  setTimeout(() => {
-    throw err;
-  }, 0);
-}
-//# sourceMappingURL=hostReportError.js.map
-
-/***/ }),
-
-/***/ 2966:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   y: () => (/* binding */ identity)
-/* harmony export */ });
-function identity(x) {
-  return x;
-}
-//# sourceMappingURL=identity.js.map
-
-/***/ }),
-
-/***/ 8748:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   k: () => (/* binding */ isArray)
-/* harmony export */ });
-const isArray = (() => Array.isArray || (x => x && typeof x.length === 'number'))();
-//# sourceMappingURL=isArray.js.map
-
-/***/ }),
-
-/***/ 8232:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   z: () => (/* binding */ isArrayLike)
-/* harmony export */ });
-const isArrayLike = x => x && typeof x.length === 'number' && typeof x !== 'function';
-//# sourceMappingURL=isArrayLike.js.map
-
-/***/ }),
-
-/***/ 2705:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   m: () => (/* binding */ isFunction)
-/* harmony export */ });
-function isFunction(x) {
-  return typeof x === 'function';
-}
-//# sourceMappingURL=isFunction.js.map
-
-/***/ }),
-
-/***/ 9174:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   K: () => (/* binding */ isObject)
-/* harmony export */ });
-function isObject(x) {
-  return x !== null && typeof x === 'object';
-}
-//# sourceMappingURL=isObject.js.map
-
-/***/ }),
-
-/***/ 9124:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   t: () => (/* binding */ isPromise)
-/* harmony export */ });
-function isPromise(value) {
-  return !!value && typeof value.subscribe !== 'function' && typeof value.then === 'function';
-}
-//# sourceMappingURL=isPromise.js.map
-
-/***/ }),
-
-/***/ 4890:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   K: () => (/* binding */ isScheduler)
-/* harmony export */ });
-function isScheduler(value) {
-  return value && typeof value.schedule === 'function';
-}
-//# sourceMappingURL=isScheduler.js.map
-
-/***/ }),
-
-/***/ 137:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  s: () => (/* binding */ subscribeTo)
-});
-
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/subscribeToArray.js
-var subscribeToArray = __webpack_require__(7845);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/hostReportError.js
-var hostReportError = __webpack_require__(650);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/subscribeToPromise.js
-
-const subscribeToPromise = promise => subscriber => {
-  promise.then(value => {
-    if (!subscriber.closed) {
-      subscriber.next(value);
-      subscriber.complete();
-    }
-  }, err => subscriber.error(err)).then(null, hostReportError/* hostReportError */.z);
-  return subscriber;
-};
-//# sourceMappingURL=subscribeToPromise.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/symbol/iterator.js
-var symbol_iterator = __webpack_require__(1171);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/subscribeToIterable.js
-
-const subscribeToIterable = iterable => subscriber => {
-  const iterator = iterable[symbol_iterator/* iterator */.hZ]();
-  do {
-    let item;
-    try {
-      item = iterator.next();
-    } catch (err) {
-      subscriber.error(err);
-      return subscriber;
-    }
-    if (item.done) {
-      subscriber.complete();
-      break;
-    }
-    subscriber.next(item.value);
-    if (subscriber.closed) {
-      break;
-    }
-  } while (true);
-  if (typeof iterator.return === 'function') {
-    subscriber.add(() => {
-      if (iterator.return) {
-        iterator.return();
-      }
-    });
-  }
-  return subscriber;
-};
-//# sourceMappingURL=subscribeToIterable.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/symbol/observable.js
-var observable = __webpack_require__(693);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/subscribeToObservable.js
-
-const subscribeToObservable = obj => subscriber => {
-  const obs = obj[observable/* observable */.L]();
-  if (typeof obs.subscribe !== 'function') {
-    throw new TypeError('Provided object does not correctly implement Symbol.observable');
-  } else {
-    return obs.subscribe(subscriber);
-  }
-};
-//# sourceMappingURL=subscribeToObservable.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/isArrayLike.js
-var isArrayLike = __webpack_require__(8232);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/isPromise.js
-var isPromise = __webpack_require__(9124);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/isObject.js
-var isObject = __webpack_require__(9174);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/rxjs/_esm2015/internal/util/subscribeTo.js
-
-
-
-
-
-
-
-
-
-const subscribeTo = result => {
-  if (!!result && typeof result[observable/* observable */.L] === 'function') {
-    return subscribeToObservable(result);
-  } else if ((0,isArrayLike/* isArrayLike */.z)(result)) {
-    return (0,subscribeToArray/* subscribeToArray */.V)(result);
-  } else if ((0,isPromise/* isPromise */.t)(result)) {
-    return subscribeToPromise(result);
-  } else if (!!result && typeof result[symbol_iterator/* iterator */.hZ] === 'function') {
-    return subscribeToIterable(result);
-  } else {
-    const value = (0,isObject/* isObject */.K)(result) ? 'an invalid object' : `'${result}'`;
-    const msg = `You provided ${value} where a stream was expected.` + ' You can provide an Observable, Promise, Array, or Iterable.';
-    throw new TypeError(msg);
-  }
-};
-//# sourceMappingURL=subscribeTo.js.map
-
-/***/ }),
-
-/***/ 7845:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   V: () => (/* binding */ subscribeToArray)
-/* harmony export */ });
-const subscribeToArray = array => subscriber => {
-  for (let i = 0, len = array.length; i < len && !subscriber.closed; i++) {
-    subscriber.next(array[i]);
-  }
-  subscriber.complete();
-};
-//# sourceMappingURL=subscribeToArray.js.map
 
 /***/ }),
 
@@ -23755,14 +22088,23 @@ const subscribeToArray = array => subscriber => {
 
 const _c0 = ["viewContainer"];
 const TUI = `tui_interactive_`;
+/**
+ * The most basic class for interactive components
+ */
 let AbstractTuiInteractive = /*#__PURE__*/(() => {
   class AbstractTuiInteractive {
     constructor() {
       this.pseudoHover = null;
       this.pseudoActive = null;
       this.pseudoFocus = null;
+      /**
+       * Determines if component is focusable with keyboard.
+       */
       this.focusable = true;
       this.nativeId = ``;
+      /**
+       * Emits 'true' on focus and 'false' on blur.
+       */
       this.focusedChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
       this.focusVisibleChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
       this.focusVisible = false;
@@ -23782,6 +22124,7 @@ let AbstractTuiInteractive = /*#__PURE__*/(() => {
       var _a;
       return !this.computedDisabled && ((_a = this.pseudoFocus) !== null && _a !== void 0 ? _a : this.focusVisible);
     }
+    // TODO: 3.0 Consider removing since native input is exposed
     get id() {
       return this.nativeId || this.autoIdString;
     }
@@ -23827,6 +22170,10 @@ let AbstractTuiInteractive = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 class AbstractTuiValueTransformer {}
+
+/**
+ * Basic ControlValueAccessor class to build form components upon
+ */
 let AbstractTuiControl = /*#__PURE__*/(() => {
   class AbstractTuiControl extends AbstractTuiInteractive {
     constructor(ngControl, cdr, valueTransformer) {
@@ -23945,6 +22292,9 @@ let AbstractTuiControl = /*#__PURE__*/(() => {
       }
       super.updateFocused(focused);
     }
+    /**
+     * @deprecated use `value` setter
+     */
     updateValue(value) {
       if (this.disabled || this.valueIdenticalComparator(this.value, value)) {
         return;
@@ -24138,6 +22488,10 @@ let AbstractTuiNullableControl = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Abstract service for displaying portals
+ */
 let AbstractTuiPortalService = /*#__PURE__*/(() => {
   class AbstractTuiPortalService {
     get safeHost() {
@@ -24176,6 +22530,10 @@ let AbstractTuiPortalService = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Abstract class for host element for dynamically created portals.
+ */
 let AbstractTuiPortalHostComponent = /*#__PURE__*/(() => {
   class AbstractTuiPortalHostComponent {
     constructor(injector, el, portalService) {
@@ -24183,6 +22541,7 @@ let AbstractTuiPortalHostComponent = /*#__PURE__*/(() => {
       this.el = el;
       portalService.attach(this);
     }
+    /** @deprecated unused, will be removed in 4.0 **/
     get clientRect() {
       return this.el.nativeElement.getBoundingClientRect();
     }
@@ -24190,6 +22549,7 @@ let AbstractTuiPortalHostComponent = /*#__PURE__*/(() => {
       const parent = component.createInjector(this.injector);
       const resolver = parent.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ComponentFactoryResolver);
       const factory = resolver.resolveComponentFactory(component.component);
+      // TODO: Remove in 4.0
       const providers = [{
         provide: AbstractTuiPortalHostComponent,
         useValue: this
@@ -24226,6 +22586,13 @@ let AbstractTuiPortalHostComponent = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Use this abstract class to create your own toggleable themes.
+ * A component extending this class must have CSS variables definitions
+ * and have ViewEncapsulation set to NONE. A boolean input allows to
+ * switch theme on or off.
+ */
 let AbstractTuiThemeSwitcher = /*#__PURE__*/(() => {
   class AbstractTuiThemeSwitcher {
     constructor(doc) {
@@ -24266,6 +22633,11 @@ let AbstractTuiThemeSwitcher = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-abstract.js.map
 
 /***/ }),
@@ -24281,6 +22653,11 @@ let AbstractTuiThemeSwitcher = /*#__PURE__*/(() => {
 /* harmony import */ var _taiga_ui_cdk_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6141);
 
 const tuiAssert = {
+  /**
+   * @deprecated:
+   * The current field no longer matters as
+   * it will not be provided in production
+   */
   enabled: false,
   get assert() {
     return ngDevMode ? Function.prototype.bind.call(console.assert, console) : _taiga_ui_cdk_constants__WEBPACK_IMPORTED_MODULE_0__/* .EMPTY_FUNCTION */ .iD;
@@ -24292,6 +22669,11 @@ class TuiValidationError {
     this.context = context;
   }
 }
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-cdk-classes.js.map
 
@@ -24325,9 +22707,30 @@ class TuiValidationError {
 /* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6825);
 
 
+
+/**
+ * Handler that always returns `false`.
+ */
+// eslint-disable-next-line no-restricted-syntax
 const ALWAYS_FALSE_HANDLER = () => false;
+
+/**
+ * Handler that always returns `true`.
+ */
+// eslint-disable-next-line no-restricted-syntax
 const ALWAYS_TRUE_HANDLER = () => true;
+
+/**
+ * @deprecated
+ * TODO: drop support of legacy Edge (EdgeHTML) in v4.x
+ */
 const CHROMIUM_EDGE_START_VERSION = 79;
+
+/**
+ * For type safety when using @ContentChildren and @ViewChildren
+ *
+ * NOTE: Be careful subscribing to 'changes'
+ */
 const EMPTY_QUERY = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.QueryList();
 const EMPTY_ARRAY = [];
 const EMPTY_FUNCTION = () => {};
@@ -24346,33 +22749,131 @@ const EMPTY_CLIENT_RECT = Object.assign(Object.assign({}, rect), {
     return rect;
   }
 });
+
+/**
+ * Default method to turn arbitrary object into string
+ */
 const TUI_DEFAULT_STRINGIFY = item => String(item);
+
+/**
+ * Default handler for matching stringified version of an item and a search query
+ * @param item arbitrary element to match with a string
+ * @param search search query
+ * @param stringify handler to turn item into a string
+ */
 const TUI_DEFAULT_MATCHER = (item, search, stringify = TUI_DEFAULT_STRINGIFY) => stringify(item).toLowerCase().includes(search.toLowerCase());
+/**
+ * Default handler for strict matching stringified version of an item and a search query
+ * @param item arbitrary element to match with a string
+ * @param search search query
+ * @param stringify handler to turn item into a string
+ */
 const TUI_STRICT_MATCHER = (item, search, stringify = TUI_DEFAULT_STRINGIFY) => stringify(item).toLowerCase() === search.toLowerCase();
+/**
+ * Default handler to match equality of two elements
+ * ATTENTION: considers two empty arrays equal
+ *
+ * @param item1 first element
+ * @param item2 second element
+ */
 const TUI_DEFAULT_IDENTITY_MATCHER = (item1, item2) => item1 === item2 || bothEmpty(item1, item2);
 function bothEmpty(item1, item2) {
   return Array.isArray(item1) && Array.isArray(item2) && !item1.length && !item2.length;
 }
+
+/**
+ * Add to enable child :leave animation (fixes https://github.com/angular/angular/issues/15753)
+ */
 const TUI_PARENT_ANIMATION = (0,_angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .trigger */ .X$)(`tuiParentAnimation`, [(0,_angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .transition */ .eR)(`:leave`, [(0,_angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .query */ .IO)(`:scope > *`, [(0,_angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .animateChild */ .pV)()], {
   optional: true
 })])]);
+/**
+ * Add on parent to stop initial :enter animation for children
+ */
 const TUI_PARENT_STOP = (0,_angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .trigger */ .X$)(`tuiParentStop`, [(0,_angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .transition */ .eR)(`:enter`, [])]);
 const POLLING_TIME = 1000 / 15;
+
+// Filtering SVGElements for TreeWalker
+// Filter must be a function in IE, other modern browsers are compliant to this format
 const svgNodeFilter = node => `ownerSVGElement` in node ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+
+/**
+ * {@link https://unicode-table.com/en/00A0/ Non-breaking space}.
+ */
 const CHAR_NO_BREAK_SPACE = `\u00A0`;
+/**
+ * {@link https://unicode-table.com/en/2013/ EN dash}
+ * is used to indicate a range of numbers or a span of time.
+ * @example 2006–2022
+ * ___
+ * Don't confuse with {@link CHAR_EM_DASH} or {@link CHAR_HYPHEN}!
+ */
 const CHAR_EN_DASH = `\u2013`;
+/**
+ * {@link https://unicode-table.com/en/2014/ EM dash}
+ * is used to mark a break in a sentence.
+ * @example Taiga UI — powerful set of open source components for Angular
+ * ___
+ * Don't confuse with {@link CHAR_EN_DASH} or {@link CHAR_HYPHEN}!
+ */
 const CHAR_EM_DASH = (/* unused pure expression or super */ null && (`\u2014`));
+/**
+ * {@link https://unicode-table.com/en/00AB/ Left-Pointing Double Angle Quotation Mark}
+ */
 const CHAR_LAQUO = (/* unused pure expression or super */ null && (`\u00AB`));
+/**
+ * {@link https://unicode-table.com/en/00BB/ Right-Pointing Double Angle Quotation Mark}
+ */
 const CHAR_RAQUO = (/* unused pure expression or super */ null && (`\u00BB`));
+/**
+ * {@link https://unicode-table.com/en/002D/ Hyphen (minus sign)}
+ * is used to combine words.
+ * @example well-behaved
+ * ___
+ * Don't confuse with {@link CHAR_EN_DASH} or {@link CHAR_EM_DASH}!
+ */
 const CHAR_HYPHEN = `\u002D`;
+/**
+ * {@link https://unicode-table.com/en/2212/ Minus}
+ * is used as math operator symbol or before negative digits.
+ * ---
+ * Can be used as `&minus;`. Don't confuse with {@link CHAR_HYPHEN}
+ */
 const CHAR_MINUS = `\u2212`;
+/**
+ * {@link https://unicode-table.com/en/002B/ Plus}
+ */
 const CHAR_PLUS = (/* unused pure expression or super */ null && (`\u002B`));
+/**
+ * {@link https://unicode-table.com/en/2022/ Bullet}.
+ */
 const CHAR_BULLET = (/* unused pure expression or super */ null && (`\u2022`));
+/**
+ * {@link https://unicode-table.com/en/2026/ Suspension points}.
+ */
 const CHAR_ELLIPSIS = (/* unused pure expression or super */ null && (`\u2026`));
+/**
+ * {@link https://unicode-table.com/en/00A4/ Suspension points}.
+ */
 const CHAR_CURRENCY_SIGN = (/* unused pure expression or super */ null && (`\u00A4`));
+/**
+ * {@link https://unicode-table.com/en/200b/ Suspension points}.
+ */
 const CHAR_ZERO_WIDTH_SPACE = (/* unused pure expression or super */ null && (`\u200B`));
+
+/**
+ * @description:
+ * AUTOGENERATED
+ *
+ * Array of icons used in taiga-ui components
+ */
 const TUI_USED_ICONS = (/* unused pure expression or super */ null && ([`tuiIconMirMono`, `tuiIconVisaMono`, `tuiIconElectronMono`, `tuiIconMastercard`, `tuiIconMaestro`, `tuiIconAmex`, `tuiIconDinersClub`, `tuiIconDiscover`, `tuiIconHumo`, `tuiIconJCB`, `tuiIconRuPay`, `tuiIconUnionPay`, `tuiIconUzcard`, `tuiIconVerve`, `tuiIconLink`, `tuiIconSearch`, `tuiIconSun`, `tuiIconMoon`, `tuiIconCode`, `tuiIconMenuLarge`, `tuiIconRotate`, `tuiIconArrowLeft`, `tuiIconArrowRight`, `tuiIconPlus`, `tuiIconMinus`, `tuiIconMinimize`, `tuiIconEye`, `tuiIconEyeOff`, `tuiIconDrag`, `tuiIconSortAscending`, `tuiIconSortDescending`, `tuiIconSortOff`, `tuiIconCheck`, `tuiIconCheckLarge`, `tuiIconMinusLarge`, `tuiIconChevronUp`, `tuiIconHelpCircle`, `tuiIconClose`, `tuiIconAlertCircle`, `tuiIconChevronRight`, `tuiIconInfo`, `tuiIconCheckCircle`, `tuiIconXCircle`, `tuiIconChevronLeft`, `tuiIconStarLarge`, `tuiIconChevronDown`, `tuiIconChevronDownLarge`, `tuiIconFileLarge`, `tuiIconTrashLarge`, `tuiIconAlertCircleLarge`, `tuiIconCheckCircleLarge`, `tuiIconCopy`, `tuiIconCopyLarge`, `tuiIconEyeOffLarge`, `tuiIconEyeLarge`, `tuiIconClock`, `tuiIconClockLarge`, `tuiIconToggleOff`, `tuiIconToggleOffLarge`, `tuiIconToggleOn`, `tuiIconToggleOnLarge`, `tuiIconCalendar`, `tuiIconCalendarLarge`]));
-const TUI_VERSION = `3.51.0`;
+const TUI_VERSION = `3.52.0`;
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-cdk-constants.js.map
 
@@ -24389,6 +22890,11 @@ const TUI_VERSION = `3.51.0`;
 /* harmony import */ var _taiga_ui_cdk_exceptions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7122);
 
 
+
+/**
+ * @deprecated:
+ * not compatible with TypeScript 5
+ */
 function tuiDebounce(timeout) {
   let timeoutRef;
   return function (_target, _key, descriptor) {
@@ -24402,6 +22908,16 @@ function tuiDebounce(timeout) {
     return descriptor;
   };
 }
+
+/**
+ * @deprecated:
+ * not compatible with TypeScript 5
+ *
+ * Decorator for checking input values for undefined. You can also pass
+ * optional assertion to check input against.
+ *
+ * CAUTION: This decorator overwrites other getters and setters.
+ */
 function tuiDefaultProp(assertion, ...args) {
   return (target, key) => {
     const {
@@ -24529,6 +23045,16 @@ function tuiPure(target, propertyKeyOrContext, descriptor) {
     }
   };
 }
+
+/**
+ * @deprecated:
+ * not compatible with TypeScript 5
+ *
+ * Decorator for checking input setter values against a custom assertion which
+ * takes value passed to input setter and component instance as arguments.
+ * It specifically checks for undefined values and prevents calls to the
+ * original setter in this case.
+ */
 function tuiRequiredSetter(assertion, ...args) {
   return (target, key, {
     configurable,
@@ -24560,6 +23086,11 @@ function errorSet(key, component) {
   return `Undefined was passed as ${String(key)} to ${component}, setter will not be called`;
 }
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-decorators.js.map
 
 /***/ }),
@@ -24577,6 +23108,10 @@ function errorSet(key, component) {
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 
 
+
+/**
+ * @internal
+ */
 class TuiLetContext {
   constructor(internalDirectiveInstance) {
     this.internalDirectiveInstance = internalDirectiveInstance;
@@ -24588,11 +23123,22 @@ class TuiLetContext {
     return this.internalDirectiveInstance.tuiLet;
   }
 }
+
+/**
+ * Works like *ngIf but does not have a condition — use it to declare
+ * the result of pipes calculation (i.e. async pipe)
+ */
 let TuiLetDirective = /*#__PURE__*/(() => {
   class TuiLetDirective {
     constructor(viewContainer, templateRef) {
       viewContainer.createEmbeddedView(templateRef, new TuiLetContext(this));
     }
+    /**
+     * Asserts the correct type of the context for the template that `TuiLet` will render.
+     *
+     * The presence of this method is a signal to the Ivy template type-check compiler that the
+     * `TuiLet` structural directive renders its template with a specific context type.
+     */
     static ngTemplateContextGuard(_dir, _ctx) {
       return true;
     }
@@ -24627,6 +23173,11 @@ let TuiLetModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-directives-let.js.map
 
 /***/ }),
@@ -24639,6 +23190,8 @@ let TuiLetModule = /*#__PURE__*/(() => {
 /* harmony export */   B: () => (/* binding */ TuiMonthNumber),
 /* harmony export */   L: () => (/* binding */ TuiDayOfWeek)
 /* harmony export */ });
+// TODO: change type in v4.0
+// eslint-disable-next-line no-restricted-syntax
 var TuiDayOfWeek = /*#__PURE__*/function (TuiDayOfWeek) {
   TuiDayOfWeek[TuiDayOfWeek["Sunday"] = 0] = "Sunday";
   TuiDayOfWeek[TuiDayOfWeek["Monday"] = 1] = "Monday";
@@ -24649,6 +23202,8 @@ var TuiDayOfWeek = /*#__PURE__*/function (TuiDayOfWeek) {
   TuiDayOfWeek[TuiDayOfWeek["Saturday"] = 6] = "Saturday";
   return TuiDayOfWeek;
 }(TuiDayOfWeek || {});
+// TODO: change type in v4.0
+// eslint-disable-next-line no-restricted-syntax
 var TuiMonthNumber = /*#__PURE__*/function (TuiMonthNumber) {
   TuiMonthNumber[TuiMonthNumber["January"] = 0] = "January";
   TuiMonthNumber[TuiMonthNumber["February"] = 1] = "February";
@@ -24664,6 +23219,10 @@ var TuiMonthNumber = /*#__PURE__*/function (TuiMonthNumber) {
   TuiMonthNumber[TuiMonthNumber["December"] = 11] = "December";
   return TuiMonthNumber;
 }(TuiMonthNumber || {});
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-cdk-enums.js.map
 
@@ -24749,6 +23308,11 @@ class TuiXmlParsingException extends (/* unused pure expression or super */ null
   }
 }
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-exceptions.js.map
 
 /***/ }),
@@ -24800,6 +23364,10 @@ class TuiXmlParsingException extends (/* unused pure expression or super */ null
 
 
 
+
+/**
+ * Turns AbstractControl/Abstract-control-directive valueChanges into ReplaySubject(1)
+ */
 function tuiControlValue(control) {
   return new rxjs__WEBPACK_IMPORTED_MODULE_0__/* .Observable */ .y(subscriber => {
     if (!control.valueChanges) {
@@ -24809,11 +23377,23 @@ function tuiControlValue(control) {
   });
 }
 function tuiTypedFromEvent(target, event, options = {}) {
+  /**
+   * @note:
+   * in RxJS 7 type signature `TuiTypedEventTarget<E>` !== `HasEventTargetAddRemove<E>`
+   */
   return (0,rxjs__WEBPACK_IMPORTED_MODULE_3__/* .fromEvent */ .R)(target, event, options);
 }
+
+/**
+ * Letting go of the mouse after it was pressed
+ * @param target
+ */
 function tuiMouseDragFinishFrom(target) {
   return merge(tuiTypedFromEvent(target, `mouseup`), tuiTypedFromEvent(target, `dragend`));
 }
+
+// TODO: change type in v4.0
+// eslint-disable-next-line no-restricted-syntax
 var TuiDragStage = /*#__PURE__*/function (TuiDragStage) {
   TuiDragStage[TuiDragStage["Start"] = 0] = "Start";
   TuiDragStage[TuiDragStage["Continues"] = 1] = "Continues";
@@ -24835,6 +23415,10 @@ function tuiDragAndDropFrom(element) {
   }
   return concat(tuiTypedFromEvent(element, `mousedown`).pipe(take(1), map(event => new TuiDragState(TuiDragStage.Start, event))), merge(tuiTypedFromEvent(ownerDocument, `mousemove`).pipe(map(event => new TuiDragState(TuiDragStage.Continues, event))), tuiMouseDragFinishFrom(ownerDocument).pipe(take(1), map(event => new TuiDragState(TuiDragStage.End, event)), endWith(null))).pipe(takeWhile(tuiIsPresent))).pipe(repeat());
 }
+
+/**
+ * Operator to set lifespan after which current value is considered obsolete
+ */
 function tuiIsAlive(lifespan = 0) {
   return (0,rxjs__WEBPACK_IMPORTED_MODULE_4__/* .pipe */ .z)((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__/* .switchMap */ .w)(() => (0,rxjs__WEBPACK_IMPORTED_MODULE_6__/* .timer */ .H)(lifespan).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__/* .map */ .U)(_taiga_ui_cdk_constants__WEBPACK_IMPORTED_MODULE_8__/* .ALWAYS_FALSE_HANDLER */ .Iy), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__/* .startWith */ .O)(true))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__/* .distinctUntilChanged */ .x)());
 }
@@ -24862,7 +23446,11 @@ function tuiFocusVisibleObservable(element) {
       refCount: true
     }));
   }
-  return (0,rxjs__WEBPACK_IMPORTED_MODULE_11__/* .merge */ .T)((0,rxjs__WEBPACK_IMPORTED_MODULE_12__/* .concat */ .z)(tuiTypedFromEvent(element, `focus`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__/* .take */ .q)(1)), elementBlur$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__/* .filter */ .h)(() => !(0,_taiga_ui_cdk_utils_focus__WEBPACK_IMPORTED_MODULE_15__/* .tuiIsNativeFocused */ .V8)(element)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__/* .take */ .q)(1), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_16__/* .ignoreElements */ .l)())).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_17__/* .repeat */ .r)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_18__/* .withLatestFrom */ .M)(documentMouseDownIsAlive$, documentMouseUpIsAlive$, (_event, elementActual, documentActual) => elementActual || documentActual), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__/* .filter */ .h)(_taiga_ui_cdk_utils__WEBPACK_IMPORTED_MODULE_19__/* .tuiIsFalsy */ .Mv))).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__/* .switchMap */ .w)(() => elementBlur$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__/* .map */ .U)(_taiga_ui_cdk_constants__WEBPACK_IMPORTED_MODULE_8__/* .ALWAYS_FALSE_HANDLER */ .Iy), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__/* .take */ .q)(1), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__/* .startWith */ .O)(true))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__/* .distinctUntilChanged */ .x)());
+  return (0,rxjs__WEBPACK_IMPORTED_MODULE_11__/* .merge */ .T)(
+  // focus events excluding ones that came right after mouse action
+  (0,rxjs__WEBPACK_IMPORTED_MODULE_12__/* .concat */ .z)(tuiTypedFromEvent(element, `focus`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__/* .take */ .q)(1)),
+  // filtering out blur events when element remains focused so that we ignore browser tab focus loss
+  elementBlur$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__/* .filter */ .h)(() => !(0,_taiga_ui_cdk_utils_focus__WEBPACK_IMPORTED_MODULE_15__/* .tuiIsNativeFocused */ .V8)(element)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__/* .take */ .q)(1), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_16__/* .ignoreElements */ .l)())).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_17__/* .repeat */ .r)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_18__/* .withLatestFrom */ .M)(documentMouseDownIsAlive$, documentMouseUpIsAlive$, (_event, elementActual, documentActual) => elementActual || documentActual), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__/* .filter */ .h)(_taiga_ui_cdk_utils__WEBPACK_IMPORTED_MODULE_19__/* .tuiIsFalsy */ .Mv))).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__/* .switchMap */ .w)(() => elementBlur$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__/* .map */ .U)(_taiga_ui_cdk_constants__WEBPACK_IMPORTED_MODULE_8__/* .ALWAYS_FALSE_HANDLER */ .Iy), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__/* .take */ .q)(1), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__/* .startWith */ .O)(true))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__/* .distinctUntilChanged */ .x)());
 }
 function tuiIfMap(project, predicate = Boolean) {
   return (0,rxjs__WEBPACK_IMPORTED_MODULE_4__/* .pipe */ .z)((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__/* .switchMap */ .w)(value => predicate(value) ? project(value) : rxjs__WEBPACK_IMPORTED_MODULE_20__/* .EMPTY */ .E));
@@ -24871,9 +23459,16 @@ function tuiIsObserved(observable) {
   var _a, _b;
   return `observed` in observable ? observable.observed : !!((_b = (_a = observable) === null || _a === void 0 ? void 0 : _a.observers) === null || _b === void 0 ? void 0 : _b.length);
 }
+
+/**
+ * Converts changes observable of a QueryList to an Observable of arrays
+ */
 function tuiQueryListChanges(queryList) {
   return queryList.changes.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__/* .startWith */ .O)(null), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__/* .map */ .U)(() => (0,_taiga_ui_cdk_utils__WEBPACK_IMPORTED_MODULE_19__/* .tuiGetOriginalArrayFromQueryList */ .gD)(queryList)));
 }
+/**
+ * @deprecated An alias, use {@link tuiQueryListChanges} instead
+ */
 const tuiItemsQueryListObservable = (/* unused pure expression or super */ null && (tuiQueryListChanges));
 function tuiMustBePresent() {
   return map(value => {
@@ -24901,6 +23496,10 @@ function tuiPressedObservable(element, {
 function tuiPreventDefault() {
   return tap(event => event.preventDefault());
 }
+
+/**
+ * Normalizes scroll event in case element is `html` (document.documentElement)
+ */
 function tuiScrollFrom(element) {
   return tuiTypedFromEvent(element === element.ownerDocument.documentElement ? element.ownerDocument : element, `scroll`);
 }
@@ -24927,6 +23526,11 @@ function tuiZonefree(zone) {
 function tuiZoneOptimized(zone) {
   return (0,rxjs__WEBPACK_IMPORTED_MODULE_4__/* .pipe */ .z)(tuiZonefree(zone), tuiZonefull(zone));
 }
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-cdk-observables.js.map
 
@@ -24994,16 +23598,14 @@ var shareReplay = __webpack_require__(7081);
 var operators_pairwise = __webpack_require__(9384);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/filter.js
 var operators_filter = __webpack_require__(2181);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
-var ng_web_apis_common = __webpack_require__(9570);
+// EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
+var ng_web_apis_common = __webpack_require__(229);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-constants.js
 var taiga_ui_cdk_constants = __webpack_require__(6141);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-dom.js
 var taiga_ui_cdk_utils_dom = __webpack_require__(7995);
 // EXTERNAL MODULE: consume shared module (default) @angular/common@=16.2.11 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
 var common_mjs_ = __webpack_require__(4917);
-// EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
-var fesm2015_ng_web_apis_common = __webpack_require__(229);
 ;// CONCATENATED MODULE: ./node_modules/@ng-web-apis/resize-observer/fesm2015/ng-web-apis-resize-observer.js
 
 
@@ -25018,7 +23620,7 @@ const RESIZE_OPTION_BOX = new core_mjs_.InjectionToken('Box model to observe cha
 });
 const RESIZE_OBSERVER_SUPPORT = new core_mjs_.InjectionToken('Resize Observer API support', {
   providedIn: 'root',
-  factory: () => !!(0,core_mjs_.inject)(fesm2015_ng_web_apis_common/* WINDOW */.m9).ResizeObserver
+  factory: () => !!(0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9).ResizeObserver
 });
 let ResizeObserverService = /*#__PURE__*/(() => {
   class ResizeObserverService extends internal_Observable/* Observable */.y {
@@ -25059,6 +23661,10 @@ let ResizeObserverService = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * @deprecated View Engine legacy
+ * TODO: use arrow function for `useFactory` and delete this exported function in future major release
+ */
 // TODO switch to Attribute once https://github.com/angular/angular/issues/36479 is fixed
 function boxExtractor({
   nativeElement
@@ -25066,6 +23672,10 @@ function boxExtractor({
   const attribute = nativeElement.getAttribute('waResizeBox');
   return boxFactory(attribute);
 }
+/**
+ * @deprecated View Engine legacy
+ * TODO: use arrow function for `useFactory` and delete this exported function in future major release
+ */
 function boxFactory(box) {
   return box || RESIZE_OPTION_BOX_DEFAULT;
 }
@@ -25208,6 +23818,15 @@ var taiga_ui_cdk_tokens = __webpack_require__(2918);
 
 
 
+
+/**
+ * @note:
+ * Observable abstraction over ngOnDestroy to use with takeUntil
+ *
+ * Why we use `ReplaySubject` instead of `Subject`?
+ * Well, we’ll use ReplaySubject to emit the last message in case
+ * the subscription is ended after the component is destroyed.
+ */
 let TuiDestroyService = /*#__PURE__*/(() => {
   class TuiDestroyService extends ReplaySubject/* ReplaySubject */.t {
     constructor() {
@@ -25230,6 +23849,10 @@ let TuiDestroyService = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Service to use styles with directives
+ */
 let TuiDirectiveStylesService = /*#__PURE__*/(() => {
   class TuiDirectiveStylesService {
     constructor(resolver, injector) {
@@ -25256,6 +23879,12 @@ let TuiDirectiveStylesService = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Service to imitate :focus-visible
+ * (https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)
+ * in browsers that do not support it
+ */
 let TuiFocusVisibleService = /*#__PURE__*/(() => {
   class TuiFocusVisibleService extends internal_Observable/* Observable */.y {
     constructor({
@@ -25278,6 +23907,9 @@ let TuiFocusVisibleService = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 const TUI = `tui_`;
+/**
+ * Generates unique ids
+ */
 let TuiIdService = /*#__PURE__*/(() => {
   class TuiIdService {
     generate() {
@@ -25298,9 +23930,15 @@ let TuiIdService = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Service that subscribes to scroll events of all parent elements
+ */
 let TuiParentsScrollService = /*#__PURE__*/(() => {
   class TuiParentsScrollService extends internal_Observable/* Observable */.y {
-    constructor(el, win) {
+    constructor(
+    // Destructuring here causes memory leak
+    el, win) {
       super(subscriber => this.callback$.subscribe(subscriber));
       this.callback$ = (0,observable_defer/* defer */.P)(() => {
         let {
@@ -25327,13 +23965,22 @@ let TuiParentsScrollService = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+// @bad TODO: Consider Intersection Observer with fallback to current implementation
+/**
+ * Service that monitors element visibility by subscribing to scrolls
+ * and polling with set interval, returns either null or an array
+ * of elements that overlap given element edges
+ */
 let TuiObscuredService = /*#__PURE__*/(() => {
   class TuiObscuredService extends internal_Observable/* Observable */.y {
     constructor(parentsScroll$, {
       nativeElement
     }, zone, win, destroy$, animationFrame$) {
       super(subscriber => this.obscured$.subscribe(subscriber));
-      this.obscured$ = (0,observable_merge/* merge */.T)((0,observable_merge/* merge */.T)(parentsScroll$, (0,fromEvent/* fromEvent */.R)(win, `resize`)).pipe((0,delay/* delay */.g)(0)), animationFrame$.pipe((0,throttleTime/* throttleTime */.p)(taiga_ui_cdk_constants/* POLLING_TIME */.Yg))).pipe((0,operators_map/* map */.U)(() => (0,taiga_ui_cdk_utils_dom/* tuiGetElementObscures */.PU)(nativeElement)), (0,startWith/* startWith */.O)(null), (0,distinctUntilChanged/* distinctUntilChanged */.x)(), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(zone), (0,operators_takeUntil/* takeUntil */.R)(destroy$));
+      this.obscured$ = (0,observable_merge/* merge */.T)(
+      // delay is added so it will not interfere with other listeners
+      (0,observable_merge/* merge */.T)(parentsScroll$, (0,fromEvent/* fromEvent */.R)(win, `resize`)).pipe((0,delay/* delay */.g)(0)), animationFrame$.pipe((0,throttleTime/* throttleTime */.p)(taiga_ui_cdk_constants/* POLLING_TIME */.Yg))).pipe((0,operators_map/* map */.U)(() => (0,taiga_ui_cdk_utils_dom/* tuiGetElementObscures */.PU)(nativeElement)), (0,startWith/* startWith */.O)(null), (0,distinctUntilChanged/* distinctUntilChanged */.x)(), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(zone), (0,operators_takeUntil/* takeUntil */.R)(destroy$));
     }
   }
   TuiObscuredService.ɵfac = function TuiObscuredService_Factory(t) {
@@ -25366,7 +24013,9 @@ let TuiPanService = /*#__PURE__*/(/* unused pure expression or super */ null && 
           const deltaX = second.clientX - first.clientX;
           const deltaY = second.clientY - first.clientY;
           return [deltaX, deltaY];
-        }), takeUntil(merge(tuiTypedFromEvent(doc, `touchend`), tuiTypedFromEvent(doc, `mouseup`))), repeat()).subscribe(subscriber);
+        }),
+        // eslint-disable-next-line rxjs/no-unsafe-takeuntil
+        takeUntil(merge(tuiTypedFromEvent(doc, `touchend`), tuiTypedFromEvent(doc, `mouseup`))), repeat()).subscribe(subscriber);
       });
     }
   }
@@ -25382,11 +24031,18 @@ let TuiPanService = /*#__PURE__*/(/* unused pure expression or super */ null && 
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+// TODO: Remove in 4.0 when Safari is bumped to 13
 let TuiResizeService = /*#__PURE__*/(() => {
   class TuiResizeService extends ResizeObserverService {
     constructor(el, zone, destroy$, support, box, animationFrame$) {
       super(el, zone, support, box);
-      return this.pipe((0,catchError/* catchError */.K)(() => animationFrame$.pipe((0,throttleTime/* throttleTime */.p)(taiga_ui_cdk_constants/* POLLING_TIME */.Yg), (0,operators_map/* map */.U)(() => `${el.nativeElement.clientWidth} ${el.nativeElement.clientHeight}`), (0,distinctUntilChanged/* distinctUntilChanged */.x)(), (0,operators_map/* map */.U)(() => taiga_ui_cdk_constants/* EMPTY_ARRAY */.LZ))), (0,debounceTime/* debounceTime */.b)(0), (0,taiga_ui_cdk_observables/* tuiZonefree */.fL)(zone), (0,share/* share */.B)(), (0,operators_takeUntil/* takeUntil */.R)(destroy$));
+      return this.pipe((0,catchError/* catchError */.K)(() =>
+      /**
+       * @note: if not supported ResizeObserver
+       * remove `catchError` after supports modern browsers
+       */
+      animationFrame$.pipe((0,throttleTime/* throttleTime */.p)(taiga_ui_cdk_constants/* POLLING_TIME */.Yg), (0,operators_map/* map */.U)(() => `${el.nativeElement.clientWidth} ${el.nativeElement.clientHeight}`), (0,distinctUntilChanged/* distinctUntilChanged */.x)(), (0,operators_map/* map */.U)(() => taiga_ui_cdk_constants/* EMPTY_ARRAY */.LZ))), (0,debounceTime/* debounceTime */.b)(0), (0,taiga_ui_cdk_observables/* tuiZonefree */.fL)(zone), (0,share/* share */.B)(), (0,operators_takeUntil/* takeUntil */.R)(destroy$));
     }
   }
   TuiResizeService.ɵfac = function TuiResizeService_Factory(t) {
@@ -25454,7 +24110,12 @@ let TuiStaticRequestService = /*#__PURE__*/(() => {
       if (cache) {
         return cache;
       }
-      const response$ = `AbortController` in this.win || (0,common_mjs_.isPlatformServer)(this.platformId) ? fromFetch(url) : (0,observable_defer/* defer */.P)(() => (0,from/* from */.D)(fetch(url)));
+      const response$ = `AbortController` in this.win || (0,common_mjs_.isPlatformServer)(this.platformId) ? fromFetch(url) :
+      /**
+       * Fallback for Firefox 55 and 56
+       * TODO: drop after browser support bump
+       */
+      (0,observable_defer/* defer */.P)(() => (0,from/* from */.D)(fetch(url)));
       const piped = response$.pipe((0,operators_switchMap/* switchMap */.w)(response => (0,tslib_es6/* __awaiter */.mG)(this, void 0, void 0, function* () {
         if (response.ok) {
           return response.text();
@@ -25585,6 +24246,11 @@ let TuiZoomService = /*#__PURE__*/(/* unused pure expression or super */ null &&
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-services.js.map
 
 /***/ }),
@@ -25621,8 +24287,8 @@ __webpack_require__.d(__webpack_exports__, {
 var common_mjs_ = __webpack_require__(4917);
 // EXTERNAL MODULE: consume shared module (default) @angular/core@=16.2.11 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
 var core_mjs_ = __webpack_require__(2368);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
-var ng_web_apis_common = __webpack_require__(9570);
+// EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
+var ng_web_apis_common = __webpack_require__(229);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-observables.js
 var taiga_ui_cdk_observables = __webpack_require__(5213);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-miscellaneous.js
@@ -25630,6 +24296,16 @@ var taiga_ui_cdk_utils_miscellaneous = __webpack_require__(8937);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-dom.js
 var taiga_ui_cdk_utils_dom = __webpack_require__(7995);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-os.js
+/**
+ * @description:
+ * All Chrome / Chromium-based browsers will return MacIntel on macOS,
+ * no matter what the hardware architecture is. See the source code here:
+ * https://source.chromium.org/chromium/chromium/src/+/master:third_party/blink/renderer/core/frame/navigator_id.cc;l=64;drc=703d3c472cf27470dad21a3f2c8972aca3732cd6
+ * But maybe in future years, it will be changed to MacM1
+ *
+ * Documentation:
+ * https://developer.mozilla.org/en-US/docs/Web/API/Navigator/platform
+ */
 function tuiIsApplePlatform(navigator) {
   return navigator.platform.startsWith(`Mac`) || navigator.platform === `iPhone`;
 }
@@ -25641,6 +24317,11 @@ const SAFARI_REG_EXP = /^((?!chrome|android).)*safari/i;
 function tuiIsApple(navigator) {
   return tuiIsIos(navigator) || SAFARI_REG_EXP.test(navigator.userAgent.toLowerCase());
 }
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-cdk-utils-os.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/BehaviorSubject.js
@@ -25691,6 +24372,10 @@ var taiga_ui_cdk_constants = __webpack_require__(6141);
 
 
 
+
+/**
+ * Element currently being removed by AnimationEngine
+ */
 const TUI_REMOVED_ELEMENT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => {
   const stub = {
     onRemovalComplete: () => {}
@@ -25706,6 +24391,10 @@ const TUI_REMOVED_ELEMENT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken
   };
   return element$.pipe((0,switchMap/* switchMap */.w)(element => (0,timer/* timer */.H)(0).pipe((0,map/* map */.U)(() => null), (0,startWith/* startWith */.O)(element))), (0,share/* share */.B)());
 });
+
+/**
+ * Active element on the document for ActiveZone
+ */
 const TUI_ACTIVE_ELEMENT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => {
   const removedElement$ = (0,core_mjs_.inject)(TUI_REMOVED_ELEMENT);
   const win = (0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9);
@@ -25715,7 +24404,16 @@ const TUI_ACTIVE_ELEMENT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenF
   const blur$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(win, `blur`);
   const mousedown$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(win, `mousedown`);
   const mouseup$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(win, `mouseup`);
-  return (0,merge/* merge */.T)(focusout$.pipe((0,takeUntil/* takeUntil */.R)(mousedown$), (0,repeatWhen/* repeatWhen */.a)(() => mouseup$), (0,withLatestFrom/* withLatestFrom */.M)(removedElement$), (0,filter/* filter */.h)(([event, removedElement]) => isValidFocusout((0,taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA)(event), removedElement)), (0,map/* map */.U)(([{
+  return (0,merge/* merge */.T)(focusout$.pipe(
+  // eslint-disable-next-line rxjs/no-unsafe-takeuntil
+  (0,takeUntil/* takeUntil */.R)(mousedown$),
+  /**
+   * TODO: replace to
+   * repeat({delay: () => mouseup$})
+   * in RxJS 7
+   */
+  // eslint-disable-next-line rxjs/no-ignored-notifier
+  (0,repeatWhen/* repeatWhen */.a)(() => mouseup$), (0,withLatestFrom/* withLatestFrom */.M)(removedElement$), (0,filter/* filter */.h)(([event, removedElement]) => isValidFocusout((0,taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA)(event), removedElement)), (0,map/* map */.U)(([{
     relatedTarget
   }]) => relatedTarget)), blur$.pipe((0,map/* map */.U)(() => doc.activeElement), (0,filter/* filter */.h)(element => !!(element === null || element === void 0 ? void 0 : element.matches(`iframe`)))), focusin$.pipe((0,switchMap/* switchMap */.w)(event => {
     const target = (0,taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA)(event);
@@ -25723,11 +24421,24 @@ const TUI_ACTIVE_ELEMENT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenF
     return root === doc ? (0,of.of)(target) : shadowRootActiveElement(root).pipe((0,startWith/* startWith */.O)(target));
   })), mousedown$.pipe((0,switchMap/* switchMap */.w)(event => {
     const actualTargetInCurrentTime = (0,taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA)(event);
-    return !doc.activeElement || doc.activeElement === doc.body ? (0,of.of)(actualTargetInCurrentTime) : focusout$.pipe((0,take/* take */.q)(1), (0,map/* map */.U)(() => actualTargetInCurrentTime), (0,takeUntil/* takeUntil */.R)((0,timer/* timer */.H)(0)));
+    return !doc.activeElement || doc.activeElement === doc.body ? (0,of.of)(actualTargetInCurrentTime) : focusout$.pipe((0,take/* take */.q)(1), (0,map/* map */.U)(
+    /**
+     * Do not use `map(() => tuiGetActualTarget(event))`
+     * because we have different result in runtime
+     */
+    () => actualTargetInCurrentTime), (0,takeUntil/* takeUntil */.R)((0,timer/* timer */.H)(0)));
   }))).pipe((0,distinctUntilChanged/* distinctUntilChanged */.x)(), (0,share/* share */.B)());
 });
+// Checks if focusout event should be considered leaving active zone
 function isValidFocusout(target, removedElement = null) {
-  return (0,taiga_ui_cdk_utils_dom/* tuiGetDocumentOrShadowRoot */.Wf)(target).activeElement !== target && !target.matches(`:disabled`) && !(removedElement === null || removedElement === void 0 ? void 0 : removedElement.contains(target));
+  return (
+    // Not due to switching tabs/going to DevTools
+    (0,taiga_ui_cdk_utils_dom/* tuiGetDocumentOrShadowRoot */.Wf)(target).activeElement !== target &&
+    // Not due to button/input becoming disabled or under disabled fieldset
+    !target.matches(`:disabled`) &&
+    // Not due to element being removed from DOM
+    !(removedElement === null || removedElement === void 0 ? void 0 : removedElement.contains(target))
+  );
 }
 function shadowRootActiveElement(root) {
   return (0,merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(root, `focusin`).pipe((0,map/* map */.U)(({
@@ -25739,6 +24450,10 @@ function shadowRootActiveElement(root) {
     relatedTarget
   }) => relatedTarget)));
 }
+
+/**
+ * A stream of alerts
+ */
 const TUI_ALERTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)([]);
 function tuiAsAlerts(useExisting) {
   return {
@@ -25751,8 +24466,22 @@ const TUI_BASE_HREF = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFa
   var _a, _b;
   return (_b = (_a = (0,core_mjs_.inject)(common_mjs_.DOCUMENT).querySelector(`base`)) === null || _a === void 0 ? void 0 : _a.href) !== null && _b !== void 0 ? _b : ``;
 });
-const TUI_DEFAULT_RENDERER = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,core_mjs_.inject)(core_mjs_.RendererFactory2).createRenderer(null, null));
+
+/**
+ * A Renderer2 for global services
+ * https://github.com/angular/angular/issues/17824#issuecomment-353239017
+ * @deprecated unnecessary
+ * TODO: remove in 4.0
+ */
+const TUI_DEFAULT_RENDERER = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(
+// @ts-ignore
+() => (0,core_mjs_.inject)(core_mjs_.RendererFactory2).createRenderer(null, null));
+
+/**
+ * A stream of dialogs
+ */
 const TUI_DIALOGS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)([]);
+// TODO: Refactor dialogs in 4.0 so there is no need for module imports
 function tuiAsDialog(useExisting) {
   return {
     provide: TUI_DIALOGS,
@@ -25760,6 +24489,10 @@ function tuiAsDialog(useExisting) {
     useExisting
   };
 }
+
+/**
+ * @deprecated: use {@link TUI_BASE_HREF}
+ */
 const TUI_ENSURE_BASE_HREF = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => {
   var _a;
   const baseHref = (_a = (0,core_mjs_.inject)(common_mjs_.DOCUMENT).querySelector(`base`)) === null || _a === void 0 ? void 0 : _a.href;
@@ -25770,6 +24503,10 @@ const TUI_ENSURE_BASE_HREF = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToke
   link.href = ``;
   return link.pathname;
 });
+
+/**
+ * A component that can be focused
+ */
 const TUI_FOCUSABLE_ITEM_ACCESSOR = new core_mjs_.InjectionToken(`[TUI_FOCUSABLE_ITEM_ACCESSOR]`);
 function tuiAsFocusableItemAccessor(useExisting) {
   return {
@@ -25786,25 +24523,69 @@ const TUI_FONTS_READY = new core_mjs_.InjectionToken(`[TUI_FONTS_READY]`, {
     }));
   }
 });
+
+/**
+ * iOS browser detection
+ */
 const TUI_IS_IOS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => tuiIsIos((0,core_mjs_.inject)(ng_web_apis_common/* NAVIGATOR */.s5)));
+
+// https://stackoverflow.com/a/11381730/2706426 http://detectmobilebrowsers.com/
 const firstRegex = /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/;
 const secondRegex = /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw-(n|u)|c55\/|capi|ccwa|cdm-|cell|chtm|cldc|cmd-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc-s|devi|dica|dmob|do(c|p)o|ds(12|-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(-|_)|g1 u|g560|gene|gf-5|g-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd-(m|p|t)|hei-|hi(pt|ta)|hp( i|ip)|hs-c|ht(c(-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i-(20|go|ma)|i230|iac( |-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|-[a-w])|libw|lynx|m1-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|-([1-8]|c))|phil|pire|pl(ay|uc)|pn-2|po(ck|rt|se)|prox|psio|pt-g|qa-a|qc(07|12|21|32|60|-[2-7]|i-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h-|oo|p-)|sdk\/|se(c(-|0|1)|47|mc|nd|ri)|sgh-|shar|sie(-|m)|sk-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h-|v-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl-|tdg-|tel(i|m)|tim-|t-mo|to(pl|sh)|ts(70|m-|m3|m5)|tx-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas-|your|zeto|zte-/;
+/**
+ * Mobile browser detection
+ */
 const TUI_IS_MOBILE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => firstRegex.test((0,core_mjs_.inject)(ng_web_apis_common/* USER_AGENT */.yZ).toLowerCase()) || secondRegex.test((0,core_mjs_.inject)(ng_web_apis_common/* USER_AGENT */.yZ).slice(0, 4).toLowerCase()));
+
+/**
+ * Mobile browser that is not iOS (technically includes Windows Phone, Blackberry etc.)
+ */
 const TUI_IS_ANDROID = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,core_mjs_.inject)(TUI_IS_MOBILE) && !(0,core_mjs_.inject)(TUI_IS_IOS));
+
+/**
+ * Apple(safari/webkit) detection
+ */
 const TUI_IS_APPLE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => tuiIsApple((0,core_mjs_.inject)(ng_web_apis_common/* NAVIGATOR */.s5)));
+
+/**
+ * Chromium browser engine detection
+ */
 const TUI_IS_CHROMIUM = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => !!(0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9).chrome);
+
+/**
+ * Detect if app is running under Cypress
+ * {@link https://docs.cypress.io/faq/questions/using-cypress-faq#Is-there-any-way-to-detect-if-my-app-is-running-under-Cypress Cypress docs}
+ */
 const TUI_IS_CYPRESS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => !!(0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9).Cypress);
+
+/**
+ * Detect if app is running under Playwright
+ */
 const TUI_IS_PLAYWRIGHT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(taiga_ui_cdk_constants/* ALWAYS_FALSE_HANDLER */.Iy);
+
+/**
+ * Detect if app is running under any of test frameworks
+ */
 const TUI_IS_E2E = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,core_mjs_.inject)(TUI_IS_CYPRESS) || (0,core_mjs_.inject)(TUI_IS_PLAYWRIGHT));
+
+/**
+ * Firefox browser engine detection
+ */
 const TUI_IS_FIREFOX = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => {
   var _a;
   return typeof ((_a = (0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9)) === null || _a === void 0 ? void 0 : _a.mozCancelFullScreen) !== `undefined`;
 });
 const TUI_IS_STACKBLITZ = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9).location.host.endsWith(`stackblitz.io`));
+
+/**
+ * Webkit browser engine detection
+ */
 const TUI_IS_WEBKIT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => {
   var _a;
   return !!((_a = (0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9)) === null || _a === void 0 ? void 0 : _a.webkitConvertPointFromNodeToPage);
 });
+
+// TODO: Switch to factory in 4.0
 const TUI_PLATFORM = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(`web`);
 function tuiPlatformFactory() {
   if (inject(TUI_IS_IOS)) {
@@ -25815,12 +24596,31 @@ function tuiPlatformFactory() {
   }
   return `web`;
 }
+
+/**
+ * SSR safe default empty Range
+ */
 const TUI_RANGE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,common_mjs_.isPlatformBrowser)((0,core_mjs_.inject)(core_mjs_.PLATFORM_ID)) ? new Range() : {});
+
+/**
+ * Scrollable container
+ */
 const TUI_SCROLL_REF = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new core_mjs_.ElementRef((0,core_mjs_.inject)(common_mjs_.DOCUMENT).documentElement));
+
+/**
+ * Swipe options
+ */
 const TUI_SWIPE_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)({
   timeout: 500,
   threshold: 30
 });
+
+/**
+ * @description:
+ * The isTrusted read-only property of the Event interface is a boolean value that is true
+ * when the event was generated by a user action, and false when the event was created or
+ * modified by a script or dispatched via EventTarget.dispatchEvent().
+ */
 const TUI_TAKE_ONLY_TRUSTED_EVENTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(taiga_ui_cdk_constants/* ALWAYS_TRUE_HANDLER */.Ye);
 const TUI_TOUCH_SUPPORTED = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9).matchMedia(`(any-pointer: coarse)`).matches);
 const TUI_WINDOW_SIZE = new core_mjs_.InjectionToken(`[TUI_WINDOW_SIZE]`, {
@@ -25844,12 +24644,25 @@ const TUI_WINDOW_SIZE = new core_mjs_.InjectionToken(`[TUI_WINDOW_SIZE]`, {
     }));
   }
 });
+
+/**
+ * @deprecated Use {@link TUI_WINDOW_SIZE} instead
+ */
 const TUI_WINDOW_HEIGHT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,core_mjs_.inject)(TUI_WINDOW_SIZE).pipe((0,map/* map */.U)(({
   height
 }) => height)));
+
+/**
+ * Zoom options
+ */
 const TUI_ZOOM_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)({
   wheelSensitivity: 0.01
 });
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-cdk-tokens.js.map
 
@@ -25884,6 +24697,11 @@ function tuiIsSafari({
   const isIosSafari = !!((_d = (_c = win.navigator) === null || _c === void 0 ? void 0 : _c.vendor) === null || _d === void 0 ? void 0 : _d.includes(`Apple`)) && !((_f = (_e = win.navigator) === null || _e === void 0 ? void 0 : _e.userAgent) === null || _f === void 0 ? void 0 : _f.includes(`CriOS`)) && !((_h = (_g = win.navigator) === null || _g === void 0 ? void 0 : _g.userAgent) === null || _h === void 0 ? void 0 : _h.includes(`FxiOS`));
   return isMacOsSafari || isIosSafari;
 }
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-cdk-utils-browser.js.map
 
@@ -25965,21 +24783,39 @@ function tuiIsElement(node) {
   return !!node && `nodeType` in node && node.nodeType === Node.ELEMENT_NODE;
 }
 function tuiIsHTMLElement(node) {
+  // TODO: iframe warning
   return node instanceof HTMLElement;
 }
 function tuiIsTextNode(node) {
   return node.nodeType === Node.TEXT_NODE;
 }
+
+/**
+ * Gets actual target from open Shadow DOM if event happened within it
+ */
 function tuiGetActualTarget(event) {
   return event.composedPath()[0];
 }
 const DEFAULT_FORMAT = (/* unused pure expression or super */ null && (`text/plain`));
+/**
+ * Gets text from data of clipboardEvent, it also works in IE and Edge browsers
+ */
 function tuiGetClipboardDataText(event, format = DEFAULT_FORMAT) {
   return `clipboardData` in event && event.clipboardData !== null ? event.clipboardData.getData(format) || event.clipboardData.getData(DEFAULT_FORMAT) : event.target.ownerDocument.defaultView.clipboardData.getData(`text`);
 }
 function tuiGetDocumentOrShadowRoot(node) {
   return `getRootNode` in node && node.isConnected ? node.getRootNode() : node.ownerDocument;
 }
+
+/**
+ * Returns array of Elements covering edges of given element or null if at least one edge middle point is visible
+ *
+ * CAUTION: Empty array means element if offscreen i.e. covered by no elements, rather than not covered
+ * TODO: v4.0 change function signature to
+ * ```ts
+ * function tuiGetElementObscures(element: Element): readonly [Element, Element, Element, Element] | [] | null
+ * ```
+ */
 function tuiGetElementObscures(element) {
   const {
     ownerDocument
@@ -26010,6 +24846,14 @@ function tuiGetElementObscures(element) {
   const filtered = nonNull.filter(el => !element.contains(el));
   return filtered.length === 4 ? filtered : null;
 }
+
+/**
+ * Calculates offset for an element relative to it's parent several levels above
+ *
+ * @param host parent element
+ * @param element
+ * @return object with offsetTop and offsetLeft number properties
+ */
 function tuiGetElementOffset(host, element) {
   ngDevMode && _taiga_ui_cdk_classes__WEBPACK_IMPORTED_MODULE_2__/* .tuiAssert */ .z.assert(host.contains(element), `Host must contain element`);
   let {
@@ -26027,6 +24871,13 @@ function tuiGetElementOffset(host, element) {
     offsetLeft
   };
 }
+
+/**
+ * Finds the nearest parent with scroll in it
+ *
+ * @param element initial element
+ * @param vertical flag for orientation of scroll
+ */
 function tuiGetScrollParent(element, vertical = true) {
   if (element === null) {
     return null;
@@ -26039,6 +24890,15 @@ function tuiGetScrollParent(element, vertical = true) {
   }
   return tuiGetScrollParent(element.parentElement, vertical);
 }
+
+/**
+ * @description:
+ * cross browser way to get selected text
+ *
+ * History:
+ * BUG - window.getSelection() fails when text selected in a form field
+ * https://bugzilla.mozilla.org/show_bug.cgi?id=85686
+ */
 function tuiGetSelectedText({
   getSelection,
   document
@@ -26055,9 +24915,21 @@ function tuiIsCurrentTarget({
 function tuiIsElementEditable(element) {
   return tuiIsTextfield(element) && !element.readOnly || !!element.isContentEditable;
 }
+
+/**
+ * Checks if an app is running inside <iframe /> tag
+ */
 function tuiIsInsideIframe(win) {
   return win.parent !== win;
 }
+
+/**
+ * Checks if node is inside a specific selector
+ *
+ * @param node
+ * @param selector
+ * @return true if node is inside a particular selector
+ */
 function tuiIsNodeIn(node, selector) {
   var _a;
   return tuiIsTextNode(node) ? !!((_a = node.parentElement) === null || _a === void 0 ? void 0 : _a.closest(selector)) : tuiIsElement(node) && !!node.closest(selector);
@@ -26080,15 +24952,25 @@ function tuiPointToClientRect(x = 0, y = 0) {
   });
 }
 function tuiRetargetedBoundaryCrossing(event) {
-  var _a, _b;
+  // firefox
   if (`explicitOriginalTarget` in event) {
     return (event === null || event === void 0 ? void 0 : event.explicitOriginalTarget) !== event.target;
   }
-  if (`layerX` in event && `layerY` in event) {
-    return ((_a = event === null || event === void 0 ? void 0 : event.layerX) !== null && _a !== void 0 ? _a : 0) < 0 || ((_b = event === null || event === void 0 ? void 0 : event.layerY) !== null && _b !== void 0 ? _b : 0) < 0;
+  // chrome
+  if (`pointerId` in event) {
+    return event.pointerId === -1;
+  }
+  // safari
+  if (`detail` in event && `webkitForce` in event) {
+    return (event === null || event === void 0 ? void 0 : event.detail) === 0;
   }
   return false;
 }
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-cdk-utils-dom.js.map
 
@@ -26113,6 +24995,12 @@ function tuiRetargetedBoundaryCrossing(event) {
 /* harmony import */ var _taiga_ui_cdk_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6141);
 
 
+
+/**
+ * Returns current active element, including shadow dom
+ *
+ * @return element or null
+ */
 function tuiGetNativeFocused({
   activeElement
 }) {
@@ -26125,12 +25013,23 @@ function tuiGetNativeFocused({
   }
   return element;
 }
+
+/**
+ * Finds and blurs current active element, including shadow DOM
+ */
 function tuiBlurNativeFocused(doc) {
   const activeElement = tuiGetNativeFocused(doc);
   if ((0,_taiga_ui_cdk_utils_dom__WEBPACK_IMPORTED_MODULE_0__/* .tuiIsHTMLElement */ .dW)(activeElement)) {
     activeElement.blur();
   }
 }
+
+/**
+ * Checks for signs that element can be focused with keyboard. tabIndex above 0 is ignored to
+ * only target natural focus order. Not checking the possibility of an element to
+ * be focused, for example element can have display: none applied to it or any other
+ * circumstances could prevent actual focus.
+ */
 function tuiIsNativeKeyboardFocusable(element) {
   if (element.hasAttribute(`disabled`) || element.getAttribute(`tabIndex`) === `-1`) {
     return false;
@@ -26158,6 +25057,11 @@ function tuiIsNativeKeyboardFocusable(element) {
 function tuiIsNativeMouseFocusable(element) {
   return !element.hasAttribute(`disabled`) && (element.getAttribute(`tabIndex`) === `-1` || tuiIsNativeKeyboardFocusable(element));
 }
+
+/**
+ * @description:
+ * Finds the closest element that can be focused with a keyboard or mouse in theory
+ */
 function tuiGetClosestFocusable({
   initial,
   root,
@@ -26180,16 +25084,41 @@ function tuiGetClosestFocusable({
   }
   return null;
 }
+
+/**
+ * Checks if element is focused.
+ *
+ * Could return true even after blur since element remains focused if you switch away from a browser tab.
+ *
+ * @param node or null (as a common return value of DOM nodes walking)
+ * @return true if focused
+ */
 function tuiIsNativeFocused(node) {
   return !!(node === null || node === void 0 ? void 0 : node.ownerDocument) && tuiGetNativeFocused(node.ownerDocument) === node;
 }
+
+/**
+ * Checks if focused element is within given element.
+ *
+ * @param node
+ * @return true if focused node is contained within element
+ */
 function tuiIsNativeFocusedIn(node) {
+  // !node.contains - check for IE11
   if (!node.ownerDocument || !node.contains) {
     return false;
   }
   const nativeFocused = tuiGetNativeFocused(node.ownerDocument);
   return nativeFocused !== null && node.contains(nativeFocused);
 }
+
+/**
+ * Utility method for moving focus in a list of elements
+ *
+ * @param currentIndex currently focused index
+ * @param elements array of focusable elements
+ * @param step a step to move focus by, typically -1 or 1
+ */
 function tuiMoveFocus(currentIndex, elements, step) {
   currentIndex += step;
   while (currentIndex >= 0 && currentIndex < elements.length) {
@@ -26200,6 +25129,14 @@ function tuiMoveFocus(currentIndex, elements, step) {
     currentIndex += step;
   }
 }
+
+/**
+ * Focuses or blurs element with mouse action imitation (to spoof {@link TuiFocusVisibleService})
+ *
+ * @param element
+ * @param focused desired focused state
+ * @param preventScroll optionally prevent native browser scroll after focus
+ */
 function tuiSetNativeMouseFocused(element, focused = true, preventScroll = false) {
   if (!element.ownerDocument) {
     return;
@@ -26223,6 +25160,11 @@ function tuiSetNativeMouseFocused(element, focused = true, preventScroll = false
   }
 }
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-utils-focus.js.map
 
 /***/ }),
@@ -26241,6 +25183,14 @@ function tuiSetNativeMouseFocused(element, focused = true, preventScroll = false
 /* unused harmony exports tuiCeil, tuiFloor, tuiQuantize, tuiRound, tuiSum, tuiToInteger, tuiToRadians, tuiTrunc */
 /* harmony import */ var _taiga_ui_cdk_classes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7178);
 
+
+/**
+ * Clamps a value between two inclusive limits
+ *
+ * @param value
+ * @param min lower limit
+ * @param max upper limit
+ */
 function tuiClamp(value, min, max) {
   ngDevMode && _taiga_ui_cdk_classes__WEBPACK_IMPORTED_MODULE_0__/* .tuiAssert */ .z.assert(!Number.isNaN(value));
   ngDevMode && _taiga_ui_cdk_classes__WEBPACK_IMPORTED_MODULE_0__/* .tuiAssert */ .z.assert(!Number.isNaN(min));
@@ -26255,6 +25205,15 @@ function tuiInRange(value, fromInclude, toExclude) {
   ngDevMode && _taiga_ui_cdk_classes__WEBPACK_IMPORTED_MODULE_0__/* .tuiAssert */ .z.assert(fromInclude < toExclude);
   return value >= fromInclude && value < toExclude;
 }
+
+/**
+ * Normalizes any number to an integer within inclusive range
+ *
+ * @param value
+ * @param min lower inclusive integer
+ * @param max upper inclusive integer
+ * @return an integer between min and max inclusive
+ */
 function tuiNormalizeToIntNumber(value, min, max) {
   ngDevMode && _taiga_ui_cdk_classes__WEBPACK_IMPORTED_MODULE_0__/* .tuiAssert */ .z.assert(Number.isInteger(min));
   ngDevMode && _taiga_ui_cdk_classes__WEBPACK_IMPORTED_MODULE_0__/* .tuiAssert */ .z.assert(Number.isInteger(max));
@@ -26267,6 +25226,13 @@ function tuiNormalizeToIntNumber(value, min, max) {
   }
   return Math.round(value);
 }
+
+/**
+ * Rounds a number to the closest value in a fixed discrete series
+ *
+ * @param value
+ * @param quantum series step
+ */
 function tuiQuantize(value, quantum) {
   ngDevMode && tuiAssert.assert(Number.isFinite(value));
   ngDevMode && tuiAssert.assert(Number.isFinite(quantum));
@@ -26287,6 +25253,13 @@ function tuiFloor(value, precision = 0) {
 function tuiTrunc(value, precision = 0) {
   return calculate(value, precision, Math.trunc);
 }
+/**
+ * Rounding number to the set precision
+ *
+ * @param value
+ * @param precision number of digits in a float part
+ * @param func rounding function (round, floor, ceil)
+ */
 function calculate(value, precision, func) {
   if (value === Infinity) {
     return value;
@@ -26315,6 +25288,10 @@ function tuiRoundWith({
       return tuiTrunc(value, precision);
   }
 }
+
+/**
+ * Calculates sum of any number of passed arguments
+ */
 function tuiSum(...args) {
   return args.reduce((a, b) => a + b, 0);
 }
@@ -26324,9 +25301,18 @@ function tuiToInt(bool) {
 function tuiToInteger(value) {
   return parseInt(value, 10);
 }
+
+/**
+ * Converts angle in degrees to radians
+ */
 function tuiToRadians(deg) {
   return deg * Math.PI / 180;
 }
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-cdk-utils-math.js.map
 
@@ -26365,6 +25351,7 @@ function tuiArrayToggle(array, item) {
   return index === -1 ? [...array, item] : tuiArrayRemove(array, index);
 }
 function tuiIsString(value) {
+  // eslint-disable-next-line @taiga-ui/experience/no-typeof
   return typeof value === `string`;
 }
 function tuiCleanObject(object) {
@@ -26382,6 +25369,8 @@ function tuiCreateTokenFromFactory(factory) {
     factory
   });
 }
+
+/** @deprecated use {@link tuiCreateToken} instead */
 function tuiCreateOptions(defaults) {
   return tuiCreateTokenFromFactory(() => defaults);
 }
@@ -26403,9 +25392,22 @@ function tuiEaseInOutQuad(t) {
   ngDevMode && tuiAssert.assert(t >= 0 && t <= 1, `Input must be between 0 and 1 inclusive but received `, t);
   return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 }
+
+/**
+ * Flattens two-dimensional array and calculates resulting length
+ *
+ * @param array twi dimensional array
+ */
 function tuiFlatLength(array) {
   return array.reduce((count, section) => count + section.length, 0);
 }
+
+/**
+ * Extracts original array from {@link QueryList} rather than
+ * creating a copy like {@link QueryList.toArray} does.
+ * @param queryList
+ * @returns original array from {@link QueryList}.
+ */
 function tuiGetOriginalArrayFromQueryList(queryList) {
   let array = [];
   queryList.find((_item, _index, originalArray) => {
@@ -26424,16 +25426,30 @@ function tuiIsFalsy(value) {
   return !value;
 }
 function tuiIsNumber(value) {
+  // eslint-disable-next-line @taiga-ui/experience/no-typeof
   return typeof value === `number`;
 }
 function tuiIsObject(value) {
+  // eslint-disable-next-line @taiga-ui/experience/no-typeof
   return typeof value === `object` && !!value;
 }
 function tuiIsPresent(value) {
   return value !== null && value !== undefined;
 }
 function tuiIsValidUrl(url) {
-  const pattern = new RegExp(`^([a-zA-Z]+:\\/\\/)?` + `((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|localhost|` + `((\\d{1,3}\\.){3}\\d{1,3}))` + `(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*` + `(\\?[;&a-z\\d%_.~+=-]*)?` + `(\\#[-a-z\\d_]*)?$`, `i`);
+  const pattern = new RegExp(`^([a-zA-Z]+:\\/\\/)?` +
+  // protocol
+  `((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|localhost|` +
+  // domain name
+  `((\\d{1,3}\\.){3}\\d{1,3}))` +
+  // OR IP (v4) address
+  `(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*` +
+  // port and path
+  `(\\?[;&a-z\\d%_.~+=-]*)?` +
+  // query string
+  `(\\#[-a-z\\d_]*)?$`,
+  // fragment locator
+  `i`);
   return pattern.test(url);
 }
 function tuiMarkControlAsTouchedAndValidate(control) {
@@ -26450,6 +25466,15 @@ function tuiMarkControlAsTouchedAndValidate(control) {
   control.markAsTouched();
   control.updateValueAndValidity();
 }
+
+/**
+ * Checks identity for nullable elements.
+ *
+ * @param a element a
+ * @param b element b
+ * @param handler called if both elements are not null
+ * @return true if either both are null or they pass identity handler
+ */
 function tuiNullableSame(a, b, handler) {
   if (a === null) {
     return b === null;
@@ -26459,6 +25484,15 @@ function tuiNullableSame(a, b, handler) {
   }
   return handler(a, b);
 }
+
+/**
+ * @deprecated use `Object.fromEntries` instead
+ * (check browser support first https://caniuse.com/mdn-javascript_builtins_object_fromentries)
+ * ___
+ * TODO: after we bump Firefox to 63+ replace this function with `Object.fromEntries`.
+ * TODO: Add `es2019.object` to `tsconfig.json` => `compilerOptions.lib`.
+ *
+ */
 function tuiObjectFromEntries(keyValuePairs) {
   return keyValuePairs.reduce((obj, [key, val]) => Object.assign(Object.assign({}, obj), {
     [key]: val
@@ -26475,6 +25509,11 @@ function tuiUniqBy(array, key) {
   return Array.from(array.reduce((map, item) => map.has(item[key]) ? map : map.set(item[key], item), new Map()).values());
 }
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-cdk-utils-miscellaneous.js.map
 
 /***/ }),
@@ -26488,6 +25527,21 @@ function tuiUniqBy(array, key) {
 /* harmony export */ });
 /* harmony import */ var _taiga_ui_cdk_utils_miscellaneous__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8937);
 
+
+/**
+ * @description:
+ * Any ‘linearGradient’ attributes which are defined on the referenced
+ * element which are not defined on this element are inherited by this element.
+ * If this element has no defined gradient stops, and the referenced element does
+ * (possibly due to its own ‘xlink:href’ attribute), then this element inherits
+ * the gradient stop from the referenced element. Inheritance can be indirect
+ * to an arbitrary level; thus, if the referenced element inherits attribute
+ * or gradient stops due to its own ‘xlink:href’ attribute, then the current
+ * element can inherit those attributes or gradient stops.
+ *
+ * Documentation: https://www.w3.org/TR/SVG11/pservers.html
+ *
+ */
 function tuiSvgLinearGradientProcessor(svg, salt = makeRandomSalt(), fallback = `rgba(0, 0, 0, 0.7)`) {
   if ((0,_taiga_ui_cdk_utils_miscellaneous__WEBPACK_IMPORTED_MODULE_0__/* .tuiIsString */ .Aj)(svg)) {
     const uniqueIds = extractLinearGradientIdsFromSvg(svg);
@@ -26514,143 +25568,20 @@ function extractLinearGradientIdsFromSvg(svg) {
 function setFallbackForGradientFill(svg, fallback) {
   try {
     const tree = new DOMParser().parseFromString(svg, `text/html`);
-    tree.body.querySelectorAll(`[fill^=url]`).forEach(element => element.setAttribute(`fill`, `${element.getAttribute(`fill`)} ${fallback}`.trim()));
+    tree.body.querySelectorAll(`[fill^=url]`) // only gradient
+    .forEach(element => element.setAttribute(`fill`, `${element.getAttribute(`fill`)} ${fallback}`.trim()));
     return tree.body.innerHTML.trim();
   } catch (_a) {
     return svg;
   }
 }
 
-//# sourceMappingURL=taiga-ui-cdk-utils-svg.js.map
-
-/***/ }),
-
-/***/ 9570:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   L1: () => (/* binding */ ANIMATION_FRAME),
-/* harmony export */   UA: () => (/* binding */ HISTORY),
-/* harmony export */   m9: () => (/* binding */ WINDOW),
-/* harmony export */   s5: () => (/* binding */ NAVIGATOR),
-/* harmony export */   yZ: () => (/* binding */ USER_AGENT)
-/* harmony export */ });
-/* unused harmony exports CACHES, CRYPTO, CSS, LOCAL_STORAGE, LOCATION, MEDIA_DEVICES, NETWORK_INFORMATION, PAGE_VISIBILITY, PERFORMANCE, SCREEN, SESSION_STORAGE, SPEECH_RECOGNITION, SPEECH_SYNTHESIS */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2368);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5592);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2438);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3020);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7921);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7398);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(3997);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(7081);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4917);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-
-const WINDOW = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over global window object', {
-  factory: () => {
-    const {
-      defaultView
-    } = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT);
-    if (!defaultView) {
-      throw new Error('Window is not available');
-    }
-    return defaultView;
-  }
-});
-const ANIMATION_FRAME = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('Shared Observable based on `window.requestAnimationFrame`', {
-  factory: () => {
-    const {
-      requestAnimationFrame,
-      cancelAnimationFrame
-    } = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW);
-    const animationFrame$ = new rxjs__WEBPACK_IMPORTED_MODULE_2__/* .Observable */ .y(subscriber => {
-      let id = NaN;
-      const callback = timestamp => {
-        subscriber.next(timestamp);
-        id = requestAnimationFrame(callback);
-      };
-      id = requestAnimationFrame(callback);
-      return () => {
-        cancelAnimationFrame(id);
-      };
-    });
-    return animationFrame$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__/* .share */ .B)());
-  }
-});
-const CACHES = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.caches object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).caches
-});
-const CRYPTO = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.crypto object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).crypto
-});
-const CSS = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.CSS object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).CSS || {
-    escape: v => v,
-    supports: () => false
-  }
-});
-const HISTORY = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.history object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).history
-});
-const LOCAL_STORAGE = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.localStorage object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).localStorage
-});
-const LOCATION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.location object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).location
-});
-const NAVIGATOR = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.navigator object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).navigator
-});
-const MEDIA_DEVICES = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.navigator.mediaDevices object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(NAVIGATOR).mediaDevices
-});
-const NETWORK_INFORMATION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.navigator.connection object', {
-  // @ts-ignore
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(NAVIGATOR).connection || null
-});
-const PAGE_VISIBILITY = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('Shared Observable based on `document visibility changed`', {
-  factory: () => {
-    const documentRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT);
-    return (0,rxjs__WEBPACK_IMPORTED_MODULE_4__/* .fromEvent */ .R)(documentRef, 'visibilitychange').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__/* .startWith */ .O)(0), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__/* .map */ .U)(() => documentRef.visibilityState !== 'hidden'), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__/* .distinctUntilChanged */ .x)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__/* .shareReplay */ .d)({
-      refCount: false,
-      bufferSize: 1
-    }));
-  }
-});
-const PERFORMANCE = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.performance object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).performance
-});
-const SCREEN = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.screen object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).screen
-});
-const SESSION_STORAGE = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.sessionStorage object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).sessionStorage
-});
-const SPEECH_RECOGNITION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over SpeechRecognition class', {
-  factory: () => {
-    const windowRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW);
-    return windowRef.speechRecognition || windowRef.webkitSpeechRecognition || null;
-  }
-});
-const SPEECH_SYNTHESIS = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.speechSynthesis object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).speechSynthesis
-});
-const USER_AGENT = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.navigator.userAgent object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(NAVIGATOR).userAgent
-});
-
 /**
  * Generated bundle index. Do not edit.
  */
 
 
-//# sourceMappingURL=ng-web-apis-common.js.map
+//# sourceMappingURL=taiga-ui-cdk-utils-svg.js.map
 
 /***/ }),
 
@@ -26687,6 +25618,8 @@ const USER_AGENT = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken
 
 
 
+
+// eslint-disable-next-line @typescript-eslint/naming-convention
 class TuiDriver extends rxjs__WEBPACK_IMPORTED_MODULE_1__/* .Observable */ .y {}
 function tuiAsDriver(useExisting) {
   return {
@@ -26695,6 +25628,8 @@ function tuiAsDriver(useExisting) {
     useExisting
   };
 }
+
+// eslint-disable-next-line @typescript-eslint/naming-convention
 class TuiVehicle {}
 function tuiAsVehicle(useExisting) {
   return {
@@ -26769,6 +25704,8 @@ let AbstractTuiTextfieldHost = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+// eslint-disable-next-line @typescript-eslint/naming-convention
 class TuiPositionAccessor {}
 function tuiPositionAccessorFor(type) {
   return {
@@ -26784,6 +25721,9 @@ function tuiAsPositionAccessor(useExisting) {
     useExisting
   };
 }
+
+// TODO: Rename to getBoundingClientRect to match the DOM API
+// eslint-disable-next-line @typescript-eslint/naming-convention
 class TuiRectAccessor {}
 function tuiRectAccessorFor(type, fallback) {
   return {
@@ -26802,6 +25742,11 @@ function tuiAsRectAccessor(useExisting) {
     useExisting
   };
 }
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-core-abstract.js.map
 
@@ -26916,6 +25861,9 @@ const TUI_BUTTON_DEFAULT_OPTIONS = {
   shape: null,
   appearance: _taiga_ui_core_enums__WEBPACK_IMPORTED_MODULE_2__/* .TuiAppearance */ .Nm.Primary
 };
+/**
+ * Default parameters for button component
+ */
 const TUI_BUTTON_OPTIONS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_3__/* .tuiCreateToken */ .JN)(TUI_BUTTON_DEFAULT_OPTIONS);
 function tuiButtonOptionsProvider(options) {
   return tuiProvideOptions(TUI_BUTTON_OPTIONS, options, TUI_BUTTON_DEFAULT_OPTIONS);
@@ -27046,6 +25994,11 @@ let TuiButtonModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-components-button.js.map
 
 /***/ }),
@@ -27085,6 +26038,8 @@ let TuiButtonModule = /*#__PURE__*/(() => {
 
 
 
+
+// @bad TODO: Think about extending Interactive
 const _c0 = ["tuiLink", ""];
 function TuiLinkComponent_tui_svg_0_Template(rf, ctx) {
   if (rf & 1) {
@@ -27210,6 +26165,11 @@ let TuiLinkModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-components-link.js.map
 
 /***/ }),
@@ -27241,6 +26201,8 @@ let TuiLinkModule = /*#__PURE__*/(() => {
 
 
 
+
+/** Default values for the loader options. */
 function TuiLoaderComponent_div_2_div_3_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerStart"](0);
@@ -27292,6 +26254,9 @@ const TUI_LOADER_DEFAULT_OPTIONS = {
   inheritColor: false,
   overlay: false
 };
+/**
+ * Default parameters for loader component
+ */
 const TUI_LOADER_OPTIONS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_2__/* .tuiCreateToken */ .JN)(TUI_LOADER_DEFAULT_OPTIONS);
 function tuiLoaderOptionsProvider(options) {
   return tuiProvideOptions(TUI_LOADER_OPTIONS, options, TUI_LOADER_DEFAULT_OPTIONS);
@@ -27310,6 +26275,7 @@ let TuiLoaderComponent = /*#__PURE__*/(() => {
       this.isApple = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_3__/* .tuiIsSafari */ .Ex)(this.el.nativeElement) || this.isIos;
     }
     set showLoader(value) {
+      // @bad TODO: https://github.com/angular/angular/issues/32083 think of a better way
       if (value && this.focused) {
         (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_4__/* .tuiBlurNativeFocused */ .hp)(this.doc);
       }
@@ -27368,7 +26334,7 @@ let TuiLoaderComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_0__.NgIf, _tinkoff_ng_polymorpheus__WEBPACK_IMPORTED_MODULE_7__/* .PolymorpheusOutletDirective */ .Li],
-    styles: ["@keyframes _ngcontent-%COMP%_tuiLoaderDashOffset{0%{stroke-dashoffset:-66}50%{stroke-dashoffset:-314}to{stroke-dashoffset:-66}}@keyframes _ngcontent-%COMP%_tuiLoaderRotate{0%{transform:rotate(0)}50%{transform:rotate(1turn)}to{transform:rotate(3turn)}}[_nghost-%COMP%]{position:relative;display:flex}._loading[_nghost-%COMP%]{overflow:hidden}.t-content[_ngcontent-%COMP%]{z-index:0;min-width:100%;height:100%;padding:0;margin:0;border:none}.t-content_has-overlay[_ngcontent-%COMP%]{opacity:.3}.t-content_loading[_ngcontent-%COMP%]{pointer-events:none}.t-loader[_ngcontent-%COMP%]{position:relative;left:-100%;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:100%;flex-shrink:0;align-self:center;color:var(--tui-text-01);stroke:var(--tui-primary);animation:tuiFadeIn var(--tui-duration)}.t-loader.t-loader_horizontal[_ngcontent-%COMP%]{flex-direction:row}.t-loader.t-loader_inherit-color[_ngcontent-%COMP%]{color:inherit;stroke:currentColor}.t-loader[data-size=xs][_ngcontent-%COMP%]{font-size:.75rem;stroke-width:38}.t-loader[data-size=s][_ngcontent-%COMP%]{font-size:1rem;stroke-width:25}.t-loader[data-size=m][_ngcontent-%COMP%]{font-size:1.5rem;stroke-width:17}.t-loader[data-size=l][_ngcontent-%COMP%]{font-size:2.5rem;stroke-width:15}.t-loader[data-size=xl][_ngcontent-%COMP%]{font-size:3.5rem;stroke-width:14}.t-loader[data-size=xxl][_ngcontent-%COMP%]{font-size:5rem;stroke-width:10}.t-text[_ngcontent-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1rem;color:inherit;max-width:100%;text-align:center;stroke-width:0}.t-text_horizontal[_ngcontent-%COMP%]{margin:0 0 0 1rem}.t-icon[_ngcontent-%COMP%]{display:block;min-width:1em;max-width:1em;min-height:1em;max-height:1em;margin:.25rem -.5em;border-radius:100%;overflow:hidden;transform:scaleY(-1);animation:_ngcontent-%COMP%_tuiLoaderRotate 3s linear infinite}@supports (-webkit-hyphens: none){.t-icon[_ngcontent-%COMP%]{overflow:visible}}.t-circle[_ngcontent-%COMP%]{fill:none;stroke:inherit;stroke-width:inherit;animation:_ngcontent-%COMP%_tuiLoaderDashOffset 3s linear infinite}"],
+    styles: ["@keyframes _ngcontent-%COMP%_tuiLoaderDashOffset{0%{stroke-dashoffset:-66}50%{stroke-dashoffset:-314}to{stroke-dashoffset:-66}}@keyframes _ngcontent-%COMP%_tuiLoaderRotate{0%{transform:rotate(0)}50%{transform:rotate(1turn)}to{transform:rotate(3turn)}}[_nghost-%COMP%]{position:relative;display:flex;min-width:1.5rem}._loading[_nghost-%COMP%]{overflow:hidden}.t-content[_ngcontent-%COMP%]{z-index:0;min-width:100%;height:100%;padding:0;margin:0;border:none}.t-content_has-overlay[_ngcontent-%COMP%]{opacity:.3}.t-content_loading[_ngcontent-%COMP%]{pointer-events:none}.t-loader[_ngcontent-%COMP%]{position:relative;left:-100%;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:100%;flex-shrink:0;align-self:center;color:var(--tui-text-01);stroke:var(--tui-primary);animation:tuiFadeIn var(--tui-duration)}.t-loader.t-loader_horizontal[_ngcontent-%COMP%]{flex-direction:row}.t-loader.t-loader_inherit-color[_ngcontent-%COMP%]{color:inherit;stroke:currentColor}.t-loader[data-size=xs][_ngcontent-%COMP%]{font-size:.75rem;stroke-width:38}.t-loader[data-size=s][_ngcontent-%COMP%]{font-size:1rem;stroke-width:25}.t-loader[data-size=m][_ngcontent-%COMP%]{font-size:1.5rem;stroke-width:17}.t-loader[data-size=l][_ngcontent-%COMP%]{font-size:2.5rem;stroke-width:15}.t-loader[data-size=xl][_ngcontent-%COMP%]{font-size:3.5rem;stroke-width:14}.t-loader[data-size=xxl][_ngcontent-%COMP%]{font-size:5rem;stroke-width:10}.t-text[_ngcontent-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1rem;color:inherit;max-width:100%;text-align:center;stroke-width:0}.t-text_horizontal[_ngcontent-%COMP%]{margin:0 0 0 1rem}.t-icon[_ngcontent-%COMP%]{display:block;min-width:1em;max-width:1em;min-height:1em;max-height:1em;margin:.25rem -.5em;border-radius:100%;overflow:hidden;transform:scaleY(-1);animation:_ngcontent-%COMP%_tuiLoaderRotate 3s linear infinite}@supports (-webkit-hyphens: none){.t-icon[_ngcontent-%COMP%]{overflow:visible}}.t-circle[_ngcontent-%COMP%]{fill:none;stroke:inherit;stroke-width:inherit;animation:_ngcontent-%COMP%_tuiLoaderDashOffset 3s linear infinite}"],
     changeDetection: 0
   });
   return TuiLoaderComponent;
@@ -27392,6 +26358,11 @@ let TuiLoaderModule = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-core-components-loader.js.map
 
@@ -27477,6 +26448,9 @@ let TuiNotificationComponent = /*#__PURE__*/(() => {
       this.closeWord$ = closeWord$;
       this.icons = icons;
       this.options = options;
+      /**
+       * @deprecated Use {@link TuiNotificationComponent.icon} input or TUI_NOTIFICATION_OPTIONS instead
+       */
       this.hasIcon = this.options.hasIcon;
       this.icon = this.options.icon;
       this.status = this.options.status;
@@ -27554,6 +26528,11 @@ let TuiNotificationModule = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-core-components-notification.js.map
 
@@ -27723,6 +26702,9 @@ const TUI_SVG_DEFAULT_OPTIONS = {
     return newIcon ? `${oldIcon}/(Large|Outline) is deprecated, use ${newIcon}/(Large|Outline) instead` : ``;
   }
 };
+/**
+ * SVG component options
+ */
 const TUI_SVG_OPTIONS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_6__/* .tuiCreateTokenFromFactory */ .N1)(() => ({
   iconsPlace: (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_2__/* .TUI_ICONS_PLACE */ .AA),
   path: (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_2__/* .TUI_ICONS_PATH */ .ki),
@@ -27755,6 +26737,7 @@ const tuiSvgOptionsProvider = options => ({
 const UNDEFINED_NAMED_ICON = 'Attempted to use undefined named icon';
 const MISSING_EXTERNAL_ICON = 'External icon is missing on the given URL';
 const FAILED_EXTERNAL_ICON = 'Failed to load external SVG';
+// TODO: Consider moving to CDK along with SvgService and SvgDefsHostComponent
 let TuiSvgComponent = /*#__PURE__*/(() => {
   class TuiSvgComponent {
     constructor(doc, win, options, srcInterceptors, tuiSanitizer, svgService, staticRequestService, sanitizer, el, baseHref) {
@@ -27847,6 +26830,7 @@ let TuiSvgComponent = /*#__PURE__*/(() => {
       if (this.isName && !icon && !!src) {
         this.onError(UNDEFINED_NAMED_ICON);
       }
+      // Empty line for innerHTML when icon is shown through USE tag
       return !this.isShadowDOM || !this.isName ? '' : this.sanitize(icon || '');
     }
     sanitize(src) {
@@ -27909,6 +26893,11 @@ let TuiSvgModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-components-svg.js.map
 
 /***/ }),
@@ -27930,6 +26919,11 @@ let TuiSvgModule = /*#__PURE__*/(() => {
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6141);
 
 const TUI_CACHE_BUSTING_PAYLOAD = `?v=${_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_0__/* .TUI_VERSION */ .Ml}`;
+
+/**
+ * @deprecated
+ * TODO: delete in v4.0
+ */
 const TUI_DECIMAL_SYMBOLS = (/* unused pure expression or super */ null && ([`,`, `.`]));
 const DEFAULT_ICONS_PATH = name => name.includes(`.svg#`) ? name : `#${name}`;
 const TUI_DEFAULT_MARKER_HANDLER = () => EMPTY_ARRAY;
@@ -27938,14 +26932,35 @@ const TUI_DEFAULT_NUMBER_FORMAT = {
   decimalSeparator: `,`,
   thousandSeparator: _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_0__/* .CHAR_NO_BREAK_SPACE */ .f$,
   zeroPadding: true,
-  rounding: `truncate`
+  rounding: `truncate`,
+  decimal: `not-zero`
 };
 const tuiEditingKeys = [`Spacebar`, `Backspace`, `Delete`, `ArrowLeft`, `ArrowRight`, `Left`, `Right`, `End`, `Home`];
+
+/**
+ * An event indicating that async data for expand has finished loading.
+ * Dispatch to finish loading states for {@link TuiExpandComponent}.
+ */
 const TUI_EXPAND_LOADED = (/* unused pure expression or super */ null && (`tui-expand-loaded`));
+/**
+ * An event for scrolling an element into view within {@link TuiScrollbarComponent}.
+ */
 const TUI_SCROLL_INTO_VIEW = `tui-scroll-into-view`;
+/**
+ * An event to notify {@link TuiScrollbarComponent} that
+ * it should control a nested element.
+ */
 const TUI_SCROLLABLE = (/* unused pure expression or super */ null && (`tui-scrollable`));
+/**
+ * An event indicating and error during icon loading in {@link TuiSvgComponent}.
+ */
 const TUI_ICON_ERROR = `tui-icon-error`;
 const TUI_HINT_DIRECTIONS = [`bottom-left`, `bottom`, `bottom-right`, `top-left`, `top`, `top-right`, `left-top`, `left`, `left-bottom`, `right-top`, `right`, `right-bottom`];
+
+/**
+ * @deprecated Use {@link https://github.com/taiga-family/maskito Maskito}
+ * TODO: delete in v4.0
+ */
 const MASK_CARET_TRAP = (/* unused pure expression or super */ null && (`[]`));
 const TUI_DIGIT_REGEXP = /\d/;
 const TUI_NON_DIGIT_REGEXP = /\D/;
@@ -27955,6 +26970,11 @@ const TUI_MASK_SYMBOLS_REGEXP = /[ \-_()]/g;
 const TUI_LAST_PUNCTUATION_MARK_REGEXP = /[.,\\/#!$%\\^&\\*;:{}=\\-_`~()]$/;
 const TUI_LATIN_REGEXP = /[A-z]/;
 const TUI_LATIN_AND_NUMBERS_REGEXP = /[A-z|0-9]/;
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-core-constants.js.map
 
@@ -28014,6 +27034,11 @@ let TuiModeModule = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-core-directives-mode.js.map
 
@@ -28127,6 +27152,11 @@ let TuiWrapperModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-directives-wrapper.js.map
 
 /***/ }),
@@ -28140,6 +27170,8 @@ let TuiWrapperModule = /*#__PURE__*/(() => {
 /* harmony export */   z3: () => (/* binding */ TuiInteractiveState)
 /* harmony export */ });
 /* unused harmony exports TuiDropdownAnimation, TuiNotification, TuiRangeState */
+// TODO: change type in v4.0
+// eslint-disable-next-line no-restricted-syntax
 var TuiAppearance = /*#__PURE__*/function (TuiAppearance) {
   TuiAppearance["Accent"] = "accent";
   TuiAppearance["Flat"] = "flat";
@@ -28154,11 +27186,17 @@ var TuiAppearance = /*#__PURE__*/function (TuiAppearance) {
   TuiAppearance["WhiteblockActive"] = "whiteblock-active";
   return TuiAppearance;
 }(TuiAppearance || {});
+/** @deprecated not used anymore TODO: remove in 4.0 **/ // eslint-disable-next-line no-restricted-syntax
 var TuiDropdownAnimation = /*#__PURE__*/function (TuiDropdownAnimation) {
   TuiDropdownAnimation["FadeInBottom"] = "fadeInBottom";
   TuiDropdownAnimation["FadeInTop"] = "fadeInTop";
   return TuiDropdownAnimation;
 }(TuiDropdownAnimation || {});
+/**
+ * @internal used in calendar, year picker and wrapper
+ */
+// TODO: change type in v4.0
+// eslint-disable-next-line no-restricted-syntax
 var TuiInteractiveState = /*#__PURE__*/function (TuiInteractiveState) {
   TuiInteractiveState["Active"] = "active";
   TuiInteractiveState["Disabled"] = "disabled";
@@ -28166,6 +27204,9 @@ var TuiInteractiveState = /*#__PURE__*/function (TuiInteractiveState) {
   TuiInteractiveState["Readonly"] = "readonly";
   return TuiInteractiveState;
 }(TuiInteractiveState || {});
+/**
+ * @deprecated use union type TuiNotificationT instead
+ */ // eslint-disable-next-line no-restricted-syntax
 var TuiNotification = /*#__PURE__*/function (TuiNotification) {
   TuiNotification["Error"] = "error";
   TuiNotification["Info"] = "info";
@@ -28173,12 +27214,21 @@ var TuiNotification = /*#__PURE__*/function (TuiNotification) {
   TuiNotification["Warning"] = "warning";
   return TuiNotification;
 }(TuiNotification || {});
+/**
+ * @internal used in calendar and year picker
+ */
+// TODO: change type in v4.0
+// eslint-disable-next-line no-restricted-syntax
 var TuiRangeState = /*#__PURE__*/function (TuiRangeState) {
   TuiRangeState["End"] = "end";
   TuiRangeState["Single"] = "single";
   TuiRangeState["Start"] = "start";
   return TuiRangeState;
 }(TuiRangeState || {});
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-core-enums.js.map
 
@@ -28205,6 +27255,10 @@ var TuiRangeState = /*#__PURE__*/function (TuiRangeState) {
 
 
 
+
+/**
+ * @deprecated: drop in v4.0
+ */
 const TUI_IS_MOBILE_RES_PROVIDER = {
   provide: _taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_1__/* .TUI_IS_MOBILE_RES */ .rL,
   deps: [[new _angular_core__WEBPACK_IMPORTED_MODULE_0__.SkipSelf(), _taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_1__/* .TUI_IS_MOBILE_RES */ .rL], _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef],
@@ -28230,6 +27284,11 @@ function tuiWatchedControllerFactory(controller, cdr, destroy$) {
   controller.change$.pipe(tuiWatch(cdr), takeUntil(destroy$)).subscribe();
   return controller;
 }
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-core-providers.js.map
 
@@ -28288,6 +27347,10 @@ function tuiWatchedControllerFactory(controller, cdr, destroy$) {
 
 
 
+
+/**
+ * Service to provide the current breakpoint based on Taiga UI's media queries
+ */
 let TuiBreakpointService = /*#__PURE__*/(() => {
   class TuiBreakpointService extends rxjs__WEBPACK_IMPORTED_MODULE_2__/* .Observable */ .y {
     constructor(media, ngZone, size$) {
@@ -28345,6 +27408,10 @@ let TuiFormatDateService = /*#__PURE__*/(/* unused pure expression or super */ n
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Service for displaying hints/tooltips
+ */
 let TuiHintService = /*#__PURE__*/(() => {
   class TuiHintService extends rxjs__WEBPACK_IMPORTED_MODULE_9__/* .BehaviorSubject */ .X {
     constructor() {
@@ -28395,7 +27462,9 @@ let TuiNightThemeService = /*#__PURE__*/(/* unused pure expression or super */ n
 })();
 let TuiPositionService = /*#__PURE__*/(() => {
   class TuiPositionService extends rxjs__WEBPACK_IMPORTED_MODULE_2__/* .Observable */ .y {
-    constructor(el, animationFrame, zone, accessor) {
+    constructor(
+    // Destructuring here causes memory leak
+    el, animationFrame, zone, accessor) {
       super(subscriber => animationFrame.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__/* .map */ .U)(() => el.nativeElement.getBoundingClientRect()), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__/* .map */ .U)(rect => accessor.getPosition(rect)), (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__/* .tuiZonefree */ .fL)(zone), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__/* .finalize */ .x)(() => accessor.getPosition(_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_11__/* .EMPTY_CLIENT_RECT */ .Jy))).subscribe(subscriber));
     }
   }
@@ -28411,10 +27480,14 @@ let TuiPositionService = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+// TODO: Remove when Angular is update and `RouterLinkActive` has output
 let TuiRouterLinkActiveService = /*#__PURE__*/(() => {
   class TuiRouterLinkActiveService extends rxjs__WEBPACK_IMPORTED_MODULE_2__/* .Observable */ .y {
     constructor(routerLinkActive, zone, animationFrame$, destroy$) {
-      const stream$ = routerLinkActive ? (0,rxjs__WEBPACK_IMPORTED_MODULE_14__/* .merge */ .T)((0,rxjs__WEBPACK_IMPORTED_MODULE_15__/* .timer */ .H)(0), animationFrame$).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__/* .map */ .U)(() => routerLinkActive.isActive), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__/* .distinctUntilChanged */ .x)(), (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__/* .tuiZoneOptimized */ .Yr)(zone), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_16__/* .takeUntil */ .R)(destroy$)) : rxjs__WEBPACK_IMPORTED_MODULE_17__/* .EMPTY */ .E;
+      const stream$ = routerLinkActive ? (0,rxjs__WEBPACK_IMPORTED_MODULE_14__/* .merge */ .T)((0,rxjs__WEBPACK_IMPORTED_MODULE_15__/* .timer */ .H)(0),
+      // SSR (animationFrame$ never emits value during SSR)
+      animationFrame$).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__/* .map */ .U)(() => routerLinkActive.isActive), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__/* .distinctUntilChanged */ .x)(), (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__/* .tuiZoneOptimized */ .Yr)(zone), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_16__/* .takeUntil */ .R)(destroy$)) : rxjs__WEBPACK_IMPORTED_MODULE_17__/* .EMPTY */ .E;
       super(subscriber => stream$.subscribe(subscriber));
     }
   }
@@ -28430,6 +27503,10 @@ let TuiRouterLinkActiveService = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Service for reusing SVGs without inlining each instance
+ */
 let TuiSvgService = /*#__PURE__*/(() => {
   class TuiSvgService {
     constructor(tuiSanitizer, sanitizer, icons) {
@@ -28491,6 +27568,7 @@ let TuiVisualViewportService = /*#__PURE__*/(() => {
       this.win = win;
       this.isWebkit = isWebkit;
     }
+    // https://bugs.webkit.org/show_bug.cgi?id=207089
     correct(point) {
       var _a, _b, _c, _d;
       return this.isWebkit ? [point[0] + ((_b = (_a = this.win.visualViewport) === null || _a === void 0 ? void 0 : _a.offsetTop) !== null && _b !== void 0 ? _b : 0), point[1] + ((_d = (_c = this.win.visualViewport) === null || _c === void 0 ? void 0 : _c.offsetLeft) !== null && _d !== void 0 ? _d : 0)] : point;
@@ -28509,6 +27587,11 @@ let TuiVisualViewportService = /*#__PURE__*/(() => {
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-core-services.js.map
 
@@ -28554,7 +27637,7 @@ __webpack_require__.d(__webpack_exports__, {
   cp: () => (/* binding */ tuiAsTextfieldHost)
 });
 
-// UNUSED EXPORTS: STATUS_ICON, TUI_ANIMATIONS_DEFAULT_DURATION, TUI_ASSERT_ENABLED, TUI_DATA_LIST_ACCESSOR, TUI_DAY_TYPE_HANDLER, TUI_DEFAULT_ERROR_MESSAGE, TUI_DOCUMENT_OR_SHADOW_ROOT, TUI_ELEMENT_REF, TUI_FIRST_DAY_OF_WEEK, TUI_NOTIFICATION_DEFAULT_OPTIONS, TUI_ORDERED_SHORT_WEEK_DAYS, TUI_SCROLL_REF, TUI_SELECTION_STREAM, TUI_SHORT_WEEK_DAYS, TUI_SPIN_ICONS, TUI_SPIN_TEXTS, tuiAsViewport, tuiCommonIconsProvider, tuiNotificationOptionsProvider, tuiNumberFormatProvider
+// UNUSED EXPORTS: STATUS_ICON, TUI_ANIMATIONS_DEFAULT_DURATION, TUI_ASSERT_ENABLED, TUI_DATA_LIST_ACCESSOR, TUI_DAY_TYPE_HANDLER, TUI_DEFAULT_ERROR_MESSAGE, TUI_DOCUMENT_OR_SHADOW_ROOT, TUI_ELEMENT_REF, TUI_FIRST_DAY_OF_WEEK, TUI_NOTIFICATION_DEFAULT_OPTIONS, TUI_NUMBER_FORMAT_OBSERVABLE, TUI_ORDERED_SHORT_WEEK_DAYS, TUI_SCROLL_REF, TUI_SELECTION_STREAM, TUI_SHORT_WEEK_DAYS, TUI_SPIN_ICONS, TUI_SPIN_TEXTS, tuiAsViewport, tuiCommonIconsProvider, tuiNotificationOptionsProvider, tuiNumberFormatProvider
 
 // EXTERNAL MODULE: consume shared module (default) @angular/core@=16.2.11 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
 var core_mjs_ = __webpack_require__(2368);
@@ -28582,6 +27665,11 @@ function tuiIsMobile(win, {
   return (0,taiga_ui_core_utils_dom/* tuiGetViewportWidth */.ic)(win) < mobile;
 }
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-utils-mobile.js.map
 // EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
 var ng_web_apis_common = __webpack_require__(229);
@@ -28599,6 +27687,8 @@ var switchMap = __webpack_require__(4664);
 var takeUntil = __webpack_require__(9773);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-constants.js
 var taiga_ui_core_constants = __webpack_require__(8103);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/of.js
+var of = __webpack_require__(2096);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/merge.js
 var merge = __webpack_require__(3019);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/identity.js
@@ -28621,13 +27711,28 @@ const TUI_REDUCED_MOTION = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenF
   return (_c = (_b = (_a = (0,core_mjs_.inject)(common_mjs_.DOCUMENT).defaultView) === null || _a === void 0 ? void 0 : _a.matchMedia) === null || _b === void 0 ? void 0 : _b.call(_a, `(prefers-reduced-motion: reduce)`).matches) !== null && _c !== void 0 ? _c : false;
 });
 const TUI_ANIMATIONS_DEFAULT_DURATION = 300;
+/**
+ * Duration of all Taiga UI animations in ms
+ */
 const TUI_ANIMATIONS_DURATION = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,core_mjs_.inject)(TUI_REDUCED_MOTION) ? 0 : TUI_ANIMATIONS_DEFAULT_DURATION);
+
+/**
+ * Options for Taiga UI animations
+ */
 const TUI_ANIMATION_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => ({
   value: ``,
   params: {
     duration: (0,core_mjs_.inject)(TUI_ANIMATIONS_DURATION)
   }
 }));
+
+/**
+ * @deprecated:
+ * Flag to enable assertions across Taiga UI
+ *
+ * The current token no longer matters as
+ * it will not be provided in production
+ */
 const TUI_ASSERT_ENABLED = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,core_mjs_.isDevMode)());
 const COMMON_ICONS = {
   check: `tuiIconCheck`,
@@ -28639,6 +27744,10 @@ const TUI_COMMON_ICONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */
 function tuiCommonIconsProvider(icons) {
   return tuiProvideOptions(TUI_COMMON_ICONS, icons, COMMON_ICONS);
 }
+
+/**
+ * Accessor for data-list options
+ */
 const TUI_DATA_LIST_ACCESSOR = new core_mjs_.InjectionToken(`[TUI_DATA_LIST_ACCESSOR]`);
 function tuiAsDataListAccessor(useExisting) {
   return {
@@ -28646,6 +27755,10 @@ function tuiAsDataListAccessor(useExisting) {
     useExisting
   };
 }
+
+/**
+ * DataList controller
+ */
 const TUI_DATA_LIST_HOST = new core_mjs_.InjectionToken(`[TUI_DATA_LIST_HOST]`);
 function tuiAsDataListHost(useExisting) {
   return {
@@ -28653,32 +27766,98 @@ function tuiAsDataListHost(useExisting) {
     useExisting
   };
 }
+
+/**
+ * Token for adding data-type attribute to calendar cell
+ */
 const TUI_DAY_TYPE_HANDLER = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(day => day.isWeekend ? `weekend` : `weekday`);
 const TUI_DOCUMENT_OR_SHADOW_ROOT = new core_mjs_.InjectionToken(`[TUI_DOCUMENT_OR_SHADOW_ROOT]`);
+
+/**
+ * ElementRef when you cannot use @Input for single time injection
+ */
 const TUI_ELEMENT_REF = new core_mjs_.InjectionToken(`[TUI_ELEMENT_REF]`);
+
+/**
+ * The first day of the week index
+ */
 const TUI_FIRST_DAY_OF_WEEK = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(taiga_ui_cdk_enums/* TuiDayOfWeek */.L.Monday);
+
+/**
+ * Localized months names
+ */
 const TUI_MONTHS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`months`));
+/**
+ * i18n 'close' word
+ */
 const TUI_CLOSE_WORD = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`close`));
+/**
+ * i18n 'Nothing found' message
+ */
 const TUI_NOTHING_FOUND_MESSAGE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`nothingFoundMessage`));
+/**
+ * i18n of error message
+ */
 const TUI_DEFAULT_ERROR_MESSAGE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`defaultErrorMessage`));
+/**
+ * spin i18n texts
+ */
 const TUI_SPIN_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`spinTexts`));
+/**
+ * calendars i18n texts
+ */
 const TUI_SHORT_WEEK_DAYS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`shortWeekDays`));
 const TUI_DEFAULT_ICONS_PLACE = `assets/taiga-ui/icons`;
+/**
+ * Path to icons
+ * @deprecated Use {@link TUI_SVG_OPTIONS} instead
+ */
 const TUI_ICONS_PLACE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_DEFAULT_ICONS_PLACE);
+
+/**
+ * A key/value dictionary of icon names and src to be defined with TuiSvgService
+ */
 const TUI_ICONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)({});
+
+/**
+ * A handler to retrieve USE id for icon by name
+ * @deprecated Use {@link TUI_SVG_OPTIONS} instead
+ */
 const TUI_ICONS_PATH = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,taiga_ui_core_utils_miscellaneous/* tuiIconsPathFactory */.ht)((0,core_mjs_.inject)(TUI_ICONS_PLACE)));
+
+/**
+ * Token for media constant
+ */
 const TUI_MEDIA = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)({
   mobile: 768,
   desktopSmall: 1024,
   desktopLarge: 1280
 });
+
+/**
+ * @deprecated use {@link https://taiga-ui.dev/services/breakpoint-service TuiBreakpointService}
+ * TODO: drop in v4.0
+ * Mobile resolution stream for private providers
+ */
 const TUI_IS_MOBILE_RES = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => {
   const win = (0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9);
   const media = (0,core_mjs_.inject)(TUI_MEDIA);
   return (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(win, `resize`).pipe((0,share/* share */.B)(), (0,startWith/* startWith */.O)(null), (0,map/* map */.U)(() => tuiIsMobile(win, media)), (0,distinctUntilChanged/* distinctUntilChanged */.x)(), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)((0,core_mjs_.inject)(core_mjs_.NgZone)));
 });
+
+/**
+ * @internal
+ * @deprecated
+ * Don't use it! Will be removed after changing the mask.
+ */
 const TUI_LEGACY_MASK = new core_mjs_.InjectionToken(`[TUI_LEGACY_MASK]`);
+
+/**
+ * Mode stream for private providers
+ */
 const TUI_MODE = new core_mjs_.InjectionToken(`[TUI_MODE]`);
+
+/** @deprecated remove export */
 const STATUS_ICON = {
   info: `tuiIconInfo`,
   success: `tuiIconCheckCircle`,
@@ -28686,6 +27865,7 @@ const STATUS_ICON = {
   warning: `tuiIconAlertCircle`,
   neutral: `tuiIconInfo`
 };
+/** Default values for the notification options. */
 const TUI_NOTIFICATION_DEFAULT_OPTIONS = {
   autoClose: 3000,
   label: ``,
@@ -28698,14 +27878,32 @@ const TUI_NOTIFICATION_DEFAULT_OPTIONS = {
   hasIcon: true,
   defaultAutoCloseTime: 3000
 };
+/**
+ * Default parameters for notification alert component
+ */
 const TUI_NOTIFICATION_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_NOTIFICATION_DEFAULT_OPTIONS);
 function tuiNotificationOptionsProvider(options) {
   return tuiProvideOptions(TUI_NOTIFICATION_OPTIONS, options, TUI_NOTIFICATION_DEFAULT_OPTIONS);
 }
+
+/**
+ * Formatting configuration for displayed numbers
+ */
 const TUI_NUMBER_FORMAT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(taiga_ui_core_constants/* TUI_DEFAULT_NUMBER_FORMAT */.Jl);
 function tuiNumberFormatProvider(options) {
   return tuiProvideOptions(TUI_NUMBER_FORMAT, options, TUI_DEFAULT_NUMBER_FORMAT);
 }
+
+/**
+ * Formatting configuration for displayed numbers
+ */
+const TUI_NUMBER_FORMAT_OBSERVABLE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)((0,of.of)(Object.assign(Object.assign({}, taiga_ui_core_constants/* TUI_DEFAULT_NUMBER_FORMAT */.Jl), {
+  decimalLimit: NaN
+})));
+
+/**
+ * Content for tuiOption component
+ */
 const TUI_OPTION_CONTENT = new core_mjs_.InjectionToken(`[TUI_OPTION_CONTENT]`);
 function tuiAsOptionContent(useValue) {
   return {
@@ -28713,16 +27911,36 @@ function tuiAsOptionContent(useValue) {
     useValue
   };
 }
+
+/**
+ * TODO: v4.0 delete the whole file
+ */
 const convertToSundayFirstWeekFormat = weekDaysNames => {
   const sundayIndex = weekDaysNames.length - 1;
   return [weekDaysNames[sundayIndex], ...weekDaysNames.slice(0, sundayIndex)];
 };
+/**
+ * Ordered calendars i18n texts
+ * @deprecated
+ */
 const TUI_ORDERED_SHORT_WEEK_DAYS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => {
   const firstDayOfWeekIndex = (0,core_mjs_.inject)(TUI_FIRST_DAY_OF_WEEK);
   return (0,core_mjs_.inject)(TUI_SHORT_WEEK_DAYS).pipe((0,map/* map */.U)(convertToSundayFirstWeekFormat), (0,map/* map */.U)(weekDays => [...weekDays.slice(firstDayOfWeekIndex), ...weekDays.slice(0, firstDayOfWeekIndex)]));
 });
+
+/**
+ * A custom Sanitizer to sanitize source before inlining
+ */
 const TUI_SANITIZER = new core_mjs_.InjectionToken(`[TUI_SANITIZER]`);
+
+/**
+ * @deprecated import from `@taiga-ui/cdk` instead
+ */
 const TUI_SCROLL_REF = (/* unused pure expression or super */ null && (TUI_SCROLL_REF$1));
+
+/**
+ * A stream of possible selection changes
+ */
 const TUI_SELECTION_STREAM = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => {
   const doc = (0,core_mjs_.inject)(common_mjs_.DOCUMENT);
   return (0,merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, `selectionchange`), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, `mouseup`), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, `mousedown`).pipe((0,switchMap/* switchMap */.w)(() => (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, `mousemove`).pipe((0,takeUntil/* takeUntil */.R)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, `mouseup`))))), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, `keydown`), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, `keyup`)).pipe((0,share/* share */.B)());
@@ -28731,9 +27949,29 @@ const TUI_SPIN_ICONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.J
   decrement: `tuiIconChevronLeft`,
   increment: `tuiIconChevronRight`
 });
+
+/**
+ * Transform function the contents of the loaded svg file
+ * @deprecated Use {@link TUI_SVG_OPTIONS} instead
+ */
 const TUI_SVG_CONTENT_PROCESSOR = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(taiga_ui_cdk_utils_svg/* tuiSvgLinearGradientProcessor */.N);
+
+/**
+ * Source path processor for svg
+ * @deprecated Use {@link TUI_SVG_OPTIONS} instead
+ */
 const TUI_SVG_SRC_PROCESSOR = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(identity/* identity */.y);
+
+/**
+ * Appearance for inputs
+ * @deprecated use {@link TUI_TEXTFIELD_APPEARANCE_DIRECTIVE} instead
+ * TODO: Remove in 4.0
+ */
 const TUI_TEXTFIELD_APPEARANCE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(taiga_ui_core_enums/* TuiAppearance */.Nm.Textfield);
+
+/**
+ * An interface to communicate with textfield based controls
+ */
 const TUI_TEXTFIELD_HOST = new core_mjs_.InjectionToken(`[TUI_TEXTFIELD_HOST]`);
 function tuiAsTextfieldHost(useExisting) {
   return {
@@ -28742,7 +27980,15 @@ function tuiAsTextfieldHost(useExisting) {
   };
 }
 const TUI_THEME = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(`Taiga`);
+
+/**
+ * Buffer token to pass NG_VALUE_ACCESSOR to a different Injector
+ */
 const TUI_VALUE_ACCESSOR = new core_mjs_.InjectionToken(`[TUI_VALUE_ACCESSOR]`);
+
+/**
+ * Viewport accessor
+ */
 const TUI_VIEWPORT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => {
   const win = (0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9);
   return {
@@ -28766,6 +28012,11 @@ function tuiAsViewport(useExisting) {
   };
 }
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-tokens.js.map
 
 /***/ }),
@@ -28788,6 +28039,12 @@ function tuiCheckFixedPosition(element) {
   const style = getComputedStyle(element);
   return style.getPropertyValue(`position`) === `fixed` || tuiCheckFixedPosition(element.parentElement);
 }
+
+/**
+ * Calculates size of safe area on mobile devices (status bars)
+ *
+ * ATTENTION: Only use in browser environment
+ */
 function tuiGetSafeAreaSize() {
   if (!CSS.supports(`padding-top: env(safe-area-inset-top)`)) {
     return 0;
@@ -28802,18 +28059,62 @@ function tuiGetSafeAreaSize() {
 function tuiGetScreenWidth(doc) {
   return Math.max(doc.documentElement.clientWidth, doc.defaultView ? doc.defaultView.innerWidth : 0);
 }
+
+/**
+ * @description:
+ * Cross-browser @media (height)
+ *
+ * 1. window.innerWidth
+ * 1.1. gets CSS viewport @media (height) which include scrollbars
+ * 1.2. initial-scale and zoom variations may cause mobile values to
+ *      wrongly scale down to what PPK calls the visual
+ *      viewport and be smaller than the @media values
+ *  1.3. zoom may cause values to be 1px off due to native rounding
+ *
+ *  2. document.documentElement.clientHeight
+ *  2.1. equals CSS viewport width minus scrollbar width
+ *  2.2. matches @media (height) when there is no scrollbar
+ *  2.3. available cross-browser
+ *  2.4. inaccurate if doctype is missing
+ */
 function tuiGetViewportHeight({
   document,
   innerHeight
 }) {
   return Math.max(document.documentElement.clientHeight || 0, innerHeight || 0);
 }
+
+/**
+ * @description:
+ * Cross-browser @media (width)
+ *
+ * 1. window.innerWidth
+ * 1.1. gets CSS viewport @media (width) which include scrollbars
+ * 1.2. initial-scale and zoom variations may cause mobile values to
+ *      wrongly scale down to what PPK calls the visual
+ *      viewport and be smaller than the @media values
+ *  1.3. zoom may cause values to be 1px off due to native rounding
+ *
+ *  2. document.documentElement.clientWidth
+ *  2.1. equals CSS viewport width minus scrollbar width
+ *  2.2. matches @media (width) when there is no scrollbar
+ *  2.3. available cross-browser
+ *  2.4. inaccurate if doctype is missing
+ */
 function tuiGetViewportWidth({
   document,
   innerWidth
 }) {
   return Math.max(document.documentElement.clientWidth || 0, innerWidth || 0);
 }
+
+/**
+ * Creates a cloned range with its boundaries set at word boundaries
+ *
+ * @param currentRange a range to clone
+ * @return modified range
+ */
+// eslint-disable-next-line max-statements
 function tuiGetWordRange(currentRange) {
   const range = currentRange.cloneRange();
   const {
@@ -28881,6 +28182,11 @@ function tuiProcessIcon(source, name) {
   return `<g id="${name}" xmlns="http://www.w3.org/2000/svg"><svg  x="50%" y="50%" width="${width / 16}em" height="${height / 16}em" overflow="visible" viewBox="0 0 ${width} ${height}"><svg x="${-width / 2}" y="${-height / 2}">${src}</svg></svg></g>`;
 }
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-core-utils-dom.js.map
 
 /***/ }),
@@ -28930,9 +28236,17 @@ function tuiIconsPathFactory(staticPath) {
     return (0,_taiga_ui_core_constants__WEBPACK_IMPORTED_MODULE_0__/* .DEFAULT_ICONS_PATH */ .oA)(name);
   };
 }
+
+/**
+ * Check if pressed key is interactive in terms of input field
+ */
 function tuiIsEditingKey(key) {
   return key.length === 1 || _taiga_ui_core_constants__WEBPACK_IMPORTED_MODULE_0__/* .tuiEditingKeys */ .Nq.includes(key);
 }
+
+/**
+ * @internal
+ */
 function tuiIsObscured(el, exceptSelector = `tui-hints-host`) {
   var _a;
   return !!((_a = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiGetElementObscures */ .PU)(el)) === null || _a === void 0 ? void 0 : _a.some(el => !el.closest(exceptSelector)));
@@ -28945,6 +28259,7 @@ function tuiOverrideOptions(override, fallback) {
   return (directive, options) => {
     const result = directive || Object.assign({}, options || fallback);
     Object.keys(override).forEach(key => {
+      // Update directive props with new defaults before inputs are processed
       result[key] = override[key];
     });
     return result;
@@ -28959,9 +28274,20 @@ const SIZES = {
   xl: 5,
   xxl: 6
 };
+/**
+ * Compares size constants to determine if first size is bigger than the second
+ *
+ * @param size size that we need to compare
+ * @param biggerThanSize size to compare with, 's' by default
+ */
 function tuiSizeBigger(size, biggerThanSize = `s`) {
   return SIZES[size] > SIZES[biggerThanSize];
 }
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-core-utils-miscellaneous.js.map
 
@@ -28974,6 +28300,8 @@ function tuiSizeBigger(size, biggerThanSize = `s`) {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   X: () => (/* binding */ TuiCountryIsoCode)
 /* harmony export */ });
+// TODO: change type in v4.0
+// eslint-disable-next-line no-restricted-syntax
 var TuiCountryIsoCode = /*#__PURE__*/function (TuiCountryIsoCode) {
   TuiCountryIsoCode["AD"] = "AD";
   TuiCountryIsoCode["AE"] = "AE";
@@ -29192,6 +28520,10 @@ var TuiCountryIsoCode = /*#__PURE__*/function (TuiCountryIsoCode) {
   TuiCountryIsoCode["ZW"] = "ZW";
   return TuiCountryIsoCode;
 }(TuiCountryIsoCode || {});
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-i18n-enums.js.map
 
@@ -29575,6 +28907,11 @@ const TUI_ENGLISH_LANGUAGE = Object.assign(Object.assign(Object.assign(Object.as
   name: `english`
 }, TUI_ENGLISH_LANGUAGE_CORE), TUI_ENGLISH_LANGUAGE_KIT), TUI_ENGLISH_LANGUAGE_ADDON_TABLE), TUI_ENGLISH_LANGUAGE_ADDON_COMMERCE), TUI_ENGLISH_LANGUAGE_ADDON_EDITOR), TUI_ENGLISH_LANGUAGE_ADDON_PREVIEW);
 
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
 //# sourceMappingURL=taiga-ui-i18n-languages-english.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/of.js
 var of = __webpack_require__(2096);
@@ -29582,16 +28919,38 @@ var of = __webpack_require__(2096);
 
 
 
+
+/**
+ * Default Language for Taiga UI libraries i18n
+ */
 const TUI_DEFAULT_LANGUAGE = new core_mjs_.InjectionToken(`[TUI_DEFAULT_LANGUAGE]`, {
   factory: () => TUI_ENGLISH_LANGUAGE
 });
+/**
+ * Language for Taiga UI libraries i18n
+ */
 const TUI_LANGUAGE = new core_mjs_.InjectionToken(`[TUI_LANGUAGE]`, {
   factory: () => (0,of.of)((0,core_mjs_.inject)(TUI_DEFAULT_LANGUAGE))
 });
+
+/**
+ * Webpack chunk loader for Taiga UI libraries i18n
+ * @note: cannot be transferred to a shared file
+ * ReferenceError: Cannot access 'TUI_LANGUAGE_LOADER' before initialization
+ */
 const TUI_LANGUAGE_LOADER = new core_mjs_.InjectionToken(`[TUI_LANGUAGE_LOADER]`);
+
+/**
+ * Default key for search value in storage
+ */
 const TUI_LANGUAGE_STORAGE_KEY = new core_mjs_.InjectionToken(`[TUI_LANGUAGE_STORAGE_KEY]`, {
   factory: () => `tuiLanguage`
 });
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-i18n-tokens.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/isObservable.js
@@ -29608,6 +28967,11 @@ var map = __webpack_require__(7398);
 function tuiExtractI18n(key) {
   return () => (0,core_mjs_.inject)(TUI_LANGUAGE).pipe((0,switchMap/* switchMap */.w)(streamOrValue => (0,isObservable/* isObservable */.b)(streamOrValue) ? streamOrValue : (0,of.of)(streamOrValue)), (0,map/* map */.U)(lang => lang[key]));
 }
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
 
 //# sourceMappingURL=taiga-ui-i18n-tools.js.map
 
