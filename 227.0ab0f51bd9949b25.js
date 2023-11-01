@@ -7,13 +7,11 @@
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   H3: () => (/* binding */ LOCAL_STORAGE),
 /* harmony export */   L1: () => (/* binding */ ANIMATION_FRAME),
-/* harmony export */   UA: () => (/* binding */ HISTORY),
 /* harmony export */   m9: () => (/* binding */ WINDOW),
-/* harmony export */   s5: () => (/* binding */ NAVIGATOR),
 /* harmony export */   ux: () => (/* binding */ CSS),
 /* harmony export */   yZ: () => (/* binding */ USER_AGENT)
 /* harmony export */ });
-/* unused harmony exports CACHES, CRYPTO, LOCATION, MEDIA_DEVICES, NETWORK_INFORMATION, PAGE_VISIBILITY, PERFORMANCE, SCREEN, SESSION_STORAGE, SPEECH_RECOGNITION, SPEECH_SYNTHESIS */
+/* unused harmony exports CACHES, CRYPTO, HISTORY, LOCATION, MEDIA_DEVICES, NAVIGATOR, NETWORK_INFORMATION, PAGE_VISIBILITY, PERFORMANCE, SCREEN, SESSION_STORAGE, SPEECH_RECOGNITION, SPEECH_SYNTHESIS */
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2368);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5592);
@@ -1380,8 +1378,8 @@ function skipWhile(predicate) {
   });
 }
 //# sourceMappingURL=skipWhile.js.map
-// EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
-var ng_web_apis_common = __webpack_require__(229);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
+var ng_web_apis_common = __webpack_require__(9570);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-tokens.js + 1 modules
 var taiga_ui_cdk_tokens = __webpack_require__(2918);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-miscellaneous.js
@@ -2405,6 +2403,8 @@ let TuiObscuredModule = /*#__PURE__*/(() => {
 var taiga_ui_cdk_utils_dom = __webpack_require__(7995);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-focus.js
 var taiga_ui_cdk_utils_focus = __webpack_require__(756);
+// EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
+var fesm2015_ng_web_apis_common = __webpack_require__(229);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/tap.js
 var tap = __webpack_require__(9397);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-overscroll.js
@@ -3376,7 +3376,7 @@ let TuiScrollbarComponent = /*#__PURE__*/(() => {
     }
   }
   TuiScrollbarComponent.ɵfac = function TuiScrollbarComponent_Factory(t) {
-    return new (t || TuiScrollbarComponent)(core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* CSS */.ux), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* USER_AGENT */.yZ), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_IOS */.FA));
+    return new (t || TuiScrollbarComponent)(core_mjs_["ɵɵdirectiveInject"](fesm2015_ng_web_apis_common/* CSS */.ux), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](fesm2015_ng_web_apis_common/* USER_AGENT */.yZ), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_IOS */.FA));
   };
   TuiScrollbarComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiScrollbarComponent,
@@ -3816,7 +3816,7 @@ let TuiDropdownComponent = /*#__PURE__*/(() => {
     }
   }
   TuiDropdownComponent.ɵfac = function TuiDropdownComponent_Factory(t) {
-    return new (t || TuiDropdownComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiVisualViewportService */.Lp), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiPositionService */.KG), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](TuiDropdownDirective), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_ANIMATION_OPTIONS */.Pw), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_abstract/* TuiRectAccessor */.O4), core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* WINDOW */.m9), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_MODE */.Au), core_mjs_["ɵɵdirectiveInject"](TUI_DROPDOWN_OPTIONS), core_mjs_["ɵɵdirectiveInject"](TuiDropdownHoverDirective, 8));
+    return new (t || TuiDropdownComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiVisualViewportService */.Lp), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiPositionService */.KG), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](TuiDropdownDirective), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_ANIMATION_OPTIONS */.Pw), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_abstract/* TuiRectAccessor */.O4), core_mjs_["ɵɵdirectiveInject"](fesm2015_ng_web_apis_common/* WINDOW */.m9), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_MODE */.Au), core_mjs_["ɵɵdirectiveInject"](TUI_DROPDOWN_OPTIONS), core_mjs_["ɵɵdirectiveInject"](TuiDropdownHoverDirective, 8));
   };
   TuiDropdownComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiDropdownComponent,
@@ -15275,7 +15275,7 @@ let TuiUnderlineComponent = /*#__PURE__*/(() => {
     }
   }
   TuiUnderlineComponent.ɵfac = function TuiUnderlineComponent_Factory(t) {
-    return new (t || TuiUnderlineComponent)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.NgZone), core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* ANIMATION_FRAME */.L1), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_MODE */.Au));
+    return new (t || TuiUnderlineComponent)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.NgZone), core_mjs_["ɵɵdirectiveInject"](fesm2015_ng_web_apis_common/* ANIMATION_FRAME */.L1), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_MODE */.Au));
   };
   TuiUnderlineComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiUnderlineComponent,
@@ -17446,7 +17446,7 @@ let TuiDialogCloseService = /*#__PURE__*/(() => {
     }
   }
   TuiDialogCloseService.ɵfac = function TuiDialogCloseService_Factory(t) {
-    return new (t || TuiDialogCloseService)(core_mjs_["ɵɵinject"](ng_web_apis_common/* WINDOW */.m9), core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵinject"](core_mjs_.ElementRef));
+    return new (t || TuiDialogCloseService)(core_mjs_["ɵɵinject"](fesm2015_ng_web_apis_common/* WINDOW */.m9), core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵinject"](core_mjs_.ElementRef));
   };
   TuiDialogCloseService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
     token: TuiDialogCloseService,
@@ -18389,7 +18389,7 @@ let TuiThemeService = /*#__PURE__*/(() => {
     }
   }
   TuiThemeService.ɵfac = function TuiThemeService_Factory(t) {
-    return new (t || TuiThemeService)(core_mjs_["ɵɵinject"](TUI_THEME_NAME), core_mjs_["ɵɵinject"](TUI_THEME_STORAGE_KEY), core_mjs_["ɵɵinject"](ng_web_apis_common/* LOCAL_STORAGE */.H3));
+    return new (t || TuiThemeService)(core_mjs_["ɵɵinject"](TUI_THEME_NAME), core_mjs_["ɵɵinject"](TUI_THEME_STORAGE_KEY), core_mjs_["ɵɵinject"](fesm2015_ng_web_apis_common/* LOCAL_STORAGE */.H3));
   };
   TuiThemeService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
     token: TuiThemeService,
@@ -18422,7 +18422,7 @@ let TuiThemeNightService = /*#__PURE__*/(() => {
     }
   }
   TuiThemeNightService.ɵfac = function TuiThemeNightService_Factory(t) {
-    return new (t || TuiThemeNightService)(core_mjs_["ɵɵinject"](ng_web_apis_common/* WINDOW */.m9), core_mjs_["ɵɵinject"](ng_web_apis_common/* LOCAL_STORAGE */.H3), core_mjs_["ɵɵinject"](TUI_THEME_NIGHT_STORAGE_KEY), core_mjs_["ɵɵinject"](TUI_USE_DEFAULT_NIGHT_THEME));
+    return new (t || TuiThemeNightService)(core_mjs_["ɵɵinject"](fesm2015_ng_web_apis_common/* WINDOW */.m9), core_mjs_["ɵɵinject"](fesm2015_ng_web_apis_common/* LOCAL_STORAGE */.H3), core_mjs_["ɵɵinject"](TUI_THEME_NIGHT_STORAGE_KEY), core_mjs_["ɵɵinject"](TUI_USE_DEFAULT_NIGHT_THEME));
   };
   TuiThemeNightService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
     token: TuiThemeNightService,
@@ -23598,14 +23598,16 @@ var shareReplay = __webpack_require__(7081);
 var operators_pairwise = __webpack_require__(9384);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/filter.js
 var operators_filter = __webpack_require__(2181);
-// EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
-var ng_web_apis_common = __webpack_require__(229);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
+var ng_web_apis_common = __webpack_require__(9570);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-constants.js
 var taiga_ui_cdk_constants = __webpack_require__(6141);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-dom.js
 var taiga_ui_cdk_utils_dom = __webpack_require__(7995);
 // EXTERNAL MODULE: consume shared module (default) @angular/common@=16.2.11 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
 var common_mjs_ = __webpack_require__(4917);
+// EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
+var fesm2015_ng_web_apis_common = __webpack_require__(229);
 ;// CONCATENATED MODULE: ./node_modules/@ng-web-apis/resize-observer/fesm2015/ng-web-apis-resize-observer.js
 
 
@@ -23620,7 +23622,7 @@ const RESIZE_OPTION_BOX = new core_mjs_.InjectionToken('Box model to observe cha
 });
 const RESIZE_OBSERVER_SUPPORT = new core_mjs_.InjectionToken('Resize Observer API support', {
   providedIn: 'root',
-  factory: () => !!(0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9).ResizeObserver
+  factory: () => !!(0,core_mjs_.inject)(fesm2015_ng_web_apis_common/* WINDOW */.m9).ResizeObserver
 });
 let ResizeObserverService = /*#__PURE__*/(() => {
   class ResizeObserverService extends internal_Observable/* Observable */.y {
@@ -24287,8 +24289,8 @@ __webpack_require__.d(__webpack_exports__, {
 var common_mjs_ = __webpack_require__(4917);
 // EXTERNAL MODULE: consume shared module (default) @angular/core@=16.2.11 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
 var core_mjs_ = __webpack_require__(2368);
-// EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
-var ng_web_apis_common = __webpack_require__(229);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
+var ng_web_apis_common = __webpack_require__(9570);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-observables.js
 var taiga_ui_cdk_observables = __webpack_require__(5213);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-miscellaneous.js
@@ -25582,6 +25584,135 @@ function setFallbackForGradientFill(svg, fallback) {
 
 
 //# sourceMappingURL=taiga-ui-cdk-utils-svg.js.map
+
+/***/ }),
+
+/***/ 9570:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   L1: () => (/* binding */ ANIMATION_FRAME),
+/* harmony export */   UA: () => (/* binding */ HISTORY),
+/* harmony export */   m9: () => (/* binding */ WINDOW),
+/* harmony export */   s5: () => (/* binding */ NAVIGATOR),
+/* harmony export */   yZ: () => (/* binding */ USER_AGENT)
+/* harmony export */ });
+/* unused harmony exports CACHES, CRYPTO, CSS, LOCAL_STORAGE, LOCATION, MEDIA_DEVICES, NETWORK_INFORMATION, PAGE_VISIBILITY, PERFORMANCE, SCREEN, SESSION_STORAGE, SPEECH_RECOGNITION, SPEECH_SYNTHESIS */
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2368);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5592);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2438);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3020);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7921);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7398);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(3997);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(7081);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4917);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+
+const WINDOW = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over global window object', {
+  factory: () => {
+    const {
+      defaultView
+    } = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT);
+    if (!defaultView) {
+      throw new Error('Window is not available');
+    }
+    return defaultView;
+  }
+});
+const ANIMATION_FRAME = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('Shared Observable based on `window.requestAnimationFrame`', {
+  factory: () => {
+    const {
+      requestAnimationFrame,
+      cancelAnimationFrame
+    } = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW);
+    const animationFrame$ = new rxjs__WEBPACK_IMPORTED_MODULE_2__/* .Observable */ .y(subscriber => {
+      let id = NaN;
+      const callback = timestamp => {
+        subscriber.next(timestamp);
+        id = requestAnimationFrame(callback);
+      };
+      id = requestAnimationFrame(callback);
+      return () => {
+        cancelAnimationFrame(id);
+      };
+    });
+    return animationFrame$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__/* .share */ .B)());
+  }
+});
+const CACHES = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.caches object', {
+  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).caches
+});
+const CRYPTO = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.crypto object', {
+  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).crypto
+});
+const CSS = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.CSS object', {
+  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).CSS || {
+    escape: v => v,
+    supports: () => false
+  }
+});
+const HISTORY = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.history object', {
+  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).history
+});
+const LOCAL_STORAGE = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.localStorage object', {
+  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).localStorage
+});
+const LOCATION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.location object', {
+  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).location
+});
+const NAVIGATOR = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.navigator object', {
+  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).navigator
+});
+const MEDIA_DEVICES = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.navigator.mediaDevices object', {
+  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(NAVIGATOR).mediaDevices
+});
+const NETWORK_INFORMATION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.navigator.connection object', {
+  // @ts-ignore
+  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(NAVIGATOR).connection || null
+});
+const PAGE_VISIBILITY = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('Shared Observable based on `document visibility changed`', {
+  factory: () => {
+    const documentRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT);
+    return (0,rxjs__WEBPACK_IMPORTED_MODULE_4__/* .fromEvent */ .R)(documentRef, 'visibilitychange').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__/* .startWith */ .O)(0), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__/* .map */ .U)(() => documentRef.visibilityState !== 'hidden'), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__/* .distinctUntilChanged */ .x)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__/* .shareReplay */ .d)({
+      refCount: false,
+      bufferSize: 1
+    }));
+  }
+});
+const PERFORMANCE = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.performance object', {
+  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).performance
+});
+const SCREEN = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.screen object', {
+  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).screen
+});
+const SESSION_STORAGE = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.sessionStorage object', {
+  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).sessionStorage
+});
+const SPEECH_RECOGNITION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over SpeechRecognition class', {
+  factory: () => {
+    const windowRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW);
+    return windowRef.speechRecognition || windowRef.webkitSpeechRecognition || null;
+  }
+});
+const SPEECH_SYNTHESIS = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.speechSynthesis object', {
+  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).speechSynthesis
+});
+const USER_AGENT = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.navigator.userAgent object', {
+  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(NAVIGATOR).userAgent
+});
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=ng-web-apis-common.js.map
 
 /***/ }),
 
