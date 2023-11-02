@@ -27,7 +27,7 @@
     "release:package": "nx build ${npm_config_package} --configuration production && npm run sync-readmes ${npm_config_package} && nx semrel ${npm_config_package}",
     "sync-readmes": "node scripts/sync-readmes",
     "test": "nx affected --target test",
-    "lint": "nx workspace-lint && nx affected --target lint",
+    "lint": "nx affected --target lint",
     "prettier": "prettier --write '**/*.{js,ts,html,md,less,json}'",
     "e2e": "nx e2e",
     "affected:apps": "nx affected:apps",
