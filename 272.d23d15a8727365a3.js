@@ -740,7 +740,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(3997);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(1374);
 /**
- * @license Angular v16.2.11
+ * @license Angular v16.2.12
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -10764,7 +10764,7 @@ class Version {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new Version('16.2.11');
+const VERSION = /*#__PURE__*/new Version('16.2.12');
 
 // This default value is when checking the hierarchy for a token.
 //
