@@ -7,11 +7,13 @@
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   H3: () => (/* binding */ LOCAL_STORAGE),
 /* harmony export */   L1: () => (/* binding */ ANIMATION_FRAME),
+/* harmony export */   UA: () => (/* binding */ HISTORY),
 /* harmony export */   m9: () => (/* binding */ WINDOW),
+/* harmony export */   s5: () => (/* binding */ NAVIGATOR),
 /* harmony export */   ux: () => (/* binding */ CSS),
 /* harmony export */   yZ: () => (/* binding */ USER_AGENT)
 /* harmony export */ });
-/* unused harmony exports CACHES, CRYPTO, HISTORY, LOCATION, MEDIA_DEVICES, NAVIGATOR, NETWORK_INFORMATION, PAGE_VISIBILITY, PERFORMANCE, SCREEN, SESSION_STORAGE, SPEECH_RECOGNITION, SPEECH_SYNTHESIS */
+/* unused harmony exports CACHES, CRYPTO, LOCATION, MEDIA_DEVICES, NETWORK_INFORMATION, PAGE_VISIBILITY, PERFORMANCE, SCREEN, SESSION_STORAGE, SPEECH_RECOGNITION, SPEECH_SYNTHESIS */
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4676);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5592);
@@ -1378,8 +1380,8 @@ function skipWhile(predicate) {
   });
 }
 //# sourceMappingURL=skipWhile.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
-var ng_web_apis_common = __webpack_require__(9570);
+// EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
+var ng_web_apis_common = __webpack_require__(229);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-tokens.js + 1 modules
 var taiga_ui_cdk_tokens = __webpack_require__(2918);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-miscellaneous.js
@@ -2403,8 +2405,6 @@ let TuiObscuredModule = /*#__PURE__*/(() => {
 var taiga_ui_cdk_utils_dom = __webpack_require__(7995);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-focus.js
 var taiga_ui_cdk_utils_focus = __webpack_require__(756);
-// EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
-var fesm2015_ng_web_apis_common = __webpack_require__(229);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/tap.js
 var tap = __webpack_require__(9397);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-overscroll.js
@@ -3376,7 +3376,7 @@ let TuiScrollbarComponent = /*#__PURE__*/(() => {
     }
   }
   TuiScrollbarComponent.ɵfac = function TuiScrollbarComponent_Factory(t) {
-    return new (t || TuiScrollbarComponent)(core_mjs_["ɵɵdirectiveInject"](fesm2015_ng_web_apis_common/* CSS */.ux), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](fesm2015_ng_web_apis_common/* USER_AGENT */.yZ), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_IOS */.FA));
+    return new (t || TuiScrollbarComponent)(core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* CSS */.ux), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* USER_AGENT */.yZ), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_IOS */.FA));
   };
   TuiScrollbarComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiScrollbarComponent,
@@ -3816,7 +3816,7 @@ let TuiDropdownComponent = /*#__PURE__*/(() => {
     }
   }
   TuiDropdownComponent.ɵfac = function TuiDropdownComponent_Factory(t) {
-    return new (t || TuiDropdownComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiVisualViewportService */.Lp), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiPositionService */.KG), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](TuiDropdownDirective), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_ANIMATION_OPTIONS */.Pw), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_abstract/* TuiRectAccessor */.O4), core_mjs_["ɵɵdirectiveInject"](fesm2015_ng_web_apis_common/* WINDOW */.m9), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_MODE */.Au), core_mjs_["ɵɵdirectiveInject"](TUI_DROPDOWN_OPTIONS), core_mjs_["ɵɵdirectiveInject"](TuiDropdownHoverDirective, 8));
+    return new (t || TuiDropdownComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiVisualViewportService */.Lp), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiPositionService */.KG), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](TuiDropdownDirective), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_ANIMATION_OPTIONS */.Pw), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_abstract/* TuiRectAccessor */.O4), core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* WINDOW */.m9), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_MODE */.Au), core_mjs_["ɵɵdirectiveInject"](TUI_DROPDOWN_OPTIONS), core_mjs_["ɵɵdirectiveInject"](TuiDropdownHoverDirective, 8));
   };
   TuiDropdownComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiDropdownComponent,
@@ -4809,6 +4809,7 @@ let TuiHostedDropdownComponent = /*#__PURE__*/(() => {
     constructor(hover$, el) {
       this.hover$ = hover$;
       this.el = el;
+      this.focus$ = new internal_BehaviorSubject/* BehaviorSubject */.X(false);
       /** TODO: rename in 4.0 */
       this.openChange = new internal_BehaviorSubject/* BehaviorSubject */.X(false);
       this.sided = false;
@@ -4847,6 +4848,9 @@ let TuiHostedDropdownComponent = /*#__PURE__*/(() => {
     }
     get focused() {
       return (0,taiga_ui_cdk_utils_focus/* tuiIsNativeFocusedIn */.zb)(this.host) || this.open && !!this.wrapper && (0,taiga_ui_cdk_utils_focus/* tuiIsNativeFocusedIn */.zb)(this.wrapper.nativeElement);
+    }
+    onFocusInOut() {
+      this.focus$.next(this.focused);
     }
     onFocusIn(target) {
       if (!this.computedHost.contains(target)) {
@@ -4964,10 +4968,16 @@ let TuiHostedDropdownComponent = /*#__PURE__*/(() => {
         core_mjs_["ɵɵqueryRefresh"](_t = core_mjs_["ɵɵloadQuery"]()) && (ctx.activeZone = _t.first);
       }
     },
-    hostVars: 2,
+    hostVars: 1,
     hostBindings: function TuiHostedDropdownComponent_HostBindings(rf, ctx) {
       if (rf & 1) {
-        core_mjs_["ɵɵlistener"]("focusin", function TuiHostedDropdownComponent_focusin_HostBindingHandler($event) {
+        core_mjs_["ɵɵlistener"]("$.class._hosted_dropdown_focused", function TuiHostedDropdownComponent___class__hosted_dropdown_focused_HostBindingHandler() {
+          return ctx.focus$;
+        })("focusin.capture.silent", function TuiHostedDropdownComponent_focusin_capture_silent_HostBindingHandler() {
+          return ctx.onFocusInOut();
+        })("focusout.capture.silent", function TuiHostedDropdownComponent_focusout_capture_silent_HostBindingHandler() {
+          return ctx.onFocusInOut();
+        })("focusin", function TuiHostedDropdownComponent_focusin_HostBindingHandler($event) {
           return ctx.onFocusIn($event.target);
         })("click", function TuiHostedDropdownComponent_click_HostBindingHandler($event) {
           return ctx.onClick($event.target);
@@ -4980,7 +4990,7 @@ let TuiHostedDropdownComponent = /*#__PURE__*/(() => {
         });
       }
       if (rf & 2) {
-        core_mjs_["ɵɵclassProp"]("_hosted_dropdown_focused", ctx.focused);
+        core_mjs_["ɵɵhostProperty"]("$.class._hosted_dropdown_focused", ctx.focus$);
       }
     },
     inputs: {
@@ -9814,7 +9824,8 @@ let TuiSelectComponent = /*#__PURE__*/(() => {
       return !this.interactive ? this.arrowMode.disabled : this.arrowMode.interactive;
     }
     get nativeFocusableElement() {
-      return this.textfield ? this.textfield.nativeFocusableElement : null;
+      var _a, _b;
+      return (_b = (_a = this.textfield) === null || _a === void 0 ? void 0 : _a.nativeFocusableElement) !== null && _b !== void 0 ? _b : null;
     }
     get focused() {
       return (0,taiga_ui_cdk_utils_focus/* tuiIsNativeFocused */.V8)(this.nativeFocusableElement) || !!this.hostedDropdown && this.hostedDropdown.focused;
@@ -10363,7 +10374,8 @@ let TuiToggleComponent = /*#__PURE__*/(() => {
       return this.options.icons.toggleOff;
     }
     get nativeFocusableElement() {
-      return this.focusableElement ? this.focusableElement.nativeElement : null;
+      var _a, _b;
+      return (_b = (_a = this.focusableElement) === null || _a === void 0 ? void 0 : _a.nativeElement) !== null && _b !== void 0 ? _b : null;
     }
     get focused() {
       return (0,taiga_ui_cdk_utils_focus/* tuiIsNativeFocused */.V8)(this.nativeFocusableElement);
@@ -10378,7 +10390,8 @@ let TuiToggleComponent = /*#__PURE__*/(() => {
       return this.sizeM ? 'xs' : 's';
     }
     get hostMode() {
-      return this.modeDirective ? this.modeDirective.mode : null;
+      var _a, _b;
+      return (_b = (_a = this.modeDirective) === null || _a === void 0 ? void 0 : _a.mode) !== null && _b !== void 0 ? _b : null;
     }
     /** @deprecated use 'value' setter */
     onChecked(checked) {
@@ -10461,7 +10474,7 @@ let TuiToggleComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [taiga_ui_core_components_loader/* TuiLoaderComponent */.kM, taiga_ui_core_components_svg/* TuiSvgComponent */.PN, taiga_ui_core_directives_wrapper/* TuiWrapperDirective */.o, common_mjs_.NgIf, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li, TuiCheckedDirective, TuiFocusableDirective, TuiFocusedDirective, TuiFocusVisibleDirective],
-    styles: ["[_nghost-%COMP%]{position:relative;display:inline-block;vertical-align:middle;overflow:hidden;border-radius:6.25rem}[data-size=m][_nghost-%COMP%]{width:2rem;height:1rem}[data-size=l][_nghost-%COMP%]{width:3rem;height:1.5rem}.t-checkbox[_ngcontent-%COMP%]{padding:0;margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;height:100%;width:100%;opacity:0;cursor:pointer}.t-checkbox[_ngcontent-%COMP%]:-webkit-autofill, .t-checkbox[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-checkbox[_ngcontent-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}._disabled[_nghost-%COMP%]   .t-checkbox[_ngcontent-%COMP%]{pointer-events:none;cursor:default}.t-toggle[_ngcontent-%COMP%]{transition-property:transform;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;display:flex;align-items:center;justify-content:center}[data-size=m][_nghost-%COMP%]   .t-toggle[_ngcontent-%COMP%]{width:3rem;height:1rem;transform:translate(-1rem)}[data-size=l][_nghost-%COMP%]   .t-toggle[_ngcontent-%COMP%]{width:4.5rem;height:1.5rem;transform:translate(-1.5rem)}._checked[_nghost-%COMP%]   .t-toggle[_ngcontent-%COMP%]{transform:translate(0)}.t-circle[_ngcontent-%COMP%]{margin:.125rem 0;flex-shrink:0;border-radius:100%;background-color:var(--tui-base-01)}._disabled[_nghost-%COMP%]   .t-circle_light[_ngcontent-%COMP%]{opacity:.24}[data-size=m][_nghost-%COMP%]   .t-circle[_ngcontent-%COMP%]{width:.75rem;height:.75rem}[data-size=l][_nghost-%COMP%]   .t-circle[_ngcontent-%COMP%]{width:1rem;height:1rem}._disabled[_nghost-%COMP%]   .t-circle[_ngcontent-%COMP%]{background-color:var(--tui-base-01)}[_nghost-%COMP%]:not(._checked)   .t-loader[_ngcontent-%COMP%]{color:var(--tui-base-06)}[_nghost-%COMP%]:not(._checked)._disabled   .t-loader[_ngcontent-%COMP%]{color:var(--tui-base-05)}[_nghost-%COMP%]:not(._checked)[data-mode=onDark]   .t-loader[_ngcontent-%COMP%]{color:var(--tui-text-03-night)}[_nghost-%COMP%]:not(._checked)[data-mode=onDark]._disabled   .t-loader[_ngcontent-%COMP%]{color:var(--tui-clear-inverse-active)}[_nghost-%COMP%]:not(._checked)[data-mode=onLight]   .t-loader[_ngcontent-%COMP%]{color:var(--tui-text-03)}[_nghost-%COMP%]:not(._checked)[data-mode=onLight]._disabled   .t-loader[_ngcontent-%COMP%]{color:var(--tui-clear-active)}[data-size=m][_nghost-%COMP%]   .t-loader[_ngcontent-%COMP%]{width:.75rem;margin:0 .2rem;transform:scale(.75)}[data-size=l][_nghost-%COMP%]   .t-loader[_ngcontent-%COMP%]{width:1rem;margin:0 .25rem}.t-icon-wrapper[_ngcontent-%COMP%]{display:flex}.t-icon[_ngcontent-%COMP%]{opacity:.8}.t-icon_off[_ngcontent-%COMP%]{color:var(--tui-base-06)}._disabled[_nghost-%COMP%]   .t-icon_off[_ngcontent-%COMP%]{color:var(--tui-base-05)}[data-mode=onDark][_nghost-%COMP%]   .t-icon_off[_ngcontent-%COMP%]{color:var(--tui-text-03-night)}[data-mode=onDark]._disabled[_nghost-%COMP%]   .t-icon_off[_ngcontent-%COMP%]{color:var(--tui-clear-inverse-active)}[data-mode=onLight][_nghost-%COMP%]   .t-icon_off[_ngcontent-%COMP%]{color:var(--tui-text-03)}[data-mode=onLight]._disabled[_nghost-%COMP%]   .t-icon_off[_ngcontent-%COMP%]{color:var(--tui-clear-active)}[data-size=m][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{width:1rem;height:1rem;transform:scale(.75)}[data-size=l][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{margin:0 .125rem;width:1.5rem;height:1.5rem}[_nghost-%COMP%]:hover   .t-icon[_ngcontent-%COMP%]{opacity:1}"],
+    styles: ["[_nghost-%COMP%]{position:relative;display:inline-block;vertical-align:middle;overflow:hidden;border-radius:6.25rem}[data-size=m][_nghost-%COMP%]{width:2rem;height:1rem}[data-size=l][_nghost-%COMP%]{width:3rem;height:1.5rem}.t-checkbox[_ngcontent-%COMP%]{padding:0;margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;height:100%;width:100%;opacity:0;cursor:pointer}.t-checkbox[_ngcontent-%COMP%]:-webkit-autofill, .t-checkbox[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-checkbox[_ngcontent-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}._disabled[_nghost-%COMP%]   .t-checkbox[_ngcontent-%COMP%]{pointer-events:none;cursor:default}.t-toggle[_ngcontent-%COMP%]{transition-property:transform;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;display:flex;align-items:center;justify-content:center}[data-size=m][_nghost-%COMP%]   .t-toggle[_ngcontent-%COMP%]{width:3rem;height:1rem;transform:translate(-1rem)}[data-size=l][_nghost-%COMP%]   .t-toggle[_ngcontent-%COMP%]{width:4.5rem;height:1.5rem;transform:translate(-1.5rem)}._checked[_nghost-%COMP%]   .t-toggle[_ngcontent-%COMP%]{transform:translate(0)}.t-circle[_ngcontent-%COMP%]{margin:.125rem 0;flex-shrink:0;border-radius:100%;background-color:var(--tui-base-01)}._disabled[_nghost-%COMP%]   .t-circle_light[_ngcontent-%COMP%]{opacity:.24}[data-size=m][_nghost-%COMP%]   .t-circle[_ngcontent-%COMP%]{width:.75rem;height:.75rem}[data-size=l][_nghost-%COMP%]   .t-circle[_ngcontent-%COMP%]{width:1rem;height:1rem}._disabled[_nghost-%COMP%]   .t-circle[_ngcontent-%COMP%]{background-color:var(--tui-base-01)}.t-loader[_ngcontent-%COMP%]{min-width:auto}[_nghost-%COMP%]:not(._checked)   .t-loader[_ngcontent-%COMP%]{color:var(--tui-base-06)}[_nghost-%COMP%]:not(._checked)._disabled   .t-loader[_ngcontent-%COMP%]{color:var(--tui-base-05)}[_nghost-%COMP%]:not(._checked)[data-mode=onDark]   .t-loader[_ngcontent-%COMP%]{color:var(--tui-text-03-night)}[_nghost-%COMP%]:not(._checked)[data-mode=onDark]._disabled   .t-loader[_ngcontent-%COMP%]{color:var(--tui-clear-inverse-active)}[_nghost-%COMP%]:not(._checked)[data-mode=onLight]   .t-loader[_ngcontent-%COMP%]{color:var(--tui-text-03)}[_nghost-%COMP%]:not(._checked)[data-mode=onLight]._disabled   .t-loader[_ngcontent-%COMP%]{color:var(--tui-clear-active)}[data-size=m][_nghost-%COMP%]   .t-loader[_ngcontent-%COMP%]{width:.75rem;margin:0 .2rem;transform:scale(.75)}[data-size=l][_nghost-%COMP%]   .t-loader[_ngcontent-%COMP%]{width:1rem;margin:0 .25rem}.t-icon-wrapper[_ngcontent-%COMP%]{display:flex}.t-icon[_ngcontent-%COMP%]{opacity:.8}.t-icon_off[_ngcontent-%COMP%]{color:var(--tui-base-06)}._disabled[_nghost-%COMP%]   .t-icon_off[_ngcontent-%COMP%]{color:var(--tui-base-05)}[data-mode=onDark][_nghost-%COMP%]   .t-icon_off[_ngcontent-%COMP%]{color:var(--tui-text-03-night)}[data-mode=onDark]._disabled[_nghost-%COMP%]   .t-icon_off[_ngcontent-%COMP%]{color:var(--tui-clear-inverse-active)}[data-mode=onLight][_nghost-%COMP%]   .t-icon_off[_ngcontent-%COMP%]{color:var(--tui-text-03)}[data-mode=onLight]._disabled[_nghost-%COMP%]   .t-icon_off[_ngcontent-%COMP%]{color:var(--tui-clear-active)}[data-size=m][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{width:1rem;height:1rem;transform:scale(.75)}[data-size=l][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{margin:0 .125rem;width:1.5rem;height:1.5rem}[_nghost-%COMP%]:hover   .t-icon[_ngcontent-%COMP%]{opacity:1}"],
     changeDetection: 0
   });
   return TuiToggleComponent;
@@ -15275,7 +15288,7 @@ let TuiUnderlineComponent = /*#__PURE__*/(() => {
     }
   }
   TuiUnderlineComponent.ɵfac = function TuiUnderlineComponent_Factory(t) {
-    return new (t || TuiUnderlineComponent)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.NgZone), core_mjs_["ɵɵdirectiveInject"](fesm2015_ng_web_apis_common/* ANIMATION_FRAME */.L1), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_MODE */.Au));
+    return new (t || TuiUnderlineComponent)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.NgZone), core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* ANIMATION_FRAME */.L1), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_MODE */.Au));
   };
   TuiUnderlineComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiUnderlineComponent,
@@ -15976,7 +15989,8 @@ let TuiRadioBlockComponent = /*#__PURE__*/(/* unused pure expression or super */
       this.pseudoDisabled = false;
     }
     get nativeFocusableElement() {
-      return this.radio ? this.radio.nativeFocusableElement : null;
+      var _a, _b;
+      return (_b = (_a = this.radio) === null || _a === void 0 ? void 0 : _a.nativeFocusableElement) !== null && _b !== void 0 ? _b : null;
     }
     get focused() {
       return !!this.radio && this.radio.focused;
@@ -16402,7 +16416,8 @@ let TuiCheckboxLabeledComponent = /*#__PURE__*/(/* unused pure expression or sup
       return tuiIsNativeFocused(this.nativeFocusableElement);
     }
     get nativeFocusableElement() {
-      return this.checkbox ? this.checkbox.nativeFocusableElement : null;
+      var _a, _b;
+      return (_b = (_a = this.checkbox) === null || _a === void 0 ? void 0 : _a.nativeFocusableElement) !== null && _b !== void 0 ? _b : null;
     }
     onFocused(focused) {
       this.updateFocused(focused);
@@ -17243,7 +17258,7 @@ let TuiRootComponent = /*#__PURE__*/(() => {
   TuiRootComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiRootComponent,
     selectors: [["tui-root"]],
-    hostAttrs: ["data-tui-version", "3.52.0"],
+    hostAttrs: ["data-tui-version", "3.53.0"],
     hostVars: 7,
     hostBindings: function TuiRootComponent_HostBindings(rf, ctx) {
       if (rf & 1) {
@@ -17446,7 +17461,7 @@ let TuiDialogCloseService = /*#__PURE__*/(() => {
     }
   }
   TuiDialogCloseService.ɵfac = function TuiDialogCloseService_Factory(t) {
-    return new (t || TuiDialogCloseService)(core_mjs_["ɵɵinject"](fesm2015_ng_web_apis_common/* WINDOW */.m9), core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵinject"](core_mjs_.ElementRef));
+    return new (t || TuiDialogCloseService)(core_mjs_["ɵɵinject"](ng_web_apis_common/* WINDOW */.m9), core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵinject"](core_mjs_.ElementRef));
   };
   TuiDialogCloseService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
     token: TuiDialogCloseService,
@@ -18389,7 +18404,7 @@ let TuiThemeService = /*#__PURE__*/(() => {
     }
   }
   TuiThemeService.ɵfac = function TuiThemeService_Factory(t) {
-    return new (t || TuiThemeService)(core_mjs_["ɵɵinject"](TUI_THEME_NAME), core_mjs_["ɵɵinject"](TUI_THEME_STORAGE_KEY), core_mjs_["ɵɵinject"](fesm2015_ng_web_apis_common/* LOCAL_STORAGE */.H3));
+    return new (t || TuiThemeService)(core_mjs_["ɵɵinject"](TUI_THEME_NAME), core_mjs_["ɵɵinject"](TUI_THEME_STORAGE_KEY), core_mjs_["ɵɵinject"](ng_web_apis_common/* LOCAL_STORAGE */.H3));
   };
   TuiThemeService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
     token: TuiThemeService,
@@ -18422,7 +18437,7 @@ let TuiThemeNightService = /*#__PURE__*/(() => {
     }
   }
   TuiThemeNightService.ɵfac = function TuiThemeNightService_Factory(t) {
-    return new (t || TuiThemeNightService)(core_mjs_["ɵɵinject"](fesm2015_ng_web_apis_common/* WINDOW */.m9), core_mjs_["ɵɵinject"](fesm2015_ng_web_apis_common/* LOCAL_STORAGE */.H3), core_mjs_["ɵɵinject"](TUI_THEME_NIGHT_STORAGE_KEY), core_mjs_["ɵɵinject"](TUI_USE_DEFAULT_NIGHT_THEME));
+    return new (t || TuiThemeNightService)(core_mjs_["ɵɵinject"](ng_web_apis_common/* WINDOW */.m9), core_mjs_["ɵɵinject"](ng_web_apis_common/* LOCAL_STORAGE */.H3), core_mjs_["ɵɵinject"](TUI_THEME_NIGHT_STORAGE_KEY), core_mjs_["ɵɵinject"](TUI_USE_DEFAULT_NIGHT_THEME));
   };
   TuiThemeNightService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
     token: TuiThemeNightService,
@@ -21814,7 +21829,7 @@ const TUI_DOC_URL_STATE_HANDLER = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/
 /* harmony export */   sj: () => (/* binding */ tuiInspectAny),
 /* harmony export */   vi: () => (/* binding */ tuiTryParseMarkdownCodeBlock)
 /* harmony export */ });
-/* unused harmony exports tuiCoerceValueIsTrue, tuiRawLoadRecord */
+/* unused harmony exports tuiCoerceValueIsTrue, tuiIsPageGroup, tuiRawLoadRecord, tuiSortPages */
 /* harmony import */ var markdown_it__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6804);
 /* harmony import */ var markdown_it__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(markdown_it__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7582);
@@ -21930,6 +21945,9 @@ function tuiInspectAny(data, depth) {
   }
   return inspectObject(data, depth);
 }
+function tuiIsPageGroup(page) {
+  return `subPages` in page;
+}
 function tuiTryParseMarkdownCodeBlock(text = ``) {
   const tokens = new (markdown_it__WEBPACK_IMPORTED_MODULE_0___default())().parse(text, {});
   const result = tokens.filter(({
@@ -21955,6 +21973,27 @@ function tuiRawLoadRecord(example) {
     }
     return processedContent;
   });
+}
+function tuiSortPages(pages, excludeSections = new Set()) {
+  const sections = Array.from(new Set(pages.map(page => page.section)));
+  const sortedPages = pages.slice().sort((a, b) => {
+    var _a, _b;
+    if (excludeSections.has((_a = a.section) !== null && _a !== void 0 ? _a : ``) || excludeSections.has((_b = b.section) !== null && _b !== void 0 ? _b : ``)) {
+      return 0;
+    }
+    const aSectionIndex = sections.indexOf(a.section);
+    const bSectionIndex = sections.indexOf(b.section);
+    if (aSectionIndex !== bSectionIndex) {
+      return aSectionIndex - bSectionIndex;
+    }
+    if (a.title > b.title) {
+      return 1;
+    }
+    return a.title.localeCompare(b.title);
+  });
+  return sortedPages.map(page => tuiIsPageGroup(page) ? Object.assign(Object.assign({}, page), {
+    subPages: tuiSortPages(page.subPages, excludeSections)
+  }) : page);
 }
 function tuiToFlatMapPages(pages) {
   const map = new Map();
@@ -22868,7 +22907,7 @@ const CHAR_ZERO_WIDTH_SPACE = (/* unused pure expression or super */ null && (`\
  * Array of icons used in taiga-ui components
  */
 const TUI_USED_ICONS = (/* unused pure expression or super */ null && ([`tuiIconMirMono`, `tuiIconVisaMono`, `tuiIconElectronMono`, `tuiIconMastercard`, `tuiIconMaestro`, `tuiIconAmex`, `tuiIconDinersClub`, `tuiIconDiscover`, `tuiIconHumo`, `tuiIconJCB`, `tuiIconRuPay`, `tuiIconUnionPay`, `tuiIconUzcard`, `tuiIconVerve`, `tuiIconLink`, `tuiIconSearch`, `tuiIconSun`, `tuiIconMoon`, `tuiIconCode`, `tuiIconMenuLarge`, `tuiIconRotate`, `tuiIconArrowLeft`, `tuiIconArrowRight`, `tuiIconPlus`, `tuiIconMinus`, `tuiIconMinimize`, `tuiIconEye`, `tuiIconEyeOff`, `tuiIconDrag`, `tuiIconSortAscending`, `tuiIconSortDescending`, `tuiIconSortOff`, `tuiIconCheck`, `tuiIconCheckLarge`, `tuiIconMinusLarge`, `tuiIconChevronUp`, `tuiIconHelpCircle`, `tuiIconClose`, `tuiIconAlertCircle`, `tuiIconChevronRight`, `tuiIconInfo`, `tuiIconCheckCircle`, `tuiIconXCircle`, `tuiIconChevronLeft`, `tuiIconStarLarge`, `tuiIconChevronDown`, `tuiIconChevronDownLarge`, `tuiIconFileLarge`, `tuiIconTrashLarge`, `tuiIconAlertCircleLarge`, `tuiIconCheckCircleLarge`, `tuiIconCopy`, `tuiIconCopyLarge`, `tuiIconEyeOffLarge`, `tuiIconEyeLarge`, `tuiIconClock`, `tuiIconClockLarge`, `tuiIconToggleOff`, `tuiIconToggleOffLarge`, `tuiIconToggleOn`, `tuiIconToggleOnLarge`, `tuiIconCalendar`, `tuiIconCalendarLarge`]));
-const TUI_VERSION = `3.52.0`;
+const TUI_VERSION = `3.53.0`;
 
 /**
  * Generated bundle index. Do not edit.
@@ -23598,16 +23637,14 @@ var shareReplay = __webpack_require__(7081);
 var operators_pairwise = __webpack_require__(9384);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/filter.js
 var operators_filter = __webpack_require__(2181);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
-var ng_web_apis_common = __webpack_require__(9570);
+// EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
+var ng_web_apis_common = __webpack_require__(229);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-constants.js
 var taiga_ui_cdk_constants = __webpack_require__(6141);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-dom.js
 var taiga_ui_cdk_utils_dom = __webpack_require__(7995);
 // EXTERNAL MODULE: consume shared module (default) @angular/common@=16.2.12 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
 var common_mjs_ = __webpack_require__(9982);
-// EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
-var fesm2015_ng_web_apis_common = __webpack_require__(229);
 ;// CONCATENATED MODULE: ./node_modules/@ng-web-apis/resize-observer/fesm2015/ng-web-apis-resize-observer.js
 
 
@@ -23622,7 +23659,7 @@ const RESIZE_OPTION_BOX = new core_mjs_.InjectionToken('Box model to observe cha
 });
 const RESIZE_OBSERVER_SUPPORT = new core_mjs_.InjectionToken('Resize Observer API support', {
   providedIn: 'root',
-  factory: () => !!(0,core_mjs_.inject)(fesm2015_ng_web_apis_common/* WINDOW */.m9).ResizeObserver
+  factory: () => !!(0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9).ResizeObserver
 });
 let ResizeObserverService = /*#__PURE__*/(() => {
   class ResizeObserverService extends internal_Observable/* Observable */.y {
@@ -24289,8 +24326,8 @@ __webpack_require__.d(__webpack_exports__, {
 var common_mjs_ = __webpack_require__(9982);
 // EXTERNAL MODULE: consume shared module (default) @angular/core@=16.2.12 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
 var core_mjs_ = __webpack_require__(4676);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
-var ng_web_apis_common = __webpack_require__(9570);
+// EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
+var ng_web_apis_common = __webpack_require__(229);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-observables.js
 var taiga_ui_cdk_observables = __webpack_require__(5213);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-miscellaneous.js
@@ -25584,135 +25621,6 @@ function setFallbackForGradientFill(svg, fallback) {
 
 
 //# sourceMappingURL=taiga-ui-cdk-utils-svg.js.map
-
-/***/ }),
-
-/***/ 9570:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   L1: () => (/* binding */ ANIMATION_FRAME),
-/* harmony export */   UA: () => (/* binding */ HISTORY),
-/* harmony export */   m9: () => (/* binding */ WINDOW),
-/* harmony export */   s5: () => (/* binding */ NAVIGATOR),
-/* harmony export */   yZ: () => (/* binding */ USER_AGENT)
-/* harmony export */ });
-/* unused harmony exports CACHES, CRYPTO, CSS, LOCAL_STORAGE, LOCATION, MEDIA_DEVICES, NETWORK_INFORMATION, PAGE_VISIBILITY, PERFORMANCE, SCREEN, SESSION_STORAGE, SPEECH_RECOGNITION, SPEECH_SYNTHESIS */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4676);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5592);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2438);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3020);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7921);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7398);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(3997);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(7081);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9982);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-
-const WINDOW = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over global window object', {
-  factory: () => {
-    const {
-      defaultView
-    } = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT);
-    if (!defaultView) {
-      throw new Error('Window is not available');
-    }
-    return defaultView;
-  }
-});
-const ANIMATION_FRAME = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('Shared Observable based on `window.requestAnimationFrame`', {
-  factory: () => {
-    const {
-      requestAnimationFrame,
-      cancelAnimationFrame
-    } = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW);
-    const animationFrame$ = new rxjs__WEBPACK_IMPORTED_MODULE_2__/* .Observable */ .y(subscriber => {
-      let id = NaN;
-      const callback = timestamp => {
-        subscriber.next(timestamp);
-        id = requestAnimationFrame(callback);
-      };
-      id = requestAnimationFrame(callback);
-      return () => {
-        cancelAnimationFrame(id);
-      };
-    });
-    return animationFrame$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__/* .share */ .B)());
-  }
-});
-const CACHES = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.caches object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).caches
-});
-const CRYPTO = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.crypto object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).crypto
-});
-const CSS = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.CSS object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).CSS || {
-    escape: v => v,
-    supports: () => false
-  }
-});
-const HISTORY = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.history object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).history
-});
-const LOCAL_STORAGE = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.localStorage object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).localStorage
-});
-const LOCATION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.location object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).location
-});
-const NAVIGATOR = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.navigator object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).navigator
-});
-const MEDIA_DEVICES = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.navigator.mediaDevices object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(NAVIGATOR).mediaDevices
-});
-const NETWORK_INFORMATION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.navigator.connection object', {
-  // @ts-ignore
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(NAVIGATOR).connection || null
-});
-const PAGE_VISIBILITY = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('Shared Observable based on `document visibility changed`', {
-  factory: () => {
-    const documentRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT);
-    return (0,rxjs__WEBPACK_IMPORTED_MODULE_4__/* .fromEvent */ .R)(documentRef, 'visibilitychange').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__/* .startWith */ .O)(0), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__/* .map */ .U)(() => documentRef.visibilityState !== 'hidden'), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__/* .distinctUntilChanged */ .x)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__/* .shareReplay */ .d)({
-      refCount: false,
-      bufferSize: 1
-    }));
-  }
-});
-const PERFORMANCE = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.performance object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).performance
-});
-const SCREEN = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.screen object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).screen
-});
-const SESSION_STORAGE = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.sessionStorage object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).sessionStorage
-});
-const SPEECH_RECOGNITION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over SpeechRecognition class', {
-  factory: () => {
-    const windowRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW);
-    return windowRef.speechRecognition || windowRef.webkitSpeechRecognition || null;
-  }
-});
-const SPEECH_SYNTHESIS = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.speechSynthesis object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(WINDOW).speechSynthesis
-});
-const USER_AGENT = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('An abstraction over window.navigator.userAgent object', {
-  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(NAVIGATOR).userAgent
-});
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=ng-web-apis-common.js.map
 
 /***/ }),
 
