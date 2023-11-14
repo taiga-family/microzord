@@ -8,9 +8,9 @@
 /* harmony export */   TuiAddonDocModule: () => (/* binding */ TuiAddonDocModule)
 /* harmony export */ });
 /* unused harmony export tuiGetDocModules */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4676);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3297);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6623);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7387);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_router__WEBPACK_IMPORTED_MODULE_1__);
 if (179 == __webpack_require__.j) {
 	/* harmony import */ var _taiga_ui_addon_doc_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2406);
@@ -41,7 +41,7 @@ let TuiAddonDocModule = /*#__PURE__*/(/* runtime-dependent pure expression or su
   });
   return TuiAddonDocModule;
 })()) : null);
-(function () {
+(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 function tuiGetDocModules(type) {

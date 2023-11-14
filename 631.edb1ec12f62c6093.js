@@ -12,8 +12,8 @@ __webpack_require__.d(__webpack_exports__, {
   ApplicationModule: () => (/* binding */ ApplicationModule)
 });
 
-// EXTERNAL MODULE: consume shared module (default) @angular/router@=16.2.12 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
-var router_mjs_ = __webpack_require__(6623);
+// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.0.2 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
+var router_mjs_ = __webpack_require__(7387);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc.js
 var taiga_ui_addon_doc = __webpack_require__(5322);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-utils.js
@@ -22,8 +22,8 @@ var taiga_ui_addon_doc_utils = __webpack_require__(8836);
 var taiga_ui_core_components_link = __webpack_require__(2114);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-notification.js
 var taiga_ui_core_components_notification = __webpack_require__(8689);
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=16.2.12 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(4676);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.2 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(3297);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-components.js + 85 modules
 var taiga_ui_addon_doc_components = __webpack_require__(2406);
 ;// CONCATENATED MODULE: ./apps/demo/src/app/modules/application/application.component.ts
@@ -130,15 +130,7 @@ function ApplicationComponent_ng_template_2_ng_template_9_Template(rf, ctx) {
 function ApplicationComponent_ng_template_2_Template(rf, ctx) {
   if (rf & 1) {
     core_mjs_["ɵɵelementStart"](0, "tui-doc-documentation", 7);
-    core_mjs_["ɵɵtemplate"](1, ApplicationComponent_ng_template_2_ng_template_1_Template, 5, 0, "ng-template", 8);
-    core_mjs_["ɵɵtemplate"](2, ApplicationComponent_ng_template_2_ng_template_2_Template, 5, 0, "ng-template", 9);
-    core_mjs_["ɵɵtemplate"](3, ApplicationComponent_ng_template_2_ng_template_3_Template, 1, 0, "ng-template", 10);
-    core_mjs_["ɵɵtemplate"](4, ApplicationComponent_ng_template_2_ng_template_4_Template, 1, 0, "ng-template", 11);
-    core_mjs_["ɵɵtemplate"](5, ApplicationComponent_ng_template_2_ng_template_5_Template, 1, 0, "ng-template", 12);
-    core_mjs_["ɵɵtemplate"](6, ApplicationComponent_ng_template_2_ng_template_6_Template, 1, 0, "ng-template", 13);
-    core_mjs_["ɵɵtemplate"](7, ApplicationComponent_ng_template_2_ng_template_7_Template, 1, 0, "ng-template", 14);
-    core_mjs_["ɵɵtemplate"](8, ApplicationComponent_ng_template_2_ng_template_8_Template, 1, 0, "ng-template", 15);
-    core_mjs_["ɵɵtemplate"](9, ApplicationComponent_ng_template_2_ng_template_9_Template, 1, 0, "ng-template", 16);
+    core_mjs_["ɵɵtemplate"](1, ApplicationComponent_ng_template_2_ng_template_1_Template, 5, 0, "ng-template", 8)(2, ApplicationComponent_ng_template_2_ng_template_2_Template, 5, 0, "ng-template", 9)(3, ApplicationComponent_ng_template_2_ng_template_3_Template, 1, 0, "ng-template", 10)(4, ApplicationComponent_ng_template_2_ng_template_4_Template, 1, 0, "ng-template", 11)(5, ApplicationComponent_ng_template_2_ng_template_5_Template, 1, 0, "ng-template", 12)(6, ApplicationComponent_ng_template_2_ng_template_6_Template, 1, 0, "ng-template", 13)(7, ApplicationComponent_ng_template_2_ng_template_7_Template, 1, 0, "ng-template", 14)(8, ApplicationComponent_ng_template_2_ng_template_8_Template, 1, 0, "ng-template", 15)(9, ApplicationComponent_ng_template_2_ng_template_9_Template, 1, 0, "ng-template", 16);
     core_mjs_["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -159,8 +151,7 @@ let ApplicationComponent = /*#__PURE__*/(() => {
       template: function ApplicationComponent_Template(rf, ctx) {
         if (rf & 1) {
           core_mjs_["ɵɵelementStart"](0, "tui-doc-page", 0);
-          core_mjs_["ɵɵtemplate"](1, ApplicationComponent_ng_template_1_Template, 30, 0, "ng-template", 1);
-          core_mjs_["ɵɵtemplate"](2, ApplicationComponent_ng_template_2_Template, 10, 1, "ng-template", 2);
+          core_mjs_["ɵɵtemplate"](1, ApplicationComponent_ng_template_1_Template, 30, 0, "ng-template", 1)(2, ApplicationComponent_ng_template_2_Template, 10, 1, "ng-template", 2);
           core_mjs_["ɵɵelementEnd"]();
         }
       },

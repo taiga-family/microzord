@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[361,542],{
+(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[193,542],{
 
 /***/ 5619:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -355,6 +355,26 @@ function defer(observableFactory) {
 
 /***/ }),
 
+/***/ 6232:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   E: () => (/* binding */ EMPTY)
+/* harmony export */ });
+/* unused harmony export empty */
+/* harmony import */ var _Observable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5592);
+
+const EMPTY = new _Observable__WEBPACK_IMPORTED_MODULE_0__/* .Observable */ .y(subscriber => subscriber.complete());
+function empty(scheduler) {
+  return scheduler ? emptyScheduled(scheduler) : EMPTY;
+}
+function emptyScheduled(scheduler) {
+  return new Observable(subscriber => scheduler.schedule(() => subscriber.complete()));
+}
+//# sourceMappingURL=empty.js.map
+
+/***/ }),
+
 /***/ 8504:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -484,6 +504,35 @@ function startWith(...values) {
   });
 }
 //# sourceMappingURL=startWith.js.map
+
+/***/ }),
+
+/***/ 8180:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   q: () => (/* binding */ take)
+/* harmony export */ });
+/* harmony import */ var _observable_empty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6232);
+/* harmony import */ var _util_lift__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9360);
+/* harmony import */ var _OperatorSubscriber__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8251);
+
+
+
+function take(count) {
+  return count <= 0 ? () => _observable_empty__WEBPACK_IMPORTED_MODULE_0__/* .EMPTY */ .E : (0,_util_lift__WEBPACK_IMPORTED_MODULE_1__/* .operate */ .e)((source, subscriber) => {
+    let seen = 0;
+    source.subscribe((0,_OperatorSubscriber__WEBPACK_IMPORTED_MODULE_2__/* .createOperatorSubscriber */ .x)(subscriber, value => {
+      if (++seen <= count) {
+        subscriber.next(value);
+        if (count <= seen) {
+          subscriber.complete();
+        }
+      }
+    }));
+  });
+}
+//# sourceMappingURL=take.js.map
 
 /***/ }),
 
@@ -667,12 +716,12 @@ function mapOneOrManyArgs(fn) {
 /* harmony export */   s3: () => (/* binding */ EVENT_MANAGER_PLUGINS),
 /* harmony export */   se: () => (/* binding */ DomRendererFactory2)
 /* harmony export */ });
-/* unused harmony exports By, EventManager, HAMMER_GESTURE_CONFIG, HAMMER_LOADER, HammerGestureConfig, HammerModule, Meta, REMOVE_STYLES_ON_COMPONENT_DESTROY, TransferState, VERSION, bootstrapApplication, createApplication, disableDebugTools, enableDebugTools, makeStateKey, provideClientHydration, provideProtractorTestingSupport, withNoDomReuse, withNoHttpTransferCache, ɵBrowserDomAdapter, ɵBrowserGetTestability, ɵDomEventsPlugin, ɵDomSanitizerImpl, ɵHammerGesturesPlugin, ɵINTERNAL_BROWSER_PLATFORM_PROVIDERS, ɵKeyEventsPlugin, ɵSharedStylesHost, ɵinitDomAdapter */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4676);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9982);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5482);
+/* unused harmony exports By, EventManager, EventManagerPlugin, HAMMER_GESTURE_CONFIG, HAMMER_LOADER, HammerGestureConfig, HammerModule, Meta, REMOVE_STYLES_ON_COMPONENT_DESTROY, TransferState, VERSION, bootstrapApplication, createApplication, disableDebugTools, enableDebugTools, makeStateKey, provideClientHydration, provideProtractorTestingSupport, withHttpTransferCacheOptions, withNoHttpTransferCache, ɵBrowserDomAdapter, ɵBrowserGetTestability, ɵDomEventsPlugin, ɵDomSanitizerImpl, ɵHammerGesturesPlugin, ɵINTERNAL_BROWSER_PLATFORM_PROVIDERS, ɵKeyEventsPlugin, ɵSharedStylesHost, ɵinitDomAdapter */
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3297);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(839);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4763);
 /**
- * @license Angular v16.2.12
+ * @license Angular v17.0.2
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -843,12 +892,12 @@ let BrowserXhr = /*#__PURE__*/(() => {
   }
   return BrowserXhr;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
 /**
- * The injection token for the event-manager plug-in service.
+ * The injection token for plugins of the `EventManager` service.
  *
  * @publicApi
  */
@@ -915,10 +964,19 @@ let EventManager = /*#__PURE__*/(() => {
   }
   return EventManager;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+/**
+ * The plugin definition for the `EventManager` class
+ *
+ * It can be used as a base class to create custom manager plugins, i.e. you can create your own
+ * class that extends the `EventManagerPlugin` one.
+ *
+ * @publicApi
+ */
 class EventManagerPlugin {
+  // TODO: remove (has some usage in G3)
   constructor(_doc) {
     this._doc = _doc;
   }
@@ -1036,12 +1094,12 @@ let SharedStylesHost = /*#__PURE__*/(() => {
         if (this.platformIsServer) {
           styleEl.setAttribute(APP_ID_ATTRIBUTE_NAME, this.appId);
         }
+        host.appendChild(styleEl);
         return styleEl;
       }
     }
     addStyleToHost(host, style) {
       const styleEl = this.getStyleElement(host, style);
-      host.appendChild(styleEl);
       const styleRef = this.styleRef;
       const styleElRef = styleRef.get(style)?.elements;
       if (styleElRef) {
@@ -1069,7 +1127,7 @@ let SharedStylesHost = /*#__PURE__*/(() => {
   }
   return SharedStylesHost;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 const NAMESPACE_URIS = {
@@ -1087,12 +1145,12 @@ const CONTENT_ATTR = `_ngcontent-${COMPONENT_VARIABLE}`;
 /**
  * The default value for the `REMOVE_STYLES_ON_COMPONENT_DESTROY` DI token.
  */
-const REMOVE_STYLES_ON_COMPONENT_DESTROY_DEFAULT = false;
+const REMOVE_STYLES_ON_COMPONENT_DESTROY_DEFAULT = true;
 /**
  * A [DI token](guide/glossary#di-token "DI token definition") that indicates whether styles
  * of destroyed components should be removed from DOM.
  *
- * By default, the value is set to `false`. This will be changed in the next major version.
+ * By default, the value is set to `true`.
  * @publicApi
  */
 const REMOVE_STYLES_ON_COMPONENT_DESTROY = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('RemoveStylesOnCompDestroy', {
@@ -1181,7 +1239,7 @@ let DomRendererFactory2 = /*#__PURE__*/(() => {
   }
   return DomRendererFactory2;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 class DefaultDomRenderer2 {
@@ -1191,6 +1249,11 @@ class DefaultDomRenderer2 {
     this.ngZone = ngZone;
     this.platformIsServer = platformIsServer;
     this.data = Object.create(null);
+    /**
+     * By default this renderer throws when encountering synthetic properties
+     * This can be disabled for example by the AsyncAnimationRendererFactory
+     */
+    this.throwOnSyntheticProps = true;
     this.destroyNode = null;
   }
   destroy() {}
@@ -1293,14 +1356,14 @@ class DefaultDomRenderer2 {
     }
   }
   setProperty(el, name, value) {
-    (typeof ngDevMode === 'undefined' || ngDevMode) && checkNoSyntheticProp(name, 'property');
+    (typeof ngDevMode === 'undefined' || ngDevMode) && this.throwOnSyntheticProps && checkNoSyntheticProp(name, 'property');
     el[name] = value;
   }
   setValue(node, value) {
     node.nodeValue = value;
   }
   listen(target, event, callback) {
-    (typeof ngDevMode === 'undefined' || ngDevMode) && checkNoSyntheticProp(event, 'listener');
+    (typeof ngDevMode === 'undefined' || ngDevMode) && this.throwOnSyntheticProps && checkNoSyntheticProp(event, 'listener');
     if (typeof target === 'string') {
       target = (0,_angular_common__WEBPACK_IMPORTED_MODULE_1__["ɵgetDOM"])().getGlobalEventTarget(this.doc, target);
       if (!target) {
@@ -1443,7 +1506,7 @@ let DomEventsPlugin = /*#__PURE__*/(() => {
   }
   return DomEventsPlugin;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -1478,7 +1541,6 @@ const MODIFIER_KEY_GETTERS = {
   'shift': event => event.shiftKey
 };
 /**
- * @publicApi
  * A browser plug-in that provides support for handling of key events in Angular.
  */
 let KeyEventsPlugin = /*#__PURE__*/(() => {
@@ -1608,13 +1670,7 @@ let KeyEventsPlugin = /*#__PURE__*/(() => {
     }
     /** @internal */
     static _normalizeKey(keyName) {
-      // TODO: switch to a Map if the mapping grows too much
-      switch (keyName) {
-        case 'esc':
-          return 'escape';
-        default:
-          return keyName;
-      }
+      return keyName === 'esc' ? 'escape' : keyName;
     }
     static #_ = this.ɵfac = function KeyEventsPlugin_Factory(t) {
       return new (t || KeyEventsPlugin)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
@@ -1626,7 +1682,7 @@ let KeyEventsPlugin = /*#__PURE__*/(() => {
   }
   return KeyEventsPlugin;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -1824,7 +1880,7 @@ let BrowserModule = /*#__PURE__*/(/* runtime-dependent pure expression or super 
   class BrowserModule {
     constructor(providersAlreadyPresent) {
       if ((typeof ngDevMode === 'undefined' || ngDevMode) && providersAlreadyPresent) {
-        throw new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](5100 /* RuntimeErrorCode.BROWER_MODULE_ALREADY_LOADED */, `Providers from the \`BrowserModule\` have already been loaded. If you need access ` + `to common directives such as NgIf and NgFor, import the \`CommonModule\` instead.`);
+        throw new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](5100 /* RuntimeErrorCode.BROWSER_MODULE_ALREADY_LOADED */, `Providers from the \`BrowserModule\` have already been loaded. If you need access ` + `to common directives such as NgIf and NgFor, import the \`CommonModule\` instead.`);
       }
     }
     /**
@@ -1859,7 +1915,7 @@ let BrowserModule = /*#__PURE__*/(/* runtime-dependent pure expression or super 
   }
   return BrowserModule;
 })()) : null);
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -2032,7 +2088,7 @@ let Meta = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
   }
   return Meta;
 })()));
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 /**
@@ -2095,7 +2151,7 @@ let Title = /*#__PURE__*/(() => {
   }
   return Title;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -2367,7 +2423,7 @@ let HammerGestureConfig = /*#__PURE__*/(/* unused pure expression or super */ nu
   }
   return HammerGestureConfig;
 })()));
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 /**
@@ -2469,7 +2525,7 @@ let HammerGesturesPlugin = /*#__PURE__*/(/* unused pure expression or super */ n
   }
   return HammerGesturesPlugin;
 })()));
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 /**
@@ -2479,7 +2535,7 @@ let HammerGesturesPlugin = /*#__PURE__*/(/* unused pure expression or super */ n
  * HammerJS to detect gesture events.
  *
  * Note that applications still need to include the HammerJS script itself. This module
- * simply sets up the coordination layer between HammerJS and Angular's EventManager.
+ * simply sets up the coordination layer between HammerJS and Angular's `EventManager`.
  *
  * @publicApi
  */
@@ -2506,7 +2562,7 @@ let HammerModule = /*#__PURE__*/(/* unused pure expression or super */ null && (
   }
   return HammerModule;
 })()));
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -2562,7 +2618,7 @@ let DomSanitizer = /*#__PURE__*/(/* runtime-dependent pure expression or super *
   }
   return DomSanitizer;
 })()) : null);
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 function domSanitizerImplFactory(injector) {
@@ -2642,66 +2698,41 @@ let DomSanitizerImpl = /*#__PURE__*/(/* runtime-dependent pure expression or sup
   }
   return DomSanitizerImpl;
 })()) : null);
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
 /**
  * Helper function to create an object that represents a Hydration feature.
  */
-function hydrationFeature(kind, providers = []) {
+function hydrationFeature(ɵkind, ɵproviders = [], ɵoptions = {}) {
   return {
-    ɵkind: kind,
-    ɵproviders: providers
+    ɵkind,
+    ɵproviders
   };
-}
-/**
- * Disables DOM nodes reuse during hydration. Effectively makes
- * Angular re-render an application from scratch on the client.
- *
- * When this option is enabled, make sure that the initial navigation
- * option is configured for the Router as `enabledBlocking` by using the
- * `withEnabledBlockingInitialNavigation` in the `provideRouter` call:
- *
- * ```
- * bootstrapApplication(RootComponent, {
- *   providers: [
- *     provideRouter(
- *       // ... other features ...
- *       withEnabledBlockingInitialNavigation()
- *     ),
- *     provideClientHydration(withNoDomReuse())
- *   ]
- * });
- * ```
- *
- * This would ensure that the application is rerendered after all async
- * operations in the Router (such as lazy-loading of components,
- * waiting for async guards and resolvers) are completed to avoid
- * clearing the DOM on the client too soon, thus causing content flicker.
- *
- * @see {@link provideRouter}
- * @see {@link withEnabledBlockingInitialNavigation}
- *
- * @publicApi
- * @developerPreview
- */
-function withNoDomReuse() {
-  // This feature has no providers and acts as a flag that turns off
-  // non-destructive hydration (which otherwise is turned on by default).
-  return hydrationFeature(0 /* HydrationFeatureKind.NoDomReuseFeature */);
 }
 /**
  * Disables HTTP transfer cache. Effectively causes HTTP requests to be performed twice: once on the
  * server and other one on the browser.
  *
  * @publicApi
- * @developerPreview
  */
 function withNoHttpTransferCache() {
   // This feature has no providers and acts as a flag that turns off
   // HTTP transfer cache (which otherwise is turned on by default).
-  return hydrationFeature(1 /* HydrationFeatureKind.NoHttpTransferCache */);
+  return hydrationFeature(0 /* HydrationFeatureKind.NoHttpTransferCache */);
+}
+/**
+ * The function accepts a an object, which allows to configure cache parameters,
+ * such as which headers should be included (no headers are included by default),
+ * wether POST requests should be cached or a callback function to determine if a
+ * particular request should be cached.
+ *
+ * @publicApi
+ */
+function withHttpTransferCacheOptions(options) {
+  // This feature has no providers and acts as a flag to pass options to the HTTP transfer cache.
+  return hydrationFeature(1 /* HydrationFeatureKind.HttpTransferCacheOptions */, ɵwithHttpTransferCache(options));
 }
 /**
  * Returns an `ENVIRONMENT_INITIALIZER` token setup with a function
@@ -2729,19 +2760,16 @@ function provideZoneJsCompatibilityDetector() {
  * Sets up providers necessary to enable hydration functionality for the application.
  *
  * By default, the function enables the recommended set of features for the optimal
- * performance for most of the applications. You can enable/disable features by
- * passing special functions (from the `HydrationFeatures` set) as arguments to the
- * `provideClientHydration` function. It includes the following features:
+ * performance for most of the applications. It includes the following features:
  *
  * * Reconciling DOM hydration. Learn more about it [here](guide/hydration).
  * * [`HttpClient`](api/common/http/HttpClient) response caching while running on the server and
  * transferring this cache to the client to avoid extra HTTP requests. Learn more about data caching
- * [here](/guide/universal#caching-data-when-using-httpclient).
+ * [here](/guide/ssr#caching-data-when-using-httpclient).
  *
- * These functions functions will allow you to disable some of the default features:
- * * {@link withNoDomReuse} to disable DOM nodes reuse during hydration
+ * These functions allow you to disable some of the default features or configure features
  * * {@link withNoHttpTransferCache} to disable HTTP transfer cache
- *
+ * * {@link withHttpTransferCacheOptions} to configure some HTTP transfer cache options
  *
  * @usageNotes
  *
@@ -2764,18 +2792,18 @@ function provideZoneJsCompatibilityDetector() {
  * export class AppModule {}
  * ```
  *
- * @see {@link withNoDomReuse}
  * @see {@link withNoHttpTransferCache}
+ * @see {@link withHttpTransferCacheOptions}
  *
  * @param features Optional features to configure additional router behaviors.
  * @returns A set of providers to enable hydration.
  *
  * @publicApi
- * @developerPreview
  */
 function provideClientHydration(...features) {
   const providers = [];
   const featuresKind = new Set();
+  const hasHttpTransferCacheOptions = featuresKind.has(1 /* HydrationFeatureKind.HttpTransferCacheOptions */);
   for (const {
     ɵproviders,
     ɵkind
@@ -2785,7 +2813,11 @@ function provideClientHydration(...features) {
       providers.push(ɵproviders);
     }
   }
-  return makeEnvironmentProviders([typeof ngDevMode !== 'undefined' && ngDevMode ? provideZoneJsCompatibilityDetector() : [], featuresKind.has(0 /* HydrationFeatureKind.NoDomReuseFeature */) ? [] : ɵwithDomHydration(), featuresKind.has(1 /* HydrationFeatureKind.NoHttpTransferCache */) ? [] : ɵwithHttpTransferCache(), providers]);
+  if (typeof ngDevMode !== 'undefined' && ngDevMode && featuresKind.has(0 /* HydrationFeatureKind.NoHttpTransferCache */) && hasHttpTransferCacheOptions) {
+    // TODO: Make this a runtime error
+    throw new Error('Configuration error: found both withHttpTransferCacheOptions() and withNoHttpTransferCache() in the same call to provideClientHydration(), which is a contradiction.');
+  }
+  return makeEnvironmentProviders([typeof ngDevMode !== 'undefined' && ngDevMode ? provideZoneJsCompatibilityDetector() : [], ɵwithDomHydration(), featuresKind.has(0 /* HydrationFeatureKind.NoHttpTransferCache */) || hasHttpTransferCacheOptions ? [] : ɵwithHttpTransferCache({}), providers]);
 }
 
 /**
@@ -2796,7 +2828,7 @@ function provideClientHydration(...features) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('16.2.12');
+const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.0.2');
 
 // Re-export TransferState to the public API of the `platform-browser` for backwards-compatibility.
 /**

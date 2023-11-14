@@ -18,105 +18,6 @@ function concatMap(project, resultSelector) {
 
 /***/ }),
 
-/***/ 3572:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   d: () => (/* binding */ defaultIfEmpty)
-/* harmony export */ });
-/* harmony import */ var _util_lift__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9360);
-/* harmony import */ var _OperatorSubscriber__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8251);
-
-
-function defaultIfEmpty(defaultValue) {
-  return (0,_util_lift__WEBPACK_IMPORTED_MODULE_0__/* .operate */ .e)((source, subscriber) => {
-    let hasValue = false;
-    source.subscribe((0,_OperatorSubscriber__WEBPACK_IMPORTED_MODULE_1__/* .createOperatorSubscriber */ .x)(subscriber, value => {
-      hasValue = true;
-      subscriber.next(value);
-    }, () => {
-      if (!hasValue) {
-        subscriber.next(defaultValue);
-      }
-      subscriber.complete();
-    }));
-  });
-}
-//# sourceMappingURL=defaultIfEmpty.js.map
-
-/***/ }),
-
-/***/ 1374:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   P: () => (/* binding */ first)
-/* harmony export */ });
-/* harmony import */ var _util_EmptyError__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6973);
-/* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2181);
-/* harmony import */ var _take__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8180);
-/* harmony import */ var _defaultIfEmpty__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3572);
-/* harmony import */ var _throwIfEmpty__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3026);
-/* harmony import */ var _util_identity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2737);
-
-
-
-
-
-
-function first(predicate, defaultValue) {
-  const hasDefaultValue = arguments.length >= 2;
-  return source => source.pipe(predicate ? (0,_filter__WEBPACK_IMPORTED_MODULE_0__/* .filter */ .h)((v, i) => predicate(v, i, source)) : _util_identity__WEBPACK_IMPORTED_MODULE_1__/* .identity */ .y, (0,_take__WEBPACK_IMPORTED_MODULE_2__/* .take */ .q)(1), hasDefaultValue ? (0,_defaultIfEmpty__WEBPACK_IMPORTED_MODULE_3__/* .defaultIfEmpty */ .d)(defaultValue) : (0,_throwIfEmpty__WEBPACK_IMPORTED_MODULE_4__/* .throwIfEmpty */ .T)(() => new _util_EmptyError__WEBPACK_IMPORTED_MODULE_5__/* .EmptyError */ .K()));
-}
-//# sourceMappingURL=first.js.map
-
-/***/ }),
-
-/***/ 3026:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   T: () => (/* binding */ throwIfEmpty)
-/* harmony export */ });
-/* harmony import */ var _util_EmptyError__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6973);
-/* harmony import */ var _util_lift__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9360);
-/* harmony import */ var _OperatorSubscriber__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8251);
-
-
-
-function throwIfEmpty(errorFactory = defaultErrorFactory) {
-  return (0,_util_lift__WEBPACK_IMPORTED_MODULE_0__/* .operate */ .e)((source, subscriber) => {
-    let hasValue = false;
-    source.subscribe((0,_OperatorSubscriber__WEBPACK_IMPORTED_MODULE_1__/* .createOperatorSubscriber */ .x)(subscriber, value => {
-      hasValue = true;
-      subscriber.next(value);
-    }, () => hasValue ? subscriber.complete() : subscriber.error(errorFactory())));
-  });
-}
-function defaultErrorFactory() {
-  return new _util_EmptyError__WEBPACK_IMPORTED_MODULE_2__/* .EmptyError */ .K();
-}
-//# sourceMappingURL=throwIfEmpty.js.map
-
-/***/ }),
-
-/***/ 6973:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   K: () => (/* binding */ EmptyError)
-/* harmony export */ });
-/* harmony import */ var _createErrorClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2306);
-
-const EmptyError = (0,_createErrorClass__WEBPACK_IMPORTED_MODULE_0__/* .createErrorClass */ .d)(_super => function EmptyErrorImpl() {
-  _super(this);
-  this.name = 'EmptyError';
-  this.message = 'no elements in sequence';
-});
-//# sourceMappingURL=EmptyError.js.map
-
-/***/ }),
-
 /***/ 1474:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
@@ -157,8 +58,10 @@ __webpack_require__.d(__webpack_exports__, {
   withNoXsrfProtection: () => (/* binding */ withNoXsrfProtection),
   withRequestsMadeViaParent: () => (/* binding */ withRequestsMadeViaParent),
   withXsrfConfiguration: () => (/* binding */ withXsrfConfiguration),
+  "ɵHTTP_ROOT_INTERCEPTOR_FNS": () => (/* binding */ HTTP_ROOT_INTERCEPTOR_FNS),
   "ɵHttpInterceptingHandler": () => (/* binding */ HttpInterceptorHandler),
   "ɵHttpInterceptorHandler": () => (/* binding */ HttpInterceptorHandler),
+  "ɵPRIMARY_HTTP_BACKEND": () => (/* binding */ PRIMARY_HTTP_BACKEND),
   "ɵwithHttpTransferCache": () => (/* binding */ withHttpTransferCache)
 });
 
@@ -193,8 +96,8 @@ function _asyncToGenerator(fn) {
     });
   };
 }
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=16.2.12 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(4676);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.2 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(3297);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/of.js
 var of = __webpack_require__(2096);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Observable.js
@@ -213,14 +116,12 @@ var finalize = __webpack_require__(4716);
 var switchMap = __webpack_require__(4664);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/tap.js
 var tap = __webpack_require__(9397);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/first.js
-var first = __webpack_require__(1374);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=16.2.12 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(9982);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.2 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(839);
 ;// CONCATENATED MODULE: ./node_modules/@angular/common/fesm2022/http.mjs
 
 /**
- * @license Angular v16.2.12
+ * @license Angular v17.0.2
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -1003,6 +904,8 @@ class HttpRequest {
       if (!!options.params) {
         this.params = options.params;
       }
+      // We do want to assign transferCache even if it's falsy (false is valid value)
+      this.transferCache = options.transferCache;
     }
     // If no headers have been passed in, construct a new HttpHeaders instance.
     if (!this.headers) {
@@ -1315,7 +1218,8 @@ function addBody(options, body) {
     params: options.params,
     reportProgress: options.reportProgress,
     responseType: options.responseType,
-    withCredentials: options.withCredentials
+    withCredentials: options.withCredentials,
+    transferCache: options.transferCache
   };
 }
 /**
@@ -1441,7 +1345,8 @@ let HttpClient = /*#__PURE__*/(() => {
           reportProgress: options.reportProgress,
           // By default, JSON is assumed to be returned for all calls.
           responseType: options.responseType || 'json',
-          withCredentials: options.withCredentials
+          withCredentials: options.withCredentials,
+          transferCache: options.transferCache
         });
       }
       // Start with an Observable.of() the initial request, and run the handler (which
@@ -1606,7 +1511,7 @@ let HttpClient = /*#__PURE__*/(() => {
   }
   return HttpClient;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 const XSSI_PREFIX$1 = /^\)\]\}',?\n/;
@@ -1633,7 +1538,6 @@ function getResponseUrl$1(response) {
  * @see {@link HttpHandler}
  *
  * @publicApi
- * @developerPreview
  */
 let FetchBackend = /*#__PURE__*/(() => {
   class FetchBackend {
@@ -1837,7 +1741,7 @@ let FetchBackend = /*#__PURE__*/(() => {
   }
   return FetchBackend;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 /**
@@ -1891,6 +1795,10 @@ const HTTP_INTERCEPTOR_FNS = /*#__PURE__*/new core_mjs_.InjectionToken(ngDevMode
  */
 const HTTP_ROOT_INTERCEPTOR_FNS = /*#__PURE__*/new core_mjs_.InjectionToken(ngDevMode ? 'HTTP_ROOT_INTERCEPTOR_FNS' : '');
 /**
+ * A provider to set a global primary http backend. If set, it will override the default one
+ */
+const PRIMARY_HTTP_BACKEND = /*#__PURE__*/new core_mjs_.InjectionToken(ngDevMode ? 'PRIMARY_HTTP_BACKEND' : '');
+/**
  * Creates an `HttpInterceptorFn` which lazily initializes an interceptor chain from the legacy
  * class-based interceptors and runs the request through it.
  */
@@ -1912,6 +1820,11 @@ function legacyInterceptorFnFactory() {
     return chain(req, handler).pipe((0,finalize/* finalize */.x)(() => pendingTasks.remove(taskId)));
   };
 }
+let fetchBackendWarningDisplayed = false;
+/** Internal function to reset the flag in tests */
+function resetFetchBackendWarningFlag() {
+  fetchBackendWarningDisplayed = false;
+}
 let HttpInterceptorHandler = /*#__PURE__*/(() => {
   class HttpInterceptorHandler extends HttpHandler {
     constructor(backend, injector) {
@@ -1920,6 +1833,23 @@ let HttpInterceptorHandler = /*#__PURE__*/(() => {
       this.injector = injector;
       this.chain = null;
       this.pendingTasks = (0,core_mjs_.inject)(core_mjs_["ɵInitialRenderPendingTasks"]);
+      // Check if there is a preferred HTTP backend configured and use it if that's the case.
+      // This is needed to enable `FetchBackend` globally for all HttpClient's when `withFetch`
+      // is used.
+      const primaryHttpBackend = (0,core_mjs_.inject)(PRIMARY_HTTP_BACKEND, {
+        optional: true
+      });
+      this.backend = primaryHttpBackend ?? backend;
+      // We strongly recommend using fetch backend for HTTP calls when SSR is used
+      // for an application. The logic below checks if that's the case and produces
+      // a warning otherwise.
+      if ((typeof ngDevMode === 'undefined' || ngDevMode) && !fetchBackendWarningDisplayed) {
+        const isServer = (0,common_mjs_.isPlatformServer)(injector.get(core_mjs_.PLATFORM_ID));
+        if (isServer && !(this.backend instanceof FetchBackend)) {
+          fetchBackendWarningDisplayed = true;
+          injector.get(core_mjs_["ɵConsole"]).warn((0,core_mjs_["ɵformatRuntimeError"])(2801 /* RuntimeErrorCode.NOT_USING_FETCH_BACKEND_IN_SSR */, 'Angular detected that `HttpClient` is not configured ' + 'to use `fetch` APIs. It\'s strongly recommended to ' + 'enable `fetch` for applications that use Server-Side Rendering ' + 'for better performance and compatibility. ' + 'To enable `fetch`, add the `withFetch()` to the `provideHttpClient()` ' + 'call at the root of the application.'));
+        }
+      }
     }
     handle(initialRequest) {
       if (this.chain === null) {
@@ -1943,7 +1873,7 @@ let HttpInterceptorHandler = /*#__PURE__*/(() => {
   }
   return HttpInterceptorHandler;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -2156,7 +2086,7 @@ let JsonpClientBackend = /*#__PURE__*/(() => {
   }
   return JsonpClientBackend;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 /**
@@ -2202,7 +2132,7 @@ let JsonpInterceptor = /*#__PURE__*/(() => {
   }
   return JsonpInterceptor;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 const XSSI_PREFIX = /^\)\]\}',?\n/;
@@ -2504,7 +2434,7 @@ let HttpXhrBackend = /*#__PURE__*/(() => {
   }
   return HttpXhrBackend;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 const XSRF_ENABLED = /*#__PURE__*/new core_mjs_.InjectionToken('XSRF_ENABLED');
@@ -2562,7 +2492,7 @@ let HttpXsrfCookieExtractor = /*#__PURE__*/(() => {
   }
   return HttpXsrfCookieExtractor;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 function xsrfInterceptorFn(req, next) {
@@ -2605,7 +2535,7 @@ let HttpXsrfInterceptor = /*#__PURE__*/(() => {
   }
   return HttpXsrfInterceptor;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -2637,6 +2567,19 @@ function makeHttpFeature(kind, providers) {
  * protection of outgoing requests. Additional configuration options can be provided by passing
  * feature functions to `provideHttpClient`. For example, HTTP interceptors can be added using the
  * `withInterceptors(...)` feature.
+ *
+ * <div class="alert is-helpful">
+ *
+ * It's strongly recommended to enable
+ * [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) for applications that use
+ * Server-Side Rendering for better performance and compatibility. To enable `fetch`, add
+ * `withFetch()` feature to the `provideHttpClient()` call at the root of the application:
+ *
+ * ```
+ * provideHttpClient(withFetch());
+ * ```
+ *
+ * </div>
  *
  * @see {@link withInterceptors}
  * @see {@link withInterceptorsFromDi}
@@ -2817,7 +2760,6 @@ function withRequestsMadeViaParent() {
  * Note: The Fetch API doesn't support progress report on uploads.
  *
  * @publicApi
- * @developerPreview
  */
 function withFetch() {
   if ((typeof ngDevMode === 'undefined' || ngDevMode) && typeof fetch !== 'function') {
@@ -2827,6 +2769,9 @@ function withFetch() {
   }
   return makeHttpFeature(HttpFeatureKind.Fetch, [FetchBackend, {
     provide: HttpBackend,
+    useExisting: FetchBackend
+  }, {
+    provide: PRIMARY_HTTP_BACKEND,
     useExisting: FetchBackend
   }]);
 }
@@ -2893,7 +2838,7 @@ let HttpClientXsrfModule = /*#__PURE__*/(() => {
   }
   return HttpClientXsrfModule;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 /**
@@ -2919,7 +2864,7 @@ let HttpClientModule = /*#__PURE__*/(() => {
   }
   return HttpClientModule;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 /**
@@ -2944,64 +2889,106 @@ let HttpClientJsonpModule = /*#__PURE__*/(() => {
   }
   return HttpClientJsonpModule;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-const CACHE_STATE = /*#__PURE__*/new core_mjs_.InjectionToken(ngDevMode ? 'HTTP_TRANSFER_STATE_CACHE_STATE' : '');
+
+/**
+ * Keys within cached response data structure.
+ */
+const BODY = 'b';
+const HEADERS = 'h';
+const STATUS = 's';
+const STATUS_TEXT = 'st';
+const URL = 'u';
+const RESPONSE_TYPE = 'rt';
+const CACHE_OPTIONS = /*#__PURE__*/new core_mjs_.InjectionToken(ngDevMode ? 'HTTP_TRANSFER_STATE_CACHE_OPTIONS' : '');
 /**
  * A list of allowed HTTP methods to cache.
  */
 const ALLOWED_METHODS = ['GET', 'HEAD'];
 function transferCacheInterceptorFn(req, next) {
   const {
-    isCacheActive
-  } = (0,core_mjs_.inject)(CACHE_STATE);
-  // Stop using the cache if the application has stabilized, indicating initial rendering
-  // is complete.
-  if (!isCacheActive || !ALLOWED_METHODS.includes(req.method)) {
-    // Cache is no longer active or method is not HEAD or GET.
-    // Pass the request through.
+    isCacheActive,
+    ...globalOptions
+  } = (0,core_mjs_.inject)(CACHE_OPTIONS);
+  const {
+    transferCache: requestOptions,
+    method: requestMethod
+  } = req;
+  // In the following situations we do not want to cache the request
+  if (!isCacheActive ||
+  // POST requests are allowed either globally or at request level
+  requestMethod === 'POST' && !globalOptions.includePostRequests && !requestOptions || requestMethod !== 'POST' && !ALLOWED_METHODS.includes(requestMethod) || requestOptions === false ||
+  //
+  globalOptions.filter?.(req) === false) {
     return next(req);
   }
   const transferState = (0,core_mjs_.inject)(core_mjs_.TransferState);
   const storeKey = makeCacheKey(req);
   const response = transferState.get(storeKey, null);
+  let headersToInclude = globalOptions.includeHeaders;
+  if (typeof requestOptions === 'object' && requestOptions.includeHeaders) {
+    // Request-specific config takes precedence over the global config.
+    headersToInclude = requestOptions.includeHeaders;
+  }
   if (response) {
+    const {
+      [BODY]: undecodedBody,
+      [RESPONSE_TYPE]: responseType,
+      [HEADERS]: httpHeaders,
+      [STATUS]: status,
+      [STATUS_TEXT]: statusText,
+      [URL]: url
+    } = response;
     // Request found in cache. Respond using it.
-    let body = response.body;
-    switch (response.responseType) {
+    let body = undecodedBody;
+    switch (responseType) {
       case 'arraybuffer':
-        body = new TextEncoder().encode(response.body).buffer;
+        body = new TextEncoder().encode(undecodedBody).buffer;
         break;
       case 'blob':
-        body = new Blob([response.body]);
+        body = new Blob([undecodedBody]);
         break;
+    }
+    // We want to warn users accessing a header provided from the cache
+    // That HttpTransferCache alters the headers
+    // The warning will be logged a single time by HttpHeaders instance
+    let headers = new HttpHeaders(httpHeaders);
+    if (typeof ngDevMode === 'undefined' || ngDevMode) {
+      // Append extra logic in dev mode to produce a warning when a header
+      // that was not transferred to the client is accessed in the code via `get`
+      // and `has` calls.
+      headers = appendMissingHeadersDetection(req.url, headers, headersToInclude ?? []);
     }
     return (0,of.of)(new HttpResponse({
       body,
-      headers: new HttpHeaders(response.headers),
-      status: response.status,
-      statusText: response.statusText,
-      url: response.url
+      headers,
+      status,
+      statusText,
+      url
     }));
   }
   // Request not found in cache. Make the request and cache it.
   return next(req).pipe((0,tap/* tap */.b)(event => {
     if (event instanceof HttpResponse) {
       transferState.set(storeKey, {
-        body: event.body,
-        headers: getHeadersMap(event.headers),
-        status: event.status,
-        statusText: event.statusText,
-        url: event.url || '',
-        responseType: req.responseType
+        [BODY]: event.body,
+        [HEADERS]: getFilteredHeaders(event.headers, headersToInclude),
+        [STATUS]: event.status,
+        [STATUS_TEXT]: event.statusText,
+        [URL]: event.url || '',
+        [RESPONSE_TYPE]: req.responseType
       });
     }
   }));
 }
-function getHeadersMap(headers) {
+function getFilteredHeaders(headers, includeHeaders) {
+  if (!includeHeaders) {
+    return {};
+  }
   const headersMap = {};
-  for (const key of headers.keys()) {
+  for (const key of includeHeaders) {
     const values = headers.getAll(key);
     if (values !== null) {
       headersMap[key] = values;
@@ -3049,33 +3036,62 @@ function generateHash(value) {
  * load time.
  *
  */
-function withHttpTransferCache() {
+function withHttpTransferCache(cacheOptions) {
   return [{
-    provide: CACHE_STATE,
+    provide: CACHE_OPTIONS,
     useFactory: () => {
-      (0,core_mjs_.inject)(core_mjs_["ɵENABLED_SSR_FEATURES"]).add('httpcache');
+      (0,core_mjs_["ɵperformanceMarkFeature"])('NgHttpTransferCache');
       return {
-        isCacheActive: true
+        isCacheActive: true,
+        ...cacheOptions
       };
     }
   }, {
     provide: HTTP_ROOT_INTERCEPTOR_FNS,
     useValue: transferCacheInterceptorFn,
     multi: true,
-    deps: [core_mjs_.TransferState, CACHE_STATE]
+    deps: [core_mjs_.TransferState, CACHE_OPTIONS]
   }, {
     provide: core_mjs_.APP_BOOTSTRAP_LISTENER,
     multi: true,
     useFactory: () => {
       const appRef = (0,core_mjs_.inject)(core_mjs_.ApplicationRef);
-      const cacheState = (0,core_mjs_.inject)(CACHE_STATE);
+      const cacheState = (0,core_mjs_.inject)(CACHE_OPTIONS);
       return () => {
-        appRef.isStable.pipe((0,first/* first */.P)(isStable => isStable)).toPromise().then(() => {
+        (0,core_mjs_["ɵwhenStable"])(appRef).then(() => {
           cacheState.isCacheActive = false;
         });
       };
     }
   }];
+}
+/**
+ * This function will add a proxy to an HttpHeader to intercept calls to get/has
+ * and log a warning if the header entry requested has been removed
+ */
+function appendMissingHeadersDetection(url, headers, headersToInclude) {
+  const warningProduced = new Set();
+  return new Proxy(headers, {
+    get(target, prop) {
+      const value = Reflect.get(target, prop);
+      const methods = new Set(['get', 'has', 'getAll']);
+      if (typeof value !== 'function' || !methods.has(prop)) {
+        return value;
+      }
+      return headerName => {
+        // We log when the key has been removed and a warning hasn't been produced for the header
+        const key = (prop + ':' + headerName).toLowerCase(); // e.g. `get:cache-control`
+        if (!headersToInclude.includes(headerName) && !warningProduced.has(key)) {
+          warningProduced.add(key);
+          const truncatedUrl = (0,core_mjs_["ɵtruncateMiddle"])(url);
+          // TODO: create Error guide for this warning
+          console.warn((0,core_mjs_["ɵformatRuntimeError"])(2802 /* RuntimeErrorCode.HEADERS_ALTERED_BY_TRANSFER_CACHE */, `Angular detected that the \`${headerName}\` header is accessed, but the value of the header ` + `was not transferred from the server to the client by the HttpTransferCache. ` + `To include the value of the \`${headerName}\` header for the \`${truncatedUrl}\` request, ` + `use the \`includeHeaders\` list. The \`includeHeaders\` can be defined either ` + `on a request level by adding the \`transferCache\` parameter, or on an application ` + `level by adding the \`httpCacheTransfer.includeHeaders\` argument to the ` + `\`provideClientHydration()\` call. `));
+        }
+        // invoking the original method
+        return value.apply(target, [headerName]);
+      };
+    }
+  });
 }
 
 // This file is not used to build this module. It is only used during editing

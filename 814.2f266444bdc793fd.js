@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   HashLocationStrategy: () => (/* binding */ HashLocationStrategy),
 /* harmony export */   I18nPluralPipe: () => (/* binding */ I18nPluralPipe),
 /* harmony export */   I18nSelectPipe: () => (/* binding */ I18nSelectPipe),
-/* harmony export */   IMAGE_CONFIG: () => (/* binding */ IMAGE_CONFIG),
+/* harmony export */   IMAGE_CONFIG: () => (/* reexport safe */ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵIMAGE_CONFIG"]),
 /* harmony export */   IMAGE_LOADER: () => (/* binding */ IMAGE_LOADER),
 /* harmony export */   JsonPipe: () => (/* binding */ JsonPipe),
 /* harmony export */   KeyValuePipe: () => (/* binding */ KeyValuePipe),
@@ -102,15 +102,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵPLATFORM_WORKER_APP_ID": () => (/* binding */ PLATFORM_WORKER_APP_ID),
 /* harmony export */   "ɵPLATFORM_WORKER_UI_ID": () => (/* binding */ PLATFORM_WORKER_UI_ID),
 /* harmony export */   "ɵgetDOM": () => (/* binding */ getDOM),
+/* harmony export */   "ɵnormalizeQueryParams": () => (/* binding */ normalizeQueryParams),
 /* harmony export */   "ɵparseCookieValue": () => (/* binding */ parseCookieValue),
 /* harmony export */   "ɵsetRootDomAdapter": () => (/* binding */ setRootDomAdapter)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4676);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3297);
 /**
- * @license Angular v16.2.12
+ * @license Angular v17.0.2
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
+
 
 
 
@@ -173,15 +175,13 @@ let PlatformLocation = /*#__PURE__*/(() => {
     };
     static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: PlatformLocation,
-      factory: function () {
-        return (() => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(BrowserPlatformLocation))();
-      },
+      factory: () => (() => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(BrowserPlatformLocation))(),
       providedIn: 'platform'
     });
   }
   return PlatformLocation;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 /**
@@ -266,15 +266,13 @@ let BrowserPlatformLocation = /*#__PURE__*/(() => {
     };
     static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: BrowserPlatformLocation,
-      factory: function () {
-        return (() => new BrowserPlatformLocation())();
-      },
+      factory: () => (() => new BrowserPlatformLocation())(),
       providedIn: 'platform'
     });
   }
   return BrowserPlatformLocation;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -362,15 +360,13 @@ let LocationStrategy = /*#__PURE__*/(() => {
     };
     static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: LocationStrategy,
-      factory: function () {
-        return (() => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(PathLocationStrategy))();
-      },
+      factory: () => (() => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(PathLocationStrategy))(),
       providedIn: 'root'
     });
   }
   return LocationStrategy;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 /**
@@ -487,7 +483,7 @@ let PathLocationStrategy = /*#__PURE__*/(() => {
   }
   return PathLocationStrategy;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -579,7 +575,7 @@ let HashLocationStrategy = /*#__PURE__*/(() => {
   }
   return HashLocationStrategy;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -833,15 +829,13 @@ let Location = /*#__PURE__*/(() => {
     };
     static #_5 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: Location,
-      factory: function () {
-        return createLocation();
-      },
+      factory: () => createLocation(),
       providedIn: 'root'
     });
   }
   return Location;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 function createLocation() {
@@ -2751,7 +2745,7 @@ let NgLocalization = /*#__PURE__*/(() => {
   }
   return NgLocalization;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 /**
@@ -2811,7 +2805,7 @@ let NgLocaleLocalization = /*#__PURE__*/(() => {
   }
   return NgLocaleLocalization;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -2992,7 +2986,7 @@ let NgClass = /*#__PURE__*/(() => {
   }
   return NgClass;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -3163,7 +3157,7 @@ let NgComponentOutlet = /*#__PURE__*/(() => {
   }
   return NgComponentOutlet;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 // Helper function that returns an Injector instance of a parent NgModule.
@@ -3437,7 +3431,7 @@ let NgForOf = /*#__PURE__*/(() => {
   }
   return NgForOf;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 function applyViewChange(view, record) {
@@ -3666,7 +3660,7 @@ let NgIf = /*#__PURE__*/(() => {
   }
   return NgIf;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 /**
@@ -3684,6 +3678,12 @@ function assertTemplate(property, templateRef) {
     throw new Error(`${property} must be a TemplateRef, but received '${(0,_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵstringify"])(templateRef)}'.`);
   }
 }
+
+/**
+ * A constant indicating a type of comparison that NgSwitch uses to match cases. Extracted to a
+ * separate file to facilitate G3 patches.
+ */
+const NG_SWITCH_USE_STRICT_EQUALS = true;
 class SwitchView {
   constructor(_viewContainerRef, _templateRef) {
     this._viewContainerRef = _viewContainerRef;
@@ -3797,7 +3797,10 @@ let NgSwitch = /*#__PURE__*/(() => {
     }
     /** @internal */
     _matchCase(value) {
-      const matched = value == this._ngSwitch;
+      const matched = NG_SWITCH_USE_STRICT_EQUALS ? value === this._ngSwitch : value == this._ngSwitch;
+      if ((typeof ngDevMode === 'undefined' || ngDevMode) && matched !== (value == this._ngSwitch)) {
+        console.warn((0,_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵformatRuntimeError"])(2001 /* RuntimeErrorCode.EQUALITY_NG_SWITCH_DIFFERENCE */, 'As of Angular v17 the NgSwitch directive uses strict equality comparison === instead of == to match different cases. ' + `Previously the case value "${stringifyValue(value)}" matched switch expression value "${stringifyValue(this._ngSwitch)}", but this is no longer the case with the stricter equality check. ` + 'Your comparison results return different results using === vs. == and you should adjust your ngSwitch expression and / or values to conform with the strict equality requirements.'));
+      }
       this._lastCasesMatched = this._lastCasesMatched || matched;
       this._lastCaseCheckIndex++;
       if (this._lastCaseCheckIndex === this._caseCount) {
@@ -3829,7 +3832,7 @@ let NgSwitch = /*#__PURE__*/(() => {
   }
   return NgSwitch;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 /**
@@ -3896,7 +3899,7 @@ let NgSwitchCase = /*#__PURE__*/(() => {
   }
   return NgSwitchCase;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 /**
@@ -3932,11 +3935,14 @@ let NgSwitchDefault = /*#__PURE__*/(() => {
   }
   return NgSwitchDefault;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 function throwNgSwitchProviderNotFoundError(attrName, directiveName) {
   throw new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](2000 /* RuntimeErrorCode.PARENT_NG_SWITCH_NOT_FOUND */, `An element with the "${attrName}" attribute ` + `(matching the "${directiveName}" directive) must be located inside an element with the "ngSwitch" attribute ` + `(matching "NgSwitch" directive)`);
+}
+function stringifyValue(value) {
+  return typeof value === 'string' ? `'${value}'` : String(value);
 }
 
 /**
@@ -4011,7 +4017,7 @@ let NgPlural = /*#__PURE__*/(() => {
   }
   return NgPlural;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 /**
@@ -4052,7 +4058,7 @@ let NgPluralCase = /*#__PURE__*/(() => {
   }
   return NgPluralCase;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -4143,7 +4149,7 @@ let NgStyle = /*#__PURE__*/(() => {
   }
   return NgStyle;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -4190,28 +4196,53 @@ let NgTemplateOutlet = /*#__PURE__*/(() => {
       /** Injector to be used within the embedded view. */
       this.ngTemplateOutletInjector = null;
     }
-    /** @nodoc */
     ngOnChanges(changes) {
-      if (changes['ngTemplateOutlet'] || changes['ngTemplateOutletInjector']) {
+      if (this._shouldRecreateView(changes)) {
         const viewContainerRef = this._viewContainerRef;
         if (this._viewRef) {
           viewContainerRef.remove(viewContainerRef.indexOf(this._viewRef));
         }
-        if (this.ngTemplateOutlet) {
-          const {
-            ngTemplateOutlet: template,
-            ngTemplateOutletContext: context,
-            ngTemplateOutletInjector: injector
-          } = this;
-          this._viewRef = viewContainerRef.createEmbeddedView(template, context, injector ? {
-            injector
-          } : undefined);
-        } else {
+        // If there is no outlet, clear the destroyed view ref.
+        if (!this.ngTemplateOutlet) {
           this._viewRef = null;
+          return;
         }
-      } else if (this._viewRef && changes['ngTemplateOutletContext'] && this.ngTemplateOutletContext) {
-        this._viewRef.context = this.ngTemplateOutletContext;
+        // Create a context forward `Proxy` that will always bind to the user-specified context,
+        // without having to destroy and re-create views whenever the context changes.
+        const viewContext = this._createContextForwardProxy();
+        this._viewRef = viewContainerRef.createEmbeddedView(this.ngTemplateOutlet, viewContext, {
+          injector: this.ngTemplateOutletInjector ?? undefined
+        });
       }
+    }
+    /**
+     * We need to re-create existing embedded view if either is true:
+     * - the outlet changed.
+     * - the injector changed.
+     */
+    _shouldRecreateView(changes) {
+      return !!changes['ngTemplateOutlet'] || !!changes['ngTemplateOutletInjector'];
+    }
+    /**
+     * For a given outlet instance, we create a proxy object that delegates
+     * to the user-specified context. This allows changing, or swapping out
+     * the context object completely without having to destroy/re-create the view.
+     */
+    _createContextForwardProxy() {
+      return new Proxy({}, {
+        set: (_target, prop, newValue) => {
+          if (!this.ngTemplateOutletContext) {
+            return false;
+          }
+          return Reflect.set(this.ngTemplateOutletContext, prop, newValue);
+        },
+        get: (_target, prop, receiver) => {
+          if (!this.ngTemplateOutletContext) {
+            return undefined;
+          }
+          return Reflect.get(this.ngTemplateOutletContext, prop, receiver);
+        }
+      });
     }
     static #_ = this.ɵfac = function NgTemplateOutlet_Factory(t) {
       return new (t || NgTemplateOutlet)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewContainerRef));
@@ -4230,7 +4261,7 @@ let NgTemplateOutlet = /*#__PURE__*/(() => {
   }
   return NgTemplateOutlet;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -4377,7 +4408,7 @@ let AsyncPipe = /*#__PURE__*/(() => {
   }
   return AsyncPipe;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -4417,7 +4448,7 @@ let LowerCasePipe = /*#__PURE__*/(() => {
   }
   return LowerCasePipe;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 //
@@ -4467,7 +4498,7 @@ let TitleCasePipe = /*#__PURE__*/(() => {
   }
   return TitleCasePipe;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 /**
@@ -4499,7 +4530,7 @@ let UpperCasePipe = /*#__PURE__*/(() => {
   }
   return UpperCasePipe;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -4737,7 +4768,7 @@ let DatePipe = /*#__PURE__*/(() => {
   }
   return DatePipe;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 const _INTERPOLATION_REGEXP = /#/g;
@@ -4787,7 +4818,7 @@ let I18nPluralPipe = /*#__PURE__*/(() => {
   }
   return I18nPluralPipe;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -4840,7 +4871,7 @@ let I18nSelectPipe = /*#__PURE__*/(() => {
   }
   return I18nSelectPipe;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -4879,7 +4910,7 @@ let JsonPipe = /*#__PURE__*/(() => {
   }
   return JsonPipe;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 function makeKeyValuePair(key, value) {
@@ -4949,7 +4980,7 @@ let KeyValuePipe = /*#__PURE__*/(() => {
   }
   return KeyValuePipe;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 function defaultComparator(keyValueA, keyValueB) {
@@ -5075,7 +5106,7 @@ let DecimalPipe = /*#__PURE__*/(() => {
   }
   return DecimalPipe;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 /**
@@ -5141,7 +5172,7 @@ let PercentPipe = /*#__PURE__*/(() => {
   }
   return PercentPipe;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 /**
@@ -5240,7 +5271,7 @@ let CurrencyPipe = /*#__PURE__*/(() => {
   }
   return CurrencyPipe;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 function isValue(value) {
@@ -5319,7 +5350,7 @@ let SlicePipe = /*#__PURE__*/(() => {
   }
   return SlicePipe;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -5355,7 +5386,7 @@ let CommonModule = /*#__PURE__*/(() => {
   }
   return CommonModule;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 const PLATFORM_BROWSER_ID = 'browser';
@@ -5403,7 +5434,7 @@ function isPlatformWorkerUi(platformId) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('16.2.12');
+const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.0.2');
 
 /**
  * Defines a scroll position manager. Implemented by `BrowserViewportScroller`.
@@ -5880,7 +5911,7 @@ let LCPImageObserver = /*#__PURE__*/(() => {
         if (!img) return;
         if (!img.priority && !img.alreadyWarnedPriority) {
           img.alreadyWarnedPriority = true;
-          logMissingPriorityWarning(imgSrc);
+          logMissingPriorityError(imgSrc);
         }
         if (img.modified && !img.alreadyWarnedModified) {
           img.alreadyWarnedModified = true;
@@ -5932,12 +5963,12 @@ let LCPImageObserver = /*#__PURE__*/(() => {
   }
   return LCPImageObserver;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-function logMissingPriorityWarning(ngSrc) {
+function logMissingPriorityError(ngSrc) {
   const directiveDetails = imgDirectiveDetails(ngSrc);
-  console.warn((0,_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵformatRuntimeError"])(2955 /* RuntimeErrorCode.LCP_IMG_MISSING_PRIORITY */, `${directiveDetails} this image is the Largest Contentful Paint (LCP) ` + `element but was not marked "priority". This image should be marked ` + `"priority" in order to prioritize its loading. ` + `To fix this, add the "priority" attribute.`));
+  console.error((0,_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵformatRuntimeError"])(2955 /* RuntimeErrorCode.LCP_IMG_MISSING_PRIORITY */, `${directiveDetails} this image is the Largest Contentful Paint (LCP) ` + `element but was not marked "priority". This image should be marked ` + `"priority" in order to prioritize its loading. ` + `To fix this, add the "priority" attribute.`));
 }
 function logModifiedWarning(ngSrc) {
   const directiveDetails = imgDirectiveDetails(ngSrc);
@@ -6057,7 +6088,7 @@ let PreconnectLinkChecker = /*#__PURE__*/(() => {
   }
   return PreconnectLinkChecker;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 /**
@@ -6153,7 +6184,7 @@ let PreloadLinkCreator = /*#__PURE__*/(() => {
   }
   return PreloadLinkCreator;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
@@ -6212,19 +6243,6 @@ const FIXED_SRCSET_WIDTH_LIMIT = 1920;
 const FIXED_SRCSET_HEIGHT_LIMIT = 1080;
 /** Info about built-in loaders we can test for. */
 const BUILT_IN_LOADERS = [imgixLoaderInfo, imageKitLoaderInfo, cloudinaryLoaderInfo];
-const defaultConfig = {
-  breakpoints: [16, 32, 48, 64, 96, 128, 256, 384, 640, 750, 828, 1080, 1200, 1920, 2048, 3840]
-};
-/**
- * Injection token that configures the image optimized image functionality.
- *
- * @see {@link NgOptimizedImage}
- * @publicApi
- */
-const IMAGE_CONFIG = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('ImageConfig', {
-  providedIn: 'root',
-  factory: () => defaultConfig
-});
 /**
  * Directive that improves image loading performance by enforcing best practices.
  *
@@ -6232,7 +6250,7 @@ const IMAGE_CONFIG = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__
  * prioritized by:
  * - Automatically setting the `fetchpriority` attribute on the `<img>` tag
  * - Lazy loading non-priority images by default
- * - Asserting that there is a corresponding preconnect link tag in the document head
+ * - Automatically generating a preconnect link tag in the document head
  *
  * In addition, the directive:
  * - Generates appropriate asset URLs if a corresponding `ImageLoader` function is provided
@@ -6327,7 +6345,7 @@ let NgOptimizedImage = /*#__PURE__*/(() => {
   class NgOptimizedImage {
     constructor() {
       this.imageLoader = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(IMAGE_LOADER);
-      this.config = processConfig((0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(IMAGE_CONFIG));
+      this.config = processConfig((0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵIMAGE_CONFIG"]));
       this.renderer = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2);
       this.imgElement = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef).nativeElement;
       this.injector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.Injector);
@@ -6358,6 +6376,7 @@ let NgOptimizedImage = /*#__PURE__*/(() => {
     }
     /** @nodoc */
     ngOnInit() {
+      (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵperformanceMarkFeature"])('NgOptimizedImage');
       if (ngDevMode) {
         const ngZone = this.injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone);
         assertNonEmptyInput(this, 'ngSrc', this.ngSrc);
@@ -6588,7 +6607,7 @@ let NgOptimizedImage = /*#__PURE__*/(() => {
   }
   return NgOptimizedImage;
 })();
-/*#__PURE__*/(function () {
+/*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 /***** Helpers *****/
@@ -6600,7 +6619,7 @@ function processConfig(config) {
   if (config.breakpoints) {
     sortedBreakpoints.breakpoints = config.breakpoints.sort((a, b) => a - b);
   }
-  return Object.assign({}, defaultConfig, config, sortedBreakpoints);
+  return Object.assign({}, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵIMAGE_CONFIG_DEFAULTS"], config, sortedBreakpoints);
 }
 /***** Assert functions *****/
 /**
@@ -6873,8 +6892,6 @@ function unwrapSafeUrl(value) {
   }
   return (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵunwrapSafeValue"])(value);
 }
-
-// These exports represent the set of symbols exposed as a public API.
 
 /**
  * @module
