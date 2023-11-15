@@ -3359,9 +3359,8 @@ let TuiDropdownComponent = /*#__PURE__*/(() => {
       this.updateWidth(this.accessor.getClientRect().width);
     }
     onHoveredChange(hovered) {
-      if (this.hoverDirective) {
-        this.hoverDirective.toggle(hovered);
-      }
+      var _a;
+      (_a = this.hoverDirective) === null || _a === void 0 ? void 0 : _a.toggle(hovered);
     }
     onTopFocus() {
       this.moveFocusOutside(true);
@@ -8940,9 +8939,6 @@ let TuiSelectOptionComponent = /*#__PURE__*/(() => {
     get matcher() {
       return this.host.identityMatcher || taiga_ui_cdk_constants/* TUI_DEFAULT_IDENTITY_MATCHER */.bg;
     }
-    ngDoCheck() {
-      this.changeDetection$.next();
-    }
     ngOnInit() {
       /**
        * This would cause changes inside already checked parent component (during the same change detection cycle),
@@ -8956,6 +8952,9 @@ let TuiSelectOptionComponent = /*#__PURE__*/(() => {
           this.host.checkOption(this.option.value);
         }
       });
+    }
+    ngDoCheck() {
+      this.changeDetection$.next();
     }
     get value() {
       var _a, _b;
@@ -16849,7 +16848,7 @@ let TuiRootComponent = /*#__PURE__*/(() => {
   TuiRootComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiRootComponent,
     selectors: [["tui-root"]],
-    hostAttrs: ["data-tui-version", "3.53.0"],
+    hostAttrs: ["data-tui-version", "3.54.0"],
     hostVars: 7,
     hostBindings: function TuiRootComponent_HostBindings(rf, ctx) {
       if (rf & 1) {
@@ -22467,7 +22466,7 @@ const CHAR_ZERO_WIDTH_SPACE = (/* unused pure expression or super */ null && (`\
  * Array of icons used in taiga-ui components
  */
 const TUI_USED_ICONS = (/* unused pure expression or super */ null && ([`tuiIconMirMono`, `tuiIconVisaMono`, `tuiIconElectronMono`, `tuiIconMastercard`, `tuiIconMaestro`, `tuiIconAmex`, `tuiIconDinersClub`, `tuiIconDiscover`, `tuiIconHumo`, `tuiIconJCB`, `tuiIconRuPay`, `tuiIconUnionPay`, `tuiIconUzcard`, `tuiIconVerve`, `tuiIconLink`, `tuiIconSearch`, `tuiIconSun`, `tuiIconMoon`, `tuiIconCode`, `tuiIconMenuLarge`, `tuiIconRotate`, `tuiIconArrowLeft`, `tuiIconArrowRight`, `tuiIconPlus`, `tuiIconMinus`, `tuiIconMinimize`, `tuiIconEye`, `tuiIconEyeOff`, `tuiIconDrag`, `tuiIconSortAscending`, `tuiIconSortDescending`, `tuiIconSortOff`, `tuiIconCheck`, `tuiIconCheckLarge`, `tuiIconMinusLarge`, `tuiIconChevronUp`, `tuiIconHelpCircle`, `tuiIconClose`, `tuiIconAlertCircle`, `tuiIconChevronRight`, `tuiIconInfo`, `tuiIconCheckCircle`, `tuiIconXCircle`, `tuiIconChevronLeft`, `tuiIconStarLarge`, `tuiIconChevronDown`, `tuiIconChevronDownLarge`, `tuiIconFileLarge`, `tuiIconTrashLarge`, `tuiIconAlertCircleLarge`, `tuiIconCheckCircleLarge`, `tuiIconCopy`, `tuiIconCopyLarge`, `tuiIconEyeOffLarge`, `tuiIconEyeLarge`, `tuiIconClock`, `tuiIconClockLarge`, `tuiIconToggleOff`, `tuiIconToggleOffLarge`, `tuiIconToggleOn`, `tuiIconToggleOnLarge`, `tuiIconCalendar`, `tuiIconCalendarLarge`]));
-const TUI_VERSION = `3.53.0`;
+const TUI_VERSION = `3.54.0`;
 
 /**
  * Generated bundle index. Do not edit.
@@ -24693,7 +24692,7 @@ function tuiGetClosestFocusable({
  * @return true if focused
  */
 function tuiIsNativeFocused(node) {
-  return !!(node === null || node === void 0 ? void 0 : node.ownerDocument) && tuiGetNativeFocused(node.ownerDocument) === node;
+  return !!(node === null || node === void 0 ? void 0 : node.ownerDocument) && tuiGetNativeFocused(node.ownerDocument) === node && node.ownerDocument.hasFocus();
 }
 
 /**
@@ -24708,7 +24707,7 @@ function tuiIsNativeFocusedIn(node) {
     return false;
   }
   const nativeFocused = tuiGetNativeFocused(node.ownerDocument);
-  return nativeFocused !== null && node.contains(nativeFocused);
+  return nativeFocused !== null && node.contains(nativeFocused) && node.ownerDocument.hasFocus();
 }
 
 /**
