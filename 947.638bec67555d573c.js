@@ -586,7 +586,6 @@ __webpack_require__.d(__webpack_exports__, {
   "ɵdefaultIterableDiffers": () => (/* binding */ defaultIterableDiffers),
   "ɵdefaultKeyValueDiffers": () => (/* binding */ defaultKeyValueDiffers),
   "ɵdepsTracker": () => (/* binding */ depsTracker),
-  "ɵdetectChanges": () => (/* binding */ detectChanges),
   "ɵdevModeEqual": () => (/* binding */ devModeEqual),
   "ɵfindLocaleData": () => (/* binding */ findLocaleData),
   "ɵflushModuleScopingQueueAsMuchAsPossible": () => (/* binding */ flushModuleScopingQueueAsMuchAsPossible),
@@ -831,7 +830,7 @@ __webpack_require__.d(__webpack_exports__, {
 
 ;// CONCATENATED MODULE: ./node_modules/@angular/core/fesm2022/primitives/signals.mjs
 /**
- * @license Angular v17.0.2
+ * @license Angular v17.0.3
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -1405,7 +1404,7 @@ var distinctUntilChanged = __webpack_require__(3997);
 var first = __webpack_require__(1374);
 ;// CONCATENATED MODULE: ./node_modules/@angular/core/fesm2022/core.mjs
 /**
- * @license Angular v17.0.2
+ * @license Angular v17.0.3
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -3511,8 +3510,8 @@ function getComponentId(componentDef) {
 // Uglify will inline these when minifying so there shouldn't be a cost.
 const HOST = 0;
 const TVIEW = 1;
-const FLAGS = 2;
 // Shared with LContainer
+const FLAGS = 2;
 const PARENT = 3;
 const NEXT = 4;
 const T_HOST = 5;
@@ -3556,32 +3555,36 @@ const TYPE = 1;
  * without having to remember the specific indices.
  * Uglify will inline these when minifying so there shouldn't be a cost.
  */
-/**
- * Flag to signify that this `LContainer` may have transplanted views which need to be change
- * detected. (see: `LView[DECLARATION_COMPONENT_VIEW])`.
- *
- * This flag, once set, is never unset for the `LContainer`. This means that when unset we can skip
- * a lot of work in `refreshEmbeddedViews`. But when set we still need to verify
- * that the `MOVED_VIEWS` are transplanted and on-push.
- */
-const HAS_TRANSPLANTED_VIEWS = 2;
-// PARENT and NEXT are indices 3 and 4
+// FLAGS, PARENT, NEXT, and T_HOST are indices 2, 3, 4, and 5
 // As we already have these constants in LView, we don't need to re-create them.
-// T_HOST is index 5
-// We already have this constants in LView, we don't need to re-create it.
-const HAS_CHILD_VIEWS_TO_REFRESH = 6;
+const DEHYDRATED_VIEWS = 6;
 const NATIVE = 7;
 const VIEW_REFS = 8;
 const MOVED_VIEWS = 9;
-const DEHYDRATED_VIEWS = 10;
 /**
  * Size of LContainer's header. Represents the index after which all views in the
  * container will be inserted. We need to keep a record of current views so we know
  * which views are already in the DOM (and don't need to be re-added) and so we can
  * remove views from the DOM when they are no longer required.
  */
-const CONTAINER_HEADER_OFFSET = 11;
-
+const CONTAINER_HEADER_OFFSET = 10;
+/** Flags associated with an LContainer (saved in LContainer[FLAGS]) */
+var LContainerFlags = /*#__PURE__*/function (LContainerFlags) {
+  LContainerFlags[LContainerFlags["None"] = 0] = "None";
+  /**
+   * Flag to signify that this `LContainer` may have transplanted views which need to be change
+   * detected. (see: `LView[DECLARATION_COMPONENT_VIEW])`.
+   *
+   * This flag, once set, is never unset for the `LContainer`.
+   */
+  LContainerFlags[LContainerFlags["HasTransplantedViews"] = 2] = "HasTransplantedViews";
+  /**
+   * Indicates that this LContainer has a view underneath it that needs to be refreshed during
+   * change detection.
+   */
+  LContainerFlags[LContainerFlags["HasChildViewsToRefresh"] = 4] = "HasChildViewsToRefresh";
+  return LContainerFlags;
+}(LContainerFlags || {});
 /**
  * True if `value` is `LView`.
  * @param value wrapped value of `RNode`, `LView`, `LContainer`
@@ -4073,11 +4076,11 @@ function markAncestorsForTraversal(lView) {
   while (parent !== null) {
     // We stop adding markers to the ancestors once we reach one that already has the marker. This
     // is to avoid needlessly traversing all the way to the root when the marker already exists.
-    if (isLContainer(parent) && parent[HAS_CHILD_VIEWS_TO_REFRESH] || isLView(parent) && parent[FLAGS] & 8192 /* LViewFlags.HasChildViewsToRefresh */) {
+    if (isLContainer(parent) && parent[FLAGS] & LContainerFlags.HasChildViewsToRefresh || isLView(parent) && parent[FLAGS] & 8192 /* LViewFlags.HasChildViewsToRefresh */) {
       break;
     }
     if (isLContainer(parent)) {
-      parent[HAS_CHILD_VIEWS_TO_REFRESH] = true;
+      parent[FLAGS] |= LContainerFlags.HasChildViewsToRefresh;
     } else {
       parent[FLAGS] |= 8192 /* LViewFlags.HasChildViewsToRefresh */;
       if (!viewAttachedToChangeDetector(parent)) {
@@ -9403,7 +9406,7 @@ function trackMovedView(declarationContainer, lView) {
     // At this point the declaration-component is not same as insertion-component; this means that
     // this is a transplanted view. Mark the declared lView as having transplanted views so that
     // those views can participate in CD.
-    declarationContainer[HAS_TRANSPLANTED_VIEWS] = true;
+    declarationContainer[FLAGS] |= LContainerFlags.HasTransplantedViews;
   }
   if (movedViews === null) {
     declarationContainer[MOVED_VIEWS] = [lView];
@@ -11561,7 +11564,7 @@ class Version {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new Version('17.0.2');
+const VERSION = /*#__PURE__*/new Version('17.0.3');
 
 // This default value is when checking the hierarchy for a token.
 //
@@ -14139,7 +14142,7 @@ function generateInitialInputs(inputs, directiveIndex, attrs) {
  */
 function createLContainer(hostNative, currentView, native, tNode) {
   ngDevMode && assertLView(currentView);
-  const lContainer = [hostNative, true, false, currentView, null, tNode, false, native, null, null, null // dehydrated views
+  const lContainer = [hostNative, true, 0, currentView, null, tNode, null, native, null, null // moved views
   ];
 
   ngDevMode && assertEqual(lContainer.length, CONTAINER_HEADER_OFFSET, 'Should allocate correct number of slots for LContainer header.');
@@ -14308,7 +14311,7 @@ function textBindingInternal(lView, index, value) {
  * The maximum number of times the change detection traversal will rerun before throwing an error.
  */
 const MAXIMUM_REFRESH_RERUNS = 100;
-function detectChangesInternal(tView, lView, context, notifyErrorHandler = true) {
+function detectChangesInternal(lView, notifyErrorHandler = true) {
   const environment = lView[ENVIRONMENT];
   const rendererFactory = environment.rendererFactory;
   const afterRenderEventManager = environment.afterRenderEventManager;
@@ -14321,6 +14324,8 @@ function detectChangesInternal(tView, lView, context, notifyErrorHandler = true)
     afterRenderEventManager?.begin();
   }
   try {
+    const tView = lView[TVIEW];
+    const context = lView[CONTEXT];
     refreshView(tView, lView, tView.template, context);
     detectChangesInViewWhileDirty(lView);
   } catch (error) {
@@ -14356,24 +14361,13 @@ function detectChangesInViewWhileDirty(lView) {
   }
 }
 
-function checkNoChangesInternal(tView, lView, context, notifyErrorHandler = true) {
+function checkNoChangesInternal(lView, notifyErrorHandler = true) {
   setIsInCheckNoChangesMode(true);
   try {
-    detectChangesInternal(tView, lView, context, notifyErrorHandler);
+    detectChangesInternal(lView, notifyErrorHandler);
   } finally {
     setIsInCheckNoChangesMode(false);
   }
-}
-/**
- * Synchronously perform change detection on a component (and possibly its sub-components).
- *
- * This function triggers change detection in a synchronous way on a component.
- *
- * @param component The component which the change detection should be performed on.
- */
-function detectChanges(component) {
-  const view = getComponentViewByInstance(component);
-  detectChangesInternal(view[TVIEW], view, component);
 }
 /**
  * Processes a view in update mode. This includes a number of steps in a specific order:
@@ -14546,7 +14540,7 @@ function viewShouldHaveReactiveConsumer(tView) {
  */
 function detectChangesInEmbeddedViews(lView, mode) {
   for (let lContainer = getFirstLContainer(lView); lContainer !== null; lContainer = getNextLContainer(lContainer)) {
-    lContainer[HAS_CHILD_VIEWS_TO_REFRESH] = false;
+    lContainer[FLAGS] &= ~LContainerFlags.HasChildViewsToRefresh;
     for (let i = CONTAINER_HEADER_OFFSET; i < lContainer.length; i++) {
       const embeddedLView = lContainer[i];
       detectChangesInViewIfAttached(embeddedLView, mode);
@@ -14560,7 +14554,7 @@ function detectChangesInEmbeddedViews(lView, mode) {
  */
 function markTransplantedViewsForRefresh(lView) {
   for (let lContainer = getFirstLContainer(lView); lContainer !== null; lContainer = getNextLContainer(lContainer)) {
-    if (!lContainer[HAS_TRANSPLANTED_VIEWS]) continue;
+    if (!(lContainer[FLAGS] & LContainerFlags.HasTransplantedViews)) continue;
     const movedViews = lContainer[MOVED_VIEWS];
     ngDevMode && assertDefined(movedViews, 'Transplanted View flags set but missing MOVED_VIEWS');
     for (let i = 0; i < movedViews.length; i++) {
@@ -14913,7 +14907,7 @@ class ViewRef$1 {
    * See {@link ChangeDetectorRef#detach} for more information.
    */
   detectChanges() {
-    detectChangesInternal(this._lView[TVIEW], this._lView, this.context, this.notifyErrorHandler);
+    detectChangesInternal(this._lView, this.notifyErrorHandler);
   }
   /**
    * Checks the change detector and its children, and throws if any changes are detected.
@@ -14923,7 +14917,7 @@ class ViewRef$1 {
    */
   checkNoChanges() {
     if (ngDevMode) {
-      checkNoChangesInternal(this._lView[TVIEW], this._lView, this.context, this.notifyErrorHandler);
+      checkNoChangesInternal(this._lView, this.notifyErrorHandler);
     }
   }
   attachToViewContainerRef() {
@@ -31565,6 +31559,17 @@ function applyChanges(component) {
   markViewDirty(getComponentViewByInstance(component));
   getRootComponents(component).forEach(rootComponent => detectChanges(rootComponent));
 }
+/**
+ * Synchronously perform change detection on a component (and possibly its sub-components).
+ *
+ * This function triggers change detection in a synchronous way on a component.
+ *
+ * @param component The component which the change detection should be performed on.
+ */
+function detectChanges(component) {
+  const view = getComponentViewByInstance(component);
+  detectChangesInternal(view);
+}
 
 /**
  * Discovers the dependencies of an injectable instance. Provides DI information about each
@@ -31902,15 +31907,15 @@ function getEnvironmentInjectorProviders(injector) {
   }
   const providerImportsContainer = getProviderImportsContainer(injector);
   if (providerImportsContainer === null) {
-    // There is a special case where the bootstrapped component does not
-    // import any NgModules. In this case the environment injector connected to
-    // that component is the root injector, which does not have a provider imports
-    // container (and thus no concept of module import paths). Therefore we simply
-    // return the provider records as is.
-    if (isRootInjector(injector)) {
-      return providerRecordsWithoutImportPaths;
-    }
-    throwError('Could not determine where injector providers were configured.');
+    // We assume that if an environment injector exists without an associated provider imports
+    // container, it was created without such a container. Some examples cases where this could
+    // happen:
+    // - The root injector of a standalone application
+    // - A router injector created by using the providers array in a lazy loaded route
+    // - A manually created injector that is attached to the injector tree
+    // Since each of these cases has no provider container, there is no concept of import paths,
+    // so we can simply return the provider records.
+    return providerRecordsWithoutImportPaths;
   }
   const providerToPath = getProviderImportPaths(providerImportsContainer);
   const providerRecords = [];
@@ -31939,9 +31944,6 @@ function getEnvironmentInjectorProviders(injector) {
 }
 function isPlatformInjector(injector) {
   return injector instanceof R3Injector && injector.scopes.has('platform');
-}
-function isRootInjector(injector) {
-  return injector instanceof R3Injector && injector.scopes.has('root');
 }
 /**
  * Gets the providers configured on an injector.
