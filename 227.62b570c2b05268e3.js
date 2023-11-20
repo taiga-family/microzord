@@ -870,12 +870,12 @@ var core_mjs_ = __webpack_require__(9796);
 var taiga_ui_addon_doc_tokens = __webpack_require__(3594);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-utils.js
 var taiga_ui_addon_doc_utils = __webpack_require__(8836);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/BehaviorSubject.js
+var internal_BehaviorSubject = __webpack_require__(5619);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Subject.js + 1 modules
 var internal_Subject = __webpack_require__(8645);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/timer.js + 1 modules
-var timer = __webpack_require__(4825);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/BehaviorSubject.js
-var internal_BehaviorSubject = __webpack_require__(5619);
+var observable_timer = __webpack_require__(4825);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/merge.js
 var merge = __webpack_require__(3019);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/switchMap.js
@@ -883,7 +883,7 @@ var operators_switchMap = __webpack_require__(4664);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/map.js
 var operators_map = __webpack_require__(7398);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/startWith.js
-var startWith = __webpack_require__(7921);
+var operators_startWith = __webpack_require__(7921);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/takeUntil.js
 var takeUntil = __webpack_require__(9773);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/filter.js
@@ -896,459 +896,18 @@ var take = __webpack_require__(8180);
 var operators_distinctUntilChanged = __webpack_require__(3997);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/share.js
 var share = __webpack_require__(3020);
-// EXTERNAL MODULE: ./node_modules/tslib/tslib.es6.mjs
-var tslib_es6 = __webpack_require__(7582);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-pipes-filter.js
-
-
-let TuiFilterPipe = /*#__PURE__*/(() => {
-  class TuiFilterPipe {
-    transform(items, matcher, ...args) {
-      return items.filter(item => matcher(item, ...args));
-    }
-  }
-  TuiFilterPipe.ɵfac = function TuiFilterPipe_Factory(t) {
-    return new (t || TuiFilterPipe)();
-  };
-  TuiFilterPipe.ɵpipe = /* @__PURE__ */core_mjs_["ɵɵdefinePipe"]({
-    name: "tuiFilter",
-    type: TuiFilterPipe,
-    pure: true
-  });
-  return TuiFilterPipe;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiFilterPipeModule = /*#__PURE__*/(() => {
-  class TuiFilterPipeModule {}
-  TuiFilterPipeModule.ɵfac = function TuiFilterPipeModule_Factory(t) {
-    return new (t || TuiFilterPipeModule)();
-  };
-  TuiFilterPipeModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiFilterPipeModule
-  });
-  TuiFilterPipeModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-  return TuiFilterPipeModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-cdk-pipes-filter.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-coercion.js
-/**
- * Coerces a data-bound value (typically a string) to a boolean.
- * @example {@link https://material.angular.io/cdk/coercion/api#functions}
- */
-function tuiCoerceBooleanProperty(value) {
-  // If you don't mind "[object Object]" in your strings, then you will not need this rule.
-  // eslint-disable-next-line @typescript-eslint/no-base-to-string
-  return value !== null && typeof value !== `undefined` && `${value}` !== `false`;
-}
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-cdk-coercion.js.map
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-button.js
+var taiga_ui_core_components_button = __webpack_require__(631);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-services.js + 2 modules
 var taiga_ui_cdk_services = __webpack_require__(5423);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Observable.js
-var Observable = __webpack_require__(5592);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/innerFrom.js
-var innerFrom = __webpack_require__(4829);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/argsOrArgArray.js
-var argsOrArgArray = __webpack_require__(7728);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/OperatorSubscriber.js
-var OperatorSubscriber = __webpack_require__(8251);
-;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/observable/race.js
-
-
-
-
-function race(...sources) {
-  sources = (0,argsOrArgArray/* argsOrArgArray */.k)(sources);
-  return sources.length === 1 ? (0,innerFrom/* innerFrom */.Xf)(sources[0]) : new Observable/* Observable */.y(raceInit(sources));
-}
-function raceInit(sources) {
-  return subscriber => {
-    let subscriptions = [];
-    for (let i = 0; subscriptions && !subscriber.closed && i < sources.length; i++) {
-      subscriptions.push((0,innerFrom/* innerFrom */.Xf)(sources[i]).subscribe((0,OperatorSubscriber/* createOperatorSubscriber */.x)(subscriber, value => {
-        if (subscriptions) {
-          for (let s = 0; s < subscriptions.length; s++) {
-            s !== i && subscriptions[s].unsubscribe();
-          }
-          subscriptions = null;
-        }
-        subscriber.next(value);
-      })));
-    }
-  };
-}
-//# sourceMappingURL=race.js.map
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/throttleTime.js + 1 modules
-var throttleTime = __webpack_require__(8753);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/lift.js
-var lift = __webpack_require__(9360);
-;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/operators/skipWhile.js
-
-
-function skipWhile(predicate) {
-  return (0,lift/* operate */.e)((source, subscriber) => {
-    let taking = false;
-    let index = 0;
-    source.subscribe((0,OperatorSubscriber/* createOperatorSubscriber */.x)(subscriber, value => (taking || (taking = !predicate(value, index++))) && subscriber.next(value)));
-  });
-}
-//# sourceMappingURL=skipWhile.js.map
-// EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
-var ng_web_apis_common = __webpack_require__(229);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-tokens.js + 1 modules
 var taiga_ui_cdk_tokens = __webpack_require__(2918);
+// EXTERNAL MODULE: ./node_modules/tslib/tslib.es6.mjs
+var tslib_es6 = __webpack_require__(7582);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-miscellaneous.js
 var taiga_ui_cdk_utils_miscellaneous = __webpack_require__(8937);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-constants.js
-var taiga_ui_cdk_constants = __webpack_require__(6141);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-classes.js
-var taiga_ui_cdk_classes = __webpack_require__(7178);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-format.js
-
-
-/**
- * Adds 'px' to the number and turns it into a string
- */
-function taiga_ui_cdk_utils_format_tuiPx(value) {
-  ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert(Number.isFinite(value), `Value must be finite number`);
-  return `${value}px`;
-}
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-cdk-utils-format.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-auto-focus.js
-
-
-
-
-
-
-
-
-
-
-
-
-
-let AbstractTuiAutofocusHandler = /*#__PURE__*/(() => {
-  class AbstractTuiAutofocusHandler {
-    constructor(focusable, el) {
-      this.focusable = focusable;
-      this.el = el;
-    }
-    get element() {
-      var _a;
-      return ((_a = this.focusable) === null || _a === void 0 ? void 0 : _a.nativeFocusableElement) || this.el.nativeElement;
-    }
-    get isTextFieldElement() {
-      return this.element.matches(`input, textarea, [contenteditable]`);
-    }
-  }
-  AbstractTuiAutofocusHandler.ɵfac = function AbstractTuiAutofocusHandler_Factory(t) {
-    core_mjs_["ɵɵinvalidFactory"]();
-  };
-  AbstractTuiAutofocusHandler.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: AbstractTuiAutofocusHandler
-  });
-  return AbstractTuiAutofocusHandler;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const TIMEOUT = 1000;
-const NG_ANIMATION_SELECTOR = `.ng-animating`;
-let TuiDefaultAutofocusHandler = /*#__PURE__*/(() => {
-  class TuiDefaultAutofocusHandler extends AbstractTuiAutofocusHandler {
-    constructor(focusable, el, animationFrame$) {
-      super(focusable, el);
-      this.animationFrame$ = animationFrame$;
-    }
-    setFocus() {
-      if (this.isTextFieldElement) {
-        race((0,timer/* timer */.H)(TIMEOUT), this.animationFrame$.pipe((0,throttleTime/* throttleTime */.p)(taiga_ui_cdk_constants/* POLLING_TIME */.Yg), (0,operators_map/* map */.U)(() => this.element.closest(NG_ANIMATION_SELECTOR)), skipWhile(Boolean), (0,take/* take */.q)(1))).subscribe(() => this.element.focus({
-          preventScroll: true
-        }));
-      } else {
-        this.element.focus({
-          preventScroll: true
-        });
-      }
-    }
-  }
-  TuiDefaultAutofocusHandler.ɵfac = function TuiDefaultAutofocusHandler_Factory(t) {
-    return new (t || TuiDefaultAutofocusHandler)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_FOCUSABLE_ITEM_ACCESSOR */.KZ, 10), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* ANIMATION_FRAME */.L1));
-  };
-  TuiDefaultAutofocusHandler.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiDefaultAutofocusHandler,
-    features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
-  });
-  return TuiDefaultAutofocusHandler;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const TEXTFIELD_ATTRS = [`type`, `inputMode`, `autocomplete`, `accept`, `min`, `max`, `step`, `pattern`, `size`, `maxlength`];
-let TuiIosAutofocusHandler = /*#__PURE__*/(() => {
-  class TuiIosAutofocusHandler extends AbstractTuiAutofocusHandler {
-    constructor(focusable, el, renderer, zone, win) {
-      super(focusable, el);
-      this.renderer = renderer;
-      this.zone = zone;
-      this.win = win;
-      this.patchCssStyles();
-    }
-    setFocus() {
-      if (this.isTextFieldElement) {
-        this.zone.runOutsideAngular(() => this.iosWebkitAutofocus());
-      } else {
-        this.element.focus({
-          preventScroll: true
-        });
-      }
-    }
-    iosWebkitAutofocus() {
-      var _a;
-      const fakeInput = this.makeFakeInput();
-      const duration = this.getDurationTimeBeforeFocus();
-      let fakeFocusTimeoutId = 0;
-      let elementFocusTimeoutId = 0;
-      const blurHandler = () => fakeInput.focus({
-        preventScroll: true
-      });
-      const focusHandler = () => {
-        clearTimeout(fakeFocusTimeoutId);
-        fakeFocusTimeoutId = this.win.setTimeout(() => {
-          clearTimeout(elementFocusTimeoutId);
-          fakeInput.removeEventListener(`blur`, blurHandler);
-          fakeInput.removeEventListener(`focus`, focusHandler);
-          elementFocusTimeoutId = this.win.setTimeout(() => {
-            this.element.focus({
-              preventScroll: false
-            });
-            fakeInput.remove();
-          }, duration);
-        });
-      };
-      fakeInput.addEventListener(`blur`, blurHandler, {
-        once: true
-      });
-      fakeInput.addEventListener(`focus`, focusHandler);
-      if (this.insideDialog()) {
-        this.win.document.body.appendChild(fakeInput);
-      } else {
-        (_a = this.element.parentElement) === null || _a === void 0 ? void 0 : _a.appendChild(fakeInput);
-      }
-      fakeInput.focus({
-        preventScroll: true
-      });
-    }
-    /**
-     * @note:
-     * emulate textfield position in layout with cursor
-     * before focus to real textfield element
-     *
-     * required note:
-     * [fakeInput.readOnly = true] ~
-     * don't use {readOnly: true} value, it's doesn't work for emulate autofill
-     *
-     * [fakeInput.style.opacity = 0] ~
-     * don't use {opacity: 0}, sometimes it's doesn't work for emulate real input
-     *
-     * [fakeInput.style.fontSize = 16px] ~
-     * disable possible auto zoom
-     *
-     * [fakeInput.style.top/left] ~
-     * emulate position cursor before focus to real textfield element
-     */
-    makeFakeInput() {
-      const fakeInput = this.renderer.createElement(`input`);
-      const rect = this.element.getBoundingClientRect();
-      this.patchFakeInputFromFocusableElement(fakeInput);
-      fakeInput.style.height = taiga_ui_cdk_utils_format_tuiPx(rect.height);
-      fakeInput.style.width = taiga_ui_cdk_utils_format_tuiPx(rect.width / 2);
-      fakeInput.style.position = `fixed`;
-      fakeInput.style.zIndex = `-99999999`;
-      fakeInput.style.caretColor = `transparent`;
-      fakeInput.style.border = `none`;
-      fakeInput.style.outline = `none`;
-      fakeInput.style.color = `transparent`;
-      fakeInput.style.background = `transparent`;
-      fakeInput.style.cursor = `none`;
-      fakeInput.style.fontSize = taiga_ui_cdk_utils_format_tuiPx(16);
-      fakeInput.style.top = taiga_ui_cdk_utils_format_tuiPx(rect.top);
-      fakeInput.style.left = taiga_ui_cdk_utils_format_tuiPx(rect.left);
-      return fakeInput;
-    }
-    getDurationTimeBeforeFocus() {
-      return parseFloat(this.win.getComputedStyle(this.element).getPropertyValue(`--tui-duration`)) || 0;
-    }
-    /**
-     * @note:
-     * unfortunately, in older versions of iOS
-     * there is a bug that the fake input cursor
-     * will move along with the dialog animation
-     * and then that dialog will be shaking
-     */
-    insideDialog() {
-      return !!this.element.closest(`tui-dialog`);
-    }
-    /**
-     * @note:
-     * This is necessary so that the viewport isn't recalculated
-     * and then the dialogs don't shake.
-     *
-     * Also, we need to fixed height viewport,
-     * so that when focusing the dialogs don't shake
-     */
-    patchCssStyles() {
-      const doc = this.win.document;
-      for (const element of [doc.documentElement, doc.body]) {
-        element.style.setProperty(`overflow`, `auto`);
-        element.style.setProperty(`height`, `100%`);
-      }
-    }
-    /**
-     * @note:
-     * inherit basic attributes values from real input
-     * for help iOS detect what do you want see on keyboard,
-     * for example [inputMode=numeric, autocomplete=cc-number]
-     */
-    patchFakeInputFromFocusableElement(fakeInput) {
-      TEXTFIELD_ATTRS.forEach(attr => {
-        const value = this.element.getAttribute(attr);
-        if ((0,taiga_ui_cdk_utils_miscellaneous/* tuiIsPresent */.Pc)(value)) {
-          fakeInput.setAttribute(attr, value);
-        }
-      });
-    }
-  }
-  TuiIosAutofocusHandler.ɵfac = function TuiIosAutofocusHandler_Factory(t) {
-    return new (t || TuiIosAutofocusHandler)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_FOCUSABLE_ITEM_ACCESSOR */.KZ, 10), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.NgZone), core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* WINDOW */.m9));
-  };
-  TuiIosAutofocusHandler.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiIosAutofocusHandler,
-    features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
-  });
-  return TuiIosAutofocusHandler;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const TUI_AUTOFOCUS_DEFAULT_OPTIONS = {
-  delay: NaN // NaN = no delay/sync
-};
-
-const TUI_AUTOFOCUS_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_AUTOFOCUS_DEFAULT_OPTIONS);
-function tuiAutoFocusOptionsProvider(options) {
-  return tuiProvideOptions(TUI_AUTOFOCUS_OPTIONS, options, TUI_AUTOFOCUS_DEFAULT_OPTIONS);
-}
-const TUI_AUTOFOCUS_HANDLER = new core_mjs_.InjectionToken(`[TUI_AUTOFOCUS_HANDLER]`);
-const TUI_AUTOFOCUS_PROVIDERS = [{
-  provide: TUI_AUTOFOCUS_HANDLER,
-  useFactory: (focusable, el, animationFrame$, renderer, zone, win, isIos) => isIos ? new TuiIosAutofocusHandler(focusable, el, renderer, zone, win) : new TuiDefaultAutofocusHandler(focusable, el, animationFrame$),
-  deps: [[new core_mjs_.Optional(), new core_mjs_.Self(), taiga_ui_cdk_tokens/* TUI_FOCUSABLE_ITEM_ACCESSOR */.KZ], core_mjs_.ElementRef, ng_web_apis_common/* ANIMATION_FRAME */.L1, core_mjs_.Renderer2, core_mjs_.NgZone, ng_web_apis_common/* WINDOW */.m9, taiga_ui_cdk_tokens/* TUI_IS_IOS */.FA]
-}, taiga_ui_cdk_services/* TuiDestroyService */.a3];
-let TuiAutoFocusDirective = /*#__PURE__*/(() => {
-  class TuiAutoFocusDirective {
-    constructor(handler, options, destroy$) {
-      this.handler = handler;
-      this.options = options;
-      this.destroy$ = destroy$;
-      this.autoFocus = true;
-    }
-    ngAfterViewInit() {
-      if (tuiCoerceBooleanProperty(this.autoFocus)) {
-        this.focus();
-      }
-    }
-    focus() {
-      if (Number.isNaN(this.options.delay)) {
-        void Promise.resolve().then(() => this.handler.setFocus());
-      } else {
-        (0,timer/* timer */.H)(this.options.delay).pipe((0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(() => this.handler.setFocus());
-      }
-    }
-  }
-  TuiAutoFocusDirective.ɵfac = function TuiAutoFocusDirective_Factory(t) {
-    return new (t || TuiAutoFocusDirective)(core_mjs_["ɵɵdirectiveInject"](TUI_AUTOFOCUS_HANDLER), core_mjs_["ɵɵdirectiveInject"](TUI_AUTOFOCUS_OPTIONS), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2));
-  };
-  TuiAutoFocusDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiAutoFocusDirective,
-    selectors: [["", "tuiAutoFocus", ""]],
-    inputs: {
-      autoFocus: ["tuiAutoFocus", "autoFocus"]
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"](TUI_AUTOFOCUS_PROVIDERS)]
-  });
-  return TuiAutoFocusDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiAutoFocusModule = /*#__PURE__*/(() => {
-  class TuiAutoFocusModule {}
-  TuiAutoFocusModule.ɵfac = function TuiAutoFocusModule_Factory(t) {
-    return new (t || TuiAutoFocusModule)();
-  };
-  TuiAutoFocusModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiAutoFocusModule
-  });
-  TuiAutoFocusModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-  return TuiAutoFocusModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiSynchronousAutofocusHandler = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
-  class TuiSynchronousAutofocusHandler extends AbstractTuiAutofocusHandler {
-    constructor(focusable, el) {
-      super(focusable, el);
-    }
-    setFocus() {
-      this.element.focus({
-        preventScroll: true
-      });
-    }
-  }
-  TuiSynchronousAutofocusHandler.ɵfac = function TuiSynchronousAutofocusHandler_Factory(t) {
-    return new (t || TuiSynchronousAutofocusHandler)(i0.ɵɵdirectiveInject(TUI_FOCUSABLE_ITEM_ACCESSOR, 10), i0.ɵɵdirectiveInject(ElementRef));
-  };
-  TuiSynchronousAutofocusHandler.ɵdir = /* @__PURE__ */i0.ɵɵdefineDirective({
-    type: TuiSynchronousAutofocusHandler,
-    features: [i0.ɵɵInheritDefinitionFeature]
-  });
-  return TuiSynchronousAutofocusHandler;
-})()));
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-cdk-directives-auto-focus.js.map
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-abstract.js
+var taiga_ui_cdk_abstract = __webpack_require__(2461);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-decorators.js
 var taiga_ui_cdk_decorators = __webpack_require__(1800);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-observables.js
@@ -1379,7 +938,7 @@ let taiga_ui_cdk_directives_active_zone_TuiActiveZoneDirective = /*#__PURE__*/((
       this.directParentActiveZone = directParentActiveZone;
       this.subActiveZones = [];
       this.tuiActiveZoneParent = null;
-      this.tuiActiveZoneChange = this.active$.pipe((0,operators_map/* map */.U)(element => !!element && this.contains(element)), (0,startWith/* startWith */.O)(false), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), skip(1), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(this.zone));
+      this.tuiActiveZoneChange = this.active$.pipe((0,operators_map/* map */.U)(element => !!element && this.contains(element)), (0,operators_startWith/* startWith */.O)(false), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), skip(1), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(this.zone));
       (_a = this.directParentActiveZone) === null || _a === void 0 ? void 0 : _a.addSubActiveZone(this);
     }
     set tuiActiveZoneParentSetter(zone) {
@@ -1447,720 +1006,12 @@ let TuiActiveZoneModule = /*#__PURE__*/(() => {
 
 
 //# sourceMappingURL=taiga-ui-cdk-directives-active-zone.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-item.js
-
-
-
-/**
- * Blank directive for queries via `@ContentChildren` / `@ViewChildren` / `querySelector`
- */
-let TuiItemDirective = /*#__PURE__*/(() => {
-  class TuiItemDirective {}
-  TuiItemDirective.ɵfac = function TuiItemDirective_Factory(t) {
-    return new (t || TuiItemDirective)();
-  };
-  TuiItemDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiItemDirective,
-    selectors: [["", "tuiItem", ""]]
-  });
-  return TuiItemDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiItemModule = /*#__PURE__*/(() => {
-  class TuiItemModule {}
-  TuiItemModule.ɵfac = function TuiItemModule_Factory(t) {
-    return new (t || TuiItemModule)();
-  };
-  TuiItemModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiItemModule
-  });
-  TuiItemModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-  return TuiItemModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-cdk-directives-item.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-pipes-replace.js
-
-
-let TuiReplacePipe = /*#__PURE__*/(() => {
-  class TuiReplacePipe {
-    transform(value, search, replaceValue) {
-      var _a;
-      return (_a = value === null || value === void 0 ? void 0 : value.replace(search,
-      // TS bug: https://github.com/microsoft/TypeScript/issues/22378
-      replaceValue)) !== null && _a !== void 0 ? _a : ``;
-    }
-  }
-  TuiReplacePipe.ɵfac = function TuiReplacePipe_Factory(t) {
-    return new (t || TuiReplacePipe)();
-  };
-  TuiReplacePipe.ɵpipe = /* @__PURE__ */core_mjs_["ɵɵdefinePipe"]({
-    name: "tuiReplace",
-    type: TuiReplacePipe,
-    pure: true
-  });
-  return TuiReplacePipe;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiReplacePipeModule = /*#__PURE__*/(() => {
-  class TuiReplacePipeModule {}
-  TuiReplacePipeModule.ɵfac = function TuiReplacePipeModule_Factory(t) {
-    return new (t || TuiReplacePipeModule)();
-  };
-  TuiReplacePipeModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiReplacePipeModule
-  });
-  TuiReplacePipeModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-  return TuiReplacePipeModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-cdk-pipes-replace.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-resizer.js
-
-
-
-
-let taiga_ui_cdk_directives_resizer_TuiResizeableDirective = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
-  class TuiResizeableDirective extends TuiElementDirective {}
-  TuiResizeableDirective.ɵfac = /* @__PURE__ */(() => {
-    let ɵTuiResizeableDirective_BaseFactory;
-    return function TuiResizeableDirective_Factory(t) {
-      return (ɵTuiResizeableDirective_BaseFactory || (ɵTuiResizeableDirective_BaseFactory = i0.ɵɵgetInheritedFactory(TuiResizeableDirective)))(t || TuiResizeableDirective);
-    };
-  })();
-  TuiResizeableDirective.ɵdir = /* @__PURE__ */i0.ɵɵdefineDirective({
-    type: TuiResizeableDirective,
-    selectors: [["", "tuiResizeable", ""]],
-    features: [i0.ɵɵInheritDefinitionFeature]
-  });
-  return TuiResizeableDirective;
-})()));
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-// TODO: Migrate to PointerEvent in 4.0
-let TuiResizerDirective = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
-  class TuiResizerDirective {
-    constructor(resizeable) {
-      this.resizeable = resizeable;
-      this.tuiResizer = [0, 0];
-      this.tuiSizeChange = new EventEmitter();
-      this.x = NaN;
-      this.y = NaN;
-      this.width = 0;
-      this.height = 0;
-    }
-    get cursor() {
-      if (!this.tuiResizer[0]) {
-        return 'ns-resize';
-      }
-      if (!this.tuiResizer[1]) {
-        return 'ew-resize';
-      }
-      if (this.tuiResizer[0] * this.tuiResizer[1] > 0) {
-        return 'nwse-resize';
-      }
-      return 'nesw-resize';
-    }
-    onTouchStart({
-      touches
-    }) {
-      this.onMouseDown(touches[0].clientX, touches[0].clientY);
-    }
-    onMouseDown(x, y) {
-      this.x = x;
-      this.y = y;
-      this.width = this.resizeable.nativeElement.clientWidth;
-      this.height = this.resizeable.nativeElement.clientHeight;
-    }
-    onMouseMove({
-      x,
-      y,
-      buttons
-    }) {
-      if (!buttons) {
-        this.onMouseUp();
-      } else {
-        this.onMove(x, y);
-      }
-    }
-    onTouchMove({
-      touches
-    }) {
-      this.onMove(touches[0].clientX, touches[0].clientY);
-    }
-    onMouseUp() {
-      this.x = NaN;
-    }
-    onMove(x, y) {
-      if (Number.isNaN(this.x)) {
-        return;
-      }
-      const {
-        style
-      } = this.resizeable.nativeElement;
-      const size = [this.width + this.tuiResizer[0] * (x - this.x), this.height + this.tuiResizer[1] * (y - this.y)];
-      if (this.tuiResizer[0]) {
-        style.width = tuiPx(size[0]);
-      }
-      if (this.tuiResizer[1]) {
-        style.height = tuiPx(size[1]);
-      }
-      this.tuiSizeChange.emit(size);
-    }
-  }
-  TuiResizerDirective.ɵfac = function TuiResizerDirective_Factory(t) {
-    return new (t || TuiResizerDirective)(i0.ɵɵdirectiveInject(taiga_ui_cdk_directives_resizer_TuiResizeableDirective));
-  };
-  TuiResizerDirective.ɵdir = /* @__PURE__ */i0.ɵɵdefineDirective({
-    type: TuiResizerDirective,
-    selectors: [["", "tuiResizer", ""]],
-    hostVars: 4,
-    hostBindings: function TuiResizerDirective_HostBindings(rf, ctx) {
-      if (rf & 1) {
-        i0.ɵɵlistener("touchstart.silent.passive", function TuiResizerDirective_touchstart_silent_passive_HostBindingHandler($event) {
-          return ctx.onTouchStart($event);
-        })("mousedown.silent.prevent", function TuiResizerDirective_mousedown_silent_prevent_HostBindingHandler($event) {
-          return ctx.onMouseDown($event.x, $event.y);
-        })("mousemove.silent", function TuiResizerDirective_mousemove_silent_HostBindingHandler($event) {
-          return ctx.onMouseMove($event);
-        }, false, i0.ɵɵresolveDocument)("touchmove.silent", function TuiResizerDirective_touchmove_silent_HostBindingHandler($event) {
-          return ctx.onTouchMove($event);
-        }, false, i0.ɵɵresolveDocument)("mouseup.silent", function TuiResizerDirective_mouseup_silent_HostBindingHandler() {
-          return ctx.onMouseUp();
-        }, false, i0.ɵɵresolveDocument)("touchend.silent", function TuiResizerDirective_touchend_silent_HostBindingHandler() {
-          return ctx.onMouseUp();
-        }, false, i0.ɵɵresolveDocument);
-      }
-      if (rf & 2) {
-        i0.ɵɵstyleProp("touch-action", "none")("cursor", ctx.cursor);
-      }
-    },
-    inputs: {
-      tuiResizer: "tuiResizer"
-    },
-    outputs: {
-      tuiSizeChange: "tuiSizeChange"
-    }
-  });
-  return TuiResizerDirective;
-})()));
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiResizerModule = /*#__PURE__*/(() => {
-  class TuiResizerModule {}
-  TuiResizerModule.ɵfac = function TuiResizerModule_Factory(t) {
-    return new (t || TuiResizerModule)();
-  };
-  TuiResizerModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiResizerModule
-  });
-  TuiResizerModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-  return TuiResizerModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-cdk-directives-resizer.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-color.js
-function tuiHexToRgb(hex) {
-  const matches = hex.replace(`#`, ``).split(``).map((char, _, array) => array.length === 3 ? char + char : char).join(``).match(/.{2}/g);
-  return matches ? matches.map(x => Number.parseInt(x, 16)) : [0, 0, 0];
-}
-function tuiHexToRGBA(hex, alpha) {
-  const [r, g, b, a] = tuiParseHex(hex, alpha);
-  return a < 1 ? `rgba(${r}, ${g}, ${b}, ${a})` : `rgb(${r}, ${g}, ${b})`;
-}
-function tuiIsValidHex(hex) {
-  // eslint-disable-next-line unicorn/no-unsafe-regex
-  return /^#([A-Fa-f0-9]{3,4}){1,2}$/.test(hex);
-}
-const getChunksFromString = (hex, chunkSize) => hex.match(new RegExp(`.{${chunkSize}}`, `g`));
-const convertHexUnitTo256 = hexStr => parseInt(hexStr.repeat(2 / hexStr.length), 16);
-const getAlphaFloat = (a, alpha) => {
-  if (typeof a !== `undefined`) {
-    return Number((a / 255).toFixed(2));
-  }
-  if (typeof alpha !== `number` || alpha < 0 || alpha > 1) {
-    return 1;
-  }
-  return alpha;
-};
-function tuiParseHex(hex, alpha) {
-  var _a;
-  if (!tuiIsValidHex(hex)) {
-    throw new Error(`Invalid HEX`);
-  }
-  const chunkSize = Math.floor((hex.length - 1) / 3);
-  const hexArr = getChunksFromString(hex.slice(1), chunkSize);
-  const [r, g, b, a] = (_a = hexArr === null || hexArr === void 0 ? void 0 : hexArr.map(convertHexUnitTo256)) !== null && _a !== void 0 ? _a : [];
-  const floatAlpha = getAlphaFloat(a, alpha);
-  return [r, g, b, floatAlpha];
-}
-
-/**
- * https://stackoverflow.com/a/54024653/2706426
- */
-function tuiHsvToRgb(h, s, v) {
-  return [hsvToColor(h, s, v, 5), hsvToColor(h, s, v, 3), hsvToColor(h, s, v, 1)];
-}
-function hsvToColor(h, s, v, n) {
-  const k = (n + h / 60) % 6;
-  return Math.round(v - v * s * Math.max(Math.min(k, 4 - k, 1), 0));
-}
-const DEFAULT = (/* unused pure expression or super */ null && ([0, 0, 0, 1]));
-function tuiParseColor(color) {
-  const stripped = color.replace(`#`, ``).replace(`rgba(`, ``).replace(`rgb(`, ``).replace(`)`, ``);
-  const array = stripped.split(`,`).map(item => parseFloat(item));
-  if (array.length === 4) {
-    return array;
-  }
-  if (array.length === 3) {
-    return array.concat(1);
-  }
-  const matches = stripped.match(new RegExp(`(.{${stripped.length / 3}})`, `g`));
-  if (!matches) {
-    return DEFAULT;
-  }
-  const parsed = matches.map(char => parseInt(stripped.length % 2 ? char + char : char, 16));
-  return [parsed[0] || DEFAULT[0], parsed[1] || DEFAULT[1], parsed[2] || DEFAULT[2], parsed[3] === undefined ? DEFAULT[3] : parsed[3]];
-}
-function tuiRgbToHex(r, g, b) {
-  return `#${[r, g, b].map(x => x.toString(16).padStart(2, `0`)).join(``)}`;
-}
-function tuiRgbToHsv(r, g, b) {
-  const v = Math.max(r, g, b);
-  const n = v - Math.min(r, g, b);
-  // eslint-disable-next-line no-nested-ternary
-  const h = n && (v === r ? (g - b) / n : v === g ? 2 + (b - r) / n : 4 + (r - g) / n);
-  return [60 * (h < 0 ? h + 6 : h), v && n / v, v];
-}
-function tuiRgbaToHex(color) {
-  var _a, _b;
-  if (!tuiIsValidRgba(color)) {
-    throw new Error(`Invalid RGBa`);
-  }
-  const rgb = (_a = color.replace(/\s/g, ``)
-  // eslint-disable-next-line unicorn/no-unsafe-regex
-  .match(/^rgba?\((\d+),(\d+),(\d+),?([^,\s)]+)?/i)) !== null && _a !== void 0 ? _a : [];
-  let alpha = ((_b = rgb === null || rgb === void 0 ? void 0 : rgb[4]) !== null && _b !== void 0 ? _b : ``).toString().trim();
-  let hex = rgb ? (rgb[1] | 1 << 8).toString(16).slice(1) + (rgb[2] | 1 << 8).toString(16).slice(1) + (rgb[3] | 1 << 8).toString(16).slice(1) : color;
-  alpha = alpha !== `` ? alpha : 0o1;
-  alpha = (Number(alpha) * 255 | 1 << 8).toString(16).slice(1);
-  hex += alpha;
-  return `#${hex.toUpperCase()}`;
-}
-function tuiIsValidRgba(rgba) {
-  const range = `(\\d|[1-9]\\d|1\\d{2}|2[0-4]\\d|2[0-5]{2})`;
-  const alpha = `([01]|0?\\.\\d+)`;
-  return new RegExp(`^(?:rgb\\(\\s*${range}\\s*,\\s*${range}\\s*,\\s*${range}\\s*\\)|rgba\\(\\s*${range}\\s*,\\s*${range}\\s*,\\s*${range}\\s*,\\s*${alpha}\\s*\\))$`).test(rgba);
-}
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-cdk-utils-color.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-pipes-mapper.js
-
-
-let TuiMapperPipe = /*#__PURE__*/(() => {
-  class TuiMapperPipe {
-    transform(value, mapper, ...args) {
-      return mapper(value, ...args);
-    }
-  }
-  TuiMapperPipe.ɵfac = function TuiMapperPipe_Factory(t) {
-    return new (t || TuiMapperPipe)();
-  };
-  TuiMapperPipe.ɵpipe = /* @__PURE__ */core_mjs_["ɵɵdefinePipe"]({
-    name: "tuiMapper",
-    type: TuiMapperPipe,
-    pure: true
-  });
-  return TuiMapperPipe;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiMapperPipeModule = /*#__PURE__*/(() => {
-  class TuiMapperPipeModule {}
-  TuiMapperPipeModule.ɵfac = function TuiMapperPipeModule_Factory(t) {
-    return new (t || TuiMapperPipeModule)();
-  };
-  TuiMapperPipeModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiMapperPipeModule
-  });
-  TuiMapperPipeModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-  return TuiMapperPipeModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-cdk-pipes-mapper.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-let.js
-var taiga_ui_cdk_directives_let = __webpack_require__(5144);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-tokens.js + 1 modules
-var taiga_ui_core_tokens = __webpack_require__(4862);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-providers.js
-var taiga_ui_core_providers = __webpack_require__(1379);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.3 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(2320);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-components-badge.js
-
-
-
-
-
-
-const _c0 = ["*"];
-let TuiBadgeComponent = /*#__PURE__*/(() => {
-  class TuiBadgeComponent {
-    constructor(mode$) {
-      this.mode$ = mode$;
-      this.size = 'm';
-      this.status = 'default';
-      this.hoverable = false;
-    }
-    get padding() {
-      var _a;
-      if (this.isEmpty) {
-        return 'none';
-      }
-      return (0,taiga_ui_cdk_utils_miscellaneous/* tuiIsNumber */.dt)((_a = this.value) === null || _a === void 0 ? void 0 : _a.valueOf()) ? 'm' : 'l';
-    }
-    get outputValue() {
-      var _a;
-      const value = (_a = this.value) === null || _a === void 0 ? void 0 : _a.valueOf();
-      if ((0,taiga_ui_cdk_utils_miscellaneous/* tuiIsNumber */.dt)(value) && value > 99) {
-        return '99+';
-      }
-      return (0,taiga_ui_cdk_utils_miscellaneous/* tuiIsPresent */.Pc)(this.value) ? String(this.value) : '';
-    }
-    get isEmpty() {
-      return !this.value && this.value !== 0;
-    }
-    titleText({
-      offsetWidth,
-      scrollWidth
-    }) {
-      return offsetWidth < scrollWidth ? this.outputValue : '';
-    }
-  }
-  TuiBadgeComponent.ɵfac = function TuiBadgeComponent_Factory(t) {
-    return new (t || TuiBadgeComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_MODE */.Au));
-  };
-  TuiBadgeComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiBadgeComponent,
-    selectors: [["tui-badge"]],
-    hostVars: 7,
-    hostBindings: function TuiBadgeComponent_HostBindings(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵlistener"]("$.data-mode.attr", function TuiBadgeComponent___data_mode_attr_HostBindingHandler() {
-          return ctx.mode$;
-        });
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵattribute"]("data-size", ctx.size)("data-status", ctx.status)("data-padding", ctx.padding);
-        core_mjs_["ɵɵclassProp"]("_hoverable", ctx.hoverable)("_empty-value", ctx.isEmpty);
-      }
-    },
-    inputs: {
-      value: "value",
-      size: "size",
-      status: "status",
-      hoverable: "hoverable"
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_core_providers/* MODE_PROVIDER */.CV])],
-    ngContentSelectors: _c0,
-    decls: 5,
-    vars: 2,
-    consts: [[1, "t-left-content"], [1, "t-text", 3, "title", "mouseenter"], ["text", ""]],
-    template: function TuiBadgeComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵprojectionDef"]();
-        core_mjs_["ɵɵelementStart"](0, "span", 0);
-        core_mjs_["ɵɵprojection"](1);
-        core_mjs_["ɵɵelementEnd"]();
-        core_mjs_["ɵɵelementStart"](2, "span", 1, 2);
-        core_mjs_["ɵɵlistener"]("mouseenter", function TuiBadgeComponent_Template_span_mouseenter_2_listener() {
-          return 0;
-        });
-        core_mjs_["ɵɵtext"](4);
-        core_mjs_["ɵɵelementEnd"]();
-      }
-      if (rf & 2) {
-        const _r0 = core_mjs_["ɵɵreference"](3);
-        core_mjs_["ɵɵadvance"](2);
-        core_mjs_["ɵɵproperty"]("title", ctx.titleText(_r0));
-        core_mjs_["ɵɵadvance"](2);
-        core_mjs_["ɵɵtextInterpolate1"](" ", ctx.outputValue, "\n");
-      }
-    },
-    styles: ["[_nghost-%COMP%]{transition-property:background-color;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;--left-content-color: currentColor;position:relative;display:inline-flex;font:var(--tui-font-text-s);align-items:center;justify-content:center;box-sizing:border-box;color:var(--tui-base-01);border-radius:6.25rem;white-space:nowrap;overflow:hidden;vertical-align:middle;max-width:100%}[_nghost-%COMP%]:after{transition-property:background;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;position:absolute;top:0;left:0;width:100%;height:100%;content:\"\";box-sizing:border-box;border-radius:inherit;pointer-events:none}._hoverable[_nghost-%COMP%]:hover[data-status=custom]:after, ._hoverable[_nghost-%COMP%]:active[data-status=custom]:after{background-color:var(--tui-clear)}[data-status=primary][_nghost-%COMP%]{background-color:var(--tui-primary);color:var(--tui-primary-text)}[data-status=primary]._hoverable[_nghost-%COMP%]:hover{background-color:var(--tui-primary-hover)}[data-status=primary]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-primary-active)}[data-status=error][_nghost-%COMP%]{--left-content-color: var(--tui-error-fill);background-color:var(--tui-error-bg);color:var(--tui-text-01)}[data-status=error]._hoverable[_nghost-%COMP%]:hover, [data-status=error]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-error-bg-hover)}[data-status=error][data-mode=onDark][_nghost-%COMP%]{background-color:var(--tui-error-bg-night);color:var(--tui-text-01-night)}[data-status=error][data-mode=onDark]._hoverable[_nghost-%COMP%]:hover, [data-status=error][data-mode=onDark]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-error-bg-night-hover)}[data-status=success][_nghost-%COMP%]{--left-content-color: var(--tui-success-fill);background-color:var(--tui-success-bg);color:var(--tui-text-01)}[data-status=success]._hoverable[_nghost-%COMP%]:hover, [data-status=success]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-success-bg-hover)}[data-status=success][data-mode=onDark][_nghost-%COMP%]{background-color:var(--tui-success-bg-night);color:var(--tui-text-01-night)}[data-status=success][data-mode=onDark]._hoverable[_nghost-%COMP%]:hover, [data-status=success][data-mode=onDark]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-success-bg-night-hover)}[data-status=warning][_nghost-%COMP%]{--left-content-color: var(--tui-warning-fill);background-color:var(--tui-warning-bg);color:var(--tui-text-01)}[data-status=warning]._hoverable[_nghost-%COMP%]:hover, [data-status=warning]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-warning-bg-hover)}[data-status=warning][data-mode=onDark][_nghost-%COMP%]{background-color:var(--tui-warning-bg-night);color:var(--tui-text-01-night)}[data-status=warning][data-mode=onDark]._hoverable[_nghost-%COMP%]:hover, [data-status=warning][data-mode=onDark]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-warning-bg-night-hover)}[data-status=info][_nghost-%COMP%]{--left-content-color: var(--tui-info-fill);background-color:var(--tui-info-bg);color:var(--tui-text-01)}[data-status=info]._hoverable[_nghost-%COMP%]:hover, [data-status=info]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-info-bg-hover)}[data-status=info][data-mode=onDark][_nghost-%COMP%]{background-color:var(--tui-info-bg-night);color:var(--tui-text-01-night)}[data-status=info][data-mode=onDark]._hoverable[_nghost-%COMP%]:hover, [data-status=info][data-mode=onDark]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-info-bg-night-hover)}[data-status=neutral][_nghost-%COMP%]{--left-content-color: var(--tui-neutral-fill);background-color:var(--tui-neutral-bg);color:var(--tui-text-01)}[data-status=neutral]._hoverable[_nghost-%COMP%]:hover, [data-status=neutral]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-neutral-bg-hover)}[data-status=neutral][data-mode=onDark][_nghost-%COMP%]{background-color:var(--tui-neutral-bg-night);color:var(--tui-text-01-night)}[data-status=neutral][data-mode=onDark]._hoverable[_nghost-%COMP%]:hover, [data-status=neutral][data-mode=onDark]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-neutral-bg-night-hover)}[data-status=default][_nghost-%COMP%]{background-color:var(--tui-base-06)}[data-status=default][_nghost-%COMP%]:not([data-mode])._hoverable:hover{background-color:var(--tui-base-07)}[data-status=default][_nghost-%COMP%]:not([data-mode])._hoverable:active{background-color:var(--tui-base-08)}[data-status=default][data-mode=onDark][_nghost-%COMP%]{background-color:var(--tui-clear-inverse-hover)}[data-status=default][data-mode=onDark]._hoverable[_nghost-%COMP%]:hover{background-color:var(--tui-clear-inverse-active)}[data-status=default][data-mode=onDark]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-clear-inverse-active)}[data-status=default][data-mode=onDark][_nghost-%COMP%]:focus:after{border:2px solid var(--tui-base-01)}[data-status=default][data-mode=onLight][_nghost-%COMP%]{background-color:var(--tui-clear);color:var(--tui-text-01)}[data-status=default][data-mode=onLight]._hoverable[_nghost-%COMP%]:hover{background-color:var(--tui-clear-hover)}[data-status=default][data-mode=onLight]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-clear-active)}._hoverable[_nghost-%COMP%]{cursor:pointer}[data-padding=m][_nghost-%COMP%]{padding:0 .5rem}[data-padding=m][data-size=xs][_nghost-%COMP%]{padding:0 .25rem}[data-padding=m][data-size=s][_nghost-%COMP%]{padding:0 .375rem}[data-padding=m][data-size=l][_nghost-%COMP%]{padding:0 .625rem}[data-padding=l][_nghost-%COMP%]{padding:0 .625rem}[data-padding=l][data-size=xs][_nghost-%COMP%]{padding:0 .375rem}[data-padding=l][data-size=s][_nghost-%COMP%]{padding:0 .5rem}[data-padding=l][data-size=l][_nghost-%COMP%]{padding:0 .75rem}[data-size=xs][_nghost-%COMP%]{font:var(--tui-font-text-xs);height:1rem;min-width:1rem}[data-size=xs][_nghost-%COMP%]   .t-left-content[_ngcontent-%COMP%]:before{width:.34375rem;height:.34375rem}[data-size=s][_nghost-%COMP%]{font:var(--tui-font-text-xs);height:1.25rem;min-width:1.25rem}[data-size=s][_nghost-%COMP%]   .t-left-content[_ngcontent-%COMP%]:before{width:.25rem;height:.25rem}[data-size=m][_nghost-%COMP%]{height:var(--tui-height-xs);line-height:var(--tui-height-xs);min-width:var(--tui-height-xs)}[data-size=l][_nghost-%COMP%]{height:var(--tui-height-s);line-height:var(--tui-height-s);min-width:var(--tui-height-s)}[data-size=l][_nghost-%COMP%]   .t-left-content[_ngcontent-%COMP%]:before{margin:0 .5rem 0 0;width:.5rem;height:.5rem}._empty-value[_nghost-%COMP%]   .t-left-content[_ngcontent-%COMP%]{margin:0 -.25rem}._empty-value[_nghost-%COMP%]   .t-left-content[_ngcontent-%COMP%]:before{margin:0}.t-left-content[_ngcontent-%COMP%]{display:none;color:var(--left-content-color);line-height:0}.t-left-content[_ngcontent-%COMP%]:not(:empty){display:block;margin-left:-.25rem}.t-left-content[_ngcontent-%COMP%]:not(:empty):before{content:none}[data-status=error][_nghost-%COMP%]   .t-left-content[_ngcontent-%COMP%], [data-status=success][_nghost-%COMP%]   .t-left-content[_ngcontent-%COMP%], [data-status=warning][_nghost-%COMP%]   .t-left-content[_ngcontent-%COMP%], [data-status=info][_nghost-%COMP%]   .t-left-content[_ngcontent-%COMP%], [data-status=neutral][_nghost-%COMP%]   .t-left-content[_ngcontent-%COMP%]{display:block}.t-left-content[_ngcontent-%COMP%]:before{content:\"\";display:block;background:currentColor;margin:0 .375rem 0 0;width:.375rem;height:.375rem;border-radius:100%}.t-text[_ngcontent-%COMP%]{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}"],
-    changeDetection: 0
-  });
-  return TuiBadgeComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiBadgeModule = /*#__PURE__*/(() => {
-  class TuiBadgeModule {}
-  TuiBadgeModule.ɵfac = function TuiBadgeModule_Factory(t) {
-    return new (t || TuiBadgeModule)();
-  };
-  TuiBadgeModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiBadgeModule
-  });
-  TuiBadgeModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-    imports: [[common_mjs_.CommonModule]]
-  });
-  return TuiBadgeModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-kit-components-badge.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-abstract.js
-var taiga_ui_core_abstract = __webpack_require__(9315);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-obscured.js
-
-
-
-
-
-
-
-
-
-
-/**
- * Directive that monitors element visibility
- */
-let TuiObscuredDirective = /*#__PURE__*/(() => {
-  class TuiObscuredDirective {
-    constructor(activeZone, obscured$) {
-      this.enabled$ = new internal_Subject/* Subject */.x();
-      const mapped$ = obscured$.pipe((0,operators_map/* map */.U)(obscuredBy => !!obscuredBy && (!activeZone || !obscuredBy.length || obscuredBy.every(element => !activeZone.contains(element)))));
-      this.tuiObscured = this.enabled$.pipe((0,taiga_ui_cdk_observables/* tuiIfMap */.Xd)(() => mapped$));
-    }
-    set tuiObscuredEnabled(enabled) {
-      this.enabled$.next(enabled);
-    }
-  }
-  TuiObscuredDirective.ɵfac = function TuiObscuredDirective_Factory(t) {
-    return new (t || TuiObscuredDirective)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_directives_active_zone_TuiActiveZoneDirective, 8), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiObscuredService */.AQ, 2));
-  };
-  TuiObscuredDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiObscuredDirective,
-    selectors: [["", "tuiObscured", ""]],
-    inputs: {
-      tuiObscuredEnabled: "tuiObscuredEnabled"
-    },
-    outputs: {
-      tuiObscured: "tuiObscured"
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiObscuredService */.AQ, taiga_ui_cdk_services/* TuiParentsScrollService */.b0, taiga_ui_cdk_services/* TuiDestroyService */.a3])]
-  });
-  return TuiObscuredDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiObscuredModule = /*#__PURE__*/(() => {
-  class TuiObscuredModule {}
-  TuiObscuredModule.ɵfac = function TuiObscuredModule_Factory(t) {
-    return new (t || TuiObscuredModule)();
-  };
-  TuiObscuredModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiObscuredModule
-  });
-  TuiObscuredModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-  return TuiObscuredModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-cdk-directives-obscured.js.map
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-constants.js
+var taiga_ui_cdk_constants = __webpack_require__(6141);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-dom.js
 var taiga_ui_cdk_utils_dom = __webpack_require__(7995);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-focus.js
-var taiga_ui_cdk_utils_focus = __webpack_require__(756);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/tap.js
-var tap = __webpack_require__(9397);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-overscroll.js
-
-
-
-
-
-
-
-
-/**
- * Directive to isolate scrolling, i.e. prevent body scroll behind modal dialog
- */
-let TuiOverscrollDirective = /*#__PURE__*/(() => {
-  class TuiOverscrollDirective {
-    constructor({
-      nativeElement
-    }, zone, destroy$) {
-      this.mode = 'scroll';
-      (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, 'wheel', {
-        passive: false
-      }).pipe((0,filter/* filter */.h)(() => this.enabled), (0,taiga_ui_cdk_observables/* tuiZonefree */.fL)(zone), (0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(event => {
-        this.processEvent(event, !!event.deltaY, event.deltaY ? event.deltaY < 0 : event.deltaX < 0);
-      });
-      (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, 'touchstart', {
-        passive: true
-      }).pipe((0,operators_switchMap/* switchMap */.w)(({
-        touches
-      }) => {
-        let {
-          clientX,
-          clientY
-        } = touches[0];
-        let deltaX = 0;
-        let deltaY = 0;
-        let vertical;
-        return (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, 'touchmove', {
-          passive: false
-        }).pipe((0,filter/* filter */.h)(() => this.enabled), (0,tap/* tap */.b)(event => {
-          // We have to have it in tap instead of subscribe due to variables in closure
-          const changedTouch = event.changedTouches[0];
-          deltaX = clientX - changedTouch.clientX;
-          deltaY = clientY - changedTouch.clientY;
-          clientX = changedTouch.clientX;
-          clientY = changedTouch.clientY;
-          if (vertical === undefined) {
-            vertical = Math.abs(deltaY) > Math.abs(deltaX);
-          }
-          this.processEvent(event, vertical, vertical ? deltaY < 0 : deltaX < 0);
-        }));
-      }), (0,taiga_ui_cdk_observables/* tuiZonefree */.fL)(zone), (0,takeUntil/* takeUntil */.R)(destroy$)).subscribe();
-    }
-    get enabled() {
-      return this.mode !== 'none';
-    }
-    get overscrollBehavior() {
-      return this.enabled ? 'contain' : null;
-    }
-    processEvent(event, vertical, negative) {
-      var _a;
-      const {
-        target,
-        currentTarget,
-        cancelable
-      } = event;
-      if (!cancelable || !(0,taiga_ui_cdk_utils_dom/* tuiIsElement */.ve)(target) || ((_a = target) === null || _a === void 0 ? void 0 : _a.type) === 'range') {
-        return;
-      }
-      // This is all what's needed in Chrome/Firefox thanks to CSS overscroll-behavior
-      if (this.mode === 'all' && (vertical && !currentTarget.contains((0,taiga_ui_cdk_utils_dom/* tuiGetScrollParent */.Hs)(target)) || !vertical && !currentTarget.contains((0,taiga_ui_cdk_utils_dom/* tuiGetScrollParent */.Hs)(target, false)))) {
-        event.preventDefault();
-        return;
-      }
-      // This is Safari/IE/Edge fallback
-      if (vertical && (negative && !(0,taiga_ui_cdk_utils_dom/* tuiCanScroll */.ty)(target, currentTarget, true, false) || !negative && !(0,taiga_ui_cdk_utils_dom/* tuiCanScroll */.ty)(target, currentTarget, true, true))) {
-        event.preventDefault();
-        return;
-      }
-      if (!vertical && (negative && !(0,taiga_ui_cdk_utils_dom/* tuiCanScroll */.ty)(target, currentTarget, false, false) || !negative && !(0,taiga_ui_cdk_utils_dom/* tuiCanScroll */.ty)(target, currentTarget, false, true))) {
-        event.preventDefault();
-      }
-    }
-  }
-  TuiOverscrollDirective.ɵfac = function TuiOverscrollDirective_Factory(t) {
-    return new (t || TuiOverscrollDirective)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.NgZone), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2));
-  };
-  TuiOverscrollDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiOverscrollDirective,
-    selectors: [["", "tuiOverscroll", ""]],
-    hostVars: 2,
-    hostBindings: function TuiOverscrollDirective_HostBindings(rf, ctx) {
-      if (rf & 2) {
-        core_mjs_["ɵɵstyleProp"]("overscroll-behavior", ctx.overscrollBehavior);
-      }
-    },
-    inputs: {
-      mode: ["tuiOverscroll", "mode"]
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3])]
-  });
-  return TuiOverscrollDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiOverscrollModule = /*#__PURE__*/(() => {
-  class TuiOverscrollModule {}
-  TuiOverscrollModule.ɵfac = function TuiOverscrollModule_Factory(t) {
-    return new (t || TuiOverscrollModule)();
-  };
-  TuiOverscrollModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiOverscrollModule
-  });
-  TuiOverscrollModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-  return TuiOverscrollModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-cdk-directives-overscroll.js.map
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Observable.js
+var Observable = __webpack_require__(5592);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-hovered.js
 
 
@@ -2242,99 +1093,31 @@ let TuiHoveredModule = /*#__PURE__*/(() => {
 
 
 //# sourceMappingURL=taiga-ui-cdk-directives-hovered.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-abstract.js
-var taiga_ui_cdk_abstract = __webpack_require__(2461);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-components-dropdown-host.js
-
-
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-math.js
+var taiga_ui_cdk_utils_math = __webpack_require__(6551);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-classes.js
+var taiga_ui_cdk_classes = __webpack_require__(7178);
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-format.js
 
 
 /**
- * Service for displaying dropdown portals
+ * Adds 'px' to the number and turns it into a string
  */
-const taiga_ui_cdk_components_dropdown_host_c0 = ["*"];
-let TuiDropdownPortalService = /*#__PURE__*/(() => {
-  class TuiDropdownPortalService extends taiga_ui_cdk_abstract/* AbstractTuiPortalService */.N9 {}
-  TuiDropdownPortalService.ɵfac = /* @__PURE__ */(() => {
-    let ɵTuiDropdownPortalService_BaseFactory;
-    return function TuiDropdownPortalService_Factory(t) {
-      return (ɵTuiDropdownPortalService_BaseFactory || (ɵTuiDropdownPortalService_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiDropdownPortalService)))(t || TuiDropdownPortalService);
-    };
-  })();
-  TuiDropdownPortalService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-    token: TuiDropdownPortalService,
-    factory: TuiDropdownPortalService.ɵfac,
-    providedIn: `root`
-  });
-  return TuiDropdownPortalService;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Host element for dynamically created portals, for example using {@link TuiDropdownDirective}.
- */
-let TuiDropdownHostComponent = /*#__PURE__*/(() => {
-  class TuiDropdownHostComponent extends taiga_ui_cdk_abstract/* AbstractTuiPortalHostComponent */.Er {}
-  TuiDropdownHostComponent.ɵfac = /* @__PURE__ */(() => {
-    let ɵTuiDropdownHostComponent_BaseFactory;
-    return function TuiDropdownHostComponent_Factory(t) {
-      return (ɵTuiDropdownHostComponent_BaseFactory || (ɵTuiDropdownHostComponent_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiDropdownHostComponent)))(t || TuiDropdownHostComponent);
-    };
-  })();
-  TuiDropdownHostComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiDropdownHostComponent,
-    selectors: [["tui-dropdown-host"]],
-    features: [core_mjs_["ɵɵProvidersFeature"]([{
-      provide: taiga_ui_cdk_abstract/* AbstractTuiPortalService */.N9,
-      useExisting: TuiDropdownPortalService
-    },
-    // TODO: Remove in 4.0
-    {
-      provide: taiga_ui_cdk_abstract/* AbstractTuiPortalHostComponent */.Er,
-      useExisting: TuiDropdownHostComponent
-    }]), core_mjs_["ɵɵInheritDefinitionFeature"]],
-    ngContentSelectors: taiga_ui_cdk_components_dropdown_host_c0,
-    decls: 3,
-    vars: 0,
-    consts: [["viewContainer", ""]],
-    template: function TuiDropdownHostComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵprojectionDef"]();
-        core_mjs_["ɵɵprojection"](0);
-        core_mjs_["ɵɵelementContainer"](1, null, 0);
-      }
-    },
-    styles: ["[_nghost-%COMP%]{position:relative;z-index:0;display:block;height:100%}[_nghost-%COMP%]:before{content:\"\";display:block;overflow:hidden}.t-position-fixed-offset[_ngcontent-%COMP%]{position:fixed;left:0;top:0;pointer-events:none;visibility:hidden;width:100%;height:100%}"],
-    changeDetection: 0
-  });
-  return TuiDropdownHostComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiDropdownHostModule = /*#__PURE__*/(() => {
-  class TuiDropdownHostModule {}
-  TuiDropdownHostModule.ɵfac = function TuiDropdownHostModule_Factory(t) {
-    return new (t || TuiDropdownHostModule)();
-  };
-  TuiDropdownHostModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiDropdownHostModule
-  });
-  TuiDropdownHostModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-  return TuiDropdownHostModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
+function taiga_ui_cdk_utils_format_tuiPx(value) {
+  ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert(Number.isFinite(value), `Value must be finite number`);
+  return `${value}px`;
+}
 
 /**
  * Generated bundle index. Do not edit.
  */
 
 
-//# sourceMappingURL=taiga-ui-cdk-components-dropdown-host.js.map
+//# sourceMappingURL=taiga-ui-cdk-utils-format.js.map
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-focus.js
+var taiga_ui_cdk_utils_focus = __webpack_require__(756);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-abstract.js
+var taiga_ui_core_abstract = __webpack_require__(9315);
 // EXTERNAL MODULE: ./node_modules/@angular/animations/fesm2022/animations.mjs
 var animations = __webpack_require__(6825);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-animations.js
@@ -2610,18 +1393,2293 @@ const tuiSlideInBottomList = (0,animations/* trigger */.X$)(`tuiSlideInBottomLis
 
 
 //# sourceMappingURL=taiga-ui-core-animations.js.map
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-directives-mode.js
+var taiga_ui_core_directives_mode = __webpack_require__(6371);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-services.js
 var taiga_ui_core_services = __webpack_require__(8542);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/delay.js + 1 modules
-var delay = __webpack_require__(932);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-utils-dom.js
-var taiga_ui_core_utils_dom = __webpack_require__(2103);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-tokens.js + 1 modules
+var taiga_ui_core_tokens = __webpack_require__(4862);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-utils-miscellaneous.js
 var taiga_ui_core_utils_miscellaneous = __webpack_require__(5863);
 // EXTERNAL MODULE: ./node_modules/@tinkoff/ng-polymorpheus/fesm2015/tinkoff-ng-polymorpheus.js
 var tinkoff_ng_polymorpheus = __webpack_require__(2549);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/delay.js + 1 modules
+var delay = __webpack_require__(932);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/repeat.js
+var repeat = __webpack_require__(7997);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/tap.js
+var tap = __webpack_require__(9397);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/lift.js
+var lift = __webpack_require__(9360);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/noop.js
+var noop = __webpack_require__(2420);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/OperatorSubscriber.js
+var OperatorSubscriber = __webpack_require__(8251);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/innerFrom.js
+var innerFrom = __webpack_require__(4829);
+;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/operators/debounce.js
+
+
+
+
+function debounce(durationSelector) {
+  return (0,lift/* operate */.e)((source, subscriber) => {
+    let hasValue = false;
+    let lastValue = null;
+    let durationSubscriber = null;
+    const emit = () => {
+      durationSubscriber === null || durationSubscriber === void 0 ? void 0 : durationSubscriber.unsubscribe();
+      durationSubscriber = null;
+      if (hasValue) {
+        hasValue = false;
+        const value = lastValue;
+        lastValue = null;
+        subscriber.next(value);
+      }
+    };
+    source.subscribe((0,OperatorSubscriber/* createOperatorSubscriber */.x)(subscriber, value => {
+      durationSubscriber === null || durationSubscriber === void 0 ? void 0 : durationSubscriber.unsubscribe();
+      hasValue = true;
+      lastValue = value;
+      durationSubscriber = (0,OperatorSubscriber/* createOperatorSubscriber */.x)(subscriber, emit, noop/* noop */.Z);
+      (0,innerFrom/* innerFrom */.Xf)(durationSelector(value)).subscribe(durationSubscriber);
+    }, () => {
+      emit();
+      subscriber.complete();
+    }, undefined, () => {
+      lastValue = durationSubscriber = null;
+    }));
+  });
+}
+//# sourceMappingURL=debounce.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/of.js
 var of = __webpack_require__(2096);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/ReplaySubject.js
+var ReplaySubject = __webpack_require__(7328);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.3 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(2320);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-constants.js
+var taiga_ui_core_constants = __webpack_require__(8103);
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-directives-hint.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * A component to display a hint
+ */
+function TuiHintComponent_span_0_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelement"](0, "span", 1);
+  }
+  if (rf & 2) {
+    const text_r1 = ctx.polymorpheusOutlet;
+    core_mjs_["ɵɵproperty"]("innerHTML", text_r1, core_mjs_["ɵɵsanitizeHtml"]);
+  }
+}
+const TUI_HINT_COMPONENT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => TuiHintComponent);
+
+/** Default values for hint options */
+const TUI_HINT_DEFAULT_OPTIONS = {
+  direction: 'bottom-left',
+  showDelay: 500,
+  hideDelay: 200,
+  appearance: '',
+  icon: 'tuiIconHelpCircle'
+};
+/**
+ * Default parameters for hint directive
+ */
+const TUI_HINT_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_HINT_DEFAULT_OPTIONS);
+const tuiHintOptionsProvider = override => ({
+  provide: TUI_HINT_OPTIONS,
+  deps: [[new Optional(), TuiHintOptionsDirective], [new Optional(), new SkipSelf(), TUI_HINT_OPTIONS]],
+  useFactory: tuiOverrideOptions(override, TUI_HINT_DEFAULT_OPTIONS)
+});
+let TuiHintOptionsDirective = /*#__PURE__*/(() => {
+  class TuiHintOptionsDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {
+    constructor(options) {
+      super();
+      this.options = options;
+      this.direction = this.options.direction;
+      this.appearance = this.options.appearance;
+      this.showDelay = this.options.showDelay;
+      this.hideDelay = this.options.hideDelay;
+      this.icon = this.options.icon;
+    }
+  }
+  TuiHintOptionsDirective.ɵfac = function TuiHintOptionsDirective_Factory(t) {
+    return new (t || TuiHintOptionsDirective)(core_mjs_["ɵɵdirectiveInject"](TUI_HINT_OPTIONS, 4));
+  };
+  TuiHintOptionsDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiHintOptionsDirective,
+    selectors: [["", "tuiHintContent", ""]],
+    inputs: {
+      content: ["tuiHintContent", "content"],
+      direction: ["tuiHintDirection", "direction"],
+      appearance: ["tuiHintAppearance", "appearance"],
+      showDelay: ["tuiHintShowDelay", "showDelay"],
+      hideDelay: ["tuiHintHideDelay", "hideDelay"]
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([{
+      provide: TUI_HINT_OPTIONS,
+      useExisting: (0,core_mjs_.forwardRef)(() => TuiHintOptionsDirective)
+    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
+  return TuiHintOptionsDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiHintDirective = /*#__PURE__*/(() => {
+  class TuiHintDirective {
+    constructor(el, component, hintService, options, activeZone) {
+      this.el = el;
+      this.component = component;
+      this.hintService = hintService;
+      this.options = options;
+      this.activeZone = activeZone;
+      this.tuiHintAppearance = null;
+      this.type = 'hint';
+    }
+    get appearance() {
+      var _a;
+      return (_a = this.tuiHintAppearance) !== null && _a !== void 0 ? _a : this.options.appearance;
+    }
+    ngOnChanges() {
+      if (!this.content) {
+        this.toggle(false);
+      }
+    }
+    ngOnDestroy() {
+      this.toggle(false);
+    }
+    getClientRect() {
+      return this.el.nativeElement.getBoundingClientRect();
+    }
+    toggle(show) {
+      if (show && this.content) {
+        this.hintService.add(this);
+      } else {
+        this.hintService.remove(this);
+      }
+    }
+  }
+  TuiHintDirective.ɵfac = function TuiHintDirective_Factory(t) {
+    return new (t || TuiHintDirective)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](tinkoff_ng_polymorpheus/* PolymorpheusComponent */.Al), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiHintService */.BN), core_mjs_["ɵɵdirectiveInject"](TUI_HINT_OPTIONS), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_directives_active_zone_TuiActiveZoneDirective, 8));
+  };
+  TuiHintDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiHintDirective,
+    selectors: [["", "tuiHint", "", 5, "ng-container"]],
+    inputs: {
+      content: ["tuiHint", "content"],
+      context: ["tuiHintContext", "context"],
+      tuiHintAppearance: "tuiHintAppearance"
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_abstract/* tuiAsRectAccessor */.Ic)(TuiHintDirective), (0,taiga_ui_core_abstract/* tuiAsVehicle */.Fe)(TuiHintDirective), {
+      provide: tinkoff_ng_polymorpheus/* PolymorpheusComponent */.Al,
+      deps: [TUI_HINT_COMPONENT, core_mjs_.INJECTOR],
+      useClass: tinkoff_ng_polymorpheus/* PolymorpheusComponent */.Al
+    }]), core_mjs_["ɵɵNgOnChangesFeature"]]
+  });
+  return TuiHintDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/* eslint-disable rxjs/no-unsafe-takeuntil */
+let TuiHintHoverDirective = /*#__PURE__*/(() => {
+  class TuiHintHoverDirective extends taiga_ui_core_abstract/* TuiDriver */.kk {
+    constructor(hovered$, options, el) {
+      super(subscriber => this.stream$.subscribe(subscriber));
+      this.hovered$ = hovered$;
+      this.options = options;
+      this.el = el;
+      this.visible = false;
+      this.toggle$ = new internal_Subject/* Subject */.x();
+      this.stream$ = (0,merge/* merge */.T)(this.toggle$.pipe((0,operators_switchMap/* switchMap */.w)(visible => (0,of.of)(visible).pipe((0,delay/* delay */.g)(visible ? 0 : this.hideDelay))), (0,takeUntil/* takeUntil */.R)(this.hovered$), (0,repeat/* repeat */.r)()), this.hovered$.pipe((0,operators_switchMap/* switchMap */.w)(visible => (0,of.of)(visible).pipe((0,delay/* delay */.g)(visible ? this.showDelay : this.hideDelay))), (0,takeUntil/* takeUntil */.R)(this.toggle$), (0,repeat/* repeat */.r)())).pipe((0,filter/* filter */.h)(() => this.enabled), (0,operators_map/* map */.U)(value => value && !(0,taiga_ui_core_utils_miscellaneous/* tuiIsObscured */.mn)(this.el.nativeElement)), (0,tap/* tap */.b)(visible => {
+        this.visible = visible;
+      }));
+      this.showDelay = this.options.showDelay;
+      this.hideDelay = this.options.hideDelay;
+      this.type = 'hint';
+      this.enabled = true;
+    }
+    toggle(visible = !this.visible) {
+      this.toggle$.next(visible);
+    }
+  }
+  TuiHintHoverDirective.ɵfac = function TuiHintHoverDirective_Factory(t) {
+    return new (t || TuiHintHoverDirective)(core_mjs_["ɵɵdirectiveInject"](TuiHoveredService), core_mjs_["ɵɵdirectiveInject"](TUI_HINT_OPTIONS), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef));
+  };
+  TuiHintHoverDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiHintHoverDirective,
+    selectors: [["", "tuiHint", "", 5, "ng-container"]],
+    inputs: {
+      showDelay: ["tuiHintShowDelay", "showDelay"],
+      hideDelay: ["tuiHintHideDelay", "hideDelay"]
+    },
+    exportAs: ["tuiHintHover"],
+    features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_abstract/* tuiAsDriver */.UK)(TuiHintHoverDirective), TuiHoveredService]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
+  return TuiHintHoverDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiHintPointerDirective = /*#__PURE__*/(() => {
+  class TuiHintPointerDirective extends TuiHintHoverDirective {
+    constructor() {
+      super(...arguments);
+      this.currentRect = taiga_ui_cdk_constants/* EMPTY_CLIENT_RECT */.Jy;
+    }
+    onMove({
+      clientX,
+      clientY
+    }) {
+      this.currentRect = (0,taiga_ui_cdk_utils_dom/* tuiPointToClientRect */.dD)(clientX, clientY);
+    }
+    getClientRect() {
+      return this.currentRect;
+    }
+  }
+  TuiHintPointerDirective.ɵfac = /* @__PURE__ */(() => {
+    let ɵTuiHintPointerDirective_BaseFactory;
+    return function TuiHintPointerDirective_Factory(t) {
+      return (ɵTuiHintPointerDirective_BaseFactory || (ɵTuiHintPointerDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiHintPointerDirective)))(t || TuiHintPointerDirective);
+    };
+  })();
+  TuiHintPointerDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiHintPointerDirective,
+    selectors: [["", "tuiHint", "", "tuiHintPointer", ""]],
+    hostBindings: function TuiHintPointerDirective_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("mousemove.silent", function TuiHintPointerDirective_mousemove_silent_HostBindingHandler($event) {
+          return ctx.onMove($event);
+        });
+      }
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_abstract/* tuiAsRectAccessor */.Ic)(TuiHintPointerDirective), (0,taiga_ui_core_abstract/* tuiAsDriver */.UK)(TuiHintPointerDirective)]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
+  return TuiHintPointerDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+const GAP = 4;
+let TuiHintComponent = /*#__PURE__*/(() => {
+  class TuiHintComponent {
+    constructor(hovered$, position$, destroy$, animation, pointer, accessor, el, polymorpheus, hover, mode, visualViewportService, viewport) {
+      var _a;
+      this.animation = animation;
+      this.pointer = pointer;
+      this.accessor = accessor;
+      this.el = el;
+      this.polymorpheus = polymorpheus;
+      this.hover = hover;
+      this.mode = mode;
+      this.visualViewportService = visualViewportService;
+      this.viewport = viewport;
+      this.appearance = this.polymorpheus.$implicit.appearance || ((_a = this.mode) === null || _a === void 0 ? void 0 : _a.mode);
+      position$.pipe((0,operators_map/* map */.U)(point => this.visualViewportService.correct(point)), (0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(([top, left]) => {
+        this.update(top, left);
+      });
+      hovered$.pipe((0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(hover => this.hover.toggle(hover));
+    }
+    get content() {
+      return this.polymorpheus.$implicit.content;
+    }
+    get context() {
+      return this.polymorpheus.$implicit.context;
+    }
+    onClick(target) {
+      if (!this.el.nativeElement.contains(target) && !this.hover.el.nativeElement.contains(target) || (0,taiga_ui_core_utils_miscellaneous/* tuiIsObscured */.mn)(this.hover.el.nativeElement)) {
+        this.hover.toggle(false);
+      }
+    }
+    update(top, left) {
+      const {
+        height,
+        width
+      } = this.el.nativeElement.getBoundingClientRect();
+      const {
+        style
+      } = this.el.nativeElement;
+      const rect = this.accessor.getClientRect();
+      const viewport = this.viewport.getClientRect();
+      if (rect === taiga_ui_cdk_constants/* EMPTY_CLIENT_RECT */.Jy) {
+        return;
+      }
+      const safeLeft = (0,taiga_ui_cdk_utils_math/* tuiClamp */.Ki)(left, GAP, viewport.width - width - GAP);
+      const [beakTop, beakLeft] = this.visualViewportService.correct([rect.top + rect.height / 2 - top, rect.left + rect.width / 2 - safeLeft]);
+      style.top = taiga_ui_cdk_utils_format_tuiPx(top);
+      style.left = taiga_ui_cdk_utils_format_tuiPx(safeLeft);
+      style.setProperty('--top', taiga_ui_cdk_utils_format_tuiPx((0,taiga_ui_cdk_utils_math/* tuiClamp */.Ki)(beakTop, 0.5, height - 1)));
+      style.setProperty('--left', taiga_ui_cdk_utils_format_tuiPx((0,taiga_ui_cdk_utils_math/* tuiClamp */.Ki)(beakLeft, 0.5, width - 1)));
+    }
+  }
+  TuiHintComponent.ɵfac = function TuiHintComponent_Factory(t) {
+    return new (t || TuiHintComponent)(core_mjs_["ɵɵdirectiveInject"](TuiHoveredService), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiPositionService */.KG), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_ANIMATION_OPTIONS */.Pw), core_mjs_["ɵɵdirectiveInject"](TuiHintPointerDirective, 8), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_abstract/* TuiRectAccessor */.O4), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](tinkoff_ng_polymorpheus/* POLYMORPHEUS_CONTEXT */.yf), core_mjs_["ɵɵdirectiveInject"](TuiHintHoverDirective), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_directives_mode/* TuiModeDirective */.w, 8), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiVisualViewportService */.Lp), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_VIEWPORT */.EO));
+  };
+  TuiHintComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiHintComponent,
+    selectors: [["tui-hint"]],
+    hostVars: 4,
+    hostBindings: function TuiHintComponent_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("click", function TuiHintComponent_click_HostBindingHandler($event) {
+          return ctx.onClick($event.target);
+        }, false, core_mjs_["ɵɵresolveDocument"]);
+      }
+      if (rf & 2) {
+        core_mjs_["ɵɵattribute"]("data-appearance", ctx.appearance);
+        core_mjs_["ɵɵsyntheticHostProperty"]("@tuiFadeIn", ctx.animation);
+        core_mjs_["ɵɵclassProp"]("_untouchable", ctx.pointer);
+      }
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3, taiga_ui_core_services/* TuiPositionService */.KG, TuiHoveredService, (0,taiga_ui_core_abstract/* tuiPositionAccessorFor */.ei)('hint'), (0,taiga_ui_core_abstract/* tuiRectAccessorFor */.Wk)('hint', TuiHintDirective)])],
+    decls: 1,
+    vars: 2,
+    consts: [[3, "innerHTML", 4, "polymorpheusOutlet", "polymorpheusOutletContext"], [3, "innerHTML"]],
+    template: function TuiHintComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵtemplate"](0, TuiHintComponent_span_0_Template, 1, 1, "span", 0);
+      }
+      if (rf & 2) {
+        core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx.content)("polymorpheusOutletContext", ctx.context);
+      }
+    },
+    dependencies: [tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li],
+    styles: ["[_nghost-%COMP%]{position:absolute;max-width:18rem;min-height:var(--tui-height-m);padding:.75rem 1rem;background:var(--tui-primary);border-radius:var(--tui-radius-l);color:var(--tui-primary-text);box-sizing:border-box;font:var(--tui-font-text-s);white-space:pre-line;word-wrap:break-word}[_nghost-%COMP%]:before{content:\"\";position:absolute;top:var(--top);left:var(--left);width:.5rem;height:.5rem;border-radius:.125rem;box-sizing:border-box;background:inherit;transform:translate(-50%,-50%) rotate(45deg)}[data-appearance=error][_nghost-%COMP%]{background:var(--tui-error-fill)}[data-appearance=onDark][_nghost-%COMP%]{background:var(--tui-elevation-02);color:var(--tui-text-01);filter:drop-shadow(0 0 .125rem rgba(0,0,0,.16)) drop-shadow(0 1.5rem 1rem rgba(0,0,0,.03)) drop-shadow(0 .75rem .75rem rgba(0,0,0,.04)) drop-shadow(0 .25rem .375rem rgba(0,0,0,.05))}[_nghost-%COMP%]:not([style*=\"top\"]){visibility:hidden}._untouchable[_nghost-%COMP%]{pointer-events:none}"],
+    data: {
+      animation: [tuiFadeIn]
+    },
+    changeDetection: 0
+  });
+  (0,tslib_es6/* __decorate */.gn)([taiga_ui_cdk_decorators/* tuiPure */.UM], TuiHintComponent.prototype, "update", null);
+  return TuiHintComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiHintDescribeDirective = /*#__PURE__*/(() => {
+  class TuiHintDescribeDirective extends taiga_ui_core_abstract/* TuiDriver */.kk {
+    constructor(zone, doc, el) {
+      super(subscriber => this.stream$.subscribe(subscriber));
+      this.zone = zone;
+      this.doc = doc;
+      this.el = el;
+      this.id$ = new ReplaySubject/* ReplaySubject */.t(1);
+      this.stream$ = this.id$.pipe((0,taiga_ui_cdk_observables/* tuiIfMap */.Xd)(() => (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, 'keydown', {
+        capture: true
+      }), taiga_ui_cdk_utils_miscellaneous/* tuiIsPresent */.Pc), (0,operators_switchMap/* switchMap */.w)(() => this.focused ? (0,of.of)(false) : (0,merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, 'keyup'), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.element, 'blur')).pipe((0,operators_map/* map */.U)(() => this.focused))), debounce(visible => visible ? (0,observable_timer/* timer */.H)(1000) : (0,of.of)(null)), (0,operators_startWith/* startWith */.O)(false), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), skip(1), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(this.zone));
+      this.tuiHintDescribe = '';
+      this.type = 'hint';
+    }
+    ngOnChanges() {
+      this.id$.next(this.tuiHintDescribe);
+    }
+    get focused() {
+      return (0,taiga_ui_cdk_utils_focus/* tuiIsNativeFocused */.V8)(this.element);
+    }
+    get element() {
+      return this.doc.getElementById(this.tuiHintDescribe || '') || this.el.nativeElement;
+    }
+  }
+  TuiHintDescribeDirective.ɵfac = function TuiHintDescribeDirective_Factory(t) {
+    return new (t || TuiHintDescribeDirective)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.NgZone), core_mjs_["ɵɵdirectiveInject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef));
+  };
+  TuiHintDescribeDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiHintDescribeDirective,
+    selectors: [["", "tuiHintDescribe", ""]],
+    inputs: {
+      tuiHintDescribe: "tuiHintDescribe"
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_abstract/* tuiAsDriver */.UK)(TuiHintDescribeDirective)]), core_mjs_["ɵɵInheritDefinitionFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
+  });
+  (0,tslib_es6/* __decorate */.gn)([taiga_ui_cdk_decorators/* tuiPure */.UM], TuiHintDescribeDirective.prototype, "element", null);
+  return TuiHintDescribeDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiHintDriverDirective = /*#__PURE__*/(() => {
+  class TuiHintDriverDirective extends taiga_ui_core_abstract/* AbstractTuiDriverDirective */.FP {
+    // TODO: Figure out why this is necessary under nx test runner
+    constructor(destroy$, drivers, vehicles) {
+      super(destroy$, drivers, vehicles);
+      this.type = 'hint';
+    }
+  }
+  TuiHintDriverDirective.ɵfac = function TuiHintDriverDirective_Factory(t) {
+    return new (t || TuiHintDriverDirective)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_abstract/* TuiDriver */.kk), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_abstract/* TuiVehicle */.c2));
+  };
+  TuiHintDriverDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiHintDriverDirective,
+    selectors: [["", "tuiHint", ""]],
+    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
+  return TuiHintDriverDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiHintHostDirective = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  class TuiHintHostDirective extends TuiRectAccessor {
+    constructor() {
+      super(...arguments);
+      this.type = 'hint';
+    }
+    getClientRect() {
+      var _a;
+      return ((_a = this.tuiHintHost) === null || _a === void 0 ? void 0 : _a.getBoundingClientRect()) || EMPTY_CLIENT_RECT;
+    }
+  }
+  TuiHintHostDirective.ɵfac = /* @__PURE__ */(() => {
+    let ɵTuiHintHostDirective_BaseFactory;
+    return function TuiHintHostDirective_Factory(t) {
+      return (ɵTuiHintHostDirective_BaseFactory || (ɵTuiHintHostDirective_BaseFactory = i0.ɵɵgetInheritedFactory(TuiHintHostDirective)))(t || TuiHintHostDirective);
+    };
+  })();
+  TuiHintHostDirective.ɵdir = /* @__PURE__ */i0.ɵɵdefineDirective({
+    type: TuiHintHostDirective,
+    selectors: [["", "tuiHint", "", "tuiHintHost", ""]],
+    inputs: {
+      tuiHintHost: "tuiHintHost"
+    },
+    features: [i0.ɵɵProvidersFeature([tuiAsRectAccessor(TuiHintHostDirective)]), i0.ɵɵInheritDefinitionFeature]
+  });
+  return TuiHintHostDirective;
+})()));
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiHintManualDirective = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  class TuiHintManualDirective extends TuiDriver {
+    constructor(hover) {
+      super(subscriber => this.stream$.subscribe(subscriber));
+      this.stream$ = new BehaviorSubject(false);
+      this.tuiHintManual = false;
+      this.type = 'hint';
+      hover.enabled = false;
+    }
+    ngOnChanges() {
+      this.stream$.next(this.tuiHintManual);
+    }
+  }
+  TuiHintManualDirective.ɵfac = function TuiHintManualDirective_Factory(t) {
+    return new (t || TuiHintManualDirective)(i0.ɵɵdirectiveInject(TuiHintHoverDirective));
+  };
+  TuiHintManualDirective.ɵdir = /* @__PURE__ */i0.ɵɵdefineDirective({
+    type: TuiHintManualDirective,
+    selectors: [["", "tuiHint", "", "tuiHintManual", ""]],
+    inputs: {
+      tuiHintManual: "tuiHintManual"
+    },
+    features: [i0.ɵɵProvidersFeature([tuiAsDriver(TuiHintManualDirective)]), i0.ɵɵInheritDefinitionFeature, i0.ɵɵNgOnChangesFeature]
+  });
+  return TuiHintManualDirective;
+})()));
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+const OFFSET = 8;
+const ARROW_OFFSET = 22;
+const TOP = 0;
+const LEFT = 1;
+let TuiHintPositionDirective = /*#__PURE__*/(() => {
+  class TuiHintPositionDirective extends taiga_ui_core_abstract/* TuiPositionAccessor */.uG {
+    constructor(options, viewport, directive, accessors) {
+      super();
+      this.options = options;
+      this.viewport = viewport;
+      this.directive = directive;
+      this.accessors = accessors;
+      this.points = taiga_ui_core_constants/* TUI_HINT_DIRECTIONS */.Fw.reduce((acc, direction) => Object.assign(Object.assign({}, acc), {
+        [direction]: [0, 0]
+      }), {});
+      this.direction = this.options.direction;
+      this.type = 'hint';
+    }
+    getPosition({
+      width,
+      height
+    }) {
+      var _a, _b;
+      const hostRect = (_b = (_a = this.accessor) === null || _a === void 0 ? void 0 : _a.getClientRect()) !== null && _b !== void 0 ? _b : taiga_ui_cdk_constants/* EMPTY_CLIENT_RECT */.Jy;
+      const leftCenter = hostRect.left + hostRect.width / 2;
+      const topCenter = hostRect.top + hostRect.height / 2;
+      this.points['top-left'][TOP] = hostRect.top - height - OFFSET;
+      this.points['top-left'][LEFT] = leftCenter - width + ARROW_OFFSET;
+      this.points.top[TOP] = this.points['top-left'][TOP];
+      this.points.top[LEFT] = leftCenter - width / 2;
+      this.points['top-right'][TOP] = this.points['top-left'][TOP];
+      this.points['top-right'][LEFT] = leftCenter - ARROW_OFFSET;
+      this.points['bottom-left'][TOP] = hostRect.bottom + OFFSET;
+      this.points['bottom-left'][LEFT] = this.points['top-left'][LEFT];
+      this.points.bottom[TOP] = this.points['bottom-left'][TOP];
+      this.points.bottom[LEFT] = this.points.top[LEFT];
+      this.points['bottom-right'][TOP] = this.points['bottom-left'][TOP];
+      this.points['bottom-right'][LEFT] = this.points['top-right'][LEFT];
+      this.points['left-top'][TOP] = topCenter - height + ARROW_OFFSET;
+      this.points['left-top'][LEFT] = hostRect.left - width - OFFSET;
+      this.points.left[TOP] = topCenter - height / 2;
+      this.points.left[LEFT] = this.points['left-top'][LEFT];
+      this.points['left-bottom'][TOP] = topCenter - ARROW_OFFSET;
+      this.points['left-bottom'][LEFT] = this.points['left-top'][LEFT];
+      this.points['right-top'][TOP] = this.points['left-top'][TOP];
+      this.points['right-top'][LEFT] = hostRect.right + OFFSET;
+      this.points.right[TOP] = this.points.left[TOP];
+      this.points.right[LEFT] = this.points['right-top'][LEFT];
+      this.points['right-bottom'][TOP] = this.points['left-bottom'][TOP];
+      this.points['right-bottom'][LEFT] = this.points['right-top'][LEFT];
+      if (this.checkPosition(this.points[this.direction], width, height)) {
+        return this.points[this.direction];
+      }
+      const direction = taiga_ui_core_constants/* TUI_HINT_DIRECTIONS */.Fw.find(direction => this.checkPosition(this.points[direction], width, height));
+      return this.points[direction || this.fallback];
+    }
+    get accessor() {
+      return (0,taiga_ui_core_abstract/* tuiFallbackRectAccessor */.Sv)('hint')(this.accessors, this.directive);
+    }
+    get fallback() {
+      return this.points.top[TOP] > this.viewport.getClientRect().bottom - this.points.bottom[TOP] ? 'top' : 'bottom';
+    }
+    checkPosition([top, left], width, height) {
+      const viewport = this.viewport.getClientRect();
+      return top > OFFSET && left > OFFSET && top + height < viewport.bottom - OFFSET && left + width < viewport.right - OFFSET;
+    }
+  }
+  TuiHintPositionDirective.ɵfac = function TuiHintPositionDirective_Factory(t) {
+    return new (t || TuiHintPositionDirective)(core_mjs_["ɵɵdirectiveInject"](TUI_HINT_OPTIONS), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_VIEWPORT */.EO), core_mjs_["ɵɵdirectiveInject"](TuiHintDirective), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_abstract/* TuiRectAccessor */.O4));
+  };
+  TuiHintPositionDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiHintPositionDirective,
+    selectors: [["", "tuiHint", "", 3, "tuiHintCustomPosition", ""]],
+    inputs: {
+      direction: ["tuiHintDirection", "direction"]
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_abstract/* tuiAsPositionAccessor */.P7)(TuiHintPositionDirective)]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
+  (0,tslib_es6/* __decorate */.gn)([taiga_ui_cdk_decorators/* tuiPure */.UM], TuiHintPositionDirective.prototype, "accessor", null);
+  return TuiHintPositionDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiHintModule = /*#__PURE__*/(() => {
+  class TuiHintModule {}
+  TuiHintModule.ɵfac = function TuiHintModule_Factory(t) {
+    return new (t || TuiHintModule)();
+  };
+  TuiHintModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiHintModule
+  });
+  TuiHintModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    imports: [[common_mjs_.CommonModule, tinkoff_ng_polymorpheus/* PolymorpheusModule */.wq]]
+  });
+  return TuiHintModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-core-directives-hint.js.map
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-providers.js
+var taiga_ui_core_providers = __webpack_require__(1379);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-svg.js
+var taiga_ui_core_components_svg = __webpack_require__(7415);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-directives-wrapper.js
+var taiga_ui_core_directives_wrapper = __webpack_require__(6626);
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-tooltip.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function TuiTooltipComponent_tui_svg_3_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelement"](0, "tui-svg", 3);
+  }
+  if (rf & 2) {
+    const src_r2 = ctx.polymorpheusOutlet;
+    core_mjs_["ɵɵproperty"]("src", src_r2);
+  }
+}
+let TuiTooltipComponent = /*#__PURE__*/(() => {
+  class TuiTooltipComponent extends TuiHintOptionsDirective {
+    constructor(destroy$, mode$, options, isMobile) {
+      super(options);
+      this.isMobile = isMobile;
+      this.mode = null;
+      this.describeId = '';
+      mode$.pipe((0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(mode => {
+        this.mode = mode;
+      });
+    }
+    get computedAppearance() {
+      return this.appearance || this.mode || '';
+    }
+    stopOnMobile(event) {
+      var _a;
+      if (this.isMobile) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      (_a = this.driver$) === null || _a === void 0 ? void 0 : _a.toggle();
+    }
+  }
+  TuiTooltipComponent.ɵfac = function TuiTooltipComponent_Factory(t) {
+    return new (t || TuiTooltipComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_MODE */.Au), core_mjs_["ɵɵdirectiveInject"](TUI_HINT_OPTIONS), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_MOBILE */.fL));
+  };
+  TuiTooltipComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiTooltipComponent,
+    selectors: [["tui-tooltip"]],
+    viewQuery: function TuiTooltipComponent_Query(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵviewQuery"](TuiHintHoverDirective, 5);
+      }
+      if (rf & 2) {
+        let _t;
+        core_mjs_["ɵɵqueryRefresh"](_t = core_mjs_["ɵɵloadQuery"]()) && (ctx.driver$ = _t.first);
+      }
+    },
+    hostVars: 1,
+    hostBindings: function TuiTooltipComponent_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("mousedown", function TuiTooltipComponent_mousedown_HostBindingHandler($event) {
+          return ctx.stopOnMobile($event);
+        });
+      }
+      if (rf & 2) {
+        core_mjs_["ɵɵattribute"]("data-appearance", ctx.computedAppearance);
+      }
+    },
+    inputs: {
+      content: "content",
+      direction: "direction",
+      appearance: "appearance",
+      showDelay: "showDelay",
+      hideDelay: "hideDelay",
+      describeId: "describeId",
+      context: "context"
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3, taiga_ui_core_providers/* MODE_PROVIDER */.CV]), core_mjs_["ɵɵInheritDefinitionFeature"]],
+    decls: 4,
+    vars: 11,
+    consts: [["appearance", "icon", "automation-id", "tui-tooltip__icon", "tuiWrapper", "", 1, "t-tooltip-icon", 3, "hover", "tuiHint", "tuiHintAppearance", "tuiHintContext", "tuiHintDescribe", "tuiHintDirection", "tuiHintHideDelay", "tuiHintShowDelay"], ["driver", "tuiHintHover"], [3, "src", 4, "polymorpheusOutlet"], [3, "src"]],
+    template: function TuiTooltipComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵelementStart"](0, "span", 0, 1);
+        core_mjs_["ɵɵpipe"](2, "async");
+        core_mjs_["ɵɵtemplate"](3, TuiTooltipComponent_tui_svg_3_Template, 1, 1, "tui-svg", 2);
+        core_mjs_["ɵɵelementEnd"]();
+      }
+      if (rf & 2) {
+        const _r0 = core_mjs_["ɵɵreference"](1);
+        core_mjs_["ɵɵproperty"]("hover", core_mjs_["ɵɵpipeBind1"](2, 9, _r0) || null)("tuiHint", ctx.content)("tuiHintAppearance", ctx.computedAppearance)("tuiHintContext", ctx.context)("tuiHintDescribe", ctx.describeId)("tuiHintDirection", ctx.direction)("tuiHintHideDelay", ctx.hideDelay)("tuiHintShowDelay", ctx.showDelay);
+        core_mjs_["ɵɵadvance"](3);
+        core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx.icon);
+      }
+    },
+    dependencies: [taiga_ui_core_components_svg/* TuiSvgComponent */.PN, taiga_ui_core_directives_wrapper/* TuiWrapperDirective */.o, TuiHintDirective, TuiHintDriverDirective, TuiHintHoverDirective, TuiHintPositionDirective, TuiHintDescribeDirective, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li, common_mjs_.AsyncPipe],
+    styles: ["[_nghost-%COMP%]{transition-property:color;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;position:relative;display:inline-block;width:1.5rem;height:1.5rem;vertical-align:middle;font-size:0;line-height:0;pointer-events:auto;cursor:pointer;color:var(--tui-text-01)}[data-appearance=error][_nghost-%COMP%]{color:var(--tui-error-fill)}.t-tooltip-icon[_ngcontent-%COMP%]{display:inline-block;width:100%;height:100%;color:inherit}[tuiWrapper][data-appearance=\"textfield\"][data-state=\"disabled\"][_nghost-%COMP%]   .t-tooltip-icon[_ngcontent-%COMP%], [tuiWrapper][data-appearance=\"textfield\"][data-state=\"disabled\"]   [_nghost-%COMP%]   .t-tooltip-icon[_ngcontent-%COMP%]{opacity:1}"],
+    changeDetection: 0
+  });
+  return TuiTooltipComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiTooltipModule = /*#__PURE__*/(() => {
+  class TuiTooltipModule {}
+  TuiTooltipModule.ɵfac = function TuiTooltipModule_Factory(t) {
+    return new (t || TuiTooltipModule)();
+  };
+  TuiTooltipModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiTooltipModule
+  });
+  TuiTooltipModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    imports: [[common_mjs_.CommonModule, taiga_ui_core_directives_wrapper/* TuiWrapperModule */.W, taiga_ui_core_components_svg/* TuiSvgModule */.EI, TuiHintModule, tinkoff_ng_polymorpheus/* PolymorpheusModule */.wq]]
+  });
+  return TuiTooltipModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-core-components-tooltip.js.map
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-link.js
+var taiga_ui_core_components_link = __webpack_require__(2114);
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-autofilled.js
+
+
+
+
+let TuiAutofilledStyleComponent = /*#__PURE__*/(() => {
+  class TuiAutofilledStyleComponent {}
+  TuiAutofilledStyleComponent.ɵfac = function TuiAutofilledStyleComponent_Factory(t) {
+    return new (t || TuiAutofilledStyleComponent)();
+  };
+  TuiAutofilledStyleComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiAutofilledStyleComponent,
+    selectors: [["ng-component"]],
+    hostAttrs: [1, "tui-autofilled-styles"],
+    decls: 0,
+    vars: 0,
+    template: function TuiAutofilledStyleComponent_Template(rf, ctx) {},
+    styles: [".tui-autofill input,input.tui-autofill{transition:box-shadow .01s}\n"],
+    encapsulation: 2,
+    changeDetection: 0
+  });
+  return TuiAutofilledStyleComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiAutofilledDirective = /*#__PURE__*/(() => {
+  class TuiAutofilledDirective {
+    constructor(directiveStyles) {
+      this.autofilled = false;
+      this.tuiAutofilledChange = new core_mjs_.EventEmitter();
+      directiveStyles.addComponent(TuiAutofilledStyleComponent);
+    }
+    transitionStartHandler({
+      propertyName,
+      target
+    }) {
+      var _a;
+      const matchedAutofill = propertyName.includes('box-shadow') && ((_a = target) === null || _a === void 0 ? void 0 : _a.matches('input'));
+      if (matchedAutofill) {
+        this.autofilled = !this.autofilled;
+        this.tuiAutofilledChange.emit(this.autofilled);
+      }
+    }
+  }
+  TuiAutofilledDirective.ɵfac = function TuiAutofilledDirective_Factory(t) {
+    return new (t || TuiAutofilledDirective)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDirectiveStylesService */.gH));
+  };
+  TuiAutofilledDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiAutofilledDirective,
+    selectors: [["", "tuiAutofilledChange", ""]],
+    hostAttrs: [1, "tui-autofill"],
+    hostVars: 2,
+    hostBindings: function TuiAutofilledDirective_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("transitionstart", function TuiAutofilledDirective_transitionstart_HostBindingHandler($event) {
+          return ctx.transitionStartHandler($event);
+        });
+      }
+      if (rf & 2) {
+        core_mjs_["ɵɵclassProp"]("_autofilled", ctx.autofilled);
+      }
+    },
+    outputs: {
+      tuiAutofilledChange: "tuiAutofilledChange"
+    }
+  });
+  return TuiAutofilledDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiAutofilledModule = /*#__PURE__*/(() => {
+  class TuiAutofilledModule {}
+  TuiAutofilledModule.ɵfac = function TuiAutofilledModule_Factory(t) {
+    return new (t || TuiAutofilledModule)();
+  };
+  TuiAutofilledModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiAutofilledModule
+  });
+  TuiAutofilledModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+  return TuiAutofilledModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-cdk-directives-autofilled.js.map
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-focusable.js
+
+
+
+/**
+ * Abstraction over `tabindex`
+ */
+let TuiFocusableDirective = /*#__PURE__*/(() => {
+  class TuiFocusableDirective {
+    constructor() {
+      /**
+       * Element can be focused with keyboard
+       */
+      this.focusable = true;
+    }
+    get tabIndex() {
+      return this.focusable ? 0 : -1;
+    }
+  }
+  TuiFocusableDirective.ɵfac = function TuiFocusableDirective_Factory(t) {
+    return new (t || TuiFocusableDirective)();
+  };
+  TuiFocusableDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiFocusableDirective,
+    selectors: [["", "tuiFocusable", ""]],
+    hostVars: 1,
+    hostBindings: function TuiFocusableDirective_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        core_mjs_["ɵɵhostProperty"]("tabIndex", ctx.tabIndex);
+      }
+    },
+    inputs: {
+      focusable: ["tuiFocusable", "focusable"]
+    }
+  });
+  return TuiFocusableDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiFocusableModule = /*#__PURE__*/(() => {
+  class TuiFocusableModule {}
+  TuiFocusableModule.ɵfac = function TuiFocusableModule_Factory(t) {
+    return new (t || TuiFocusableModule)();
+  };
+  TuiFocusableModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiFocusableModule
+  });
+  TuiFocusableModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+  return TuiFocusableModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-cdk-directives-focusable.js.map
+;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/observable/never.js
+
+
+const NEVER = new Observable/* Observable */.y(noop/* noop */.Z);
+function never() {
+  return NEVER;
+}
+//# sourceMappingURL=never.js.map
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-directives-textfield-controller.js
+
+
+
+
+
+
+class TuiTextfieldController {
+  constructor(change$, options, legacyAppearance, appearanceDirective, cleanerDirective, customContentDirective, iconDirective, iconLeftDirective, labelOutsideDirective, sizeDirective, prefixDirective, postfixDirective, fillerDirective) {
+    this.change$ = change$;
+    this.options = options;
+    this.legacyAppearance = legacyAppearance;
+    this.appearanceDirective = appearanceDirective;
+    this.cleanerDirective = cleanerDirective;
+    this.customContentDirective = customContentDirective;
+    this.iconDirective = iconDirective;
+    this.iconLeftDirective = iconLeftDirective;
+    this.labelOutsideDirective = labelOutsideDirective;
+    this.sizeDirective = sizeDirective;
+    this.prefixDirective = prefixDirective;
+    this.postfixDirective = postfixDirective;
+    this.fillerDirective = fillerDirective;
+  }
+  get appearance() {
+    return this.appearanceDirective.appearance || this.legacyAppearance;
+  }
+  get cleaner() {
+    return this.cleanerDirective.cleaner;
+  }
+  get customContent() {
+    return this.customContentDirective.customContent || ``;
+  }
+  get icon() {
+    return this.iconDirective.icon;
+  }
+  get iconLeft() {
+    return this.iconLeftDirective.iconLeft;
+  }
+  get labelOutside() {
+    return this.labelOutsideDirective.labelOutside;
+  }
+  get size() {
+    return this.sizeDirective.size;
+  }
+  get prefix() {
+    return this.prefixDirective.prefix;
+  }
+  get postfix() {
+    return this.postfixDirective.postfix;
+  }
+  get filler() {
+    return this.fillerDirective.filler;
+  }
+}
+
+/** Default values for primitive textfield options */
+const taiga_ui_core_directives_textfield_controller_TUI_TEXTFIELD_DEFAULT_OPTIONS = {
+  iconCleaner: `tuiIconClose`,
+  hintOnDisabled: false
+};
+/**
+ * Default parameters for textfield
+ */
+const TUI_TEXTFIELD_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(taiga_ui_core_directives_textfield_controller_TUI_TEXTFIELD_DEFAULT_OPTIONS);
+function taiga_ui_core_directives_textfield_controller_tuiTextfieldOptionsProvider(options) {
+  return tuiProvideOptions(TUI_TEXTFIELD_OPTIONS, options, taiga_ui_core_directives_textfield_controller_TUI_TEXTFIELD_DEFAULT_OPTIONS);
+}
+
+// TODO: rename to TUI_TEXTFIELD_APPEARANCE in v4
+const TUI_TEXTFIELD_APPEARANCE_DIRECTIVE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new TuiTextfieldAppearanceDirective());
+let TuiTextfieldAppearanceDirective = /*#__PURE__*/(() => {
+  class TuiTextfieldAppearanceDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {
+    constructor() {
+      super(...arguments);
+      // it's an empty string by default for backward compatibility
+      // (see comment https://github.com/taiga-family/taiga-ui/pull/3007#issuecomment-1315179508)
+      this.appearance = '';
+    }
+  }
+  TuiTextfieldAppearanceDirective.ɵfac = /* @__PURE__ */(() => {
+    let ɵTuiTextfieldAppearanceDirective_BaseFactory;
+    return function TuiTextfieldAppearanceDirective_Factory(t) {
+      return (ɵTuiTextfieldAppearanceDirective_BaseFactory || (ɵTuiTextfieldAppearanceDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiTextfieldAppearanceDirective)))(t || TuiTextfieldAppearanceDirective);
+    };
+  })();
+  TuiTextfieldAppearanceDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiTextfieldAppearanceDirective,
+    selectors: [["", "tuiTextfieldAppearance", ""]],
+    inputs: {
+      appearance: ["tuiTextfieldAppearance", "appearance"]
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([{
+      provide: TUI_TEXTFIELD_APPEARANCE_DIRECTIVE,
+      useExisting: (0,core_mjs_.forwardRef)(() => TuiTextfieldAppearanceDirective)
+    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
+  return TuiTextfieldAppearanceDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+const TUI_TEXTFIELD_CLEANER = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new TuiTextfieldCleanerDirective());
+let TuiTextfieldCleanerDirective = /*#__PURE__*/(() => {
+  class TuiTextfieldCleanerDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {
+    constructor() {
+      super(...arguments);
+      this.cleaner = false;
+    }
+  }
+  TuiTextfieldCleanerDirective.ɵfac = /* @__PURE__ */(() => {
+    let ɵTuiTextfieldCleanerDirective_BaseFactory;
+    return function TuiTextfieldCleanerDirective_Factory(t) {
+      return (ɵTuiTextfieldCleanerDirective_BaseFactory || (ɵTuiTextfieldCleanerDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiTextfieldCleanerDirective)))(t || TuiTextfieldCleanerDirective);
+    };
+  })();
+  TuiTextfieldCleanerDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiTextfieldCleanerDirective,
+    selectors: [["", "tuiTextfieldCleaner", ""]],
+    inputs: {
+      cleaner: ["tuiTextfieldCleaner", "cleaner"]
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([{
+      provide: TUI_TEXTFIELD_CLEANER,
+      useExisting: (0,core_mjs_.forwardRef)(() => TuiTextfieldCleanerDirective)
+    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
+  return TuiTextfieldCleanerDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+const TUI_TEXTFIELD_CUSTOM_CONTENT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new TuiTextfieldCustomContentDirective());
+let TuiTextfieldCustomContentDirective = /*#__PURE__*/(() => {
+  class TuiTextfieldCustomContentDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {}
+  TuiTextfieldCustomContentDirective.ɵfac = /* @__PURE__ */(() => {
+    let ɵTuiTextfieldCustomContentDirective_BaseFactory;
+    return function TuiTextfieldCustomContentDirective_Factory(t) {
+      return (ɵTuiTextfieldCustomContentDirective_BaseFactory || (ɵTuiTextfieldCustomContentDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiTextfieldCustomContentDirective)))(t || TuiTextfieldCustomContentDirective);
+    };
+  })();
+  TuiTextfieldCustomContentDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiTextfieldCustomContentDirective,
+    selectors: [["", "tuiTextfieldCustomContent", ""]],
+    inputs: {
+      customContent: ["tuiTextfieldCustomContent", "customContent"]
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([{
+      provide: TUI_TEXTFIELD_CUSTOM_CONTENT,
+      useExisting: (0,core_mjs_.forwardRef)(() => TuiTextfieldCustomContentDirective)
+    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
+  return TuiTextfieldCustomContentDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+const TUI_TEXTFIELD_FILLER = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new TuiTextfieldFillerDirective());
+let TuiTextfieldFillerDirective = /*#__PURE__*/(() => {
+  class TuiTextfieldFillerDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {
+    constructor() {
+      super(...arguments);
+      this.filler = '';
+    }
+  }
+  TuiTextfieldFillerDirective.ɵfac = /* @__PURE__ */(() => {
+    let ɵTuiTextfieldFillerDirective_BaseFactory;
+    return function TuiTextfieldFillerDirective_Factory(t) {
+      return (ɵTuiTextfieldFillerDirective_BaseFactory || (ɵTuiTextfieldFillerDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiTextfieldFillerDirective)))(t || TuiTextfieldFillerDirective);
+    };
+  })();
+  TuiTextfieldFillerDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiTextfieldFillerDirective,
+    selectors: [["", "tuiTextfieldFiller", ""]],
+    inputs: {
+      filler: ["tuiTextfieldFiller", "filler"]
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([{
+      provide: TUI_TEXTFIELD_FILLER,
+      useExisting: (0,core_mjs_.forwardRef)(() => TuiTextfieldFillerDirective)
+    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
+  return TuiTextfieldFillerDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+const TUI_TEXTFIELD_ICON = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new TuiTextfieldIconDirective());
+let TuiTextfieldIconDirective = /*#__PURE__*/(() => {
+  class TuiTextfieldIconDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {}
+  TuiTextfieldIconDirective.ɵfac = /* @__PURE__ */(() => {
+    let ɵTuiTextfieldIconDirective_BaseFactory;
+    return function TuiTextfieldIconDirective_Factory(t) {
+      return (ɵTuiTextfieldIconDirective_BaseFactory || (ɵTuiTextfieldIconDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiTextfieldIconDirective)))(t || TuiTextfieldIconDirective);
+    };
+  })();
+  TuiTextfieldIconDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiTextfieldIconDirective,
+    selectors: [["", "tuiTextfieldIcon", ""]],
+    inputs: {
+      icon: ["tuiTextfieldIcon", "icon"]
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([{
+      provide: TUI_TEXTFIELD_ICON,
+      useExisting: (0,core_mjs_.forwardRef)(() => TuiTextfieldIconDirective)
+    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
+  return TuiTextfieldIconDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+const TUI_TEXTFIELD_ICON_LEFT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new TuiTextfieldIconLeftDirective());
+let TuiTextfieldIconLeftDirective = /*#__PURE__*/(() => {
+  class TuiTextfieldIconLeftDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {}
+  TuiTextfieldIconLeftDirective.ɵfac = /* @__PURE__ */(() => {
+    let ɵTuiTextfieldIconLeftDirective_BaseFactory;
+    return function TuiTextfieldIconLeftDirective_Factory(t) {
+      return (ɵTuiTextfieldIconLeftDirective_BaseFactory || (ɵTuiTextfieldIconLeftDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiTextfieldIconLeftDirective)))(t || TuiTextfieldIconLeftDirective);
+    };
+  })();
+  TuiTextfieldIconLeftDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiTextfieldIconLeftDirective,
+    selectors: [["", "tuiTextfieldIconLeft", ""]],
+    inputs: {
+      iconLeft: ["tuiTextfieldIconLeft", "iconLeft"]
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([{
+      provide: TUI_TEXTFIELD_ICON_LEFT,
+      useExisting: (0,core_mjs_.forwardRef)(() => TuiTextfieldIconLeftDirective)
+    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
+  return TuiTextfieldIconLeftDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+const TUI_TEXTFIELD_LABEL_OUTSIDE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new TuiTextfieldLabelOutsideDirective());
+let TuiTextfieldLabelOutsideDirective = /*#__PURE__*/(() => {
+  class TuiTextfieldLabelOutsideDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {
+    constructor() {
+      super(...arguments);
+      this.labelOutside = false;
+    }
+  }
+  TuiTextfieldLabelOutsideDirective.ɵfac = /* @__PURE__ */(() => {
+    let ɵTuiTextfieldLabelOutsideDirective_BaseFactory;
+    return function TuiTextfieldLabelOutsideDirective_Factory(t) {
+      return (ɵTuiTextfieldLabelOutsideDirective_BaseFactory || (ɵTuiTextfieldLabelOutsideDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiTextfieldLabelOutsideDirective)))(t || TuiTextfieldLabelOutsideDirective);
+    };
+  })();
+  TuiTextfieldLabelOutsideDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiTextfieldLabelOutsideDirective,
+    selectors: [["", "tuiTextfieldLabelOutside", ""]],
+    inputs: {
+      labelOutside: ["tuiTextfieldLabelOutside", "labelOutside"]
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([{
+      provide: TUI_TEXTFIELD_LABEL_OUTSIDE,
+      useExisting: (0,core_mjs_.forwardRef)(() => TuiTextfieldLabelOutsideDirective)
+    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
+  return TuiTextfieldLabelOutsideDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+const TUI_TEXTFIELD_POSTFIX = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new TuiTextfieldPostfixDirective());
+let TuiTextfieldPostfixDirective = /*#__PURE__*/(() => {
+  class TuiTextfieldPostfixDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {
+    constructor() {
+      super(...arguments);
+      this.postfix = '';
+    }
+  }
+  TuiTextfieldPostfixDirective.ɵfac = /* @__PURE__ */(() => {
+    let ɵTuiTextfieldPostfixDirective_BaseFactory;
+    return function TuiTextfieldPostfixDirective_Factory(t) {
+      return (ɵTuiTextfieldPostfixDirective_BaseFactory || (ɵTuiTextfieldPostfixDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiTextfieldPostfixDirective)))(t || TuiTextfieldPostfixDirective);
+    };
+  })();
+  TuiTextfieldPostfixDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiTextfieldPostfixDirective,
+    selectors: [["", "tuiTextfieldPostfix", ""]],
+    inputs: {
+      postfix: ["tuiTextfieldPostfix", "postfix"]
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([{
+      provide: TUI_TEXTFIELD_POSTFIX,
+      useExisting: (0,core_mjs_.forwardRef)(() => TuiTextfieldPostfixDirective)
+    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
+  return TuiTextfieldPostfixDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+const TUI_TEXTFIELD_PREFIX = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new TuiTextfieldPrefixDirective());
+let TuiTextfieldPrefixDirective = /*#__PURE__*/(() => {
+  class TuiTextfieldPrefixDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {
+    constructor() {
+      super(...arguments);
+      this.prefix = '';
+    }
+  }
+  TuiTextfieldPrefixDirective.ɵfac = /* @__PURE__ */(() => {
+    let ɵTuiTextfieldPrefixDirective_BaseFactory;
+    return function TuiTextfieldPrefixDirective_Factory(t) {
+      return (ɵTuiTextfieldPrefixDirective_BaseFactory || (ɵTuiTextfieldPrefixDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiTextfieldPrefixDirective)))(t || TuiTextfieldPrefixDirective);
+    };
+  })();
+  TuiTextfieldPrefixDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiTextfieldPrefixDirective,
+    selectors: [["", "tuiTextfieldPrefix", ""]],
+    inputs: {
+      prefix: ["tuiTextfieldPrefix", "prefix"]
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([{
+      provide: TUI_TEXTFIELD_PREFIX,
+      useExisting: (0,core_mjs_.forwardRef)(() => TuiTextfieldPrefixDirective)
+    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
+  return TuiTextfieldPrefixDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+const TUI_TEXTFIELD_SIZE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new taiga_ui_core_directives_textfield_controller_TuiTextfieldSizeDirective());
+let taiga_ui_core_directives_textfield_controller_TuiTextfieldSizeDirective = /*#__PURE__*/(() => {
+  class TuiTextfieldSizeDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {
+    constructor() {
+      super(...arguments);
+      this.size = 'l';
+    }
+  }
+  TuiTextfieldSizeDirective.ɵfac = /* @__PURE__ */(() => {
+    let ɵTuiTextfieldSizeDirective_BaseFactory;
+    return function TuiTextfieldSizeDirective_Factory(t) {
+      return (ɵTuiTextfieldSizeDirective_BaseFactory || (ɵTuiTextfieldSizeDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiTextfieldSizeDirective)))(t || TuiTextfieldSizeDirective);
+    };
+  })();
+  TuiTextfieldSizeDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiTextfieldSizeDirective,
+    selectors: [["", "tuiTextfieldSize", ""]],
+    inputs: {
+      size: ["tuiTextfieldSize", "size"]
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([{
+      provide: TUI_TEXTFIELD_SIZE,
+      useExisting: (0,core_mjs_.forwardRef)(() => TuiTextfieldSizeDirective)
+    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
+  return TuiTextfieldSizeDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiTextfieldControllerModule = /*#__PURE__*/(() => {
+  class TuiTextfieldControllerModule {}
+  TuiTextfieldControllerModule.ɵfac = function TuiTextfieldControllerModule_Factory(t) {
+    return new (t || TuiTextfieldControllerModule)();
+  };
+  TuiTextfieldControllerModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiTextfieldControllerModule
+  });
+  TuiTextfieldControllerModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+  return TuiTextfieldControllerModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+const TUI_TEXTFIELD_WATCHED_CONTROLLER = new core_mjs_.InjectionToken(`[TUI_TEXTFIELD_WATCHED_CONTROLLER]`);
+const TEXTFIELD_CONTROLLER_PROVIDER = [taiga_ui_cdk_services/* TuiDestroyService */.a3, {
+  provide: TUI_TEXTFIELD_WATCHED_CONTROLLER,
+  deps: [core_mjs_.ChangeDetectorRef, taiga_ui_cdk_services/* TuiDestroyService */.a3, TUI_TEXTFIELD_OPTIONS, taiga_ui_core_tokens/* TUI_TEXTFIELD_APPEARANCE */.jt, TUI_TEXTFIELD_APPEARANCE_DIRECTIVE, TUI_TEXTFIELD_CLEANER, TUI_TEXTFIELD_CUSTOM_CONTENT, TUI_TEXTFIELD_ICON, TUI_TEXTFIELD_ICON_LEFT, TUI_TEXTFIELD_LABEL_OUTSIDE, TUI_TEXTFIELD_SIZE, TUI_TEXTFIELD_PREFIX, TUI_TEXTFIELD_POSTFIX, TUI_TEXTFIELD_FILLER],
+  useFactory: (cdr, destroy$, options, legacyAppearance, ...controllers) => {
+    const change$ = (0,merge/* merge */.T)(...controllers.map(({
+      change$
+    }) => change$ || NEVER)).pipe((0,taiga_ui_cdk_observables/* tuiWatch */.NA)(cdr), (0,takeUntil/* takeUntil */.R)(destroy$));
+    change$.subscribe();
+    return new TuiTextfieldController(change$, options, legacyAppearance, ...controllers);
+  }
+}];
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-core-directives-textfield-controller.js.map
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/fromEvent.js
+var fromEvent = __webpack_require__(2438);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-enums.js
+var taiga_ui_core_enums = __webpack_require__(7241);
+// EXTERNAL MODULE: ./node_modules/@angular/forms/fesm2022/forms.mjs + 1 modules
+var fesm2022_forms = __webpack_require__(95);
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-directives-mask-accessor.js
+
+
+
+
+let TuiMaskAccessorDirective = /*#__PURE__*/(() => {
+  class TuiMaskAccessorDirective {}
+  TuiMaskAccessorDirective.ɵfac = function TuiMaskAccessorDirective_Factory(t) {
+    return new (t || TuiMaskAccessorDirective)();
+  };
+  TuiMaskAccessorDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiMaskAccessorDirective,
+    selectors: [["input", "tuiMaskAccessor", ""]],
+    features: [core_mjs_["ɵɵProvidersFeature"]([{
+      provide: fesm2022_forms/* NG_VALUE_ACCESSOR */.JU,
+      deps: [[new core_mjs_.Optional(), taiga_ui_core_tokens/* TUI_VALUE_ACCESSOR */.sE], fesm2022_forms/* DefaultValueAccessor */.Fj],
+      multi: true,
+      useFactory: (accessor, fallback) => accessor ? accessor[0] : fallback
+    }])]
+  });
+  return TuiMaskAccessorDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * @internal
+ */
+let TuiMaskAccessorModule = /*#__PURE__*/(() => {
+  class TuiMaskAccessorModule {}
+  TuiMaskAccessorModule.ɵfac = function TuiMaskAccessorModule_Factory(t) {
+    return new (t || TuiMaskAccessorModule)();
+  };
+  TuiMaskAccessorModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiMaskAccessorModule
+  });
+  TuiMaskAccessorModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+  return TuiMaskAccessorModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-core-directives-mask-accessor.js.map
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-primitive-textfield.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const _c0 = ["pre"];
+const _c1 = ["focusableElement"];
+function TuiPrimitiveTextfieldComponent_ng_container_0_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementContainer"](0);
+  }
+}
+function TuiPrimitiveTextfieldComponent_ng_container_2_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementContainer"](0);
+  }
+}
+function TuiPrimitiveTextfieldComponent_div_10_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementStart"](0, "div", 17);
+    core_mjs_["ɵɵprojection"](1, 2);
+    core_mjs_["ɵɵelementEnd"]();
+  }
+}
+function TuiPrimitiveTextfieldComponent_div_12_tui_svg_1_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelement"](0, "tui-svg", 20);
+  }
+  if (rf & 2) {
+    const src_r12 = ctx.polymorpheusOutlet;
+    core_mjs_["ɵɵproperty"]("src", src_r12);
+  }
+}
+const _c2 = a0 => ({
+  $implicit: a0
+});
+function TuiPrimitiveTextfieldComponent_div_12_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementStart"](0, "div", 18);
+    core_mjs_["ɵɵtemplate"](1, TuiPrimitiveTextfieldComponent_div_12_tui_svg_1_Template, 1, 1, "tui-svg", 19);
+    core_mjs_["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r4 = core_mjs_["ɵɵnextContext"]();
+    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r4.iconLeftContent)("polymorpheusOutletContext", core_mjs_["ɵɵpureFunction1"](2, _c2, ctx_r4.size));
+  }
+}
+function TuiPrimitiveTextfieldComponent_label_14_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementStart"](0, "label", 21);
+    core_mjs_["ɵɵprojection"](1, 3);
+    core_mjs_["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r5 = core_mjs_["ɵɵnextContext"]();
+    core_mjs_["ɵɵclassProp"]("t-placeholder_raised", ctx_r5.placeholderRaised);
+    core_mjs_["ɵɵproperty"]("for", ctx_r5.computedId);
+  }
+}
+function TuiPrimitiveTextfieldComponent_div_20_tui_svg_1_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelement"](0, "tui-svg", 24);
+  }
+  if (rf & 2) {
+    const src_r14 = ctx.polymorpheusOutlet;
+    core_mjs_["ɵɵproperty"]("src", src_r14);
+  }
+}
+function TuiPrimitiveTextfieldComponent_div_20_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementStart"](0, "div", 22);
+    core_mjs_["ɵɵtemplate"](1, TuiPrimitiveTextfieldComponent_div_20_tui_svg_1_Template, 1, 1, "tui-svg", 23);
+    core_mjs_["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r7 = core_mjs_["ɵɵnextContext"]();
+    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r7.controller.customContent);
+  }
+}
+function TuiPrimitiveTextfieldComponent_span_21_tui_svg_1_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelement"](0, "tui-svg", 27);
+  }
+  if (rf & 2) {
+    const src_r16 = ctx.polymorpheusOutlet;
+    core_mjs_["ɵɵproperty"]("src", src_r16);
+  }
+}
+function TuiPrimitiveTextfieldComponent_span_21_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r18 = core_mjs_["ɵɵgetCurrentView"]();
+    core_mjs_["ɵɵelementStart"](0, "span", 25);
+    core_mjs_["ɵɵlistener"]("click.stop", function TuiPrimitiveTextfieldComponent_span_21_Template_span_click_stop_0_listener() {
+      core_mjs_["ɵɵrestoreView"](_r18);
+      const ctx_r17 = core_mjs_["ɵɵnextContext"]();
+      return core_mjs_["ɵɵresetView"](ctx_r17.clear());
+    });
+    core_mjs_["ɵɵtemplate"](1, TuiPrimitiveTextfieldComponent_span_21_tui_svg_1_Template, 1, 1, "tui-svg", 26);
+    core_mjs_["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r8 = core_mjs_["ɵɵnextContext"]();
+    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r8.iconCleaner || ctx_r8.controller.options.iconCleaner)("polymorpheusOutletContext", core_mjs_["ɵɵpureFunction1"](2, _c2, ctx_r8.size));
+  }
+}
+function TuiPrimitiveTextfieldComponent_tui_tooltip_22_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelement"](0, "tui-tooltip", 28);
+  }
+  if (rf & 2) {
+    const ctx_r9 = core_mjs_["ɵɵnextContext"]();
+    core_mjs_["ɵɵproperty"]("content", ctx_r9.hintOptions == null ? null : ctx_r9.hintOptions.content)("describeId", ctx_r9.computedId);
+  }
+}
+function TuiPrimitiveTextfieldComponent_div_23_tui_svg_1_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelement"](0, "tui-svg", 20);
+  }
+  if (rf & 2) {
+    const src_r20 = ctx.polymorpheusOutlet;
+    core_mjs_["ɵɵproperty"]("src", src_r20);
+  }
+}
+function TuiPrimitiveTextfieldComponent_div_23_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementStart"](0, "div", 29);
+    core_mjs_["ɵɵtemplate"](1, TuiPrimitiveTextfieldComponent_div_23_tui_svg_1_Template, 1, 1, "tui-svg", 19);
+    core_mjs_["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r10 = core_mjs_["ɵɵnextContext"]();
+    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r10.iconContent)("polymorpheusOutletContext", core_mjs_["ɵɵpureFunction1"](2, _c2, ctx_r10.size));
+  }
+}
+const _c3 = [[["input"]], [["select"]], [["tuiContent"]], "*"];
+const _c4 = ["input", "select", "tuiContent", "*"];
+const _c5 = ["tuiTextfield", ""];
+let TuiValueDecorationComponent = /*#__PURE__*/(() => {
+  class TuiValueDecorationComponent {
+    constructor(textfield, fontsReady$) {
+      this.textfield = textfield;
+      this.fontsReady$ = fontsReady$;
+      this.prefix$ = new internal_BehaviorSubject/* BehaviorSubject */.X('');
+      this.pre$ = (0,merge/* merge */.T)(this.fontsReady$, this.prefix$).pipe((0,delay/* delay */.g)(0), (0,filter/* filter */.h)(() => {
+        var _a;
+        return !!((_a = this.pre) === null || _a === void 0 ? void 0 : _a.nativeElement.isConnected);
+      }), (0,operators_map/* map */.U)(() => {
+        var _a;
+        return ((_a = this.pre) === null || _a === void 0 ? void 0 : _a.nativeElement.offsetWidth) || 0;
+      }), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)());
+    }
+    get isContextTable() {
+      return this.textfield.appearance === taiga_ui_core_enums/* TuiAppearance */.Nm.Table;
+    }
+    get value() {
+      return this.textfield.value;
+    }
+    get filler() {
+      const {
+        focused,
+        placeholder,
+        exampleText,
+        value,
+        textfield
+      } = this;
+      if (placeholder && exampleText) {
+        return '';
+      }
+      return focused ? exampleText || textfield.filler.slice(value.length) : '';
+    }
+    get prefix() {
+      return this.decorationsVisible ? this.textfield.prefix : '';
+    }
+    get postfix() {
+      return this.decorationsVisible ? this.computedPostfix : '';
+    }
+    ngDoCheck() {
+      this.prefix$.next(this.prefix);
+    }
+    get placeholder() {
+      var _a;
+      return ((_a = this.textfield.nativeFocusableElement) === null || _a === void 0 ? void 0 : _a.placeholder) || '';
+    }
+    get exampleText() {
+      return !this.value && this.focused ? this.placeholder : '';
+    }
+    get decorationsVisible() {
+      return !!this.value || this.focused && !this.placeholder;
+    }
+    get focused() {
+      return this.textfield.computedFocused && !this.textfield.readOnly;
+    }
+    get computedPostfix() {
+      return this.textfield.postfix && (this.filler || this.value) ? ` ${this.textfield.postfix}` : this.textfield.postfix;
+    }
+  }
+  TuiValueDecorationComponent.ɵfac = function TuiValueDecorationComponent_Factory(t) {
+    return new (t || TuiValueDecorationComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_FOCUSABLE_ITEM_ACCESSOR */.KZ), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_FONTS_READY */.tS));
+  };
+  TuiValueDecorationComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiValueDecorationComponent,
+    selectors: [["tui-value-decoration"]],
+    viewQuery: function TuiValueDecorationComponent_Query(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵviewQuery"](_c0, 7, core_mjs_.ElementRef);
+      }
+      if (rf & 2) {
+        let _t;
+        core_mjs_["ɵɵqueryRefresh"](_t = core_mjs_["ɵɵloadQuery"]()) && (ctx.pre = _t.first);
+      }
+    },
+    hostVars: 4,
+    hostBindings: function TuiValueDecorationComponent_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("animationstart", function TuiValueDecorationComponent_animationstart_HostBindingHandler() {
+          return ctx.ngDoCheck();
+        });
+      }
+      if (rf & 2) {
+        core_mjs_["ɵɵclassProp"]("_table", ctx.isContextTable)("_filler", ctx.filler);
+      }
+    },
+    decls: 5,
+    vars: 4,
+    consts: [[1, "t-prefix", 3, "textContent"], ["pre", ""], [1, "t-ghost", 3, "textContent"], [1, "t-filler", 3, "textContent"], [1, "t-postfix", 3, "textContent"]],
+    template: function TuiValueDecorationComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵelement"](0, "span", 0, 1)(2, "span", 2)(3, "span", 3)(4, "span", 4);
+      }
+      if (rf & 2) {
+        core_mjs_["ɵɵproperty"]("textContent", ctx.prefix);
+        core_mjs_["ɵɵadvance"](2);
+        core_mjs_["ɵɵproperty"]("textContent", ctx.value);
+        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵproperty"]("textContent", ctx.filler);
+        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵproperty"]("textContent", ctx.postfix);
+      }
+    },
+    styles: ["[_nghost-%COMP%]{position:absolute;display:block;width:100%;line-height:var(--tui-height);margin-top:calc(var(--tui-height) / -2);box-sizing:content-box;color:var(--tui-text-03);animation:tuiPresent 1s;white-space:nowrap}._table[_nghost-%COMP%]{position:static;margin-top:0}._filler[_nghost-%COMP%]{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}tui-primitive-textfield   [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]{color:var(--tui-text-03-night)}tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)   [_nghost-%COMP%]{line-height:calc(var(--tui-height) - .25rem)}.t-ghost[_ngcontent-%COMP%]{visibility:hidden;white-space:pre;text-overflow:clip}.t-prefix[_ngcontent-%COMP%], .t-postfix[_ngcontent-%COMP%]{white-space:pre;color:var(--tui-text-01)}tui-primitive-textfield   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]   .t-prefix[_ngcontent-%COMP%], tui-primitive-textfield   [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]   .t-prefix[_ngcontent-%COMP%], tui-primitive-textfield   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]   .t-postfix[_ngcontent-%COMP%], tui-primitive-textfield   [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]   .t-postfix[_ngcontent-%COMP%]{color:var(--tui-text-01-night)}.t-filler[_ngcontent-%COMP%]{max-width:100%;white-space:nowrap}"]
+  });
+  return TuiValueDecorationComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+const TUI_ICON_PADDINGS = {
+  s: 1.25,
+  m: 1.75,
+  l: 2.25
+};
+let TuiPrimitiveTextfieldComponent = /*#__PURE__*/(() => {
+  class TuiPrimitiveTextfieldComponent extends taiga_ui_cdk_abstract/* AbstractTuiInteractive */.Xn {
+    constructor(controller, hintOptions, options, el) {
+      super();
+      this.controller = controller;
+      this.hintOptions = hintOptions;
+      this.options = options;
+      this.el = el;
+      this.editable = true;
+      /** @deprecated use `tuiTextfieldFiller` from {@link TuiTextfieldControllerModule} instead */
+      this.textfieldFiller = '';
+      /**
+       * @deprecated:
+       * use `tuiTextfieldOptionsProvider({iconCleaner: `tuiIconChevronUp`})`
+       */
+      this.iconCleaner = this.options.iconCleaner;
+      this.readOnly = false;
+      this.invalid = false;
+      this.disabled = false;
+      /** @deprecated use `tuiTextfieldPrefix` from {@link TuiTextfieldControllerModule} instead */
+      this.textfieldPrefix = '';
+      /** @deprecated use `tuiTextfieldPostfix` from {@link TuiTextfieldControllerModule} instead */
+      this.textfieldPostfix = '';
+      this.value = '';
+      this.valueChange = new core_mjs_.EventEmitter();
+      this.autofilled = false;
+    }
+    get prefix() {
+      return this.textfieldPrefix || this.controller.prefix;
+    }
+    get postfix() {
+      return this.textfieldPostfix || this.controller.postfix;
+    }
+    get filler() {
+      return this.textfieldFiller || this.controller.filler;
+    }
+    get nativeFocusableElement() {
+      if (this.computedDisabled || !this.focusableElement) {
+        return null;
+      }
+      const {
+        nativeElement
+      } = this.focusableElement;
+      return nativeElement.previousElementSibling || nativeElement;
+    }
+    get focused() {
+      return (0,taiga_ui_cdk_utils_focus/* tuiIsNativeFocusedIn */.zb)(this.el.nativeElement);
+    }
+    get appearance() {
+      return this.controller.appearance;
+    }
+    get size() {
+      return this.controller.size;
+    }
+    get computedInvalid() {
+      return !this.readOnly && !this.disabled && this.invalid;
+    }
+    get inputHidden() {
+      var _a;
+      return !!((_a = this.content) === null || _a === void 0 ? void 0 : _a.length);
+    }
+    get hasValue() {
+      return !!this.value;
+    }
+    get hasCleaner() {
+      return this.controller.cleaner && this.hasValue && !this.computedDisabled && !this.readOnly;
+    }
+    get hasTooltip() {
+      var _a;
+      return !!((_a = this.hintOptions) === null || _a === void 0 ? void 0 : _a.content) && !this.computedDisabled;
+    }
+    get hasCustomContent() {
+      return !!this.controller.customContent;
+    }
+    get placeholderVisible() {
+      var _a;
+      const hasDecor = ((_a = this.nativeFocusableElement) === null || _a === void 0 ? void 0 : _a.placeholder) || this.prefix || this.postfix || this.filler;
+      const showDecor = hasDecor && !this.readOnly && this.computedFocused;
+      return !this.hasValue && !showDecor;
+    }
+    get hasPlaceholder() {
+      return this.placeholderRaisable || this.placeholderVisible;
+    }
+    get placeholderRaised() {
+      return this.placeholderRaisable && (this.computedFocused && !this.readOnly || this.hasValue || this.autofilled);
+    }
+    get borderStart() {
+      return this.iconLeftContent ? this.iconPaddingLeft : 0;
+    }
+    get borderEnd() {
+      return (0,taiga_ui_core_utils_miscellaneous/* tuiGetBorder */._X)(!!this.iconContent, this.hasCleaner, this.hasTooltip, this.hasCustomContent, this.size);
+    }
+    get iconContent() {
+      return this.controller.icon;
+    }
+    get iconLeftContent() {
+      return this.controller.iconLeft;
+    }
+    get showHint() {
+      var _a;
+      return !!((_a = this.hintOptions) === null || _a === void 0 ? void 0 : _a.content) && (this.options.hintOnDisabled || !this.computedDisabled);
+    }
+    // Safari expiration date autofill workaround
+    get name() {
+      var _a;
+      return ((_a = this.nativeFocusableElement) === null || _a === void 0 ? void 0 : _a.autocomplete) === 'cc-exp' ? 'ccexpiryyear' : null;
+    }
+    get computedId() {
+      var _a;
+      return ((_a = this.nativeFocusableElement) === null || _a === void 0 ? void 0 : _a.id) || '';
+    }
+    onFocused(focused) {
+      this.updateFocused(focused);
+    }
+    getIndent$(element) {
+      return (0,fromEvent/* fromEvent */.R)(element, 'scroll').pipe((0,operators_map/* map */.U)(() => -1 * Math.max(element.scrollLeft, 0)));
+    }
+    clear() {
+      if (this.nativeFocusableElement) {
+        this.nativeFocusableElement.value = '';
+      }
+      this.updateValue('');
+    }
+    onMouseDown(event) {
+      const {
+        nativeFocusableElement
+      } = this;
+      if (!nativeFocusableElement || event.target === nativeFocusableElement) {
+        return;
+      }
+      event.preventDefault();
+      nativeFocusableElement.focus();
+    }
+    onModelChange(value) {
+      this.updateValue(value);
+    }
+    onAutofilled(autofilled) {
+      this.updateAutofilled(autofilled);
+    }
+    detectRetargetFromLabel(event) {
+      if ((0,taiga_ui_cdk_utils_dom/* tuiRetargetedBoundaryCrossing */.UP)(event)) {
+        event.stopImmediatePropagation();
+      }
+    }
+    get iconPaddingLeft() {
+      return TUI_ICON_PADDINGS[this.size];
+    }
+    get placeholderRaisable() {
+      return this.size !== 's' && !this.controller.labelOutside;
+    }
+    updateAutofilled(autofilled) {
+      if (this.autofilled === autofilled) {
+        return;
+      }
+      this.autofilled = autofilled;
+    }
+    updateValue(value) {
+      this.value = value;
+      this.valueChange.emit(value);
+    }
+  }
+  TuiPrimitiveTextfieldComponent.ɵfac = function TuiPrimitiveTextfieldComponent_Factory(t) {
+    return new (t || TuiPrimitiveTextfieldComponent)(core_mjs_["ɵɵdirectiveInject"](TUI_TEXTFIELD_WATCHED_CONTROLLER), core_mjs_["ɵɵdirectiveInject"](TuiHintOptionsDirective, 8), core_mjs_["ɵɵdirectiveInject"](TUI_TEXTFIELD_OPTIONS), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef));
+  };
+  TuiPrimitiveTextfieldComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiPrimitiveTextfieldComponent,
+    selectors: [["tui-primitive-textfield"]],
+    contentQueries: function TuiPrimitiveTextfieldComponent_ContentQueries(rf, ctx, dirIndex) {
+      if (rf & 1) {
+        core_mjs_["ɵɵcontentQuery"](dirIndex, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li, 5);
+      }
+      if (rf & 2) {
+        let _t;
+        core_mjs_["ɵɵqueryRefresh"](_t = core_mjs_["ɵɵloadQuery"]()) && (ctx.content = _t);
+      }
+    },
+    viewQuery: function TuiPrimitiveTextfieldComponent_Query(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵviewQuery"](_c1, 5);
+      }
+      if (rf & 2) {
+        let _t;
+        core_mjs_["ɵɵqueryRefresh"](_t = core_mjs_["ɵɵloadQuery"]()) && (ctx.focusableElement = _t.first);
+      }
+    },
+    hostVars: 15,
+    hostBindings: function TuiPrimitiveTextfieldComponent_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("focusin", function TuiPrimitiveTextfieldComponent_focusin_HostBindingHandler() {
+          return ctx.onFocused(true);
+        })("focusout", function TuiPrimitiveTextfieldComponent_focusout_HostBindingHandler() {
+          return ctx.onFocused(false);
+        });
+      }
+      if (rf & 2) {
+        core_mjs_["ɵɵattribute"]("data-size", ctx.size);
+        core_mjs_["ɵɵstyleProp"]("--border-start", ctx.borderStart, "rem")("--border-end", ctx.borderEnd, "rem");
+        core_mjs_["ɵɵclassProp"]("_autofilled", ctx.autofilled)("_label-outside", ctx.controller.labelOutside)("_readonly", ctx.readOnly)("_invalid", ctx.computedInvalid)("_hidden", ctx.inputHidden);
+      }
+    },
+    inputs: {
+      editable: "editable",
+      textfieldFiller: ["filler", "textfieldFiller"],
+      iconCleaner: "iconCleaner",
+      readOnly: "readOnly",
+      invalid: "invalid",
+      disabled: "disabled",
+      textfieldPrefix: ["prefix", "textfieldPrefix"],
+      textfieldPostfix: ["postfix", "textfieldPostfix"],
+      value: "value"
+    },
+    outputs: {
+      valueChange: "valueChange"
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_cdk_tokens/* tuiAsFocusableItemAccessor */.FT)(TuiPrimitiveTextfieldComponent), TEXTFIELD_CONTROLLER_PROVIDER]), core_mjs_["ɵɵInheritDefinitionFeature"]],
+    ngContentSelectors: _c4,
+    decls: 24,
+    vars: 37,
+    consts: [[4, "ngIf"], ["automation-id", "tui-primitive-textfield__wrapper", "tuiWrapper", "", 3, "active", "appearance", "disabled", "focus", "hover", "invalid", "readOnly", "click.prevent.silent", "mousedown", "tuiAutofilledChange"], ["automation-id", "tui-primitive-textfield__native-input", "tuiMaskAccessor", "", 1, "t-input", 3, "disabled", "id", "ngModel", "readOnly", "tuiFocusable", "ngModelChange"], ["focusableElement", ""], ["automation-id", "tui-primitive-textfield__value", "class", "t-input t-input_template", 4, "ngIf"], [1, "t-content"], ["class", "t-icon t-icon_left t-textfield-icon", 4, "ngIf"], [1, "t-wrapper"], ["automation-id", "tui-primitive-textfield__placeholder", "class", "t-placeholder", 3, "t-placeholder_raised", "for", 4, "ngIf"], [1, "t-wrapper-value-decoration"], ["aria-hidden", "true", "automation-id", "tui-primitive-textfield__value-decoration", 1, "t-value-decoration"], ["decor", ""], [1, "t-icons"], ["automation-id", "tui-primitive-textfield__custom-content", "class", "t-custom-content", 4, "ngIf"], ["appearance", "icon", "automation-id", "tui-primitive-textfield__cleaner", "tuiWrapper", "", "class", "t-cleaner", 3, "click.stop", 4, "ngIf"], ["automation-id", "tui-primitive-textfield__tooltip", "class", "t-tooltip", 3, "content", "describeId", 4, "ngIf"], ["class", "t-icon t-textfield-icon", 4, "ngIf"], ["automation-id", "tui-primitive-textfield__value", 1, "t-input", "t-input_template"], [1, "t-icon", "t-icon_left", "t-textfield-icon"], ["appearance", "icon", "tuiWrapper", "", 3, "src", 4, "polymorpheusOutlet", "polymorpheusOutletContext"], ["appearance", "icon", "tuiWrapper", "", 3, "src"], ["automation-id", "tui-primitive-textfield__placeholder", 1, "t-placeholder", 3, "for"], ["automation-id", "tui-primitive-textfield__custom-content", 1, "t-custom-content"], ["class", "t-custom-icon", 3, "src", 4, "polymorpheusOutlet"], [1, "t-custom-icon", 3, "src"], ["appearance", "icon", "automation-id", "tui-primitive-textfield__cleaner", "tuiWrapper", "", 1, "t-cleaner", 3, "click.stop"], [3, "src", 4, "polymorpheusOutlet", "polymorpheusOutletContext"], [3, "src"], ["automation-id", "tui-primitive-textfield__tooltip", 1, "t-tooltip", 3, "content", "describeId"], [1, "t-icon", "t-textfield-icon"]],
+    template: function TuiPrimitiveTextfieldComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵprojectionDef"](_c3);
+        core_mjs_["ɵɵtemplate"](0, TuiPrimitiveTextfieldComponent_ng_container_0_Template, 1, 0, "ng-container", 0);
+        core_mjs_["ɵɵpipe"](1, "async");
+        core_mjs_["ɵɵtemplate"](2, TuiPrimitiveTextfieldComponent_ng_container_2_Template, 1, 0, "ng-container", 0);
+        core_mjs_["ɵɵpipe"](3, "async");
+        core_mjs_["ɵɵelementStart"](4, "div", 1);
+        core_mjs_["ɵɵlistener"]("click.prevent.silent", function TuiPrimitiveTextfieldComponent_Template_div_click_prevent_silent_4_listener($event) {
+          return ctx.detectRetargetFromLabel($event);
+        })("mousedown", function TuiPrimitiveTextfieldComponent_Template_div_mousedown_4_listener($event) {
+          return ctx.onMouseDown($event);
+        })("tuiAutofilledChange", function TuiPrimitiveTextfieldComponent_Template_div_tuiAutofilledChange_4_listener($event) {
+          return ctx.onAutofilled($event);
+        });
+        core_mjs_["ɵɵpipe"](5, "async");
+        core_mjs_["ɵɵprojection"](6);
+        core_mjs_["ɵɵprojection"](7, 1);
+        core_mjs_["ɵɵelementStart"](8, "input", 2, 3);
+        core_mjs_["ɵɵlistener"]("ngModelChange", function TuiPrimitiveTextfieldComponent_Template_input_ngModelChange_8_listener($event) {
+          return ctx.onModelChange($event);
+        });
+        core_mjs_["ɵɵelementEnd"]();
+        core_mjs_["ɵɵtemplate"](10, TuiPrimitiveTextfieldComponent_div_10_Template, 2, 0, "div", 4);
+        core_mjs_["ɵɵelementStart"](11, "div", 5);
+        core_mjs_["ɵɵtemplate"](12, TuiPrimitiveTextfieldComponent_div_12_Template, 2, 4, "div", 6);
+        core_mjs_["ɵɵelementStart"](13, "div", 7);
+        core_mjs_["ɵɵtemplate"](14, TuiPrimitiveTextfieldComponent_label_14_Template, 2, 3, "label", 8);
+        core_mjs_["ɵɵelementStart"](15, "div", 9)(16, "tui-value-decoration", 10, 11);
+        core_mjs_["ɵɵpipe"](18, "async");
+        core_mjs_["ɵɵelementEnd"]()()();
+        core_mjs_["ɵɵelementStart"](19, "div", 12);
+        core_mjs_["ɵɵtemplate"](20, TuiPrimitiveTextfieldComponent_div_20_Template, 2, 1, "div", 13)(21, TuiPrimitiveTextfieldComponent_span_21_Template, 2, 4, "span", 14)(22, TuiPrimitiveTextfieldComponent_tui_tooltip_22_Template, 1, 2, "tui-tooltip", 15)(23, TuiPrimitiveTextfieldComponent_div_23_Template, 2, 4, "div", 16);
+        core_mjs_["ɵɵelementEnd"]()()();
+      }
+      if (rf & 2) {
+        const _r2 = core_mjs_["ɵɵreference"](9);
+        const _r6 = core_mjs_["ɵɵreference"](17);
+        core_mjs_["ɵɵproperty"]("ngIf", core_mjs_["ɵɵpipeBind1"](1, 29, ctx.content == null ? null : ctx.content.changes));
+        core_mjs_["ɵɵadvance"](2);
+        core_mjs_["ɵɵproperty"]("ngIf", core_mjs_["ɵɵpipeBind1"](3, 31, ctx.hintOptions == null ? null : ctx.hintOptions.change$));
+        core_mjs_["ɵɵadvance"](2);
+        core_mjs_["ɵɵstyleProp"]("--text-indent", core_mjs_["ɵɵpipeBind1"](5, 33, _r6.pre$), "px");
+        core_mjs_["ɵɵproperty"]("active", ctx.pseudoActive)("appearance", ctx.appearance)("disabled", ctx.disabled)("focus", ctx.computedFocused)("hover", ctx.pseudoHover)("invalid", ctx.computedInvalid)("readOnly", ctx.readOnly);
+        core_mjs_["ɵɵadvance"](4);
+        core_mjs_["ɵɵproperty"]("disabled", ctx.computedDisabled)("id", ctx.id)("ngModel", ctx.value)("readOnly", ctx.readOnly || !ctx.editable)("tuiFocusable", ctx.computedFocusable);
+        core_mjs_["ɵɵattribute"]("aria-invalid", ctx.computedInvalid)("name", ctx.name);
+        core_mjs_["ɵɵadvance"](2);
+        core_mjs_["ɵɵproperty"]("ngIf", ctx.inputHidden);
+        core_mjs_["ɵɵadvance"](2);
+        core_mjs_["ɵɵproperty"]("ngIf", ctx.iconLeftContent);
+        core_mjs_["ɵɵadvance"](2);
+        core_mjs_["ɵɵproperty"]("ngIf", ctx.hasPlaceholder);
+        core_mjs_["ɵɵadvance"](2);
+        core_mjs_["ɵɵstyleProp"]("text-indent", core_mjs_["ɵɵpipeBind1"](18, 35, ctx.getIndent$(_r2)), "px");
+        core_mjs_["ɵɵclassProp"]("t-has-value", ctx.value);
+        core_mjs_["ɵɵadvance"](4);
+        core_mjs_["ɵɵproperty"]("ngIf", ctx.hasCustomContent);
+        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵproperty"]("ngIf", ctx.hasCleaner);
+        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵproperty"]("ngIf", ctx.showHint);
+        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵproperty"]("ngIf", ctx.iconContent);
+      }
+    },
+    dependencies: [taiga_ui_core_components_svg/* TuiSvgComponent */.PN, TuiValueDecorationComponent, TuiTooltipComponent, common_mjs_.NgIf, taiga_ui_core_directives_wrapper/* TuiWrapperDirective */.o, TuiAutofilledDirective, TuiMaskAccessorDirective, fesm2022_forms/* DefaultValueAccessor */.Fj, fesm2022_forms/* NgControlStatus */.JJ, fesm2022_forms/* NgModel */.On, TuiFocusableDirective, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li, common_mjs_.AsyncPipe],
+    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);position:relative;display:block;text-align:left;border-radius:var(--tui-radius-m);height:var(--tui-height);min-height:var(--tui-height);max-height:var(--tui-height)}[data-size=s][_nghost-%COMP%]{--tui-height: var(--tui-height-s)}[data-size=m][_nghost-%COMP%]{--tui-height: var(--tui-height-m)}[data-size=l][_nghost-%COMP%]{--tui-height: var(--tui-height-l);font:var(--tui-font-text-m);line-height:1.25rem}.t-input[_ngcontent-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);padding:0;margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;width:100%;height:100%;border-style:solid;border-color:transparent;border-inline-start-width:var(--border-start, 0);border-inline-end-width:var(--border-end, 0);text-indent:var(--text-indent);text-align:inherit;box-sizing:border-box;white-space:nowrap;overflow:hidden;text-transform:inherit;resize:none}.t-input[_ngcontent-%COMP%]:-webkit-autofill, .t-input[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-input[_ngcontent-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}.t-input[_ngcontent-%COMP%]:-webkit-autofill, .t-input[_ngcontent-%COMP%]:-webkit-autofill:first-line{font-size:inherit;line-height:inherit}.t-input[_ngcontent-%COMP%]::-webkit-caps-lock-indicator, .t-input[_ngcontent-%COMP%]::-webkit-contacts-auto-fill-button, .t-input[_ngcontent-%COMP%]::-webkit-credit-card-auto-fill-button, .t-input[_ngcontent-%COMP%]::-webkit-credentials-auto-fill-button, .t-input[_ngcontent-%COMP%]::-webkit-strong-password-auto-fill-button{content:none!important;position:absolute;left:-62.4375rem;top:-62.4375rem;z-index:-999;display:none!important;background:transparent!important;pointer-events:none!important}.t-input[_ngcontent-%COMP%]::placeholder{color:var(--tui-text-03);opacity:0}._focused[_nghost-%COMP%]:not(._readonly)   .t-input[_ngcontent-%COMP%]::placeholder, tui-primitive-textfield._focused:not(._readonly)[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-primitive-textfield._focused:not(._readonly)   [_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-textarea._focused:not(._readonly)[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-textarea._focused:not(._readonly)   [_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-text-area._focused:not(._readonly)[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-text-area._focused:not(._readonly)   [_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder{opacity:1}[tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]:-webkit-autofill, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]:-webkit-autofill:focus, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:focus, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01-night)!important;border-color:var(--tui-autofill-night);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill-night) inset!important}[tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]::placeholder, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]::placeholder{color:var(--tui-text-03-night)}[data-size=s][_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"s\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), .t-input   tui-textarea[data-size=\"s\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-textarea), .t-input   tui-text-area[data-size=\"s\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-s)}[data-size=m][_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"m\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), .t-input   tui-textarea[data-size=\"m\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-textarea), .t-input   tui-text-area[data-size=\"m\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-m)}[data-size=l][_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"l\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), .t-input   tui-textarea[data-size=\"l\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-textarea), .t-input   tui-text-area[data-size=\"l\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-l)}._disabled[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield._disabled[_nghost-%COMP%], tui-primitive-textfield._disabled   [_nghost-%COMP%], .t-input   tui-textarea._disabled[_nghost-%COMP%], tui-textarea._disabled   [_nghost-%COMP%], .t-input   tui-text-area._disabled[_nghost-%COMP%], tui-text-area._disabled   [_nghost-%COMP%]{pointer-events:none}[data-size=l][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1.25rem}[data-size=l][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield):-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield):-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.8156rem;transform:translateY(-.625rem)}[data-size=m][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1rem}[data-size=m][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield):-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield):-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.69rem;transform:translateY(-.5rem)}._hidden[_nghost-%COMP%]   input.t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield._hidden[_nghost-%COMP%], tui-primitive-textfield._hidden   [_nghost-%COMP%]{opacity:0;text-indent:-10em;-webkit-user-select:none}.t-content[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;box-sizing:border-box;align-items:center;overflow:hidden}[data-size=s][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:0 var(--tui-padding-s)}[data-size=m][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:0 var(--tui-padding-m)}[data-size=l][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:0 var(--tui-padding-l)}.t-wrapper[_ngcontent-%COMP%]{flex:1;min-width:0;-webkit-padding-end:.25rem;padding-inline-end:.25rem}.t-placeholder[_ngcontent-%COMP%]{transition-property:transform,font-size,color,letter-spacing;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;width:100%;-webkit-user-select:none;-moz-user-select:none;user-select:none;font:var(--tui-font-text-s);color:var(--tui-text-02);pointer-events:none;will-change:transform;transform:translateY(0)}@supports (-webkit-hyphens: none){.t-placeholder[_ngcontent-%COMP%]{will-change:unset;transition-property:transform,color,letter-spacing}}.t-placeholder_raised[_ngcontent-%COMP%]{transform:translateY(-.625rem)}[data-size=m][_nghost-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%]{font:var(--tui-font-text-xs);line-height:1.25rem;transform:translateY(-.5rem);letter-spacing:.025rem}._invalid[_nghost-%COMP%]:not(._focused)   .t-placeholder_raised[_ngcontent-%COMP%], ._invalid[_nghost-%COMP%]:not(._focused):hover   .t-placeholder_raised[_ngcontent-%COMP%]{color:var(--tui-error-fill)}._invalid[_nghost-%COMP%]:not(._focused)   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%], ._invalid[_nghost-%COMP%]:not(._focused):hover   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%]{color:var(--tui-error-fill-night)}._focused[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=m]._focused._label-outside[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused._label-outside[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-03)}[data-size=l][_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font:var(--tui-font-text-m);line-height:1.25rem}[data-size=l][_nghost-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%]{font-size:.8156rem}[data-size=m]._focused[_nghost-%COMP%]:not(._label-outside)   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused[_nghost-%COMP%]:not(._label-outside)   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-01)}[tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-02-night)}[data-size=m]._focused[_nghost-%COMP%]:not(._label-outside)   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused[_nghost-%COMP%]:not(._label-outside)   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-01-night)}._focused[_nghost-%COMP%]   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=m]._focused._label-outside[_nghost-%COMP%]   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused._label-outside[_nghost-%COMP%]   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-02-night)}.t-cleaner[_ngcontent-%COMP%]{position:relative;display:flex;width:1.5rem;height:1.5rem;align-items:center;justify-content:center;box-sizing:border-box;cursor:pointer;pointer-events:none;pointer-events:auto}._readonly[_nghost-%COMP%]   .t-cleaner[_ngcontent-%COMP%], ._disabled[_nghost-%COMP%]   .t-cleaner[_ngcontent-%COMP%]{pointer-events:none}.t-icon[_ngcontent-%COMP%]{position:relative;display:flex;width:1.5rem;height:1.5rem;align-items:center;justify-content:center;box-sizing:border-box;cursor:pointer;pointer-events:none}[data-size=s][_nghost-%COMP%]   .t-icon_left[_ngcontent-%COMP%]{-webkit-margin-start:-.375rem;margin-inline-start:-.375rem}[data-size=m][_nghost-%COMP%]   .t-icon_left[_ngcontent-%COMP%]{-webkit-margin-start:-.125rem;margin-inline-start:-.125rem;-webkit-margin-end:.375rem;margin-inline-end:.375rem}[data-size=l][_nghost-%COMP%]   .t-icon_left[_ngcontent-%COMP%]{-webkit-margin-end:.75rem;margin-inline-end:.75rem}.t-icons[_ngcontent-%COMP%]{display:flex;align-items:center}[data-size=m][_nghost-%COMP%]   .t-icons[_ngcontent-%COMP%]{-webkit-margin-end:-.125rem;margin-inline-end:-.125rem}[data-size=s][_nghost-%COMP%]   .t-icons[_ngcontent-%COMP%]{-webkit-margin-end:-.375rem;margin-inline-end:-.375rem}[_nghost-%COMP%]:not([data-size=\"s\"])   .t-icons[_ngcontent-%COMP%] > [_ngcontent-%COMP%]:not(:first-child){-webkit-margin-start:.25rem;margin-inline-start:.25rem}._autofilled[data-size=s][_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], ._autofilled._label-outside[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], ._autofilled[_nghost-%COMP%]   .t-value-decoration[_ngcontent-%COMP%]:not(.t-has-value){visibility:hidden}.t-custom-content[_ngcontent-%COMP%]{position:relative;display:flex;align-items:center;justify-content:center;min-width:2rem;height:2rem;pointer-events:none}.t-custom-icon[_ngcontent-%COMP%]{width:2rem;height:100%}.t-input[_ngcontent-%COMP%]:not(:first-child){display:none}[data-size][_nghost-%COMP%]   .t-input_template[_ngcontent-%COMP%]{display:flex;width:calc(100% - 1rem);max-width:calc(100% - 1rem);align-items:center;pointer-events:none;-webkit-padding-end:0;padding-inline-end:0}.t-text-template[_ngcontent-%COMP%]{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.t-wrapper-value-decoration[_ngcontent-%COMP%]{position:relative;pointer-events:none}"],
+    changeDetection: 0
+  });
+  (0,tslib_es6/* __decorate */.gn)([taiga_ui_cdk_decorators/* tuiPure */.UM], TuiPrimitiveTextfieldComponent.prototype, "getIndent$", null);
+  return TuiPrimitiveTextfieldComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiPrimitiveTextfieldDirective = /*#__PURE__*/(() => {
+  class TuiPrimitiveTextfieldDirective extends taiga_ui_core_abstract/* AbstractTuiTextfieldHost */.D1 {
+    constructor(textfield) {
+      /**
+       * TuiPrimitiveTextfieldComponent satisfies all required parts of
+       * AbstractTuiControl interface. A new interface is not introduced
+       * so AbstractTuiControl is automatically injected for all other controls.
+       */
+      super(textfield);
+      this.textfield = textfield;
+    }
+    get readOnly() {
+      return this.textfield.readOnly || !this.textfield.editable;
+    }
+    onValueChange(value) {
+      this.textfield.onModelChange(value);
+    }
+  }
+  TuiPrimitiveTextfieldDirective.ɵfac = function TuiPrimitiveTextfieldDirective_Factory(t) {
+    return new (t || TuiPrimitiveTextfieldDirective)(core_mjs_["ɵɵdirectiveInject"](TuiPrimitiveTextfieldComponent));
+  };
+  TuiPrimitiveTextfieldDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiPrimitiveTextfieldDirective,
+    selectors: [["tui-primitive-textfield"]],
+    features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_tokens/* tuiAsTextfieldHost */.cp)(TuiPrimitiveTextfieldDirective)]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
+  return TuiPrimitiveTextfieldDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiTextfieldComponent = /*#__PURE__*/(() => {
+  class TuiTextfieldComponent {
+    constructor(host, controller, el, idService, legacyMask) {
+      this.host = host;
+      this.controller = controller;
+      this.el = el;
+      this.idService = idService;
+      this.legacyMask = legacyMask;
+      this.host.process(this.el.nativeElement);
+    }
+    get id() {
+      return this.el.nativeElement.id || this.idService.generate();
+    }
+    get inputMode() {
+      return this.el.nativeElement.inputMode || this.host.inputMode;
+    }
+  }
+  TuiTextfieldComponent.ɵfac = function TuiTextfieldComponent_Factory(t) {
+    return new (t || TuiTextfieldComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_TEXTFIELD_HOST */.S0), core_mjs_["ɵɵdirectiveInject"](TUI_TEXTFIELD_WATCHED_CONTROLLER), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiIdService */.ll), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_LEGACY_MASK */.sf, 8));
+  };
+  TuiTextfieldComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiTextfieldComponent,
+    selectors: [["input", "tuiTextfield", ""], ["textarea", "tuiTextfield", ""]],
+    hostAttrs: ["type", "text"],
+    hostVars: 7,
+    hostBindings: function TuiTextfieldComponent_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("input", function TuiTextfieldComponent_input_HostBindingHandler($event) {
+          return !ctx.legacyMask && ctx.host.onValueChange($event.target.value);
+        });
+      }
+      if (rf & 2) {
+        core_mjs_["ɵɵhostProperty"]("tabIndex", ctx.host.focusable ? 0 : -1)("readOnly", ctx.host.readOnly)("value", ctx.host.value);
+        core_mjs_["ɵɵattribute"]("id", ctx.id)("inputMode", ctx.inputMode)("aria-invalid", ctx.host.invalid)("disabled", ctx.host.disabled || null);
+      }
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([TEXTFIELD_CONTROLLER_PROVIDER])],
+    attrs: _c5,
+    decls: 0,
+    vars: 0,
+    template: function TuiTextfieldComponent_Template(rf, ctx) {},
+    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);padding:0;margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;width:100%;height:100%;border-style:solid;border-color:transparent;border-inline-start-width:var(--border-start, 0);border-inline-end-width:var(--border-end, 0);text-indent:var(--text-indent);text-align:inherit;box-sizing:border-box;white-space:nowrap;overflow:hidden;text-transform:inherit;resize:none}[_nghost-%COMP%]:-webkit-autofill, [_nghost-%COMP%]:-webkit-autofill:hover, [_nghost-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}[_nghost-%COMP%]:-webkit-autofill, [_nghost-%COMP%]:-webkit-autofill:first-line{font-size:inherit;line-height:inherit}[_nghost-%COMP%]::-webkit-caps-lock-indicator, [_nghost-%COMP%]::-webkit-contacts-auto-fill-button, [_nghost-%COMP%]::-webkit-credit-card-auto-fill-button, [_nghost-%COMP%]::-webkit-credentials-auto-fill-button, [_nghost-%COMP%]::-webkit-strong-password-auto-fill-button{content:none!important;position:absolute;left:-62.4375rem;top:-62.4375rem;z-index:-999;display:none!important;background:transparent!important;pointer-events:none!important}[_nghost-%COMP%]::placeholder{color:var(--tui-text-03);opacity:0}._focused[_nghost-%COMP%]:not(._readonly)   [_ngcontent-%COMP%]::placeholder, tui-primitive-textfield._focused:not(._readonly)   [_nghost-%COMP%]::placeholder, tui-textarea._focused:not(._readonly)   [_nghost-%COMP%]::placeholder, tui-text-area._focused:not(._readonly)   [_nghost-%COMP%]::placeholder{opacity:1}[tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]:-webkit-autofill, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]:-webkit-autofill:hover, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]:-webkit-autofill:focus, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:focus, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01-night)!important;border-color:var(--tui-autofill-night);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill-night) inset!important}[tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]::placeholder, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]::placeholder, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]::placeholder{color:var(--tui-text-03-night)}[data-size=s][_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"s\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), [_nghost-%COMP%]   tui-textarea[data-size=\"s\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-textarea), [_nghost-%COMP%]   tui-text-area[data-size=\"s\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-s)}[data-size=m][_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"m\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), [_nghost-%COMP%]   tui-textarea[data-size=\"m\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-textarea), [_nghost-%COMP%]   tui-text-area[data-size=\"m\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-m)}[data-size=l][_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"l\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), [_nghost-%COMP%]   tui-textarea[data-size=\"l\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-textarea), [_nghost-%COMP%]   tui-text-area[data-size=\"l\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-l)}._disabled[_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield._disabled[_nghost-%COMP%], tui-primitive-textfield._disabled   [_nghost-%COMP%], [_nghost-%COMP%]   tui-textarea._disabled[_nghost-%COMP%], tui-textarea._disabled   [_nghost-%COMP%], [_nghost-%COMP%]   tui-text-area._disabled[_nghost-%COMP%], tui-text-area._disabled   [_nghost-%COMP%]{pointer-events:none}[data-size=l][_nghost-%COMP%]:not(._label-outside)   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1.25rem}[data-size=l][_nghost-%COMP%]:not(._label-outside)   [_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield):-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield):-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.8156rem;transform:translateY(-.625rem)}[data-size=m][_nghost-%COMP%]:not(._label-outside)   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1rem}[data-size=m][_nghost-%COMP%]:not(._label-outside)   [_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield):-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield):-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.69rem;transform:translateY(-.5rem)}._hidden[_nghost-%COMP%]   input[_ngcontent-%COMP%], [_nghost-%COMP%]   tui-primitive-textfield._hidden[_nghost-%COMP%], tui-primitive-textfield._hidden   [_nghost-%COMP%]{opacity:0;text-indent:-10em;-webkit-user-select:none}textarea[_nghost-%COMP%]{white-space:pre-wrap}textarea[_nghost-%COMP%]   tui-textarea._ios[_nghost-%COMP%], tui-textarea._ios   [_nghost-%COMP%], textarea[_nghost-%COMP%]   tui-text-area._ios[_nghost-%COMP%], tui-text-area._ios   [_nghost-%COMP%]{padding-left:.8125rem}"],
+    changeDetection: 0
+  });
+  return TuiTextfieldComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiPrimitiveTextfieldModule = /*#__PURE__*/(() => {
+  class TuiPrimitiveTextfieldModule {}
+  TuiPrimitiveTextfieldModule.ɵfac = function TuiPrimitiveTextfieldModule_Factory(t) {
+    return new (t || TuiPrimitiveTextfieldModule)();
+  };
+  TuiPrimitiveTextfieldModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiPrimitiveTextfieldModule
+  });
+  TuiPrimitiveTextfieldModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    imports: [[common_mjs_.CommonModule, fesm2022_forms/* FormsModule */.u5, tinkoff_ng_polymorpheus/* PolymorpheusModule */.wq, TuiMaskAccessorModule, TuiFocusableModule, taiga_ui_core_directives_wrapper/* TuiWrapperModule */.W, taiga_ui_core_components_svg/* TuiSvgModule */.EI, TuiTooltipModule, TuiAutofilledModule]]
+  });
+  return TuiPrimitiveTextfieldModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * @deprecated:
+ * use {@link TUI_TEXTFIELD_DEFAULT_OPTIONS}
+ */
+const TUI_PRIMITIVE_TEXTFIELD_DEFAULT_OPTIONS = (/* unused pure expression or super */ null && (TUI_TEXTFIELD_DEFAULT_OPTIONS));
+/**
+ * @deprecated:
+ * use {@link TUI_TEXTFIELD_OPTIONS}
+ */
+const TUI_PRIMITIVE_TEXTFIELD_OPTIONS = (/* unused pure expression or super */ null && (TUI_TEXTFIELD_OPTIONS$1));
+/**
+ * @deprecated:
+ * use {@link tuiTextfieldOptionsProvider}
+ */
+const tuiPrimitiveTextfieldOptionsProvider = (/* unused pure expression or super */ null && (tuiTextfieldOptionsProvider));
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-core-components-primitive-textfield.js.map
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-notification.js
+var taiga_ui_core_components_notification = __webpack_require__(8689);
+// EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
+var ng_web_apis_common = __webpack_require__(229);
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-overscroll.js
+
+
+
+
+
+
+
+
+/**
+ * Directive to isolate scrolling, i.e. prevent body scroll behind modal dialog
+ */
+let TuiOverscrollDirective = /*#__PURE__*/(() => {
+  class TuiOverscrollDirective {
+    constructor({
+      nativeElement
+    }, zone, destroy$) {
+      this.mode = 'scroll';
+      (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, 'wheel', {
+        passive: false
+      }).pipe((0,filter/* filter */.h)(() => this.enabled), (0,taiga_ui_cdk_observables/* tuiZonefree */.fL)(zone), (0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(event => {
+        this.processEvent(event, !!event.deltaY, event.deltaY ? event.deltaY < 0 : event.deltaX < 0);
+      });
+      (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, 'touchstart', {
+        passive: true
+      }).pipe((0,operators_switchMap/* switchMap */.w)(({
+        touches
+      }) => {
+        let {
+          clientX,
+          clientY
+        } = touches[0];
+        let deltaX = 0;
+        let deltaY = 0;
+        let vertical;
+        return (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, 'touchmove', {
+          passive: false
+        }).pipe((0,filter/* filter */.h)(() => this.enabled), (0,tap/* tap */.b)(event => {
+          // We have to have it in tap instead of subscribe due to variables in closure
+          const changedTouch = event.changedTouches[0];
+          deltaX = clientX - changedTouch.clientX;
+          deltaY = clientY - changedTouch.clientY;
+          clientX = changedTouch.clientX;
+          clientY = changedTouch.clientY;
+          if (vertical === undefined) {
+            vertical = Math.abs(deltaY) > Math.abs(deltaX);
+          }
+          this.processEvent(event, vertical, vertical ? deltaY < 0 : deltaX < 0);
+        }));
+      }), (0,taiga_ui_cdk_observables/* tuiZonefree */.fL)(zone), (0,takeUntil/* takeUntil */.R)(destroy$)).subscribe();
+    }
+    get enabled() {
+      return this.mode !== 'none';
+    }
+    get overscrollBehavior() {
+      return this.enabled ? 'contain' : null;
+    }
+    processEvent(event, vertical, negative) {
+      var _a;
+      const {
+        target,
+        currentTarget,
+        cancelable
+      } = event;
+      if (!cancelable || !(0,taiga_ui_cdk_utils_dom/* tuiIsElement */.ve)(target) || ((_a = target) === null || _a === void 0 ? void 0 : _a.type) === 'range') {
+        return;
+      }
+      // This is all what's needed in Chrome/Firefox thanks to CSS overscroll-behavior
+      if (this.mode === 'all' && (vertical && !currentTarget.contains((0,taiga_ui_cdk_utils_dom/* tuiGetScrollParent */.Hs)(target)) || !vertical && !currentTarget.contains((0,taiga_ui_cdk_utils_dom/* tuiGetScrollParent */.Hs)(target, false)))) {
+        event.preventDefault();
+        return;
+      }
+      // This is Safari/IE/Edge fallback
+      if (vertical && (negative && !(0,taiga_ui_cdk_utils_dom/* tuiCanScroll */.ty)(target, currentTarget, true, false) || !negative && !(0,taiga_ui_cdk_utils_dom/* tuiCanScroll */.ty)(target, currentTarget, true, true))) {
+        event.preventDefault();
+        return;
+      }
+      if (!vertical && (negative && !(0,taiga_ui_cdk_utils_dom/* tuiCanScroll */.ty)(target, currentTarget, false, false) || !negative && !(0,taiga_ui_cdk_utils_dom/* tuiCanScroll */.ty)(target, currentTarget, false, true))) {
+        event.preventDefault();
+      }
+    }
+  }
+  TuiOverscrollDirective.ɵfac = function TuiOverscrollDirective_Factory(t) {
+    return new (t || TuiOverscrollDirective)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.NgZone), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2));
+  };
+  TuiOverscrollDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiOverscrollDirective,
+    selectors: [["", "tuiOverscroll", ""]],
+    hostVars: 2,
+    hostBindings: function TuiOverscrollDirective_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        core_mjs_["ɵɵstyleProp"]("overscroll-behavior", ctx.overscrollBehavior);
+      }
+    },
+    inputs: {
+      mode: ["tuiOverscroll", "mode"]
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3])]
+  });
+  return TuiOverscrollDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiOverscrollModule = /*#__PURE__*/(() => {
+  class TuiOverscrollModule {}
+  TuiOverscrollModule.ɵfac = function TuiOverscrollModule_Factory(t) {
+    return new (t || TuiOverscrollModule)();
+  };
+  TuiOverscrollModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiOverscrollModule
+  });
+  TuiOverscrollModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+  return TuiOverscrollModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-cdk-directives-overscroll.js.map
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-components-dropdown-host.js
+
+
+
+
+/**
+ * Service for displaying dropdown portals
+ */
+const taiga_ui_cdk_components_dropdown_host_c0 = ["*"];
+let TuiDropdownPortalService = /*#__PURE__*/(() => {
+  class TuiDropdownPortalService extends taiga_ui_cdk_abstract/* AbstractTuiPortalService */.N9 {}
+  TuiDropdownPortalService.ɵfac = /* @__PURE__ */(() => {
+    let ɵTuiDropdownPortalService_BaseFactory;
+    return function TuiDropdownPortalService_Factory(t) {
+      return (ɵTuiDropdownPortalService_BaseFactory || (ɵTuiDropdownPortalService_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiDropdownPortalService)))(t || TuiDropdownPortalService);
+    };
+  })();
+  TuiDropdownPortalService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: TuiDropdownPortalService,
+    factory: TuiDropdownPortalService.ɵfac,
+    providedIn: `root`
+  });
+  return TuiDropdownPortalService;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Host element for dynamically created portals, for example using {@link TuiDropdownDirective}.
+ */
+let TuiDropdownHostComponent = /*#__PURE__*/(() => {
+  class TuiDropdownHostComponent extends taiga_ui_cdk_abstract/* AbstractTuiPortalHostComponent */.Er {}
+  TuiDropdownHostComponent.ɵfac = /* @__PURE__ */(() => {
+    let ɵTuiDropdownHostComponent_BaseFactory;
+    return function TuiDropdownHostComponent_Factory(t) {
+      return (ɵTuiDropdownHostComponent_BaseFactory || (ɵTuiDropdownHostComponent_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiDropdownHostComponent)))(t || TuiDropdownHostComponent);
+    };
+  })();
+  TuiDropdownHostComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiDropdownHostComponent,
+    selectors: [["tui-dropdown-host"]],
+    features: [core_mjs_["ɵɵProvidersFeature"]([{
+      provide: taiga_ui_cdk_abstract/* AbstractTuiPortalService */.N9,
+      useExisting: TuiDropdownPortalService
+    },
+    // TODO: Remove in 4.0
+    {
+      provide: taiga_ui_cdk_abstract/* AbstractTuiPortalHostComponent */.Er,
+      useExisting: TuiDropdownHostComponent
+    }]), core_mjs_["ɵɵInheritDefinitionFeature"]],
+    ngContentSelectors: taiga_ui_cdk_components_dropdown_host_c0,
+    decls: 3,
+    vars: 0,
+    consts: [["viewContainer", ""]],
+    template: function TuiDropdownHostComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵprojectionDef"]();
+        core_mjs_["ɵɵprojection"](0);
+        core_mjs_["ɵɵelementContainer"](1, null, 0);
+      }
+    },
+    styles: ["[_nghost-%COMP%]{position:relative;z-index:0;display:block;height:100%}[_nghost-%COMP%]:before{content:\"\";display:block;overflow:hidden}.t-position-fixed-offset[_ngcontent-%COMP%]{position:fixed;left:0;top:0;pointer-events:none;visibility:hidden;width:100%;height:100%}"],
+    changeDetection: 0
+  });
+  return TuiDropdownHostComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiDropdownHostModule = /*#__PURE__*/(() => {
+  class TuiDropdownHostModule {}
+  TuiDropdownHostModule.ɵfac = function TuiDropdownHostModule_Factory(t) {
+    return new (t || TuiDropdownHostModule)();
+  };
+  TuiDropdownHostModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiDropdownHostModule
+  });
+  TuiDropdownHostModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+  return TuiDropdownHostModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-cdk-components-dropdown-host.js.map
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/throttleTime.js + 1 modules
+var throttleTime = __webpack_require__(8753);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-utils-dom.js
+var taiga_ui_core_utils_dom = __webpack_require__(2103);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-components-scroll-controls.js
 
 
@@ -2672,6 +3730,22 @@ function TuiScrollControlsComponent_ng_container_0_Template(rf, ctx) {
   }
 }
 const MIN_WIDTH = 24;
+function getOffsetVertical({
+  clientY
+}, {
+  top,
+  height
+}) {
+  return (clientY - top) / height;
+}
+function getOffsetHorizontal({
+  clientX
+}, {
+  left,
+  width
+}) {
+  return (clientX - left) / width;
+}
 let TuiScrollbarDirective = /*#__PURE__*/(() => {
   class TuiScrollbarDirective {
     constructor(zone, destroy$, animationFrame$, container, doc, el) {
@@ -2787,29 +3861,13 @@ let TuiScrollbarDirective = /*#__PURE__*/(() => {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-function getOffsetVertical({
-  clientY
-}, {
-  top,
-  height
-}) {
-  return (clientY - top) / height;
-}
-function getOffsetHorizontal({
-  clientX
-}, {
-  left,
-  width
-}) {
-  return (clientX - left) / width;
-}
 let TuiScrollControlsComponent = /*#__PURE__*/(() => {
   class TuiScrollControlsComponent {
     constructor(zone, scrollRef, animationFrame$) {
       this.zone = zone;
       this.scrollRef = scrollRef;
       this.animationFrame$ = animationFrame$;
-      this.refresh$ = this.animationFrame$.pipe((0,throttleTime/* throttleTime */.p)(300), (0,operators_map/* map */.U)(() => this.scrollbars), (0,startWith/* startWith */.O)([false, false]), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)((a, b) => a[0] === b[0] && a[1] === b[1]), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(this.zone));
+      this.refresh$ = this.animationFrame$.pipe((0,throttleTime/* throttleTime */.p)(300), (0,operators_map/* map */.U)(() => this.scrollbars), (0,operators_startWith/* startWith */.O)([false, false]), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)((a, b) => a[0] === b[0] && a[1] === b[1]), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(this.zone));
     }
     get scrollbars() {
       const {
@@ -3932,12 +4990,10 @@ let TuiDropdownModule = /*#__PURE__*/(() => {
 
 
 //# sourceMappingURL=taiga-ui-core-directives-dropdown.js.map
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/combineLatest.js
-var observable_combineLatest = __webpack_require__(2572);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/empty.js
-var empty = __webpack_require__(6232);
 // EXTERNAL MODULE: ./node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
 var platform_browser = __webpack_require__(6593);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/empty.js
+var empty = __webpack_require__(6232);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/concat.js + 1 modules
 var concat = __webpack_require__(5211);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/defer.js
@@ -4268,6 +5324,1628 @@ let EventPluginsModule = /*#__PURE__*/(() => {
 
 
 //# sourceMappingURL=tinkoff-ng-event-plugins.js.map
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-data-list.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const taiga_ui_core_components_data_list_c0 = ["tuiOption", ""];
+function TuiOptionComponent_ng_container_0_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementContainerStart"](0);
+    core_mjs_["ɵɵtext"](1);
+    core_mjs_["ɵɵelementContainerEnd"]();
+  }
+  if (rf & 2) {
+    const text_r3 = ctx.polymorpheusOutlet;
+    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵtextInterpolate1"](" ", text_r3, "\n");
+  }
+}
+function TuiOptionComponent_ng_template_1_tui_svg_1_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelement"](0, "tui-svg", 3);
+  }
+  if (rf & 2) {
+    const ctx_r4 = core_mjs_["ɵɵnextContext"](2);
+    core_mjs_["ɵɵproperty"]("src", ctx_r4.icons.more);
+  }
+}
+function TuiOptionComponent_ng_template_1_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵprojection"](0);
+    core_mjs_["ɵɵtemplate"](1, TuiOptionComponent_ng_template_1_tui_svg_1_Template, 1, 1, "tui-svg", 2);
+  }
+  if (rf & 2) {
+    const ctx_r1 = core_mjs_["ɵɵnextContext"]();
+    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵproperty"]("ngIf", ctx_r1.dropdown);
+  }
+}
+const taiga_ui_core_components_data_list_c1 = a0 => ({
+  $implicit: a0
+});
+const taiga_ui_core_components_data_list_c2 = ["*"];
+function TuiDataListComponent_div_2_ng_container_1_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementContainerStart"](0);
+    core_mjs_["ɵɵtext"](1);
+    core_mjs_["ɵɵelementContainerEnd"]();
+  }
+  if (rf & 2) {
+    const text_r2 = ctx.polymorpheusOutlet;
+    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵtextInterpolate1"](" ", text_r2, " ");
+  }
+}
+function TuiDataListComponent_div_2_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementStart"](0, "div", 2);
+    core_mjs_["ɵɵtemplate"](1, TuiDataListComponent_div_2_ng_container_1_Template, 2, 1, "ng-container", 3);
+    core_mjs_["ɵɵpipe"](2, "async");
+    core_mjs_["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r0 = core_mjs_["ɵɵnextContext"]();
+    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r0.emptyContent || core_mjs_["ɵɵpipeBind1"](2, 1, ctx_r0.defaultEmptyContent$));
+  }
+}
+function shouldFocus({
+  currentTarget
+}) {
+  return !(0,taiga_ui_cdk_utils_focus/* tuiIsNativeFocused */.V8)(currentTarget);
+}
+// TODO: Consider all use cases for aria roles
+let TuiOptionComponent = /*#__PURE__*/(() => {
+  class TuiOptionComponent {
+    constructor(content, dataList, el, host, dropdown, icons) {
+      this.content = content;
+      this.dataList = dataList;
+      this.el = el;
+      this.host = host;
+      this.dropdown = dropdown;
+      this.icons = icons;
+      /** @deprecated use size on {@link TuiDataListComponent} instead */
+      this.size = null;
+      this.role = 'option';
+      this.disabled = false;
+    }
+    get active() {
+      return !!this.dropdown && !!this.dropdown.dropdownBoxRef;
+    }
+    onClick() {
+      if (this.host && this.value !== undefined) {
+        this.host.handleOption(this.value);
+      }
+    }
+    // @bad TODO: Consider aria-activedescendant for proper accessibility implementation
+    onMouseMove({
+      currentTarget
+    }) {
+      currentTarget.focus({
+        preventScroll: true
+      });
+    }
+    // Preventing focus loss upon focused option removal
+    ngOnDestroy() {
+      var _a;
+      (_a = this.dataList) === null || _a === void 0 ? void 0 : _a.handleFocusLossIfNecessary(this.el.nativeElement);
+    }
+  }
+  TuiOptionComponent.ɵfac = function TuiOptionComponent_Factory(t) {
+    return new (t || TuiOptionComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_OPTION_CONTENT */.IQ, 8), core_mjs_["ɵɵdirectiveInject"]((0,core_mjs_.forwardRef)(() => TuiDataListComponent), 8), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_DATA_LIST_HOST */.N1, 8), core_mjs_["ɵɵdirectiveInject"](TuiDropdownDirective, 10), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_COMMON_ICONS */.Gs));
+  };
+  TuiOptionComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiOptionComponent,
+    selectors: [["button", "tuiOption", ""], ["a", "tuiOption", ""]],
+    hostAttrs: ["tabIndex", "-1", "type", "button"],
+    hostVars: 5,
+    hostBindings: function TuiOptionComponent_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("click", function TuiOptionComponent_click_HostBindingHandler() {
+          return ctx.onClick();
+        })("mousemove.silent", function TuiOptionComponent_mousemove_silent_HostBindingHandler($event) {
+          return ctx.onMouseMove($event);
+        });
+      }
+      if (rf & 2) {
+        core_mjs_["ɵɵattribute"]("disabled", ctx.disabled || null)("data-size", ctx.size)("role", ctx.role);
+        core_mjs_["ɵɵclassProp"]("_with-dropdown", ctx.active);
+      }
+    },
+    inputs: {
+      size: "size",
+      role: "role",
+      disabled: "disabled",
+      value: "value"
+    },
+    attrs: taiga_ui_core_components_data_list_c0,
+    ngContentSelectors: taiga_ui_core_components_data_list_c2,
+    decls: 3,
+    vars: 4,
+    consts: [[4, "polymorpheusOutlet", "polymorpheusOutletContext"], ["base", ""], ["class", "t-arrow", 3, "src", 4, "ngIf"], [1, "t-arrow", 3, "src"]],
+    template: function TuiOptionComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵprojectionDef"]();
+        core_mjs_["ɵɵtemplate"](0, TuiOptionComponent_ng_container_0_Template, 2, 1, "ng-container", 0)(1, TuiOptionComponent_ng_template_1_Template, 2, 1, "ng-template", null, 1, core_mjs_["ɵɵtemplateRefExtractor"]);
+      }
+      if (rf & 2) {
+        const _r2 = core_mjs_["ɵɵreference"](2);
+        core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx.content || _r2)("polymorpheusOutletContext", core_mjs_["ɵɵpureFunction1"](2, taiga_ui_core_components_data_list_c1, _r2));
+      }
+    },
+    dependencies: [taiga_ui_core_components_svg/* TuiSvgComponent */.PN, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li, common_mjs_.NgIf],
+    styles: ["[_nghost-%COMP%]{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:0;border:0;background:none;font-size:inherit;line-height:inherit;text-decoration:none;transition-property:background;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;justify-content:space-between;text-align:left;color:var(--tui-text-01);border-radius:var(--tui-radius-s);outline:none;cursor:pointer;background-clip:padding-box}[_nghost-%COMP%]:disabled{opacity:var(--tui-disabled-opacity);cursor:default}[_nghost-%COMP%]:focus, ._with-dropdown[_nghost-%COMP%]{background-color:var(--tui-clear)}[_nghost-%COMP%]   [data-list-size=\"s\"][_nghost-%COMP%], [data-list-size=\"s\"]   [_nghost-%COMP%], [_nghost-%COMP%]   [data-list-size=\"xs\"][_nghost-%COMP%], [data-list-size=\"xs\"]   [_nghost-%COMP%], [data-size=s][data-size=s][_nghost-%COMP%], [data-size=xs][data-size=xs][_nghost-%COMP%]{display:flex;align-items:center;box-sizing:border-box;margin:var(--tui-data-list-margin) 0;font:var(--tui-font-text-s);min-height:2rem;padding:.3125rem .5rem}[_nghost-%COMP%]   [data-list-size=\"m\"][_nghost-%COMP%], [data-list-size=\"m\"]   [_nghost-%COMP%], [data-size=m][data-size=m][_nghost-%COMP%]{display:flex;align-items:center;box-sizing:border-box;margin:var(--tui-data-list-margin) 0;font:var(--tui-font-text-s);min-height:2.5rem;padding:.375rem .5rem}[_nghost-%COMP%]   [data-list-size=\"l\"][_nghost-%COMP%], [data-list-size=\"l\"]   [_nghost-%COMP%], [data-size=l][data-size=l][_nghost-%COMP%]{display:flex;align-items:center;box-sizing:border-box;margin:var(--tui-data-list-margin) 0;font:var(--tui-font-text-m);min-height:2.75rem;padding:.375rem .625rem}.t-arrow[_ngcontent-%COMP%]{margin:0 -.5rem 0 .75rem}"],
+    changeDetection: 0
+  });
+  (0,tslib_es6/* __decorate */.gn)([tinkoff_ng_event_plugins_shouldCall(shouldFocus)], TuiOptionComponent.prototype, "onMouseMove", null);
+  return TuiOptionComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+// TODO: Consider aria-activedescendant for proper accessibility implementation
+let TuiDataListComponent = /*#__PURE__*/(() => {
+  class TuiDataListComponent {
+    constructor(controller, el, defaultEmptyContent$) {
+      var _a;
+      this.controller = controller;
+      this.el = el;
+      this.defaultEmptyContent$ = defaultEmptyContent$;
+      this.options = taiga_ui_cdk_constants/* EMPTY_QUERY */.Mm;
+      this.role = 'listbox';
+      this.size = ((_a = this.controller) === null || _a === void 0 ? void 0 : _a.size) || 'm';
+    }
+    get empty$() {
+      return (0,taiga_ui_cdk_observables/* tuiQueryListChanges */.ll)(this.options).pipe((0,operators_map/* map */.U)(({
+        length
+      }) => !length));
+    }
+    onFocusIn(relatedTarget, currentTarget) {
+      if (!currentTarget.contains(relatedTarget) && !this.origin) {
+        this.origin = relatedTarget;
+      }
+    }
+    noop() {}
+    onKeyDownArrow(current, step) {
+      const {
+        elements
+      } = this;
+      (0,taiga_ui_cdk_utils_focus/* tuiMoveFocus */.VR)(elements.indexOf(current), elements, step);
+    }
+    // TODO: Consider aria-activedescendant for proper accessibility implementation
+    handleFocusLossIfNecessary(element = this.el.nativeElement) {
+      if (this.origin && (0,taiga_ui_cdk_utils_focus/* tuiIsNativeFocusedIn */.zb)(element)) {
+        (0,taiga_ui_cdk_utils_focus/* tuiSetNativeMouseFocused */.Pg)(this.origin, true, true);
+      }
+    }
+    getOptions(includeDisabled = false) {
+      return this.options.filter(({
+        disabled
+      }) => includeDisabled || !disabled).map(({
+        value
+      }) => value).filter(taiga_ui_cdk_utils_miscellaneous/* tuiIsPresent */.Pc);
+    }
+    onFocus({
+      target
+    }, top) {
+      if (!(0,taiga_ui_cdk_utils_dom/* tuiIsElement */.ve)(target)) {
+        return;
+      }
+      const {
+        elements
+      } = this;
+      (0,taiga_ui_cdk_utils_focus/* tuiMoveFocus */.VR)(top ? -1 : elements.length, elements, top ? 1 : -1);
+      this.handleFocusLossIfNecessary(target);
+    }
+    get elements() {
+      return Array.from(this.el.nativeElement.querySelectorAll('[tuiOption]'));
+    }
+  }
+  TuiDataListComponent.ɵfac = function TuiDataListComponent_Factory(t) {
+    return new (t || TuiDataListComponent)(core_mjs_["ɵɵdirectiveInject"](TUI_TEXTFIELD_WATCHED_CONTROLLER, 8), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_NOTHING_FOUND_MESSAGE */.PH));
+  };
+  TuiDataListComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiDataListComponent,
+    selectors: [["tui-data-list"]],
+    contentQueries: function TuiDataListComponent_ContentQueries(rf, ctx, dirIndex) {
+      if (rf & 1) {
+        core_mjs_["ɵɵcontentQuery"](dirIndex, TuiOptionComponent, 5);
+      }
+      if (rf & 2) {
+        let _t;
+        core_mjs_["ɵɵqueryRefresh"](_t = core_mjs_["ɵɵloadQuery"]()) && (ctx.options = _t);
+      }
+    },
+    hostVars: 2,
+    hostBindings: function TuiDataListComponent_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("focusin", function TuiDataListComponent_focusin_HostBindingHandler($event) {
+          return ctx.onFocusIn($event.relatedTarget, $event.currentTarget);
+        })("mousedown.prevent", function TuiDataListComponent_mousedown_prevent_HostBindingHandler() {
+          return ctx.noop();
+        })("keydown.arrowDown.prevent", function TuiDataListComponent_keydown_arrowDown_prevent_HostBindingHandler($event) {
+          return ctx.onKeyDownArrow($event.target, 1);
+        })("keydown.arrowUp.prevent", function TuiDataListComponent_keydown_arrowUp_prevent_HostBindingHandler($event) {
+          return ctx.onKeyDownArrow($event.target, -1);
+        })("wheel.silent.passive", function TuiDataListComponent_wheel_silent_passive_HostBindingHandler() {
+          return ctx.handleFocusLossIfNecessary();
+        })("mouseleave", function TuiDataListComponent_mouseleave_HostBindingHandler($event) {
+          return ctx.handleFocusLossIfNecessary($event.target);
+        });
+      }
+      if (rf & 2) {
+        core_mjs_["ɵɵattribute"]("role", ctx.role)("data-list-size", ctx.size);
+      }
+    },
+    inputs: {
+      role: "role",
+      emptyContent: "emptyContent",
+      size: "size"
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_tokens/* tuiAsDataListAccessor */.RB)(TuiDataListComponent), TEXTFIELD_CONTROLLER_PROVIDER])],
+    ngContentSelectors: taiga_ui_core_components_data_list_c2,
+    decls: 5,
+    vars: 3,
+    consts: [["tabindex", "0", 1, "t-trap", 3, "focusin"], ["class", "t-empty", 4, "ngIf"], [1, "t-empty"], [4, "polymorpheusOutlet"]],
+    template: function TuiDataListComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵprojectionDef"]();
+        core_mjs_["ɵɵelementStart"](0, "div", 0);
+        core_mjs_["ɵɵlistener"]("focusin", function TuiDataListComponent_Template_div_focusin_0_listener($event) {
+          return ctx.onFocus($event, true);
+        });
+        core_mjs_["ɵɵelementEnd"]();
+        core_mjs_["ɵɵprojection"](1);
+        core_mjs_["ɵɵtemplate"](2, TuiDataListComponent_div_2_Template, 3, 3, "div", 1);
+        core_mjs_["ɵɵpipe"](3, "async");
+        core_mjs_["ɵɵelementStart"](4, "div", 0);
+        core_mjs_["ɵɵlistener"]("focusin", function TuiDataListComponent_Template_div_focusin_4_listener($event) {
+          return ctx.onFocus($event, false);
+        });
+        core_mjs_["ɵɵelementEnd"]();
+      }
+      if (rf & 2) {
+        core_mjs_["ɵɵadvance"](2);
+        core_mjs_["ɵɵproperty"]("ngIf", core_mjs_["ɵɵpipeBind1"](3, 1, ctx.empty$));
+      }
+    },
+    dependencies: [common_mjs_.NgIf, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li, common_mjs_.AsyncPipe],
+    styles: ["tui-data-list{--tui-data-list-padding: .25rem;--tui-data-list-margin: .0625rem;display:flex;font:var(--tui-font-text-m);flex-direction:column;padding:calc(var(--tui-data-list-padding) - var(--tui-data-list-margin)) var(--tui-data-list-padding);color:var(--tui-text-03)}tui-data-list:focus-within .t-trap{display:none}tui-data-list:focus-within [tuiOption]._with-dropdown:not(:focus){background-color:transparent}tui-data-list[data-list-size=s]{--tui-data-list-margin: 0rem}tui-data-list[data-list-size=s]>.t-empty{display:flex;align-items:center;box-sizing:border-box;margin:var(--tui-data-list-margin) 0;font:var(--tui-font-text-s);min-height:2rem;padding:.3125rem .5rem}tui-data-list[data-list-size=m]>.t-empty{display:flex;align-items:center;box-sizing:border-box;margin:var(--tui-data-list-margin) 0;font:var(--tui-font-text-s);min-height:2.5rem;padding:.375rem .5rem}tui-data-list[data-list-size=l]{--tui-data-list-padding: .375rem;--tui-data-list-margin: .125rem}tui-data-list[data-list-size=l]>.t-empty{display:flex;align-items:center;box-sizing:border-box;margin:var(--tui-data-list-margin) 0;font:var(--tui-font-text-m);min-height:2.75rem;padding:.375rem .625rem}tui-opt-group{position:relative;display:flex;font:var(--tui-font-text-xs);color:var(--tui-text-02);flex-direction:column;line-height:1rem}tui-data-list[data-list-size=l] tui-opt-group{font:var(--tui-font-text-s);line-height:1.25rem}tui-data-list[data-list-size=l] tui-opt-group:before{padding-left:.625rem;padding-right:.625rem}tui-data-list[data-list-size=l] tui-opt-group:after{left:.625rem;right:.625rem}tui-opt-group:empty:before,tui-opt-group:empty:after{display:none}tui-opt-group:before{content:attr(data-label);padding:var(--tui-data-list-padding) .5rem var(--tui-data-list-padding);margin:var(--tui-data-list-margin) 0;white-space:normal;word-break:break-word}tui-opt-group:after{position:absolute;left:.5rem;right:.5rem;top:var(--tui-data-list-padding);height:1px;background:var(--tui-base-03)}tui-opt-group:not(:empty)~tui-opt-group:before{padding-top:calc(.75rem + var(--tui-data-list-padding))}tui-opt-group:not(:empty)~tui-opt-group[data-label=\"\"]:before,tui-opt-group:not(:empty)~tui-opt-group:not([data-label]):before{padding:var(--tui-data-list-padding) 0}tui-opt-group:not(:empty)~tui-opt-group:after{content:\"\"}tui-opt-group[data-label=\"\"]:before,tui-opt-group:not([data-label]):before{padding:0;margin:0}\n"],
+    encapsulation: 2,
+    changeDetection: 0
+  });
+  (0,tslib_es6/* __decorate */.gn)([taiga_ui_cdk_decorators/* tuiPure */.UM], TuiDataListComponent.prototype, "empty$", null);
+  return TuiDataListComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiDataListDirective = /*#__PURE__*/(() => {
+  class TuiDataListDirective {}
+  TuiDataListDirective.ɵfac = function TuiDataListDirective_Factory(t) {
+    return new (t || TuiDataListDirective)();
+  };
+  TuiDataListDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiDataListDirective,
+    selectors: [["ng-template", "tuiDataList", ""]]
+  });
+  return TuiDataListDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+function taiga_ui_core_components_data_list_tuiAsDataList(useExisting) {
+  return {
+    provide: TuiDataListDirective,
+    useExisting
+  };
+}
+let TuiOptGroupDirective = /*#__PURE__*/(() => {
+  class TuiOptGroupDirective {}
+  TuiOptGroupDirective.ɵfac = function TuiOptGroupDirective_Factory(t) {
+    return new (t || TuiOptGroupDirective)();
+  };
+  TuiOptGroupDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiOptGroupDirective,
+    selectors: [["tui-opt-group"]],
+    hostAttrs: ["role", "group"],
+    hostVars: 1,
+    hostBindings: function TuiOptGroupDirective_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        core_mjs_["ɵɵattribute"]("data-label", ctx.label);
+      }
+    },
+    inputs: {
+      label: "label"
+    }
+  });
+  return TuiOptGroupDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let taiga_ui_core_components_data_list_TuiDataListModule = /*#__PURE__*/(() => {
+  class TuiDataListModule {}
+  TuiDataListModule.ɵfac = function TuiDataListModule_Factory(t) {
+    return new (t || TuiDataListModule)();
+  };
+  TuiDataListModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiDataListModule
+  });
+  TuiDataListModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    imports: [[common_mjs_.CommonModule, taiga_ui_core_components_svg/* TuiSvgModule */.EI, tinkoff_ng_polymorpheus/* PolymorpheusModule */.wq]]
+  });
+  return TuiDataListModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-core-components-data-list.js.map
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-group.js
+
+
+
+
+
+let TuiGroupStylesComponent = /*#__PURE__*/(() => {
+  class TuiGroupStylesComponent {}
+  TuiGroupStylesComponent.ɵfac = function TuiGroupStylesComponent_Factory(t) {
+    return new (t || TuiGroupStylesComponent)();
+  };
+  TuiGroupStylesComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiGroupStylesComponent,
+    selectors: [["ng-component"]],
+    hostAttrs: [1, "tui-group-styles"],
+    decls: 0,
+    vars: 0,
+    template: function TuiGroupStylesComponent_Template(rf, ctx) {},
+    styles: [".tui-group{position:relative;display:flex;isolation:isolate}.tui-group>*{flex:1 1 0;min-width:0}.tui-group>*:not(:last-child){margin-right:.125rem}.tui-group.tui-group>*:nth-child(n){border-radius:0}.tui-group_collapsed>*{z-index:1}.tui-group_collapsed>*:not(:last-child){margin-right:-1px}.tui-group_collapsed>*._readonly,.tui-group_collapsed>*._disabled,.tui-group_collapsed>*._readonly:hover,.tui-group_collapsed>*._disabled:hover{z-index:0}.tui-group_collapsed>*:hover,.tui-group_collapsed>*._hovered,.tui-group_collapsed>*._pressed{z-index:3}.tui-group_collapsed>*._invalid{z-index:2}.tui-group_collapsed>*._invalid:hover,.tui-group_collapsed>*._invalid._hovered,.tui-group_collapsed>*._invalid._pressed{z-index:4}.tui-group_collapsed>*._hosted_dropdown_focused,.tui-group_collapsed>*._focus-visible,.tui-group_collapsed>*._focused.ng-touched,.tui-group_collapsed>*._focused.ng-untouched{z-index:5}.tui-group_collapsed>*._active,.tui-group_collapsed>*[data-appearance=whiteblock-active]{z-index:6}.tui-group_collapsed>*._focus-visible._focused,.tui-group_collapsed>*._focus-visible._active,.tui-group_collapsed>*._focus-visible[data-appearance=whiteblock-active]{z-index:7}.tui-group_orientation_vertical{display:inline-flex;flex-direction:column}.tui-group_orientation_vertical>*{min-height:auto;flex:0 0 auto}.tui-group_orientation_vertical>*:not(:last-child){margin-right:0;margin-bottom:.125rem}.tui-group_orientation_vertical.tui-group_collapsed>*:not(:last-child){margin-right:0;margin-bottom:-1px}.tui-group_rounded.tui-group_orientation_horizontal>*:first-child{border-top-left-radius:var(--tui-radius-m);border-bottom-left-radius:var(--tui-radius-m)}.tui-group_rounded.tui-group_orientation_horizontal>*:last-child{border-top-right-radius:var(--tui-radius-m);border-bottom-right-radius:var(--tui-radius-m)}.tui-group_rounded.tui-group_orientation_horizontal.tui-group_radius_large>*:first-child{border-top-left-radius:var(--tui-radius-l);border-bottom-left-radius:var(--tui-radius-l)}.tui-group_rounded.tui-group_orientation_horizontal.tui-group_radius_large>*:last-child{border-top-right-radius:var(--tui-radius-l);border-bottom-right-radius:var(--tui-radius-l)}.tui-group_rounded.tui-group_orientation_vertical>*:first-child{border-top-left-radius:var(--tui-radius-m);border-top-right-radius:var(--tui-radius-m)}.tui-group_rounded.tui-group_orientation_vertical>*:last-child{border-bottom-left-radius:var(--tui-radius-m);border-bottom-right-radius:var(--tui-radius-m)}.tui-group_rounded.tui-group_orientation_vertical.tui-group_radius_large>*:first-child{border-top-left-radius:var(--tui-radius-l);border-top-right-radius:var(--tui-radius-l)}.tui-group_rounded.tui-group_orientation_vertical.tui-group_radius_large>*:last-child{border-bottom-left-radius:var(--tui-radius-l);border-bottom-right-radius:var(--tui-radius-l)}@media screen and (max-width: 47.9625em){.tui-group_rounded.tui-group_adaptive.tui-group_orientation_vertical:not(.tui-group_collapsed)>*:first-child:not(:last-child),.tui-group_rounded.tui-group_adaptive.tui-group_orientation_horizontal>*:first-child:not(:last-child),.tui-group_rounded.tui-group_adaptive.tui-group_orientation_vertical:not(.tui-group_collapsed)>*:last-child:not(:first-child),.tui-group_rounded.tui-group_adaptive.tui-group_orientation_horizontal>*:last-child:not(:first-child){border-radius:var(--tui-radius-m)}}@media screen and (max-width: 47.9625em){.tui-group_rounded.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_vertical:not(.tui-group_collapsed)>*:first-child:not(:last-child),.tui-group_rounded.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_horizontal>*:first-child:not(:last-child),.tui-group_rounded.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_vertical:not(.tui-group_collapsed)>*:last-child:not(:first-child),.tui-group_rounded.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_horizontal>*:last-child:not(:first-child){border-radius:var(--tui-radius-l)}}@media screen and (max-width: 47.9625em){.tui-group_adaptive.tui-group_orientation_vertical{width:100%}.tui-group_adaptive.tui-group_orientation_vertical>*:nth-child(n):not(:only-child){border-radius:var(--tui-radius-m)}.tui-group_adaptive.tui-group_orientation_vertical>*:not(:last-child){margin-bottom:1rem}.tui-group_adaptive.tui-group_orientation_vertical.tui-group_collapsed>*:nth-child(n):not(:only-child){border-radius:0}.tui-group_adaptive.tui-group_orientation_vertical.tui-group_collapsed>*:first-child:not(:last-child){border-radius:var(--tui-radius-m) var(--tui-radius-m) 0 0}.tui-group_adaptive.tui-group_orientation_vertical.tui-group_collapsed>*:last-child:not(:first-child){border-radius:0 0 var(--tui-radius-m) var(--tui-radius-m)}.tui-group_adaptive.tui-group_orientation_vertical.tui-group_collapsed>*:not(:last-child){margin-bottom:-1px}}@media screen and (max-width: 47.9625em){.tui-group_adaptive.tui-group_orientation_horizontal{flex-direction:column;width:100%}.tui-group_adaptive.tui-group_orientation_horizontal>*:nth-child(n):not(:only-child){border-radius:var(--tui-radius-m)}.tui-group_adaptive.tui-group_orientation_horizontal>*:not(:last-child){margin-right:0;margin-bottom:1rem}.tui-group_adaptive.tui-group_orientation_horizontal.tui-group_collapsed>*:nth-child(n):not(:only-child){border-radius:0}.tui-group_adaptive.tui-group_orientation_horizontal.tui-group_collapsed>*:first-child:not(:last-child){border-radius:var(--tui-radius-m) var(--tui-radius-m) 0 0}.tui-group_adaptive.tui-group_orientation_horizontal.tui-group_collapsed>*:last-child:not(:first-child){border-radius:0 0 var(--tui-radius-m) var(--tui-radius-m)}.tui-group_adaptive.tui-group_orientation_horizontal.tui-group_collapsed>*:not(:last-child){margin-right:0;margin-bottom:-1px}}@media screen and (max-width: 47.9625em){.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_vertical>*:nth-child(n):not(:only-child){border-radius:var(--tui-radius-l)}.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_vertical.tui-group_collapsed>*:nth-child(n):not(:only-child){border-radius:0}.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_vertical.tui-group_collapsed>*:first-child:not(:last-child){border-radius:var(--tui-radius-l) var(--tui-radius-l) 0 0}.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_vertical.tui-group_collapsed>*:last-child:not(:first-child){border-radius:0 0 var(--tui-radius-l) var(--tui-radius-l)}}@media screen and (max-width: 47.9625em){.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_horizontal>*:nth-child(n):not(:only-child){border-radius:var(--tui-radius-l)}.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_horizontal.tui-group_collapsed>*:nth-child(n):not(:only-child){border-radius:0}.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_horizontal.tui-group_collapsed>*:first-child:not(:last-child){border-radius:var(--tui-radius-l) var(--tui-radius-l) 0 0}.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_horizontal.tui-group_collapsed>*:last-child:not(:first-child){border-radius:0 0 var(--tui-radius-l) var(--tui-radius-l)}}.tui-group__auto-width-item{min-width:auto;flex:0 0 auto}.tui-group .tui-group__inherit-item{border-radius:inherit}\n"],
+    encapsulation: 2,
+    changeDetection: 0
+  });
+  return TuiGroupStylesComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiGroupDirective = /*#__PURE__*/(() => {
+  class TuiGroupDirective {
+    constructor(directiveStyles) {
+      this.orientation = 'horizontal';
+      this.adaptive = false;
+      this.collapsed = false;
+      this.rounded = true;
+      this.size = 'm';
+      directiveStyles.addComponent(TuiGroupStylesComponent);
+    }
+    get orientationHorizontal() {
+      return this.orientation === 'horizontal';
+    }
+    get orientationVertical() {
+      return this.orientation === 'vertical';
+    }
+    get sizeLarge() {
+      return this.size === 'l';
+    }
+  }
+  TuiGroupDirective.ɵfac = function TuiGroupDirective_Factory(t) {
+    return new (t || TuiGroupDirective)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDirectiveStylesService */.gH));
+  };
+  TuiGroupDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiGroupDirective,
+    selectors: [["", "tuiGroup", "", 5, "ng-container"]],
+    hostAttrs: ["role", "group", 1, "tui-group"],
+    hostVars: 12,
+    hostBindings: function TuiGroupDirective_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        core_mjs_["ɵɵclassProp"]("tui-group_adaptive", ctx.adaptive)("tui-group_collapsed", ctx.collapsed)("tui-group_rounded", ctx.rounded)("tui-group_orientation_horizontal", ctx.orientationHorizontal)("tui-group_orientation_vertical", ctx.orientationVertical)("tui-group_radius_large", ctx.sizeLarge);
+      }
+    },
+    inputs: {
+      orientation: "orientation",
+      adaptive: "adaptive",
+      collapsed: "collapsed",
+      rounded: "rounded",
+      size: "size"
+    }
+  });
+  return TuiGroupDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiGroupModule = /*#__PURE__*/(() => {
+  class TuiGroupModule {}
+  TuiGroupModule.ɵfac = function TuiGroupModule_Factory(t) {
+    return new (t || TuiGroupModule)();
+  };
+  TuiGroupModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiGroupModule
+  });
+  TuiGroupModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    imports: [[common_mjs_.CommonModule]]
+  });
+  return TuiGroupModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-core-components-group.js.map
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-loader.js
+var taiga_ui_core_components_loader = __webpack_require__(63);
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-expand.js
+
+
+
+
+
+
+
+
+const taiga_ui_core_components_expand_c0 = ["wrapper"];
+function TuiExpandComponent_ng_container_2_tui_loader_2_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementStart"](0, "tui-loader", 4);
+    core_mjs_["ɵɵelementContainer"](1, 5);
+    core_mjs_["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r2 = core_mjs_["ɵɵnextContext"](2);
+    core_mjs_["ɵɵproperty"]("overlay", true)("showLoader", ctx_r2.loading);
+    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵproperty"]("ngTemplateOutlet", ctx_r2.content);
+  }
+}
+function TuiExpandComponent_ng_container_2_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementContainerStart"](0);
+    core_mjs_["ɵɵprojection"](1);
+    core_mjs_["ɵɵtemplate"](2, TuiExpandComponent_ng_container_2_tui_loader_2_Template, 2, 3, "tui-loader", 3);
+    core_mjs_["ɵɵelementContainerEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r1 = core_mjs_["ɵɵnextContext"]();
+    core_mjs_["ɵɵadvance"](2);
+    core_mjs_["ɵɵproperty"]("ngIf", ctx_r1.async)("ngIfElse", ctx_r1.content);
+  }
+}
+const taiga_ui_core_components_expand_c1 = ["*"];
+let TuiExpandContentDirective = /*#__PURE__*/(() => {
+  class TuiExpandContentDirective {}
+  TuiExpandContentDirective.ɵfac = function TuiExpandContentDirective_Factory(t) {
+    return new (t || TuiExpandContentDirective)();
+  };
+  TuiExpandContentDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiExpandContentDirective,
+    selectors: [["", "tuiExpandContent", ""]]
+  });
+  return TuiExpandContentDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+const State = {
+  Idle: 0,
+  Loading: 1,
+  Prepared: 2,
+  Animated: 3
+};
+const LOADER_HEIGHT = 48;
+let TuiExpandComponent = /*#__PURE__*/(() => {
+  class TuiExpandComponent {
+    constructor(cdr) {
+      this.cdr = cdr;
+      this.state = State.Idle;
+      this.async = false;
+      this.content = null;
+      this.expanded = null;
+    }
+    set expandedSetter(expanded) {
+      if (this.expanded === null) {
+        this.expanded = expanded;
+        return;
+      }
+      if (this.state !== State.Idle) {
+        this.expanded = expanded;
+        this.state = State.Animated;
+        return;
+      }
+      this.expanded = expanded;
+      this.retrigger(this.async && expanded ? State.Loading : State.Animated);
+    }
+    get overflow() {
+      return this.state !== State.Idle;
+    }
+    get loading() {
+      return !!this.expanded && this.async && this.state === State.Loading;
+    }
+    get height() {
+      const {
+        expanded,
+        state,
+        contentWrapper
+      } = this;
+      if (expanded && state === State.Prepared || !expanded && state === State.Animated) {
+        return 0;
+      }
+      if (contentWrapper && (!expanded && state === State.Prepared || expanded && state === State.Animated)) {
+        return contentWrapper.nativeElement.offsetHeight;
+      }
+      if (contentWrapper && expanded && state === State.Loading) {
+        return Math.max(contentWrapper.nativeElement.offsetHeight, LOADER_HEIGHT);
+      }
+      return null;
+    }
+    get contentVisible() {
+      return this.expanded || this.state !== State.Idle;
+    }
+    onTransitionEnd({
+      propertyName
+    }) {
+      if (propertyName === 'opacity' && this.state === State.Animated) {
+        this.state = State.Idle;
+      }
+    }
+    onExpandLoaded(event) {
+      event.stopPropagation();
+      if (this.state === State.Loading) {
+        this.retrigger(State.Animated);
+      }
+    }
+    retrigger(state) {
+      this.state = State.Prepared;
+      // We need delay to re-trigger CSS height transition from the correct number
+      setTimeout(() => {
+        if (this.state !== State.Prepared) {
+          return;
+        }
+        this.state = state;
+        this.cdr.markForCheck();
+      });
+    }
+  }
+  TuiExpandComponent.ɵfac = function TuiExpandComponent_Factory(t) {
+    return new (t || TuiExpandComponent)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ChangeDetectorRef));
+  };
+  TuiExpandComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiExpandComponent,
+    selectors: [["tui-expand"]],
+    contentQueries: function TuiExpandComponent_ContentQueries(rf, ctx, dirIndex) {
+      if (rf & 1) {
+        core_mjs_["ɵɵcontentQuery"](dirIndex, TuiExpandContentDirective, 5, core_mjs_.TemplateRef);
+      }
+      if (rf & 2) {
+        let _t;
+        core_mjs_["ɵɵqueryRefresh"](_t = core_mjs_["ɵɵloadQuery"]()) && (ctx.content = _t.first);
+      }
+    },
+    viewQuery: function TuiExpandComponent_Query(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵviewQuery"](taiga_ui_core_components_expand_c0, 5);
+      }
+      if (rf & 2) {
+        let _t;
+        core_mjs_["ɵɵqueryRefresh"](_t = core_mjs_["ɵɵloadQuery"]()) && (ctx.contentWrapper = _t.first);
+      }
+    },
+    hostVars: 9,
+    hostBindings: function TuiExpandComponent_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("transitionend.self", function TuiExpandComponent_transitionend_self_HostBindingHandler($event) {
+          return ctx.onTransitionEnd($event);
+        })("tui-expand-loaded", function TuiExpandComponent_tui_expand_loaded_HostBindingHandler($event) {
+          return ctx.onExpandLoaded($event);
+        });
+      }
+      if (rf & 2) {
+        core_mjs_["ɵɵattribute"]("aria-expanded", ctx.expanded);
+        core_mjs_["ɵɵstyleProp"]("height", ctx.height, "px");
+        core_mjs_["ɵɵclassProp"]("_expanded", ctx.expanded)("_overflow", ctx.overflow)("_loading", ctx.loading);
+      }
+    },
+    inputs: {
+      async: "async",
+      expandedSetter: ["expanded", "expandedSetter"]
+    },
+    ngContentSelectors: taiga_ui_core_components_expand_c1,
+    decls: 3,
+    vars: 3,
+    consts: [[1, "t-wrapper"], ["wrapper", ""], [4, "ngIf"], ["size", "l", 3, "overlay", "showLoader", 4, "ngIf", "ngIfElse"], ["size", "l", 3, "overlay", "showLoader"], [3, "ngTemplateOutlet"]],
+    template: function TuiExpandComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵprojectionDef"]();
+        core_mjs_["ɵɵelementStart"](0, "div", 0, 1);
+        core_mjs_["ɵɵtemplate"](2, TuiExpandComponent_ng_container_2_Template, 3, 2, "ng-container", 2);
+        core_mjs_["ɵɵelementEnd"]();
+      }
+      if (rf & 2) {
+        core_mjs_["ɵɵproperty"]("@tuiParentAnimation", undefined)("@.disabled", ctx.overflow);
+        core_mjs_["ɵɵadvance"](2);
+        core_mjs_["ɵɵproperty"]("ngIf", ctx.contentVisible);
+      }
+    },
+    dependencies: [taiga_ui_core_components_loader/* TuiLoaderComponent */.kM, common_mjs_.NgIf, common_mjs_.NgTemplateOutlet],
+    styles: ["[_nghost-%COMP%]{display:block;transition-property:opacity,height,visibility;transition-duration:var(--tui-duration, .3s);opacity:0}._overflow[_nghost-%COMP%]{overflow:hidden}._expanded[_nghost-%COMP%]{opacity:1;transform:translate(0)}._loading[_nghost-%COMP%]{opacity:.99}.t-wrapper[_ngcontent-%COMP%]:before, .t-wrapper[_ngcontent-%COMP%]:after{content:\"\";display:table}"],
+    data: {
+      animation: [taiga_ui_cdk_constants/* TUI_PARENT_ANIMATION */.Kx]
+    },
+    changeDetection: 0
+  });
+  return TuiExpandComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiExpandModule = /*#__PURE__*/(() => {
+  class TuiExpandModule {}
+  TuiExpandModule.ɵfac = function TuiExpandModule_Factory(t) {
+    return new (t || TuiExpandModule)();
+  };
+  TuiExpandModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiExpandModule
+  });
+  TuiExpandModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    imports: [[common_mjs_.CommonModule, taiga_ui_core_components_loader/* TuiLoaderModule */.dS]]
+  });
+  return TuiExpandModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-core-components-expand.js.map
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-theme-night.js
+
+
+
+let TuiThemeNightComponent = /*#__PURE__*/(() => {
+  class TuiThemeNightComponent extends taiga_ui_cdk_abstract/* AbstractTuiThemeSwitcher */.GM {}
+  TuiThemeNightComponent.ɵfac = /* @__PURE__ */(() => {
+    let ɵTuiThemeNightComponent_BaseFactory;
+    return function TuiThemeNightComponent_Factory(t) {
+      return (ɵTuiThemeNightComponent_BaseFactory || (ɵTuiThemeNightComponent_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiThemeNightComponent)))(t || TuiThemeNightComponent);
+    };
+  })();
+  TuiThemeNightComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiThemeNightComponent,
+    selectors: [["tui-theme-night"]],
+    features: [core_mjs_["ɵɵInheritDefinitionFeature"]],
+    decls: 0,
+    vars: 0,
+    template: function TuiThemeNightComponent_Template(rf, ctx) {},
+    styles: [":root{--tui-base-01: #222;--tui-base-02: #333;--tui-base-03: #808080;--tui-base-04: #959595;--tui-base-05: #b0b0b0;--tui-base-06: #d7d7d7;--tui-base-07: #ededed;--tui-base-08: #f6f6f6;--tui-base-09: #fff;--tui-focus: rgba(51, 51, 51, .64);--tui-secondary: rgba(255, 255, 255, .16);--tui-secondary-hover: rgba(255, 255, 255, .24);--tui-secondary-active: rgba(255, 255, 255, .4);--tui-clear: rgba(255, 255, 255, .16);--tui-clear-disabled: rgba(255, 255, 255, .08);--tui-clear-hover: rgba(255, 255, 255, .24);--tui-clear-active: rgba(255, 255, 255, .4);--tui-error-fill: #ff8c67;--tui-error-bg: rgba(244, 87, 37, .32);--tui-error-bg-hover: rgba(244, 87, 37, .4);--tui-success-fill: #4ac99b;--tui-success-bg: rgba(74, 201, 155, .32);--tui-success-bg-hover: rgba(74, 201, 155, .4);--tui-warning-fill: #ffc700;--tui-warning-bg: rgba(255, 199, 0, .32);--tui-warning-bg-hover: rgba(255, 199, 0, .4);--tui-info-fill: #70b6f6;--tui-info-bg: rgba(112, 182, 246, .32);--tui-info-bg-hover: rgba(112, 182, 246, .4);--tui-neutral-fill: #959ba4;--tui-neutral-bg: rgba(149, 155, 164, .32);--tui-neutral-bg-hover: rgba(149, 155, 164, .48);--tui-text-01: #ffffff;--tui-text-02: rgba(255, 255, 255, .72);--tui-text-03: rgba(255, 255, 255, .6);--tui-link: #6788ff;--tui-link-hover: #526ed3;--tui-positive: #44c596;--tui-positive-hover: #3aa981;--tui-negative: #ff8c67;--tui-negative-hover: #bb593a;--tui-autofill: var(--tui-autofill-night);--tui-elevation-01: #222;--tui-elevation-02: #222}tui-notification{--tui-base-01: #000}\n"],
+    encapsulation: 2,
+    changeDetection: 0
+  });
+  return TuiThemeNightComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiThemeNightModule = /*#__PURE__*/(() => {
+  class TuiThemeNightModule {}
+  TuiThemeNightModule.ɵfac = function TuiThemeNightModule_Factory(t) {
+    return new (t || TuiThemeNightModule)();
+  };
+  TuiThemeNightModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiThemeNightModule
+  });
+  TuiThemeNightModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+  return TuiThemeNightModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-core-components-theme-night.js.map
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/combineLatest.js
+var observable_combineLatest = __webpack_require__(2572);
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-focus-trap.js
+
+
+
+
+
+let TuiFocusTrapDirective = /*#__PURE__*/(() => {
+  class TuiFocusTrapDirective {
+    constructor(doc, el, renderer) {
+      this.doc = doc;
+      this.el = el;
+      this.renderer = renderer;
+      this.activeElement = (0,taiga_ui_cdk_utils_focus/* tuiGetNativeFocused */.ie)(this.doc);
+      /**
+       * This would cause currently focused element to lose focus,
+       * but it might cause ExpressionChanged error due to potential HostBinding.
+       * Microtask keeps it in the same frame but allows change detection to run
+       */
+      void Promise.resolve().then(() => this.el.nativeElement.focus());
+    }
+    onBlur() {
+      this.renderer.removeAttribute(this.el.nativeElement, 'tabIndex');
+    }
+    onFocusIn(node) {
+      const {
+        nativeElement
+      } = this.el;
+      if ((0,taiga_ui_cdk_utils_dom/* tuiContainsOrAfter */.PP)(nativeElement, node)) {
+        return;
+      }
+      const focusable = (0,taiga_ui_cdk_utils_focus/* tuiGetClosestFocusable */.BW)({
+        initial: nativeElement,
+        root: nativeElement
+      });
+      if (focusable) {
+        focusable.focus();
+      }
+    }
+    ngOnDestroy() {
+      (0,taiga_ui_cdk_utils_focus/* tuiBlurNativeFocused */.hp)(this.doc);
+      /**
+       * HostListeners are triggered even after ngOnDestroy
+       * {@link https://github.com/angular/angular/issues/38100}
+       * so we need to delay it but stay in the same sync cycle,
+       * therefore using Promise instead of setTimeout
+       */
+      // eslint-disable-next-line
+      Promise.resolve().then(() => {
+        if ((0,taiga_ui_cdk_utils_dom/* tuiIsHTMLElement */.dW)(this.activeElement)) {
+          this.activeElement.focus();
+        }
+      });
+    }
+  }
+  TuiFocusTrapDirective.ɵfac = function TuiFocusTrapDirective_Factory(t) {
+    return new (t || TuiFocusTrapDirective)(core_mjs_["ɵɵdirectiveInject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2));
+  };
+  TuiFocusTrapDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiFocusTrapDirective,
+    selectors: [["", "tuiFocusTrap", ""]],
+    hostAttrs: ["tabIndex", "0"],
+    hostBindings: function TuiFocusTrapDirective_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("blur", function TuiFocusTrapDirective_blur_HostBindingHandler() {
+          return ctx.onBlur();
+        })("focusin.silent", function TuiFocusTrapDirective_focusin_silent_HostBindingHandler($event) {
+          return ctx.onFocusIn($event.target);
+        }, false, core_mjs_["ɵɵresolveWindow"]);
+      }
+    }
+  });
+  return TuiFocusTrapDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiFocusTrapModule = /*#__PURE__*/(() => {
+  class TuiFocusTrapModule {}
+  TuiFocusTrapModule.ɵfac = function TuiFocusTrapModule_Factory(t) {
+    return new (t || TuiFocusTrapModule)();
+  };
+  TuiFocusTrapModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiFocusTrapModule
+  });
+  TuiFocusTrapModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+  return TuiFocusTrapModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-cdk-directives-focus-trap.js.map
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-let.js
+var taiga_ui_cdk_directives_let = __webpack_require__(5144);
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-components-dialog-host.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function TuiDialogHostComponent_section_0_ng_container_1_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementContainer"](0);
+  }
+}
+function TuiDialogHostComponent_section_0_tui_scroll_controls_2_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelement"](0, "tui-scroll-controls", 5);
+  }
+}
+function TuiDialogHostComponent_section_0_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementStart"](0, "section", 2);
+    core_mjs_["ɵɵtemplate"](1, TuiDialogHostComponent_section_0_ng_container_1_Template, 1, 0, "ng-container", 3)(2, TuiDialogHostComponent_section_0_tui_scroll_controls_2_Template, 1, 0, "tui-scroll-controls", 4);
+    core_mjs_["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const item_r2 = ctx.$implicit;
+    const ctx_r0 = core_mjs_["ɵɵnextContext"]();
+    core_mjs_["ɵɵproperty"]("@host", undefined);
+    core_mjs_["ɵɵattribute"]("aria-labelledby", item_r2.id);
+    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵproperty"]("polymorpheusOutlet", item_r2.component)("polymorpheusOutletContext", item_r2);
+    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵproperty"]("ngIf", !ctx_r0.isMobile);
+  }
+}
+function TuiDialogHostComponent_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r7 = core_mjs_["ɵɵgetCurrentView"]();
+    core_mjs_["ɵɵelementStart"](0, "div", 6);
+    core_mjs_["ɵɵlistener"]("transitionend", function TuiDialogHostComponent_div_1_Template_div_transitionend_0_listener($event) {
+      const restoredCtx = core_mjs_["ɵɵrestoreView"](_r7);
+      const isDialogClosesOnBack_r5 = restoredCtx.tuiLet;
+      const ctx_r6 = core_mjs_["ɵɵnextContext"]();
+      return core_mjs_["ɵɵresetView"](ctx_r6.onDialog($event, !!ctx_r6.dialogs.length, !!isDialogClosesOnBack_r5));
+    })("popstate", function TuiDialogHostComponent_div_1_Template_div_popstate_0_listener() {
+      const restoredCtx = core_mjs_["ɵɵrestoreView"](_r7);
+      const isDialogClosesOnBack_r5 = restoredCtx.tuiLet;
+      const ctx_r8 = core_mjs_["ɵɵnextContext"]();
+      return core_mjs_["ɵɵresetView"](ctx_r8.closeLast(ctx_r8.dialogs, !!isDialogClosesOnBack_r5));
+    }, false, core_mjs_["ɵɵresolveWindow"]);
+    core_mjs_["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r1 = core_mjs_["ɵɵnextContext"]();
+    core_mjs_["ɵɵclassProp"]("t-overlay_visible", ctx_r1.dialogs.length);
+  }
+}
+const FAKE_HISTORY_STATE = {
+  label: 'ignoreMe'
+};
+const isFakeHistoryState = historyState => (historyState === null || historyState === void 0 ? void 0 : historyState.label) === FAKE_HISTORY_STATE.label;
+/**
+ * Is closing dialog on browser backward navigation enabled
+ */
+const TUI_DIALOG_CLOSES_ON_BACK = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)((0,of.of)(false));
+let TuiDialogHostComponent = /*#__PURE__*/(() => {
+  class TuiDialogHostComponent {
+    constructor(isMobile, isDialogClosesOnBack$, dialogsByType, historyRef, titleService, destroy$, cdr, doc) {
+      this.isMobile = isMobile;
+      this.isDialogClosesOnBack$ = isDialogClosesOnBack$;
+      this.dialogsByType = dialogsByType;
+      this.historyRef = historyRef;
+      this.titleService = titleService;
+      this.destroy$ = destroy$;
+      this.cdr = cdr;
+      this.doc = doc;
+      this.dialogs = [];
+    }
+    ngOnInit() {
+      // Due to this view being parallel to app content, `markForCheck` from `async` pipe
+      // can happen after view was checked, so calling `detectChanges` instead
+      (0,observable_combineLatest/* combineLatest */.a)(this.dialogsByType).pipe((0,operators_map/* map */.U)(arr => [].concat(...arr).sort((a, b) => a.createdAt - b.createdAt)), (0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(dialogs => {
+        this.dialogs = dialogs;
+        this.cdr.markForCheck();
+        this.doc.documentElement.classList.toggle('t-overscroll-none', !!dialogs.length);
+      });
+    }
+    closeLast(dialogs, isDialogClosesOnBack) {
+      if (!isDialogClosesOnBack) {
+        return;
+      }
+      const [last] = dialogs.slice(-1);
+      if (!last) {
+        return;
+      }
+      if (dialogs.length > 1) {
+        this.historyRef.pushState(FAKE_HISTORY_STATE, this.titleService.getTitle());
+      }
+      last.$implicit.complete();
+    }
+    onDialog({
+      propertyName
+    }, popupOpened, isDialogClosesOnBack) {
+      if (!isDialogClosesOnBack || propertyName !== 'letter-spacing') {
+        return;
+      }
+      if (popupOpened) {
+        this.historyRef.pushState(FAKE_HISTORY_STATE, this.titleService.getTitle());
+      } else if (isFakeHistoryState(this.historyRef.state)) {
+        this.historyRef.back();
+      }
+    }
+  }
+  TuiDialogHostComponent.ɵfac = function TuiDialogHostComponent_Factory(t) {
+    return new (t || TuiDialogHostComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_MOBILE */.fL), core_mjs_["ɵɵdirectiveInject"](TUI_DIALOG_CLOSES_ON_BACK), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_DIALOGS */.qY), core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* HISTORY */.UA), core_mjs_["ɵɵdirectiveInject"](platform_browser/* Title */.Dx), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ChangeDetectorRef), core_mjs_["ɵɵdirectiveInject"](common_mjs_.DOCUMENT));
+  };
+  TuiDialogHostComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiDialogHostComponent,
+    selectors: [["tui-dialog-host"]],
+    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3])],
+    decls: 3,
+    vars: 4,
+    consts: [["aria-modal", "true", "role", "dialog", "tuiFocusTrap", "", "tuiOverscroll", "all", "tuiScrollRef", "", "class", "t-dialog", 4, "ngFor", "ngForOf"], ["class", "t-overlay", 3, "t-overlay_visible", "transitionend", "popstate", 4, "tuiLet"], ["aria-modal", "true", "role", "dialog", "tuiFocusTrap", "", "tuiOverscroll", "all", "tuiScrollRef", "", 1, "t-dialog"], [4, "polymorpheusOutlet", "polymorpheusOutletContext"], ["class", "t-scrollbars", 4, "ngIf"], [1, "t-scrollbars"], [1, "t-overlay", 3, "transitionend", "popstate"]],
+    template: function TuiDialogHostComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵtemplate"](0, TuiDialogHostComponent_section_0_Template, 3, 5, "section", 0)(1, TuiDialogHostComponent_div_1_Template, 1, 2, "div", 1);
+        core_mjs_["ɵɵpipe"](2, "async");
+      }
+      if (rf & 2) {
+        core_mjs_["ɵɵproperty"]("ngForOf", ctx.dialogs);
+        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵproperty"]("tuiLet", core_mjs_["ɵɵpipeBind1"](2, 2, ctx.isDialogClosesOnBack$));
+      }
+    },
+    dependencies: [TuiScrollControlsComponent, common_mjs_.NgForOf, TuiFocusTrapDirective, TuiOverscrollDirective, TuiScrollRefDirective, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li, common_mjs_.NgIf, taiga_ui_cdk_directives_let/* TuiLetDirective */.Ls, common_mjs_.AsyncPipe],
+    styles: ["[_nghost-%COMP%]{position:fixed;left:0;bottom:0;width:100%;height:0}.t-overlay[_ngcontent-%COMP%], .t-dialog[_ngcontent-%COMP%]{position:fixed;top:0;left:0;right:0;bottom:0;display:flex;align-items:flex-start;outline:none;overflow:auto;scrollbar-width:none;-ms-overflow-style:none}.t-overlay.ng-animating[_ngcontent-%COMP%], .t-dialog.ng-animating[_ngcontent-%COMP%]{overflow:clip}.t-overlay[_ngcontent-%COMP%]::-webkit-scrollbar, .t-dialog[_ngcontent-%COMP%]::-webkit-scrollbar, .t-overlay[_ngcontent-%COMP%]::-webkit-scrollbar-thumb, .t-dialog[_ngcontent-%COMP%]::-webkit-scrollbar-thumb{background:transparent;width:0;height:0}.t-dialog[_ngcontent-%COMP%]{bottom:auto;height:100%}.t-overlay[_ngcontent-%COMP%]{height:100%;pointer-events:none;touch-action:none;opacity:0;letter-spacing:normal;transition:opacity var(--tui-duration, .3s),letter-spacing .01s;background:rgba(0,0,0,.75);-webkit-backdrop-filter:var(--tui-backdrop, none);backdrop-filter:var(--tui-backdrop, none)}.t-overlay_visible[_ngcontent-%COMP%]{opacity:1;letter-spacing:1px}.t-dialog[_ngcontent-%COMP%]:last-of-type{z-index:1}.t-scrollbars[_ngcontent-%COMP%]{position:fixed;top:0;left:0;right:0;bottom:0;margin:0;color:#747474}"],
+    data: {
+      animation: [(0,animations/* trigger */.X$)('host', [(0,animations/* transition */.eR)(':enter', [(0,animations/* style */.oB)({
+        overflow: 'clip'
+      }), (0,animations/* query */.IO)(':scope > *', [(0,animations/* animateChild */.pV)()], {
+        optional: true
+      })]), (0,animations/* transition */.eR)(':leave', [(0,animations/* style */.oB)({
+        overflow: 'clip'
+      }), (0,animations/* query */.IO)(':scope > *', [(0,animations/* animateChild */.pV)()], {
+        optional: true
+      })])])]
+    }
+  });
+  return TuiDialogHostComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiDialogHostModule = /*#__PURE__*/(() => {
+  class TuiDialogHostModule {}
+  TuiDialogHostModule.ɵfac = function TuiDialogHostModule_Factory(t) {
+    return new (t || TuiDialogHostModule)();
+  };
+  TuiDialogHostModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiDialogHostModule
+  });
+  TuiDialogHostModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    imports: [[common_mjs_.CommonModule, tinkoff_ng_polymorpheus/* PolymorpheusModule */.wq, TuiOverscrollModule, TuiFocusTrapModule, taiga_ui_cdk_directives_let/* TuiLetModule */.WD, TuiScrollControlsModule]]
+  });
+  return TuiDialogHostModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-cdk-components-dialog-host.js.map
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-pipes-mapper.js
+
+
+let TuiMapperPipe = /*#__PURE__*/(() => {
+  class TuiMapperPipe {
+    transform(value, mapper, ...args) {
+      return mapper(value, ...args);
+    }
+  }
+  TuiMapperPipe.ɵfac = function TuiMapperPipe_Factory(t) {
+    return new (t || TuiMapperPipe)();
+  };
+  TuiMapperPipe.ɵpipe = /* @__PURE__ */core_mjs_["ɵɵdefinePipe"]({
+    name: "tuiMapper",
+    type: TuiMapperPipe,
+    pure: true
+  });
+  return TuiMapperPipe;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiMapperPipeModule = /*#__PURE__*/(() => {
+  class TuiMapperPipeModule {}
+  TuiMapperPipeModule.ɵfac = function TuiMapperPipeModule_Factory(t) {
+    return new (t || TuiMapperPipeModule)();
+  };
+  TuiMapperPipeModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiMapperPipeModule
+  });
+  TuiMapperPipeModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+  return TuiMapperPipeModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-cdk-pipes-mapper.js.map
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-components-alert-host.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+function TuiAlertHostComponent_div_0_ng_container_1_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementContainer"](0, 3);
+    core_mjs_["ɵɵpipe"](1, "tuiMapper");
+  }
+  if (rf & 2) {
+    const item_r3 = ctx.$implicit;
+    const ctx_r2 = core_mjs_["ɵɵnextContext"](2);
+    core_mjs_["ɵɵproperty"]("ngComponentOutlet", item_r3.component.component)("ngComponentOutletInjector", core_mjs_["ɵɵpipeBind2"](1, 2, item_r3, ctx_r2.mapper));
+  }
+}
+function TuiAlertHostComponent_div_0_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementStart"](0, "div", 1);
+    core_mjs_["ɵɵtemplate"](1, TuiAlertHostComponent_div_0_ng_container_1_Template, 2, 5, "ng-container", 2);
+    core_mjs_["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const alert_r1 = ctx.$implicit;
+    core_mjs_["ɵɵproperty"]("@tuiParentAnimation", undefined);
+    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵproperty"]("ngForOf", alert_r1);
+  }
+}
+let TuiAlertHostComponent = /*#__PURE__*/(() => {
+  class TuiAlertHostComponent {
+    constructor(allAlerts, injector, destroy$, cdr) {
+      this.allAlerts = allAlerts;
+      this.injector = injector;
+      this.destroy$ = destroy$;
+      this.cdr = cdr;
+      this.alerts = [];
+      this.trackBy = index => index;
+      this.mapper = useValue => core_mjs_.Injector.create({
+        providers: [{
+          provide: tinkoff_ng_polymorpheus/* POLYMORPHEUS_CONTEXT */.yf,
+          useValue
+        }],
+        parent: this.injector
+      });
+    }
+    ngOnInit() {
+      // Due to this view being parallel to app content, `markForCheck` from `async` pipe
+      // can happen after view was checked, so calling `detectChanges` instead
+      (0,observable_combineLatest/* combineLatest */.a)(this.allAlerts).pipe((0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(alerts => {
+        this.alerts = alerts;
+        this.cdr.detectChanges();
+      });
+    }
+  }
+  TuiAlertHostComponent.ɵfac = function TuiAlertHostComponent_Factory(t) {
+    return new (t || TuiAlertHostComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_ALERTS */.bS), core_mjs_["ɵɵdirectiveInject"](core_mjs_.INJECTOR), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ChangeDetectorRef));
+  };
+  TuiAlertHostComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiAlertHostComponent,
+    selectors: [["tui-alert-host"]],
+    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3])],
+    decls: 1,
+    vars: 2,
+    consts: [["class", "t-wrapper", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "t-wrapper"], [3, "ngComponentOutlet", "ngComponentOutletInjector", 4, "ngFor", "ngForOf"], [3, "ngComponentOutlet", "ngComponentOutletInjector"]],
+    template: function TuiAlertHostComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵtemplate"](0, TuiAlertHostComponent_div_0_Template, 2, 2, "div", 0);
+      }
+      if (rf & 2) {
+        core_mjs_["ɵɵproperty"]("ngForOf", ctx.alerts)("ngForTrackBy", ctx.trackBy);
+      }
+    },
+    dependencies: [common_mjs_.NgForOf, common_mjs_.NgComponentOutlet, TuiMapperPipe],
+    styles: ["tui-alert-host>.t-wrapper{position:fixed;top:0;left:0;display:flex;width:100%;height:100%;flex-direction:column;pointer-events:none}tui-alert-host>.t-wrapper>*{pointer-events:auto}\n"],
+    encapsulation: 2,
+    data: {
+      animation: [taiga_ui_cdk_constants/* TUI_PARENT_ANIMATION */.Kx]
+    }
+  });
+  return TuiAlertHostComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiAlertHostModule = /*#__PURE__*/(() => {
+  class TuiAlertHostModule {}
+  TuiAlertHostModule.ɵfac = function TuiAlertHostModule_Factory(t) {
+    return new (t || TuiAlertHostModule)();
+  };
+  TuiAlertHostModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiAlertHostModule
+  });
+  TuiAlertHostModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    imports: [[common_mjs_.CommonModule, TuiMapperPipeModule]]
+  });
+  return TuiAlertHostModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-cdk-components-alert-host.js.map
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/debounceTime.js
+var debounceTime = __webpack_require__(3620);
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-internal-svg-defs-host.js
+
+
+
+
+
+
+
+
+
+function TuiSvgDefsHostComponent__svg_ng_container_1__svg_defs_1_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵnamespaceSVG"]();
+    core_mjs_["ɵɵelement"](0, "defs", 4);
+  }
+  if (rf & 2) {
+    const def_r4 = ctx.$implicit;
+    core_mjs_["ɵɵproperty"]("innerHTML", def_r4, core_mjs_["ɵɵsanitizeHtml"]);
+  }
+}
+function TuiSvgDefsHostComponent__svg_ng_container_1_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵnamespaceSVG"]();
+    core_mjs_["ɵɵelementContainerStart"](0);
+    core_mjs_["ɵɵtemplate"](1, TuiSvgDefsHostComponent__svg_ng_container_1__svg_defs_1_Template, 1, 1, "defs", 3);
+    core_mjs_["ɵɵelementContainerEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r0 = core_mjs_["ɵɵnextContext"]();
+    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵproperty"]("ngForOf", ctx_r0.items);
+  }
+}
+function TuiSvgDefsHostComponent__svg_ng_template_2__svg_defs_0_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵnamespaceSVG"]();
+    core_mjs_["ɵɵelementStart"](0, "defs");
+    core_mjs_["ɵɵelement"](1, "svg", 6);
+    core_mjs_["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const def_r6 = ctx.$implicit;
+    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵproperty"]("outerHTML", def_r6, core_mjs_["ɵɵsanitizeHtml"]);
+  }
+}
+function TuiSvgDefsHostComponent__svg_ng_template_2_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵnamespaceSVG"]();
+    core_mjs_["ɵɵtemplate"](0, TuiSvgDefsHostComponent__svg_ng_template_2__svg_defs_0_Template, 2, 1, "defs", 5);
+  }
+  if (rf & 2) {
+    const ctx_r1 = core_mjs_["ɵɵnextContext"]();
+    core_mjs_["ɵɵproperty"]("ngForOf", ctx_r1.items);
+  }
+}
+let TuiSvgDefsHostComponent = /*#__PURE__*/(() => {
+  class TuiSvgDefsHostComponent {
+    constructor(svgService, cdr, destroy$, platformId) {
+      this.svgService = svgService;
+      this.cdr = cdr;
+      this.destroy$ = destroy$;
+      this.isBrowser = true;
+      this.isBrowser = !(0,common_mjs_.isPlatformServer)(platformId);
+    }
+    // @bad TODO: Looks like it could be async piped but it was probably written like that for a reason
+    ngOnInit() {
+      this.svgService.items$.pipe((0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(defsMap => {
+        this.items = defsMap.values();
+        this.cdr.detectChanges();
+      });
+    }
+  }
+  TuiSvgDefsHostComponent.ɵfac = function TuiSvgDefsHostComponent_Factory(t) {
+    return new (t || TuiSvgDefsHostComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiSvgService */.K5), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ChangeDetectorRef), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.PLATFORM_ID));
+  };
+  TuiSvgDefsHostComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiSvgDefsHostComponent,
+    selectors: [["tui-svg-defs-host"]],
+    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3])],
+    decls: 4,
+    vars: 2,
+    consts: [["version", "1.1", 0, "xmlns", "xlink", "http://www.w3.org/1999/xlink", "xmlns", "http://www.w3.org/2000/svg"], [4, "ngIf", "ngIfElse"], ["server", ""], [3, "innerHTML", 4, "ngFor", "ngForOf"], [3, "innerHTML"], [4, "ngFor", "ngForOf"], [3, "outerHTML"]],
+    template: function TuiSvgDefsHostComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵnamespaceSVG"]();
+        core_mjs_["ɵɵelementStart"](0, "svg", 0);
+        core_mjs_["ɵɵtemplate"](1, TuiSvgDefsHostComponent__svg_ng_container_1_Template, 2, 1, "ng-container", 1)(2, TuiSvgDefsHostComponent__svg_ng_template_2_Template, 1, 1, "ng-template", null, 2, core_mjs_["ɵɵtemplateRefExtractor"]);
+        core_mjs_["ɵɵelementEnd"]();
+      }
+      if (rf & 2) {
+        const _r2 = core_mjs_["ɵɵreference"](3);
+        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵproperty"]("ngIf", ctx.isBrowser)("ngIfElse", _r2);
+      }
+    },
+    dependencies: [common_mjs_.NgIf, common_mjs_.NgForOf],
+    styles: ["[_nghost-%COMP%]{display:none}"],
+    changeDetection: 0
+  });
+  return TuiSvgDefsHostComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiSvgDefsHostModule = /*#__PURE__*/(() => {
+  class TuiSvgDefsHostModule {}
+  TuiSvgDefsHostModule.ɵfac = function TuiSvgDefsHostModule_Factory(t) {
+    return new (t || TuiSvgDefsHostModule)();
+  };
+  TuiSvgDefsHostModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiSvgDefsHostModule
+  });
+  TuiSvgDefsHostModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    imports: [[common_mjs_.CommonModule, taiga_ui_cdk_directives_let/* TuiLetModule */.WD]]
+  });
+  return TuiSvgDefsHostModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-core-internal-svg-defs-host.js.map
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-hints-host.js
+
+
+
+
+
+
+
+
+
+
+
+function TuiHintsHostComponent_div_0_ng_container_1_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementContainer"](0);
+  }
+}
+const taiga_ui_core_components_hints_host_c0 = a0 => ({
+  $implicit: a0
+});
+function TuiHintsHostComponent_div_0_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementStart"](0, "div", 1);
+    core_mjs_["ɵɵtemplate"](1, TuiHintsHostComponent_div_0_ng_container_1_Template, 1, 0, "ng-container", 2);
+    core_mjs_["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const hint_r1 = ctx.$implicit;
+    core_mjs_["ɵɵproperty"]("@tuiParentAnimation", undefined)("tuiActiveZoneParent", hint_r1.activeZone || null);
+    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵproperty"]("polymorpheusOutlet", hint_r1.component)("polymorpheusOutletContext", core_mjs_["ɵɵpureFunction1"](4, taiga_ui_core_components_hints_host_c0, hint_r1));
+  }
+}
+let TuiHintsHostComponent = /*#__PURE__*/(() => {
+  class TuiHintsHostComponent {
+    constructor(hints$, destroy$, cdr) {
+      this.hints$ = hints$;
+      this.destroy$ = destroy$;
+      this.cdr = cdr;
+      this.hints = [];
+    }
+    ngOnInit() {
+      // Due to this view being parallel to app content, `markForCheck` from `async` pipe
+      // can happen after view was checked, so calling `detectChanges` instead
+      this.hints$.pipe((0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(hints => {
+        this.hints = hints;
+        this.cdr.detectChanges();
+      });
+    }
+  }
+  TuiHintsHostComponent.ɵfac = function TuiHintsHostComponent_Factory(t) {
+    return new (t || TuiHintsHostComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiHintService */.BN), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ChangeDetectorRef));
+  };
+  TuiHintsHostComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiHintsHostComponent,
+    selectors: [["tui-hints-host"]],
+    hostAttrs: ["aria-live", "polite"],
+    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3])],
+    decls: 1,
+    vars: 1,
+    consts: [["role", "tooltip", 3, "tuiActiveZoneParent", 4, "ngFor", "ngForOf"], ["role", "tooltip", 3, "tuiActiveZoneParent"], [4, "polymorpheusOutlet", "polymorpheusOutletContext"]],
+    template: function TuiHintsHostComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵtemplate"](0, TuiHintsHostComponent_div_0_Template, 2, 6, "div", 0);
+      }
+      if (rf & 2) {
+        core_mjs_["ɵɵproperty"]("ngForOf", ctx.hints);
+      }
+    },
+    dependencies: [common_mjs_.NgForOf, taiga_ui_cdk_directives_active_zone_TuiActiveZoneDirective, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li],
+    styles: ["[_nghost-%COMP%]{position:fixed;top:0;left:0;width:100%;height:0}"],
+    data: {
+      animation: [taiga_ui_cdk_constants/* TUI_PARENT_ANIMATION */.Kx]
+    }
+  });
+  return TuiHintsHostComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiHintsHostModule = /*#__PURE__*/(() => {
+  class TuiHintsHostModule {}
+  TuiHintsHostModule.ɵfac = function TuiHintsHostModule_Factory(t) {
+    return new (t || TuiHintsHostModule)();
+  };
+  TuiHintsHostModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiHintsHostModule
+  });
+  TuiHintsHostModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    imports: [[common_mjs_.CommonModule, tinkoff_ng_polymorpheus/* PolymorpheusModule */.wq, TuiActiveZoneModule]]
+  });
+  return TuiHintsHostModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-core-components-hints-host.js.map
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-root.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function TuiRootComponent_tui_scroll_controls_0_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelement"](0, "tui-scroll-controls", 2);
+  }
+}
+const taiga_ui_core_components_root_c0 = ["*", [["tuiOverContent"]], [["tuiOverDialogs"]], [["tuiOverAlerts"]], [["tuiOverPortals"]], [["tuiOverHints"]]];
+const taiga_ui_core_components_root_c1 = ["*", "tuiOverContent", "tuiOverDialogs", "tuiOverAlerts", "tuiOverPortals", "tuiOverHints"];
+let TuiRootComponent = /*#__PURE__*/(() => {
+  class TuiRootComponent {
+    constructor(duration, dialogs, isMobile, breakpoint, isIOS, isAndroid, {
+      body
+    }, theme) {
+      this.duration = duration;
+      this.dialogs = dialogs;
+      this.isMobile = isMobile;
+      this.breakpoint = breakpoint;
+      this.isIOS = isIOS;
+      this.isAndroid = isAndroid;
+      this.isMobileRes$ = this.breakpoint.pipe((0,operators_map/* map */.U)(breakpoint => breakpoint === 'mobile'));
+      this.scrollbars$ = this.dialogs.length && !this.isMobile ? (0,observable_combineLatest/* combineLatest */.a)([...this.dialogs]).pipe((0,operators_map/* map */.U)(dialogs => !dialogs.some(({
+        length
+      }) => length)), (0,debounceTime/* debounceTime */.b)(0)) : (0,of.of)(!this.isMobile);
+      body.setAttribute('data-tui-theme', theme.toLowerCase());
+    }
+  }
+  TuiRootComponent.ɵfac = function TuiRootComponent_Factory(t) {
+    return new (t || TuiRootComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_ANIMATIONS_DURATION */.dx), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_DIALOGS */.qY), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_MOBILE */.fL), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiBreakpointService */.zE), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_IOS */.FA), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_ANDROID */.XG), core_mjs_["ɵɵdirectiveInject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_THEME */.r2));
+  };
+  TuiRootComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiRootComponent,
+    selectors: [["tui-root"]],
+    hostAttrs: ["data-tui-version", "3.55.0"],
+    hostVars: 7,
+    hostBindings: function TuiRootComponent_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("$.class._mobile", function TuiRootComponent___class__mobile_HostBindingHandler() {
+          return ctx.isMobileRes$;
+        });
+      }
+      if (rf & 2) {
+        core_mjs_["ɵɵhostProperty"]("$.class._mobile", ctx.isMobileRes$);
+        core_mjs_["ɵɵstyleProp"]("--tui-duration", ctx.duration, "ms");
+        core_mjs_["ɵɵclassProp"]("_ios", ctx.isIOS)("_android", ctx.isAndroid);
+      }
+    },
+    ngContentSelectors: taiga_ui_core_components_root_c1,
+    decls: 14,
+    vars: 3,
+    consts: [["class", "t-root-scrollbar", 4, "ngIf"], [1, "t-root-content"], [1, "t-root-scrollbar"]],
+    template: function TuiRootComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵprojectionDef"](taiga_ui_core_components_root_c0);
+        core_mjs_["ɵɵtemplate"](0, TuiRootComponent_tui_scroll_controls_0_Template, 1, 0, "tui-scroll-controls", 0);
+        core_mjs_["ɵɵpipe"](1, "async");
+        core_mjs_["ɵɵelement"](2, "tui-svg-defs-host");
+        core_mjs_["ɵɵelementStart"](3, "tui-dropdown-host")(4, "div", 1);
+        core_mjs_["ɵɵprojection"](5);
+        core_mjs_["ɵɵelementEnd"]();
+        core_mjs_["ɵɵprojection"](6, 1);
+        core_mjs_["ɵɵelement"](7, "tui-dialog-host");
+        core_mjs_["ɵɵprojection"](8, 2);
+        core_mjs_["ɵɵelement"](9, "tui-alert-host");
+        core_mjs_["ɵɵprojection"](10, 3);
+        core_mjs_["ɵɵelementEnd"]();
+        core_mjs_["ɵɵprojection"](11, 4);
+        core_mjs_["ɵɵelement"](12, "tui-hints-host");
+        core_mjs_["ɵɵprojection"](13, 5);
+      }
+      if (rf & 2) {
+        core_mjs_["ɵɵproperty"]("ngIf", core_mjs_["ɵɵpipeBind1"](1, 1, ctx.scrollbars$));
+      }
+    },
+    dependencies: [TuiScrollControlsComponent, TuiSvgDefsHostComponent, TuiDropdownHostComponent, TuiDialogHostComponent, TuiAlertHostComponent, TuiHintsHostComponent, common_mjs_.NgIf, common_mjs_.AsyncPipe],
+    styles: ["@keyframes tuiPresent{to{content:\"1\"}}@keyframes tuiSkeletonVibe{to{opacity:.5}}html,.tui-zero-scrollbar{scrollbar-width:none;-ms-overflow-style:none}html::-webkit-scrollbar,.tui-zero-scrollbar::-webkit-scrollbar,html::-webkit-scrollbar-thumb,.tui-zero-scrollbar::-webkit-scrollbar-thumb{background:transparent;width:0;height:0}body{font:var(--tui-font-text-s);color:var(--tui-text-01);background:var(--tui-base-01);margin:0}tui-root{position:relative;display:block;flex:1;-webkit-tap-highlight-color:transparent}tui-root>.t-root-scrollbar{position:fixed;top:0;left:0;bottom:0;right:0;margin:0}.t-root-content{height:100%;isolation:isolate}.t-overscroll-none{overscroll-behavior:none;overflow:hidden}\n"],
+    encapsulation: 2
+  });
+  return TuiRootComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiRootModule = /*#__PURE__*/(() => {
+  class TuiRootModule {}
+  TuiRootModule.ɵfac = function TuiRootModule_Factory(t) {
+    return new (t || TuiRootModule)();
+  };
+  TuiRootModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiRootModule
+  });
+  TuiRootModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    imports: [[common_mjs_.CommonModule, EventPluginsModule, TuiDropdownHostModule, TuiSvgDefsHostModule, TuiHintsHostModule, TuiDialogHostModule, TuiAlertHostModule, TuiScrollControlsModule]]
+  });
+  return TuiRootModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-core-components-root.js.map
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-obscured.js
+
+
+
+
+
+
+
+
+
+
+/**
+ * Directive that monitors element visibility
+ */
+let TuiObscuredDirective = /*#__PURE__*/(() => {
+  class TuiObscuredDirective {
+    constructor(activeZone, obscured$) {
+      this.enabled$ = new internal_Subject/* Subject */.x();
+      const mapped$ = obscured$.pipe((0,operators_map/* map */.U)(obscuredBy => !!obscuredBy && (!activeZone || !obscuredBy.length || obscuredBy.every(element => !activeZone.contains(element)))));
+      this.tuiObscured = this.enabled$.pipe((0,taiga_ui_cdk_observables/* tuiIfMap */.Xd)(() => mapped$));
+    }
+    set tuiObscuredEnabled(enabled) {
+      this.enabled$.next(enabled);
+    }
+  }
+  TuiObscuredDirective.ɵfac = function TuiObscuredDirective_Factory(t) {
+    return new (t || TuiObscuredDirective)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_directives_active_zone_TuiActiveZoneDirective, 8), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiObscuredService */.AQ, 2));
+  };
+  TuiObscuredDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiObscuredDirective,
+    selectors: [["", "tuiObscured", ""]],
+    inputs: {
+      tuiObscuredEnabled: "tuiObscuredEnabled"
+    },
+    outputs: {
+      tuiObscured: "tuiObscured"
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiObscuredService */.AQ, taiga_ui_cdk_services/* TuiParentsScrollService */.b0, taiga_ui_cdk_services/* TuiDestroyService */.a3])]
+  });
+  return TuiObscuredDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiObscuredModule = /*#__PURE__*/(() => {
+  class TuiObscuredModule {}
+  TuiObscuredModule.ɵfac = function TuiObscuredModule_Factory(t) {
+    return new (t || TuiObscuredModule)();
+  };
+  TuiObscuredModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiObscuredModule
+  });
+  TuiObscuredModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+  return TuiObscuredModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-cdk-directives-obscured.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-hosted-dropdown.js
 
 
@@ -4289,11 +6967,11 @@ let EventPluginsModule = /*#__PURE__*/(() => {
 
 
 const taiga_ui_core_components_hosted_dropdown_c0 = ["wrapper"];
-function TuiHostedDropdownComponent_div_0_ng_template_3_ng_container_2_Template(rf, ctx) {
+function TuiHostedDropdownComponent_div_0_ng_template_3_div_2_Template(rf, ctx) {
   if (rf & 1) {
-    core_mjs_["ɵɵelementContainerStart"](0);
+    core_mjs_["ɵɵelementStart"](0, "div", 8);
     core_mjs_["ɵɵtext"](1);
-    core_mjs_["ɵɵelementContainerEnd"]();
+    core_mjs_["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     const text_r7 = ctx.polymorpheusOutlet;
@@ -4301,7 +6979,7 @@ function TuiHostedDropdownComponent_div_0_ng_template_3_ng_container_2_Template(
     core_mjs_["ɵɵtextInterpolate1"](" ", text_r7, " ");
   }
 }
-const _c1 = (a0, a1) => ({
+const taiga_ui_core_components_hosted_dropdown_c1 = (a0, a1) => ({
   $implicit: a0,
   close: a1
 });
@@ -4314,7 +6992,7 @@ function TuiHostedDropdownComponent_div_0_ng_template_3_Template(rf, ctx) {
       const ctx_r8 = core_mjs_["ɵɵnextContext"](2);
       return core_mjs_["ɵɵresetView"](ctx_r8.onKeydown($event));
     });
-    core_mjs_["ɵɵtemplate"](2, TuiHostedDropdownComponent_div_0_ng_template_3_ng_container_2_Template, 2, 1, "ng-container", 7);
+    core_mjs_["ɵɵtemplate"](2, TuiHostedDropdownComponent_div_0_ng_template_3_div_2_Template, 2, 1, "div", 7);
     core_mjs_["ɵɵelementEnd"]();
     core_mjs_["ɵɵelement"](3, "div");
   }
@@ -4323,7 +7001,7 @@ function TuiHostedDropdownComponent_div_0_ng_template_3_Template(rf, ctx) {
     const _r2 = core_mjs_["ɵɵreference"](1);
     const ctx_r3 = core_mjs_["ɵɵnextContext"]();
     core_mjs_["ɵɵadvance"](2);
-    core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r3.content)("polymorpheusOutletContext", core_mjs_["ɵɵpureFunction2"](2, _c1, _r2, ctx_r3.close));
+    core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r3.content)("polymorpheusOutletContext", core_mjs_["ɵɵpureFunction2"](2, taiga_ui_core_components_hosted_dropdown_c1, _r2, ctx_r3.close));
   }
 }
 function TuiHostedDropdownComponent_div_0_Template(rf, ctx) {
@@ -4352,7 +7030,7 @@ function TuiHostedDropdownComponent_div_0_Template(rf, ctx) {
     core_mjs_["ɵɵproperty"]("polymorpheus", ctx_r0.context);
   }
 }
-const _c2 = ["*"];
+const taiga_ui_core_components_hosted_dropdown_c2 = ["*"];
 let TuiAccessorProxyDirective = /*#__PURE__*/(() => {
   class TuiAccessorProxyDirective extends taiga_ui_core_abstract/* TuiPositionAccessor */.uG {
     constructor() {
@@ -4634,10 +7312,10 @@ let TuiHostedDropdownComponent = /*#__PURE__*/(() => {
       provide: TUI_HOSTED_DROPDOWN_COMPONENT,
       useExisting: TuiHostedDropdownComponent
     }])],
-    ngContentSelectors: _c2,
+    ngContentSelectors: taiga_ui_core_components_hosted_dropdown_c2,
     decls: 2,
     vars: 3,
-    consts: [["tuiAccessorProxy", "", "tuiDropdownOpenMonitor", "", "class", "t-wrapper", 3, "tuiDropdown", "tuiDropdownManual", "tuiDropdownSided", "tuiObscuredEnabled", "tuiActiveZoneChange", "tuiObscured", 4, "tuiLet"], ["tuiAccessorProxy", "", "tuiDropdownOpenMonitor", "", 1, "t-wrapper", 3, "tuiDropdown", "tuiDropdownManual", "tuiDropdownSided", "tuiObscuredEnabled", "tuiActiveZoneChange", "tuiObscured"], ["activeZone", "tuiActiveZone"], [3, "polymorpheus"], ["dropdown", "polymorpheus"], [1, "t-dropdown", 3, "keydown"], ["wrapper", ""], [4, "polymorpheusOutlet", "polymorpheusOutletContext"]],
+    consts: [["tuiAccessorProxy", "", "tuiDropdownOpenMonitor", "", "class", "t-wrapper", 3, "tuiDropdown", "tuiDropdownManual", "tuiDropdownSided", "tuiObscuredEnabled", "tuiActiveZoneChange", "tuiObscured", 4, "tuiLet"], ["tuiAccessorProxy", "", "tuiDropdownOpenMonitor", "", 1, "t-wrapper", 3, "tuiDropdown", "tuiDropdownManual", "tuiDropdownSided", "tuiObscuredEnabled", "tuiActiveZoneChange", "tuiObscured"], ["activeZone", "tuiActiveZone"], [3, "polymorpheus"], ["dropdown", "polymorpheus"], [1, "t-dropdown", 3, "keydown"], ["wrapper", ""], ["class", "t-primitive", 4, "polymorpheusOutlet", "polymorpheusOutletContext"], [1, "t-primitive"]],
     template: function TuiHostedDropdownComponent_Template(rf, ctx) {
       if (rf & 1) {
         core_mjs_["ɵɵprojectionDef"]();
@@ -4650,7 +7328,7 @@ let TuiHostedDropdownComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [taiga_ui_cdk_directives_let/* TuiLetDirective */.Ls, TuiAccessorProxyDirective, TuiDropdownOpenMonitorDirective, TuiDropdownDirective, TuiDropdownDriverDirective, TuiDropdownManualDirective, TuiDropdownPositionSidedDirective, taiga_ui_cdk_directives_active_zone_TuiActiveZoneDirective, TuiObscuredDirective, tinkoff_ng_polymorpheus/* PolymorpheusTemplate */.GL, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li, common_mjs_.AsyncPipe],
-    styles: ["[_nghost-%COMP%]{display:inline-flex}.t-wrapper[_ngcontent-%COMP%]{border-radius:inherit;height:inherit;flex:1 1 auto;width:100%}.t-dropdown[_ngcontent-%COMP%]{height:100%}"],
+    styles: ["[_nghost-%COMP%]{display:inline-flex}.t-wrapper[_ngcontent-%COMP%]{border-radius:inherit;height:inherit;flex:1 1 auto;width:100%}.t-dropdown[_ngcontent-%COMP%]{height:100%}.t-primitive[_ngcontent-%COMP%]{padding:1rem}"],
     changeDetection: 0
   });
   (0,tslib_es6/* __decorate */.gn)([tinkoff_ng_event_plugins_shouldCall(shouldClose)], TuiHostedDropdownComponent.prototype, "onKeyDownEsc", null);
@@ -4682,208 +7360,63 @@ let TuiHostedDropdownModule = /*#__PURE__*/(() => {
 
 
 //# sourceMappingURL=taiga-ui-core-components-hosted-dropdown.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-autofilled.js
-
-
-
-
-let TuiAutofilledStyleComponent = /*#__PURE__*/(() => {
-  class TuiAutofilledStyleComponent {}
-  TuiAutofilledStyleComponent.ɵfac = function TuiAutofilledStyleComponent_Factory(t) {
-    return new (t || TuiAutofilledStyleComponent)();
-  };
-  TuiAutofilledStyleComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiAutofilledStyleComponent,
-    selectors: [["ng-component"]],
-    hostAttrs: [1, "tui-autofilled-styles"],
-    decls: 0,
-    vars: 0,
-    template: function TuiAutofilledStyleComponent_Template(rf, ctx) {},
-    styles: [".tui-autofill input,input.tui-autofill{transition:box-shadow .01s}\n"],
-    encapsulation: 2,
-    changeDetection: 0
-  });
-  return TuiAutofilledStyleComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiAutofilledDirective = /*#__PURE__*/(() => {
-  class TuiAutofilledDirective {
-    constructor(directiveStyles) {
-      this.autofilled = false;
-      this.tuiAutofilledChange = new core_mjs_.EventEmitter();
-      directiveStyles.addComponent(TuiAutofilledStyleComponent);
-    }
-    transitionStartHandler({
-      propertyName,
-      target
-    }) {
-      var _a;
-      const matchedAutofill = propertyName.includes('box-shadow') && ((_a = target) === null || _a === void 0 ? void 0 : _a.matches('input'));
-      if (matchedAutofill) {
-        this.autofilled = !this.autofilled;
-        this.tuiAutofilledChange.emit(this.autofilled);
-      }
-    }
-  }
-  TuiAutofilledDirective.ɵfac = function TuiAutofilledDirective_Factory(t) {
-    return new (t || TuiAutofilledDirective)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDirectiveStylesService */.gH));
-  };
-  TuiAutofilledDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiAutofilledDirective,
-    selectors: [["", "tuiAutofilledChange", ""]],
-    hostAttrs: [1, "tui-autofill"],
-    hostVars: 2,
-    hostBindings: function TuiAutofilledDirective_HostBindings(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵlistener"]("transitionstart", function TuiAutofilledDirective_transitionstart_HostBindingHandler($event) {
-          return ctx.transitionStartHandler($event);
-        });
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵclassProp"]("_autofilled", ctx.autofilled);
-      }
-    },
-    outputs: {
-      tuiAutofilledChange: "tuiAutofilledChange"
-    }
-  });
-  return TuiAutofilledDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiAutofilledModule = /*#__PURE__*/(() => {
-  class TuiAutofilledModule {}
-  TuiAutofilledModule.ɵfac = function TuiAutofilledModule_Factory(t) {
-    return new (t || TuiAutofilledModule)();
-  };
-  TuiAutofilledModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiAutofilledModule
-  });
-  TuiAutofilledModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-  return TuiAutofilledModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-coercion.js
+/**
+ * Coerces a data-bound value (typically a string) to a boolean.
+ * @example {@link https://material.angular.io/cdk/coercion/api#functions}
+ */
+function tuiCoerceBooleanProperty(value) {
+  // If you don't mind "[object Object]" in your strings, then you will not need this rule.
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+  return value !== null && typeof value !== `undefined` && `${value}` !== `false`;
+}
 
 /**
  * Generated bundle index. Do not edit.
  */
 
 
-//# sourceMappingURL=taiga-ui-cdk-directives-autofilled.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-focusable.js
-
-
-
-/**
- * Abstraction over `tabindex`
- */
-let TuiFocusableDirective = /*#__PURE__*/(() => {
-  class TuiFocusableDirective {
-    constructor() {
-      /**
-       * Element can be focused with keyboard
-       */
-      this.focusable = true;
-    }
-    get tabIndex() {
-      return this.focusable ? 0 : -1;
-    }
-  }
-  TuiFocusableDirective.ɵfac = function TuiFocusableDirective_Factory(t) {
-    return new (t || TuiFocusableDirective)();
-  };
-  TuiFocusableDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiFocusableDirective,
-    selectors: [["", "tuiFocusable", ""]],
-    hostVars: 1,
-    hostBindings: function TuiFocusableDirective_HostBindings(rf, ctx) {
-      if (rf & 2) {
-        core_mjs_["ɵɵhostProperty"]("tabIndex", ctx.tabIndex);
-      }
-    },
-    inputs: {
-      focusable: ["tuiFocusable", "focusable"]
-    }
-  });
-  return TuiFocusableDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiFocusableModule = /*#__PURE__*/(() => {
-  class TuiFocusableModule {}
-  TuiFocusableModule.ɵfac = function TuiFocusableModule_Factory(t) {
-    return new (t || TuiFocusableModule)();
-  };
-  TuiFocusableModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiFocusableModule
-  });
-  TuiFocusableModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-  return TuiFocusableModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-cdk-directives-focusable.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-math.js
-var taiga_ui_cdk_utils_math = __webpack_require__(6551);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-directives-mode.js
-var taiga_ui_core_directives_mode = __webpack_require__(6371);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/repeat.js
-var repeat = __webpack_require__(7997);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/noop.js
-var noop = __webpack_require__(2420);
-;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/operators/debounce.js
+//# sourceMappingURL=taiga-ui-cdk-coercion.js.map
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/argsOrArgArray.js
+var argsOrArgArray = __webpack_require__(7728);
+;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/observable/race.js
 
 
 
 
-function debounce(durationSelector) {
-  return (0,lift/* operate */.e)((source, subscriber) => {
-    let hasValue = false;
-    let lastValue = null;
-    let durationSubscriber = null;
-    const emit = () => {
-      durationSubscriber === null || durationSubscriber === void 0 ? void 0 : durationSubscriber.unsubscribe();
-      durationSubscriber = null;
-      if (hasValue) {
-        hasValue = false;
-        const value = lastValue;
-        lastValue = null;
+function race(...sources) {
+  sources = (0,argsOrArgArray/* argsOrArgArray */.k)(sources);
+  return sources.length === 1 ? (0,innerFrom/* innerFrom */.Xf)(sources[0]) : new Observable/* Observable */.y(raceInit(sources));
+}
+function raceInit(sources) {
+  return subscriber => {
+    let subscriptions = [];
+    for (let i = 0; subscriptions && !subscriber.closed && i < sources.length; i++) {
+      subscriptions.push((0,innerFrom/* innerFrom */.Xf)(sources[i]).subscribe((0,OperatorSubscriber/* createOperatorSubscriber */.x)(subscriber, value => {
+        if (subscriptions) {
+          for (let s = 0; s < subscriptions.length; s++) {
+            s !== i && subscriptions[s].unsubscribe();
+          }
+          subscriptions = null;
+        }
         subscriber.next(value);
-      }
-    };
-    source.subscribe((0,OperatorSubscriber/* createOperatorSubscriber */.x)(subscriber, value => {
-      durationSubscriber === null || durationSubscriber === void 0 ? void 0 : durationSubscriber.unsubscribe();
-      hasValue = true;
-      lastValue = value;
-      durationSubscriber = (0,OperatorSubscriber/* createOperatorSubscriber */.x)(subscriber, emit, noop/* noop */.Z);
-      (0,innerFrom/* innerFrom */.Xf)(durationSelector(value)).subscribe(durationSubscriber);
-    }, () => {
-      emit();
-      subscriber.complete();
-    }, undefined, () => {
-      lastValue = durationSubscriber = null;
-    }));
+      })));
+    }
+  };
+}
+//# sourceMappingURL=race.js.map
+;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/operators/skipWhile.js
+
+
+function skipWhile(predicate) {
+  return (0,lift/* operate */.e)((source, subscriber) => {
+    let taking = false;
+    let index = 0;
+    source.subscribe((0,OperatorSubscriber/* createOperatorSubscriber */.x)(subscriber, value => (taking || (taking = !predicate(value, index++))) && subscriber.next(value)));
   });
 }
-//# sourceMappingURL=debounce.js.map
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/ReplaySubject.js
-var ReplaySubject = __webpack_require__(7328);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-constants.js
-var taiga_ui_core_constants = __webpack_require__(8103);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-directives-hint.js
+//# sourceMappingURL=skipWhile.js.map
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-auto-focus.js
 
 
 
@@ -4897,1832 +7430,628 @@ var taiga_ui_core_constants = __webpack_require__(8103);
 
 
 
-
-
-
-
-
-
-
-
-
-/**
- * A component to display a hint
- */
-function TuiHintComponent_span_0_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelement"](0, "span", 1);
-  }
-  if (rf & 2) {
-    const text_r1 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵproperty"]("innerHTML", text_r1, core_mjs_["ɵɵsanitizeHtml"]);
-  }
-}
-const TUI_HINT_COMPONENT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => TuiHintComponent);
-
-/** Default values for hint options */
-const TUI_HINT_DEFAULT_OPTIONS = {
-  direction: 'bottom-left',
-  showDelay: 500,
-  hideDelay: 200,
-  appearance: '',
-  icon: 'tuiIconHelpCircle'
-};
-/**
- * Default parameters for hint directive
- */
-const TUI_HINT_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_HINT_DEFAULT_OPTIONS);
-const tuiHintOptionsProvider = override => ({
-  provide: TUI_HINT_OPTIONS,
-  deps: [[new Optional(), TuiHintOptionsDirective], [new Optional(), new SkipSelf(), TUI_HINT_OPTIONS]],
-  useFactory: tuiOverrideOptions(override, TUI_HINT_DEFAULT_OPTIONS)
-});
-let TuiHintOptionsDirective = /*#__PURE__*/(() => {
-  class TuiHintOptionsDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {
-    constructor(options) {
-      super();
-      this.options = options;
-      this.direction = this.options.direction;
-      this.appearance = this.options.appearance;
-      this.showDelay = this.options.showDelay;
-      this.hideDelay = this.options.hideDelay;
-      this.icon = this.options.icon;
-    }
-  }
-  TuiHintOptionsDirective.ɵfac = function TuiHintOptionsDirective_Factory(t) {
-    return new (t || TuiHintOptionsDirective)(core_mjs_["ɵɵdirectiveInject"](TUI_HINT_OPTIONS, 4));
-  };
-  TuiHintOptionsDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiHintOptionsDirective,
-    selectors: [["", "tuiHintContent", ""]],
-    inputs: {
-      content: ["tuiHintContent", "content"],
-      direction: ["tuiHintDirection", "direction"],
-      appearance: ["tuiHintAppearance", "appearance"],
-      showDelay: ["tuiHintShowDelay", "showDelay"],
-      hideDelay: ["tuiHintHideDelay", "hideDelay"]
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([{
-      provide: TUI_HINT_OPTIONS,
-      useExisting: (0,core_mjs_.forwardRef)(() => TuiHintOptionsDirective)
-    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-  });
-  return TuiHintOptionsDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiHintDirective = /*#__PURE__*/(() => {
-  class TuiHintDirective {
-    constructor(el, component, hintService, options, activeZone) {
+let AbstractTuiAutofocusHandler = /*#__PURE__*/(() => {
+  class AbstractTuiAutofocusHandler {
+    constructor(focusable, el) {
+      this.focusable = focusable;
       this.el = el;
-      this.component = component;
-      this.hintService = hintService;
-      this.options = options;
-      this.activeZone = activeZone;
-      this.tuiHintAppearance = null;
-      this.type = 'hint';
-    }
-    get appearance() {
-      var _a;
-      return (_a = this.tuiHintAppearance) !== null && _a !== void 0 ? _a : this.options.appearance;
-    }
-    ngOnChanges() {
-      if (!this.content) {
-        this.toggle(false);
-      }
-    }
-    ngOnDestroy() {
-      this.toggle(false);
-    }
-    getClientRect() {
-      return this.el.nativeElement.getBoundingClientRect();
-    }
-    toggle(show) {
-      if (show && this.content) {
-        this.hintService.add(this);
-      } else {
-        this.hintService.remove(this);
-      }
-    }
-  }
-  TuiHintDirective.ɵfac = function TuiHintDirective_Factory(t) {
-    return new (t || TuiHintDirective)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](tinkoff_ng_polymorpheus/* PolymorpheusComponent */.Al), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiHintService */.BN), core_mjs_["ɵɵdirectiveInject"](TUI_HINT_OPTIONS), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_directives_active_zone_TuiActiveZoneDirective, 8));
-  };
-  TuiHintDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiHintDirective,
-    selectors: [["", "tuiHint", "", 5, "ng-container"]],
-    inputs: {
-      content: ["tuiHint", "content"],
-      context: ["tuiHintContext", "context"],
-      tuiHintAppearance: "tuiHintAppearance"
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_abstract/* tuiAsRectAccessor */.Ic)(TuiHintDirective), (0,taiga_ui_core_abstract/* tuiAsVehicle */.Fe)(TuiHintDirective), {
-      provide: tinkoff_ng_polymorpheus/* PolymorpheusComponent */.Al,
-      deps: [TUI_HINT_COMPONENT, core_mjs_.INJECTOR],
-      useClass: tinkoff_ng_polymorpheus/* PolymorpheusComponent */.Al
-    }]), core_mjs_["ɵɵNgOnChangesFeature"]]
-  });
-  return TuiHintDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/* eslint-disable rxjs/no-unsafe-takeuntil */
-let TuiHintHoverDirective = /*#__PURE__*/(() => {
-  class TuiHintHoverDirective extends taiga_ui_core_abstract/* TuiDriver */.kk {
-    constructor(hovered$, options, el) {
-      super(subscriber => this.stream$.subscribe(subscriber));
-      this.hovered$ = hovered$;
-      this.options = options;
-      this.el = el;
-      this.visible = false;
-      this.toggle$ = new internal_Subject/* Subject */.x();
-      this.stream$ = (0,merge/* merge */.T)(this.toggle$.pipe((0,operators_switchMap/* switchMap */.w)(visible => (0,of.of)(visible).pipe((0,delay/* delay */.g)(visible ? 0 : this.hideDelay))), (0,takeUntil/* takeUntil */.R)(this.hovered$), (0,repeat/* repeat */.r)()), this.hovered$.pipe((0,operators_switchMap/* switchMap */.w)(visible => (0,of.of)(visible).pipe((0,delay/* delay */.g)(visible ? this.showDelay : this.hideDelay))), (0,takeUntil/* takeUntil */.R)(this.toggle$), (0,repeat/* repeat */.r)())).pipe((0,filter/* filter */.h)(() => this.enabled), (0,operators_map/* map */.U)(value => value && !(0,taiga_ui_core_utils_miscellaneous/* tuiIsObscured */.mn)(this.el.nativeElement)), (0,tap/* tap */.b)(visible => {
-        this.visible = visible;
-      }));
-      this.showDelay = this.options.showDelay;
-      this.hideDelay = this.options.hideDelay;
-      this.type = 'hint';
-      this.enabled = true;
-    }
-    toggle(visible = !this.visible) {
-      this.toggle$.next(visible);
-    }
-  }
-  TuiHintHoverDirective.ɵfac = function TuiHintHoverDirective_Factory(t) {
-    return new (t || TuiHintHoverDirective)(core_mjs_["ɵɵdirectiveInject"](TuiHoveredService), core_mjs_["ɵɵdirectiveInject"](TUI_HINT_OPTIONS), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef));
-  };
-  TuiHintHoverDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiHintHoverDirective,
-    selectors: [["", "tuiHint", "", 5, "ng-container"]],
-    inputs: {
-      showDelay: ["tuiHintShowDelay", "showDelay"],
-      hideDelay: ["tuiHintHideDelay", "hideDelay"]
-    },
-    exportAs: ["tuiHintHover"],
-    features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_abstract/* tuiAsDriver */.UK)(TuiHintHoverDirective), TuiHoveredService]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-  });
-  return TuiHintHoverDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiHintPointerDirective = /*#__PURE__*/(() => {
-  class TuiHintPointerDirective extends TuiHintHoverDirective {
-    constructor() {
-      super(...arguments);
-      this.currentRect = taiga_ui_cdk_constants/* EMPTY_CLIENT_RECT */.Jy;
-    }
-    onMove({
-      clientX,
-      clientY
-    }) {
-      this.currentRect = (0,taiga_ui_cdk_utils_dom/* tuiPointToClientRect */.dD)(clientX, clientY);
-    }
-    getClientRect() {
-      return this.currentRect;
-    }
-  }
-  TuiHintPointerDirective.ɵfac = /* @__PURE__ */(() => {
-    let ɵTuiHintPointerDirective_BaseFactory;
-    return function TuiHintPointerDirective_Factory(t) {
-      return (ɵTuiHintPointerDirective_BaseFactory || (ɵTuiHintPointerDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiHintPointerDirective)))(t || TuiHintPointerDirective);
-    };
-  })();
-  TuiHintPointerDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiHintPointerDirective,
-    selectors: [["", "tuiHint", "", "tuiHintPointer", ""]],
-    hostBindings: function TuiHintPointerDirective_HostBindings(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵlistener"]("mousemove.silent", function TuiHintPointerDirective_mousemove_silent_HostBindingHandler($event) {
-          return ctx.onMove($event);
-        });
-      }
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_abstract/* tuiAsRectAccessor */.Ic)(TuiHintPointerDirective), (0,taiga_ui_core_abstract/* tuiAsDriver */.UK)(TuiHintPointerDirective)]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-  });
-  return TuiHintPointerDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const GAP = 4;
-let TuiHintComponent = /*#__PURE__*/(() => {
-  class TuiHintComponent {
-    constructor(hovered$, position$, destroy$, animation, pointer, accessor, el, polymorpheus, hover, mode, visualViewportService, viewport) {
-      var _a;
-      this.animation = animation;
-      this.pointer = pointer;
-      this.accessor = accessor;
-      this.el = el;
-      this.polymorpheus = polymorpheus;
-      this.hover = hover;
-      this.mode = mode;
-      this.visualViewportService = visualViewportService;
-      this.viewport = viewport;
-      this.appearance = this.polymorpheus.$implicit.appearance || ((_a = this.mode) === null || _a === void 0 ? void 0 : _a.mode);
-      position$.pipe((0,operators_map/* map */.U)(point => this.visualViewportService.correct(point)), (0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(([top, left]) => {
-        this.update(top, left);
-      });
-      hovered$.pipe((0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(hover => this.hover.toggle(hover));
-    }
-    get content() {
-      return this.polymorpheus.$implicit.content;
-    }
-    get context() {
-      return this.polymorpheus.$implicit.context;
-    }
-    onClick(target) {
-      if (!this.el.nativeElement.contains(target) && !this.hover.el.nativeElement.contains(target) || (0,taiga_ui_core_utils_miscellaneous/* tuiIsObscured */.mn)(this.hover.el.nativeElement)) {
-        this.hover.toggle(false);
-      }
-    }
-    update(top, left) {
-      const {
-        height,
-        width
-      } = this.el.nativeElement.getBoundingClientRect();
-      const {
-        style
-      } = this.el.nativeElement;
-      const rect = this.accessor.getClientRect();
-      const viewport = this.viewport.getClientRect();
-      if (rect === taiga_ui_cdk_constants/* EMPTY_CLIENT_RECT */.Jy) {
-        return;
-      }
-      const safeLeft = (0,taiga_ui_cdk_utils_math/* tuiClamp */.Ki)(left, GAP, viewport.width - width - GAP);
-      const [beakTop, beakLeft] = this.visualViewportService.correct([rect.top + rect.height / 2 - top, rect.left + rect.width / 2 - safeLeft]);
-      style.top = taiga_ui_cdk_utils_format_tuiPx(top);
-      style.left = taiga_ui_cdk_utils_format_tuiPx(safeLeft);
-      style.setProperty('--top', taiga_ui_cdk_utils_format_tuiPx((0,taiga_ui_cdk_utils_math/* tuiClamp */.Ki)(beakTop, 0.5, height - 1)));
-      style.setProperty('--left', taiga_ui_cdk_utils_format_tuiPx((0,taiga_ui_cdk_utils_math/* tuiClamp */.Ki)(beakLeft, 0.5, width - 1)));
-    }
-  }
-  TuiHintComponent.ɵfac = function TuiHintComponent_Factory(t) {
-    return new (t || TuiHintComponent)(core_mjs_["ɵɵdirectiveInject"](TuiHoveredService), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiPositionService */.KG), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_ANIMATION_OPTIONS */.Pw), core_mjs_["ɵɵdirectiveInject"](TuiHintPointerDirective, 8), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_abstract/* TuiRectAccessor */.O4), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](tinkoff_ng_polymorpheus/* POLYMORPHEUS_CONTEXT */.yf), core_mjs_["ɵɵdirectiveInject"](TuiHintHoverDirective), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_directives_mode/* TuiModeDirective */.w, 8), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiVisualViewportService */.Lp), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_VIEWPORT */.EO));
-  };
-  TuiHintComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiHintComponent,
-    selectors: [["tui-hint"]],
-    hostVars: 4,
-    hostBindings: function TuiHintComponent_HostBindings(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵlistener"]("click", function TuiHintComponent_click_HostBindingHandler($event) {
-          return ctx.onClick($event.target);
-        }, false, core_mjs_["ɵɵresolveDocument"]);
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵattribute"]("data-appearance", ctx.appearance);
-        core_mjs_["ɵɵsyntheticHostProperty"]("@tuiFadeIn", ctx.animation);
-        core_mjs_["ɵɵclassProp"]("_untouchable", ctx.pointer);
-      }
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3, taiga_ui_core_services/* TuiPositionService */.KG, TuiHoveredService, (0,taiga_ui_core_abstract/* tuiPositionAccessorFor */.ei)('hint'), (0,taiga_ui_core_abstract/* tuiRectAccessorFor */.Wk)('hint', TuiHintDirective)])],
-    decls: 1,
-    vars: 2,
-    consts: [[3, "innerHTML", 4, "polymorpheusOutlet", "polymorpheusOutletContext"], [3, "innerHTML"]],
-    template: function TuiHintComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵtemplate"](0, TuiHintComponent_span_0_Template, 1, 1, "span", 0);
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx.content)("polymorpheusOutletContext", ctx.context);
-      }
-    },
-    dependencies: [tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li],
-    styles: ["[_nghost-%COMP%]{position:absolute;max-width:18rem;min-height:var(--tui-height-m);padding:.75rem 1rem;background:var(--tui-primary);border-radius:var(--tui-radius-l);color:var(--tui-primary-text);box-sizing:border-box;font:var(--tui-font-text-s);white-space:pre-line;word-wrap:break-word}[_nghost-%COMP%]:before{content:\"\";position:absolute;top:var(--top);left:var(--left);width:.5rem;height:.5rem;border-radius:.125rem;box-sizing:border-box;background:inherit;transform:translate(-50%,-50%) rotate(45deg)}[data-appearance=error][_nghost-%COMP%]{background:var(--tui-error-fill)}[data-appearance=onDark][_nghost-%COMP%]{background:var(--tui-elevation-02);color:var(--tui-text-01);filter:drop-shadow(0 0 .125rem rgba(0,0,0,.16)) drop-shadow(0 1.5rem 1rem rgba(0,0,0,.03)) drop-shadow(0 .75rem .75rem rgba(0,0,0,.04)) drop-shadow(0 .25rem .375rem rgba(0,0,0,.05))}[_nghost-%COMP%]:not([style*=\"top\"]){visibility:hidden}._untouchable[_nghost-%COMP%]{pointer-events:none}"],
-    data: {
-      animation: [tuiFadeIn]
-    },
-    changeDetection: 0
-  });
-  (0,tslib_es6/* __decorate */.gn)([taiga_ui_cdk_decorators/* tuiPure */.UM], TuiHintComponent.prototype, "update", null);
-  return TuiHintComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiHintDescribeDirective = /*#__PURE__*/(() => {
-  class TuiHintDescribeDirective extends taiga_ui_core_abstract/* TuiDriver */.kk {
-    constructor(zone, doc, el) {
-      super(subscriber => this.stream$.subscribe(subscriber));
-      this.zone = zone;
-      this.doc = doc;
-      this.el = el;
-      this.id$ = new ReplaySubject/* ReplaySubject */.t(1);
-      this.stream$ = this.id$.pipe((0,taiga_ui_cdk_observables/* tuiIfMap */.Xd)(() => (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, 'keydown', {
-        capture: true
-      }), taiga_ui_cdk_utils_miscellaneous/* tuiIsPresent */.Pc), (0,operators_switchMap/* switchMap */.w)(() => this.focused ? (0,of.of)(false) : (0,merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, 'keyup'), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.element, 'blur')).pipe((0,operators_map/* map */.U)(() => this.focused))), debounce(visible => visible ? (0,timer/* timer */.H)(1000) : (0,of.of)(null)), (0,startWith/* startWith */.O)(false), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), skip(1), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(this.zone));
-      this.tuiHintDescribe = '';
-      this.type = 'hint';
-    }
-    ngOnChanges() {
-      this.id$.next(this.tuiHintDescribe);
-    }
-    get focused() {
-      return (0,taiga_ui_cdk_utils_focus/* tuiIsNativeFocused */.V8)(this.element);
     }
     get element() {
-      return this.doc.getElementById(this.tuiHintDescribe || '') || this.el.nativeElement;
-    }
-  }
-  TuiHintDescribeDirective.ɵfac = function TuiHintDescribeDirective_Factory(t) {
-    return new (t || TuiHintDescribeDirective)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.NgZone), core_mjs_["ɵɵdirectiveInject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef));
-  };
-  TuiHintDescribeDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiHintDescribeDirective,
-    selectors: [["", "tuiHintDescribe", ""]],
-    inputs: {
-      tuiHintDescribe: "tuiHintDescribe"
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_abstract/* tuiAsDriver */.UK)(TuiHintDescribeDirective)]), core_mjs_["ɵɵInheritDefinitionFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
-  });
-  (0,tslib_es6/* __decorate */.gn)([taiga_ui_cdk_decorators/* tuiPure */.UM], TuiHintDescribeDirective.prototype, "element", null);
-  return TuiHintDescribeDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiHintDriverDirective = /*#__PURE__*/(() => {
-  class TuiHintDriverDirective extends taiga_ui_core_abstract/* AbstractTuiDriverDirective */.FP {
-    // TODO: Figure out why this is necessary under nx test runner
-    constructor(destroy$, drivers, vehicles) {
-      super(destroy$, drivers, vehicles);
-      this.type = 'hint';
-    }
-  }
-  TuiHintDriverDirective.ɵfac = function TuiHintDriverDirective_Factory(t) {
-    return new (t || TuiHintDriverDirective)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_abstract/* TuiDriver */.kk), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_abstract/* TuiVehicle */.c2));
-  };
-  TuiHintDriverDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiHintDriverDirective,
-    selectors: [["", "tuiHint", ""]],
-    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-  });
-  return TuiHintDriverDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiHintHostDirective = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
-  class TuiHintHostDirective extends TuiRectAccessor {
-    constructor() {
-      super(...arguments);
-      this.type = 'hint';
-    }
-    getClientRect() {
       var _a;
-      return ((_a = this.tuiHintHost) === null || _a === void 0 ? void 0 : _a.getBoundingClientRect()) || EMPTY_CLIENT_RECT;
+      return ((_a = this.focusable) === null || _a === void 0 ? void 0 : _a.nativeFocusableElement) || this.el.nativeElement;
+    }
+    get isTextFieldElement() {
+      return this.element.matches(`input, textarea, [contenteditable]`);
     }
   }
-  TuiHintHostDirective.ɵfac = /* @__PURE__ */(() => {
-    let ɵTuiHintHostDirective_BaseFactory;
-    return function TuiHintHostDirective_Factory(t) {
-      return (ɵTuiHintHostDirective_BaseFactory || (ɵTuiHintHostDirective_BaseFactory = i0.ɵɵgetInheritedFactory(TuiHintHostDirective)))(t || TuiHintHostDirective);
-    };
-  })();
-  TuiHintHostDirective.ɵdir = /* @__PURE__ */i0.ɵɵdefineDirective({
-    type: TuiHintHostDirective,
-    selectors: [["", "tuiHint", "", "tuiHintHost", ""]],
-    inputs: {
-      tuiHintHost: "tuiHintHost"
-    },
-    features: [i0.ɵɵProvidersFeature([tuiAsRectAccessor(TuiHintHostDirective)]), i0.ɵɵInheritDefinitionFeature]
-  });
-  return TuiHintHostDirective;
-})()));
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiHintManualDirective = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
-  class TuiHintManualDirective extends TuiDriver {
-    constructor(hover) {
-      super(subscriber => this.stream$.subscribe(subscriber));
-      this.stream$ = new BehaviorSubject(false);
-      this.tuiHintManual = false;
-      this.type = 'hint';
-      hover.enabled = false;
-    }
-    ngOnChanges() {
-      this.stream$.next(this.tuiHintManual);
-    }
-  }
-  TuiHintManualDirective.ɵfac = function TuiHintManualDirective_Factory(t) {
-    return new (t || TuiHintManualDirective)(i0.ɵɵdirectiveInject(TuiHintHoverDirective));
+  AbstractTuiAutofocusHandler.ɵfac = function AbstractTuiAutofocusHandler_Factory(t) {
+    core_mjs_["ɵɵinvalidFactory"]();
   };
-  TuiHintManualDirective.ɵdir = /* @__PURE__ */i0.ɵɵdefineDirective({
-    type: TuiHintManualDirective,
-    selectors: [["", "tuiHint", "", "tuiHintManual", ""]],
-    inputs: {
-      tuiHintManual: "tuiHintManual"
-    },
-    features: [i0.ɵɵProvidersFeature([tuiAsDriver(TuiHintManualDirective)]), i0.ɵɵInheritDefinitionFeature, i0.ɵɵNgOnChangesFeature]
+  AbstractTuiAutofocusHandler.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: AbstractTuiAutofocusHandler
   });
-  return TuiHintManualDirective;
-})()));
+  return AbstractTuiAutofocusHandler;
+})();
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-const OFFSET = 8;
-const ARROW_OFFSET = 22;
-const TOP = 0;
-const LEFT = 1;
-let TuiHintPositionDirective = /*#__PURE__*/(() => {
-  class TuiHintPositionDirective extends taiga_ui_core_abstract/* TuiPositionAccessor */.uG {
-    constructor(options, viewport, directive, accessors) {
-      super();
-      this.options = options;
-      this.viewport = viewport;
-      this.directive = directive;
-      this.accessors = accessors;
-      this.points = taiga_ui_core_constants/* TUI_HINT_DIRECTIONS */.Fw.reduce((acc, direction) => Object.assign(Object.assign({}, acc), {
-        [direction]: [0, 0]
-      }), {});
-      this.direction = this.options.direction;
-      this.type = 'hint';
+const TIMEOUT = 1000;
+const NG_ANIMATION_SELECTOR = `.ng-animating`;
+let TuiDefaultAutofocusHandler = /*#__PURE__*/(() => {
+  class TuiDefaultAutofocusHandler extends AbstractTuiAutofocusHandler {
+    constructor(focusable, el, animationFrame$) {
+      super(focusable, el);
+      this.animationFrame$ = animationFrame$;
     }
-    // eslint-disable-next-line max-statements
-    getPosition({
-      width,
-      height
-    }) {
-      var _a, _b;
-      const hostRect = (_b = (_a = this.accessor) === null || _a === void 0 ? void 0 : _a.getClientRect()) !== null && _b !== void 0 ? _b : taiga_ui_cdk_constants/* EMPTY_CLIENT_RECT */.Jy;
-      const leftCenter = hostRect.left + hostRect.width / 2;
-      const topCenter = hostRect.top + hostRect.height / 2;
-      this.points['top-left'][TOP] = hostRect.top - height - OFFSET;
-      this.points['top-left'][LEFT] = leftCenter - width + ARROW_OFFSET;
-      this.points.top[TOP] = this.points['top-left'][TOP];
-      this.points.top[LEFT] = leftCenter - width / 2;
-      this.points['top-right'][TOP] = this.points['top-left'][TOP];
-      this.points['top-right'][LEFT] = leftCenter - ARROW_OFFSET;
-      this.points['bottom-left'][TOP] = hostRect.bottom + OFFSET;
-      this.points['bottom-left'][LEFT] = this.points['top-left'][LEFT];
-      this.points.bottom[TOP] = this.points['bottom-left'][TOP];
-      this.points.bottom[LEFT] = this.points.top[LEFT];
-      this.points['bottom-right'][TOP] = this.points['bottom-left'][TOP];
-      this.points['bottom-right'][LEFT] = this.points['top-right'][LEFT];
-      this.points['left-top'][TOP] = topCenter - height + ARROW_OFFSET;
-      this.points['left-top'][LEFT] = hostRect.left - width - OFFSET;
-      this.points.left[TOP] = topCenter - height / 2;
-      this.points.left[LEFT] = this.points['left-top'][LEFT];
-      this.points['left-bottom'][TOP] = topCenter - ARROW_OFFSET;
-      this.points['left-bottom'][LEFT] = this.points['left-top'][LEFT];
-      this.points['right-top'][TOP] = this.points['left-top'][TOP];
-      this.points['right-top'][LEFT] = hostRect.right + OFFSET;
-      this.points.right[TOP] = this.points.left[TOP];
-      this.points.right[LEFT] = this.points['right-top'][LEFT];
-      this.points['right-bottom'][TOP] = this.points['left-bottom'][TOP];
-      this.points['right-bottom'][LEFT] = this.points['right-top'][LEFT];
-      if (this.checkPosition(this.points[this.direction], width, height)) {
-        return this.points[this.direction];
+    setFocus() {
+      if (this.isTextFieldElement) {
+        race((0,observable_timer/* timer */.H)(TIMEOUT), this.animationFrame$.pipe((0,throttleTime/* throttleTime */.p)(taiga_ui_cdk_constants/* POLLING_TIME */.Yg), (0,operators_map/* map */.U)(() => this.element.closest(NG_ANIMATION_SELECTOR)), skipWhile(Boolean), (0,take/* take */.q)(1))).subscribe(() => this.element.focus({
+          preventScroll: true
+        }));
+      } else {
+        this.element.focus({
+          preventScroll: true
+        });
       }
-      const direction = taiga_ui_core_constants/* TUI_HINT_DIRECTIONS */.Fw.find(direction => this.checkPosition(this.points[direction], width, height));
-      return this.points[direction || this.fallback];
-    }
-    get accessor() {
-      return (0,taiga_ui_core_abstract/* tuiFallbackRectAccessor */.Sv)('hint')(this.accessors, this.directive);
-    }
-    get fallback() {
-      return this.points.top[TOP] > this.viewport.getClientRect().bottom - this.points.bottom[TOP] ? 'top' : 'bottom';
-    }
-    checkPosition([top, left], width, height) {
-      const viewport = this.viewport.getClientRect();
-      return top > OFFSET && left > OFFSET && top + height < viewport.bottom - OFFSET && left + width < viewport.right - OFFSET;
     }
   }
-  TuiHintPositionDirective.ɵfac = function TuiHintPositionDirective_Factory(t) {
-    return new (t || TuiHintPositionDirective)(core_mjs_["ɵɵdirectiveInject"](TUI_HINT_OPTIONS), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_VIEWPORT */.EO), core_mjs_["ɵɵdirectiveInject"](TuiHintDirective), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_abstract/* TuiRectAccessor */.O4));
+  TuiDefaultAutofocusHandler.ɵfac = function TuiDefaultAutofocusHandler_Factory(t) {
+    return new (t || TuiDefaultAutofocusHandler)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_FOCUSABLE_ITEM_ACCESSOR */.KZ, 10), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* ANIMATION_FRAME */.L1));
   };
-  TuiHintPositionDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiHintPositionDirective,
-    selectors: [["", "tuiHint", "", 3, "tuiHintCustomPosition", ""]],
-    inputs: {
-      direction: ["tuiHintDirection", "direction"]
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_abstract/* tuiAsPositionAccessor */.P7)(TuiHintPositionDirective)]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  TuiDefaultAutofocusHandler.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiDefaultAutofocusHandler,
+    features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
   });
-  (0,tslib_es6/* __decorate */.gn)([taiga_ui_cdk_decorators/* tuiPure */.UM], TuiHintPositionDirective.prototype, "accessor", null);
-  return TuiHintPositionDirective;
+  return TuiDefaultAutofocusHandler;
 })();
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-let TuiHintModule = /*#__PURE__*/(() => {
-  class TuiHintModule {}
-  TuiHintModule.ɵfac = function TuiHintModule_Factory(t) {
-    return new (t || TuiHintModule)();
-  };
-  TuiHintModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiHintModule
-  });
-  TuiHintModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-    imports: [[common_mjs_.CommonModule, tinkoff_ng_polymorpheus/* PolymorpheusModule */.wq]]
-  });
-  return TuiHintModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-core-directives-hint.js.map
-;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/observable/never.js
-
-
-const NEVER = new Observable/* Observable */.y(noop/* noop */.Z);
-function never() {
-  return NEVER;
-}
-//# sourceMappingURL=never.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-directives-textfield-controller.js
-
-
-
-
-
-
-class TuiTextfieldController {
-  constructor(change$, options, legacyAppearance, appearanceDirective, cleanerDirective, customContentDirective, iconDirective, iconLeftDirective, labelOutsideDirective, sizeDirective, prefixDirective, postfixDirective, fillerDirective) {
-    this.change$ = change$;
-    this.options = options;
-    this.legacyAppearance = legacyAppearance;
-    this.appearanceDirective = appearanceDirective;
-    this.cleanerDirective = cleanerDirective;
-    this.customContentDirective = customContentDirective;
-    this.iconDirective = iconDirective;
-    this.iconLeftDirective = iconLeftDirective;
-    this.labelOutsideDirective = labelOutsideDirective;
-    this.sizeDirective = sizeDirective;
-    this.prefixDirective = prefixDirective;
-    this.postfixDirective = postfixDirective;
-    this.fillerDirective = fillerDirective;
-  }
-  get appearance() {
-    return this.appearanceDirective.appearance || this.legacyAppearance;
-  }
-  get cleaner() {
-    return this.cleanerDirective.cleaner;
-  }
-  get customContent() {
-    return this.customContentDirective.customContent || ``;
-  }
-  get icon() {
-    return this.iconDirective.icon;
-  }
-  get iconLeft() {
-    return this.iconLeftDirective.iconLeft;
-  }
-  get labelOutside() {
-    return this.labelOutsideDirective.labelOutside;
-  }
-  get size() {
-    return this.sizeDirective.size;
-  }
-  get prefix() {
-    return this.prefixDirective.prefix;
-  }
-  get postfix() {
-    return this.postfixDirective.postfix;
-  }
-  get filler() {
-    return this.fillerDirective.filler;
-  }
-}
-
-/** Default values for primitive textfield options */
-const taiga_ui_core_directives_textfield_controller_TUI_TEXTFIELD_DEFAULT_OPTIONS = {
-  iconCleaner: `tuiIconClose`,
-  hintOnDisabled: false
-};
-/**
- * Default parameters for textfield
- */
-const TUI_TEXTFIELD_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(taiga_ui_core_directives_textfield_controller_TUI_TEXTFIELD_DEFAULT_OPTIONS);
-function taiga_ui_core_directives_textfield_controller_tuiTextfieldOptionsProvider(options) {
-  return tuiProvideOptions(TUI_TEXTFIELD_OPTIONS, options, taiga_ui_core_directives_textfield_controller_TUI_TEXTFIELD_DEFAULT_OPTIONS);
-}
-
-// TODO: rename to TUI_TEXTFIELD_APPEARANCE in v4
-const TUI_TEXTFIELD_APPEARANCE_DIRECTIVE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new TuiTextfieldAppearanceDirective());
-let TuiTextfieldAppearanceDirective = /*#__PURE__*/(() => {
-  class TuiTextfieldAppearanceDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {
-    constructor() {
-      super(...arguments);
-      // it's an empty string by default for backward compatibility
-      // (see comment https://github.com/taiga-family/taiga-ui/pull/3007#issuecomment-1315179508)
-      this.appearance = '';
+const TEXTFIELD_ATTRS = [`type`, `inputMode`, `autocomplete`, `accept`, `min`, `max`, `step`, `pattern`, `size`, `maxlength`];
+let TuiIosAutofocusHandler = /*#__PURE__*/(() => {
+  class TuiIosAutofocusHandler extends AbstractTuiAutofocusHandler {
+    constructor(focusable, el, renderer, zone, win) {
+      super(focusable, el);
+      this.renderer = renderer;
+      this.zone = zone;
+      this.win = win;
+      this.patchCssStyles();
     }
-  }
-  TuiTextfieldAppearanceDirective.ɵfac = /* @__PURE__ */(() => {
-    let ɵTuiTextfieldAppearanceDirective_BaseFactory;
-    return function TuiTextfieldAppearanceDirective_Factory(t) {
-      return (ɵTuiTextfieldAppearanceDirective_BaseFactory || (ɵTuiTextfieldAppearanceDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiTextfieldAppearanceDirective)))(t || TuiTextfieldAppearanceDirective);
-    };
-  })();
-  TuiTextfieldAppearanceDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiTextfieldAppearanceDirective,
-    selectors: [["", "tuiTextfieldAppearance", ""]],
-    inputs: {
-      appearance: ["tuiTextfieldAppearance", "appearance"]
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([{
-      provide: TUI_TEXTFIELD_APPEARANCE_DIRECTIVE,
-      useExisting: (0,core_mjs_.forwardRef)(() => TuiTextfieldAppearanceDirective)
-    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-  });
-  return TuiTextfieldAppearanceDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const TUI_TEXTFIELD_CLEANER = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new TuiTextfieldCleanerDirective());
-let TuiTextfieldCleanerDirective = /*#__PURE__*/(() => {
-  class TuiTextfieldCleanerDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {
-    constructor() {
-      super(...arguments);
-      this.cleaner = false;
+    setFocus() {
+      if (this.isTextFieldElement) {
+        this.zone.runOutsideAngular(() => this.iosWebkitAutofocus());
+      } else {
+        this.element.focus({
+          preventScroll: true
+        });
+      }
     }
-  }
-  TuiTextfieldCleanerDirective.ɵfac = /* @__PURE__ */(() => {
-    let ɵTuiTextfieldCleanerDirective_BaseFactory;
-    return function TuiTextfieldCleanerDirective_Factory(t) {
-      return (ɵTuiTextfieldCleanerDirective_BaseFactory || (ɵTuiTextfieldCleanerDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiTextfieldCleanerDirective)))(t || TuiTextfieldCleanerDirective);
-    };
-  })();
-  TuiTextfieldCleanerDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiTextfieldCleanerDirective,
-    selectors: [["", "tuiTextfieldCleaner", ""]],
-    inputs: {
-      cleaner: ["tuiTextfieldCleaner", "cleaner"]
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([{
-      provide: TUI_TEXTFIELD_CLEANER,
-      useExisting: (0,core_mjs_.forwardRef)(() => TuiTextfieldCleanerDirective)
-    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-  });
-  return TuiTextfieldCleanerDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const TUI_TEXTFIELD_CUSTOM_CONTENT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new TuiTextfieldCustomContentDirective());
-let TuiTextfieldCustomContentDirective = /*#__PURE__*/(() => {
-  class TuiTextfieldCustomContentDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {}
-  TuiTextfieldCustomContentDirective.ɵfac = /* @__PURE__ */(() => {
-    let ɵTuiTextfieldCustomContentDirective_BaseFactory;
-    return function TuiTextfieldCustomContentDirective_Factory(t) {
-      return (ɵTuiTextfieldCustomContentDirective_BaseFactory || (ɵTuiTextfieldCustomContentDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiTextfieldCustomContentDirective)))(t || TuiTextfieldCustomContentDirective);
-    };
-  })();
-  TuiTextfieldCustomContentDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiTextfieldCustomContentDirective,
-    selectors: [["", "tuiTextfieldCustomContent", ""]],
-    inputs: {
-      customContent: ["tuiTextfieldCustomContent", "customContent"]
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([{
-      provide: TUI_TEXTFIELD_CUSTOM_CONTENT,
-      useExisting: (0,core_mjs_.forwardRef)(() => TuiTextfieldCustomContentDirective)
-    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-  });
-  return TuiTextfieldCustomContentDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const TUI_TEXTFIELD_FILLER = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new TuiTextfieldFillerDirective());
-let TuiTextfieldFillerDirective = /*#__PURE__*/(() => {
-  class TuiTextfieldFillerDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {
-    constructor() {
-      super(...arguments);
-      this.filler = '';
-    }
-  }
-  TuiTextfieldFillerDirective.ɵfac = /* @__PURE__ */(() => {
-    let ɵTuiTextfieldFillerDirective_BaseFactory;
-    return function TuiTextfieldFillerDirective_Factory(t) {
-      return (ɵTuiTextfieldFillerDirective_BaseFactory || (ɵTuiTextfieldFillerDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiTextfieldFillerDirective)))(t || TuiTextfieldFillerDirective);
-    };
-  })();
-  TuiTextfieldFillerDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiTextfieldFillerDirective,
-    selectors: [["", "tuiTextfieldFiller", ""]],
-    inputs: {
-      filler: ["tuiTextfieldFiller", "filler"]
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([{
-      provide: TUI_TEXTFIELD_FILLER,
-      useExisting: (0,core_mjs_.forwardRef)(() => TuiTextfieldFillerDirective)
-    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-  });
-  return TuiTextfieldFillerDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const TUI_TEXTFIELD_ICON = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new TuiTextfieldIconDirective());
-let TuiTextfieldIconDirective = /*#__PURE__*/(() => {
-  class TuiTextfieldIconDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {}
-  TuiTextfieldIconDirective.ɵfac = /* @__PURE__ */(() => {
-    let ɵTuiTextfieldIconDirective_BaseFactory;
-    return function TuiTextfieldIconDirective_Factory(t) {
-      return (ɵTuiTextfieldIconDirective_BaseFactory || (ɵTuiTextfieldIconDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiTextfieldIconDirective)))(t || TuiTextfieldIconDirective);
-    };
-  })();
-  TuiTextfieldIconDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiTextfieldIconDirective,
-    selectors: [["", "tuiTextfieldIcon", ""]],
-    inputs: {
-      icon: ["tuiTextfieldIcon", "icon"]
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([{
-      provide: TUI_TEXTFIELD_ICON,
-      useExisting: (0,core_mjs_.forwardRef)(() => TuiTextfieldIconDirective)
-    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-  });
-  return TuiTextfieldIconDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const TUI_TEXTFIELD_ICON_LEFT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new TuiTextfieldIconLeftDirective());
-let TuiTextfieldIconLeftDirective = /*#__PURE__*/(() => {
-  class TuiTextfieldIconLeftDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {}
-  TuiTextfieldIconLeftDirective.ɵfac = /* @__PURE__ */(() => {
-    let ɵTuiTextfieldIconLeftDirective_BaseFactory;
-    return function TuiTextfieldIconLeftDirective_Factory(t) {
-      return (ɵTuiTextfieldIconLeftDirective_BaseFactory || (ɵTuiTextfieldIconLeftDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiTextfieldIconLeftDirective)))(t || TuiTextfieldIconLeftDirective);
-    };
-  })();
-  TuiTextfieldIconLeftDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiTextfieldIconLeftDirective,
-    selectors: [["", "tuiTextfieldIconLeft", ""]],
-    inputs: {
-      iconLeft: ["tuiTextfieldIconLeft", "iconLeft"]
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([{
-      provide: TUI_TEXTFIELD_ICON_LEFT,
-      useExisting: (0,core_mjs_.forwardRef)(() => TuiTextfieldIconLeftDirective)
-    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-  });
-  return TuiTextfieldIconLeftDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const TUI_TEXTFIELD_LABEL_OUTSIDE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new TuiTextfieldLabelOutsideDirective());
-let TuiTextfieldLabelOutsideDirective = /*#__PURE__*/(() => {
-  class TuiTextfieldLabelOutsideDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {
-    constructor() {
-      super(...arguments);
-      this.labelOutside = false;
-    }
-  }
-  TuiTextfieldLabelOutsideDirective.ɵfac = /* @__PURE__ */(() => {
-    let ɵTuiTextfieldLabelOutsideDirective_BaseFactory;
-    return function TuiTextfieldLabelOutsideDirective_Factory(t) {
-      return (ɵTuiTextfieldLabelOutsideDirective_BaseFactory || (ɵTuiTextfieldLabelOutsideDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiTextfieldLabelOutsideDirective)))(t || TuiTextfieldLabelOutsideDirective);
-    };
-  })();
-  TuiTextfieldLabelOutsideDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiTextfieldLabelOutsideDirective,
-    selectors: [["", "tuiTextfieldLabelOutside", ""]],
-    inputs: {
-      labelOutside: ["tuiTextfieldLabelOutside", "labelOutside"]
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([{
-      provide: TUI_TEXTFIELD_LABEL_OUTSIDE,
-      useExisting: (0,core_mjs_.forwardRef)(() => TuiTextfieldLabelOutsideDirective)
-    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-  });
-  return TuiTextfieldLabelOutsideDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const TUI_TEXTFIELD_POSTFIX = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new TuiTextfieldPostfixDirective());
-let TuiTextfieldPostfixDirective = /*#__PURE__*/(() => {
-  class TuiTextfieldPostfixDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {
-    constructor() {
-      super(...arguments);
-      this.postfix = '';
-    }
-  }
-  TuiTextfieldPostfixDirective.ɵfac = /* @__PURE__ */(() => {
-    let ɵTuiTextfieldPostfixDirective_BaseFactory;
-    return function TuiTextfieldPostfixDirective_Factory(t) {
-      return (ɵTuiTextfieldPostfixDirective_BaseFactory || (ɵTuiTextfieldPostfixDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiTextfieldPostfixDirective)))(t || TuiTextfieldPostfixDirective);
-    };
-  })();
-  TuiTextfieldPostfixDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiTextfieldPostfixDirective,
-    selectors: [["", "tuiTextfieldPostfix", ""]],
-    inputs: {
-      postfix: ["tuiTextfieldPostfix", "postfix"]
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([{
-      provide: TUI_TEXTFIELD_POSTFIX,
-      useExisting: (0,core_mjs_.forwardRef)(() => TuiTextfieldPostfixDirective)
-    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-  });
-  return TuiTextfieldPostfixDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const TUI_TEXTFIELD_PREFIX = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new TuiTextfieldPrefixDirective());
-let TuiTextfieldPrefixDirective = /*#__PURE__*/(() => {
-  class TuiTextfieldPrefixDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {
-    constructor() {
-      super(...arguments);
-      this.prefix = '';
-    }
-  }
-  TuiTextfieldPrefixDirective.ɵfac = /* @__PURE__ */(() => {
-    let ɵTuiTextfieldPrefixDirective_BaseFactory;
-    return function TuiTextfieldPrefixDirective_Factory(t) {
-      return (ɵTuiTextfieldPrefixDirective_BaseFactory || (ɵTuiTextfieldPrefixDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiTextfieldPrefixDirective)))(t || TuiTextfieldPrefixDirective);
-    };
-  })();
-  TuiTextfieldPrefixDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiTextfieldPrefixDirective,
-    selectors: [["", "tuiTextfieldPrefix", ""]],
-    inputs: {
-      prefix: ["tuiTextfieldPrefix", "prefix"]
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([{
-      provide: TUI_TEXTFIELD_PREFIX,
-      useExisting: (0,core_mjs_.forwardRef)(() => TuiTextfieldPrefixDirective)
-    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-  });
-  return TuiTextfieldPrefixDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const TUI_TEXTFIELD_SIZE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => new taiga_ui_core_directives_textfield_controller_TuiTextfieldSizeDirective());
-let taiga_ui_core_directives_textfield_controller_TuiTextfieldSizeDirective = /*#__PURE__*/(() => {
-  class TuiTextfieldSizeDirective extends taiga_ui_cdk_abstract/* AbstractTuiController */.QJ {
-    constructor() {
-      super(...arguments);
-      this.size = 'l';
-    }
-  }
-  TuiTextfieldSizeDirective.ɵfac = /* @__PURE__ */(() => {
-    let ɵTuiTextfieldSizeDirective_BaseFactory;
-    return function TuiTextfieldSizeDirective_Factory(t) {
-      return (ɵTuiTextfieldSizeDirective_BaseFactory || (ɵTuiTextfieldSizeDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiTextfieldSizeDirective)))(t || TuiTextfieldSizeDirective);
-    };
-  })();
-  TuiTextfieldSizeDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiTextfieldSizeDirective,
-    selectors: [["", "tuiTextfieldSize", ""]],
-    inputs: {
-      size: ["tuiTextfieldSize", "size"]
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([{
-      provide: TUI_TEXTFIELD_SIZE,
-      useExisting: (0,core_mjs_.forwardRef)(() => TuiTextfieldSizeDirective)
-    }]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-  });
-  return TuiTextfieldSizeDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiTextfieldControllerModule = /*#__PURE__*/(() => {
-  class TuiTextfieldControllerModule {}
-  TuiTextfieldControllerModule.ɵfac = function TuiTextfieldControllerModule_Factory(t) {
-    return new (t || TuiTextfieldControllerModule)();
-  };
-  TuiTextfieldControllerModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiTextfieldControllerModule
-  });
-  TuiTextfieldControllerModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-  return TuiTextfieldControllerModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const TUI_TEXTFIELD_WATCHED_CONTROLLER = new core_mjs_.InjectionToken(`[TUI_TEXTFIELD_WATCHED_CONTROLLER]`);
-const TEXTFIELD_CONTROLLER_PROVIDER = [taiga_ui_cdk_services/* TuiDestroyService */.a3, {
-  provide: TUI_TEXTFIELD_WATCHED_CONTROLLER,
-  deps: [core_mjs_.ChangeDetectorRef, taiga_ui_cdk_services/* TuiDestroyService */.a3, TUI_TEXTFIELD_OPTIONS, taiga_ui_core_tokens/* TUI_TEXTFIELD_APPEARANCE */.jt, TUI_TEXTFIELD_APPEARANCE_DIRECTIVE, TUI_TEXTFIELD_CLEANER, TUI_TEXTFIELD_CUSTOM_CONTENT, TUI_TEXTFIELD_ICON, TUI_TEXTFIELD_ICON_LEFT, TUI_TEXTFIELD_LABEL_OUTSIDE, TUI_TEXTFIELD_SIZE, TUI_TEXTFIELD_PREFIX, TUI_TEXTFIELD_POSTFIX, TUI_TEXTFIELD_FILLER],
-  useFactory: (cdr, destroy$, options, legacyAppearance, ...controllers) => {
-    const change$ = (0,merge/* merge */.T)(...controllers.map(({
-      change$
-    }) => change$ || NEVER)).pipe((0,taiga_ui_cdk_observables/* tuiWatch */.NA)(cdr), (0,takeUntil/* takeUntil */.R)(destroy$));
-    change$.subscribe();
-    return new TuiTextfieldController(change$, options, legacyAppearance, ...controllers);
-  }
-}];
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-core-directives-textfield-controller.js.map
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/fromEvent.js
-var fromEvent = __webpack_require__(2438);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-svg.js
-var taiga_ui_core_components_svg = __webpack_require__(7415);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-enums.js
-var taiga_ui_core_enums = __webpack_require__(7241);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-directives-wrapper.js
-var taiga_ui_core_directives_wrapper = __webpack_require__(1713);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-tooltip.js
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function TuiTooltipComponent_tui_svg_3_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelement"](0, "tui-svg", 3);
-  }
-  if (rf & 2) {
-    const src_r2 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵproperty"]("src", src_r2);
-  }
-}
-let TuiTooltipComponent = /*#__PURE__*/(() => {
-  class TuiTooltipComponent extends TuiHintOptionsDirective {
-    constructor(destroy$, mode$, options, isMobile) {
-      super(options);
-      this.isMobile = isMobile;
-      this.mode = null;
-      this.describeId = '';
-      mode$.pipe((0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(mode => {
-        this.mode = mode;
+    iosWebkitAutofocus() {
+      var _a;
+      const fakeInput = this.makeFakeInput();
+      const duration = this.getDurationTimeBeforeFocus();
+      let fakeFocusTimeoutId = 0;
+      let elementFocusTimeoutId = 0;
+      const blurHandler = () => fakeInput.focus({
+        preventScroll: true
+      });
+      const focusHandler = () => {
+        clearTimeout(fakeFocusTimeoutId);
+        fakeFocusTimeoutId = this.win.setTimeout(() => {
+          clearTimeout(elementFocusTimeoutId);
+          fakeInput.removeEventListener(`blur`, blurHandler);
+          fakeInput.removeEventListener(`focus`, focusHandler);
+          elementFocusTimeoutId = this.win.setTimeout(() => {
+            this.element.focus({
+              preventScroll: false
+            });
+            fakeInput.remove();
+          }, duration);
+        });
+      };
+      fakeInput.addEventListener(`blur`, blurHandler, {
+        once: true
+      });
+      fakeInput.addEventListener(`focus`, focusHandler);
+      if (this.insideDialog()) {
+        this.win.document.body.appendChild(fakeInput);
+      } else {
+        (_a = this.element.parentElement) === null || _a === void 0 ? void 0 : _a.appendChild(fakeInput);
+      }
+      fakeInput.focus({
+        preventScroll: true
       });
     }
-    get computedAppearance() {
-      return this.appearance || this.mode || '';
+    /**
+     * @note:
+     * emulate textfield position in layout with cursor
+     * before focus to real textfield element
+     *
+     * required note:
+     * [fakeInput.readOnly = true] ~
+     * don't use {readOnly: true} value, it's doesn't work for emulate autofill
+     *
+     * [fakeInput.style.opacity = 0] ~
+     * don't use {opacity: 0}, sometimes it's doesn't work for emulate real input
+     *
+     * [fakeInput.style.fontSize = 16px] ~
+     * disable possible auto zoom
+     *
+     * [fakeInput.style.top/left] ~
+     * emulate position cursor before focus to real textfield element
+     */
+    makeFakeInput() {
+      const fakeInput = this.renderer.createElement(`input`);
+      const rect = this.element.getBoundingClientRect();
+      this.patchFakeInputFromFocusableElement(fakeInput);
+      fakeInput.style.height = taiga_ui_cdk_utils_format_tuiPx(rect.height);
+      fakeInput.style.width = taiga_ui_cdk_utils_format_tuiPx(rect.width / 2);
+      fakeInput.style.position = `fixed`;
+      fakeInput.style.zIndex = `-99999999`;
+      fakeInput.style.caretColor = `transparent`;
+      fakeInput.style.border = `none`;
+      fakeInput.style.outline = `none`;
+      fakeInput.style.color = `transparent`;
+      fakeInput.style.background = `transparent`;
+      fakeInput.style.cursor = `none`;
+      fakeInput.style.fontSize = taiga_ui_cdk_utils_format_tuiPx(16);
+      fakeInput.style.top = taiga_ui_cdk_utils_format_tuiPx(rect.top);
+      fakeInput.style.left = taiga_ui_cdk_utils_format_tuiPx(rect.left);
+      return fakeInput;
     }
-    stopOnMobile(event) {
-      var _a;
-      if (this.isMobile) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      (_a = this.driver$) === null || _a === void 0 ? void 0 : _a.toggle();
+    getDurationTimeBeforeFocus() {
+      return parseFloat(this.win.getComputedStyle(this.element).getPropertyValue(`--tui-duration`)) || 0;
+    }
+    /**
+     * @note:
+     * unfortunately, in older versions of iOS
+     * there is a bug that the fake input cursor
+     * will move along with the dialog animation
+     * and then that dialog will be shaking
+     */
+    insideDialog() {
+      return !!this.element.closest(`tui-dialog`);
+    }
+    /**
+     * @note:
+     * This is necessary so that the viewport isn't recalculated
+     * and then the dialogs don't shake.
+     *
+     * Also, we need to fixed height viewport,
+     * so that when focusing the dialogs don't shake
+     */
+    patchCssStyles() {
+      [this.win.document.documentElement, this.win.document.body].forEach(element => {
+        element.style.setProperty(`overflow`, `auto`);
+        element.style.setProperty(`height`, `100%`);
+      });
+    }
+    /**
+     * @note:
+     * inherit basic attributes values from real input
+     * for help iOS detect what do you want see on keyboard,
+     * for example [inputMode=numeric, autocomplete=cc-number]
+     */
+    patchFakeInputFromFocusableElement(fakeInput) {
+      TEXTFIELD_ATTRS.forEach(attr => {
+        const value = this.element.getAttribute(attr);
+        if ((0,taiga_ui_cdk_utils_miscellaneous/* tuiIsPresent */.Pc)(value)) {
+          fakeInput.setAttribute(attr, value);
+        }
+      });
     }
   }
-  TuiTooltipComponent.ɵfac = function TuiTooltipComponent_Factory(t) {
-    return new (t || TuiTooltipComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_MODE */.Au), core_mjs_["ɵɵdirectiveInject"](TUI_HINT_OPTIONS), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_MOBILE */.fL));
+  TuiIosAutofocusHandler.ɵfac = function TuiIosAutofocusHandler_Factory(t) {
+    return new (t || TuiIosAutofocusHandler)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_FOCUSABLE_ITEM_ACCESSOR */.KZ, 10), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.NgZone), core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* WINDOW */.m9));
   };
-  TuiTooltipComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiTooltipComponent,
-    selectors: [["tui-tooltip"]],
-    viewQuery: function TuiTooltipComponent_Query(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵviewQuery"](TuiHintHoverDirective, 5);
-      }
-      if (rf & 2) {
-        let _t;
-        core_mjs_["ɵɵqueryRefresh"](_t = core_mjs_["ɵɵloadQuery"]()) && (ctx.driver$ = _t.first);
-      }
-    },
-    hostVars: 1,
-    hostBindings: function TuiTooltipComponent_HostBindings(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵlistener"]("mousedown", function TuiTooltipComponent_mousedown_HostBindingHandler($event) {
-          return ctx.stopOnMobile($event);
-        });
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵattribute"]("data-appearance", ctx.computedAppearance);
-      }
-    },
-    inputs: {
-      content: "content",
-      direction: "direction",
-      appearance: "appearance",
-      showDelay: "showDelay",
-      hideDelay: "hideDelay",
-      describeId: "describeId",
-      context: "context"
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3, taiga_ui_core_providers/* MODE_PROVIDER */.CV]), core_mjs_["ɵɵInheritDefinitionFeature"]],
-    decls: 4,
-    vars: 11,
-    consts: [["appearance", "icon", "automation-id", "tui-tooltip__icon", "tuiWrapper", "", 1, "t-tooltip-icon", 3, "hover", "tuiHint", "tuiHintAppearance", "tuiHintContext", "tuiHintDescribe", "tuiHintDirection", "tuiHintHideDelay", "tuiHintShowDelay"], ["driver", "tuiHintHover"], [3, "src", 4, "polymorpheusOutlet"], [3, "src"]],
-    template: function TuiTooltipComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵelementStart"](0, "span", 0, 1);
-        core_mjs_["ɵɵpipe"](2, "async");
-        core_mjs_["ɵɵtemplate"](3, TuiTooltipComponent_tui_svg_3_Template, 1, 1, "tui-svg", 2);
-        core_mjs_["ɵɵelementEnd"]();
-      }
-      if (rf & 2) {
-        const _r0 = core_mjs_["ɵɵreference"](1);
-        core_mjs_["ɵɵproperty"]("hover", core_mjs_["ɵɵpipeBind1"](2, 9, _r0) || null)("tuiHint", ctx.content)("tuiHintAppearance", ctx.computedAppearance)("tuiHintContext", ctx.context)("tuiHintDescribe", ctx.describeId)("tuiHintDirection", ctx.direction)("tuiHintHideDelay", ctx.hideDelay)("tuiHintShowDelay", ctx.showDelay);
-        core_mjs_["ɵɵadvance"](3);
-        core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx.icon);
-      }
-    },
-    dependencies: [taiga_ui_core_components_svg/* TuiSvgComponent */.PN, taiga_ui_core_directives_wrapper/* TuiWrapperDirective */.o, TuiHintDirective, TuiHintDriverDirective, TuiHintHoverDirective, TuiHintPositionDirective, TuiHintDescribeDirective, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li, common_mjs_.AsyncPipe],
-    styles: ["[_nghost-%COMP%]{transition-property:color;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;position:relative;display:inline-block;width:1.5rem;height:1.5rem;vertical-align:middle;font-size:0;line-height:0;pointer-events:auto;cursor:pointer;color:var(--tui-text-01)}[data-appearance=error][_nghost-%COMP%]{color:var(--tui-error-fill)}.t-tooltip-icon[_ngcontent-%COMP%]{display:inline-block;width:100%;height:100%;color:inherit}[tuiWrapper][data-appearance=\"textfield\"][data-state=\"disabled\"][_nghost-%COMP%]   .t-tooltip-icon[_ngcontent-%COMP%], [tuiWrapper][data-appearance=\"textfield\"][data-state=\"disabled\"]   [_nghost-%COMP%]   .t-tooltip-icon[_ngcontent-%COMP%]{opacity:1}"],
-    changeDetection: 0
+  TuiIosAutofocusHandler.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiIosAutofocusHandler,
+    features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
   });
-  return TuiTooltipComponent;
+  return TuiIosAutofocusHandler;
 })();
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-let TuiTooltipModule = /*#__PURE__*/(() => {
-  class TuiTooltipModule {}
-  TuiTooltipModule.ɵfac = function TuiTooltipModule_Factory(t) {
-    return new (t || TuiTooltipModule)();
-  };
-  TuiTooltipModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiTooltipModule
-  });
-  TuiTooltipModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-    imports: [[common_mjs_.CommonModule, taiga_ui_core_directives_wrapper/* TuiWrapperModule */.W, taiga_ui_core_components_svg/* TuiSvgModule */.EI, TuiHintModule, tinkoff_ng_polymorpheus/* PolymorpheusModule */.wq]]
-  });
-  return TuiTooltipModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-core-components-tooltip.js.map
-// EXTERNAL MODULE: ./node_modules/@angular/forms/fesm2022/forms.mjs + 1 modules
-var fesm2022_forms = __webpack_require__(95);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-directives-mask-accessor.js
-
-
-
-
-let TuiMaskAccessorDirective = /*#__PURE__*/(() => {
-  class TuiMaskAccessorDirective {}
-  TuiMaskAccessorDirective.ɵfac = function TuiMaskAccessorDirective_Factory(t) {
-    return new (t || TuiMaskAccessorDirective)();
-  };
-  TuiMaskAccessorDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiMaskAccessorDirective,
-    selectors: [["input", "tuiMaskAccessor", ""]],
-    features: [core_mjs_["ɵɵProvidersFeature"]([{
-      provide: fesm2022_forms/* NG_VALUE_ACCESSOR */.JU,
-      deps: [[new core_mjs_.Optional(), taiga_ui_core_tokens/* TUI_VALUE_ACCESSOR */.sE], fesm2022_forms/* DefaultValueAccessor */.Fj],
-      multi: true,
-      useFactory: (accessor, fallback) => accessor ? accessor[0] : fallback
-    }])]
-  });
-  return TuiMaskAccessorDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * @internal
- */
-let TuiMaskAccessorModule = /*#__PURE__*/(() => {
-  class TuiMaskAccessorModule {}
-  TuiMaskAccessorModule.ɵfac = function TuiMaskAccessorModule_Factory(t) {
-    return new (t || TuiMaskAccessorModule)();
-  };
-  TuiMaskAccessorModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiMaskAccessorModule
-  });
-  TuiMaskAccessorModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-  return TuiMaskAccessorModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-core-directives-mask-accessor.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-primitive-textfield.js
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const taiga_ui_core_components_primitive_textfield_c0 = ["pre"];
-const taiga_ui_core_components_primitive_textfield_c1 = ["focusableElement"];
-function TuiPrimitiveTextfieldComponent_ng_container_0_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementContainer"](0);
-  }
-}
-function TuiPrimitiveTextfieldComponent_ng_container_2_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementContainer"](0);
-  }
-}
-function TuiPrimitiveTextfieldComponent_div_10_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementStart"](0, "div", 17);
-    core_mjs_["ɵɵprojection"](1, 2);
-    core_mjs_["ɵɵelementEnd"]();
-  }
-}
-function TuiPrimitiveTextfieldComponent_div_12_tui_svg_1_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelement"](0, "tui-svg", 20);
-  }
-  if (rf & 2) {
-    const src_r12 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵproperty"]("src", src_r12);
-  }
-}
-const taiga_ui_core_components_primitive_textfield_c2 = a0 => ({
-  $implicit: a0
-});
-function TuiPrimitiveTextfieldComponent_div_12_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementStart"](0, "div", 18);
-    core_mjs_["ɵɵtemplate"](1, TuiPrimitiveTextfieldComponent_div_12_tui_svg_1_Template, 1, 1, "tui-svg", 19);
-    core_mjs_["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r4 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r4.iconLeftContent)("polymorpheusOutletContext", core_mjs_["ɵɵpureFunction1"](2, taiga_ui_core_components_primitive_textfield_c2, ctx_r4.size));
-  }
-}
-function TuiPrimitiveTextfieldComponent_label_14_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementStart"](0, "label", 21);
-    core_mjs_["ɵɵprojection"](1, 3);
-    core_mjs_["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r5 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵclassProp"]("t-placeholder_raised", ctx_r5.placeholderRaised);
-    core_mjs_["ɵɵproperty"]("for", ctx_r5.computedId);
-  }
-}
-function TuiPrimitiveTextfieldComponent_div_20_tui_svg_1_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelement"](0, "tui-svg", 24);
-  }
-  if (rf & 2) {
-    const src_r14 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵproperty"]("src", src_r14);
-  }
-}
-function TuiPrimitiveTextfieldComponent_div_20_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementStart"](0, "div", 22);
-    core_mjs_["ɵɵtemplate"](1, TuiPrimitiveTextfieldComponent_div_20_tui_svg_1_Template, 1, 1, "tui-svg", 23);
-    core_mjs_["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r7 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r7.controller.customContent);
-  }
-}
-function TuiPrimitiveTextfieldComponent_span_21_tui_svg_1_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelement"](0, "tui-svg", 27);
-  }
-  if (rf & 2) {
-    const src_r16 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵproperty"]("src", src_r16);
-  }
-}
-function TuiPrimitiveTextfieldComponent_span_21_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r18 = core_mjs_["ɵɵgetCurrentView"]();
-    core_mjs_["ɵɵelementStart"](0, "span", 25);
-    core_mjs_["ɵɵlistener"]("click.stop", function TuiPrimitiveTextfieldComponent_span_21_Template_span_click_stop_0_listener() {
-      core_mjs_["ɵɵrestoreView"](_r18);
-      const ctx_r17 = core_mjs_["ɵɵnextContext"]();
-      return core_mjs_["ɵɵresetView"](ctx_r17.clear());
-    });
-    core_mjs_["ɵɵtemplate"](1, TuiPrimitiveTextfieldComponent_span_21_tui_svg_1_Template, 1, 1, "tui-svg", 26);
-    core_mjs_["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r8 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r8.iconCleaner || ctx_r8.controller.options.iconCleaner)("polymorpheusOutletContext", core_mjs_["ɵɵpureFunction1"](2, taiga_ui_core_components_primitive_textfield_c2, ctx_r8.size));
-  }
-}
-function TuiPrimitiveTextfieldComponent_tui_tooltip_22_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelement"](0, "tui-tooltip", 28);
-  }
-  if (rf & 2) {
-    const ctx_r9 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵproperty"]("content", ctx_r9.hintOptions == null ? null : ctx_r9.hintOptions.content)("describeId", ctx_r9.computedId);
-  }
-}
-function TuiPrimitiveTextfieldComponent_div_23_tui_svg_1_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelement"](0, "tui-svg", 20);
-  }
-  if (rf & 2) {
-    const src_r20 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵproperty"]("src", src_r20);
-  }
-}
-function TuiPrimitiveTextfieldComponent_div_23_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementStart"](0, "div", 29);
-    core_mjs_["ɵɵtemplate"](1, TuiPrimitiveTextfieldComponent_div_23_tui_svg_1_Template, 1, 1, "tui-svg", 19);
-    core_mjs_["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r10 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r10.iconContent)("polymorpheusOutletContext", core_mjs_["ɵɵpureFunction1"](2, taiga_ui_core_components_primitive_textfield_c2, ctx_r10.size));
-  }
-}
-const _c3 = [[["input"]], [["select"]], [["tuiContent"]], "*"];
-const _c4 = ["input", "select", "tuiContent", "*"];
-const _c5 = ["tuiTextfield", ""];
-let TuiValueDecorationComponent = /*#__PURE__*/(() => {
-  class TuiValueDecorationComponent {
-    constructor(textfield, fontsReady$) {
-      this.textfield = textfield;
-      this.fontsReady$ = fontsReady$;
-      this.prefix$ = new internal_BehaviorSubject/* BehaviorSubject */.X('');
-      this.pre$ = (0,merge/* merge */.T)(this.fontsReady$, this.prefix$).pipe((0,delay/* delay */.g)(0), (0,filter/* filter */.h)(() => {
-        var _a;
-        return !!((_a = this.pre) === null || _a === void 0 ? void 0 : _a.nativeElement.isConnected);
-      }), (0,operators_map/* map */.U)(() => {
-        var _a;
-        return ((_a = this.pre) === null || _a === void 0 ? void 0 : _a.nativeElement.offsetWidth) || 0;
-      }), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)());
-    }
-    get isContextTable() {
-      return this.textfield.appearance === taiga_ui_core_enums/* TuiAppearance */.Nm.Table;
-    }
-    get value() {
-      return this.textfield.value;
-    }
-    get filler() {
-      const {
-        focused,
-        placeholder,
-        exampleText,
-        value,
-        textfield
-      } = this;
-      if (placeholder && exampleText) {
-        return '';
-      }
-      return focused ? exampleText || textfield.filler.slice(value.length) : '';
-    }
-    get prefix() {
-      return this.decorationsVisible ? this.textfield.prefix : '';
-    }
-    get postfix() {
-      return this.decorationsVisible ? this.computedPostfix : '';
-    }
-    ngDoCheck() {
-      this.prefix$.next(this.prefix);
-    }
-    get placeholder() {
-      var _a;
-      return ((_a = this.textfield.nativeFocusableElement) === null || _a === void 0 ? void 0 : _a.placeholder) || '';
-    }
-    get exampleText() {
-      return !this.value && this.focused ? this.placeholder : '';
-    }
-    get decorationsVisible() {
-      return !!this.value || this.focused && !this.placeholder;
-    }
-    get focused() {
-      return this.textfield.computedFocused && !this.textfield.readOnly;
-    }
-    get computedPostfix() {
-      return this.textfield.postfix && (this.filler || this.value) ? ` ${this.textfield.postfix}` : this.textfield.postfix;
-    }
-  }
-  TuiValueDecorationComponent.ɵfac = function TuiValueDecorationComponent_Factory(t) {
-    return new (t || TuiValueDecorationComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_FOCUSABLE_ITEM_ACCESSOR */.KZ), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_FONTS_READY */.tS));
-  };
-  TuiValueDecorationComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiValueDecorationComponent,
-    selectors: [["tui-value-decoration"]],
-    viewQuery: function TuiValueDecorationComponent_Query(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵviewQuery"](taiga_ui_core_components_primitive_textfield_c0, 7, core_mjs_.ElementRef);
-      }
-      if (rf & 2) {
-        let _t;
-        core_mjs_["ɵɵqueryRefresh"](_t = core_mjs_["ɵɵloadQuery"]()) && (ctx.pre = _t.first);
-      }
-    },
-    hostVars: 4,
-    hostBindings: function TuiValueDecorationComponent_HostBindings(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵlistener"]("animationstart", function TuiValueDecorationComponent_animationstart_HostBindingHandler() {
-          return ctx.ngDoCheck();
-        });
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵclassProp"]("_table", ctx.isContextTable)("_filler", ctx.filler);
-      }
-    },
-    decls: 5,
-    vars: 4,
-    consts: [[1, "t-prefix", 3, "textContent"], ["pre", ""], [1, "t-ghost", 3, "textContent"], [1, "t-filler", 3, "textContent"], [1, "t-postfix", 3, "textContent"]],
-    template: function TuiValueDecorationComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵelement"](0, "span", 0, 1)(2, "span", 2)(3, "span", 3)(4, "span", 4);
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵproperty"]("textContent", ctx.prefix);
-        core_mjs_["ɵɵadvance"](2);
-        core_mjs_["ɵɵproperty"]("textContent", ctx.value);
-        core_mjs_["ɵɵadvance"](1);
-        core_mjs_["ɵɵproperty"]("textContent", ctx.filler);
-        core_mjs_["ɵɵadvance"](1);
-        core_mjs_["ɵɵproperty"]("textContent", ctx.postfix);
-      }
-    },
-    styles: ["[_nghost-%COMP%]{position:absolute;display:block;width:100%;line-height:var(--tui-height);margin-top:calc(var(--tui-height) / -2);box-sizing:content-box;color:var(--tui-text-03);animation:tuiPresent 1s;white-space:nowrap}._table[_nghost-%COMP%]{position:static;margin-top:0}._filler[_nghost-%COMP%]{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}tui-primitive-textfield   [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]{color:var(--tui-text-03-night)}tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)   [_nghost-%COMP%]{line-height:calc(var(--tui-height) - .25rem)}.t-ghost[_ngcontent-%COMP%]{visibility:hidden;white-space:pre;text-overflow:clip}.t-prefix[_ngcontent-%COMP%], .t-postfix[_ngcontent-%COMP%]{white-space:pre;color:var(--tui-text-01)}tui-primitive-textfield   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]   .t-prefix[_ngcontent-%COMP%], tui-primitive-textfield   [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]   .t-prefix[_ngcontent-%COMP%], tui-primitive-textfield   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]   .t-postfix[_ngcontent-%COMP%], tui-primitive-textfield   [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]   .t-postfix[_ngcontent-%COMP%]{color:var(--tui-text-01-night)}.t-filler[_ngcontent-%COMP%]{max-width:100%;white-space:nowrap}"]
-  });
-  return TuiValueDecorationComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const TUI_ICON_PADDINGS = {
-  s: 1.25,
-  m: 1.75,
-  l: 2.25
+const TUI_AUTOFOCUS_DEFAULT_OPTIONS = {
+  delay: NaN // NaN = no delay/sync
 };
-let TuiPrimitiveTextfieldComponent = /*#__PURE__*/(() => {
-  class TuiPrimitiveTextfieldComponent extends taiga_ui_cdk_abstract/* AbstractTuiInteractive */.Xn {
-    constructor(controller, hintOptions, options, el) {
-      super();
-      this.controller = controller;
-      this.hintOptions = hintOptions;
+
+const TUI_AUTOFOCUS_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_AUTOFOCUS_DEFAULT_OPTIONS);
+function tuiAutoFocusOptionsProvider(options) {
+  return tuiProvideOptions(TUI_AUTOFOCUS_OPTIONS, options, TUI_AUTOFOCUS_DEFAULT_OPTIONS);
+}
+const TUI_AUTOFOCUS_HANDLER = new core_mjs_.InjectionToken(`[TUI_AUTOFOCUS_HANDLER]`);
+const TUI_AUTOFOCUS_PROVIDERS = [{
+  provide: TUI_AUTOFOCUS_HANDLER,
+  useFactory: (focusable, el, animationFrame$, renderer, zone, win, isIos) => isIos ? new TuiIosAutofocusHandler(focusable, el, renderer, zone, win) : new TuiDefaultAutofocusHandler(focusable, el, animationFrame$),
+  deps: [[new core_mjs_.Optional(), new core_mjs_.Self(), taiga_ui_cdk_tokens/* TUI_FOCUSABLE_ITEM_ACCESSOR */.KZ], core_mjs_.ElementRef, ng_web_apis_common/* ANIMATION_FRAME */.L1, core_mjs_.Renderer2, core_mjs_.NgZone, ng_web_apis_common/* WINDOW */.m9, taiga_ui_cdk_tokens/* TUI_IS_IOS */.FA]
+}, taiga_ui_cdk_services/* TuiDestroyService */.a3];
+let TuiAutoFocusDirective = /*#__PURE__*/(() => {
+  class TuiAutoFocusDirective {
+    constructor(handler, options, destroy$) {
+      this.handler = handler;
       this.options = options;
-      this.el = el;
-      this.editable = true;
-      /** @deprecated use `tuiTextfieldFiller` from {@link TuiTextfieldControllerModule} instead */
-      this.textfieldFiller = '';
-      /**
-       * @deprecated:
-       * use `tuiTextfieldOptionsProvider({iconCleaner: `tuiIconChevronUp`})`
-       */
-      this.iconCleaner = this.options.iconCleaner;
-      this.readOnly = false;
-      this.invalid = false;
-      this.disabled = false;
-      /** @deprecated use `tuiTextfieldPrefix` from {@link TuiTextfieldControllerModule} instead */
-      this.textfieldPrefix = '';
-      /** @deprecated use `tuiTextfieldPostfix` from {@link TuiTextfieldControllerModule} instead */
-      this.textfieldPostfix = '';
-      this.value = '';
-      this.valueChange = new core_mjs_.EventEmitter();
-      this.autofilled = false;
+      this.destroy$ = destroy$;
+      this.autoFocus = true;
     }
-    get prefix() {
-      return this.textfieldPrefix || this.controller.prefix;
-    }
-    get postfix() {
-      return this.textfieldPostfix || this.controller.postfix;
-    }
-    get filler() {
-      return this.textfieldFiller || this.controller.filler;
-    }
-    get nativeFocusableElement() {
-      if (this.computedDisabled || !this.focusableElement) {
-        return null;
+    ngAfterViewInit() {
+      if (tuiCoerceBooleanProperty(this.autoFocus)) {
+        this.focus();
       }
-      const {
-        nativeElement
-      } = this.focusableElement;
-      return nativeElement.previousElementSibling || nativeElement;
     }
-    get focused() {
-      return (0,taiga_ui_cdk_utils_focus/* tuiIsNativeFocusedIn */.zb)(this.el.nativeElement);
+    focus() {
+      if (Number.isNaN(this.options.delay)) {
+        void Promise.resolve().then(() => this.handler.setFocus());
+      } else {
+        (0,observable_timer/* timer */.H)(this.options.delay).pipe((0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(() => this.handler.setFocus());
+      }
     }
-    get appearance() {
-      return this.controller.appearance;
+  }
+  TuiAutoFocusDirective.ɵfac = function TuiAutoFocusDirective_Factory(t) {
+    return new (t || TuiAutoFocusDirective)(core_mjs_["ɵɵdirectiveInject"](TUI_AUTOFOCUS_HANDLER), core_mjs_["ɵɵdirectiveInject"](TUI_AUTOFOCUS_OPTIONS), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2));
+  };
+  TuiAutoFocusDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiAutoFocusDirective,
+    selectors: [["", "tuiAutoFocus", ""]],
+    inputs: {
+      autoFocus: ["tuiAutoFocus", "autoFocus"]
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"](TUI_AUTOFOCUS_PROVIDERS)]
+  });
+  return TuiAutoFocusDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiAutoFocusModule = /*#__PURE__*/(() => {
+  class TuiAutoFocusModule {}
+  TuiAutoFocusModule.ɵfac = function TuiAutoFocusModule_Factory(t) {
+    return new (t || TuiAutoFocusModule)();
+  };
+  TuiAutoFocusModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiAutoFocusModule
+  });
+  TuiAutoFocusModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+  return TuiAutoFocusModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiSynchronousAutofocusHandler = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  class TuiSynchronousAutofocusHandler extends AbstractTuiAutofocusHandler {
+    constructor(focusable, el) {
+      super(focusable, el);
+    }
+    setFocus() {
+      this.element.focus({
+        preventScroll: true
+      });
+    }
+  }
+  TuiSynchronousAutofocusHandler.ɵfac = function TuiSynchronousAutofocusHandler_Factory(t) {
+    return new (t || TuiSynchronousAutofocusHandler)(i0.ɵɵdirectiveInject(TUI_FOCUSABLE_ITEM_ACCESSOR, 10), i0.ɵɵdirectiveInject(ElementRef));
+  };
+  TuiSynchronousAutofocusHandler.ɵdir = /* @__PURE__ */i0.ɵɵdefineDirective({
+    type: TuiSynchronousAutofocusHandler,
+    features: [i0.ɵɵInheritDefinitionFeature]
+  });
+  return TuiSynchronousAutofocusHandler;
+})()));
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-cdk-directives-auto-focus.js.map
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/isObservable.js
+var isObservable = __webpack_require__(2664);
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-dialog.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function TuiDialogComponent_header_0_ng_container_1_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementContainerStart"](0);
+    core_mjs_["ɵɵtext"](1);
+    core_mjs_["ɵɵelementContainerEnd"]();
+  }
+  if (rf & 2) {
+    const text_r4 = ctx.polymorpheusOutlet;
+    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵtextInterpolate1"](" ", text_r4, " ");
+  }
+}
+function TuiDialogComponent_header_0_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementStart"](0, "header", 6);
+    core_mjs_["ɵɵtemplate"](1, TuiDialogComponent_header_0_ng_container_1_Template, 2, 1, "ng-container", 3);
+    core_mjs_["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r0 = core_mjs_["ɵɵnextContext"]();
+    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r0.header)("polymorpheusOutletContext", ctx_r0.context);
+  }
+}
+function TuiDialogComponent_ng_container_4_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r7 = core_mjs_["ɵɵgetCurrentView"]();
+    core_mjs_["ɵɵelementContainerStart"](0);
+    core_mjs_["ɵɵelement"](1, "div", 7);
+    core_mjs_["ɵɵelementStart"](2, "div", 8)(3, "button", 9);
+    core_mjs_["ɵɵlistener"]("click", function TuiDialogComponent_ng_container_4_Template_button_click_3_listener() {
+      core_mjs_["ɵɵrestoreView"](_r7);
+      const ctx_r6 = core_mjs_["ɵɵnextContext"]();
+      return core_mjs_["ɵɵresetView"](ctx_r6.context.$implicit.complete());
+    });
+    core_mjs_["ɵɵtext"](4);
+    core_mjs_["ɵɵelementEnd"]()();
+    core_mjs_["ɵɵelementContainerEnd"]();
+  }
+  if (rf & 2) {
+    const text_r5 = ctx.polymorpheusOutlet;
+    const ctx_r1 = core_mjs_["ɵɵnextContext"]();
+    let tmp_1_0;
+    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵproperty"]("innerHTML", text_r5, core_mjs_["ɵɵsanitizeHtml"]);
+    core_mjs_["ɵɵadvance"](3);
+    core_mjs_["ɵɵtextInterpolate1"](" ", ((tmp_1_0 = ctx_r1.context.data) == null ? null : tmp_1_0.button) || "OK", " ");
+  }
+}
+function TuiDialogComponent_div_6_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r9 = core_mjs_["ɵɵgetCurrentView"]();
+    core_mjs_["ɵɵelementStart"](0, "div", 10)(1, "button", 11);
+    core_mjs_["ɵɵlistener"]("click", function TuiDialogComponent_div_6_Template_button_click_1_listener() {
+      core_mjs_["ɵɵrestoreView"](_r9);
+      const ctx_r8 = core_mjs_["ɵɵnextContext"]();
+      return core_mjs_["ɵɵresetView"](ctx_r8.close$.next());
+    })("mousedown.prevent.silent", function TuiDialogComponent_div_6_Template_button_mousedown_prevent_silent_1_listener() {
+      return 0;
+    });
+    core_mjs_["ɵɵpipe"](2, "async");
+    core_mjs_["ɵɵelementEnd"]()();
+  }
+  if (rf & 2) {
+    const ctx_r2 = core_mjs_["ɵɵnextContext"]();
+    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵproperty"]("appearance", ctx_r2.fullscreen ? "secondary" : "")("icon", ctx_r2.icons.close)("title", core_mjs_["ɵɵpipeBind1"](2, 3, ctx_r2.closeWord$));
+  }
+}
+const TUI_DIALOG_DEFAULT_OPTIONS = {
+  size: `m`,
+  required: false,
+  closeable: true,
+  dismissible: true,
+  label: ``,
+  header: ``
+};
+/**
+ * A stream to close dialogs
+ */
+const TUI_DIALOGS_CLOSE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(empty/* EMPTY */.E);
+/**
+ * Default parameters for dialog component
+ */
+const TUI_DIALOG_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_DIALOG_DEFAULT_OPTIONS);
+function tuiDialogOptionsProvider(options) {
+  return tuiProvideOptions(TUI_DIALOG_OPTIONS, options, TUI_DIALOG_DEFAULT_OPTIONS);
+}
+const SCROLLBAR_PLACEHOLDER = 17;
+let TuiDialogCloseService = /*#__PURE__*/(() => {
+  class TuiDialogCloseService extends Observable/* Observable */.y {
+    constructor(win, doc, el) {
+      super(subscriber => (0,merge/* merge */.T)(this.esc$, this.mousedown$).subscribe(subscriber));
+      this.win = win;
+      this.doc = doc;
+      this.el = el;
+      this.esc$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, `keydown`).pipe((0,filter/* filter */.h)(event => {
+        const target = (0,taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA)(event);
+        return event.key === `Escape` && !event.defaultPrevented && (this.element.contains(target) || this.isOutside(target));
+      }));
+      this.mousedown$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, `mousedown`).pipe((0,filter/* filter */.h)(event => (0,taiga_ui_core_utils_dom/* tuiGetViewportWidth */.ic)(this.win) - event.clientX > SCROLLBAR_PLACEHOLDER && this.isOutside((0,taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA)(event))), (0,operators_switchMap/* switchMap */.w)(() => (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, `mouseup`).pipe((0,take/* take */.q)(1), (0,operators_map/* map */.U)(taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA), (0,filter/* filter */.h)(target => this.isOutside(target)))));
+    }
+    get element() {
+      return this.el.nativeElement;
+    }
+    isOutside(target) {
+      return (0,taiga_ui_cdk_utils_dom/* tuiIsElement */.ve)(target) && (!(0,taiga_ui_cdk_utils_dom/* tuiContainsOrAfter */.PP)(this.element, target) || target === this.element);
+    }
+  }
+  TuiDialogCloseService.ɵfac = function TuiDialogCloseService_Factory(t) {
+    return new (t || TuiDialogCloseService)(core_mjs_["ɵɵinject"](ng_web_apis_common/* WINDOW */.m9), core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵinject"](core_mjs_.ElementRef));
+  };
+  TuiDialogCloseService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: TuiDialogCloseService,
+    factory: TuiDialogCloseService.ɵfac
+  });
+  return TuiDialogCloseService;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+const REQUIRED_ERROR = new Error('Required dialog was dismissed');
+function toObservable(valueOrStream) {
+  return (0,isObservable/* isObservable */.b)(valueOrStream) ? valueOrStream : (0,of.of)(valueOrStream);
+}
+let TuiDialogComponent = /*#__PURE__*/(() => {
+  class TuiDialogComponent {
+    constructor(duration, isMobile, context, destroy$, dialogClose$, close$, closeWord$, icons) {
+      this.duration = duration;
+      this.isMobile = isMobile;
+      this.context = context;
+      this.closeWord$ = closeWord$;
+      this.icons = icons;
+      this.animation = {
+        value: '',
+        params: {
+          start: '40px',
+          duration: this.duration
+        }
+      };
+      this.fullscreenAnimation = {
+        value: '',
+        params: {
+          start: '100vh',
+          duration: this.duration
+        }
+      };
+      this.close$ = new internal_Subject/* Subject */.x();
+      (0,merge/* merge */.T)(this.close$.pipe((0,operators_switchMap/* switchMap */.w)(() => toObservable(context.closeable))), dialogClose$.pipe((0,operators_switchMap/* switchMap */.w)(() => toObservable(context.dismissible))), close$.pipe((0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_TRUE_HANDLER */.Ye))).pipe((0,filter/* filter */.h)(Boolean), (0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(() => {
+        this.close();
+      });
     }
     get size() {
-      return this.controller.size;
+      return this.context.size;
     }
-    get computedInvalid() {
-      return !this.readOnly && !this.disabled && this.invalid;
+    get header() {
+      return this.context.header;
     }
-    get inputHidden() {
-      var _a;
-      return !!((_a = this.content) === null || _a === void 0 ? void 0 : _a.length);
+    get slideInTop() {
+      return this.fullscreen || this.isMobile ? this.fullscreenAnimation : this.animation;
     }
-    get hasValue() {
-      return !!this.value;
+    get fullscreen() {
+      return !this.isMobile && (this.size === 'fullscreen' || this.size === 'page');
     }
-    get hasCleaner() {
-      return this.controller.cleaner && this.hasValue && !this.computedDisabled && !this.readOnly;
-    }
-    get hasTooltip() {
-      var _a;
-      return !!((_a = this.hintOptions) === null || _a === void 0 ? void 0 : _a.content) && !this.computedDisabled;
-    }
-    get hasCustomContent() {
-      return !!this.controller.customContent;
-    }
-    get placeholderVisible() {
-      var _a;
-      const hasDecor = ((_a = this.nativeFocusableElement) === null || _a === void 0 ? void 0 : _a.placeholder) || this.prefix || this.postfix || this.filler;
-      const showDecor = hasDecor && !this.readOnly && this.computedFocused;
-      return !this.hasValue && !showDecor;
-    }
-    get hasPlaceholder() {
-      return this.placeholderRaisable || this.placeholderVisible;
-    }
-    get placeholderRaised() {
-      return this.placeholderRaisable && (this.computedFocused && !this.readOnly || this.hasValue || this.autofilled);
-    }
-    get borderStart() {
-      return this.iconLeftContent ? this.iconPaddingLeft : 0;
-    }
-    get borderEnd() {
-      return (0,taiga_ui_core_utils_miscellaneous/* tuiGetBorder */._X)(!!this.iconContent, this.hasCleaner, this.hasTooltip, this.hasCustomContent, this.size);
-    }
-    get iconContent() {
-      return this.controller.icon;
-    }
-    get iconLeftContent() {
-      return this.controller.iconLeft;
-    }
-    get showHint() {
-      var _a;
-      return !!((_a = this.hintOptions) === null || _a === void 0 ? void 0 : _a.content) && (this.options.hintOnDisabled || !this.computedDisabled);
-    }
-    // Safari expiration date autofill workaround
-    get name() {
-      var _a;
-      return ((_a = this.nativeFocusableElement) === null || _a === void 0 ? void 0 : _a.autocomplete) === 'cc-exp' ? 'ccexpiryyear' : null;
-    }
-    get computedId() {
-      var _a;
-      return ((_a = this.nativeFocusableElement) === null || _a === void 0 ? void 0 : _a.id) || '';
-    }
-    onFocused(focused) {
-      this.updateFocused(focused);
-    }
-    getIndent$(element) {
-      return (0,fromEvent/* fromEvent */.R)(element, 'scroll').pipe((0,operators_map/* map */.U)(() => -1 * Math.max(element.scrollLeft, 0)));
-    }
-    clear() {
-      if (this.nativeFocusableElement) {
-        this.nativeFocusableElement.value = '';
+    close() {
+      if (this.context.required) {
+        this.context.$implicit.error(REQUIRED_ERROR);
+      } else {
+        this.context.$implicit.complete();
       }
-      this.updateValue('');
-    }
-    onMouseDown(event) {
-      const {
-        nativeFocusableElement
-      } = this;
-      if (!nativeFocusableElement || event.target === nativeFocusableElement) {
-        return;
-      }
-      event.preventDefault();
-      nativeFocusableElement.focus();
-    }
-    onModelChange(value) {
-      this.updateValue(value);
-    }
-    onAutofilled(autofilled) {
-      this.updateAutofilled(autofilled);
-    }
-    detectRetargetFromLabel(event) {
-      if ((0,taiga_ui_cdk_utils_dom/* tuiRetargetedBoundaryCrossing */.UP)(event)) {
-        event.stopImmediatePropagation();
-      }
-    }
-    get iconPaddingLeft() {
-      return TUI_ICON_PADDINGS[this.size];
-    }
-    get placeholderRaisable() {
-      return this.size !== 's' && !this.controller.labelOutside;
-    }
-    updateAutofilled(autofilled) {
-      if (this.autofilled === autofilled) {
-        return;
-      }
-      this.autofilled = autofilled;
-    }
-    updateValue(value) {
-      this.value = value;
-      this.valueChange.emit(value);
     }
   }
-  TuiPrimitiveTextfieldComponent.ɵfac = function TuiPrimitiveTextfieldComponent_Factory(t) {
-    return new (t || TuiPrimitiveTextfieldComponent)(core_mjs_["ɵɵdirectiveInject"](TUI_TEXTFIELD_WATCHED_CONTROLLER), core_mjs_["ɵɵdirectiveInject"](TuiHintOptionsDirective, 8), core_mjs_["ɵɵdirectiveInject"](TUI_TEXTFIELD_OPTIONS), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef));
+  TuiDialogComponent.ɵfac = function TuiDialogComponent_Factory(t) {
+    return new (t || TuiDialogComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_ANIMATIONS_DURATION */.dx), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_MOBILE */.fL), core_mjs_["ɵɵdirectiveInject"](tinkoff_ng_polymorpheus/* POLYMORPHEUS_CONTEXT */.yf), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](TuiDialogCloseService), core_mjs_["ɵɵdirectiveInject"](TUI_DIALOGS_CLOSE), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_CLOSE_WORD */.U0), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_COMMON_ICONS */.Gs));
   };
-  TuiPrimitiveTextfieldComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiPrimitiveTextfieldComponent,
-    selectors: [["tui-primitive-textfield"]],
-    contentQueries: function TuiPrimitiveTextfieldComponent_ContentQueries(rf, ctx, dirIndex) {
-      if (rf & 1) {
-        core_mjs_["ɵɵcontentQuery"](dirIndex, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li, 5);
-      }
+  TuiDialogComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiDialogComponent,
+    selectors: [["tui-dialog"]],
+    hostVars: 6,
+    hostBindings: function TuiDialogComponent_HostBindings(rf, ctx) {
       if (rf & 2) {
-        let _t;
-        core_mjs_["ɵɵqueryRefresh"](_t = core_mjs_["ɵɵloadQuery"]()) && (ctx.content = _t);
+        core_mjs_["ɵɵattribute"]("data-appearance", ctx.context.appearance)("data-size", ctx.size);
+        core_mjs_["ɵɵsyntheticHostProperty"]("@tuiSlideInTop", ctx.slideInTop)("@tuiFadeIn", ctx.slideInTop);
+        core_mjs_["ɵɵclassProp"]("_centered", ctx.header);
       }
     },
-    viewQuery: function TuiPrimitiveTextfieldComponent_Query(rf, ctx) {
+    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3, TuiDialogCloseService])],
+    decls: 7,
+    vars: 6,
+    consts: [["class", "t-header", 4, "ngIf"], [1, "t-content"], [1, "t-heading", 3, "id", "textContent"], [4, "polymorpheusOutlet", "polymorpheusOutletContext"], [1, "t-filler"], ["class", "t-wrapper", 4, "ngIf"], [1, "t-header"], [3, "innerHTML"], [1, "t-buttons"], ["size", "m", "tuiAutoFocus", "", "tuiButton", "", "type", "button", 3, "click"], [1, "t-wrapper"], ["automation-id", "tui-dialog__close", "shape", "rounded", "size", "s", "tuiIconButton", "", "type", "button", 1, "t-close", 3, "appearance", "icon", "title", "click", "mousedown.prevent.silent"]],
+    template: function TuiDialogComponent_Template(rf, ctx) {
       if (rf & 1) {
-        core_mjs_["ɵɵviewQuery"](taiga_ui_core_components_primitive_textfield_c1, 5);
+        core_mjs_["ɵɵtemplate"](0, TuiDialogComponent_header_0_Template, 2, 2, "header", 0);
+        core_mjs_["ɵɵelementStart"](1, "div", 1);
+        core_mjs_["ɵɵelement"](2, "h2", 2);
+        core_mjs_["ɵɵelementStart"](3, "section");
+        core_mjs_["ɵɵtemplate"](4, TuiDialogComponent_ng_container_4_Template, 5, 2, "ng-container", 3);
+        core_mjs_["ɵɵelementEnd"]()();
+        core_mjs_["ɵɵelement"](5, "div", 4);
+        core_mjs_["ɵɵtemplate"](6, TuiDialogComponent_div_6_Template, 3, 5, "div", 5);
       }
       if (rf & 2) {
-        let _t;
-        core_mjs_["ɵɵqueryRefresh"](_t = core_mjs_["ɵɵloadQuery"]()) && (ctx.focusableElement = _t.first);
+        core_mjs_["ɵɵproperty"]("ngIf", ctx.header);
+        core_mjs_["ɵɵadvance"](2);
+        core_mjs_["ɵɵproperty"]("id", ctx.context.id)("textContent", ctx.context.label);
+        core_mjs_["ɵɵadvance"](2);
+        core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx.context.content)("polymorpheusOutletContext", ctx.context);
+        core_mjs_["ɵɵadvance"](2);
+        core_mjs_["ɵɵproperty"]("ngIf", ctx.context.closeable);
       }
     },
-    hostVars: 15,
-    hostBindings: function TuiPrimitiveTextfieldComponent_HostBindings(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵlistener"]("focusin", function TuiPrimitiveTextfieldComponent_focusin_HostBindingHandler() {
-          return ctx.onFocused(true);
-        })("focusout", function TuiPrimitiveTextfieldComponent_focusout_HostBindingHandler() {
-          return ctx.onFocused(false);
-        });
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵattribute"]("data-size", ctx.size);
-        core_mjs_["ɵɵstyleProp"]("--border-start", ctx.borderStart, "rem")("--border-end", ctx.borderEnd, "rem");
-        core_mjs_["ɵɵclassProp"]("_autofilled", ctx.autofilled)("_label-outside", ctx.controller.labelOutside)("_readonly", ctx.readOnly)("_invalid", ctx.computedInvalid)("_hidden", ctx.inputHidden);
-      }
-    },
+    dependencies: [taiga_ui_core_components_button/* TuiButtonComponent */.v0, common_mjs_.NgIf, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li, TuiAutoFocusDirective, common_mjs_.AsyncPipe],
+    styles: ["[_nghost-%COMP%]{position:relative;display:flex;font:var(--tui-font-text-m);flex-direction:column;box-sizing:border-box;margin:auto;border-radius:1rem;border:2.5rem solid transparent}[_nghost-%COMP%]:after{position:absolute;top:0;left:0;width:100%;height:100%;box-shadow:0 1.125rem 1.875rem #0000007a;content:\"\";border-radius:inherit;pointer-events:none}[data-size=auto][_nghost-%COMP%]{width:auto}[data-size=s][_nghost-%COMP%]{width:30rem}[data-size=s][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:1.5rem}[data-size=s][_nghost-%COMP%]   .t-heading[_ngcontent-%COMP%]{margin-bottom:.5rem;font:var(--tui-font-heading-5)}[data-size=m][_nghost-%COMP%]{width:42.5rem}[data-size=m][_nghost-%COMP%]   .t-heading[_ngcontent-%COMP%]{margin-bottom:.75rem;font:var(--tui-font-heading-4)}[data-size=l][_nghost-%COMP%]{width:55rem}[data-size=l][_nghost-%COMP%]   .t-heading[_ngcontent-%COMP%]{margin-bottom:1rem}[data-size=fullscreen][_nghost-%COMP%], [data-size=page][_nghost-%COMP%]{min-width:100vw;min-height:100%;border-radius:0;border:none;background:var(--tui-elevation-01);box-shadow:0 4rem var(--tui-elevation-01)}[data-size=fullscreen][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%], [data-size=page][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:3rem calc(50vw - (45rem / 2))}[data-size=fullscreen][_nghost-%COMP%]   .t-heading[_ngcontent-%COMP%], [data-size=page][_nghost-%COMP%]   .t-heading[_ngcontent-%COMP%]{margin-bottom:1rem}[data-size=page][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:0}._centered[_nghost-%COMP%]{text-align:center}[_nghost-%COMP%]   tui-root._mobile[data-size][_nghost-%COMP%], tui-root._mobile   [data-size][_nghost-%COMP%]{min-width:100%;width:100%;max-width:100%;border-radius:0;border:none;margin:auto 0 0}[_nghost-%COMP%]   tui-root._mobile[data-size][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%], tui-root._mobile   [data-size][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:1.5rem}[_nghost-%COMP%]   tui-root._mobile[data-size][_nghost-%COMP%]   .t-heading[_ngcontent-%COMP%], tui-root._mobile   [data-size][_nghost-%COMP%]   .t-heading[_ngcontent-%COMP%]{margin-bottom:.5rem;font:var(--tui-font-heading-5)}.t-heading[_ngcontent-%COMP%]{margin:0;word-wrap:break-word;font:var(--tui-font-heading-3)}.t-heading[_ngcontent-%COMP%]:empty{display:none}.t-header[_ngcontent-%COMP%]{display:flex;border-top-left-radius:inherit;border-top-right-radius:inherit;overflow:hidden}[data-size=fullscreen][_nghost-%COMP%]   tui-root._mobile[_nghost-%COMP%]   .t-header[_ngcontent-%COMP%], tui-root._mobile   [_nghost-%COMP%]   .t-header[_ngcontent-%COMP%]{flex:1}.t-content[_ngcontent-%COMP%]{border-radius:inherit;padding:2rem;background:var(--tui-elevation-01)}.t-content[_ngcontent-%COMP%]:not(:first-child){border-top-left-radius:0;border-top-right-radius:0}.t-wrapper[_ngcontent-%COMP%]{position:-webkit-sticky;position:sticky;top:0;z-index:1;order:-1}.t-filler[_ngcontent-%COMP%]{flex-grow:1}.t-close[_ngcontent-%COMP%]{transition-property:background;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;position:fixed;top:1.5rem;right:1.5rem;display:none;color:var(--tui-base-01)}.t-dialog:last-of-type[_nghost-%COMP%]   .t-close[_ngcontent-%COMP%], .t-dialog:last-of-type   [_nghost-%COMP%]   .t-close[_ngcontent-%COMP%]{display:block}[_nghost-%COMP%]:not([data-size=\"fullscreen\"]):not([data-size=\"page\"])   .t-close[_ngcontent-%COMP%]{animation:tuiFadeIn var(--tui-duration);background:rgba(104,104,104,.96)}[_nghost-%COMP%]:not([data-size=\"fullscreen\"]):not([data-size=\"page\"])   .t-close[_ngcontent-%COMP%]:hover{background:rgba(159,159,159,.86)}[_nghost-%COMP%]:not([data-size=\"fullscreen\"]).ng-animating   .t-close[_ngcontent-%COMP%]{display:none}tui-root._mobile[_nghost-%COMP%]   .t-close[_ngcontent-%COMP%], tui-root._mobile   [_nghost-%COMP%]   .t-close[_ngcontent-%COMP%]{position:absolute;top:0;right:0;background:transparent!important;color:var(--tui-text-01);opacity:.5}.t-buttons[_ngcontent-%COMP%]{margin-top:1.25rem;text-align:right}"],
+    data: {
+      animation: [tuiSlideInTop, tuiFadeIn]
+    }
+  });
+  return TuiDialogComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+const DIALOG = new tinkoff_ng_polymorpheus/* PolymorpheusComponent */.Al(TuiDialogComponent);
+let TuiDialogService = /*#__PURE__*/(() => {
+  class TuiDialogService extends taiga_ui_cdk_abstract/* AbstractTuiDialogService */.d5 {
+    constructor() {
+      super(...arguments);
+      this.component = DIALOG;
+      this.defaultOptions = Object.assign(Object.assign({}, (0,core_mjs_.inject)(TUI_DIALOG_OPTIONS)), {
+        data: undefined
+      });
+    }
+  }
+  TuiDialogService.ɵfac = /* @__PURE__ */(() => {
+    let ɵTuiDialogService_BaseFactory;
+    return function TuiDialogService_Factory(t) {
+      return (ɵTuiDialogService_BaseFactory || (ɵTuiDialogService_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiDialogService)))(t || TuiDialogService);
+    };
+  })();
+  TuiDialogService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: TuiDialogService,
+    factory: TuiDialogService.ɵfac,
+    providedIn: `root`
+  });
+  return TuiDialogService;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiDialogDirective = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  class TuiDialogDirective extends AbstractTuiDialogDirective {}
+  TuiDialogDirective.ɵfac = /* @__PURE__ */(() => {
+    let ɵTuiDialogDirective_BaseFactory;
+    return function TuiDialogDirective_Factory(t) {
+      return (ɵTuiDialogDirective_BaseFactory || (ɵTuiDialogDirective_BaseFactory = i0.ɵɵgetInheritedFactory(TuiDialogDirective)))(t || TuiDialogDirective);
+    };
+  })();
+  TuiDialogDirective.ɵdir = /* @__PURE__ */i0.ɵɵdefineDirective({
+    type: TuiDialogDirective,
+    selectors: [["ng-template", "tuiDialog", ""]],
     inputs: {
-      editable: "editable",
-      textfieldFiller: ["filler", "textfieldFiller"],
-      iconCleaner: "iconCleaner",
-      readOnly: "readOnly",
-      invalid: "invalid",
-      disabled: "disabled",
-      textfieldPrefix: ["prefix", "textfieldPrefix"],
-      textfieldPostfix: ["postfix", "textfieldPostfix"],
-      value: "value"
+      options: ["tuiDialogOptions", "options"],
+      open: ["tuiDialog", "open"]
     },
     outputs: {
-      valueChange: "valueChange"
+      openChange: "tuiDialogChange"
     },
-    features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_cdk_tokens/* tuiAsFocusableItemAccessor */.FT)(TuiPrimitiveTextfieldComponent), TEXTFIELD_CONTROLLER_PROVIDER]), core_mjs_["ɵɵInheritDefinitionFeature"]],
-    ngContentSelectors: _c4,
-    decls: 24,
-    vars: 37,
-    consts: [[4, "ngIf"], ["automation-id", "tui-primitive-textfield__wrapper", "tuiWrapper", "", 3, "active", "appearance", "disabled", "focus", "hover", "invalid", "readOnly", "click.prevent.silent", "mousedown", "tuiAutofilledChange"], ["automation-id", "tui-primitive-textfield__native-input", "tuiMaskAccessor", "", 1, "t-input", 3, "disabled", "id", "ngModel", "readOnly", "tuiFocusable", "ngModelChange"], ["focusableElement", ""], ["automation-id", "tui-primitive-textfield__value", "class", "t-input t-input_template", 4, "ngIf"], [1, "t-content"], ["class", "t-icon t-icon_left t-textfield-icon", 4, "ngIf"], [1, "t-wrapper"], ["automation-id", "tui-primitive-textfield__placeholder", "class", "t-placeholder", 3, "t-placeholder_raised", "for", 4, "ngIf"], [1, "t-wrapper-value-decoration"], ["aria-hidden", "true", "automation-id", "tui-primitive-textfield__value-decoration", 1, "t-value-decoration"], ["decor", ""], [1, "t-icons"], ["automation-id", "tui-primitive-textfield__custom-content", "class", "t-custom-content", 4, "ngIf"], ["appearance", "icon", "automation-id", "tui-primitive-textfield__cleaner", "tuiWrapper", "", "class", "t-cleaner", 3, "click.stop", 4, "ngIf"], ["automation-id", "tui-primitive-textfield__tooltip", "class", "t-tooltip", 3, "content", "describeId", 4, "ngIf"], ["class", "t-icon t-textfield-icon", 4, "ngIf"], ["automation-id", "tui-primitive-textfield__value", 1, "t-input", "t-input_template"], [1, "t-icon", "t-icon_left", "t-textfield-icon"], ["appearance", "icon", "tuiWrapper", "", 3, "src", 4, "polymorpheusOutlet", "polymorpheusOutletContext"], ["appearance", "icon", "tuiWrapper", "", 3, "src"], ["automation-id", "tui-primitive-textfield__placeholder", 1, "t-placeholder", 3, "for"], ["automation-id", "tui-primitive-textfield__custom-content", 1, "t-custom-content"], ["class", "t-custom-icon", 3, "src", 4, "polymorpheusOutlet"], [1, "t-custom-icon", 3, "src"], ["appearance", "icon", "automation-id", "tui-primitive-textfield__cleaner", "tuiWrapper", "", 1, "t-cleaner", 3, "click.stop"], [3, "src", 4, "polymorpheusOutlet", "polymorpheusOutletContext"], [3, "src"], ["automation-id", "tui-primitive-textfield__tooltip", 1, "t-tooltip", 3, "content", "describeId"], [1, "t-icon", "t-textfield-icon"]],
-    template: function TuiPrimitiveTextfieldComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵprojectionDef"](_c3);
-        core_mjs_["ɵɵtemplate"](0, TuiPrimitiveTextfieldComponent_ng_container_0_Template, 1, 0, "ng-container", 0);
-        core_mjs_["ɵɵpipe"](1, "async");
-        core_mjs_["ɵɵtemplate"](2, TuiPrimitiveTextfieldComponent_ng_container_2_Template, 1, 0, "ng-container", 0);
-        core_mjs_["ɵɵpipe"](3, "async");
-        core_mjs_["ɵɵelementStart"](4, "div", 1);
-        core_mjs_["ɵɵlistener"]("click.prevent.silent", function TuiPrimitiveTextfieldComponent_Template_div_click_prevent_silent_4_listener($event) {
-          return ctx.detectRetargetFromLabel($event);
-        })("mousedown", function TuiPrimitiveTextfieldComponent_Template_div_mousedown_4_listener($event) {
-          return ctx.onMouseDown($event);
-        })("tuiAutofilledChange", function TuiPrimitiveTextfieldComponent_Template_div_tuiAutofilledChange_4_listener($event) {
-          return ctx.onAutofilled($event);
-        });
-        core_mjs_["ɵɵpipe"](5, "async");
-        core_mjs_["ɵɵprojection"](6);
-        core_mjs_["ɵɵprojection"](7, 1);
-        core_mjs_["ɵɵelementStart"](8, "input", 2, 3);
-        core_mjs_["ɵɵlistener"]("ngModelChange", function TuiPrimitiveTextfieldComponent_Template_input_ngModelChange_8_listener($event) {
-          return ctx.onModelChange($event);
-        });
-        core_mjs_["ɵɵelementEnd"]();
-        core_mjs_["ɵɵtemplate"](10, TuiPrimitiveTextfieldComponent_div_10_Template, 2, 0, "div", 4);
-        core_mjs_["ɵɵelementStart"](11, "div", 5);
-        core_mjs_["ɵɵtemplate"](12, TuiPrimitiveTextfieldComponent_div_12_Template, 2, 4, "div", 6);
-        core_mjs_["ɵɵelementStart"](13, "div", 7);
-        core_mjs_["ɵɵtemplate"](14, TuiPrimitiveTextfieldComponent_label_14_Template, 2, 3, "label", 8);
-        core_mjs_["ɵɵelementStart"](15, "div", 9)(16, "tui-value-decoration", 10, 11);
-        core_mjs_["ɵɵpipe"](18, "async");
-        core_mjs_["ɵɵelementEnd"]()()();
-        core_mjs_["ɵɵelementStart"](19, "div", 12);
-        core_mjs_["ɵɵtemplate"](20, TuiPrimitiveTextfieldComponent_div_20_Template, 2, 1, "div", 13)(21, TuiPrimitiveTextfieldComponent_span_21_Template, 2, 4, "span", 14)(22, TuiPrimitiveTextfieldComponent_tui_tooltip_22_Template, 1, 2, "tui-tooltip", 15)(23, TuiPrimitiveTextfieldComponent_div_23_Template, 2, 4, "div", 16);
-        core_mjs_["ɵɵelementEnd"]()()();
-      }
-      if (rf & 2) {
-        const _r2 = core_mjs_["ɵɵreference"](9);
-        const _r6 = core_mjs_["ɵɵreference"](17);
-        core_mjs_["ɵɵproperty"]("ngIf", core_mjs_["ɵɵpipeBind1"](1, 29, ctx.content == null ? null : ctx.content.changes));
-        core_mjs_["ɵɵadvance"](2);
-        core_mjs_["ɵɵproperty"]("ngIf", core_mjs_["ɵɵpipeBind1"](3, 31, ctx.hintOptions == null ? null : ctx.hintOptions.change$));
-        core_mjs_["ɵɵadvance"](2);
-        core_mjs_["ɵɵstyleProp"]("--text-indent", core_mjs_["ɵɵpipeBind1"](5, 33, _r6.pre$), "px");
-        core_mjs_["ɵɵproperty"]("active", ctx.pseudoActive)("appearance", ctx.appearance)("disabled", ctx.disabled)("focus", ctx.computedFocused)("hover", ctx.pseudoHover)("invalid", ctx.computedInvalid)("readOnly", ctx.readOnly);
-        core_mjs_["ɵɵadvance"](4);
-        core_mjs_["ɵɵproperty"]("disabled", ctx.computedDisabled)("id", ctx.id)("ngModel", ctx.value)("readOnly", ctx.readOnly || !ctx.editable)("tuiFocusable", ctx.computedFocusable);
-        core_mjs_["ɵɵattribute"]("aria-invalid", ctx.computedInvalid)("name", ctx.name);
-        core_mjs_["ɵɵadvance"](2);
-        core_mjs_["ɵɵproperty"]("ngIf", ctx.inputHidden);
-        core_mjs_["ɵɵadvance"](2);
-        core_mjs_["ɵɵproperty"]("ngIf", ctx.iconLeftContent);
-        core_mjs_["ɵɵadvance"](2);
-        core_mjs_["ɵɵproperty"]("ngIf", ctx.hasPlaceholder);
-        core_mjs_["ɵɵadvance"](2);
-        core_mjs_["ɵɵstyleProp"]("text-indent", core_mjs_["ɵɵpipeBind1"](18, 35, ctx.getIndent$(_r2)), "px");
-        core_mjs_["ɵɵclassProp"]("t-has-value", ctx.value);
-        core_mjs_["ɵɵadvance"](4);
-        core_mjs_["ɵɵproperty"]("ngIf", ctx.hasCustomContent);
-        core_mjs_["ɵɵadvance"](1);
-        core_mjs_["ɵɵproperty"]("ngIf", ctx.hasCleaner);
-        core_mjs_["ɵɵadvance"](1);
-        core_mjs_["ɵɵproperty"]("ngIf", ctx.showHint);
-        core_mjs_["ɵɵadvance"](1);
-        core_mjs_["ɵɵproperty"]("ngIf", ctx.iconContent);
-      }
-    },
-    dependencies: [taiga_ui_core_components_svg/* TuiSvgComponent */.PN, TuiValueDecorationComponent, TuiTooltipComponent, common_mjs_.NgIf, taiga_ui_core_directives_wrapper/* TuiWrapperDirective */.o, TuiAutofilledDirective, TuiMaskAccessorDirective, fesm2022_forms/* DefaultValueAccessor */.Fj, fesm2022_forms/* NgControlStatus */.JJ, fesm2022_forms/* NgModel */.On, TuiFocusableDirective, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li, common_mjs_.AsyncPipe],
-    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);position:relative;display:block;text-align:left;border-radius:var(--tui-radius-m);height:var(--tui-height);min-height:var(--tui-height);max-height:var(--tui-height)}[data-size=s][_nghost-%COMP%]{--tui-height: var(--tui-height-s)}[data-size=m][_nghost-%COMP%]{--tui-height: var(--tui-height-m)}[data-size=l][_nghost-%COMP%]{--tui-height: var(--tui-height-l);font:var(--tui-font-text-m);line-height:1.25rem}.t-input[_ngcontent-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);padding:0;margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;width:100%;height:100%;border-style:solid;border-color:transparent;border-inline-start-width:var(--border-start, 0);border-inline-end-width:var(--border-end, 0);text-indent:var(--text-indent);text-align:inherit;box-sizing:border-box;white-space:nowrap;overflow:hidden;text-transform:inherit;resize:none}.t-input[_ngcontent-%COMP%]:-webkit-autofill, .t-input[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-input[_ngcontent-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}.t-input[_ngcontent-%COMP%]:-webkit-autofill, .t-input[_ngcontent-%COMP%]:-webkit-autofill:first-line{font-size:inherit;line-height:inherit}.t-input[_ngcontent-%COMP%]::-webkit-caps-lock-indicator, .t-input[_ngcontent-%COMP%]::-webkit-contacts-auto-fill-button, .t-input[_ngcontent-%COMP%]::-webkit-credit-card-auto-fill-button, .t-input[_ngcontent-%COMP%]::-webkit-credentials-auto-fill-button, .t-input[_ngcontent-%COMP%]::-webkit-strong-password-auto-fill-button{content:none!important;position:absolute;left:-62.4375rem;top:-62.4375rem;z-index:-999;display:none!important;background:transparent!important;pointer-events:none!important}.t-input[_ngcontent-%COMP%]::placeholder{color:var(--tui-text-03);opacity:0}._focused[_nghost-%COMP%]:not(._readonly)   .t-input[_ngcontent-%COMP%]::placeholder, tui-primitive-textfield._focused:not(._readonly)[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-primitive-textfield._focused:not(._readonly)   [_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-textarea._focused:not(._readonly)[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-textarea._focused:not(._readonly)   [_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-text-area._focused:not(._readonly)[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-text-area._focused:not(._readonly)   [_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder{opacity:1}[tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]:-webkit-autofill, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]:-webkit-autofill:focus, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:focus, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01-night)!important;border-color:var(--tui-autofill-night);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill-night) inset!important}[tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]::placeholder, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]::placeholder{color:var(--tui-text-03-night)}[data-size=s][_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"s\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), .t-input   tui-textarea[data-size=\"s\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-textarea), .t-input   tui-text-area[data-size=\"s\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-s)}[data-size=m][_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"m\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), .t-input   tui-textarea[data-size=\"m\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-textarea), .t-input   tui-text-area[data-size=\"m\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-m)}[data-size=l][_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"l\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), .t-input   tui-textarea[data-size=\"l\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-textarea), .t-input   tui-text-area[data-size=\"l\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-l)}._disabled[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield._disabled[_nghost-%COMP%], tui-primitive-textfield._disabled   [_nghost-%COMP%], .t-input   tui-textarea._disabled[_nghost-%COMP%], tui-textarea._disabled   [_nghost-%COMP%], .t-input   tui-text-area._disabled[_nghost-%COMP%], tui-text-area._disabled   [_nghost-%COMP%]{pointer-events:none}[data-size=l][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1.25rem}[data-size=l][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield):-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield):-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.8156rem;transform:translateY(-.625rem)}[data-size=m][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1rem}[data-size=m][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield):-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield):-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.69rem;transform:translateY(-.5rem)}._hidden[_nghost-%COMP%]   input.t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield._hidden[_nghost-%COMP%], tui-primitive-textfield._hidden   [_nghost-%COMP%]{opacity:0;text-indent:-10em;-webkit-user-select:none}.t-content[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;box-sizing:border-box;align-items:center;overflow:hidden}[data-size=s][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:0 var(--tui-padding-s)}[data-size=m][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:0 var(--tui-padding-m)}[data-size=l][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:0 var(--tui-padding-l)}.t-wrapper[_ngcontent-%COMP%]{flex:1;min-width:0;-webkit-padding-end:.25rem;padding-inline-end:.25rem}.t-placeholder[_ngcontent-%COMP%]{transition-property:transform,font-size,color,letter-spacing;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;width:100%;-webkit-user-select:none;-moz-user-select:none;user-select:none;font:var(--tui-font-text-s);color:var(--tui-text-02);pointer-events:none;will-change:transform;transform:translateY(0)}@supports (-webkit-hyphens: none){.t-placeholder[_ngcontent-%COMP%]{will-change:unset;transition-property:transform,color,letter-spacing}}.t-placeholder_raised[_ngcontent-%COMP%]{transform:translateY(-.625rem)}[data-size=m][_nghost-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%]{font:var(--tui-font-text-xs);line-height:1.25rem;transform:translateY(-.5rem);letter-spacing:.025rem}._invalid[_nghost-%COMP%]:not(._focused)   .t-placeholder_raised[_ngcontent-%COMP%], ._invalid[_nghost-%COMP%]:not(._focused):hover   .t-placeholder_raised[_ngcontent-%COMP%]{color:var(--tui-error-fill)}._invalid[_nghost-%COMP%]:not(._focused)   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%], ._invalid[_nghost-%COMP%]:not(._focused):hover   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%]{color:var(--tui-error-fill-night)}._focused[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=m]._focused._label-outside[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused._label-outside[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-03)}[data-size=l][_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font:var(--tui-font-text-m);line-height:1.25rem}[data-size=l][_nghost-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%]{font-size:.8156rem}[data-size=m]._focused[_nghost-%COMP%]:not(._label-outside)   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused[_nghost-%COMP%]:not(._label-outside)   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-01)}[tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-02-night)}[data-size=m]._focused[_nghost-%COMP%]:not(._label-outside)   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused[_nghost-%COMP%]:not(._label-outside)   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-01-night)}._focused[_nghost-%COMP%]   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=m]._focused._label-outside[_nghost-%COMP%]   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused._label-outside[_nghost-%COMP%]   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-02-night)}.t-cleaner[_ngcontent-%COMP%]{position:relative;display:flex;width:1.5rem;height:1.5rem;align-items:center;justify-content:center;box-sizing:border-box;cursor:pointer;pointer-events:none;pointer-events:auto}._readonly[_nghost-%COMP%]   .t-cleaner[_ngcontent-%COMP%], ._disabled[_nghost-%COMP%]   .t-cleaner[_ngcontent-%COMP%]{pointer-events:none}.t-icon[_ngcontent-%COMP%]{position:relative;display:flex;width:1.5rem;height:1.5rem;align-items:center;justify-content:center;box-sizing:border-box;cursor:pointer;pointer-events:none}[data-size=s][_nghost-%COMP%]   .t-icon_left[_ngcontent-%COMP%]{-webkit-margin-start:-.375rem;margin-inline-start:-.375rem}[data-size=m][_nghost-%COMP%]   .t-icon_left[_ngcontent-%COMP%]{-webkit-margin-start:-.125rem;margin-inline-start:-.125rem;-webkit-margin-end:.375rem;margin-inline-end:.375rem}[data-size=l][_nghost-%COMP%]   .t-icon_left[_ngcontent-%COMP%]{-webkit-margin-end:.75rem;margin-inline-end:.75rem}.t-icons[_ngcontent-%COMP%]{display:flex;align-items:center}[data-size=m][_nghost-%COMP%]   .t-icons[_ngcontent-%COMP%]{-webkit-margin-end:-.125rem;margin-inline-end:-.125rem}[data-size=s][_nghost-%COMP%]   .t-icons[_ngcontent-%COMP%]{-webkit-margin-end:-.375rem;margin-inline-end:-.375rem}[_nghost-%COMP%]:not([data-size=\"s\"])   .t-icons[_ngcontent-%COMP%] > [_ngcontent-%COMP%]:not(:first-child){-webkit-margin-start:.25rem;margin-inline-start:.25rem}._autofilled[data-size=s][_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], ._autofilled._label-outside[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], ._autofilled[_nghost-%COMP%]   .t-value-decoration[_ngcontent-%COMP%]:not(.t-has-value){visibility:hidden}.t-custom-content[_ngcontent-%COMP%]{position:relative;display:flex;align-items:center;justify-content:center;min-width:2rem;height:2rem;pointer-events:none}.t-custom-icon[_ngcontent-%COMP%]{width:2rem;height:100%}.t-input[_ngcontent-%COMP%]:not(:first-child){display:none}[data-size][_nghost-%COMP%]   .t-input_template[_ngcontent-%COMP%]{display:flex;width:calc(100% - 1rem);max-width:calc(100% - 1rem);align-items:center;pointer-events:none;-webkit-padding-end:0;padding-inline-end:0}.t-text-template[_ngcontent-%COMP%]{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.t-wrapper-value-decoration[_ngcontent-%COMP%]{position:relative;pointer-events:none}"],
-    changeDetection: 0
+    features: [i0.ɵɵProvidersFeature([{
+      provide: AbstractTuiDialogService,
+      useExisting: TuiDialogService
+    }]), i0.ɵɵInheritDefinitionFeature]
   });
-  (0,tslib_es6/* __decorate */.gn)([taiga_ui_cdk_decorators/* tuiPure */.UM], TuiPrimitiveTextfieldComponent.prototype, "getIndent$", null);
-  return TuiPrimitiveTextfieldComponent;
-})();
+  return TuiDialogDirective;
+})()));
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-let TuiPrimitiveTextfieldDirective = /*#__PURE__*/(() => {
-  class TuiPrimitiveTextfieldDirective extends taiga_ui_core_abstract/* AbstractTuiTextfieldHost */.D1 {
-    constructor(textfield) {
-      /**
-       * TuiPrimitiveTextfieldComponent satisfies all required parts of
-       * AbstractTuiControl interface. A new interface is not introduced
-       * so AbstractTuiControl is automatically injected for all other controls.
-       */
-      super(textfield);
-      this.textfield = textfield;
-    }
-    get readOnly() {
-      return this.textfield.readOnly || !this.textfield.editable;
-    }
-    onValueChange(value) {
-      this.textfield.onModelChange(value);
-    }
-  }
-  TuiPrimitiveTextfieldDirective.ɵfac = function TuiPrimitiveTextfieldDirective_Factory(t) {
-    return new (t || TuiPrimitiveTextfieldDirective)(core_mjs_["ɵɵdirectiveInject"](TuiPrimitiveTextfieldComponent));
+let TuiDialogModule = /*#__PURE__*/(() => {
+  class TuiDialogModule {}
+  TuiDialogModule.ɵfac = function TuiDialogModule_Factory(t) {
+    return new (t || TuiDialogModule)();
   };
-  TuiPrimitiveTextfieldDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiPrimitiveTextfieldDirective,
-    selectors: [["tui-primitive-textfield"]],
-    features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_tokens/* tuiAsTextfieldHost */.cp)(TuiPrimitiveTextfieldDirective)]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  TuiDialogModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiDialogModule
   });
-  return TuiPrimitiveTextfieldDirective;
+  TuiDialogModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    providers: [(0,taiga_ui_cdk_tokens/* tuiAsDialog */.Q)(TuiDialogService)],
+    imports: [[tinkoff_ng_polymorpheus/* PolymorpheusModule */.wq, taiga_ui_core_components_button/* TuiButtonModule */.fN, common_mjs_.CommonModule, TuiAutoFocusModule]]
+  });
+  return TuiDialogModule;
 })();
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-let TuiTextfieldComponent = /*#__PURE__*/(() => {
-  class TuiTextfieldComponent {
-    constructor(host, controller, el, idService, legacyMask) {
-      this.host = host;
-      this.controller = controller;
-      this.el = el;
-      this.idService = idService;
-      this.legacyMask = legacyMask;
-      this.host.process(this.el.nativeElement);
-    }
-    get id() {
-      return this.el.nativeElement.id || this.idService.generate();
-    }
-    get inputMode() {
-      return this.el.nativeElement.inputMode || this.host.inputMode;
-    }
-  }
-  TuiTextfieldComponent.ɵfac = function TuiTextfieldComponent_Factory(t) {
-    return new (t || TuiTextfieldComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_TEXTFIELD_HOST */.S0), core_mjs_["ɵɵdirectiveInject"](TUI_TEXTFIELD_WATCHED_CONTROLLER), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiIdService */.ll), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_LEGACY_MASK */.sf, 8));
-  };
-  TuiTextfieldComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiTextfieldComponent,
-    selectors: [["input", "tuiTextfield", ""], ["textarea", "tuiTextfield", ""]],
-    hostAttrs: ["type", "text"],
-    hostVars: 7,
-    hostBindings: function TuiTextfieldComponent_HostBindings(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵlistener"]("input", function TuiTextfieldComponent_input_HostBindingHandler($event) {
-          return !ctx.legacyMask && ctx.host.onValueChange($event.target.value);
-        });
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵhostProperty"]("tabIndex", ctx.host.focusable ? 0 : -1)("readOnly", ctx.host.readOnly)("value", ctx.host.value);
-        core_mjs_["ɵɵattribute"]("id", ctx.id)("inputMode", ctx.inputMode)("aria-invalid", ctx.host.invalid)("disabled", ctx.host.disabled || null);
-      }
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([TEXTFIELD_CONTROLLER_PROVIDER])],
-    attrs: _c5,
-    decls: 0,
-    vars: 0,
-    template: function TuiTextfieldComponent_Template(rf, ctx) {},
-    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);padding:0;margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;width:100%;height:100%;border-style:solid;border-color:transparent;border-inline-start-width:var(--border-start, 0);border-inline-end-width:var(--border-end, 0);text-indent:var(--text-indent);text-align:inherit;box-sizing:border-box;white-space:nowrap;overflow:hidden;text-transform:inherit;resize:none}[_nghost-%COMP%]:-webkit-autofill, [_nghost-%COMP%]:-webkit-autofill:hover, [_nghost-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}[_nghost-%COMP%]:-webkit-autofill, [_nghost-%COMP%]:-webkit-autofill:first-line{font-size:inherit;line-height:inherit}[_nghost-%COMP%]::-webkit-caps-lock-indicator, [_nghost-%COMP%]::-webkit-contacts-auto-fill-button, [_nghost-%COMP%]::-webkit-credit-card-auto-fill-button, [_nghost-%COMP%]::-webkit-credentials-auto-fill-button, [_nghost-%COMP%]::-webkit-strong-password-auto-fill-button{content:none!important;position:absolute;left:-62.4375rem;top:-62.4375rem;z-index:-999;display:none!important;background:transparent!important;pointer-events:none!important}[_nghost-%COMP%]::placeholder{color:var(--tui-text-03);opacity:0}._focused[_nghost-%COMP%]:not(._readonly)   [_ngcontent-%COMP%]::placeholder, tui-primitive-textfield._focused:not(._readonly)   [_nghost-%COMP%]::placeholder, tui-textarea._focused:not(._readonly)   [_nghost-%COMP%]::placeholder, tui-text-area._focused:not(._readonly)   [_nghost-%COMP%]::placeholder{opacity:1}[tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]:-webkit-autofill, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]:-webkit-autofill:hover, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]:-webkit-autofill:focus, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:focus, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01-night)!important;border-color:var(--tui-autofill-night);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill-night) inset!important}[tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]::placeholder, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]::placeholder, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]::placeholder{color:var(--tui-text-03-night)}[data-size=s][_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"s\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), [_nghost-%COMP%]   tui-textarea[data-size=\"s\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-textarea), [_nghost-%COMP%]   tui-text-area[data-size=\"s\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-s)}[data-size=m][_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"m\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), [_nghost-%COMP%]   tui-textarea[data-size=\"m\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-textarea), [_nghost-%COMP%]   tui-text-area[data-size=\"m\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-m)}[data-size=l][_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"l\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), [_nghost-%COMP%]   tui-textarea[data-size=\"l\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-textarea), [_nghost-%COMP%]   tui-text-area[data-size=\"l\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-l)}._disabled[_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield._disabled[_nghost-%COMP%], tui-primitive-textfield._disabled   [_nghost-%COMP%], [_nghost-%COMP%]   tui-textarea._disabled[_nghost-%COMP%], tui-textarea._disabled   [_nghost-%COMP%], [_nghost-%COMP%]   tui-text-area._disabled[_nghost-%COMP%], tui-text-area._disabled   [_nghost-%COMP%]{pointer-events:none}[data-size=l][_nghost-%COMP%]:not(._label-outside)   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1.25rem}[data-size=l][_nghost-%COMP%]:not(._label-outside)   [_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield):-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield):-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.8156rem;transform:translateY(-.625rem)}[data-size=m][_nghost-%COMP%]:not(._label-outside)   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1rem}[data-size=m][_nghost-%COMP%]:not(._label-outside)   [_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield):-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield):-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.69rem;transform:translateY(-.5rem)}._hidden[_nghost-%COMP%]   input[_ngcontent-%COMP%], [_nghost-%COMP%]   tui-primitive-textfield._hidden[_nghost-%COMP%], tui-primitive-textfield._hidden   [_nghost-%COMP%]{opacity:0;text-indent:-10em;-webkit-user-select:none}textarea[_nghost-%COMP%]{white-space:pre-wrap}textarea[_nghost-%COMP%]   tui-textarea._ios[_nghost-%COMP%], tui-textarea._ios   [_nghost-%COMP%], textarea[_nghost-%COMP%]   tui-text-area._ios[_nghost-%COMP%], tui-text-area._ios   [_nghost-%COMP%]{padding-left:.8125rem}"],
-    changeDetection: 0
-  });
-  return TuiTextfieldComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiPrimitiveTextfieldModule = /*#__PURE__*/(() => {
-  class TuiPrimitiveTextfieldModule {}
-  TuiPrimitiveTextfieldModule.ɵfac = function TuiPrimitiveTextfieldModule_Factory(t) {
-    return new (t || TuiPrimitiveTextfieldModule)();
-  };
-  TuiPrimitiveTextfieldModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiPrimitiveTextfieldModule
-  });
-  TuiPrimitiveTextfieldModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-    imports: [[common_mjs_.CommonModule, fesm2022_forms/* FormsModule */.u5, tinkoff_ng_polymorpheus/* PolymorpheusModule */.wq, TuiMaskAccessorModule, TuiFocusableModule, taiga_ui_core_directives_wrapper/* TuiWrapperModule */.W, taiga_ui_core_components_svg/* TuiSvgModule */.EI, TuiTooltipModule, TuiAutofilledModule]]
-  });
-  return TuiPrimitiveTextfieldModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * @deprecated:
- * use {@link TUI_TEXTFIELD_DEFAULT_OPTIONS}
- */
-const TUI_PRIMITIVE_TEXTFIELD_DEFAULT_OPTIONS = (/* unused pure expression or super */ null && (TUI_TEXTFIELD_DEFAULT_OPTIONS));
-/**
- * @deprecated:
- * use {@link TUI_TEXTFIELD_OPTIONS}
- */
-const TUI_PRIMITIVE_TEXTFIELD_OPTIONS = (/* unused pure expression or super */ null && (TUI_TEXTFIELD_OPTIONS$1));
-/**
- * @deprecated:
- * use {@link tuiTextfieldOptionsProvider}
- */
-const tuiPrimitiveTextfieldOptionsProvider = (/* unused pure expression or super */ null && (tuiTextfieldOptionsProvider));
 
 /**
  * Generated bundle index. Do not edit.
  */
 
 
-//# sourceMappingURL=taiga-ui-core-components-primitive-textfield.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-data-list.js
+//# sourceMappingURL=taiga-ui-core-components-dialog.js.map
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/repeatWhen.js
+var repeatWhen = __webpack_require__(2077);
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-alert.js
 
 
 
@@ -6737,12 +8066,7 @@ const tuiPrimitiveTextfieldOptionsProvider = (/* unused pure expression or super
 
 
 
-
-
-
-
-const taiga_ui_core_components_data_list_c0 = ["tuiOption", ""];
-function TuiOptionComponent_ng_container_0_Template(rf, ctx) {
+function TuiAlertComponent_label_1_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     core_mjs_["ɵɵelementContainerStart"](0);
     core_mjs_["ɵɵtext"](1);
@@ -6751,346 +8075,182 @@ function TuiOptionComponent_ng_container_0_Template(rf, ctx) {
   if (rf & 2) {
     const text_r3 = ctx.polymorpheusOutlet;
     core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵtextInterpolate1"](" ", text_r3, "\n");
+    core_mjs_["ɵɵtextInterpolate1"](" ", text_r3, " ");
   }
 }
-function TuiOptionComponent_ng_template_1_tui_svg_1_Template(rf, ctx) {
+function TuiAlertComponent_label_1_Template(rf, ctx) {
   if (rf & 1) {
-    core_mjs_["ɵɵelement"](0, "tui-svg", 3);
-  }
-  if (rf & 2) {
-    const ctx_r4 = core_mjs_["ɵɵnextContext"](2);
-    core_mjs_["ɵɵproperty"]("src", ctx_r4.icons.more);
-  }
-}
-function TuiOptionComponent_ng_template_1_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵprojection"](0);
-    core_mjs_["ɵɵtemplate"](1, TuiOptionComponent_ng_template_1_tui_svg_1_Template, 1, 1, "tui-svg", 2);
-  }
-  if (rf & 2) {
-    const ctx_r1 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵproperty"]("ngIf", ctx_r1.dropdown);
-  }
-}
-const taiga_ui_core_components_data_list_c1 = a0 => ({
-  $implicit: a0
-});
-const taiga_ui_core_components_data_list_c2 = ["*"];
-function TuiDataListComponent_div_2_ng_container_1_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementContainerStart"](0);
-    core_mjs_["ɵɵtext"](1);
-    core_mjs_["ɵɵelementContainerEnd"]();
-  }
-  if (rf & 2) {
-    const text_r2 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵtextInterpolate1"](" ", text_r2, " ");
-  }
-}
-function TuiDataListComponent_div_2_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementStart"](0, "div", 2);
-    core_mjs_["ɵɵtemplate"](1, TuiDataListComponent_div_2_ng_container_1_Template, 2, 1, "ng-container", 3);
-    core_mjs_["ɵɵpipe"](2, "async");
+    core_mjs_["ɵɵelementStart"](0, "label", 4);
+    core_mjs_["ɵɵtemplate"](1, TuiAlertComponent_label_1_ng_container_1_Template, 2, 1, "ng-container", 5);
     core_mjs_["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     const ctx_r0 = core_mjs_["ɵɵnextContext"]();
     core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r0.emptyContent || core_mjs_["ɵɵpipeBind1"](2, 1, ctx_r0.defaultEmptyContent$));
+    core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r0.item.label)("polymorpheusOutletContext", ctx_r0.item);
   }
 }
-function shouldFocus({
-  currentTarget
-}) {
-  return !(0,taiga_ui_cdk_utils_focus/* tuiIsNativeFocused */.V8)(currentTarget);
+function TuiAlertComponent_div_3_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelement"](0, "div", 6);
+  }
+  if (rf & 2) {
+    const text_r4 = ctx.polymorpheusOutlet;
+    core_mjs_["ɵɵproperty"]("innerHTML", text_r4, core_mjs_["ɵɵsanitizeHtml"]);
+  }
 }
-// TODO: Consider all use cases for aria roles
-let TuiOptionComponent = /*#__PURE__*/(() => {
-  class TuiOptionComponent {
-    constructor(content, dataList, el, host, dropdown, icons) {
-      this.content = content;
-      this.dataList = dataList;
+const TUI_ALERT_POSITION = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,core_mjs_.inject)(taiga_ui_cdk_tokens/* TUI_IS_MOBILE */.fL) ? `1rem 1rem 0 auto` : `2rem 3rem 0 auto`);
+
+// TODO: get rid of $any in template
+let TuiAlertComponent = /*#__PURE__*/(() => {
+  class TuiAlertComponent {
+    constructor(el, destroy$, position, options, item) {
       this.el = el;
-      this.host = host;
-      this.dropdown = dropdown;
-      this.icons = icons;
-      /** @deprecated use size on {@link TuiDataListComponent} instead */
-      this.size = null;
-      this.role = 'option';
-      this.disabled = false;
-    }
-    get active() {
-      return !!this.dropdown && !!this.dropdown.dropdownBoxRef;
-    }
-    onClick() {
-      if (this.host && this.value !== undefined) {
-        this.host.handleOption(this.value);
-      }
-    }
-    // @bad TODO: Consider aria-activedescendant for proper accessibility implementation
-    onMouseMove({
-      currentTarget
-    }) {
-      currentTarget.focus({
-        preventScroll: true
+      this.destroy$ = destroy$;
+      this.position = position;
+      this.options = options;
+      this.item = item;
+      this.autoClose = typeof this.item.autoClose === 'function' ? this.item.autoClose(this.item.status) : this.item.autoClose;
+      this.animation = this.position.endsWith('auto') ? Object.assign(Object.assign({}, this.options), {
+        value: 'right'
+      }) : Object.assign(Object.assign({}, this.options), {
+        value: 'left'
       });
     }
-    // Preventing focus loss upon focused option removal
-    ngOnDestroy() {
-      var _a;
-      (_a = this.dataList) === null || _a === void 0 ? void 0 : _a.handleFocusLossIfNecessary(this.el.nativeElement);
+    ngOnInit() {
+      this.initAutoClose();
     }
-  }
-  TuiOptionComponent.ɵfac = function TuiOptionComponent_Factory(t) {
-    return new (t || TuiOptionComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_OPTION_CONTENT */.IQ, 8), core_mjs_["ɵɵdirectiveInject"]((0,core_mjs_.forwardRef)(() => TuiDataListComponent), 8), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_DATA_LIST_HOST */.N1, 8), core_mjs_["ɵɵdirectiveInject"](TuiDropdownDirective, 10), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_COMMON_ICONS */.Gs));
-  };
-  TuiOptionComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiOptionComponent,
-    selectors: [["button", "tuiOption", ""], ["a", "tuiOption", ""]],
-    hostAttrs: ["tabIndex", "-1", "type", "button"],
-    hostVars: 5,
-    hostBindings: function TuiOptionComponent_HostBindings(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵlistener"]("click", function TuiOptionComponent_click_HostBindingHandler() {
-          return ctx.onClick();
-        })("mousemove.silent", function TuiOptionComponent_mousemove_silent_HostBindingHandler($event) {
-          return ctx.onMouseMove($event);
-        });
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵattribute"]("disabled", ctx.disabled || null)("data-size", ctx.size)("role", ctx.role);
-        core_mjs_["ɵɵclassProp"]("_with-dropdown", ctx.active);
-      }
-    },
-    inputs: {
-      size: "size",
-      role: "role",
-      disabled: "disabled",
-      value: "value"
-    },
-    attrs: taiga_ui_core_components_data_list_c0,
-    ngContentSelectors: taiga_ui_core_components_data_list_c2,
-    decls: 3,
-    vars: 4,
-    consts: [[4, "polymorpheusOutlet", "polymorpheusOutletContext"], ["base", ""], ["class", "t-arrow", 3, "src", 4, "ngIf"], [1, "t-arrow", 3, "src"]],
-    template: function TuiOptionComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵprojectionDef"]();
-        core_mjs_["ɵɵtemplate"](0, TuiOptionComponent_ng_container_0_Template, 2, 1, "ng-container", 0)(1, TuiOptionComponent_ng_template_1_Template, 2, 1, "ng-template", null, 1, core_mjs_["ɵɵtemplateRefExtractor"]);
-      }
-      if (rf & 2) {
-        const _r2 = core_mjs_["ɵɵreference"](2);
-        core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx.content || _r2)("polymorpheusOutletContext", core_mjs_["ɵɵpureFunction1"](2, taiga_ui_core_components_data_list_c1, _r2));
-      }
-    },
-    dependencies: [taiga_ui_core_components_svg/* TuiSvgComponent */.PN, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li, common_mjs_.NgIf],
-    styles: ["[_nghost-%COMP%]{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:0;border:0;background:none;font-size:inherit;line-height:inherit;transition-property:background;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;justify-content:space-between;text-align:left;color:var(--tui-text-01);border-radius:var(--tui-radius-s);outline:none;text-decoration:none;cursor:pointer;background-clip:padding-box}[_nghost-%COMP%]:disabled{opacity:var(--tui-disabled-opacity);cursor:default}[_nghost-%COMP%]:focus, ._with-dropdown[_nghost-%COMP%]{background-color:var(--tui-clear)}[_nghost-%COMP%]   [data-list-size=\"s\"][_nghost-%COMP%], [data-list-size=\"s\"]   [_nghost-%COMP%], [_nghost-%COMP%]   [data-list-size=\"xs\"][_nghost-%COMP%], [data-list-size=\"xs\"]   [_nghost-%COMP%], [data-size=s][data-size=s][_nghost-%COMP%], [data-size=xs][data-size=xs][_nghost-%COMP%]{display:flex;align-items:center;box-sizing:border-box;margin:var(--tui-data-list-margin) 0;font:var(--tui-font-text-s);min-height:2rem;padding:.3125rem .5rem}[_nghost-%COMP%]   [data-list-size=\"m\"][_nghost-%COMP%], [data-list-size=\"m\"]   [_nghost-%COMP%], [data-size=m][data-size=m][_nghost-%COMP%]{display:flex;align-items:center;box-sizing:border-box;margin:var(--tui-data-list-margin) 0;font:var(--tui-font-text-s);min-height:2.5rem;padding:.375rem .5rem}[_nghost-%COMP%]   [data-list-size=\"l\"][_nghost-%COMP%], [data-list-size=\"l\"]   [_nghost-%COMP%], [data-size=l][data-size=l][_nghost-%COMP%]{display:flex;align-items:center;box-sizing:border-box;margin:var(--tui-data-list-margin) 0;font:var(--tui-font-text-m);min-height:2.75rem;padding:.375rem .625rem}.t-arrow[_ngcontent-%COMP%]{margin:0 -.5rem 0 .75rem}"],
-    changeDetection: 0
-  });
-  (0,tslib_es6/* __decorate */.gn)([tinkoff_ng_event_plugins_shouldCall(shouldFocus)], TuiOptionComponent.prototype, "onMouseMove", null);
-  return TuiOptionComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-// TODO: Consider aria-activedescendant for proper accessibility implementation
-let TuiDataListComponent = /*#__PURE__*/(() => {
-  class TuiDataListComponent {
-    constructor(controller, el, defaultEmptyContent$) {
-      var _a;
-      this.controller = controller;
-      this.el = el;
-      this.defaultEmptyContent$ = defaultEmptyContent$;
-      this.options = taiga_ui_cdk_constants/* EMPTY_QUERY */.Mm;
-      this.role = 'listbox';
-      this.size = ((_a = this.controller) === null || _a === void 0 ? void 0 : _a.size) || 'm';
+    close() {
+      this.item.$implicit.complete();
     }
-    get empty$() {
-      return (0,taiga_ui_cdk_observables/* tuiQueryListChanges */.ll)(this.options).pipe((0,operators_map/* map */.U)(({
-        length
-      }) => !length));
-    }
-    onFocusIn(relatedTarget, currentTarget) {
-      if (!currentTarget.contains(relatedTarget) && !this.origin) {
-        this.origin = relatedTarget;
-      }
-    }
-    noop() {}
-    onKeyDownArrow(current, step) {
-      const {
-        elements
-      } = this;
-      (0,taiga_ui_cdk_utils_focus/* tuiMoveFocus */.VR)(elements.indexOf(current), elements, step);
-    }
-    // TODO: Consider aria-activedescendant for proper accessibility implementation
-    handleFocusLossIfNecessary(element = this.el.nativeElement) {
-      if (this.origin && (0,taiga_ui_cdk_utils_focus/* tuiIsNativeFocusedIn */.zb)(element)) {
-        (0,taiga_ui_cdk_utils_focus/* tuiSetNativeMouseFocused */.Pg)(this.origin, true, true);
-      }
-    }
-    getOptions(includeDisabled = false) {
-      return this.options.filter(({
-        disabled
-      }) => includeDisabled || !disabled).map(({
-        value
-      }) => value).filter(taiga_ui_cdk_utils_miscellaneous/* tuiIsPresent */.Pc);
-    }
-    onFocus({
-      target
-    }, top) {
-      if (!(0,taiga_ui_cdk_utils_dom/* tuiIsElement */.ve)(target)) {
+    initAutoClose() {
+      if (!this.autoClose) {
         return;
       }
-      const {
-        elements
-      } = this;
-      (0,taiga_ui_cdk_utils_focus/* tuiMoveFocus */.VR)(top ? -1 : elements.length, elements, top ? 1 : -1);
-      this.handleFocusLossIfNecessary(target);
-    }
-    get elements() {
-      return Array.from(this.el.nativeElement.querySelectorAll('[tuiOption]'));
+      (0,observable_timer/* timer */.H)((0,taiga_ui_cdk_utils_miscellaneous/* tuiIsNumber */.dt)(this.autoClose) ? this.autoClose : 3000).pipe((0,takeUntil/* takeUntil */.R)((0,fromEvent/* fromEvent */.R)(this.el.nativeElement, 'mouseenter')),
+      /**
+       * TODO: replace to
+       * repeat({
+       *    delay: () => fromEvent(this.el.nativeElement, 'mouseleave'),
+       * })
+       *
+       * in RxJS 7
+       */
+      // eslint-disable-next-line rxjs/no-ignored-notifier
+      (0,repeatWhen/* repeatWhen */.a)(() => (0,fromEvent/* fromEvent */.R)(this.el.nativeElement, 'mouseleave')), (0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(() => this.close());
     }
   }
-  TuiDataListComponent.ɵfac = function TuiDataListComponent_Factory(t) {
-    return new (t || TuiDataListComponent)(core_mjs_["ɵɵdirectiveInject"](TUI_TEXTFIELD_WATCHED_CONTROLLER, 8), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_NOTHING_FOUND_MESSAGE */.PH));
+  TuiAlertComponent.ɵfac = function TuiAlertComponent_Factory(t) {
+    return new (t || TuiAlertComponent)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](TUI_ALERT_POSITION), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_ANIMATION_OPTIONS */.Pw), core_mjs_["ɵɵdirectiveInject"](tinkoff_ng_polymorpheus/* POLYMORPHEUS_CONTEXT */.yf));
   };
-  TuiDataListComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiDataListComponent,
-    selectors: [["tui-data-list"]],
-    contentQueries: function TuiDataListComponent_ContentQueries(rf, ctx, dirIndex) {
-      if (rf & 1) {
-        core_mjs_["ɵɵcontentQuery"](dirIndex, TuiOptionComponent, 5);
-      }
+  TuiAlertComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiAlertComponent,
+    selectors: [["tui-alert"]],
+    hostAttrs: ["role", "alert"],
+    hostVars: 5,
+    hostBindings: function TuiAlertComponent_HostBindings(rf, ctx) {
       if (rf & 2) {
-        let _t;
-        core_mjs_["ɵɵqueryRefresh"](_t = core_mjs_["ɵɵloadQuery"]()) && (ctx.options = _t);
+        core_mjs_["ɵɵsyntheticHostProperty"]("@tuiFadeIn", ctx.options)("@tuiSlideIn", ctx.animation)("@tuiHeightCollapse", ctx.animation);
+        core_mjs_["ɵɵstyleProp"]("margin", ctx.position);
       }
     },
-    hostVars: 2,
-    hostBindings: function TuiDataListComponent_HostBindings(rf, ctx) {
+    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3])],
+    decls: 4,
+    vars: 7,
+    consts: [[3, "hasIcon", "hideClose", "icon", "status", "close"], ["automation-id", "tui-notification-alert__heading", "class", "t-heading", 4, "ngIf"], ["automation-id", "tui-notification-alert__content", 1, "t-content"], [3, "innerHTML", 4, "polymorpheusOutlet", "polymorpheusOutletContext"], ["automation-id", "tui-notification-alert__heading", 1, "t-heading"], [4, "polymorpheusOutlet", "polymorpheusOutletContext"], [3, "innerHTML"]],
+    template: function TuiAlertComponent_Template(rf, ctx) {
       if (rf & 1) {
-        core_mjs_["ɵɵlistener"]("focusin", function TuiDataListComponent_focusin_HostBindingHandler($event) {
-          return ctx.onFocusIn($event.relatedTarget, $event.currentTarget);
-        })("mousedown.prevent", function TuiDataListComponent_mousedown_prevent_HostBindingHandler() {
-          return ctx.noop();
-        })("keydown.arrowDown.prevent", function TuiDataListComponent_keydown_arrowDown_prevent_HostBindingHandler($event) {
-          return ctx.onKeyDownArrow($event.target, 1);
-        })("keydown.arrowUp.prevent", function TuiDataListComponent_keydown_arrowUp_prevent_HostBindingHandler($event) {
-          return ctx.onKeyDownArrow($event.target, -1);
-        })("wheel.silent.passive", function TuiDataListComponent_wheel_silent_passive_HostBindingHandler() {
-          return ctx.handleFocusLossIfNecessary();
-        })("mouseleave", function TuiDataListComponent_mouseleave_HostBindingHandler($event) {
-          return ctx.handleFocusLossIfNecessary($event.target);
+        core_mjs_["ɵɵelementStart"](0, "tui-notification", 0);
+        core_mjs_["ɵɵlistener"]("close", function TuiAlertComponent_Template_tui_notification_close_0_listener() {
+          return ctx.close();
         });
+        core_mjs_["ɵɵtemplate"](1, TuiAlertComponent_label_1_Template, 2, 2, "label", 1);
+        core_mjs_["ɵɵelementStart"](2, "div", 2);
+        core_mjs_["ɵɵtemplate"](3, TuiAlertComponent_div_3_Template, 1, 1, "div", 3);
+        core_mjs_["ɵɵelementEnd"]()();
       }
       if (rf & 2) {
-        core_mjs_["ɵɵattribute"]("role", ctx.role)("data-list-size", ctx.size);
-      }
-    },
-    inputs: {
-      role: "role",
-      emptyContent: "emptyContent",
-      size: "size"
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_tokens/* tuiAsDataListAccessor */.RB)(TuiDataListComponent), TEXTFIELD_CONTROLLER_PROVIDER])],
-    ngContentSelectors: taiga_ui_core_components_data_list_c2,
-    decls: 5,
-    vars: 3,
-    consts: [["tabindex", "0", 1, "t-trap", 3, "focusin"], ["class", "t-empty", 4, "ngIf"], [1, "t-empty"], [4, "polymorpheusOutlet"]],
-    template: function TuiDataListComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵprojectionDef"]();
-        core_mjs_["ɵɵelementStart"](0, "div", 0);
-        core_mjs_["ɵɵlistener"]("focusin", function TuiDataListComponent_Template_div_focusin_0_listener($event) {
-          return ctx.onFocus($event, true);
-        });
-        core_mjs_["ɵɵelementEnd"]();
-        core_mjs_["ɵɵprojection"](1);
-        core_mjs_["ɵɵtemplate"](2, TuiDataListComponent_div_2_Template, 3, 3, "div", 1);
-        core_mjs_["ɵɵpipe"](3, "async");
-        core_mjs_["ɵɵelementStart"](4, "div", 0);
-        core_mjs_["ɵɵlistener"]("focusin", function TuiDataListComponent_Template_div_focusin_4_listener($event) {
-          return ctx.onFocus($event, false);
-        });
-        core_mjs_["ɵɵelementEnd"]();
-      }
-      if (rf & 2) {
+        core_mjs_["ɵɵproperty"]("hasIcon", ctx.item.hasIcon)("hideClose", !ctx.item.hasCloseButton)("icon", ctx.item.icon)("status", ctx.item.status);
+        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵproperty"]("ngIf", ctx.item.label);
         core_mjs_["ɵɵadvance"](2);
-        core_mjs_["ɵɵproperty"]("ngIf", core_mjs_["ɵɵpipeBind1"](3, 1, ctx.empty$));
+        core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx.item.content)("polymorpheusOutletContext", ctx.item);
       }
     },
-    dependencies: [common_mjs_.NgIf, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li, common_mjs_.AsyncPipe],
-    styles: ["tui-data-list{--tui-data-list-padding: .25rem;--tui-data-list-margin: .0625rem;display:flex;font:var(--tui-font-text-m);flex-direction:column;padding:calc(var(--tui-data-list-padding) - var(--tui-data-list-margin)) var(--tui-data-list-padding);color:var(--tui-text-03)}tui-data-list:focus-within .t-trap{display:none}tui-data-list:focus-within [tuiOption]._with-dropdown:not(:focus){background-color:transparent}tui-data-list[data-list-size=s]{--tui-data-list-margin: 0rem}tui-data-list[data-list-size=s]>.t-empty{display:flex;align-items:center;box-sizing:border-box;margin:var(--tui-data-list-margin) 0;font:var(--tui-font-text-s);min-height:2rem;padding:.3125rem .5rem}tui-data-list[data-list-size=m]>.t-empty{display:flex;align-items:center;box-sizing:border-box;margin:var(--tui-data-list-margin) 0;font:var(--tui-font-text-s);min-height:2.5rem;padding:.375rem .5rem}tui-data-list[data-list-size=l]{--tui-data-list-padding: .375rem;--tui-data-list-margin: .125rem}tui-data-list[data-list-size=l]>.t-empty{display:flex;align-items:center;box-sizing:border-box;margin:var(--tui-data-list-margin) 0;font:var(--tui-font-text-m);min-height:2.75rem;padding:.375rem .625rem}tui-opt-group{position:relative;display:flex;font:var(--tui-font-text-xs);color:var(--tui-text-02);flex-direction:column;line-height:1rem}tui-data-list[data-list-size=l] tui-opt-group{font:var(--tui-font-text-s);line-height:1.25rem}tui-data-list[data-list-size=l] tui-opt-group:before{padding-left:.625rem;padding-right:.625rem}tui-data-list[data-list-size=l] tui-opt-group:after{left:.625rem;right:.625rem}tui-opt-group:empty:before,tui-opt-group:empty:after{display:none}tui-opt-group:before{content:attr(data-label);padding:var(--tui-data-list-padding) .5rem var(--tui-data-list-padding);margin:var(--tui-data-list-margin) 0;white-space:normal;word-break:break-word}tui-opt-group:after{position:absolute;left:.5rem;right:.5rem;top:var(--tui-data-list-padding);height:1px;background:var(--tui-base-03)}tui-opt-group:not(:empty)~tui-opt-group:before{padding-top:calc(.75rem + var(--tui-data-list-padding))}tui-opt-group:not(:empty)~tui-opt-group[data-label=\"\"]:before,tui-opt-group:not(:empty)~tui-opt-group:not([data-label]):before{padding:var(--tui-data-list-padding) 0}tui-opt-group:not(:empty)~tui-opt-group:after{content:\"\"}tui-opt-group[data-label=\"\"]:before,tui-opt-group:not([data-label]):before{padding:0;margin:0}\n"],
-    encapsulation: 2,
+    dependencies: [taiga_ui_core_components_notification/* TuiNotificationComponent */.L, common_mjs_.NgIf, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li],
+    styles: ["[_nghost-%COMP%]{box-shadow:0 1.5rem 1rem #00000008,0 .75rem .75rem #0000000a,0 .25rem .375rem #0000000d;display:block;border-radius:var(--tui-radius-l);width:18rem}[_nghost-%COMP%]:not(:first-child){margin-top:.75rem!important}[_nghost-%COMP%]:not(:last-child){margin-bottom:0!important}.t-heading[_ngcontent-%COMP%]{margin:0}[data-size=s][_ngcontent-%COMP%]   .t-heading[_ngcontent-%COMP%]{font:var(--tui-font-text-s);font-weight:bold}[data-size=m][_ngcontent-%COMP%]   .t-heading[_ngcontent-%COMP%]{font:var(--tui-font-text-m);line-height:1.25rem;font-weight:bold}[data-size=l][_ngcontent-%COMP%]   .t-heading[_ngcontent-%COMP%]{font:var(--tui-font-text-l);line-height:1.5rem;font-weight:bold}.t-content[_ngcontent-%COMP%]{color:var(--tui-text-01);word-wrap:break-word;word-break:break-word}.t-content[_ngcontent-%COMP%]:empty{display:none}"],
+    data: {
+      animation: [tuiFadeIn, tuiSlideIn, tuiHeightCollapse]
+    },
     changeDetection: 0
   });
-  (0,tslib_es6/* __decorate */.gn)([taiga_ui_cdk_decorators/* tuiPure */.UM], TuiDataListComponent.prototype, "empty$", null);
-  return TuiDataListComponent;
+  return TuiAlertComponent;
 })();
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-let TuiDataListDirective = /*#__PURE__*/(() => {
-  class TuiDataListDirective {}
-  TuiDataListDirective.ɵfac = function TuiDataListDirective_Factory(t) {
-    return new (t || TuiDataListDirective)();
-  };
-  TuiDataListDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiDataListDirective,
-    selectors: [["ng-template", "tuiDataList", ""]]
-  });
-  return TuiDataListDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-function taiga_ui_core_components_data_list_tuiAsDataList(useExisting) {
-  return {
-    provide: TuiDataListDirective,
-    useExisting
-  };
-}
-let TuiOptGroupDirective = /*#__PURE__*/(() => {
-  class TuiOptGroupDirective {}
-  TuiOptGroupDirective.ɵfac = function TuiOptGroupDirective_Factory(t) {
-    return new (t || TuiOptGroupDirective)();
-  };
-  TuiOptGroupDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiOptGroupDirective,
-    selectors: [["tui-opt-group"]],
-    hostAttrs: ["role", "group"],
-    hostVars: 1,
-    hostBindings: function TuiOptGroupDirective_HostBindings(rf, ctx) {
-      if (rf & 2) {
-        core_mjs_["ɵɵattribute"]("data-label", ctx.label);
-      }
-    },
-    inputs: {
-      label: "label"
+let taiga_ui_core_components_alert_TuiAlertService = /*#__PURE__*/(() => {
+  class TuiAlertService extends taiga_ui_cdk_abstract/* AbstractTuiDialogService */.d5 {
+    constructor(defaultOptions, idService) {
+      super(idService);
+      this.defaultOptions = defaultOptions;
+      this.component = new tinkoff_ng_polymorpheus/* PolymorpheusComponent */.Al(TuiAlertComponent);
     }
+  }
+  TuiAlertService.ɵfac = function TuiAlertService_Factory(t) {
+    return new (t || TuiAlertService)(core_mjs_["ɵɵinject"](taiga_ui_core_tokens/* TUI_NOTIFICATION_OPTIONS */.Ln), core_mjs_["ɵɵinject"](taiga_ui_cdk_services/* TuiIdService */.ll));
+  };
+  TuiAlertService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: TuiAlertService,
+    factory: TuiAlertService.ɵfac,
+    providedIn: `root`
   });
-  return TuiOptGroupDirective;
+  return TuiAlertService;
 })();
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-let taiga_ui_core_components_data_list_TuiDataListModule = /*#__PURE__*/(() => {
-  class TuiDataListModule {}
-  TuiDataListModule.ɵfac = function TuiDataListModule_Factory(t) {
-    return new (t || TuiDataListModule)();
+let TuiAlertDirective = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  class TuiAlertDirective extends AbstractTuiDialogDirective {}
+  TuiAlertDirective.ɵfac = /* @__PURE__ */(() => {
+    let ɵTuiAlertDirective_BaseFactory;
+    return function TuiAlertDirective_Factory(t) {
+      return (ɵTuiAlertDirective_BaseFactory || (ɵTuiAlertDirective_BaseFactory = i0.ɵɵgetInheritedFactory(TuiAlertDirective)))(t || TuiAlertDirective);
+    };
+  })();
+  TuiAlertDirective.ɵdir = /* @__PURE__ */i0.ɵɵdefineDirective({
+    type: TuiAlertDirective,
+    selectors: [["ng-template", "tuiAlert", ""]],
+    inputs: {
+      options: ["tuiAlertOptions", "options"],
+      open: ["tuiAlert", "open"]
+    },
+    outputs: {
+      openChange: "tuiAlertChange"
+    },
+    features: [i0.ɵɵProvidersFeature([{
+      provide: AbstractTuiDialogService,
+      useExisting: taiga_ui_core_components_alert_TuiAlertService
+    }]), i0.ɵɵInheritDefinitionFeature]
+  });
+  return TuiAlertDirective;
+})()));
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiAlertModule = /*#__PURE__*/(() => {
+  class TuiAlertModule {}
+  TuiAlertModule.ɵfac = function TuiAlertModule_Factory(t) {
+    return new (t || TuiAlertModule)();
   };
-  TuiDataListModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiDataListModule
+  TuiAlertModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiAlertModule
   });
-  TuiDataListModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-    imports: [[common_mjs_.CommonModule, taiga_ui_core_components_svg/* TuiSvgModule */.EI, tinkoff_ng_polymorpheus/* PolymorpheusModule */.wq]]
+  TuiAlertModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    providers: [(0,taiga_ui_cdk_tokens/* tuiAsAlerts */.XH)(taiga_ui_core_components_alert_TuiAlertService)],
+    imports: [[common_mjs_.CommonModule, tinkoff_ng_polymorpheus/* PolymorpheusModule */.wq, taiga_ui_core_components_notification/* TuiNotificationModule */.H]]
   });
-  return TuiDataListModule;
+  return TuiAlertModule;
 })();
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
@@ -7101,7 +8261,740 @@ let taiga_ui_core_components_data_list_TuiDataListModule = /*#__PURE__*/(() => {
  */
 
 
-//# sourceMappingURL=taiga-ui-core-components-data-list.js.map
+//# sourceMappingURL=taiga-ui-core-components-alert.js.map
+// EXTERNAL MODULE: ./node_modules/ngx-highlightjs/fesm2020/ngx-highlightjs.mjs + 5 modules
+var ngx_highlightjs = __webpack_require__(2839);
+;// CONCATENATED MODULE: ./node_modules/@angular/cdk/fesm2022/clipboard.mjs
+
+
+
+
+/**
+ * A pending copy-to-clipboard operation.
+ *
+ * The implementation of copying text to the clipboard modifies the DOM and
+ * forces a re-layout. This re-layout can take too long if the string is large,
+ * causing the execCommand('copy') to happen too long after the user clicked.
+ * This results in the browser refusing to copy. This object lets the
+ * re-layout happen in a separate tick from copying by providing a copy function
+ * that can be called later.
+ *
+ * Destroy must be called when no longer in use, regardless of whether `copy` is
+ * called.
+ */
+class PendingCopy {
+  constructor(text, _document) {
+    this._document = _document;
+    const textarea = this._textarea = this._document.createElement('textarea');
+    const styles = textarea.style;
+    // Hide the element for display and accessibility. Set a fixed position so the page layout
+    // isn't affected. We use `fixed` with `top: 0`, because focus is moved into the textarea
+    // for a split second and if it's off-screen, some browsers will attempt to scroll it into view.
+    styles.position = 'fixed';
+    styles.top = styles.opacity = '0';
+    styles.left = '-999em';
+    textarea.setAttribute('aria-hidden', 'true');
+    textarea.value = text;
+    // Making the textarea `readonly` prevents the screen from jumping on iOS Safari (see #25169).
+    textarea.readOnly = true;
+    // The element needs to be inserted into the fullscreen container, if the page
+    // is in fullscreen mode, otherwise the browser won't execute the copy command.
+    (this._document.fullscreenElement || this._document.body).appendChild(textarea);
+  }
+  /** Finishes copying the text. */
+  copy() {
+    const textarea = this._textarea;
+    let successful = false;
+    try {
+      // Older browsers could throw if copy is not supported.
+      if (textarea) {
+        const currentFocus = this._document.activeElement;
+        textarea.select();
+        textarea.setSelectionRange(0, textarea.value.length);
+        successful = this._document.execCommand('copy');
+        if (currentFocus) {
+          currentFocus.focus();
+        }
+      }
+    } catch {
+      // Discard error.
+      // Initial setting of {@code successful} will represent failure here.
+    }
+    return successful;
+  }
+  /** Cleans up DOM changes used to perform the copy operation. */
+  destroy() {
+    const textarea = this._textarea;
+    if (textarea) {
+      textarea.remove();
+      this._textarea = undefined;
+    }
+  }
+}
+
+/**
+ * A service for copying text to the clipboard.
+ */
+let clipboard_Clipboard = /*#__PURE__*/(() => {
+  class Clipboard {
+    constructor(document) {
+      this._document = document;
+    }
+    /**
+     * Copies the provided text into the user's clipboard.
+     *
+     * @param text The string to copy.
+     * @returns Whether the operation was successful.
+     */
+    copy(text) {
+      const pendingCopy = this.beginCopy(text);
+      const successful = pendingCopy.copy();
+      pendingCopy.destroy();
+      return successful;
+    }
+    /**
+     * Prepares a string to be copied later. This is useful for large strings
+     * which take too long to successfully render and be copied in the same tick.
+     *
+     * The caller must call `destroy` on the returned `PendingCopy`.
+     *
+     * @param text The string to copy.
+     * @returns the pending copy operation.
+     */
+    beginCopy(text) {
+      return new PendingCopy(text, this._document);
+    }
+    static #_ = this.ɵfac = function Clipboard_Factory(t) {
+      return new (t || Clipboard)(core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT));
+    };
+    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+      token: Clipboard,
+      factory: Clipboard.ɵfac,
+      providedIn: 'root'
+    });
+  }
+  return Clipboard;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/** Injection token that can be used to provide the default options to `CdkCopyToClipboard`. */
+const CDK_COPY_TO_CLIPBOARD_CONFIG = /*#__PURE__*/new core_mjs_.InjectionToken('CDK_COPY_TO_CLIPBOARD_CONFIG');
+/**
+ * Provides behavior for a button that when clicked copies content into user's
+ * clipboard.
+ */
+let CdkCopyToClipboard = /*#__PURE__*/(() => {
+  class CdkCopyToClipboard {
+    constructor(_clipboard, _ngZone, config) {
+      this._clipboard = _clipboard;
+      this._ngZone = _ngZone;
+      /** Content to be copied. */
+      this.text = '';
+      /**
+       * How many times to attempt to copy the text. This may be necessary for longer text, because
+       * the browser needs time to fill an intermediate textarea element and copy the content.
+       */
+      this.attempts = 1;
+      /**
+       * Emits when some text is copied to the clipboard. The
+       * emitted value indicates whether copying was successful.
+       */
+      this.copied = new core_mjs_.EventEmitter();
+      /** Copies that are currently being attempted. */
+      this._pending = new Set();
+      if (config && config.attempts != null) {
+        this.attempts = config.attempts;
+      }
+    }
+    /** Copies the current text to the clipboard. */
+    copy(attempts = this.attempts) {
+      if (attempts > 1) {
+        let remainingAttempts = attempts;
+        const pending = this._clipboard.beginCopy(this.text);
+        this._pending.add(pending);
+        const attempt = () => {
+          const successful = pending.copy();
+          if (!successful && --remainingAttempts && !this._destroyed) {
+            // We use 1 for the timeout since it's more predictable when flushing in unit tests.
+            this._currentTimeout = this._ngZone.runOutsideAngular(() => setTimeout(attempt, 1));
+          } else {
+            this._currentTimeout = null;
+            this._pending.delete(pending);
+            pending.destroy();
+            this.copied.emit(successful);
+          }
+        };
+        attempt();
+      } else {
+        this.copied.emit(this._clipboard.copy(this.text));
+      }
+    }
+    ngOnDestroy() {
+      if (this._currentTimeout) {
+        clearTimeout(this._currentTimeout);
+      }
+      this._pending.forEach(copy => copy.destroy());
+      this._pending.clear();
+      this._destroyed = true;
+    }
+    static #_ = this.ɵfac = function CdkCopyToClipboard_Factory(t) {
+      return new (t || CdkCopyToClipboard)(core_mjs_["ɵɵdirectiveInject"](clipboard_Clipboard), core_mjs_["ɵɵdirectiveInject"](core_mjs_.NgZone), core_mjs_["ɵɵdirectiveInject"](CDK_COPY_TO_CLIPBOARD_CONFIG, 8));
+    };
+    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+      type: CdkCopyToClipboard,
+      selectors: [["", "cdkCopyToClipboard", ""]],
+      hostBindings: function CdkCopyToClipboard_HostBindings(rf, ctx) {
+        if (rf & 1) {
+          core_mjs_["ɵɵlistener"]("click", function CdkCopyToClipboard_click_HostBindingHandler() {
+            return ctx.copy();
+          });
+        }
+      },
+      inputs: {
+        text: ["cdkCopyToClipboard", "text"],
+        attempts: ["cdkCopyToClipboardAttempts", "attempts"]
+      },
+      outputs: {
+        copied: "cdkCopyToClipboardCopied"
+      }
+    });
+  }
+  return CdkCopyToClipboard;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let ClipboardModule = /*#__PURE__*/(() => {
+  class ClipboardModule {
+    static #_ = this.ɵfac = function ClipboardModule_Factory(t) {
+      return new (t || ClipboardModule)();
+    };
+    static #_2 = this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+      type: ClipboardModule
+    });
+    static #_3 = this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+  }
+  return ClipboardModule;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=clipboard.mjs.map
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-pipes-filter.js
+
+
+let TuiFilterPipe = /*#__PURE__*/(() => {
+  class TuiFilterPipe {
+    transform(items, matcher, ...args) {
+      return items.filter(item => matcher(item, ...args));
+    }
+  }
+  TuiFilterPipe.ɵfac = function TuiFilterPipe_Factory(t) {
+    return new (t || TuiFilterPipe)();
+  };
+  TuiFilterPipe.ɵpipe = /* @__PURE__ */core_mjs_["ɵɵdefinePipe"]({
+    name: "tuiFilter",
+    type: TuiFilterPipe,
+    pure: true
+  });
+  return TuiFilterPipe;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiFilterPipeModule = /*#__PURE__*/(() => {
+  class TuiFilterPipeModule {}
+  TuiFilterPipeModule.ɵfac = function TuiFilterPipeModule_Factory(t) {
+    return new (t || TuiFilterPipeModule)();
+  };
+  TuiFilterPipeModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiFilterPipeModule
+  });
+  TuiFilterPipeModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+  return TuiFilterPipeModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-cdk-pipes-filter.js.map
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-item.js
+
+
+
+/**
+ * Blank directive for queries via `@ContentChildren` / `@ViewChildren` / `querySelector`
+ */
+let TuiItemDirective = /*#__PURE__*/(() => {
+  class TuiItemDirective {}
+  TuiItemDirective.ɵfac = function TuiItemDirective_Factory(t) {
+    return new (t || TuiItemDirective)();
+  };
+  TuiItemDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiItemDirective,
+    selectors: [["", "tuiItem", ""]]
+  });
+  return TuiItemDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiItemModule = /*#__PURE__*/(() => {
+  class TuiItemModule {}
+  TuiItemModule.ɵfac = function TuiItemModule_Factory(t) {
+    return new (t || TuiItemModule)();
+  };
+  TuiItemModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiItemModule
+  });
+  TuiItemModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+  return TuiItemModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-cdk-directives-item.js.map
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-pipes-replace.js
+
+
+let TuiReplacePipe = /*#__PURE__*/(() => {
+  class TuiReplacePipe {
+    transform(value, search, replaceValue) {
+      var _a;
+      return (_a = value === null || value === void 0 ? void 0 : value.replace(search,
+      // TS bug: https://github.com/microsoft/TypeScript/issues/22378
+      replaceValue)) !== null && _a !== void 0 ? _a : ``;
+    }
+  }
+  TuiReplacePipe.ɵfac = function TuiReplacePipe_Factory(t) {
+    return new (t || TuiReplacePipe)();
+  };
+  TuiReplacePipe.ɵpipe = /* @__PURE__ */core_mjs_["ɵɵdefinePipe"]({
+    name: "tuiReplace",
+    type: TuiReplacePipe,
+    pure: true
+  });
+  return TuiReplacePipe;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiReplacePipeModule = /*#__PURE__*/(() => {
+  class TuiReplacePipeModule {}
+  TuiReplacePipeModule.ɵfac = function TuiReplacePipeModule_Factory(t) {
+    return new (t || TuiReplacePipeModule)();
+  };
+  TuiReplacePipeModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiReplacePipeModule
+  });
+  TuiReplacePipeModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+  return TuiReplacePipeModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-cdk-pipes-replace.js.map
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-resizer.js
+
+
+
+
+let taiga_ui_cdk_directives_resizer_TuiResizeableDirective = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  class TuiResizeableDirective extends TuiElementDirective {}
+  TuiResizeableDirective.ɵfac = /* @__PURE__ */(() => {
+    let ɵTuiResizeableDirective_BaseFactory;
+    return function TuiResizeableDirective_Factory(t) {
+      return (ɵTuiResizeableDirective_BaseFactory || (ɵTuiResizeableDirective_BaseFactory = i0.ɵɵgetInheritedFactory(TuiResizeableDirective)))(t || TuiResizeableDirective);
+    };
+  })();
+  TuiResizeableDirective.ɵdir = /* @__PURE__ */i0.ɵɵdefineDirective({
+    type: TuiResizeableDirective,
+    selectors: [["", "tuiResizeable", ""]],
+    features: [i0.ɵɵInheritDefinitionFeature]
+  });
+  return TuiResizeableDirective;
+})()));
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+// TODO: Migrate to PointerEvent in 4.0
+let TuiResizerDirective = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  class TuiResizerDirective {
+    constructor(resizeable) {
+      this.resizeable = resizeable;
+      this.tuiResizer = [0, 0];
+      this.tuiSizeChange = new EventEmitter();
+      this.x = NaN;
+      this.y = NaN;
+      this.width = 0;
+      this.height = 0;
+    }
+    get cursor() {
+      if (!this.tuiResizer[0]) {
+        return 'ns-resize';
+      }
+      if (!this.tuiResizer[1]) {
+        return 'ew-resize';
+      }
+      if (this.tuiResizer[0] * this.tuiResizer[1] > 0) {
+        return 'nwse-resize';
+      }
+      return 'nesw-resize';
+    }
+    onTouchStart({
+      touches
+    }) {
+      this.onMouseDown(touches[0].clientX, touches[0].clientY);
+    }
+    onMouseDown(x, y) {
+      this.x = x;
+      this.y = y;
+      this.width = this.resizeable.nativeElement.clientWidth;
+      this.height = this.resizeable.nativeElement.clientHeight;
+    }
+    onMouseMove({
+      x,
+      y,
+      buttons
+    }) {
+      if (!buttons) {
+        this.onMouseUp();
+      } else {
+        this.onMove(x, y);
+      }
+    }
+    onTouchMove({
+      touches
+    }) {
+      this.onMove(touches[0].clientX, touches[0].clientY);
+    }
+    onMouseUp() {
+      this.x = NaN;
+    }
+    onMove(x, y) {
+      if (Number.isNaN(this.x)) {
+        return;
+      }
+      const {
+        style
+      } = this.resizeable.nativeElement;
+      const size = [this.width + this.tuiResizer[0] * (x - this.x), this.height + this.tuiResizer[1] * (y - this.y)];
+      if (this.tuiResizer[0]) {
+        style.width = tuiPx(size[0]);
+      }
+      if (this.tuiResizer[1]) {
+        style.height = tuiPx(size[1]);
+      }
+      this.tuiSizeChange.emit(size);
+    }
+  }
+  TuiResizerDirective.ɵfac = function TuiResizerDirective_Factory(t) {
+    return new (t || TuiResizerDirective)(i0.ɵɵdirectiveInject(taiga_ui_cdk_directives_resizer_TuiResizeableDirective));
+  };
+  TuiResizerDirective.ɵdir = /* @__PURE__ */i0.ɵɵdefineDirective({
+    type: TuiResizerDirective,
+    selectors: [["", "tuiResizer", ""]],
+    hostVars: 4,
+    hostBindings: function TuiResizerDirective_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        i0.ɵɵlistener("touchstart.silent.passive", function TuiResizerDirective_touchstart_silent_passive_HostBindingHandler($event) {
+          return ctx.onTouchStart($event);
+        })("mousedown.silent.prevent", function TuiResizerDirective_mousedown_silent_prevent_HostBindingHandler($event) {
+          return ctx.onMouseDown($event.x, $event.y);
+        })("mousemove.silent", function TuiResizerDirective_mousemove_silent_HostBindingHandler($event) {
+          return ctx.onMouseMove($event);
+        }, false, i0.ɵɵresolveDocument)("touchmove.silent", function TuiResizerDirective_touchmove_silent_HostBindingHandler($event) {
+          return ctx.onTouchMove($event);
+        }, false, i0.ɵɵresolveDocument)("mouseup.silent", function TuiResizerDirective_mouseup_silent_HostBindingHandler() {
+          return ctx.onMouseUp();
+        }, false, i0.ɵɵresolveDocument)("touchend.silent", function TuiResizerDirective_touchend_silent_HostBindingHandler() {
+          return ctx.onMouseUp();
+        }, false, i0.ɵɵresolveDocument);
+      }
+      if (rf & 2) {
+        i0.ɵɵstyleProp("touch-action", "none")("cursor", ctx.cursor);
+      }
+    },
+    inputs: {
+      tuiResizer: "tuiResizer"
+    },
+    outputs: {
+      tuiSizeChange: "tuiSizeChange"
+    }
+  });
+  return TuiResizerDirective;
+})()));
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiResizerModule = /*#__PURE__*/(() => {
+  class TuiResizerModule {}
+  TuiResizerModule.ɵfac = function TuiResizerModule_Factory(t) {
+    return new (t || TuiResizerModule)();
+  };
+  TuiResizerModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiResizerModule
+  });
+  TuiResizerModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+  return TuiResizerModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-cdk-directives-resizer.js.map
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-color.js
+function tuiHexToRgb(hex) {
+  const matches = hex.replace(`#`, ``).split(``).map((char, _, array) => array.length === 3 ? char + char : char).join(``).match(/.{2}/g);
+  return matches ? matches.map(x => Number.parseInt(x, 16)) : [0, 0, 0];
+}
+const getChunksFromString = (hex, chunkSize) => hex.match(new RegExp(`.{${chunkSize}}`, `g`));
+const convertHexUnitTo256 = hexStr => parseInt(hexStr.repeat(2 / hexStr.length), 16);
+const getAlphaFloat = (a, alpha) => {
+  if (typeof a !== `undefined`) {
+    return Number((a / 255).toFixed(2));
+  }
+  if (typeof alpha !== `number` || alpha < 0 || alpha > 1) {
+    return 1;
+  }
+  return alpha;
+};
+function tuiHexToRGBA(hex, alpha) {
+  const [r, g, b, a] = tuiParseHex(hex, alpha);
+  return a < 1 ? `rgba(${r}, ${g}, ${b}, ${a})` : `rgb(${r}, ${g}, ${b})`;
+}
+function tuiIsValidHex(hex) {
+  // eslint-disable-next-line unicorn/no-unsafe-regex
+  return /^#([A-Fa-f0-9]{3,4}){1,2}$/.test(hex);
+}
+function tuiParseHex(hex, alpha) {
+  var _a;
+  if (!tuiIsValidHex(hex)) {
+    throw new Error(`Invalid HEX`);
+  }
+  const chunkSize = Math.floor((hex.length - 1) / 3);
+  const hexArr = getChunksFromString(hex.slice(1), chunkSize);
+  const [r, g, b, a] = (_a = hexArr === null || hexArr === void 0 ? void 0 : hexArr.map(convertHexUnitTo256)) !== null && _a !== void 0 ? _a : [];
+  const floatAlpha = getAlphaFloat(a, alpha);
+  return [r, g, b, floatAlpha];
+}
+function hsvToColor(h, s, v, n) {
+  const k = (n + h / 60) % 6;
+  return Math.round(v - v * s * Math.max(Math.min(k, 4 - k, 1), 0));
+}
+/**
+ * https://stackoverflow.com/a/54024653/2706426
+ */
+function tuiHsvToRgb(h, s, v) {
+  return [hsvToColor(h, s, v, 5), hsvToColor(h, s, v, 3), hsvToColor(h, s, v, 1)];
+}
+const DEFAULT = (/* unused pure expression or super */ null && ([0, 0, 0, 1]));
+function tuiParseColor(color) {
+  const stripped = color.replace(`#`, ``).replace(`rgba(`, ``).replace(`rgb(`, ``).replace(`)`, ``);
+  const array = stripped.split(`,`).map(item => parseFloat(item));
+  if (array.length === 4) {
+    return array;
+  }
+  if (array.length === 3) {
+    return array.concat(1);
+  }
+  const matches = stripped.match(new RegExp(`(.{${stripped.length / 3}})`, `g`));
+  if (!matches) {
+    return DEFAULT;
+  }
+  const parsed = matches.map(char => parseInt(stripped.length % 2 ? char + char : char, 16));
+  return [parsed[0] || DEFAULT[0], parsed[1] || DEFAULT[1], parsed[2] || DEFAULT[2], parsed[3] === undefined ? DEFAULT[3] : parsed[3]];
+}
+function tuiRgbToHex(r, g, b) {
+  return `#${[r, g, b].map(x => x.toString(16).padStart(2, `0`)).join(``)}`;
+}
+function tuiRgbToHsv(r, g, b) {
+  const v = Math.max(r, g, b);
+  const n = v - Math.min(r, g, b);
+  // eslint-disable-next-line no-nested-ternary
+  const h = n && (v === r ? (g - b) / n : v === g ? 2 + (b - r) / n : 4 + (r - g) / n);
+  return [60 * (h < 0 ? h + 6 : h), v && n / v, v];
+}
+function tuiRgbaToHex(color) {
+  var _a, _b;
+  if (!tuiIsValidRgba(color)) {
+    throw new Error(`Invalid RGBa`);
+  }
+  const rgb = (_a = color.replace(/\s/g, ``)
+  // eslint-disable-next-line unicorn/no-unsafe-regex
+  .match(/^rgba?\((\d+),(\d+),(\d+),?([^,\s)]+)?/i)) !== null && _a !== void 0 ? _a : [];
+  let alpha = ((_b = rgb === null || rgb === void 0 ? void 0 : rgb[4]) !== null && _b !== void 0 ? _b : ``).toString().trim();
+  let hex = rgb ? (rgb[1] | 1 << 8).toString(16).slice(1) + (rgb[2] | 1 << 8).toString(16).slice(1) + (rgb[3] | 1 << 8).toString(16).slice(1) : color;
+  alpha = alpha !== `` ? alpha : 0o1;
+  alpha = (Number(alpha) * 255 | 1 << 8).toString(16).slice(1);
+  hex += alpha;
+  return `#${hex.toUpperCase()}`;
+}
+function tuiIsValidRgba(rgba) {
+  const range = `(\\d|[1-9]\\d|1\\d{2}|2[0-4]\\d|2[0-5]{2})`;
+  const alpha = `([01]|0?\\.\\d+)`;
+  return new RegExp(`^(?:rgb\\(\\s*${range}\\s*,\\s*${range}\\s*,\\s*${range}\\s*\\)|rgba\\(\\s*${range}\\s*,\\s*${range}\\s*,\\s*${range}\\s*,\\s*${alpha}\\s*\\))$`).test(rgba);
+}
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-cdk-utils-color.js.map
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-components-badge.js
+
+
+
+
+
+
+const taiga_ui_kit_components_badge_c0 = ["*"];
+let TuiBadgeComponent = /*#__PURE__*/(() => {
+  class TuiBadgeComponent {
+    constructor(mode$) {
+      this.mode$ = mode$;
+      this.size = 'm';
+      this.status = 'default';
+      this.hoverable = false;
+    }
+    get padding() {
+      var _a;
+      if (this.isEmpty) {
+        return 'none';
+      }
+      return (0,taiga_ui_cdk_utils_miscellaneous/* tuiIsNumber */.dt)((_a = this.value) === null || _a === void 0 ? void 0 : _a.valueOf()) ? 'm' : 'l';
+    }
+    get outputValue() {
+      var _a;
+      const value = (_a = this.value) === null || _a === void 0 ? void 0 : _a.valueOf();
+      if ((0,taiga_ui_cdk_utils_miscellaneous/* tuiIsNumber */.dt)(value) && value > 99) {
+        return '99+';
+      }
+      return (0,taiga_ui_cdk_utils_miscellaneous/* tuiIsPresent */.Pc)(this.value) ? String(this.value) : '';
+    }
+    get isEmpty() {
+      return !this.value && this.value !== 0;
+    }
+    titleText({
+      offsetWidth,
+      scrollWidth
+    }) {
+      return offsetWidth < scrollWidth ? this.outputValue : '';
+    }
+  }
+  TuiBadgeComponent.ɵfac = function TuiBadgeComponent_Factory(t) {
+    return new (t || TuiBadgeComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_MODE */.Au));
+  };
+  TuiBadgeComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiBadgeComponent,
+    selectors: [["tui-badge"]],
+    hostVars: 7,
+    hostBindings: function TuiBadgeComponent_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("$.data-mode.attr", function TuiBadgeComponent___data_mode_attr_HostBindingHandler() {
+          return ctx.mode$;
+        });
+      }
+      if (rf & 2) {
+        core_mjs_["ɵɵattribute"]("data-size", ctx.size)("data-status", ctx.status)("data-padding", ctx.padding);
+        core_mjs_["ɵɵclassProp"]("_hoverable", ctx.hoverable)("_empty-value", ctx.isEmpty);
+      }
+    },
+    inputs: {
+      value: "value",
+      size: "size",
+      status: "status",
+      hoverable: "hoverable"
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_core_providers/* MODE_PROVIDER */.CV])],
+    ngContentSelectors: taiga_ui_kit_components_badge_c0,
+    decls: 5,
+    vars: 2,
+    consts: [[1, "t-left-content"], [1, "t-text", 3, "title", "mouseenter"], ["text", ""]],
+    template: function TuiBadgeComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵprojectionDef"]();
+        core_mjs_["ɵɵelementStart"](0, "span", 0);
+        core_mjs_["ɵɵprojection"](1);
+        core_mjs_["ɵɵelementEnd"]();
+        core_mjs_["ɵɵelementStart"](2, "span", 1, 2);
+        core_mjs_["ɵɵlistener"]("mouseenter", function TuiBadgeComponent_Template_span_mouseenter_2_listener() {
+          return 0;
+        });
+        core_mjs_["ɵɵtext"](4);
+        core_mjs_["ɵɵelementEnd"]();
+      }
+      if (rf & 2) {
+        const _r0 = core_mjs_["ɵɵreference"](3);
+        core_mjs_["ɵɵadvance"](2);
+        core_mjs_["ɵɵproperty"]("title", ctx.titleText(_r0));
+        core_mjs_["ɵɵadvance"](2);
+        core_mjs_["ɵɵtextInterpolate1"](" ", ctx.outputValue, "\n");
+      }
+    },
+    styles: ["[_nghost-%COMP%]{transition-property:background-color;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;--left-content-color: currentColor;position:relative;display:inline-flex;font:var(--tui-font-text-s);align-items:center;justify-content:center;box-sizing:border-box;color:var(--tui-base-01);border-radius:6.25rem;white-space:nowrap;overflow:hidden;vertical-align:middle;max-width:100%}[_nghost-%COMP%]:after{transition-property:background;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;position:absolute;top:0;left:0;width:100%;height:100%;content:\"\";box-sizing:border-box;border-radius:inherit;pointer-events:none}._hoverable[_nghost-%COMP%]:hover[data-status=custom]:after, ._hoverable[_nghost-%COMP%]:active[data-status=custom]:after{background-color:var(--tui-clear)}[data-status=primary][_nghost-%COMP%]{background-color:var(--tui-primary);color:var(--tui-primary-text)}[data-status=primary]._hoverable[_nghost-%COMP%]:hover{background-color:var(--tui-primary-hover)}[data-status=primary]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-primary-active)}[data-status=error][_nghost-%COMP%]{--left-content-color: var(--tui-error-fill);background-color:var(--tui-error-bg);color:var(--tui-text-01)}[data-status=error]._hoverable[_nghost-%COMP%]:hover, [data-status=error]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-error-bg-hover)}[data-status=error][data-mode=onDark][_nghost-%COMP%]{background-color:var(--tui-error-bg-night);color:var(--tui-text-01-night)}[data-status=error][data-mode=onDark]._hoverable[_nghost-%COMP%]:hover, [data-status=error][data-mode=onDark]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-error-bg-night-hover)}[data-status=success][_nghost-%COMP%]{--left-content-color: var(--tui-success-fill);background-color:var(--tui-success-bg);color:var(--tui-text-01)}[data-status=success]._hoverable[_nghost-%COMP%]:hover, [data-status=success]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-success-bg-hover)}[data-status=success][data-mode=onDark][_nghost-%COMP%]{background-color:var(--tui-success-bg-night);color:var(--tui-text-01-night)}[data-status=success][data-mode=onDark]._hoverable[_nghost-%COMP%]:hover, [data-status=success][data-mode=onDark]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-success-bg-night-hover)}[data-status=warning][_nghost-%COMP%]{--left-content-color: var(--tui-warning-fill);background-color:var(--tui-warning-bg);color:var(--tui-text-01)}[data-status=warning]._hoverable[_nghost-%COMP%]:hover, [data-status=warning]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-warning-bg-hover)}[data-status=warning][data-mode=onDark][_nghost-%COMP%]{background-color:var(--tui-warning-bg-night);color:var(--tui-text-01-night)}[data-status=warning][data-mode=onDark]._hoverable[_nghost-%COMP%]:hover, [data-status=warning][data-mode=onDark]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-warning-bg-night-hover)}[data-status=info][_nghost-%COMP%]{--left-content-color: var(--tui-info-fill);background-color:var(--tui-info-bg);color:var(--tui-text-01)}[data-status=info]._hoverable[_nghost-%COMP%]:hover, [data-status=info]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-info-bg-hover)}[data-status=info][data-mode=onDark][_nghost-%COMP%]{background-color:var(--tui-info-bg-night);color:var(--tui-text-01-night)}[data-status=info][data-mode=onDark]._hoverable[_nghost-%COMP%]:hover, [data-status=info][data-mode=onDark]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-info-bg-night-hover)}[data-status=neutral][_nghost-%COMP%]{--left-content-color: var(--tui-neutral-fill);background-color:var(--tui-neutral-bg);color:var(--tui-text-01)}[data-status=neutral]._hoverable[_nghost-%COMP%]:hover, [data-status=neutral]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-neutral-bg-hover)}[data-status=neutral][data-mode=onDark][_nghost-%COMP%]{background-color:var(--tui-neutral-bg-night);color:var(--tui-text-01-night)}[data-status=neutral][data-mode=onDark]._hoverable[_nghost-%COMP%]:hover, [data-status=neutral][data-mode=onDark]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-neutral-bg-night-hover)}[data-status=default][_nghost-%COMP%]{background-color:var(--tui-base-06)}[data-status=default][_nghost-%COMP%]:not([data-mode])._hoverable:hover{background-color:var(--tui-base-07)}[data-status=default][_nghost-%COMP%]:not([data-mode])._hoverable:active{background-color:var(--tui-base-08)}[data-status=default][data-mode=onDark][_nghost-%COMP%]{background-color:var(--tui-clear-inverse-hover)}[data-status=default][data-mode=onDark]._hoverable[_nghost-%COMP%]:hover{background-color:var(--tui-clear-inverse-active)}[data-status=default][data-mode=onDark]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-clear-inverse-active)}[data-status=default][data-mode=onDark][_nghost-%COMP%]:focus:after{border:2px solid var(--tui-base-01)}[data-status=default][data-mode=onLight][_nghost-%COMP%]{background-color:var(--tui-clear);color:var(--tui-text-01)}[data-status=default][data-mode=onLight]._hoverable[_nghost-%COMP%]:hover{background-color:var(--tui-clear-hover)}[data-status=default][data-mode=onLight]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-clear-active)}._hoverable[_nghost-%COMP%]{cursor:pointer}[data-padding=m][_nghost-%COMP%]{padding:0 .5rem}[data-padding=m][data-size=xs][_nghost-%COMP%]{padding:0 .25rem}[data-padding=m][data-size=s][_nghost-%COMP%]{padding:0 .375rem}[data-padding=m][data-size=l][_nghost-%COMP%]{padding:0 .625rem}[data-padding=l][_nghost-%COMP%]{padding:0 .625rem}[data-padding=l][data-size=xs][_nghost-%COMP%]{padding:0 .375rem}[data-padding=l][data-size=s][_nghost-%COMP%]{padding:0 .5rem}[data-padding=l][data-size=l][_nghost-%COMP%]{padding:0 .75rem}[data-size=xs][_nghost-%COMP%]{font:var(--tui-font-text-xs);height:1rem;min-width:1rem}[data-size=xs][_nghost-%COMP%]   .t-left-content[_ngcontent-%COMP%]:before{width:.34375rem;height:.34375rem}[data-size=s][_nghost-%COMP%]{font:var(--tui-font-text-xs);height:1.25rem;min-width:1.25rem}[data-size=s][_nghost-%COMP%]   .t-left-content[_ngcontent-%COMP%]:before{width:.25rem;height:.25rem}[data-size=m][_nghost-%COMP%]{height:var(--tui-height-xs);line-height:var(--tui-height-xs);min-width:var(--tui-height-xs)}[data-size=l][_nghost-%COMP%]{height:var(--tui-height-s);line-height:var(--tui-height-s);min-width:var(--tui-height-s)}[data-size=l][_nghost-%COMP%]   .t-left-content[_ngcontent-%COMP%]:before{margin:0 .5rem 0 0;width:.5rem;height:.5rem}._empty-value[_nghost-%COMP%]   .t-left-content[_ngcontent-%COMP%]{margin:0 -.25rem}._empty-value[_nghost-%COMP%]   .t-left-content[_ngcontent-%COMP%]:before{margin:0}.t-left-content[_ngcontent-%COMP%]{display:none;color:var(--left-content-color);line-height:0}.t-left-content[_ngcontent-%COMP%]:not(:empty){display:block;margin-left:-.25rem}.t-left-content[_ngcontent-%COMP%]:not(:empty):before{content:none}[data-status=error][_nghost-%COMP%]   .t-left-content[_ngcontent-%COMP%], [data-status=success][_nghost-%COMP%]   .t-left-content[_ngcontent-%COMP%], [data-status=warning][_nghost-%COMP%]   .t-left-content[_ngcontent-%COMP%], [data-status=info][_nghost-%COMP%]   .t-left-content[_ngcontent-%COMP%], [data-status=neutral][_nghost-%COMP%]   .t-left-content[_ngcontent-%COMP%]{display:block}.t-left-content[_ngcontent-%COMP%]:before{content:\"\";display:block;background:currentColor;margin:0 .375rem 0 0;width:.375rem;height:.375rem;border-radius:100%}.t-text[_ngcontent-%COMP%]{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}"],
+    changeDetection: 0
+  });
+  return TuiBadgeComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiBadgeModule = /*#__PURE__*/(() => {
+  class TuiBadgeModule {}
+  TuiBadgeModule.ɵfac = function TuiBadgeModule_Factory(t) {
+    return new (t || TuiBadgeModule)();
+  };
+  TuiBadgeModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiBadgeModule
+  });
+  TuiBadgeModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    imports: [[common_mjs_.CommonModule]]
+  });
+  return TuiBadgeModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-kit-components-badge.js.map
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-enums.js
 var taiga_ui_cdk_enums = __webpack_require__(7344);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-exceptions.js
@@ -7513,8 +9406,8 @@ class TuiDay extends TuiMonth {
           month: parseInt(date.slice(0, 2), 10) - 1,
           year: parseInt(date.slice(6, 10), 10)
         };
-      default:
       case `DMY`:
+      default:
         return {
           day: parseInt(date.slice(0, 2), 10),
           month: parseInt(date.slice(3, 5), 10) - 1,
@@ -7794,9 +9687,7 @@ class TuiDayRange extends (/* unused pure expression or super */ null && (TuiMon
     return `${from}${RANGE_SEPARATOR_CHAR}${to}`;
   }
   toString(dateFormat = `DMY`, dateSeparator = `.`) {
-    const from = this.from.getFormattedDay(dateFormat, dateSeparator);
-    const to = this.to.getFormattedDay(dateFormat, dateSeparator);
-    return `${from}${RANGE_SEPARATOR_CHAR}${to}`;
+    return this.getFormattedDayRange(dateFormat, dateSeparator);
   }
 }
 const TUI_FIRST_DAY = new TuiDay(MIN_YEAR, MIN_MONTH, MIN_DAY);
@@ -8304,8 +10195,6 @@ let taiga_ui_kit_abstract_AbstractTuiNativeSelect = /*#__PURE__*/(() => {
 
 
 //# sourceMappingURL=taiga-ui-kit-abstract.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-loader.js
-var taiga_ui_core_components_loader = __webpack_require__(63);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-element.js
 
 
@@ -8849,7 +10738,7 @@ let TuiScrollIntoViewDirective = /*#__PURE__*/(() => {
       }
       // Timeout is necessary in order to give element render cycle to get into its final spot
       // (for example if it is inside dropdown box which has to be positioned first)
-      (0,timer/* timer */.H)(0).pipe((0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(() => {
+      (0,observable_timer/* timer */.H)(0).pipe((0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(() => {
         this.el.nativeElement.dispatchEvent(new CustomEvent(taiga_ui_core_constants/* TUI_SCROLL_INTO_VIEW */.fe, {
           bubbles: true,
           detail: this.el.nativeElement
@@ -8934,7 +10823,7 @@ let TuiSelectOptionComponent = /*#__PURE__*/(() => {
       this.control = control;
       this.abstractControl = abstractControl;
       this.changeDetection$ = new internal_Subject/* Subject */.x();
-      this.selected$ = (0,merge/* merge */.T)(this.changeDetection$, this.control.valueChanges || empty/* EMPTY */.E, (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.el.nativeElement, 'animationstart')).pipe((0,startWith/* startWith */.O)(null), (0,operators_map/* map */.U)(() => this.selected), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)());
+      this.selected$ = (0,merge/* merge */.T)(this.changeDetection$, this.control.valueChanges || empty/* EMPTY */.E, (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.el.nativeElement, 'animationstart')).pipe((0,operators_startWith/* startWith */.O)(null), (0,operators_map/* map */.U)(() => this.selected), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)());
     }
     get matcher() {
       return this.host.identityMatcher || taiga_ui_cdk_constants/* TUI_DEFAULT_IDENTITY_MATCHER */.bg;
@@ -8946,10 +10835,10 @@ let TuiSelectOptionComponent = /*#__PURE__*/(() => {
        * (for example, inside {@link https://github.com/angular/angular/blob/main/packages/forms/src/directives/ng_control_status.ts#L99 NgControlStatus}).
        * Microtask keeps it in the same frame but allows change detection to run.
        */
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      Promise.resolve().then(() => {
-        if ((0,taiga_ui_cdk_utils_miscellaneous/* tuiIsPresent */.Pc)(this.option.value) && this.host.checkOption) {
-          this.host.checkOption(this.option.value);
+      void Promise.resolve().then(() => {
+        var _a, _b;
+        if ((0,taiga_ui_cdk_utils_miscellaneous/* tuiIsPresent */.Pc)(this.option.value) && !this.option.disabled) {
+          (_b = (_a = this.host).checkOption) === null || _b === void 0 ? void 0 : _b.call(_a, this.option.value);
         }
       });
     }
@@ -9709,7 +11598,7 @@ let TuiFocusedDirective = /*#__PURE__*/(() => {
     constructor({
       nativeElement
     }, zone) {
-      this.tuiFocusedChange = (0,merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, 'focusin'), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, 'focusout')).pipe((0,operators_map/* map */.U)(() => (0,taiga_ui_cdk_utils_focus/* tuiIsNativeFocused */.V8)(nativeElement)), (0,startWith/* startWith */.O)(false), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), skip(1), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(zone));
+      this.tuiFocusedChange = (0,merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, 'focusin'), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, 'focusout')).pipe((0,operators_map/* map */.U)(() => (0,taiga_ui_cdk_utils_focus/* tuiIsNativeFocused */.V8)(nativeElement)), (0,operators_startWith/* startWith */.O)(false), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), skip(1), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(zone));
     }
   }
   TuiFocusedDirective.ɵfac = function TuiFocusedDirective_Factory(t) {
@@ -11194,13 +13083,11 @@ function maskitoPrefixPostprocessorGenerator(prefix) {
       };
     }
     const [from, to] = selection;
-    const requiredPrefix = Array.from(prefix).reduce((computedPrefix, char, i) => {
-      const newValue = computedPrefix + value;
-      return newValue[i] === char ? computedPrefix : computedPrefix + char;
-    }, '');
+    const prefixedValue = Array.from(prefix).reduce((modifiedValue, char, i) => modifiedValue[i] === char ? modifiedValue : modifiedValue.slice(0, i) + char + modifiedValue.slice(i), value);
+    const addedCharsCount = prefixedValue.length - value.length;
     return {
-      selection: [from + requiredPrefix.length, to + requiredPrefix.length],
-      value: requiredPrefix + value
+      selection: [from + addedCharsCount, to + addedCharsCount],
+      value: prefixedValue
     };
   } : index_esm_identity;
 }
@@ -12442,8 +14329,6 @@ function maskitoTimeOptionsGenerator({
   });
 }
 
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-button.js
-var taiga_ui_core_components_button = __webpack_require__(631);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-utils-format.js
 
 
@@ -13384,328 +15269,6 @@ let TuiInputModule = /*#__PURE__*/(() => {
 //# sourceMappingURL=taiga-ui-kit-components-input.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/pairwise.js
 var pairwise = __webpack_require__(9384);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-expand.js
-
-
-
-
-
-
-
-
-const taiga_ui_core_components_expand_c0 = ["wrapper"];
-function TuiExpandComponent_ng_container_2_tui_loader_2_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementStart"](0, "tui-loader", 4);
-    core_mjs_["ɵɵelementContainer"](1, 5);
-    core_mjs_["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r2 = core_mjs_["ɵɵnextContext"](2);
-    core_mjs_["ɵɵproperty"]("overlay", true)("showLoader", ctx_r2.loading);
-    core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵproperty"]("ngTemplateOutlet", ctx_r2.content);
-  }
-}
-function TuiExpandComponent_ng_container_2_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementContainerStart"](0);
-    core_mjs_["ɵɵprojection"](1);
-    core_mjs_["ɵɵtemplate"](2, TuiExpandComponent_ng_container_2_tui_loader_2_Template, 2, 3, "tui-loader", 3);
-    core_mjs_["ɵɵelementContainerEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r1 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](2);
-    core_mjs_["ɵɵproperty"]("ngIf", ctx_r1.async)("ngIfElse", ctx_r1.content);
-  }
-}
-const taiga_ui_core_components_expand_c1 = ["*"];
-let TuiExpandContentDirective = /*#__PURE__*/(() => {
-  class TuiExpandContentDirective {}
-  TuiExpandContentDirective.ɵfac = function TuiExpandContentDirective_Factory(t) {
-    return new (t || TuiExpandContentDirective)();
-  };
-  TuiExpandContentDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiExpandContentDirective,
-    selectors: [["", "tuiExpandContent", ""]]
-  });
-  return TuiExpandContentDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const State = {
-  Idle: 0,
-  Loading: 1,
-  Prepared: 2,
-  Animated: 3
-};
-const LOADER_HEIGHT = 48;
-let TuiExpandComponent = /*#__PURE__*/(() => {
-  class TuiExpandComponent {
-    constructor(cdr) {
-      this.cdr = cdr;
-      this.state = State.Idle;
-      this.async = false;
-      this.content = null;
-      this.expanded = null;
-    }
-    set expandedSetter(expanded) {
-      if (this.expanded === null) {
-        this.expanded = expanded;
-        return;
-      }
-      if (this.state !== State.Idle) {
-        this.expanded = expanded;
-        this.state = State.Animated;
-        return;
-      }
-      this.expanded = expanded;
-      this.retrigger(this.async && expanded ? State.Loading : State.Animated);
-    }
-    get overflow() {
-      return this.state !== State.Idle;
-    }
-    get loading() {
-      return !!this.expanded && this.async && this.state === State.Loading;
-    }
-    get height() {
-      const {
-        expanded,
-        state,
-        contentWrapper
-      } = this;
-      if (expanded && state === State.Prepared || !expanded && state === State.Animated) {
-        return 0;
-      }
-      if (contentWrapper && (!expanded && state === State.Prepared || expanded && state === State.Animated)) {
-        return contentWrapper.nativeElement.offsetHeight;
-      }
-      if (contentWrapper && expanded && state === State.Loading) {
-        return Math.max(contentWrapper.nativeElement.offsetHeight, LOADER_HEIGHT);
-      }
-      return null;
-    }
-    get contentVisible() {
-      return this.expanded || this.state !== State.Idle;
-    }
-    onTransitionEnd({
-      propertyName
-    }) {
-      if (propertyName === 'opacity' && this.state === State.Animated) {
-        this.state = State.Idle;
-      }
-    }
-    onExpandLoaded(event) {
-      event.stopPropagation();
-      if (this.state === State.Loading) {
-        this.retrigger(State.Animated);
-      }
-    }
-    retrigger(state) {
-      this.state = State.Prepared;
-      // We need delay to re-trigger CSS height transition from the correct number
-      setTimeout(() => {
-        if (this.state !== State.Prepared) {
-          return;
-        }
-        this.state = state;
-        this.cdr.markForCheck();
-      });
-    }
-  }
-  TuiExpandComponent.ɵfac = function TuiExpandComponent_Factory(t) {
-    return new (t || TuiExpandComponent)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ChangeDetectorRef));
-  };
-  TuiExpandComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiExpandComponent,
-    selectors: [["tui-expand"]],
-    contentQueries: function TuiExpandComponent_ContentQueries(rf, ctx, dirIndex) {
-      if (rf & 1) {
-        core_mjs_["ɵɵcontentQuery"](dirIndex, TuiExpandContentDirective, 5, core_mjs_.TemplateRef);
-      }
-      if (rf & 2) {
-        let _t;
-        core_mjs_["ɵɵqueryRefresh"](_t = core_mjs_["ɵɵloadQuery"]()) && (ctx.content = _t.first);
-      }
-    },
-    viewQuery: function TuiExpandComponent_Query(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵviewQuery"](taiga_ui_core_components_expand_c0, 5);
-      }
-      if (rf & 2) {
-        let _t;
-        core_mjs_["ɵɵqueryRefresh"](_t = core_mjs_["ɵɵloadQuery"]()) && (ctx.contentWrapper = _t.first);
-      }
-    },
-    hostVars: 9,
-    hostBindings: function TuiExpandComponent_HostBindings(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵlistener"]("transitionend.self", function TuiExpandComponent_transitionend_self_HostBindingHandler($event) {
-          return ctx.onTransitionEnd($event);
-        })("tui-expand-loaded", function TuiExpandComponent_tui_expand_loaded_HostBindingHandler($event) {
-          return ctx.onExpandLoaded($event);
-        });
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵattribute"]("aria-expanded", ctx.expanded);
-        core_mjs_["ɵɵstyleProp"]("height", ctx.height, "px");
-        core_mjs_["ɵɵclassProp"]("_expanded", ctx.expanded)("_overflow", ctx.overflow)("_loading", ctx.loading);
-      }
-    },
-    inputs: {
-      async: "async",
-      expandedSetter: ["expanded", "expandedSetter"]
-    },
-    ngContentSelectors: taiga_ui_core_components_expand_c1,
-    decls: 3,
-    vars: 3,
-    consts: [[1, "t-wrapper"], ["wrapper", ""], [4, "ngIf"], ["size", "l", 3, "overlay", "showLoader", 4, "ngIf", "ngIfElse"], ["size", "l", 3, "overlay", "showLoader"], [3, "ngTemplateOutlet"]],
-    template: function TuiExpandComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵprojectionDef"]();
-        core_mjs_["ɵɵelementStart"](0, "div", 0, 1);
-        core_mjs_["ɵɵtemplate"](2, TuiExpandComponent_ng_container_2_Template, 3, 2, "ng-container", 2);
-        core_mjs_["ɵɵelementEnd"]();
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵproperty"]("@tuiParentAnimation", undefined)("@.disabled", ctx.overflow);
-        core_mjs_["ɵɵadvance"](2);
-        core_mjs_["ɵɵproperty"]("ngIf", ctx.contentVisible);
-      }
-    },
-    dependencies: [taiga_ui_core_components_loader/* TuiLoaderComponent */.kM, common_mjs_.NgIf, common_mjs_.NgTemplateOutlet],
-    styles: ["[_nghost-%COMP%]{display:block;transition-property:opacity,height,visibility;transition-duration:var(--tui-duration, .3s);opacity:0}._overflow[_nghost-%COMP%]{overflow:hidden}._expanded[_nghost-%COMP%]{opacity:1;transform:translate(0)}._loading[_nghost-%COMP%]{opacity:.99}.t-wrapper[_ngcontent-%COMP%]:before, .t-wrapper[_ngcontent-%COMP%]:after{content:\"\";display:table}"],
-    data: {
-      animation: [taiga_ui_cdk_constants/* TUI_PARENT_ANIMATION */.Kx]
-    },
-    changeDetection: 0
-  });
-  return TuiExpandComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiExpandModule = /*#__PURE__*/(() => {
-  class TuiExpandModule {}
-  TuiExpandModule.ɵfac = function TuiExpandModule_Factory(t) {
-    return new (t || TuiExpandModule)();
-  };
-  TuiExpandModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiExpandModule
-  });
-  TuiExpandModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-    imports: [[common_mjs_.CommonModule, taiga_ui_core_components_loader/* TuiLoaderModule */.dS]]
-  });
-  return TuiExpandModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-core-components-expand.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-group.js
-
-
-
-
-
-let TuiGroupStylesComponent = /*#__PURE__*/(() => {
-  class TuiGroupStylesComponent {}
-  TuiGroupStylesComponent.ɵfac = function TuiGroupStylesComponent_Factory(t) {
-    return new (t || TuiGroupStylesComponent)();
-  };
-  TuiGroupStylesComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiGroupStylesComponent,
-    selectors: [["ng-component"]],
-    hostAttrs: [1, "tui-group-styles"],
-    decls: 0,
-    vars: 0,
-    template: function TuiGroupStylesComponent_Template(rf, ctx) {},
-    styles: [".tui-group{position:relative;display:flex;isolation:isolate}.tui-group>*{flex:1 1 0;min-width:0}.tui-group>*:not(:last-child){margin-right:.125rem}.tui-group.tui-group>*:nth-child(n){border-radius:0}.tui-group_collapsed>*{z-index:1}.tui-group_collapsed>*:not(:last-child){margin-right:-1px}.tui-group_collapsed>*._readonly,.tui-group_collapsed>*._disabled,.tui-group_collapsed>*._readonly:hover,.tui-group_collapsed>*._disabled:hover{z-index:0}.tui-group_collapsed>*:hover,.tui-group_collapsed>*._hovered,.tui-group_collapsed>*._pressed{z-index:3}.tui-group_collapsed>*._invalid{z-index:2}.tui-group_collapsed>*._invalid:hover,.tui-group_collapsed>*._invalid._hovered,.tui-group_collapsed>*._invalid._pressed{z-index:4}.tui-group_collapsed>*._hosted_dropdown_focused,.tui-group_collapsed>*._focus-visible,.tui-group_collapsed>*._focused.ng-touched,.tui-group_collapsed>*._focused.ng-untouched{z-index:5}.tui-group_collapsed>*._active,.tui-group_collapsed>*[data-appearance=whiteblock-active]{z-index:6}.tui-group_collapsed>*._focus-visible._focused,.tui-group_collapsed>*._focus-visible._active,.tui-group_collapsed>*._focus-visible[data-appearance=whiteblock-active]{z-index:7}.tui-group_orientation_vertical{display:inline-flex;flex-direction:column}.tui-group_orientation_vertical>*{min-height:auto;flex:0 0 auto}.tui-group_orientation_vertical>*:not(:last-child){margin-right:0;margin-bottom:.125rem}.tui-group_orientation_vertical.tui-group_collapsed>*:not(:last-child){margin-right:0;margin-bottom:-1px}.tui-group_rounded.tui-group_orientation_horizontal>*:first-child{border-top-left-radius:var(--tui-radius-m);border-bottom-left-radius:var(--tui-radius-m)}.tui-group_rounded.tui-group_orientation_horizontal>*:last-child{border-top-right-radius:var(--tui-radius-m);border-bottom-right-radius:var(--tui-radius-m)}.tui-group_rounded.tui-group_orientation_horizontal.tui-group_radius_large>*:first-child{border-top-left-radius:var(--tui-radius-l);border-bottom-left-radius:var(--tui-radius-l)}.tui-group_rounded.tui-group_orientation_horizontal.tui-group_radius_large>*:last-child{border-top-right-radius:var(--tui-radius-l);border-bottom-right-radius:var(--tui-radius-l)}.tui-group_rounded.tui-group_orientation_vertical>*:first-child{border-top-left-radius:var(--tui-radius-m);border-top-right-radius:var(--tui-radius-m)}.tui-group_rounded.tui-group_orientation_vertical>*:last-child{border-bottom-left-radius:var(--tui-radius-m);border-bottom-right-radius:var(--tui-radius-m)}.tui-group_rounded.tui-group_orientation_vertical.tui-group_radius_large>*:first-child{border-top-left-radius:var(--tui-radius-l);border-top-right-radius:var(--tui-radius-l)}.tui-group_rounded.tui-group_orientation_vertical.tui-group_radius_large>*:last-child{border-bottom-left-radius:var(--tui-radius-l);border-bottom-right-radius:var(--tui-radius-l)}@media screen and (max-width: 47.9625em){.tui-group_rounded.tui-group_adaptive.tui-group_orientation_vertical:not(.tui-group_collapsed)>*:first-child:not(:last-child),.tui-group_rounded.tui-group_adaptive.tui-group_orientation_horizontal>*:first-child:not(:last-child),.tui-group_rounded.tui-group_adaptive.tui-group_orientation_vertical:not(.tui-group_collapsed)>*:last-child:not(:first-child),.tui-group_rounded.tui-group_adaptive.tui-group_orientation_horizontal>*:last-child:not(:first-child){border-radius:var(--tui-radius-m)}}@media screen and (max-width: 47.9625em){.tui-group_rounded.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_vertical:not(.tui-group_collapsed)>*:first-child:not(:last-child),.tui-group_rounded.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_horizontal>*:first-child:not(:last-child),.tui-group_rounded.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_vertical:not(.tui-group_collapsed)>*:last-child:not(:first-child),.tui-group_rounded.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_horizontal>*:last-child:not(:first-child){border-radius:var(--tui-radius-l)}}@media screen and (max-width: 47.9625em){.tui-group_adaptive.tui-group_orientation_vertical{width:100%}.tui-group_adaptive.tui-group_orientation_vertical>*:nth-child(n):not(:only-child){border-radius:var(--tui-radius-m)}.tui-group_adaptive.tui-group_orientation_vertical>*:not(:last-child){margin-bottom:1rem}.tui-group_adaptive.tui-group_orientation_vertical.tui-group_collapsed>*:nth-child(n):not(:only-child){border-radius:0}.tui-group_adaptive.tui-group_orientation_vertical.tui-group_collapsed>*:first-child:not(:last-child){border-radius:var(--tui-radius-m) var(--tui-radius-m) 0 0}.tui-group_adaptive.tui-group_orientation_vertical.tui-group_collapsed>*:last-child:not(:first-child){border-radius:0 0 var(--tui-radius-m) var(--tui-radius-m)}.tui-group_adaptive.tui-group_orientation_vertical.tui-group_collapsed>*:not(:last-child){margin-bottom:-1px}}@media screen and (max-width: 47.9625em){.tui-group_adaptive.tui-group_orientation_horizontal{flex-direction:column;width:100%}.tui-group_adaptive.tui-group_orientation_horizontal>*:nth-child(n):not(:only-child){border-radius:var(--tui-radius-m)}.tui-group_adaptive.tui-group_orientation_horizontal>*:not(:last-child){margin-right:0;margin-bottom:1rem}.tui-group_adaptive.tui-group_orientation_horizontal.tui-group_collapsed>*:nth-child(n):not(:only-child){border-radius:0}.tui-group_adaptive.tui-group_orientation_horizontal.tui-group_collapsed>*:first-child:not(:last-child){border-radius:var(--tui-radius-m) var(--tui-radius-m) 0 0}.tui-group_adaptive.tui-group_orientation_horizontal.tui-group_collapsed>*:last-child:not(:first-child){border-radius:0 0 var(--tui-radius-m) var(--tui-radius-m)}.tui-group_adaptive.tui-group_orientation_horizontal.tui-group_collapsed>*:not(:last-child){margin-right:0;margin-bottom:-1px}}@media screen and (max-width: 47.9625em){.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_vertical>*:nth-child(n):not(:only-child){border-radius:var(--tui-radius-l)}.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_vertical.tui-group_collapsed>*:nth-child(n):not(:only-child){border-radius:0}.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_vertical.tui-group_collapsed>*:first-child:not(:last-child){border-radius:var(--tui-radius-l) var(--tui-radius-l) 0 0}.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_vertical.tui-group_collapsed>*:last-child:not(:first-child){border-radius:0 0 var(--tui-radius-l) var(--tui-radius-l)}}@media screen and (max-width: 47.9625em){.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_horizontal>*:nth-child(n):not(:only-child){border-radius:var(--tui-radius-l)}.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_horizontal.tui-group_collapsed>*:nth-child(n):not(:only-child){border-radius:0}.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_horizontal.tui-group_collapsed>*:first-child:not(:last-child){border-radius:var(--tui-radius-l) var(--tui-radius-l) 0 0}.tui-group_adaptive.tui-group_radius_large.tui-group_orientation_horizontal.tui-group_collapsed>*:last-child:not(:first-child){border-radius:0 0 var(--tui-radius-l) var(--tui-radius-l)}}.tui-group__auto-width-item{min-width:auto;flex:0 0 auto}.tui-group .tui-group__inherit-item{border-radius:inherit}\n"],
-    encapsulation: 2,
-    changeDetection: 0
-  });
-  return TuiGroupStylesComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiGroupDirective = /*#__PURE__*/(() => {
-  class TuiGroupDirective {
-    constructor(directiveStyles) {
-      this.orientation = 'horizontal';
-      this.adaptive = false;
-      this.collapsed = false;
-      this.rounded = true;
-      this.size = 'm';
-      directiveStyles.addComponent(TuiGroupStylesComponent);
-    }
-    get orientationHorizontal() {
-      return this.orientation === 'horizontal';
-    }
-    get orientationVertical() {
-      return this.orientation === 'vertical';
-    }
-    get sizeLarge() {
-      return this.size === 'l';
-    }
-  }
-  TuiGroupDirective.ɵfac = function TuiGroupDirective_Factory(t) {
-    return new (t || TuiGroupDirective)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDirectiveStylesService */.gH));
-  };
-  TuiGroupDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiGroupDirective,
-    selectors: [["", "tuiGroup", "", 5, "ng-container"]],
-    hostAttrs: ["role", "group", 1, "tui-group"],
-    hostVars: 12,
-    hostBindings: function TuiGroupDirective_HostBindings(rf, ctx) {
-      if (rf & 2) {
-        core_mjs_["ɵɵclassProp"]("tui-group_adaptive", ctx.adaptive)("tui-group_collapsed", ctx.collapsed)("tui-group_rounded", ctx.rounded)("tui-group_orientation_horizontal", ctx.orientationHorizontal)("tui-group_orientation_vertical", ctx.orientationVertical)("tui-group_radius_large", ctx.sizeLarge);
-      }
-    },
-    inputs: {
-      orientation: "orientation",
-      adaptive: "adaptive",
-      collapsed: "collapsed",
-      rounded: "rounded",
-      size: "size"
-    }
-  });
-  return TuiGroupDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiGroupModule = /*#__PURE__*/(() => {
-  class TuiGroupModule {}
-  TuiGroupModule.ɵfac = function TuiGroupModule_Factory(t) {
-    return new (t || TuiGroupModule)();
-  };
-  TuiGroupModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiGroupModule
-  });
-  TuiGroupModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-    imports: [[common_mjs_.CommonModule]]
-  });
-  return TuiGroupModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-core-components-group.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-components-accordion.js
 
 
@@ -13966,7 +15529,7 @@ let TuiAccordionItemComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [taiga_ui_core_components_svg/* TuiSvgComponent */.PN, TuiExpandComponent, TuiFocusableDirective, TuiFocusedDirective, TuiFocusVisibleDirective, common_mjs_.NgIf, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li, TuiExpandContentDirective],
-    styles: ["[_nghost-%COMP%]{position:relative;display:block;overflow:hidden;border-radius:var(--tui-radius-l)}[data-borders=top-bottom][_nghost-%COMP%]{border-radius:0!important}.t-wrapper[_ngcontent-%COMP%]{position:relative;border-radius:inherit}.t-wrapper[_ngcontent-%COMP%]:after{position:absolute;top:0;left:0;width:100%;height:100%;content:\"\";box-sizing:border-box;border-radius:inherit;border:1px solid var(--tui-base-04);pointer-events:none}[_nghost-%COMP%]:not([data-borders])   .t-wrapper[_ngcontent-%COMP%]:after{border-width:0}[data-borders=all][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:after{border-width:1px}[data-borders=top-bottom][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:after{border-left-width:0;border-right-width:0}[data-borders=top][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:after{border-left-width:0;border-right-width:0;border-bottom-width:0}[data-borders=bottom][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:after{border-left-width:0;border-right-width:0;border-top-width:0}[data-mode=onDark][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:after{border-color:var(--tui-base-03)}[data-mode=onLight][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:after{border-color:var(--tui-text-01)}._focus-visible[_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:after{border:2px solid var(--tui-focus)}[_nghost-%COMP%]:not([data-mode])   .t-wrapper[_ngcontent-%COMP%]{background:var(--tui-base-01)}.t-header[_ngcontent-%COMP%]{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0;background:none;font-size:inherit;line-height:inherit;transition-property:background;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;display:flex;width:100%;font:var(--tui-font-text-l);align-items:center;box-sizing:border-box;border-bottom:1px solid var(--tui-base-04);min-height:var(--tui-height-l);padding:.75rem 1.25rem;color:var(--tui-text-01);cursor:pointer;text-align:left;outline:none}[data-mode=onDark][_nghost-%COMP%]   .t-header[_ngcontent-%COMP%]{color:var(--tui-text-01-night);border-color:var(--tui-base-03)}[data-mode=onLight][_nghost-%COMP%]   .t-header[_ngcontent-%COMP%]{border-color:var(--tui-text-01)}[_nghost-%COMP%]:not([data-borders])   .t-header[_ngcontent-%COMP%]{border-bottom-width:0;box-shadow:none}._has-arrow[_nghost-%COMP%]   .t-header[_ngcontent-%COMP%]{padding-right:.75rem}[data-mode=onDark][_nghost-%COMP%]   .t-header_open[_ngcontent-%COMP%]{background:var(--tui-clear-inverse)}[data-mode=onLight][_nghost-%COMP%]   .t-header_open[_ngcontent-%COMP%]{background:var(--tui-clear)}[data-size=s][_nghost-%COMP%]   .t-header[_ngcontent-%COMP%]{font:var(--tui-font-text-m);min-height:var(--tui-height-m);padding:.625rem .75rem .625rem 1rem}._no-padding[_nghost-%COMP%]   .t-header[_ngcontent-%COMP%]{padding-left:0;padding-right:0}._disabled[_nghost-%COMP%]   .t-header[_ngcontent-%COMP%]{cursor:default}[_nghost-%COMP%]:hover:not([data-mode])   .t-header_hoverable[_ngcontent-%COMP%]{background:var(--tui-base-02)}[_nghost-%COMP%]:hover[data-mode=onDark]   .t-header_hoverable[_ngcontent-%COMP%]{background:var(--tui-clear-inverse)}[_nghost-%COMP%]:hover[data-mode=onLight]   .t-header_hoverable[_ngcontent-%COMP%]{background:var(--tui-clear)}.t-title[_ngcontent-%COMP%]{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-right:0;flex-grow:1}._has-arrow[_nghost-%COMP%]   .t-title[_ngcontent-%COMP%]{margin-right:.5rem}.t-icon[_ngcontent-%COMP%]{transition-property:transform,color;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;width:1.5rem;height:1.5rem;margin-left:auto;color:var(--tui-base-06)}.t-icon_open[_ngcontent-%COMP%]{transform:rotate(180deg)}[data-mode][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{opacity:var(--tui-disabled-opacity)}[_nghost-%COMP%]:hover[data-mode]   .t-icon[_ngcontent-%COMP%]{opacity:.8}[data-mode=onDark][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{color:var(--tui-text-01-night)}[data-mode=onLight][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{color:var(--tui-text-01)}[_nghost-%COMP%]:hover:not([data-mode])   .t-icon[_ngcontent-%COMP%]{color:var(--tui-base-07)}.t-content[_ngcontent-%COMP%]{font:var(--tui-font-text-m);padding:1.25rem;word-wrap:break-word}[data-size=s][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{font:var(--tui-font-text-s);padding:1rem}"],
+    styles: ["[_nghost-%COMP%]{position:relative;display:block;overflow:hidden;border-radius:var(--tui-radius-l)}[data-borders=top-bottom][_nghost-%COMP%]{border-radius:0!important}.t-wrapper[_ngcontent-%COMP%]{position:relative;border-radius:inherit}.t-wrapper[_ngcontent-%COMP%]:after{position:absolute;top:0;left:0;width:100%;height:100%;content:\"\";box-sizing:border-box;border-radius:inherit;border:1px solid var(--tui-base-04);pointer-events:none}[_nghost-%COMP%]:not([data-borders])   .t-wrapper[_ngcontent-%COMP%]:after{border-width:0}[data-borders=all][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:after{border-width:1px}[data-borders=top-bottom][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:after{border-left-width:0;border-right-width:0}[data-borders=top][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:after{border-left-width:0;border-right-width:0;border-bottom-width:0}[data-borders=bottom][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:after{border-left-width:0;border-right-width:0;border-top-width:0}[data-mode=onDark][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:after{border-color:var(--tui-base-03)}[data-mode=onLight][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:after{border-color:var(--tui-text-01)}._focus-visible[_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:after{border:2px solid var(--tui-focus)}[_nghost-%COMP%]:not([data-mode])   .t-wrapper[_ngcontent-%COMP%]{background:var(--tui-base-01)}.t-header[_ngcontent-%COMP%]{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0;background:none;font-size:inherit;line-height:inherit;text-decoration:none;transition-property:background;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;display:flex;width:100%;font:var(--tui-font-text-l);align-items:center;box-sizing:border-box;border-bottom:1px solid var(--tui-base-04);min-height:var(--tui-height-l);padding:.75rem 1.25rem;color:var(--tui-text-01);cursor:pointer;text-align:left;outline:none}[data-mode=onDark][_nghost-%COMP%]   .t-header[_ngcontent-%COMP%]{color:var(--tui-text-01-night);border-color:var(--tui-base-03)}[data-mode=onLight][_nghost-%COMP%]   .t-header[_ngcontent-%COMP%]{border-color:var(--tui-text-01)}[_nghost-%COMP%]:not([data-borders])   .t-header[_ngcontent-%COMP%]{border-bottom-width:0;box-shadow:none}._has-arrow[_nghost-%COMP%]   .t-header[_ngcontent-%COMP%]{padding-right:.75rem}[data-mode=onDark][_nghost-%COMP%]   .t-header_open[_ngcontent-%COMP%]{background:var(--tui-clear-inverse)}[data-mode=onLight][_nghost-%COMP%]   .t-header_open[_ngcontent-%COMP%]{background:var(--tui-clear)}[data-size=s][_nghost-%COMP%]   .t-header[_ngcontent-%COMP%]{font:var(--tui-font-text-m);min-height:var(--tui-height-m);padding:.625rem .75rem .625rem 1rem}._no-padding[_nghost-%COMP%]   .t-header[_ngcontent-%COMP%]{padding-left:0;padding-right:0}._disabled[_nghost-%COMP%]   .t-header[_ngcontent-%COMP%]{cursor:default}.t-wrapper[_ngcontent-%COMP%]:hover:not([data-mode]) > .t-header_hoverable[_ngcontent-%COMP%]{background:var(--tui-base-02)}.t-wrapper[_ngcontent-%COMP%]:hover[data-mode=onDark] > .t-header_hoverable[_ngcontent-%COMP%]{background:var(--tui-clear-inverse)}.t-wrapper[_ngcontent-%COMP%]:hover[data-mode=onLight] > .t-header_hoverable[_ngcontent-%COMP%]{background:var(--tui-clear)}.t-title[_ngcontent-%COMP%]{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-right:0;flex-grow:1}._has-arrow[_nghost-%COMP%]   .t-title[_ngcontent-%COMP%]{margin-right:.5rem}.t-icon[_ngcontent-%COMP%]{transition-property:transform,color;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;width:1.5rem;height:1.5rem;margin-left:auto;color:var(--tui-base-06)}.t-icon_open[_ngcontent-%COMP%]{transform:rotate(180deg)}[data-mode][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{opacity:var(--tui-disabled-opacity)}[_nghost-%COMP%]:hover[data-mode]   .t-icon[_ngcontent-%COMP%]{opacity:.8}[data-mode=onDark][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{color:var(--tui-text-01-night)}[data-mode=onLight][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{color:var(--tui-text-01)}[_nghost-%COMP%]:hover:not([data-mode])   .t-icon[_ngcontent-%COMP%]{color:var(--tui-base-07)}.t-content[_ngcontent-%COMP%]{font:var(--tui-font-text-m);padding:1.25rem;word-wrap:break-word}[data-size=s][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{font:var(--tui-font-text-s);padding:1rem}"],
     changeDetection: 0
   });
   return TuiAccordionItemComponent;
@@ -14521,8 +16084,6 @@ let MutationObserverModule = /*#__PURE__*/(/* unused pure expression or super */
 
 
 //# sourceMappingURL=ng-web-apis-mutation-observer.js.map
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/debounceTime.js
-var debounceTime = __webpack_require__(3620);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-components-tabs.js
 
 
@@ -14778,7 +16339,7 @@ let TuiTabComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [common_mjs_.NgIf, common_mjs_.AsyncPipe],
-    styles: ["._underline[_nghost-%COMP%]:hover, ._underline   [_nghost-%COMP%]:hover{box-shadow:inset 0 -2px var(--tui-base-03)}tui-tabs    > [_nghost-%COMP%]:first-child, tui-tabs    > [_nghost-%COMP%]:first-child, [tuiTabs]    > [_nghost-%COMP%]:first-child, [tuiTabs]    > [_nghost-%COMP%]:first-child, tui-tabs    > :first-child[_nghost-%COMP%], tui-tabs    > :first-child   [_nghost-%COMP%], [tuiTabs]    > :first-child[_nghost-%COMP%], [tuiTabs]    > :first-child   [_nghost-%COMP%]{margin-left:0}[_nghost-%COMP%]{transition-property:color,box-shadow,opacity,background;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:0;border:0;background:none;font-size:inherit;line-height:inherit;position:relative;display:flex;flex-shrink:0;height:100%;box-sizing:border-box;justify-content:space-between;align-items:center;white-space:nowrap;cursor:pointer;outline:none;text-decoration:none;color:inherit;margin-left:var(--tui-tab-margin, 1.5rem)}[_nghost-%COMP%]:disabled{opacity:var(--tui-disabled-opacity);pointer-events:none}[_nghost-%COMP%]:not([data-mode])._active{opacity:1;color:var(--tui-text-01);box-shadow:none}[data-mode=onDark][_nghost-%COMP%]{color:#ffffffb8}[data-mode=onDark][_nghost-%COMP%]:hover, [data-mode=onDark]._active[_nghost-%COMP%]{color:#fff}[data-mode=onDark]._focus-visible[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{background:var(--tui-clear-inverse);color:var(--tui-text-01)}[data-mode=onLight][_nghost-%COMP%]{color:var(--tui-text-02)}[data-mode=onLight][_nghost-%COMP%]:hover, [data-mode=onLight]._active[_nghost-%COMP%]{color:var(--tui-text-01)}[data-mode=onLight]._focus-visible[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{background:var(--tui-text-01);color:#fff}._focus-visible[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{background:var(--tui-selection)}._android[_nghost-%COMP%]{transition-property:opacity;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;height:3rem;flex:1;flex-shrink:0;justify-content:center;margin:0;text-transform:uppercase;color:var(--tui-base-09);opacity:.5;font-size:.875rem;font-weight:500;letter-spacing:-.008125rem;font-family:-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif}._android[_nghost-%COMP%]:hover{box-shadow:none}._android._active[_nghost-%COMP%]{opacity:1;color:var(--tui-base-09)}._android[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{width:auto}._ios[_nghost-%COMP%]{height:1.75rem;flex:1;flex-shrink:0;justify-content:center;margin:0;color:var(--tui-base-01);opacity:1;font-size:.8125rem;font-weight:500;letter-spacing:-.005rem;font-family:-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif}._ios[_nghost-%COMP%]:hover{box-shadow:none}._ios._active[_nghost-%COMP%]{font-size:.875rem;font-weight:600;color:var(--tui-link)}._ios[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{width:auto}@media (hover: hover){[_nghost-%COMP%]:hover{color:var(--tui-text-01)}}.t-highlight[_ngcontent-%COMP%]{display:inline-flex;width:100%;align-items:center;justify-content:inherit}.t-highlight[_ngcontent-%COMP%]    >*{flex-shrink:0}tui-tabs[data-vertical][_nghost-%COMP%], tui-tabs[data-vertical]   [_nghost-%COMP%], [tuiTabs][data-vertical][_nghost-%COMP%], [tuiTabs][data-vertical]   [_nghost-%COMP%]{min-height:2.75rem;height:auto;white-space:normal;margin:0;text-align:left;padding:.25rem 1.25rem .25rem 0}tui-tabs[data-vertical][_nghost-%COMP%]:after, tui-tabs[data-vertical]   [_nghost-%COMP%]:after, [tuiTabs][data-vertical][_nghost-%COMP%]:after, [tuiTabs][data-vertical]   [_nghost-%COMP%]:after{transition-property:transform;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;content:\"\";position:absolute;top:0;bottom:0;right:0;width:2px;background:var(--tui-primary);transform:scaleX(0);transform-origin:right}tui-tabs[data-vertical][_nghost-%COMP%]:hover, tui-tabs[data-vertical]   [_nghost-%COMP%]:hover, [tuiTabs][data-vertical][_nghost-%COMP%]:hover, [tuiTabs][data-vertical]   [_nghost-%COMP%]:hover{box-shadow:inset -2px 0 var(--tui-base-03)}tui-tabs[data-vertical]._active[_nghost-%COMP%]:after, tui-tabs[data-vertical]   ._active[_nghost-%COMP%]:after, [tuiTabs][data-vertical]._active[_nghost-%COMP%]:after, [tuiTabs][data-vertical]   ._active[_nghost-%COMP%]:after{transform:none}tui-tabs[data-vertical=\"right\"][_nghost-%COMP%], tui-tabs[data-vertical=\"right\"]   [_nghost-%COMP%], [tuiTabs][data-vertical=\"right\"][_nghost-%COMP%], [tuiTabs][data-vertical=\"right\"]   [_nghost-%COMP%]{text-align:right;padding:.25rem 0 .25rem 1.25rem}tui-tabs[data-vertical=\"right\"][_nghost-%COMP%]:after, tui-tabs[data-vertical=\"right\"]   [_nghost-%COMP%]:after, [tuiTabs][data-vertical=\"right\"][_nghost-%COMP%]:after, [tuiTabs][data-vertical=\"right\"]   [_nghost-%COMP%]:after{right:auto;left:0;transform-origin:left}tui-tabs[data-vertical=\"right\"][_nghost-%COMP%]:hover, tui-tabs[data-vertical=\"right\"]   [_nghost-%COMP%]:hover, [tuiTabs][data-vertical=\"right\"][_nghost-%COMP%]:hover, [tuiTabs][data-vertical=\"right\"]   [_nghost-%COMP%]:hover{box-shadow:inset 2px 0 var(--tui-base-03)}"],
+    styles: ["._underline[_nghost-%COMP%]:hover, ._underline   [_nghost-%COMP%]:hover{box-shadow:inset 0 -2px var(--tui-base-03)}tui-tabs    > [_nghost-%COMP%]:first-child, tui-tabs    > [_nghost-%COMP%]:first-child, [tuiTabs]    > [_nghost-%COMP%]:first-child, [tuiTabs]    > [_nghost-%COMP%]:first-child, tui-tabs    > :first-child[_nghost-%COMP%], tui-tabs    > :first-child   [_nghost-%COMP%], [tuiTabs]    > :first-child[_nghost-%COMP%], [tuiTabs]    > :first-child   [_nghost-%COMP%]{margin-left:0}[_nghost-%COMP%]{transition-property:color,box-shadow,opacity,background;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:0;border:0;background:none;font-size:inherit;line-height:inherit;text-decoration:none;position:relative;display:flex;flex-shrink:0;height:100%;box-sizing:border-box;justify-content:space-between;align-items:center;white-space:nowrap;cursor:pointer;outline:none;color:inherit;margin-left:var(--tui-tab-margin, 1.5rem)}[_nghost-%COMP%]:disabled{opacity:var(--tui-disabled-opacity);pointer-events:none}[_nghost-%COMP%]:not([data-mode])._active{opacity:1;color:var(--tui-text-01);box-shadow:none}[data-mode=onDark][_nghost-%COMP%]{color:#ffffffb8}[data-mode=onDark][_nghost-%COMP%]:hover, [data-mode=onDark]._active[_nghost-%COMP%]{color:#fff}[data-mode=onDark]._focus-visible[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{background:var(--tui-clear-inverse);color:var(--tui-text-01)}[data-mode=onLight][_nghost-%COMP%]{color:var(--tui-text-02)}[data-mode=onLight][_nghost-%COMP%]:hover, [data-mode=onLight]._active[_nghost-%COMP%]{color:var(--tui-text-01)}[data-mode=onLight]._focus-visible[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{background:var(--tui-text-01);color:#fff}._focus-visible[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{background:var(--tui-selection)}._android[_nghost-%COMP%]{transition-property:opacity;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;height:3rem;flex:1;flex-shrink:0;justify-content:center;margin:0;text-transform:uppercase;color:var(--tui-base-09);opacity:.5;font-size:.875rem;font-weight:500;letter-spacing:-.008125rem;font-family:-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif}._android[_nghost-%COMP%]:hover{box-shadow:none}._android._active[_nghost-%COMP%]{opacity:1;color:var(--tui-base-09)}._android[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{width:auto}._ios[_nghost-%COMP%]{height:1.75rem;flex:1;flex-shrink:0;justify-content:center;margin:0;color:var(--tui-base-01);opacity:1;font-size:.8125rem;font-weight:500;letter-spacing:-.005rem;font-family:-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif}._ios[_nghost-%COMP%]:hover{box-shadow:none}._ios._active[_nghost-%COMP%]{font-size:.875rem;font-weight:600;color:var(--tui-link)}._ios[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{width:auto}@media (hover: hover){[_nghost-%COMP%]:hover{color:var(--tui-text-01)}}.t-highlight[_ngcontent-%COMP%]{display:inline-flex;width:100%;align-items:center;justify-content:inherit}.t-highlight[_ngcontent-%COMP%]    >*{flex-shrink:0}tui-tabs[data-vertical][_nghost-%COMP%], tui-tabs[data-vertical]   [_nghost-%COMP%], [tuiTabs][data-vertical][_nghost-%COMP%], [tuiTabs][data-vertical]   [_nghost-%COMP%]{min-height:2.75rem;height:auto;white-space:normal;margin:0;text-align:left;padding:.25rem 1.25rem .25rem 0}tui-tabs[data-vertical][_nghost-%COMP%]:after, tui-tabs[data-vertical]   [_nghost-%COMP%]:after, [tuiTabs][data-vertical][_nghost-%COMP%]:after, [tuiTabs][data-vertical]   [_nghost-%COMP%]:after{transition-property:transform;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;content:\"\";position:absolute;top:0;bottom:0;right:0;width:2px;background:var(--tui-primary);transform:scaleX(0);transform-origin:right}tui-tabs[data-vertical][_nghost-%COMP%]:hover, tui-tabs[data-vertical]   [_nghost-%COMP%]:hover, [tuiTabs][data-vertical][_nghost-%COMP%]:hover, [tuiTabs][data-vertical]   [_nghost-%COMP%]:hover{box-shadow:inset -2px 0 var(--tui-base-03)}tui-tabs[data-vertical]._active[_nghost-%COMP%]:after, tui-tabs[data-vertical]   ._active[_nghost-%COMP%]:after, [tuiTabs][data-vertical]._active[_nghost-%COMP%]:after, [tuiTabs][data-vertical]   ._active[_nghost-%COMP%]:after{transform:none}tui-tabs[data-vertical=\"right\"][_nghost-%COMP%], tui-tabs[data-vertical=\"right\"]   [_nghost-%COMP%], [tuiTabs][data-vertical=\"right\"][_nghost-%COMP%], [tuiTabs][data-vertical=\"right\"]   [_nghost-%COMP%]{text-align:right;padding:.25rem 0 .25rem 1.25rem}tui-tabs[data-vertical=\"right\"][_nghost-%COMP%]:after, tui-tabs[data-vertical=\"right\"]   [_nghost-%COMP%]:after, [tuiTabs][data-vertical=\"right\"][_nghost-%COMP%]:after, [tuiTabs][data-vertical=\"right\"]   [_nghost-%COMP%]:after{right:auto;left:0;transform-origin:left}tui-tabs[data-vertical=\"right\"][_nghost-%COMP%]:hover, tui-tabs[data-vertical=\"right\"]   [_nghost-%COMP%]:hover, [tuiTabs][data-vertical=\"right\"][_nghost-%COMP%]:hover, [tuiTabs][data-vertical=\"right\"]   [_nghost-%COMP%]:hover{box-shadow:inset 2px 0 var(--tui-base-03)}"],
     changeDetection: 0
   });
   return TuiTabComponent;
@@ -15102,7 +16663,7 @@ const TUI_TABS_PROVIDERS = [taiga_ui_cdk_services/* TuiResizeService */.tl, taig
     nativeElement
   }, cdr) => (0,merge/* merge */.T)(resize$, mutations$.pipe((0,tap/* tap */.b)(() => cdr.detectChanges()))).pipe(
   // Ignoring cases when host is detached from DOM
-  (0,filter/* filter */.h)(() => body.contains(nativeElement)), (0,debounceTime/* debounceTime */.b)(0), (0,startWith/* startWith */.O)(null), (0,takeUntil/* takeUntil */.R)(destroy$))
+  (0,filter/* filter */.h)(() => body.contains(nativeElement)), (0,debounceTime/* debounceTime */.b)(0), (0,operators_startWith/* startWith */.O)(null), (0,takeUntil/* takeUntil */.R)(destroy$))
 }];
 let TuiTabsWithMoreComponent = /*#__PURE__*/(() => {
   class TuiTabsWithMoreComponent {
@@ -16109,1578 +17670,6 @@ let TuiCheckboxLabeledModule = /*#__PURE__*/(() => {
 
 
 //# sourceMappingURL=taiga-ui-kit-components-checkbox-labeled.js.map
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-link.js
-var taiga_ui_core_components_link = __webpack_require__(2114);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-notification.js
-var taiga_ui_core_components_notification = __webpack_require__(8689);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-theme-night.js
-
-
-
-let TuiThemeNightComponent = /*#__PURE__*/(() => {
-  class TuiThemeNightComponent extends taiga_ui_cdk_abstract/* AbstractTuiThemeSwitcher */.GM {}
-  TuiThemeNightComponent.ɵfac = /* @__PURE__ */(() => {
-    let ɵTuiThemeNightComponent_BaseFactory;
-    return function TuiThemeNightComponent_Factory(t) {
-      return (ɵTuiThemeNightComponent_BaseFactory || (ɵTuiThemeNightComponent_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiThemeNightComponent)))(t || TuiThemeNightComponent);
-    };
-  })();
-  TuiThemeNightComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiThemeNightComponent,
-    selectors: [["tui-theme-night"]],
-    features: [core_mjs_["ɵɵInheritDefinitionFeature"]],
-    decls: 0,
-    vars: 0,
-    template: function TuiThemeNightComponent_Template(rf, ctx) {},
-    styles: [":root{--tui-base-01: #222;--tui-base-02: #333;--tui-base-03: #808080;--tui-base-04: #959595;--tui-base-05: #b0b0b0;--tui-base-06: #d7d7d7;--tui-base-07: #ededed;--tui-base-08: #f6f6f6;--tui-base-09: #fff;--tui-focus: rgba(51, 51, 51, .64);--tui-secondary: rgba(255, 255, 255, .16);--tui-secondary-hover: rgba(255, 255, 255, .24);--tui-secondary-active: rgba(255, 255, 255, .4);--tui-clear: rgba(255, 255, 255, .16);--tui-clear-disabled: rgba(255, 255, 255, .08);--tui-clear-hover: rgba(255, 255, 255, .24);--tui-clear-active: rgba(255, 255, 255, .4);--tui-error-fill: #ff8c67;--tui-error-bg: rgba(244, 87, 37, .32);--tui-error-bg-hover: rgba(244, 87, 37, .4);--tui-success-fill: #4ac99b;--tui-success-bg: rgba(74, 201, 155, .32);--tui-success-bg-hover: rgba(74, 201, 155, .4);--tui-warning-fill: #ffc700;--tui-warning-bg: rgba(255, 199, 0, .32);--tui-warning-bg-hover: rgba(255, 199, 0, .4);--tui-info-fill: #70b6f6;--tui-info-bg: rgba(112, 182, 246, .32);--tui-info-bg-hover: rgba(112, 182, 246, .4);--tui-neutral-fill: #959ba4;--tui-neutral-bg: rgba(149, 155, 164, .32);--tui-neutral-bg-hover: rgba(149, 155, 164, .48);--tui-text-01: #ffffff;--tui-text-02: rgba(255, 255, 255, .72);--tui-text-03: rgba(255, 255, 255, .6);--tui-link: #6788ff;--tui-link-hover: #526ed3;--tui-positive: #44c596;--tui-positive-hover: #3aa981;--tui-negative: #ff8c67;--tui-negative-hover: #bb593a;--tui-autofill: var(--tui-autofill-night);--tui-elevation-01: #222;--tui-elevation-02: #222}tui-notification{--tui-base-01: #000}\n"],
-    encapsulation: 2,
-    changeDetection: 0
-  });
-  return TuiThemeNightComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiThemeNightModule = /*#__PURE__*/(() => {
-  class TuiThemeNightModule {}
-  TuiThemeNightModule.ɵfac = function TuiThemeNightModule_Factory(t) {
-    return new (t || TuiThemeNightModule)();
-  };
-  TuiThemeNightModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiThemeNightModule
-  });
-  TuiThemeNightModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-  return TuiThemeNightModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-core-components-theme-night.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-focus-trap.js
-
-
-
-
-
-let TuiFocusTrapDirective = /*#__PURE__*/(() => {
-  class TuiFocusTrapDirective {
-    constructor(doc, el, renderer) {
-      this.doc = doc;
-      this.el = el;
-      this.renderer = renderer;
-      this.activeElement = (0,taiga_ui_cdk_utils_focus/* tuiGetNativeFocused */.ie)(this.doc);
-      /**
-       * This would cause currently focused element to lose focus,
-       * but it might cause ExpressionChanged error due to potential HostBinding.
-       * Microtask keeps it in the same frame but allows change detection to run
-       */
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      Promise.resolve().then(() => {
-        this.el.nativeElement.focus();
-      });
-    }
-    onBlur() {
-      this.renderer.removeAttribute(this.el.nativeElement, 'tabIndex');
-    }
-    onFocusIn(node) {
-      const {
-        nativeElement
-      } = this.el;
-      if ((0,taiga_ui_cdk_utils_dom/* tuiContainsOrAfter */.PP)(nativeElement, node)) {
-        return;
-      }
-      const focusable = (0,taiga_ui_cdk_utils_focus/* tuiGetClosestFocusable */.BW)({
-        initial: nativeElement,
-        root: nativeElement
-      });
-      if (focusable) {
-        focusable.focus();
-      }
-    }
-    ngOnDestroy() {
-      (0,taiga_ui_cdk_utils_focus/* tuiBlurNativeFocused */.hp)(this.doc);
-      /**
-       * HostListeners are triggered even after ngOnDestroy
-       * {@link https://github.com/angular/angular/issues/38100}
-       * so we need to delay it but stay in the same sync cycle,
-       * therefore using Promise instead of setTimeout
-       */
-      // eslint-disable-next-line
-      Promise.resolve().then(() => {
-        if ((0,taiga_ui_cdk_utils_dom/* tuiIsHTMLElement */.dW)(this.activeElement)) {
-          this.activeElement.focus();
-        }
-      });
-    }
-  }
-  TuiFocusTrapDirective.ɵfac = function TuiFocusTrapDirective_Factory(t) {
-    return new (t || TuiFocusTrapDirective)(core_mjs_["ɵɵdirectiveInject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2));
-  };
-  TuiFocusTrapDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiFocusTrapDirective,
-    selectors: [["", "tuiFocusTrap", ""]],
-    hostAttrs: ["tabIndex", "0"],
-    hostBindings: function TuiFocusTrapDirective_HostBindings(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵlistener"]("blur", function TuiFocusTrapDirective_blur_HostBindingHandler() {
-          return ctx.onBlur();
-        })("focusin.silent", function TuiFocusTrapDirective_focusin_silent_HostBindingHandler($event) {
-          return ctx.onFocusIn($event.target);
-        }, false, core_mjs_["ɵɵresolveWindow"]);
-      }
-    }
-  });
-  return TuiFocusTrapDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiFocusTrapModule = /*#__PURE__*/(() => {
-  class TuiFocusTrapModule {}
-  TuiFocusTrapModule.ɵfac = function TuiFocusTrapModule_Factory(t) {
-    return new (t || TuiFocusTrapModule)();
-  };
-  TuiFocusTrapModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiFocusTrapModule
-  });
-  TuiFocusTrapModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-  return TuiFocusTrapModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-cdk-directives-focus-trap.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-components-dialog-host.js
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/**
- * Is closing dialog on browser backward navigation enabled
- */
-function TuiDialogHostComponent_section_0_ng_container_1_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementContainer"](0);
-  }
-}
-function TuiDialogHostComponent_section_0_tui_scroll_controls_2_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelement"](0, "tui-scroll-controls", 5);
-  }
-}
-function TuiDialogHostComponent_section_0_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementStart"](0, "section", 2);
-    core_mjs_["ɵɵtemplate"](1, TuiDialogHostComponent_section_0_ng_container_1_Template, 1, 0, "ng-container", 3)(2, TuiDialogHostComponent_section_0_tui_scroll_controls_2_Template, 1, 0, "tui-scroll-controls", 4);
-    core_mjs_["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const item_r2 = ctx.$implicit;
-    const ctx_r0 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵproperty"]("@host", undefined);
-    core_mjs_["ɵɵattribute"]("aria-labelledby", item_r2.id);
-    core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵproperty"]("polymorpheusOutlet", item_r2.component)("polymorpheusOutletContext", item_r2);
-    core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵproperty"]("ngIf", !ctx_r0.isMobile);
-  }
-}
-function TuiDialogHostComponent_div_1_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r7 = core_mjs_["ɵɵgetCurrentView"]();
-    core_mjs_["ɵɵelementStart"](0, "div", 6);
-    core_mjs_["ɵɵlistener"]("transitionend", function TuiDialogHostComponent_div_1_Template_div_transitionend_0_listener($event) {
-      const restoredCtx = core_mjs_["ɵɵrestoreView"](_r7);
-      const isDialogClosesOnBack_r5 = restoredCtx.tuiLet;
-      const ctx_r6 = core_mjs_["ɵɵnextContext"]();
-      return core_mjs_["ɵɵresetView"](ctx_r6.onDialog($event, !!ctx_r6.dialogs.length, !!isDialogClosesOnBack_r5));
-    })("popstate", function TuiDialogHostComponent_div_1_Template_div_popstate_0_listener() {
-      const restoredCtx = core_mjs_["ɵɵrestoreView"](_r7);
-      const isDialogClosesOnBack_r5 = restoredCtx.tuiLet;
-      const ctx_r8 = core_mjs_["ɵɵnextContext"]();
-      return core_mjs_["ɵɵresetView"](ctx_r8.closeLast(ctx_r8.dialogs, !!isDialogClosesOnBack_r5));
-    }, false, core_mjs_["ɵɵresolveWindow"]);
-    core_mjs_["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r1 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵclassProp"]("t-overlay_visible", ctx_r1.dialogs.length);
-  }
-}
-const TUI_DIALOG_CLOSES_ON_BACK = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)((0,of.of)(false));
-const FAKE_HISTORY_STATE = {
-  label: 'ignoreMe'
-};
-const isFakeHistoryState = historyState => (historyState === null || historyState === void 0 ? void 0 : historyState.label) === FAKE_HISTORY_STATE.label;
-let TuiDialogHostComponent = /*#__PURE__*/(() => {
-  class TuiDialogHostComponent {
-    constructor(isMobile, isDialogClosesOnBack$, dialogsByType, historyRef, titleService, destroy$, cdr, doc) {
-      this.isMobile = isMobile;
-      this.isDialogClosesOnBack$ = isDialogClosesOnBack$;
-      this.dialogsByType = dialogsByType;
-      this.historyRef = historyRef;
-      this.titleService = titleService;
-      this.destroy$ = destroy$;
-      this.cdr = cdr;
-      this.doc = doc;
-      this.dialogs = [];
-    }
-    ngOnInit() {
-      // Due to this view being parallel to app content, `markForCheck` from `async` pipe
-      // can happen after view was checked, so calling `detectChanges` instead
-      (0,observable_combineLatest/* combineLatest */.a)(this.dialogsByType).pipe((0,operators_map/* map */.U)(arr => [].concat(...arr).sort((a, b) => a.createdAt - b.createdAt)), (0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(dialogs => {
-        this.dialogs = dialogs;
-        this.cdr.markForCheck();
-        this.doc.documentElement.classList.toggle('t-overscroll-none', !!dialogs.length);
-      });
-    }
-    closeLast(dialogs, isDialogClosesOnBack) {
-      if (!isDialogClosesOnBack) {
-        return;
-      }
-      const [last] = dialogs.slice(-1);
-      if (!last) {
-        return;
-      }
-      if (dialogs.length > 1) {
-        this.historyRef.pushState(FAKE_HISTORY_STATE, this.titleService.getTitle());
-      }
-      last.$implicit.complete();
-    }
-    onDialog({
-      propertyName
-    }, popupOpened, isDialogClosesOnBack) {
-      if (!isDialogClosesOnBack || propertyName !== 'letter-spacing') {
-        return;
-      }
-      if (popupOpened) {
-        this.historyRef.pushState(FAKE_HISTORY_STATE, this.titleService.getTitle());
-      } else if (isFakeHistoryState(this.historyRef.state)) {
-        this.historyRef.back();
-      }
-    }
-  }
-  TuiDialogHostComponent.ɵfac = function TuiDialogHostComponent_Factory(t) {
-    return new (t || TuiDialogHostComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_MOBILE */.fL), core_mjs_["ɵɵdirectiveInject"](TUI_DIALOG_CLOSES_ON_BACK), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_DIALOGS */.qY), core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* HISTORY */.UA), core_mjs_["ɵɵdirectiveInject"](platform_browser/* Title */.Dx), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ChangeDetectorRef), core_mjs_["ɵɵdirectiveInject"](common_mjs_.DOCUMENT));
-  };
-  TuiDialogHostComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiDialogHostComponent,
-    selectors: [["tui-dialog-host"]],
-    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3])],
-    decls: 3,
-    vars: 4,
-    consts: [["aria-modal", "true", "role", "dialog", "tuiFocusTrap", "", "tuiOverscroll", "all", "tuiScrollRef", "", "class", "t-dialog", 4, "ngFor", "ngForOf"], ["class", "t-overlay", 3, "t-overlay_visible", "transitionend", "popstate", 4, "tuiLet"], ["aria-modal", "true", "role", "dialog", "tuiFocusTrap", "", "tuiOverscroll", "all", "tuiScrollRef", "", 1, "t-dialog"], [4, "polymorpheusOutlet", "polymorpheusOutletContext"], ["class", "t-scrollbars", 4, "ngIf"], [1, "t-scrollbars"], [1, "t-overlay", 3, "transitionend", "popstate"]],
-    template: function TuiDialogHostComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵtemplate"](0, TuiDialogHostComponent_section_0_Template, 3, 5, "section", 0)(1, TuiDialogHostComponent_div_1_Template, 1, 2, "div", 1);
-        core_mjs_["ɵɵpipe"](2, "async");
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵproperty"]("ngForOf", ctx.dialogs);
-        core_mjs_["ɵɵadvance"](1);
-        core_mjs_["ɵɵproperty"]("tuiLet", core_mjs_["ɵɵpipeBind1"](2, 2, ctx.isDialogClosesOnBack$));
-      }
-    },
-    dependencies: [TuiScrollControlsComponent, common_mjs_.NgForOf, TuiFocusTrapDirective, TuiOverscrollDirective, TuiScrollRefDirective, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li, common_mjs_.NgIf, taiga_ui_cdk_directives_let/* TuiLetDirective */.Ls, common_mjs_.AsyncPipe],
-    styles: ["[_nghost-%COMP%]{position:fixed;left:0;bottom:0;width:100%;height:0}.t-overlay[_ngcontent-%COMP%], .t-dialog[_ngcontent-%COMP%]{position:fixed;top:0;left:0;right:0;bottom:0;display:flex;align-items:flex-start;outline:none;overflow:auto;scrollbar-width:none;-ms-overflow-style:none}.t-overlay.ng-animating[_ngcontent-%COMP%], .t-dialog.ng-animating[_ngcontent-%COMP%]{overflow:clip}.t-overlay[_ngcontent-%COMP%]::-webkit-scrollbar, .t-dialog[_ngcontent-%COMP%]::-webkit-scrollbar, .t-overlay[_ngcontent-%COMP%]::-webkit-scrollbar-thumb, .t-dialog[_ngcontent-%COMP%]::-webkit-scrollbar-thumb{background:transparent;width:0;height:0}.t-dialog[_ngcontent-%COMP%]{bottom:auto;height:100%}.t-overlay[_ngcontent-%COMP%]{height:100%;pointer-events:none;touch-action:none;opacity:0;letter-spacing:normal;transition:opacity var(--tui-duration, .3s),letter-spacing .01s;background:rgba(0,0,0,.75);-webkit-backdrop-filter:var(--tui-backdrop, none);backdrop-filter:var(--tui-backdrop, none)}.t-overlay_visible[_ngcontent-%COMP%]{opacity:1;letter-spacing:1px}.t-dialog[_ngcontent-%COMP%]:last-of-type{z-index:1}.t-scrollbars[_ngcontent-%COMP%]{position:fixed;top:0;left:0;right:0;bottom:0;margin:0;color:#747474}"],
-    data: {
-      animation: [(0,animations/* trigger */.X$)('host', [(0,animations/* transition */.eR)(':enter', [(0,animations/* style */.oB)({
-        overflow: 'clip'
-      }), (0,animations/* query */.IO)(':scope > *', [(0,animations/* animateChild */.pV)()], {
-        optional: true
-      })]), (0,animations/* transition */.eR)(':leave', [(0,animations/* style */.oB)({
-        overflow: 'clip'
-      }), (0,animations/* query */.IO)(':scope > *', [(0,animations/* animateChild */.pV)()], {
-        optional: true
-      })])])]
-    }
-  });
-  return TuiDialogHostComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiDialogHostModule = /*#__PURE__*/(() => {
-  class TuiDialogHostModule {}
-  TuiDialogHostModule.ɵfac = function TuiDialogHostModule_Factory(t) {
-    return new (t || TuiDialogHostModule)();
-  };
-  TuiDialogHostModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiDialogHostModule
-  });
-  TuiDialogHostModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-    imports: [[common_mjs_.CommonModule, tinkoff_ng_polymorpheus/* PolymorpheusModule */.wq, TuiOverscrollModule, TuiFocusTrapModule, taiga_ui_cdk_directives_let/* TuiLetModule */.WD, TuiScrollControlsModule]]
-  });
-  return TuiDialogHostModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-cdk-components-dialog-host.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-components-alert-host.js
-
-
-
-
-
-
-
-
-
-
-
-
-
-function TuiAlertHostComponent_div_0_ng_container_1_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementContainer"](0, 3);
-    core_mjs_["ɵɵpipe"](1, "tuiMapper");
-  }
-  if (rf & 2) {
-    const item_r3 = ctx.$implicit;
-    const ctx_r2 = core_mjs_["ɵɵnextContext"](2);
-    core_mjs_["ɵɵproperty"]("ngComponentOutlet", item_r3.component.component)("ngComponentOutletInjector", core_mjs_["ɵɵpipeBind2"](1, 2, item_r3, ctx_r2.mapper));
-  }
-}
-function TuiAlertHostComponent_div_0_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementStart"](0, "div", 1);
-    core_mjs_["ɵɵtemplate"](1, TuiAlertHostComponent_div_0_ng_container_1_Template, 2, 5, "ng-container", 2);
-    core_mjs_["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const alert_r1 = ctx.$implicit;
-    core_mjs_["ɵɵproperty"]("@tuiParentAnimation", undefined);
-    core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵproperty"]("ngForOf", alert_r1);
-  }
-}
-let TuiAlertHostComponent = /*#__PURE__*/(() => {
-  class TuiAlertHostComponent {
-    constructor(allAlerts, injector, destroy$, cdr) {
-      this.allAlerts = allAlerts;
-      this.injector = injector;
-      this.destroy$ = destroy$;
-      this.cdr = cdr;
-      this.alerts = [];
-      this.trackBy = index => index;
-      this.mapper = useValue => core_mjs_.Injector.create({
-        providers: [{
-          provide: tinkoff_ng_polymorpheus/* POLYMORPHEUS_CONTEXT */.yf,
-          useValue
-        }],
-        parent: this.injector
-      });
-    }
-    ngOnInit() {
-      // Due to this view being parallel to app content, `markForCheck` from `async` pipe
-      // can happen after view was checked, so calling `detectChanges` instead
-      (0,observable_combineLatest/* combineLatest */.a)(this.allAlerts).pipe((0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(alerts => {
-        this.alerts = alerts;
-        this.cdr.detectChanges();
-      });
-    }
-  }
-  TuiAlertHostComponent.ɵfac = function TuiAlertHostComponent_Factory(t) {
-    return new (t || TuiAlertHostComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_ALERTS */.bS), core_mjs_["ɵɵdirectiveInject"](core_mjs_.INJECTOR), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ChangeDetectorRef));
-  };
-  TuiAlertHostComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiAlertHostComponent,
-    selectors: [["tui-alert-host"]],
-    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3])],
-    decls: 1,
-    vars: 2,
-    consts: [["class", "t-wrapper", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "t-wrapper"], [3, "ngComponentOutlet", "ngComponentOutletInjector", 4, "ngFor", "ngForOf"], [3, "ngComponentOutlet", "ngComponentOutletInjector"]],
-    template: function TuiAlertHostComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵtemplate"](0, TuiAlertHostComponent_div_0_Template, 2, 2, "div", 0);
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵproperty"]("ngForOf", ctx.alerts)("ngForTrackBy", ctx.trackBy);
-      }
-    },
-    dependencies: [common_mjs_.NgForOf, common_mjs_.NgComponentOutlet, TuiMapperPipe],
-    styles: ["tui-alert-host>.t-wrapper{position:fixed;top:0;left:0;display:flex;width:100%;height:100%;flex-direction:column;pointer-events:none}tui-alert-host>.t-wrapper>*{pointer-events:auto}\n"],
-    encapsulation: 2,
-    data: {
-      animation: [taiga_ui_cdk_constants/* TUI_PARENT_ANIMATION */.Kx]
-    }
-  });
-  return TuiAlertHostComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiAlertHostModule = /*#__PURE__*/(() => {
-  class TuiAlertHostModule {}
-  TuiAlertHostModule.ɵfac = function TuiAlertHostModule_Factory(t) {
-    return new (t || TuiAlertHostModule)();
-  };
-  TuiAlertHostModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiAlertHostModule
-  });
-  TuiAlertHostModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-    imports: [[common_mjs_.CommonModule, TuiMapperPipeModule]]
-  });
-  return TuiAlertHostModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-cdk-components-alert-host.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-internal-svg-defs-host.js
-
-
-
-
-
-
-
-
-
-function TuiSvgDefsHostComponent__svg_ng_container_1__svg_defs_1_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵnamespaceSVG"]();
-    core_mjs_["ɵɵelement"](0, "defs", 4);
-  }
-  if (rf & 2) {
-    const def_r4 = ctx.$implicit;
-    core_mjs_["ɵɵproperty"]("innerHTML", def_r4, core_mjs_["ɵɵsanitizeHtml"]);
-  }
-}
-function TuiSvgDefsHostComponent__svg_ng_container_1_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵnamespaceSVG"]();
-    core_mjs_["ɵɵelementContainerStart"](0);
-    core_mjs_["ɵɵtemplate"](1, TuiSvgDefsHostComponent__svg_ng_container_1__svg_defs_1_Template, 1, 1, "defs", 3);
-    core_mjs_["ɵɵelementContainerEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r0 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵproperty"]("ngForOf", ctx_r0.items);
-  }
-}
-function TuiSvgDefsHostComponent__svg_ng_template_2__svg_defs_0_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵnamespaceSVG"]();
-    core_mjs_["ɵɵelementStart"](0, "defs");
-    core_mjs_["ɵɵelement"](1, "svg", 6);
-    core_mjs_["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const def_r6 = ctx.$implicit;
-    core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵproperty"]("outerHTML", def_r6, core_mjs_["ɵɵsanitizeHtml"]);
-  }
-}
-function TuiSvgDefsHostComponent__svg_ng_template_2_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵnamespaceSVG"]();
-    core_mjs_["ɵɵtemplate"](0, TuiSvgDefsHostComponent__svg_ng_template_2__svg_defs_0_Template, 2, 1, "defs", 5);
-  }
-  if (rf & 2) {
-    const ctx_r1 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵproperty"]("ngForOf", ctx_r1.items);
-  }
-}
-let TuiSvgDefsHostComponent = /*#__PURE__*/(() => {
-  class TuiSvgDefsHostComponent {
-    constructor(svgService, cdr, destroy$, platformId) {
-      this.svgService = svgService;
-      this.cdr = cdr;
-      this.destroy$ = destroy$;
-      this.isBrowser = true;
-      this.isBrowser = !(0,common_mjs_.isPlatformServer)(platformId);
-    }
-    // @bad TODO: Looks like it could be async piped but it was probably written like that for a reason
-    ngOnInit() {
-      this.svgService.items$.pipe((0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(defsMap => {
-        this.items = defsMap.values();
-        this.cdr.detectChanges();
-      });
-    }
-  }
-  TuiSvgDefsHostComponent.ɵfac = function TuiSvgDefsHostComponent_Factory(t) {
-    return new (t || TuiSvgDefsHostComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiSvgService */.K5), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ChangeDetectorRef), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.PLATFORM_ID));
-  };
-  TuiSvgDefsHostComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiSvgDefsHostComponent,
-    selectors: [["tui-svg-defs-host"]],
-    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3])],
-    decls: 4,
-    vars: 2,
-    consts: [["version", "1.1", 0, "xmlns", "xlink", "http://www.w3.org/1999/xlink", "xmlns", "http://www.w3.org/2000/svg"], [4, "ngIf", "ngIfElse"], ["server", ""], [3, "innerHTML", 4, "ngFor", "ngForOf"], [3, "innerHTML"], [4, "ngFor", "ngForOf"], [3, "outerHTML"]],
-    template: function TuiSvgDefsHostComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵnamespaceSVG"]();
-        core_mjs_["ɵɵelementStart"](0, "svg", 0);
-        core_mjs_["ɵɵtemplate"](1, TuiSvgDefsHostComponent__svg_ng_container_1_Template, 2, 1, "ng-container", 1)(2, TuiSvgDefsHostComponent__svg_ng_template_2_Template, 1, 1, "ng-template", null, 2, core_mjs_["ɵɵtemplateRefExtractor"]);
-        core_mjs_["ɵɵelementEnd"]();
-      }
-      if (rf & 2) {
-        const _r2 = core_mjs_["ɵɵreference"](3);
-        core_mjs_["ɵɵadvance"](1);
-        core_mjs_["ɵɵproperty"]("ngIf", ctx.isBrowser)("ngIfElse", _r2);
-      }
-    },
-    dependencies: [common_mjs_.NgIf, common_mjs_.NgForOf],
-    styles: ["[_nghost-%COMP%]{display:none}"],
-    changeDetection: 0
-  });
-  return TuiSvgDefsHostComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiSvgDefsHostModule = /*#__PURE__*/(() => {
-  class TuiSvgDefsHostModule {}
-  TuiSvgDefsHostModule.ɵfac = function TuiSvgDefsHostModule_Factory(t) {
-    return new (t || TuiSvgDefsHostModule)();
-  };
-  TuiSvgDefsHostModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiSvgDefsHostModule
-  });
-  TuiSvgDefsHostModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-    imports: [[common_mjs_.CommonModule, taiga_ui_cdk_directives_let/* TuiLetModule */.WD]]
-  });
-  return TuiSvgDefsHostModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-core-internal-svg-defs-host.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-hints-host.js
-
-
-
-
-
-
-
-
-
-
-
-function TuiHintsHostComponent_div_0_ng_container_1_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementContainer"](0);
-  }
-}
-const taiga_ui_core_components_hints_host_c0 = a0 => ({
-  $implicit: a0
-});
-function TuiHintsHostComponent_div_0_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementStart"](0, "div", 1);
-    core_mjs_["ɵɵtemplate"](1, TuiHintsHostComponent_div_0_ng_container_1_Template, 1, 0, "ng-container", 2);
-    core_mjs_["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const hint_r1 = ctx.$implicit;
-    core_mjs_["ɵɵproperty"]("@tuiParentAnimation", undefined)("tuiActiveZoneParent", hint_r1.activeZone || null);
-    core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵproperty"]("polymorpheusOutlet", hint_r1.component)("polymorpheusOutletContext", core_mjs_["ɵɵpureFunction1"](4, taiga_ui_core_components_hints_host_c0, hint_r1));
-  }
-}
-let TuiHintsHostComponent = /*#__PURE__*/(() => {
-  class TuiHintsHostComponent {
-    constructor(hints$, destroy$, cdr) {
-      this.hints$ = hints$;
-      this.destroy$ = destroy$;
-      this.cdr = cdr;
-      this.hints = [];
-    }
-    ngOnInit() {
-      // Due to this view being parallel to app content, `markForCheck` from `async` pipe
-      // can happen after view was checked, so calling `detectChanges` instead
-      this.hints$.pipe((0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(hints => {
-        this.hints = hints;
-        this.cdr.detectChanges();
-      });
-    }
-  }
-  TuiHintsHostComponent.ɵfac = function TuiHintsHostComponent_Factory(t) {
-    return new (t || TuiHintsHostComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiHintService */.BN), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ChangeDetectorRef));
-  };
-  TuiHintsHostComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiHintsHostComponent,
-    selectors: [["tui-hints-host"]],
-    hostAttrs: ["aria-live", "polite"],
-    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3])],
-    decls: 1,
-    vars: 1,
-    consts: [["role", "tooltip", 3, "tuiActiveZoneParent", 4, "ngFor", "ngForOf"], ["role", "tooltip", 3, "tuiActiveZoneParent"], [4, "polymorpheusOutlet", "polymorpheusOutletContext"]],
-    template: function TuiHintsHostComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵtemplate"](0, TuiHintsHostComponent_div_0_Template, 2, 6, "div", 0);
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵproperty"]("ngForOf", ctx.hints);
-      }
-    },
-    dependencies: [common_mjs_.NgForOf, taiga_ui_cdk_directives_active_zone_TuiActiveZoneDirective, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li],
-    styles: ["[_nghost-%COMP%]{position:fixed;top:0;left:0;width:100%;height:0}"],
-    data: {
-      animation: [taiga_ui_cdk_constants/* TUI_PARENT_ANIMATION */.Kx]
-    }
-  });
-  return TuiHintsHostComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiHintsHostModule = /*#__PURE__*/(() => {
-  class TuiHintsHostModule {}
-  TuiHintsHostModule.ɵfac = function TuiHintsHostModule_Factory(t) {
-    return new (t || TuiHintsHostModule)();
-  };
-  TuiHintsHostModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiHintsHostModule
-  });
-  TuiHintsHostModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-    imports: [[common_mjs_.CommonModule, tinkoff_ng_polymorpheus/* PolymorpheusModule */.wq, TuiActiveZoneModule]]
-  });
-  return TuiHintsHostModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-core-components-hints-host.js.map
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-root.js
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function TuiRootComponent_tui_scroll_controls_0_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelement"](0, "tui-scroll-controls", 2);
-  }
-}
-const taiga_ui_core_components_root_c0 = ["*", [["tuiOverContent"]], [["tuiOverDialogs"]], [["tuiOverAlerts"]], [["tuiOverPortals"]], [["tuiOverHints"]]];
-const taiga_ui_core_components_root_c1 = ["*", "tuiOverContent", "tuiOverDialogs", "tuiOverAlerts", "tuiOverPortals", "tuiOverHints"];
-let TuiRootComponent = /*#__PURE__*/(() => {
-  class TuiRootComponent {
-    constructor(duration, dialogs, isMobile, breakpoint, isIOS, isAndroid, {
-      body
-    }, theme) {
-      this.duration = duration;
-      this.dialogs = dialogs;
-      this.isMobile = isMobile;
-      this.breakpoint = breakpoint;
-      this.isIOS = isIOS;
-      this.isAndroid = isAndroid;
-      this.isMobileRes$ = this.breakpoint.pipe((0,operators_map/* map */.U)(breakpoint => breakpoint === 'mobile'));
-      this.scrollbars$ = this.dialogs.length && !this.isMobile ? (0,observable_combineLatest/* combineLatest */.a)([...this.dialogs]).pipe((0,operators_map/* map */.U)(dialogs => !dialogs.some(({
-        length
-      }) => length)), (0,debounceTime/* debounceTime */.b)(0)) : (0,of.of)(!this.isMobile);
-      body.setAttribute('data-tui-theme', theme.toLowerCase());
-    }
-  }
-  TuiRootComponent.ɵfac = function TuiRootComponent_Factory(t) {
-    return new (t || TuiRootComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_ANIMATIONS_DURATION */.dx), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_DIALOGS */.qY), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_MOBILE */.fL), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_services/* TuiBreakpointService */.zE), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_IOS */.FA), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_ANDROID */.XG), core_mjs_["ɵɵdirectiveInject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_THEME */.r2));
-  };
-  TuiRootComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiRootComponent,
-    selectors: [["tui-root"]],
-    hostAttrs: ["data-tui-version", "3.54.0"],
-    hostVars: 7,
-    hostBindings: function TuiRootComponent_HostBindings(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵlistener"]("$.class._mobile", function TuiRootComponent___class__mobile_HostBindingHandler() {
-          return ctx.isMobileRes$;
-        });
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵhostProperty"]("$.class._mobile", ctx.isMobileRes$);
-        core_mjs_["ɵɵstyleProp"]("--tui-duration", ctx.duration, "ms");
-        core_mjs_["ɵɵclassProp"]("_ios", ctx.isIOS)("_android", ctx.isAndroid);
-      }
-    },
-    ngContentSelectors: taiga_ui_core_components_root_c1,
-    decls: 14,
-    vars: 3,
-    consts: [["class", "t-root-scrollbar", 4, "ngIf"], [1, "t-root-content"], [1, "t-root-scrollbar"]],
-    template: function TuiRootComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵprojectionDef"](taiga_ui_core_components_root_c0);
-        core_mjs_["ɵɵtemplate"](0, TuiRootComponent_tui_scroll_controls_0_Template, 1, 0, "tui-scroll-controls", 0);
-        core_mjs_["ɵɵpipe"](1, "async");
-        core_mjs_["ɵɵelement"](2, "tui-svg-defs-host");
-        core_mjs_["ɵɵelementStart"](3, "tui-dropdown-host")(4, "div", 1);
-        core_mjs_["ɵɵprojection"](5);
-        core_mjs_["ɵɵelementEnd"]();
-        core_mjs_["ɵɵprojection"](6, 1);
-        core_mjs_["ɵɵelement"](7, "tui-dialog-host");
-        core_mjs_["ɵɵprojection"](8, 2);
-        core_mjs_["ɵɵelement"](9, "tui-alert-host");
-        core_mjs_["ɵɵprojection"](10, 3);
-        core_mjs_["ɵɵelementEnd"]();
-        core_mjs_["ɵɵprojection"](11, 4);
-        core_mjs_["ɵɵelement"](12, "tui-hints-host");
-        core_mjs_["ɵɵprojection"](13, 5);
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵproperty"]("ngIf", core_mjs_["ɵɵpipeBind1"](1, 1, ctx.scrollbars$));
-      }
-    },
-    dependencies: [TuiScrollControlsComponent, TuiSvgDefsHostComponent, TuiDropdownHostComponent, TuiDialogHostComponent, TuiAlertHostComponent, TuiHintsHostComponent, common_mjs_.NgIf, common_mjs_.AsyncPipe],
-    styles: ["@keyframes tuiPresent{to{content:\"1\"}}@keyframes tuiSkeletonVibe{to{opacity:.5}}html,.tui-zero-scrollbar{scrollbar-width:none;-ms-overflow-style:none}html::-webkit-scrollbar,.tui-zero-scrollbar::-webkit-scrollbar,html::-webkit-scrollbar-thumb,.tui-zero-scrollbar::-webkit-scrollbar-thumb{background:transparent;width:0;height:0}body{font:var(--tui-font-text-s);color:var(--tui-text-01);background:var(--tui-base-01);margin:0}tui-root{position:relative;display:block;flex:1;-webkit-tap-highlight-color:transparent}tui-root>.t-root-scrollbar{position:fixed;top:0;left:0;bottom:0;right:0;margin:0}.t-root-content{height:100%;isolation:isolate}.t-overscroll-none{overscroll-behavior:none;overflow:hidden}\n"],
-    encapsulation: 2
-  });
-  return TuiRootComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiRootModule = /*#__PURE__*/(() => {
-  class TuiRootModule {}
-  TuiRootModule.ɵfac = function TuiRootModule_Factory(t) {
-    return new (t || TuiRootModule)();
-  };
-  TuiRootModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiRootModule
-  });
-  TuiRootModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-    imports: [[common_mjs_.CommonModule, EventPluginsModule, TuiDropdownHostModule, TuiSvgDefsHostModule, TuiHintsHostModule, TuiDialogHostModule, TuiAlertHostModule, TuiScrollControlsModule]]
-  });
-  return TuiRootModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-core-components-root.js.map
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/isObservable.js
-var isObservable = __webpack_require__(2664);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-dialog.js
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function TuiDialogComponent_header_0_ng_container_1_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementContainerStart"](0);
-    core_mjs_["ɵɵtext"](1);
-    core_mjs_["ɵɵelementContainerEnd"]();
-  }
-  if (rf & 2) {
-    const text_r4 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵtextInterpolate1"](" ", text_r4, " ");
-  }
-}
-function TuiDialogComponent_header_0_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementStart"](0, "header", 6);
-    core_mjs_["ɵɵtemplate"](1, TuiDialogComponent_header_0_ng_container_1_Template, 2, 1, "ng-container", 3);
-    core_mjs_["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r0 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r0.header)("polymorpheusOutletContext", ctx_r0.context);
-  }
-}
-function TuiDialogComponent_ng_container_4_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r7 = core_mjs_["ɵɵgetCurrentView"]();
-    core_mjs_["ɵɵelementContainerStart"](0);
-    core_mjs_["ɵɵelement"](1, "div", 7);
-    core_mjs_["ɵɵelementStart"](2, "div", 8)(3, "button", 9);
-    core_mjs_["ɵɵlistener"]("click", function TuiDialogComponent_ng_container_4_Template_button_click_3_listener() {
-      core_mjs_["ɵɵrestoreView"](_r7);
-      const ctx_r6 = core_mjs_["ɵɵnextContext"]();
-      return core_mjs_["ɵɵresetView"](ctx_r6.context.$implicit.complete());
-    });
-    core_mjs_["ɵɵtext"](4);
-    core_mjs_["ɵɵelementEnd"]()();
-    core_mjs_["ɵɵelementContainerEnd"]();
-  }
-  if (rf & 2) {
-    const text_r5 = ctx.polymorpheusOutlet;
-    const ctx_r1 = core_mjs_["ɵɵnextContext"]();
-    let tmp_1_0;
-    core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵproperty"]("innerHTML", text_r5, core_mjs_["ɵɵsanitizeHtml"]);
-    core_mjs_["ɵɵadvance"](3);
-    core_mjs_["ɵɵtextInterpolate1"](" ", ((tmp_1_0 = ctx_r1.context.data) == null ? null : tmp_1_0.button) || "OK", " ");
-  }
-}
-function TuiDialogComponent_div_6_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r9 = core_mjs_["ɵɵgetCurrentView"]();
-    core_mjs_["ɵɵelementStart"](0, "div", 10)(1, "button", 11);
-    core_mjs_["ɵɵlistener"]("click", function TuiDialogComponent_div_6_Template_button_click_1_listener() {
-      core_mjs_["ɵɵrestoreView"](_r9);
-      const ctx_r8 = core_mjs_["ɵɵnextContext"]();
-      return core_mjs_["ɵɵresetView"](ctx_r8.close$.next());
-    })("mousedown.prevent.silent", function TuiDialogComponent_div_6_Template_button_mousedown_prevent_silent_1_listener() {
-      return 0;
-    });
-    core_mjs_["ɵɵpipe"](2, "async");
-    core_mjs_["ɵɵelementEnd"]()();
-  }
-  if (rf & 2) {
-    const ctx_r2 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵproperty"]("appearance", ctx_r2.fullscreen ? "secondary" : "")("icon", ctx_r2.icons.close)("title", core_mjs_["ɵɵpipeBind1"](2, 3, ctx_r2.closeWord$));
-  }
-}
-const TUI_DIALOG_DEFAULT_OPTIONS = {
-  size: `m`,
-  required: false,
-  closeable: true,
-  dismissible: true,
-  label: ``,
-  header: ``
-};
-/**
- * A stream to close dialogs
- */
-const TUI_DIALOGS_CLOSE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(empty/* EMPTY */.E);
-/**
- * Default parameters for dialog component
- */
-const TUI_DIALOG_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_DIALOG_DEFAULT_OPTIONS);
-function tuiDialogOptionsProvider(options) {
-  return tuiProvideOptions(TUI_DIALOG_OPTIONS, options, TUI_DIALOG_DEFAULT_OPTIONS);
-}
-const SCROLLBAR_PLACEHOLDER = 17;
-let TuiDialogCloseService = /*#__PURE__*/(() => {
-  class TuiDialogCloseService extends Observable/* Observable */.y {
-    constructor(win, doc, el) {
-      super(subscriber => (0,merge/* merge */.T)(this.esc$, this.mousedown$).subscribe(subscriber));
-      this.win = win;
-      this.doc = doc;
-      this.el = el;
-      this.esc$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, `keydown`).pipe((0,filter/* filter */.h)(event => {
-        const target = (0,taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA)(event);
-        return event.key === `Escape` && !event.defaultPrevented && (this.element.contains(target) || this.isOutside(target));
-      }));
-      this.mousedown$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, `mousedown`).pipe((0,filter/* filter */.h)(event => (0,taiga_ui_core_utils_dom/* tuiGetViewportWidth */.ic)(this.win) - event.clientX > SCROLLBAR_PLACEHOLDER && this.isOutside((0,taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA)(event))), (0,operators_switchMap/* switchMap */.w)(() => (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, `mouseup`).pipe((0,take/* take */.q)(1), (0,operators_map/* map */.U)(taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA), (0,filter/* filter */.h)(target => this.isOutside(target)))));
-    }
-    get element() {
-      return this.el.nativeElement;
-    }
-    isOutside(target) {
-      return (0,taiga_ui_cdk_utils_dom/* tuiIsElement */.ve)(target) && (!(0,taiga_ui_cdk_utils_dom/* tuiContainsOrAfter */.PP)(this.element, target) || target === this.element);
-    }
-  }
-  TuiDialogCloseService.ɵfac = function TuiDialogCloseService_Factory(t) {
-    return new (t || TuiDialogCloseService)(core_mjs_["ɵɵinject"](ng_web_apis_common/* WINDOW */.m9), core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵinject"](core_mjs_.ElementRef));
-  };
-  TuiDialogCloseService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-    token: TuiDialogCloseService,
-    factory: TuiDialogCloseService.ɵfac
-  });
-  return TuiDialogCloseService;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const REQUIRED_ERROR = new Error('Required dialog was dismissed');
-let TuiDialogComponent = /*#__PURE__*/(() => {
-  class TuiDialogComponent {
-    constructor(duration, isMobile, context, destroy$, dialogClose$, close$, closeWord$, icons) {
-      this.duration = duration;
-      this.isMobile = isMobile;
-      this.context = context;
-      this.closeWord$ = closeWord$;
-      this.icons = icons;
-      this.animation = {
-        value: '',
-        params: {
-          start: '40px',
-          duration: this.duration
-        }
-      };
-      this.fullscreenAnimation = {
-        value: '',
-        params: {
-          start: '100vh',
-          duration: this.duration
-        }
-      };
-      this.close$ = new internal_Subject/* Subject */.x();
-      (0,merge/* merge */.T)(this.close$.pipe((0,operators_switchMap/* switchMap */.w)(() => toObservable(context.closeable))), dialogClose$.pipe((0,operators_switchMap/* switchMap */.w)(() => toObservable(context.dismissible))), close$.pipe((0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_TRUE_HANDLER */.Ye))).pipe((0,filter/* filter */.h)(Boolean), (0,takeUntil/* takeUntil */.R)(destroy$)).subscribe(() => {
-        this.close();
-      });
-    }
-    get size() {
-      return this.context.size;
-    }
-    get header() {
-      return this.context.header;
-    }
-    get slideInTop() {
-      return this.fullscreen || this.isMobile ? this.fullscreenAnimation : this.animation;
-    }
-    get fullscreen() {
-      return !this.isMobile && (this.size === 'fullscreen' || this.size === 'page');
-    }
-    close() {
-      if (this.context.required) {
-        this.context.$implicit.error(REQUIRED_ERROR);
-      } else {
-        this.context.$implicit.complete();
-      }
-    }
-  }
-  TuiDialogComponent.ɵfac = function TuiDialogComponent_Factory(t) {
-    return new (t || TuiDialogComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_ANIMATIONS_DURATION */.dx), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_MOBILE */.fL), core_mjs_["ɵɵdirectiveInject"](tinkoff_ng_polymorpheus/* POLYMORPHEUS_CONTEXT */.yf), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](TuiDialogCloseService), core_mjs_["ɵɵdirectiveInject"](TUI_DIALOGS_CLOSE), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_CLOSE_WORD */.U0), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_COMMON_ICONS */.Gs));
-  };
-  TuiDialogComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiDialogComponent,
-    selectors: [["tui-dialog"]],
-    hostVars: 6,
-    hostBindings: function TuiDialogComponent_HostBindings(rf, ctx) {
-      if (rf & 2) {
-        core_mjs_["ɵɵattribute"]("data-appearance", ctx.context.appearance)("data-size", ctx.size);
-        core_mjs_["ɵɵsyntheticHostProperty"]("@tuiSlideInTop", ctx.slideInTop)("@tuiFadeIn", ctx.slideInTop);
-        core_mjs_["ɵɵclassProp"]("_centered", ctx.header);
-      }
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3, TuiDialogCloseService])],
-    decls: 7,
-    vars: 6,
-    consts: [["class", "t-header", 4, "ngIf"], [1, "t-content"], [1, "t-heading", 3, "id", "textContent"], [4, "polymorpheusOutlet", "polymorpheusOutletContext"], [1, "t-filler"], ["class", "t-wrapper", 4, "ngIf"], [1, "t-header"], [3, "innerHTML"], [1, "t-buttons"], ["size", "m", "tuiAutoFocus", "", "tuiButton", "", "type", "button", 3, "click"], [1, "t-wrapper"], ["automation-id", "tui-dialog__close", "shape", "rounded", "size", "s", "tuiIconButton", "", "type", "button", 1, "t-close", 3, "appearance", "icon", "title", "click", "mousedown.prevent.silent"]],
-    template: function TuiDialogComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵtemplate"](0, TuiDialogComponent_header_0_Template, 2, 2, "header", 0);
-        core_mjs_["ɵɵelementStart"](1, "div", 1);
-        core_mjs_["ɵɵelement"](2, "h2", 2);
-        core_mjs_["ɵɵelementStart"](3, "section");
-        core_mjs_["ɵɵtemplate"](4, TuiDialogComponent_ng_container_4_Template, 5, 2, "ng-container", 3);
-        core_mjs_["ɵɵelementEnd"]()();
-        core_mjs_["ɵɵelement"](5, "div", 4);
-        core_mjs_["ɵɵtemplate"](6, TuiDialogComponent_div_6_Template, 3, 5, "div", 5);
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵproperty"]("ngIf", ctx.header);
-        core_mjs_["ɵɵadvance"](2);
-        core_mjs_["ɵɵproperty"]("id", ctx.context.id)("textContent", ctx.context.label);
-        core_mjs_["ɵɵadvance"](2);
-        core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx.context.content)("polymorpheusOutletContext", ctx.context);
-        core_mjs_["ɵɵadvance"](2);
-        core_mjs_["ɵɵproperty"]("ngIf", ctx.context.closeable);
-      }
-    },
-    dependencies: [taiga_ui_core_components_button/* TuiButtonComponent */.v0, common_mjs_.NgIf, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li, TuiAutoFocusDirective, common_mjs_.AsyncPipe],
-    styles: ["[_nghost-%COMP%]{position:relative;display:flex;font:var(--tui-font-text-m);flex-direction:column;box-sizing:border-box;margin:auto;border-radius:1rem;border:2.5rem solid transparent}[_nghost-%COMP%]:after{position:absolute;top:0;left:0;width:100%;height:100%;box-shadow:0 1.125rem 1.875rem #0000007a;content:\"\";border-radius:inherit;pointer-events:none}[data-size=auto][_nghost-%COMP%]{width:auto}[data-size=s][_nghost-%COMP%]{width:30rem}[data-size=s][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:1.5rem}[data-size=s][_nghost-%COMP%]   .t-heading[_ngcontent-%COMP%]{margin-bottom:.5rem;font:var(--tui-font-heading-5)}[data-size=m][_nghost-%COMP%]{width:42.5rem}[data-size=m][_nghost-%COMP%]   .t-heading[_ngcontent-%COMP%]{margin-bottom:.75rem;font:var(--tui-font-heading-4)}[data-size=l][_nghost-%COMP%]{width:55rem}[data-size=l][_nghost-%COMP%]   .t-heading[_ngcontent-%COMP%]{margin-bottom:1rem}[data-size=fullscreen][_nghost-%COMP%], [data-size=page][_nghost-%COMP%]{min-width:100vw;min-height:100%;border-radius:0;border:none;background:var(--tui-elevation-01);box-shadow:0 4rem var(--tui-elevation-01)}[data-size=fullscreen][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%], [data-size=page][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:3rem calc(50vw - (45rem / 2))}[data-size=fullscreen][_nghost-%COMP%]   .t-heading[_ngcontent-%COMP%], [data-size=page][_nghost-%COMP%]   .t-heading[_ngcontent-%COMP%]{margin-bottom:1rem}[data-size=page][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:0}._centered[_nghost-%COMP%]{text-align:center}[_nghost-%COMP%]   tui-root._mobile[data-size][_nghost-%COMP%], tui-root._mobile   [data-size][_nghost-%COMP%]{min-width:100%;width:100%;max-width:100%;border-radius:0;border:none;margin:auto 0 0}[_nghost-%COMP%]   tui-root._mobile[data-size][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%], tui-root._mobile   [data-size][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:1.5rem}[_nghost-%COMP%]   tui-root._mobile[data-size][_nghost-%COMP%]   .t-heading[_ngcontent-%COMP%], tui-root._mobile   [data-size][_nghost-%COMP%]   .t-heading[_ngcontent-%COMP%]{margin-bottom:.5rem;font:var(--tui-font-heading-5)}.t-heading[_ngcontent-%COMP%]{margin:0;word-wrap:break-word;font:var(--tui-font-heading-3)}.t-heading[_ngcontent-%COMP%]:empty{display:none}.t-header[_ngcontent-%COMP%]{display:flex;border-top-left-radius:inherit;border-top-right-radius:inherit;overflow:hidden}[data-size=fullscreen][_nghost-%COMP%]   tui-root._mobile[_nghost-%COMP%]   .t-header[_ngcontent-%COMP%], tui-root._mobile   [_nghost-%COMP%]   .t-header[_ngcontent-%COMP%]{flex:1}.t-content[_ngcontent-%COMP%]{border-radius:inherit;padding:2rem;background:var(--tui-elevation-01)}.t-content[_ngcontent-%COMP%]:not(:first-child){border-top-left-radius:0;border-top-right-radius:0}.t-wrapper[_ngcontent-%COMP%]{position:-webkit-sticky;position:sticky;top:0;z-index:1;order:-1}.t-filler[_ngcontent-%COMP%]{flex-grow:1}.t-close[_ngcontent-%COMP%]{transition-property:background;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;position:fixed;top:1.5rem;right:1.5rem;display:none;color:var(--tui-base-01)}.t-dialog:last-of-type[_nghost-%COMP%]   .t-close[_ngcontent-%COMP%], .t-dialog:last-of-type   [_nghost-%COMP%]   .t-close[_ngcontent-%COMP%]{display:block}[_nghost-%COMP%]:not([data-size=\"fullscreen\"]):not([data-size=\"page\"])   .t-close[_ngcontent-%COMP%]{animation:tuiFadeIn var(--tui-duration);background:rgba(104,104,104,.96)}[_nghost-%COMP%]:not([data-size=\"fullscreen\"]):not([data-size=\"page\"])   .t-close[_ngcontent-%COMP%]:hover{background:rgba(159,159,159,.86)}[_nghost-%COMP%]:not([data-size=\"fullscreen\"]).ng-animating   .t-close[_ngcontent-%COMP%]{display:none}tui-root._mobile[_nghost-%COMP%]   .t-close[_ngcontent-%COMP%], tui-root._mobile   [_nghost-%COMP%]   .t-close[_ngcontent-%COMP%]{position:absolute;top:0;right:0;background:transparent!important;color:var(--tui-text-01);opacity:.5}.t-buttons[_ngcontent-%COMP%]{margin-top:1.25rem;text-align:right}"],
-    data: {
-      animation: [tuiSlideInTop, tuiFadeIn]
-    }
-  });
-  return TuiDialogComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-function toObservable(valueOrStream) {
-  return (0,isObservable/* isObservable */.b)(valueOrStream) ? valueOrStream : (0,of.of)(valueOrStream);
-}
-const DIALOG = new tinkoff_ng_polymorpheus/* PolymorpheusComponent */.Al(TuiDialogComponent);
-let TuiDialogService = /*#__PURE__*/(() => {
-  class TuiDialogService extends taiga_ui_cdk_abstract/* AbstractTuiDialogService */.d5 {
-    constructor() {
-      super(...arguments);
-      this.component = DIALOG;
-      this.defaultOptions = Object.assign(Object.assign({}, (0,core_mjs_.inject)(TUI_DIALOG_OPTIONS)), {
-        data: undefined
-      });
-    }
-  }
-  TuiDialogService.ɵfac = /* @__PURE__ */(() => {
-    let ɵTuiDialogService_BaseFactory;
-    return function TuiDialogService_Factory(t) {
-      return (ɵTuiDialogService_BaseFactory || (ɵTuiDialogService_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](TuiDialogService)))(t || TuiDialogService);
-    };
-  })();
-  TuiDialogService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-    token: TuiDialogService,
-    factory: TuiDialogService.ɵfac,
-    providedIn: `root`
-  });
-  return TuiDialogService;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiDialogDirective = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
-  class TuiDialogDirective extends AbstractTuiDialogDirective {}
-  TuiDialogDirective.ɵfac = /* @__PURE__ */(() => {
-    let ɵTuiDialogDirective_BaseFactory;
-    return function TuiDialogDirective_Factory(t) {
-      return (ɵTuiDialogDirective_BaseFactory || (ɵTuiDialogDirective_BaseFactory = i0.ɵɵgetInheritedFactory(TuiDialogDirective)))(t || TuiDialogDirective);
-    };
-  })();
-  TuiDialogDirective.ɵdir = /* @__PURE__ */i0.ɵɵdefineDirective({
-    type: TuiDialogDirective,
-    selectors: [["ng-template", "tuiDialog", ""]],
-    inputs: {
-      options: ["tuiDialogOptions", "options"],
-      open: ["tuiDialog", "open"]
-    },
-    outputs: {
-      openChange: "tuiDialogChange"
-    },
-    features: [i0.ɵɵProvidersFeature([{
-      provide: AbstractTuiDialogService,
-      useExisting: TuiDialogService
-    }]), i0.ɵɵInheritDefinitionFeature]
-  });
-  return TuiDialogDirective;
-})()));
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiDialogModule = /*#__PURE__*/(() => {
-  class TuiDialogModule {}
-  TuiDialogModule.ɵfac = function TuiDialogModule_Factory(t) {
-    return new (t || TuiDialogModule)();
-  };
-  TuiDialogModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiDialogModule
-  });
-  TuiDialogModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-    providers: [(0,taiga_ui_cdk_tokens/* tuiAsDialog */.Q)(TuiDialogService)],
-    imports: [[tinkoff_ng_polymorpheus/* PolymorpheusModule */.wq, taiga_ui_core_components_button/* TuiButtonModule */.fN, common_mjs_.CommonModule, TuiAutoFocusModule]]
-  });
-  return TuiDialogModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-core-components-dialog.js.map
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/repeatWhen.js
-var repeatWhen = __webpack_require__(2077);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-alert.js
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function TuiAlertComponent_label_1_ng_container_1_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementContainerStart"](0);
-    core_mjs_["ɵɵtext"](1);
-    core_mjs_["ɵɵelementContainerEnd"]();
-  }
-  if (rf & 2) {
-    const text_r3 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵtextInterpolate1"](" ", text_r3, " ");
-  }
-}
-function TuiAlertComponent_label_1_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelementStart"](0, "label", 4);
-    core_mjs_["ɵɵtemplate"](1, TuiAlertComponent_label_1_ng_container_1_Template, 2, 1, "ng-container", 5);
-    core_mjs_["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r0 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r0.item.label)("polymorpheusOutletContext", ctx_r0.item);
-  }
-}
-function TuiAlertComponent_div_3_Template(rf, ctx) {
-  if (rf & 1) {
-    core_mjs_["ɵɵelement"](0, "div", 6);
-  }
-  if (rf & 2) {
-    const text_r4 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵproperty"]("innerHTML", text_r4, core_mjs_["ɵɵsanitizeHtml"]);
-  }
-}
-const TUI_ALERT_POSITION = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,core_mjs_.inject)(taiga_ui_cdk_tokens/* TUI_IS_MOBILE */.fL) ? `1rem 1rem 0 auto` : `2rem 3rem 0 auto`);
-
-// TODO: get rid of $any in template
-let TuiAlertComponent = /*#__PURE__*/(() => {
-  class TuiAlertComponent {
-    constructor(el, destroy$, position, options, item) {
-      this.el = el;
-      this.destroy$ = destroy$;
-      this.position = position;
-      this.options = options;
-      this.item = item;
-      this.autoClose = typeof this.item.autoClose === 'function' ? this.item.autoClose(this.item.status) : this.item.autoClose;
-      this.animation = this.position.endsWith('auto') ? Object.assign(Object.assign({}, this.options), {
-        value: 'right'
-      }) : Object.assign(Object.assign({}, this.options), {
-        value: 'left'
-      });
-    }
-    ngOnInit() {
-      this.initAutoClose();
-    }
-    close() {
-      this.item.$implicit.complete();
-    }
-    initAutoClose() {
-      if (!this.autoClose) {
-        return;
-      }
-      (0,timer/* timer */.H)((0,taiga_ui_cdk_utils_miscellaneous/* tuiIsNumber */.dt)(this.autoClose) ? this.autoClose : 3000).pipe((0,takeUntil/* takeUntil */.R)((0,fromEvent/* fromEvent */.R)(this.el.nativeElement, 'mouseenter')),
-      /**
-       * TODO: replace to
-       * repeat({
-       *    delay: () => fromEvent(this.el.nativeElement, 'mouseleave'),
-       * })
-       *
-       * in RxJS 7
-       */
-      // eslint-disable-next-line rxjs/no-ignored-notifier
-      (0,repeatWhen/* repeatWhen */.a)(() => (0,fromEvent/* fromEvent */.R)(this.el.nativeElement, 'mouseleave')), (0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(() => this.close());
-    }
-  }
-  TuiAlertComponent.ɵfac = function TuiAlertComponent_Factory(t) {
-    return new (t || TuiAlertComponent)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiDestroyService */.a3, 2), core_mjs_["ɵɵdirectiveInject"](TUI_ALERT_POSITION), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_ANIMATION_OPTIONS */.Pw), core_mjs_["ɵɵdirectiveInject"](tinkoff_ng_polymorpheus/* POLYMORPHEUS_CONTEXT */.yf));
-  };
-  TuiAlertComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiAlertComponent,
-    selectors: [["tui-alert"]],
-    hostAttrs: ["role", "alert"],
-    hostVars: 5,
-    hostBindings: function TuiAlertComponent_HostBindings(rf, ctx) {
-      if (rf & 2) {
-        core_mjs_["ɵɵsyntheticHostProperty"]("@tuiFadeIn", ctx.options)("@tuiSlideIn", ctx.animation)("@tuiHeightCollapse", ctx.animation);
-        core_mjs_["ɵɵstyleProp"]("margin", ctx.position);
-      }
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3])],
-    decls: 4,
-    vars: 7,
-    consts: [[3, "hasIcon", "hideClose", "icon", "status", "close"], ["automation-id", "tui-notification-alert__heading", "class", "t-heading", 4, "ngIf"], ["automation-id", "tui-notification-alert__content", 1, "t-content"], [3, "innerHTML", 4, "polymorpheusOutlet", "polymorpheusOutletContext"], ["automation-id", "tui-notification-alert__heading", 1, "t-heading"], [4, "polymorpheusOutlet", "polymorpheusOutletContext"], [3, "innerHTML"]],
-    template: function TuiAlertComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵelementStart"](0, "tui-notification", 0);
-        core_mjs_["ɵɵlistener"]("close", function TuiAlertComponent_Template_tui_notification_close_0_listener() {
-          return ctx.close();
-        });
-        core_mjs_["ɵɵtemplate"](1, TuiAlertComponent_label_1_Template, 2, 2, "label", 1);
-        core_mjs_["ɵɵelementStart"](2, "div", 2);
-        core_mjs_["ɵɵtemplate"](3, TuiAlertComponent_div_3_Template, 1, 1, "div", 3);
-        core_mjs_["ɵɵelementEnd"]()();
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵproperty"]("hasIcon", ctx.item.hasIcon)("hideClose", !ctx.item.hasCloseButton)("icon", ctx.item.icon)("status", ctx.item.status);
-        core_mjs_["ɵɵadvance"](1);
-        core_mjs_["ɵɵproperty"]("ngIf", ctx.item.label);
-        core_mjs_["ɵɵadvance"](2);
-        core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx.item.content)("polymorpheusOutletContext", ctx.item);
-      }
-    },
-    dependencies: [taiga_ui_core_components_notification/* TuiNotificationComponent */.L, common_mjs_.NgIf, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li],
-    styles: ["[_nghost-%COMP%]{box-shadow:0 1.5rem 1rem #00000008,0 .75rem .75rem #0000000a,0 .25rem .375rem #0000000d;display:block;border-radius:var(--tui-radius-l);width:18rem}[_nghost-%COMP%]:not(:first-child){margin-top:.75rem!important}[_nghost-%COMP%]:not(:last-child){margin-bottom:0!important}.t-heading[_ngcontent-%COMP%]{margin:0}[data-size=s][_ngcontent-%COMP%]   .t-heading[_ngcontent-%COMP%]{font:var(--tui-font-text-s);font-weight:bold}[data-size=m][_ngcontent-%COMP%]   .t-heading[_ngcontent-%COMP%]{font:var(--tui-font-text-m);line-height:1.25rem;font-weight:bold}[data-size=l][_ngcontent-%COMP%]   .t-heading[_ngcontent-%COMP%]{font:var(--tui-font-text-l);line-height:1.5rem;font-weight:bold}.t-content[_ngcontent-%COMP%]{color:var(--tui-text-01);word-wrap:break-word;word-break:break-word}.t-content[_ngcontent-%COMP%]:empty{display:none}"],
-    data: {
-      animation: [tuiFadeIn, tuiSlideIn, tuiHeightCollapse]
-    },
-    changeDetection: 0
-  });
-  return TuiAlertComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let taiga_ui_core_components_alert_TuiAlertService = /*#__PURE__*/(() => {
-  class TuiAlertService extends taiga_ui_cdk_abstract/* AbstractTuiDialogService */.d5 {
-    constructor(defaultOptions, idService) {
-      super(idService);
-      this.defaultOptions = defaultOptions;
-      this.component = new tinkoff_ng_polymorpheus/* PolymorpheusComponent */.Al(TuiAlertComponent);
-    }
-  }
-  TuiAlertService.ɵfac = function TuiAlertService_Factory(t) {
-    return new (t || TuiAlertService)(core_mjs_["ɵɵinject"](taiga_ui_core_tokens/* TUI_NOTIFICATION_OPTIONS */.Ln), core_mjs_["ɵɵinject"](taiga_ui_cdk_services/* TuiIdService */.ll));
-  };
-  TuiAlertService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-    token: TuiAlertService,
-    factory: TuiAlertService.ɵfac,
-    providedIn: `root`
-  });
-  return TuiAlertService;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiAlertDirective = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
-  class TuiAlertDirective extends AbstractTuiDialogDirective {}
-  TuiAlertDirective.ɵfac = /* @__PURE__ */(() => {
-    let ɵTuiAlertDirective_BaseFactory;
-    return function TuiAlertDirective_Factory(t) {
-      return (ɵTuiAlertDirective_BaseFactory || (ɵTuiAlertDirective_BaseFactory = i0.ɵɵgetInheritedFactory(TuiAlertDirective)))(t || TuiAlertDirective);
-    };
-  })();
-  TuiAlertDirective.ɵdir = /* @__PURE__ */i0.ɵɵdefineDirective({
-    type: TuiAlertDirective,
-    selectors: [["ng-template", "tuiAlert", ""]],
-    inputs: {
-      options: ["tuiAlertOptions", "options"],
-      open: ["tuiAlert", "open"]
-    },
-    outputs: {
-      openChange: "tuiAlertChange"
-    },
-    features: [i0.ɵɵProvidersFeature([{
-      provide: AbstractTuiDialogService,
-      useExisting: taiga_ui_core_components_alert_TuiAlertService
-    }]), i0.ɵɵInheritDefinitionFeature]
-  });
-  return TuiAlertDirective;
-})()));
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiAlertModule = /*#__PURE__*/(() => {
-  class TuiAlertModule {}
-  TuiAlertModule.ɵfac = function TuiAlertModule_Factory(t) {
-    return new (t || TuiAlertModule)();
-  };
-  TuiAlertModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiAlertModule
-  });
-  TuiAlertModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-    providers: [(0,taiga_ui_cdk_tokens/* tuiAsAlerts */.XH)(taiga_ui_core_components_alert_TuiAlertService)],
-    imports: [[common_mjs_.CommonModule, tinkoff_ng_polymorpheus/* PolymorpheusModule */.wq, taiga_ui_core_components_notification/* TuiNotificationModule */.H]]
-  });
-  return TuiAlertModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-core-components-alert.js.map
-// EXTERNAL MODULE: ./node_modules/ngx-highlightjs/fesm2020/ngx-highlightjs.mjs + 5 modules
-var ngx_highlightjs = __webpack_require__(2839);
-;// CONCATENATED MODULE: ./node_modules/@angular/cdk/fesm2022/clipboard.mjs
-
-
-
-
-/**
- * A pending copy-to-clipboard operation.
- *
- * The implementation of copying text to the clipboard modifies the DOM and
- * forces a re-layout. This re-layout can take too long if the string is large,
- * causing the execCommand('copy') to happen too long after the user clicked.
- * This results in the browser refusing to copy. This object lets the
- * re-layout happen in a separate tick from copying by providing a copy function
- * that can be called later.
- *
- * Destroy must be called when no longer in use, regardless of whether `copy` is
- * called.
- */
-class PendingCopy {
-  constructor(text, _document) {
-    this._document = _document;
-    const textarea = this._textarea = this._document.createElement('textarea');
-    const styles = textarea.style;
-    // Hide the element for display and accessibility. Set a fixed position so the page layout
-    // isn't affected. We use `fixed` with `top: 0`, because focus is moved into the textarea
-    // for a split second and if it's off-screen, some browsers will attempt to scroll it into view.
-    styles.position = 'fixed';
-    styles.top = styles.opacity = '0';
-    styles.left = '-999em';
-    textarea.setAttribute('aria-hidden', 'true');
-    textarea.value = text;
-    // Making the textarea `readonly` prevents the screen from jumping on iOS Safari (see #25169).
-    textarea.readOnly = true;
-    // The element needs to be inserted into the fullscreen container, if the page
-    // is in fullscreen mode, otherwise the browser won't execute the copy command.
-    (this._document.fullscreenElement || this._document.body).appendChild(textarea);
-  }
-  /** Finishes copying the text. */
-  copy() {
-    const textarea = this._textarea;
-    let successful = false;
-    try {
-      // Older browsers could throw if copy is not supported.
-      if (textarea) {
-        const currentFocus = this._document.activeElement;
-        textarea.select();
-        textarea.setSelectionRange(0, textarea.value.length);
-        successful = this._document.execCommand('copy');
-        if (currentFocus) {
-          currentFocus.focus();
-        }
-      }
-    } catch {
-      // Discard error.
-      // Initial setting of {@code successful} will represent failure here.
-    }
-    return successful;
-  }
-  /** Cleans up DOM changes used to perform the copy operation. */
-  destroy() {
-    const textarea = this._textarea;
-    if (textarea) {
-      textarea.remove();
-      this._textarea = undefined;
-    }
-  }
-}
-
-/**
- * A service for copying text to the clipboard.
- */
-let clipboard_Clipboard = /*#__PURE__*/(() => {
-  class Clipboard {
-    constructor(document) {
-      this._document = document;
-    }
-    /**
-     * Copies the provided text into the user's clipboard.
-     *
-     * @param text The string to copy.
-     * @returns Whether the operation was successful.
-     */
-    copy(text) {
-      const pendingCopy = this.beginCopy(text);
-      const successful = pendingCopy.copy();
-      pendingCopy.destroy();
-      return successful;
-    }
-    /**
-     * Prepares a string to be copied later. This is useful for large strings
-     * which take too long to successfully render and be copied in the same tick.
-     *
-     * The caller must call `destroy` on the returned `PendingCopy`.
-     *
-     * @param text The string to copy.
-     * @returns the pending copy operation.
-     */
-    beginCopy(text) {
-      return new PendingCopy(text, this._document);
-    }
-    static #_ = this.ɵfac = function Clipboard_Factory(t) {
-      return new (t || Clipboard)(core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: Clipboard,
-      factory: Clipboard.ɵfac,
-      providedIn: 'root'
-    });
-  }
-  return Clipboard;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/** Injection token that can be used to provide the default options to `CdkCopyToClipboard`. */
-const CDK_COPY_TO_CLIPBOARD_CONFIG = /*#__PURE__*/new core_mjs_.InjectionToken('CDK_COPY_TO_CLIPBOARD_CONFIG');
-/**
- * Provides behavior for a button that when clicked copies content into user's
- * clipboard.
- */
-let CdkCopyToClipboard = /*#__PURE__*/(() => {
-  class CdkCopyToClipboard {
-    constructor(_clipboard, _ngZone, config) {
-      this._clipboard = _clipboard;
-      this._ngZone = _ngZone;
-      /** Content to be copied. */
-      this.text = '';
-      /**
-       * How many times to attempt to copy the text. This may be necessary for longer text, because
-       * the browser needs time to fill an intermediate textarea element and copy the content.
-       */
-      this.attempts = 1;
-      /**
-       * Emits when some text is copied to the clipboard. The
-       * emitted value indicates whether copying was successful.
-       */
-      this.copied = new core_mjs_.EventEmitter();
-      /** Copies that are currently being attempted. */
-      this._pending = new Set();
-      if (config && config.attempts != null) {
-        this.attempts = config.attempts;
-      }
-    }
-    /** Copies the current text to the clipboard. */
-    copy(attempts = this.attempts) {
-      if (attempts > 1) {
-        let remainingAttempts = attempts;
-        const pending = this._clipboard.beginCopy(this.text);
-        this._pending.add(pending);
-        const attempt = () => {
-          const successful = pending.copy();
-          if (!successful && --remainingAttempts && !this._destroyed) {
-            // We use 1 for the timeout since it's more predictable when flushing in unit tests.
-            this._currentTimeout = this._ngZone.runOutsideAngular(() => setTimeout(attempt, 1));
-          } else {
-            this._currentTimeout = null;
-            this._pending.delete(pending);
-            pending.destroy();
-            this.copied.emit(successful);
-          }
-        };
-        attempt();
-      } else {
-        this.copied.emit(this._clipboard.copy(this.text));
-      }
-    }
-    ngOnDestroy() {
-      if (this._currentTimeout) {
-        clearTimeout(this._currentTimeout);
-      }
-      this._pending.forEach(copy => copy.destroy());
-      this._pending.clear();
-      this._destroyed = true;
-    }
-    static #_ = this.ɵfac = function CdkCopyToClipboard_Factory(t) {
-      return new (t || CdkCopyToClipboard)(core_mjs_["ɵɵdirectiveInject"](clipboard_Clipboard), core_mjs_["ɵɵdirectiveInject"](core_mjs_.NgZone), core_mjs_["ɵɵdirectiveInject"](CDK_COPY_TO_CLIPBOARD_CONFIG, 8));
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: CdkCopyToClipboard,
-      selectors: [["", "cdkCopyToClipboard", ""]],
-      hostBindings: function CdkCopyToClipboard_HostBindings(rf, ctx) {
-        if (rf & 1) {
-          core_mjs_["ɵɵlistener"]("click", function CdkCopyToClipboard_click_HostBindingHandler() {
-            return ctx.copy();
-          });
-        }
-      },
-      inputs: {
-        text: ["cdkCopyToClipboard", "text"],
-        attempts: ["cdkCopyToClipboardAttempts", "attempts"]
-      },
-      outputs: {
-        copied: "cdkCopyToClipboardCopied"
-      }
-    });
-  }
-  return CdkCopyToClipboard;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let ClipboardModule = /*#__PURE__*/(() => {
-  class ClipboardModule {
-    static #_ = this.ɵfac = function ClipboardModule_Factory(t) {
-      return new (t || ClipboardModule)();
-    };
-    static #_2 = this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-      type: ClipboardModule
-    });
-    static #_3 = this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-  }
-  return ClipboardModule;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=clipboard.mjs.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-interfaces.js
 const TUI_EXAMPLE_PRIMARY_FILE_NAME = {
   TS: `TypeScript`,
@@ -18086,36 +18075,6 @@ let TuiThemeNightService = /*#__PURE__*/(() => {
 
 
 
-function TuiDocCopyComponent_button_0_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r3 = core_mjs_["ɵɵgetCurrentView"]();
-    core_mjs_["ɵɵelementStart"](0, "button", 1);
-    core_mjs_["ɵɵlistener"]("click", function TuiDocCopyComponent_button_0_Template_button_click_0_listener() {
-      core_mjs_["ɵɵrestoreView"](_r3);
-      const ctx_r2 = core_mjs_["ɵɵnextContext"]();
-      return core_mjs_["ɵɵresetView"](ctx_r2.onClick());
-    });
-    core_mjs_["ɵɵelementStart"](1, "span", 2);
-    core_mjs_["ɵɵpipe"](2, "async");
-    core_mjs_["ɵɵelementStart"](3, "span", 3);
-    core_mjs_["ɵɵprojection"](4);
-    core_mjs_["ɵɵelementEnd"]();
-    core_mjs_["ɵɵtext"](5);
-    core_mjs_["ɵɵelementEnd"]()();
-  }
-  if (rf & 2) {
-    const texts_r1 = ctx.ngIf;
-    const ctx_r0 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵproperty"]("title", texts_r1[0]);
-    core_mjs_["ɵɵadvance"](1);
-    core_mjs_["ɵɵclassProp"]("t-content_moved", core_mjs_["ɵɵpipeBind1"](2, 5, ctx_r0.copied$));
-    core_mjs_["ɵɵadvance"](2);
-    core_mjs_["ɵɵattribute"]("data-text", texts_r1[0]);
-    core_mjs_["ɵɵadvance"](2);
-    core_mjs_["ɵɵtextInterpolate1"](" ", texts_r1[1], " ");
-  }
-}
-const taiga_ui_addon_doc_components_c0 = ["*"];
 function TuiDocCodeComponent_p_0_Template(rf, ctx) {
   if (rf & 1) {
     core_mjs_["ɵɵelementStart"](0, "p", 2);
@@ -18130,26 +18089,66 @@ function TuiDocCodeComponent_p_0_Template(rf, ctx) {
 }
 function TuiDocCodeComponent_pre_1_Template(rf, ctx) {
   if (rf & 1) {
+    const _r4 = core_mjs_["ɵɵgetCurrentView"]();
     core_mjs_["ɵɵelementStart"](0, "pre", 3);
     core_mjs_["ɵɵtext"](1, "    ");
     core_mjs_["ɵɵelement"](2, "code", 4);
     core_mjs_["ɵɵtext"](3, "\n    ");
     core_mjs_["ɵɵelementStart"](4, "div", 5);
     core_mjs_["ɵɵtext"](5, "\n        ");
-    core_mjs_["ɵɵelement"](6, "tui-doc-copy", 6);
-    core_mjs_["ɵɵtext"](7, "\n        ");
-    core_mjs_["ɵɵprojection"](8);
-    core_mjs_["ɵɵtext"](9, "\n    ");
+    core_mjs_["ɵɵelementStart"](6, "button", 6);
+    core_mjs_["ɵɵlistener"]("click", function TuiDocCodeComponent_pre_1_Template_button_click_6_listener() {
+      core_mjs_["ɵɵrestoreView"](_r4);
+      const ctx_r3 = core_mjs_["ɵɵnextContext"]();
+      return core_mjs_["ɵɵresetView"](ctx_r3.copy$.next());
+    });
+    core_mjs_["ɵɵpipe"](7, "async");
+    core_mjs_["ɵɵtext"](8, "\n        ");
     core_mjs_["ɵɵelementEnd"]();
-    core_mjs_["ɵɵtext"](10, "\n");
+    core_mjs_["ɵɵtext"](9, "\n        ");
+    core_mjs_["ɵɵprojection"](10);
+    core_mjs_["ɵɵtext"](11, "\n    ");
+    core_mjs_["ɵɵelementEnd"]();
+    core_mjs_["ɵɵtext"](12, "\n");
     core_mjs_["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     const content_r2 = ctx.$implicit;
+    const ctx_r1 = core_mjs_["ɵɵnextContext"]();
     core_mjs_["ɵɵadvance"](2);
     core_mjs_["ɵɵproperty"]("lineNumbers", true)("highlight", content_r2);
     core_mjs_["ɵɵadvance"](4);
-    core_mjs_["ɵɵproperty"]("cdkCopyToClipboard", content_r2);
+    core_mjs_["ɵɵproperty"]("icon", core_mjs_["ɵɵpipeBind1"](7, 4, ctx_r1.icon$) || "tuiIconCopyLarge")("cdkCopyToClipboard", content_r2);
+  }
+}
+const taiga_ui_addon_doc_components_c0 = ["*"];
+function TuiDocCopyComponent_button_0_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r3 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "button", 1);
+    i0.ɵɵlistener("click", function TuiDocCopyComponent_button_0_Template_button_click_0_listener() {
+      i0.ɵɵrestoreView(_r3);
+      const ctx_r2 = i0.ɵɵnextContext();
+      return i0.ɵɵresetView(ctx_r2.onClick());
+    });
+    i0.ɵɵelementStart(1, "span", 2);
+    i0.ɵɵpipe(2, "async");
+    i0.ɵɵelementStart(3, "span", 3);
+    i0.ɵɵprojection(4);
+    i0.ɵɵelementEnd();
+    i0.ɵɵtext(5);
+    i0.ɵɵelementEnd()();
+  }
+  if (rf & 2) {
+    const texts_r1 = ctx.ngIf;
+    const ctx_r0 = i0.ɵɵnextContext();
+    i0.ɵɵproperty("title", texts_r1[0]);
+    i0.ɵɵadvance(1);
+    i0.ɵɵclassProp("t-content_moved", i0.ɵɵpipeBind1(2, 5, ctx_r0.copied$));
+    i0.ɵɵadvance(2);
+    i0.ɵɵattribute("data-text", texts_r1[0]);
+    i0.ɵɵadvance(2);
+    i0.ɵɵtextInterpolate1(" ", texts_r1[1], " ");
   }
 }
 const taiga_ui_addon_doc_components_c1 = (/* unused pure expression or super */ null && (["content"]));
@@ -19456,57 +19455,14 @@ function TuiDocPageComponent_ng_container_10_Template(rf, ctx) {
     core_mjs_["ɵɵproperty"]("ngIf", index_r17 === ctx_r4.activeItemIndex);
   }
 }
-const COPIED_TIMEOUT = 1500;
-let TuiDocCopyComponent = /*#__PURE__*/(() => {
-  class TuiDocCopyComponent {
-    constructor(texts$) {
-      this.texts$ = texts$;
-      this.copy$ = new internal_Subject/* Subject */.x();
-    }
-    get copied$() {
-      return this.copy$.pipe((0,operators_switchMap/* switchMap */.w)(() => (0,timer/* timer */.H)(COPIED_TIMEOUT).pipe((0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_FALSE_HANDLER */.Iy), (0,startWith/* startWith */.O)(true))));
-    }
-    onClick() {
-      this.copy$.next();
-    }
-  }
-  TuiDocCopyComponent.ɵfac = function TuiDocCopyComponent_Factory(t) {
-    return new (t || TuiDocCopyComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_kit_tokens_TUI_COPY_TEXTS));
-  };
-  TuiDocCopyComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiDocCopyComponent,
-    selectors: [["tui-doc-copy"]],
-    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3])],
-    ngContentSelectors: taiga_ui_addon_doc_components_c0,
-    decls: 2,
-    vars: 3,
-    consts: [["appearance", "", "size", "s", "tuiButton", "", "type", "button", "class", "t-copy", 3, "title", "click", 4, "ngIf"], ["appearance", "", "size", "s", "tuiButton", "", "type", "button", 1, "t-copy", 3, "title", "click"], [1, "t-content"], [1, "t-initial"]],
-    template: function TuiDocCopyComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵprojectionDef"]();
-        core_mjs_["ɵɵtemplate"](0, TuiDocCopyComponent_button_0_Template, 6, 7, "button", 0);
-        core_mjs_["ɵɵpipe"](1, "async");
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵproperty"]("ngIf", core_mjs_["ɵɵpipeBind1"](1, 1, ctx.texts$));
-      }
-    },
-    dependencies: [taiga_ui_core_components_button/* TuiButtonComponent */.v0, common_mjs_.NgIf, common_mjs_.AsyncPipe],
-    styles: ["[_nghost-%COMP%]{position:relative;display:inline-block;vertical-align:middle}.t-copy[_ngcontent-%COMP%]{transition-property:background;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;width:100%;color:var(--tui-text-01);background:var(--tui-base-01);overflow:hidden}.t-copy[_ngcontent-%COMP%]:hover{background:var(--tui-base-02)}.t-initial[_ngcontent-%COMP%]{white-space:nowrap}.t-initial[_ngcontent-%COMP%]:empty:before{content:attr(data-text)}.t-content[_ngcontent-%COMP%]{transition-property:transform;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;display:flex;flex-direction:column;transform:translateY(1rem);text-align:center;line-height:2rem}.t-content_moved[_ngcontent-%COMP%]{transform:translateY(-1rem)}"],
-    changeDetection: 0
-  });
-  (0,tslib_es6/* __decorate */.gn)([taiga_ui_cdk_decorators/* tuiPure */.UM], TuiDocCopyComponent.prototype, "copied$", null);
-  return TuiDocCopyComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
 let TuiDocCodeComponent = /*#__PURE__*/(() => {
   class TuiDocCodeComponent {
     constructor(markdownCodeProcessor) {
       this.markdownCodeProcessor = markdownCodeProcessor;
       this.rawLoader$$ = new internal_BehaviorSubject/* BehaviorSubject */.X('');
       this.filename = '';
+      this.copy$ = new internal_Subject/* Subject */.x();
+      this.icon$ = this.copy$.pipe((0,operators_switchMap/* switchMap */.w)(() => (0,observable_timer/* timer */.H)(2000).pipe((0,operators_map/* map */.U)(() => 'tuiIconCopyLarge'), (0,operators_startWith/* startWith */.O)('tuiIconCheckLarge'))));
       this.processor$ = this.rawLoader$$.pipe((0,operators_switchMap/* switchMap */.w)(taiga_ui_addon_doc_utils/* tuiRawLoad */.JQ), (0,operators_map/* map */.U)(value => this.markdownCodeProcessor(value)));
     }
     set code(code) {
@@ -19535,11 +19491,11 @@ let TuiDocCodeComponent = /*#__PURE__*/(() => {
     ngContentSelectors: taiga_ui_addon_doc_components_c0,
     decls: 3,
     vars: 4,
-    consts: [["class", "t-header", 4, "ngIf"], ["class", "t-code", 4, "ngFor", "ngForOf"], [1, "t-header"], [1, "t-code"], [3, "lineNumbers", "highlight"], [1, "t-code-actions"], [1, "t-copy", 3, "cdkCopyToClipboard"]],
+    consts: [["class", "t-header", 4, "ngIf"], ["class", "t-code", 4, "ngFor", "ngForOf"], [1, "t-header"], [1, "t-code"], [3, "lineNumbers", "highlight"], [1, "t-code-actions"], ["tuiIconButton", "", "appearance", "icon", "size", "xs", 1, "t-copy-button", 3, "icon", "cdkCopyToClipboard", "click"]],
     template: function TuiDocCodeComponent_Template(rf, ctx) {
       if (rf & 1) {
         core_mjs_["ɵɵprojectionDef"]();
-        core_mjs_["ɵɵtemplate"](0, TuiDocCodeComponent_p_0_Template, 2, 1, "p", 0)(1, TuiDocCodeComponent_pre_1_Template, 11, 3, "pre", 1);
+        core_mjs_["ɵɵtemplate"](0, TuiDocCodeComponent_p_0_Template, 2, 1, "p", 0)(1, TuiDocCodeComponent_pre_1_Template, 13, 6, "pre", 1);
         core_mjs_["ɵɵpipe"](2, "async");
       }
       if (rf & 2) {
@@ -19548,12 +19504,73 @@ let TuiDocCodeComponent = /*#__PURE__*/(() => {
         core_mjs_["ɵɵproperty"]("ngForOf", core_mjs_["ɵɵpipeBind1"](2, 2, ctx.processor$));
       }
     },
-    dependencies: [TuiDocCopyComponent, common_mjs_.NgIf, common_mjs_.NgForOf, ngx_highlightjs/* Highlight */.y$, CdkCopyToClipboard, common_mjs_.AsyncPipe],
-    styles: ["[_nghost-%COMP%]{display:block}.t-header[_ngcontent-%COMP%]{font:var(--tui-font-text-s);font-weight:bold}.t-code[_ngcontent-%COMP%]{position:relative;margin:0;white-space:normal}.t-code[_ngcontent-%COMP%]:hover   .t-code-actions[_ngcontent-%COMP%], .t-code[_ngcontent-%COMP%]:focus-visible   .t-code-actions[_ngcontent-%COMP%]{opacity:1}.t-code[_ngcontent-%COMP%] + .t-code[_ngcontent-%COMP%]{margin-top:1rem}.t-code-actions[_ngcontent-%COMP%]{position:absolute;top:.875rem;right:2rem;display:flex;opacity:0;grid-gap:.5rem;gap:.5rem;flex-direction:row-reverse}.hljs[_ngcontent-%COMP%]:not(:empty){font:var(--tui-font-text-m);padding:1.5rem 2rem;font-family:monospace;background:var(--tui-clear);word-wrap:break-word;white-space:pre-wrap}@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm){.hljs[_ngcontent-%COMP%]:not(:empty)::-webkit-scrollbar, .hljs[_ngcontent-%COMP%]:not(:empty)::-webkit-scrollbar-thumb{width:1rem;height:1rem;border-radius:6.25rem;background-clip:padding-box;border:.375rem solid transparent}.hljs[_ngcontent-%COMP%]:not(:empty)::-webkit-scrollbar{background-color:transparent}.hljs[_ngcontent-%COMP%]:not(:empty)::-webkit-scrollbar-thumb{background-color:var(--tui-clear-hover)}.hljs[_ngcontent-%COMP%]:not(:empty)::-webkit-scrollbar-thumb:hover{background-color:var(--tui-clear-active)}.hljs[_ngcontent-%COMP%]:not(:empty)::-webkit-scrollbar-thumb:active{background-color:var(--tui-text-03)}}._has-filename[_nghost-%COMP%]   .hljs[_ngcontent-%COMP%]:not(:empty){border-radius:.75rem}tui-root._mobile[_nghost-%COMP%]   .hljs[_ngcontent-%COMP%]:not(:empty), tui-root._mobile   [_nghost-%COMP%]   .hljs[_ngcontent-%COMP%]:not(:empty){padding:1rem}"],
+    dependencies: [taiga_ui_core_components_button/* TuiButtonComponent */.v0, common_mjs_.NgIf, common_mjs_.NgForOf, ngx_highlightjs/* Highlight */.y$, CdkCopyToClipboard, common_mjs_.AsyncPipe],
+    styles: ["[_nghost-%COMP%]{display:block}.t-header[_ngcontent-%COMP%]{font:var(--tui-font-text-s);font-weight:bold}.t-header[_ngcontent-%COMP%] + .t-code[_ngcontent-%COMP%]{border-radius:.25rem}.t-code[_ngcontent-%COMP%]{position:relative;margin:0;white-space:normal;outline:1px solid var(--tui-base-03)}.t-code[_ngcontent-%COMP%]     .hljs-ln{width:-webkit-max-content;width:max-content}.t-code[_ngcontent-%COMP%] + .t-code[_ngcontent-%COMP%]{margin-top:1rem}.t-code-actions[_ngcontent-%COMP%]{position:absolute;top:.75rem;right:.75rem;display:flex;justify-content:center;align-items:center;flex-direction:row-reverse}tui-root._mobile[_nghost-%COMP%]   .t-code-actions[_ngcontent-%COMP%], tui-root._mobile   [_nghost-%COMP%]   .t-code-actions[_ngcontent-%COMP%]{padding:.3125rem;border-radius:.25rem;border:1px solid var(--tui-base-04)}.t-copy-button[_ngcontent-%COMP%] +*:not(:empty){margin-right:.375rem}.hljs[_ngcontent-%COMP%]:not(:empty){font:var(--tui-font-text-m);font-size:.875rem;padding:1.5rem 2rem;font-family:monospace;word-wrap:break-word;white-space:pre-wrap}@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm){.hljs[_ngcontent-%COMP%]:not(:empty)::-webkit-scrollbar, .hljs[_ngcontent-%COMP%]:not(:empty)::-webkit-scrollbar-thumb{width:1rem;height:1rem;border-radius:6.25rem;background-clip:padding-box;border:.375rem solid transparent}.hljs[_ngcontent-%COMP%]:not(:empty)::-webkit-scrollbar{background-color:transparent}.hljs[_ngcontent-%COMP%]:not(:empty)::-webkit-scrollbar-thumb{background-color:var(--tui-clear-hover)}.hljs[_ngcontent-%COMP%]:not(:empty)::-webkit-scrollbar-thumb:hover{background-color:var(--tui-clear-active)}.hljs[_ngcontent-%COMP%]:not(:empty)::-webkit-scrollbar-thumb:active{background-color:var(--tui-text-03)}}tui-root._mobile[_nghost-%COMP%]   .hljs[_ngcontent-%COMP%]:not(:empty), tui-root._mobile   [_nghost-%COMP%]   .hljs[_ngcontent-%COMP%]:not(:empty){padding:1rem}.t-code-actions[_ngcontent-%COMP%], .hljs[_ngcontent-%COMP%]:not(:empty){background:var(--tui-base-01)}@supports (background: color-mix(in srgb,var(--tui-base-01),#222 2%)){.t-code-actions[_ngcontent-%COMP%], .hljs[_ngcontent-%COMP%]:not(:empty){background:color-mix(in srgb,var(--tui-base-01),#222 2%)}}"],
     changeDetection: 0
   });
   return TuiDocCodeComponent;
 })();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiDocCodeModule = /*#__PURE__*/(() => {
+  class TuiDocCodeModule {}
+  TuiDocCodeModule.ɵfac = function TuiDocCodeModule_Factory(t) {
+    return new (t || TuiDocCodeModule)();
+  };
+  TuiDocCodeModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiDocCodeModule
+  });
+  TuiDocCodeModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    imports: [[common_mjs_.CommonModule, taiga_ui_core_components_svg/* TuiSvgModule */.EI, ngx_highlightjs/* HighlightModule */._l, taiga_ui_core_components_button/* TuiButtonModule */.fN, ClipboardModule]]
+  });
+  return TuiDocCodeModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+const COPIED_TIMEOUT = 1500;
+let TuiDocCopyComponent = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  class TuiDocCopyComponent {
+    constructor(texts$) {
+      this.texts$ = texts$;
+      this.copy$ = new Subject();
+    }
+    get copied$() {
+      return this.copy$.pipe(switchMap(() => timer(COPIED_TIMEOUT).pipe(map(ALWAYS_FALSE_HANDLER), startWith(true))));
+    }
+    onClick() {
+      this.copy$.next();
+    }
+  }
+  TuiDocCopyComponent.ɵfac = function TuiDocCopyComponent_Factory(t) {
+    return new (t || TuiDocCopyComponent)(i0.ɵɵdirectiveInject(TUI_COPY_TEXTS));
+  };
+  TuiDocCopyComponent.ɵcmp = /* @__PURE__ */i0.ɵɵdefineComponent({
+    type: TuiDocCopyComponent,
+    selectors: [["tui-doc-copy"]],
+    features: [i0.ɵɵProvidersFeature([TuiDestroyService])],
+    ngContentSelectors: taiga_ui_addon_doc_components_c0,
+    decls: 2,
+    vars: 3,
+    consts: [["appearance", "", "size", "s", "tuiButton", "", "type", "button", "class", "t-copy", 3, "title", "click", 4, "ngIf"], ["appearance", "", "size", "s", "tuiButton", "", "type", "button", 1, "t-copy", 3, "title", "click"], [1, "t-content"], [1, "t-initial"]],
+    template: function TuiDocCopyComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        i0.ɵɵprojectionDef();
+        i0.ɵɵtemplate(0, TuiDocCopyComponent_button_0_Template, 6, 7, "button", 0);
+        i0.ɵɵpipe(1, "async");
+      }
+      if (rf & 2) {
+        i0.ɵɵproperty("ngIf", i0.ɵɵpipeBind1(1, 1, ctx.texts$));
+      }
+    },
+    dependencies: [i2.TuiButtonComponent, i4.NgIf, i4.AsyncPipe],
+    styles: ["[_nghost-%COMP%]{position:relative;display:inline-block;vertical-align:middle}.t-copy[_ngcontent-%COMP%]{transition-property:background;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;width:100%;color:var(--tui-text-01);background:var(--tui-base-01);overflow:hidden}.t-copy[_ngcontent-%COMP%]:hover{background:var(--tui-base-02)}.t-initial[_ngcontent-%COMP%]{white-space:nowrap}.t-initial[_ngcontent-%COMP%]:empty:before{content:attr(data-text)}.t-content[_ngcontent-%COMP%]{transition-property:transform;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;display:flex;flex-direction:column;transform:translateY(1rem);text-align:center;line-height:2rem}.t-content_moved[_ngcontent-%COMP%]{transform:translateY(-1rem)}"],
+    changeDetection: 0
+  });
+  __decorate([tuiPure], TuiDocCopyComponent.prototype, "copied$", null);
+  return TuiDocCopyComponent;
+})()));
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
@@ -19569,22 +19586,6 @@ let TuiDocCopyModule = /*#__PURE__*/(() => {
     imports: [[common_mjs_.CommonModule, taiga_ui_core_components_button/* TuiButtonModule */.fN]]
   });
   return TuiDocCopyModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiDocCodeModule = /*#__PURE__*/(() => {
-  class TuiDocCodeModule {}
-  TuiDocCodeModule.ɵfac = function TuiDocCodeModule_Factory(t) {
-    return new (t || TuiDocCodeModule)();
-  };
-  TuiDocCodeModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiDocCodeModule
-  });
-  TuiDocCodeModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-    imports: [[common_mjs_.CommonModule, ngx_highlightjs/* HighlightModule */._l, TuiDocCopyModule, ClipboardModule]]
-  });
-  return TuiDocCodeModule;
 })();
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
@@ -20407,7 +20408,7 @@ let TuiDocExampleComponent = /*#__PURE__*/(/* unused pure expression or super */
       }
     },
     dependencies: [i2.TuiButtonComponent, i1.TuiTabsWithMoreComponent, i1.TuiTabComponent, i2.TuiLoaderComponent, TuiDocCodeComponent, i4.NgIf, i5$1.PolymorpheusOutletDirective, i4.NgForOf, i6$1.TuiItemDirective, i4.NgTemplateOutlet, TuiDocExampleCapitalizePipe, i4.AsyncPipe, TuiDocExampleGetTabsPipe, i6$1.TuiMapperPipe],
-    styles: ["[_nghost-%COMP%]{position:relative;display:block;padding-top:3.5rem;clear:right}[_nghost-%COMP%]   tui-root._mobile[_nghost-%COMP%], tui-root._mobile   [_nghost-%COMP%]{padding-top:2rem}.t-title[_ngcontent-%COMP%]{font:var(--tui-font-heading-5);margin:0 0 .5rem}tui-root._mobile[_nghost-%COMP%]   .t-title[_ngcontent-%COMP%], tui-root._mobile   [_nghost-%COMP%]   .t-title[_ngcontent-%COMP%]{font:var(--tui-font-heading-6)}.t-description[_ngcontent-%COMP%]{font:var(--tui-font-text-m);font-weight:normal;margin:0}.t-example[_ngcontent-%COMP%]{position:relative;margin-top:1.5rem;border:1px solid var(--tui-base-03);border-radius:var(--tui-radius-m);box-shadow:0 .125rem .1875rem #0000001a;overflow:hidden}tui-root._mobile[_nghost-%COMP%]   .t-example[_ngcontent-%COMP%], tui-root._mobile   [_nghost-%COMP%]   .t-example[_ngcontent-%COMP%]{margin-top:.75rem}.t-tabs-wrapper[_ngcontent-%COMP%]{display:flex;padding:0 2rem;box-shadow:inset 0 -1px var(--tui-base-03);justify-content:space-between;align-items:center}tui-root._mobile[_nghost-%COMP%]   .t-tabs-wrapper[_ngcontent-%COMP%], tui-root._mobile   [_nghost-%COMP%]   .t-tabs-wrapper[_ngcontent-%COMP%]{padding:0 1rem}.t-tabs[_ngcontent-%COMP%]{flex-grow:1}.t-demo[_ngcontent-%COMP%]{padding:2rem;max-width:100%;box-sizing:border-box;overflow-x:auto}@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm){.t-demo[_ngcontent-%COMP%]::-webkit-scrollbar, .t-demo[_ngcontent-%COMP%]::-webkit-scrollbar-thumb{width:1rem;height:1rem;border-radius:6.25rem;background-clip:padding-box;border:.375rem solid transparent}.t-demo[_ngcontent-%COMP%]::-webkit-scrollbar{background-color:transparent}.t-demo[_ngcontent-%COMP%]::-webkit-scrollbar-thumb{background-color:var(--tui-clear-hover)}.t-demo[_ngcontent-%COMP%]::-webkit-scrollbar-thumb:hover{background-color:var(--tui-clear-active)}.t-demo[_ngcontent-%COMP%]::-webkit-scrollbar-thumb:active{background-color:var(--tui-text-03)}}tui-root._mobile[_nghost-%COMP%]   .t-demo[_ngcontent-%COMP%], tui-root._mobile   [_nghost-%COMP%]   .t-demo[_ngcontent-%COMP%]{padding:1rem}[_nghost-%COMP%]:not(._fullsize)   .t-demo[_ngcontent-%COMP%]{width:-webkit-min-content;width:min-content;min-width:20rem}.t-link-icon[_ngcontent-%COMP%]{margin-left:.3rem;vertical-align:baseline}.t-content[_ngcontent-%COMP%]{will-change:opacity;height:0;visibility:hidden;opacity:0}.t-content_animated[_ngcontent-%COMP%]{transition:opacity .3s ease-in-out}.t-content_visible[_ngcontent-%COMP%]{height:auto;visibility:visible;opacity:1}"],
+    styles: ["[_nghost-%COMP%]{position:relative;display:block;padding-top:3.5rem;clear:right}[_nghost-%COMP%]   tui-root._mobile[_nghost-%COMP%], tui-root._mobile   [_nghost-%COMP%]{padding-top:2rem}.t-title[_ngcontent-%COMP%]{font:var(--tui-font-heading-5);margin:0 0 .5rem}tui-root._mobile[_nghost-%COMP%]   .t-title[_ngcontent-%COMP%], tui-root._mobile   [_nghost-%COMP%]   .t-title[_ngcontent-%COMP%]{font:var(--tui-font-heading-6)}.t-description[_ngcontent-%COMP%]{font:var(--tui-font-text-m);font-weight:normal;margin:0}.t-example[_ngcontent-%COMP%]{position:relative;margin-top:1.5rem;border:1px solid var(--tui-base-03);border-radius:var(--tui-radius-m);box-shadow:0 .125rem .1875rem #0000001a;overflow:hidden}tui-root._mobile[_nghost-%COMP%]   .t-example[_ngcontent-%COMP%], tui-root._mobile   [_nghost-%COMP%]   .t-example[_ngcontent-%COMP%]{margin-top:.75rem}.t-tabs-wrapper[_ngcontent-%COMP%]{display:flex;padding:0 .875rem 0 2rem;box-shadow:inset 0 -1px var(--tui-base-03);justify-content:space-between;align-items:center}tui-root._mobile[_nghost-%COMP%]   .t-tabs-wrapper[_ngcontent-%COMP%], tui-root._mobile   [_nghost-%COMP%]   .t-tabs-wrapper[_ngcontent-%COMP%]{padding:0 .875rem 0 1rem}.t-tabs[_ngcontent-%COMP%]{flex-grow:1}.t-demo[_ngcontent-%COMP%]{padding:2rem;max-width:100%;box-sizing:border-box;overflow-x:auto}@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm){.t-demo[_ngcontent-%COMP%]::-webkit-scrollbar, .t-demo[_ngcontent-%COMP%]::-webkit-scrollbar-thumb{width:1rem;height:1rem;border-radius:6.25rem;background-clip:padding-box;border:.375rem solid transparent}.t-demo[_ngcontent-%COMP%]::-webkit-scrollbar{background-color:transparent}.t-demo[_ngcontent-%COMP%]::-webkit-scrollbar-thumb{background-color:var(--tui-clear-hover)}.t-demo[_ngcontent-%COMP%]::-webkit-scrollbar-thumb:hover{background-color:var(--tui-clear-active)}.t-demo[_ngcontent-%COMP%]::-webkit-scrollbar-thumb:active{background-color:var(--tui-text-03)}}tui-root._mobile[_nghost-%COMP%]   .t-demo[_ngcontent-%COMP%], tui-root._mobile   [_nghost-%COMP%]   .t-demo[_ngcontent-%COMP%]{padding:1rem}[_nghost-%COMP%]:not(._fullsize)   .t-demo[_ngcontent-%COMP%]{width:-webkit-min-content;width:min-content;min-width:20rem}.t-link-icon[_ngcontent-%COMP%]{margin-left:.3rem;vertical-align:baseline}.t-content[_ngcontent-%COMP%]{will-change:opacity;height:0;visibility:hidden;opacity:0}.t-content_animated[_ngcontent-%COMP%]{transition:opacity .3s ease-in-out}.t-content_visible[_ngcontent-%COMP%]{height:auto;visibility:visible;opacity:1}"],
     changeDetection: 0
   });
   return TuiDocExampleComponent;
@@ -20431,7 +20432,11 @@ let TuiDocExampleModule = /*#__PURE__*/(() => {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-
+function labelsProviderFactory(pages) {
+  return pages.map(({
+    section
+  }) => section).filter(taiga_ui_cdk_utils_miscellaneous/* tuiIsPresent */.Pc).filter((item, index, array) => array.indexOf(item) === index);
+}
 /**
  * Page title
  */
@@ -20466,11 +20471,6 @@ const NAVIGATION_PROVIDERS = [taiga_ui_cdk_services/* TuiDestroyService */.a3, {
     }) => section === label)), pages.filter(page => !page.section)];
   }
 }];
-function labelsProviderFactory(pages) {
-  return pages.map(({
-    section
-  }) => section).filter(taiga_ui_cdk_utils_miscellaneous/* tuiIsPresent */.Pc).filter((item, index, array) => array.indexOf(item) === index);
-}
 let TuiDocNavigationComponent = /*#__PURE__*/(() => {
   class TuiDocNavigationComponent {
     constructor(cdr, titleService, title$, doc, mode, sidebar, labels, items, searchText, router, activatedRoute, destroy$, readyToScroll$, scrollBehavior, docIcons, icons) {
@@ -20493,7 +20493,7 @@ let TuiDocNavigationComponent = /*#__PURE__*/(() => {
       this.active = '';
       this.search = new fesm2022_forms/* FormControl */.NI('');
       this.filtered$ = (0,taiga_ui_cdk_observables/* tuiControlValue */.EK)(this.search).pipe((0,filter/* filter */.h)(search => search.trim().length > 2), (0,operators_map/* map */.U)(search => this.filterItems(this.flattenSubPages(this.items), search)));
-      this.mode$ = this.mode.change$.pipe((0,startWith/* startWith */.O)(null), (0,operators_map/* map */.U)(() => this.mode.mode || 'onLight'));
+      this.mode$ = this.mode.change$.pipe((0,operators_startWith/* startWith */.O)(null), (0,operators_map/* map */.U)(() => this.mode.mode || 'onLight'));
       // Angular can't navigate no anchor links
       // https://stackoverflow.com/questions/36101756/angular2-routing-with-hashtag-to-page-anchor
       title$.subscribe(title => {
@@ -20639,7 +20639,7 @@ let TuiDocNavigationComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [TuiInputComponent, TuiDataListComponent, TuiOptionComponent, taiga_ui_core_components_svg/* TuiSvgComponent */.PN, TuiScrollbarComponent, TuiAccordionComponent, TuiAccordionItemComponent, taiga_ui_core_components_link/* TuiLinkComponent */.V, TuiExpandComponent, TuiInputDirective, taiga_ui_core_directives_textfield_controller_TuiTextfieldSizeDirective, fesm2022_forms/* NgControlStatus */.JJ, fesm2022_forms/* FormControlDirective */.oH, TuiAutoFocusDirective, TuiTextfieldCleanerDirective, TuiTextfieldIconLeftDirective, TuiTextfieldLabelOutsideDirective, common_mjs_.NgIf, TuiDataListDirective, common_mjs_.NgForOf, TuiOptGroupDirective, router_mjs_.RouterLinkWithHref, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.Li, taiga_ui_core_directives_mode/* TuiModeDirective */.w, TuiAccordionItemContentDirective, common_mjs_.NgTemplateOutlet, router_mjs_.RouterLinkActive, TuiScrollIntoViewLinkDirective, common_mjs_.AsyncPipe],
-    styles: ["[_nghost-%COMP%]{z-index:1;display:flex;flex-direction:column;text-align:center;background:var(--tui-base-01)}.t-input[_ngcontent-%COMP%]{margin:1.25rem}.t-navigation[_ngcontent-%COMP%]{display:flex;max-height:100%;min-height:0;flex:1 1 0;text-align:left}.t-scrollbar[_ngcontent-%COMP%]{scroll-behavior:smooth;width:100%}@media screen and (prefers-reduced-motion: reduce){.t-scrollbar[_ngcontent-%COMP%]{scroll-behavior:auto}}.t-items-container[_ngcontent-%COMP%]{display:flex;flex-direction:column;padding:0 1rem}.t-label[_ngcontent-%COMP%]{margin-left:.5rem}.t-expand[_ngcontent-%COMP%]{margin-left:.25rem}.t-section[_ngcontent-%COMP%]{display:flex;flex-direction:column;align-items:flex-start;margin:-1rem 0 -.5rem}.t-section_bordered[_ngcontent-%COMP%]{margin:.5rem 0;border-left:1px solid var(--tui-base-03)}.t-subsection[_ngcontent-%COMP%]{margin-left:.5rem}.t-sublink[_ngcontent-%COMP%]{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:1rem 0 0;border:0;background:none;font-size:inherit;line-height:inherit;font:var(--tui-font-text-m);margin-left:.5rem}.t-sublink_small[_ngcontent-%COMP%]{margin-left:1rem;line-height:1.5rem;padding-top:.5rem}.t-sublink_subsection[_ngcontent-%COMP%]{margin-left:0;line-height:1.6rem}.t-sublink.t-sublink.t-sublink_active[_ngcontent-%COMP%]{color:var(--tui-text-01)}.t-icon[_ngcontent-%COMP%]{margin-left:.5rem}.t-chevron[_ngcontent-%COMP%]{transition-property:transform;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;width:1rem;height:1rem;margin:-.25rem .25rem 0 -.1875rem}.t-chevron_active[_ngcontent-%COMP%]{transform:rotate(90deg)}"],
+    styles: ["[_nghost-%COMP%]{z-index:1;display:flex;flex-direction:column;text-align:center;background:var(--tui-base-01)}.t-input[_ngcontent-%COMP%]{margin:1.25rem}.t-navigation[_ngcontent-%COMP%]{display:flex;max-height:100%;min-height:0;flex:1 1 0;text-align:left}.t-scrollbar[_ngcontent-%COMP%]{scroll-behavior:smooth;width:100%}@media screen and (prefers-reduced-motion: reduce){.t-scrollbar[_ngcontent-%COMP%]{scroll-behavior:auto}}.t-items-container[_ngcontent-%COMP%]{display:flex;flex-direction:column;padding:0 1rem}.t-label[_ngcontent-%COMP%]{margin-left:.5rem}.t-expand[_ngcontent-%COMP%]{margin-left:.25rem}.t-section[_ngcontent-%COMP%]{display:flex;flex-direction:column;align-items:flex-start;margin:-1rem 0 -.5rem}.t-section_bordered[_ngcontent-%COMP%]{margin:.5rem 0;border-left:1px solid var(--tui-base-03)}.t-subsection[_ngcontent-%COMP%]{margin-left:.5rem}.t-sublink[_ngcontent-%COMP%]{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:1rem 0 0;border:0;background:none;font-size:inherit;line-height:inherit;text-decoration:none;font:var(--tui-font-text-m);margin-left:.5rem}.t-sublink_small[_ngcontent-%COMP%]{margin-left:1rem;line-height:1.5rem;padding-top:.5rem}.t-sublink_subsection[_ngcontent-%COMP%]{margin-left:0;line-height:1.6rem}.t-sublink.t-sublink.t-sublink_active[_ngcontent-%COMP%]{color:var(--tui-text-01)}.t-icon[_ngcontent-%COMP%]{margin-left:.5rem}.t-chevron[_ngcontent-%COMP%]{transition-property:transform;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;width:1rem;height:1rem;margin:-.25rem .25rem 0 -.1875rem}.t-chevron_active[_ngcontent-%COMP%]{transform:rotate(90deg)}"],
     changeDetection: 0
   });
   (0,tslib_es6/* __decorate */.gn)([taiga_ui_cdk_decorators/* tuiPure */.UM], TuiDocNavigationComponent.prototype, "filterItems", null);
@@ -20658,7 +20658,7 @@ let TuiDocHeaderComponent = /*#__PURE__*/(() => {
       this.router = router;
       this.swipes$ = swipes$;
       this.stream$ = new internal_Subject/* Subject */.x();
-      this.open$ = (0,merge/* merge */.T)(this.router.events.pipe((0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_FALSE_HANDLER */.Iy)), this.stream$, this.swipes$.pipe((0,filter/* filter */.h)(swipe => swipe.direction === 'left' || swipe.direction === 'right'), (0,operators_map/* map */.U)(swipe => swipe.direction === 'right'))).pipe((0,startWith/* startWith */.O)(false), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)());
+      this.open$ = (0,merge/* merge */.T)(this.router.events.pipe((0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_FALSE_HANDLER */.Iy)), this.stream$, this.swipes$.pipe((0,filter/* filter */.h)(swipe => swipe.direction === 'left' || swipe.direction === 'right'), (0,operators_map/* map */.U)(swipe => swipe.direction === 'right'))).pipe((0,operators_startWith/* startWith */.O)(false), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)());
     }
     onClick() {
       this.stream$.next(true);
@@ -20959,7 +20959,7 @@ let TuiDocMainComponent = /*#__PURE__*/(() => {
       this.theme = theme;
       this.night = night;
       this.change$ = this.night;
-      this.night$ = this.change$.pipe((0,startWith/* startWith */.O)(null), (0,operators_map/* map */.U)(() => this.night.value), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), (0,share/* share */.B)());
+      this.night$ = this.change$.pipe((0,operators_startWith/* startWith */.O)(null), (0,operators_map/* map */.U)(() => this.night.value), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), (0,share/* share */.B)());
     }
     get mode() {
       return this.night.value ? 'onDark' : null;
@@ -21397,6 +21397,21 @@ const TUI_DOC_URL_STATE_HANDLER = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/
 function tuiCoerceValueIsTrue(value) {
   return (value === null || value === void 0 ? void 0 : value.toString()) === `true`;
 }
+function isEmptyParamValue(value) {
+  return [`undefined`, `null`, `NaN`].includes(value);
+}
+function isBooleanParamValue(value) {
+  return value === `true` || value === `false`;
+}
+function isNumberParamValue(value) {
+  return !!value.trim() && !Number.isNaN(Number(value)) && !value.startsWith(`+`);
+}
+function isPossibleArray(value) {
+  return value.startsWith(`[`) && value.endsWith(`]`);
+}
+function isPossibleObject(value) {
+  return value.startsWith(`{`) && value.endsWith(`}`);
+}
 function tuiCoerceValue(value) {
   const prepared = String(value).trim();
   if (isEmptyParamValue(prepared)) {
@@ -21414,21 +21429,6 @@ function tuiCoerceValue(value) {
   } catch (_a) {
     return decodedValue;
   }
-}
-function isEmptyParamValue(value) {
-  return [`undefined`, `null`, `NaN`].includes(value);
-}
-function isBooleanParamValue(value) {
-  return value === `true` || value === `false`;
-}
-function isNumberParamValue(value) {
-  return !!value.trim() && !Number.isNaN(Number(value)) && !value.startsWith(`+`);
-}
-function isPossibleArray(value) {
-  return value.startsWith(`[`) && value.endsWith(`]`);
-}
-function isPossibleObject(value) {
-  return value.startsWith(`{`) && value.endsWith(`}`);
 }
 function tuiGenerateRoutes(type) {
   return [{
@@ -21554,26 +21554,26 @@ function tuiSortPages(pages, excludeSections = new Set()) {
     subPages: tuiSortPages(page.subPages, excludeSections)
   }) : page);
 }
-function tuiToFlatMapPages(pages) {
-  const map = new Map();
-  for (const page of pages) {
-    if (`subPages` in page) {
-      for (const subPage of page.subPages) {
-        ngDevMode && assertTitle(subPage, map);
-        map.set(subPage.title, subPage);
-      }
-    } else {
-      ngDevMode && assertTitle(page, map);
-      map.set(page.title, page);
-    }
-  }
-  return map;
-}
 function assertTitle(page, map) {
   var _a;
   if (map.has(page.title) && ((_a = map.get(page.title)) === null || _a === void 0 ? void 0 : _a.route) !== page.route) {
     console.error(`Title for page should be unique for prevent inconsistent page names`, page, `<== Collisions between ==>`, map.get(page.title));
   }
+}
+function tuiToFlatMapPages(pages) {
+  const map = new Map();
+  pages.forEach(page => {
+    if (`subPages` in page) {
+      page.subPages.forEach(subPage => {
+        ngDevMode && assertTitle(subPage, map);
+        map.set(subPage.title, subPage);
+      });
+    } else {
+      ngDevMode && assertTitle(page, map);
+      map.set(page.title, page);
+    }
+  });
+  return map;
 }
 const MAP = {
   а: `f`,
@@ -22323,15 +22323,6 @@ const ALWAYS_TRUE_HANDLER = () => true;
  * TODO: drop support of legacy Edge (EdgeHTML) in v4.x
  */
 const CHROMIUM_EDGE_START_VERSION = 79;
-
-/**
- * For type safety when using @ContentChildren and @ViewChildren
- *
- * NOTE: Be careful subscribing to 'changes'
- */
-const EMPTY_QUERY = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.QueryList();
-const EMPTY_ARRAY = [];
-const EMPTY_FUNCTION = () => {};
 const rect = {
   bottom: 0,
   height: 0,
@@ -22342,6 +22333,14 @@ const rect = {
   x: 0,
   y: 0
 };
+/**
+ * For type safety when using @ContentChildren and @ViewChildren
+ *
+ * NOTE: Be careful subscribing to 'changes'
+ */
+const EMPTY_QUERY = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.QueryList();
+const EMPTY_ARRAY = [];
+const EMPTY_FUNCTION = () => {};
 const EMPTY_CLIENT_RECT = Object.assign(Object.assign({}, rect), {
   toJSON() {
     return rect;
@@ -22352,7 +22351,9 @@ const EMPTY_CLIENT_RECT = Object.assign(Object.assign({}, rect), {
  * Default method to turn arbitrary object into string
  */
 const TUI_DEFAULT_STRINGIFY = item => String(item);
-
+function bothEmpty(item1, item2) {
+  return Array.isArray(item1) && Array.isArray(item2) && !item1.length && !item2.length;
+}
 /**
  * Default handler for matching stringified version of an item and a search query
  * @param item arbitrary element to match with a string
@@ -22375,9 +22376,6 @@ const TUI_STRICT_MATCHER = (item, search, stringify = TUI_DEFAULT_STRINGIFY) => 
  * @param item2 second element
  */
 const TUI_DEFAULT_IDENTITY_MATCHER = (item1, item2) => item1 === item2 || bothEmpty(item1, item2);
-function bothEmpty(item1, item2) {
-  return Array.isArray(item1) && Array.isArray(item2) && !item1.length && !item2.length;
-}
 
 /**
  * Add to enable child :leave animation (fixes https://github.com/angular/angular/issues/15753)
@@ -22465,8 +22463,8 @@ const CHAR_ZERO_WIDTH_SPACE = (/* unused pure expression or super */ null && (`\
  *
  * Array of icons used in taiga-ui components
  */
-const TUI_USED_ICONS = (/* unused pure expression or super */ null && ([`tuiIconMirMono`, `tuiIconVisaMono`, `tuiIconElectronMono`, `tuiIconMastercard`, `tuiIconMaestro`, `tuiIconAmex`, `tuiIconDinersClub`, `tuiIconDiscover`, `tuiIconHumo`, `tuiIconJCB`, `tuiIconRuPay`, `tuiIconUnionPay`, `tuiIconUzcard`, `tuiIconVerve`, `tuiIconLink`, `tuiIconSearch`, `tuiIconSun`, `tuiIconMoon`, `tuiIconCode`, `tuiIconMenuLarge`, `tuiIconRotate`, `tuiIconArrowLeft`, `tuiIconArrowRight`, `tuiIconPlus`, `tuiIconMinus`, `tuiIconMinimize`, `tuiIconEye`, `tuiIconEyeOff`, `tuiIconDrag`, `tuiIconSortAscending`, `tuiIconSortDescending`, `tuiIconSortOff`, `tuiIconCheck`, `tuiIconCheckLarge`, `tuiIconMinusLarge`, `tuiIconChevronUp`, `tuiIconHelpCircle`, `tuiIconClose`, `tuiIconAlertCircle`, `tuiIconChevronRight`, `tuiIconInfo`, `tuiIconCheckCircle`, `tuiIconXCircle`, `tuiIconChevronLeft`, `tuiIconStarLarge`, `tuiIconChevronDown`, `tuiIconChevronDownLarge`, `tuiIconFileLarge`, `tuiIconTrashLarge`, `tuiIconAlertCircleLarge`, `tuiIconCheckCircleLarge`, `tuiIconCopy`, `tuiIconCopyLarge`, `tuiIconEyeOffLarge`, `tuiIconEyeLarge`, `tuiIconClock`, `tuiIconClockLarge`, `tuiIconToggleOff`, `tuiIconToggleOffLarge`, `tuiIconToggleOn`, `tuiIconToggleOnLarge`, `tuiIconCalendar`, `tuiIconCalendarLarge`]));
-const TUI_VERSION = `3.54.0`;
+const TUI_USED_ICONS = (/* unused pure expression or super */ null && ([`tuiIconMirMono`, `tuiIconVisaMono`, `tuiIconElectronMono`, `tuiIconMastercard`, `tuiIconMaestro`, `tuiIconAmex`, `tuiIconDinersClub`, `tuiIconDiscover`, `tuiIconHumo`, `tuiIconJCB`, `tuiIconRuPay`, `tuiIconUnionPay`, `tuiIconUzcard`, `tuiIconVerve`, `tuiIconCopyLarge`, `tuiIconCheckLarge`, `tuiIconLink`, `tuiIconSearch`, `tuiIconSun`, `tuiIconMoon`, `tuiIconCode`, `tuiIconMenuLarge`, `tuiIconRotate`, `tuiIconArrowLeft`, `tuiIconArrowRight`, `tuiIconPlus`, `tuiIconMinus`, `tuiIconMinimize`, `tuiIconEye`, `tuiIconEyeOff`, `tuiIconDrag`, `tuiIconSortAscending`, `tuiIconSortDescending`, `tuiIconSortOff`, `tuiIconCheck`, `tuiIconMinusLarge`, `tuiIconChevronUp`, `tuiIconHelpCircle`, `tuiIconClose`, `tuiIconAlertCircle`, `tuiIconChevronRight`, `tuiIconInfo`, `tuiIconCheckCircle`, `tuiIconXCircle`, `tuiIconChevronLeft`, `tuiIconStarLarge`, `tuiIconChevronDown`, `tuiIconChevronDownLarge`, `tuiIconFileLarge`, `tuiIconTrashLarge`, `tuiIconAlertCircleLarge`, `tuiIconCheckCircleLarge`, `tuiIconCopy`, `tuiIconEyeOffLarge`, `tuiIconEyeLarge`, `tuiIconClock`, `tuiIconClockLarge`, `tuiIconToggleOff`, `tuiIconToggleOffLarge`, `tuiIconToggleOn`, `tuiIconToggleOnLarge`, `tuiIconCalendar`, `tuiIconCalendarLarge`]));
+const TUI_VERSION = `3.55.0`;
 
 /**
  * Generated bundle index. Do not edit.
@@ -22506,7 +22504,15 @@ function tuiDebounce(timeout) {
     return descriptor;
   };
 }
-
+function errorGetDefault(key, component) {
+  return `Default value for ${String(key)} was not provided in ${component}, error in Taiga UI Angular Kit`;
+}
+function errorSetDefault(key, component) {
+  return `Undefined was passed as ${String(key)} to ${component}, which is invalid input, using default value:`;
+}
+function errorSetDefaultInitial(key, component) {
+  return `Undefined was passed as default value for ${String(key)} to ${component}, error in Taiga UI Angular Kit`;
+}
 /**
  * @deprecated:
  * not compatible with TypeScript 5
@@ -22555,15 +22561,6 @@ function tuiDefaultProp(assertion, ...args) {
       }
     });
   };
-}
-function errorGetDefault(key, component) {
-  return `Default value for ${String(key)} was not provided in ${component}, error in Taiga UI Angular Kit`;
-}
-function errorSetDefault(key, component) {
-  return `Undefined was passed as ${String(key)} to ${component}, which is invalid input, using default value:`;
-}
-function errorSetDefaultInitial(key, component) {
-  return `Undefined was passed as default value for ${String(key)} to ${component}, error in Taiga UI Angular Kit`;
 }
 function decorateMethod(originalMethod) {
   let previousArgs = [];
@@ -22643,7 +22640,9 @@ function tuiPure(target, propertyKeyOrContext, descriptor) {
     }
   };
 }
-
+function errorSet(key, component) {
+  return `Undefined was passed as ${String(key)} to ${component}, setter will not be called`;
+}
 /**
  * @deprecated:
  * not compatible with TypeScript 5
@@ -22679,9 +22678,6 @@ function tuiRequiredSetter(assertion, ...args) {
       }
     };
   };
-}
-function errorSet(key, component) {
-  return `Undefined was passed as ${String(key)} to ${component}, setter will not be called`;
 }
 
 /**
@@ -23656,6 +23652,12 @@ let TuiResizeService = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 const SCROLL_TIME = 300;
+function getX(elementOrWindow) {
+  return `scrollX` in elementOrWindow ? elementOrWindow.scrollX : elementOrWindow.scrollLeft;
+}
+function getY(elementOrWindow) {
+  return `scrollY` in elementOrWindow ? elementOrWindow.scrollY : elementOrWindow.scrollTop;
+}
 let TuiScrollService = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
   class TuiScrollService {
     constructor(performanceRef, animationFrame$) {
@@ -23690,12 +23692,6 @@ let TuiScrollService = /*#__PURE__*/(/* unused pure expression or super */ null 
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-function getX(elementOrWindow) {
-  return `scrollX` in elementOrWindow ? elementOrWindow.scrollX : elementOrWindow.scrollLeft;
-}
-function getY(elementOrWindow) {
-  return `scrollY` in elementOrWindow ? elementOrWindow.scrollY : elementOrWindow.scrollTop;
-}
 let TuiStaticRequestService = /*#__PURE__*/(() => {
   class TuiStaticRequestService {
     constructor(win, platformId) {
@@ -23942,14 +23938,14 @@ var map = __webpack_require__(7398);
 var startWith = __webpack_require__(7921);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/share.js
 var share = __webpack_require__(3020);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/filter.js
+var filter = __webpack_require__(2181);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/takeUntil.js
 var takeUntil = __webpack_require__(9773);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/repeatWhen.js
 var repeatWhen = __webpack_require__(2077);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/withLatestFrom.js
 var withLatestFrom = __webpack_require__(2460);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/filter.js
-var filter = __webpack_require__(2181);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/take.js
 var take = __webpack_require__(8180);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/distinctUntilChanged.js
@@ -23990,6 +23986,27 @@ const TUI_REMOVED_ELEMENT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken
   return element$.pipe((0,switchMap/* switchMap */.w)(element => (0,timer/* timer */.H)(0).pipe((0,map/* map */.U)(() => null), (0,startWith/* startWith */.O)(element))), (0,share/* share */.B)());
 });
 
+// Checks if focusout event should be considered leaving active zone
+function isValidFocusout(target, removedElement = null) {
+  return (
+    // Not due to switching tabs/going to DevTools
+    (0,taiga_ui_cdk_utils_dom/* tuiGetDocumentOrShadowRoot */.Wf)(target).activeElement !== target &&
+    // Not due to button/input becoming disabled or under disabled fieldset
+    !target.matches(`:disabled`) &&
+    // Not due to element being removed from DOM
+    !(removedElement === null || removedElement === void 0 ? void 0 : removedElement.contains(target))
+  );
+}
+function shadowRootActiveElement(root) {
+  return (0,merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(root, `focusin`).pipe((0,map/* map */.U)(({
+    target
+  }) => target)), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(root, `focusout`).pipe((0,filter/* filter */.h)(({
+    target,
+    relatedTarget
+  }) => !!relatedTarget && isValidFocusout(target)), (0,map/* map */.U)(({
+    relatedTarget
+  }) => relatedTarget)));
+}
 /**
  * Active element on the document for ActiveZone
  */
@@ -24027,27 +24044,6 @@ const TUI_ACTIVE_ELEMENT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenF
     () => actualTargetInCurrentTime), (0,takeUntil/* takeUntil */.R)((0,timer/* timer */.H)(0)));
   }))).pipe((0,distinctUntilChanged/* distinctUntilChanged */.x)(), (0,share/* share */.B)());
 });
-// Checks if focusout event should be considered leaving active zone
-function isValidFocusout(target, removedElement = null) {
-  return (
-    // Not due to switching tabs/going to DevTools
-    (0,taiga_ui_cdk_utils_dom/* tuiGetDocumentOrShadowRoot */.Wf)(target).activeElement !== target &&
-    // Not due to button/input becoming disabled or under disabled fieldset
-    !target.matches(`:disabled`) &&
-    // Not due to element being removed from DOM
-    !(removedElement === null || removedElement === void 0 ? void 0 : removedElement.contains(target))
-  );
-}
-function shadowRootActiveElement(root) {
-  return (0,merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(root, `focusin`).pipe((0,map/* map */.U)(({
-    target
-  }) => target)), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(root, `focusout`).pipe((0,filter/* filter */.h)(({
-    target,
-    relatedTarget
-  }) => !!relatedTarget && isValidFocusout(target)), (0,map/* map */.U)(({
-    relatedTarget
-  }) => relatedTarget)));
-}
 
 /**
  * A stream of alerts
@@ -24330,9 +24326,6 @@ function tuiIsSafari({
 
 
 
-function tuiCanScroll(element, rootElement, vertical, scrollEnd) {
-  return vertical ? canScrollVertical(element, rootElement, scrollEnd) : canScrollHorizontal(element, rootElement, scrollEnd);
-}
 function canScrollVertical(element, rootElement, scrollEnd) {
   let currentElement = element;
   while (currentElement !== rootElement.parentElement) {
@@ -24360,6 +24353,9 @@ function canScrollHorizontal(element, rootElement, scrollEnd) {
     }
   }
   return false;
+}
+function tuiCanScroll(element, rootElement, vertical, scrollEnd) {
+  return vertical ? canScrollVertical(element, rootElement, scrollEnd) : canScrollHorizontal(element, rootElement, scrollEnd);
 }
 function tuiContainsOrAfter(current, node) {
   try {
@@ -24839,18 +24835,6 @@ function tuiQuantize(value, quantum) {
   return remainder < quantum / 2 ? value - remainder : value + quantum - remainder;
 }
 const MAX_PRECISION = 292;
-function tuiRound(value, precision = 0) {
-  return calculate(value, precision, Math.round);
-}
-function tuiCeil(value, precision = 0) {
-  return calculate(value, precision, Math.ceil);
-}
-function tuiFloor(value, precision = 0) {
-  return calculate(value, precision, Math.floor);
-}
-function tuiTrunc(value, precision = 0) {
-  return calculate(value, precision, Math.trunc);
-}
 /**
  * Rounding number to the set precision
  *
@@ -24869,6 +24853,18 @@ function calculate(value, precision, func) {
   const tempValue = func(Number(`${pair[0]}e${Number(pair[1]) + precision}`));
   const processedPair = `${tempValue}e`.split(`e`);
   return Number(`${processedPair[0]}e${Number(processedPair[1]) - precision}`);
+}
+function tuiRound(value, precision = 0) {
+  return calculate(value, precision, Math.round);
+}
+function tuiCeil(value, precision = 0) {
+  return calculate(value, precision, Math.ceil);
+}
+function tuiFloor(value, precision = 0) {
+  return calculate(value, precision, Math.floor);
+}
+function tuiTrunc(value, precision = 0) {
+  return calculate(value, precision, Math.trunc);
 }
 function tuiRoundWith({
   value,
@@ -24952,12 +24948,12 @@ function tuiIsString(value) {
   // eslint-disable-next-line @taiga-ui/experience/no-typeof
   return typeof value === `string`;
 }
-function tuiCleanObject(object) {
-  return JSON.parse(JSON.stringify(object, (_key, value) => checkValueIsEmpty(value) ? undefined : value));
-}
 function checkValueIsEmpty(value) {
   const nextValue = tuiIsString(value) ? value.trim() : value;
   return [undefined, null, NaN, ``].includes(nextValue);
+}
+function tuiCleanObject(object) {
+  return JSON.parse(JSON.stringify(object, (_key, value) => checkValueIsEmpty(value) ? undefined : value));
 }
 function tuiCreateToken(defaults) {
   return tuiCreateTokenFromFactory(() => defaults);
@@ -25125,7 +25121,27 @@ function tuiUniqBy(array, key) {
 /* harmony export */ });
 /* harmony import */ var _taiga_ui_cdk_utils_miscellaneous__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8937);
 
-
+function makeRandomSalt() {
+  return Math.floor(Math.random() * Date.now());
+}
+function escapeRegExp(search) {
+  return search.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, `\\$&`);
+}
+function extractLinearGradientIdsFromSvg(svg) {
+  var _a;
+  const ids = ((_a = svg.match(/url\(("?)('*)#(.*?)('*)\)/g)) !== null && _a !== void 0 ? _a : []).map(url => url.slice(4, url.length - 1).replace(/['"#]+/g, ``));
+  return Array.from(new Set(ids));
+}
+function setFallbackForGradientFill(svg, fallback) {
+  try {
+    const tree = new DOMParser().parseFromString(svg, `text/html`);
+    tree.body.querySelectorAll(`[fill^=url]`) // only gradient
+    .forEach(element => element.setAttribute(`fill`, `${element.getAttribute(`fill`)} ${fallback}`.trim()));
+    return tree.body.innerHTML.trim();
+  } catch (_a) {
+    return svg;
+  }
+}
 /**
  * @description:
  * Any ‘linearGradient’ attributes which are defined on the referenced
@@ -25151,27 +25167,6 @@ function tuiSvgLinearGradientProcessor(svg, salt = makeRandomSalt(), fallback = 
     return setFallbackForGradientFill(rawSvg, fallback);
   }
   return svg;
-}
-function makeRandomSalt() {
-  return Math.floor(Math.random() * Date.now());
-}
-function escapeRegExp(search) {
-  return search.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, `\\$&`);
-}
-function extractLinearGradientIdsFromSvg(svg) {
-  var _a;
-  const ids = ((_a = svg.match(/url\(("?)('*)#(.*?)('*)\)/g)) !== null && _a !== void 0 ? _a : []).map(url => url.slice(4, url.length - 1).replace(/['"#]+/g, ``));
-  return Array.from(new Set(ids));
-}
-function setFallbackForGradientFill(svg, fallback) {
-  try {
-    const tree = new DOMParser().parseFromString(svg, `text/html`);
-    tree.body.querySelectorAll(`[fill^=url]`) // only gradient
-    .forEach(element => element.setAttribute(`fill`, `${element.getAttribute(`fill`)} ${fallback}`.trim()));
-    return tree.body.innerHTML.trim();
-  } catch (_a) {
-    return svg;
-  }
 }
 
 /**
@@ -25376,7 +25371,7 @@ function tuiAsRectAccessor(useExisting) {
 /* harmony import */ var _taiga_ui_core_components_loader__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(63);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2320);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _taiga_ui_core_directives_wrapper__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(1713);
+/* harmony import */ var _taiga_ui_core_directives_wrapper__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(6626);
 /* harmony import */ var _tinkoff_ng_polymorpheus__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(2549);
 
 
@@ -25567,7 +25562,7 @@ let TuiButtonComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [_taiga_ui_core_components_svg__WEBPACK_IMPORTED_MODULE_13__/* .TuiSvgComponent */ .PN, _taiga_ui_core_components_loader__WEBPACK_IMPORTED_MODULE_14__/* .TuiLoaderComponent */ .kM, _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgIf, _taiga_ui_core_directives_wrapper__WEBPACK_IMPORTED_MODULE_15__/* .TuiWrapperDirective */ .o, _tinkoff_ng_polymorpheus__WEBPACK_IMPORTED_MODULE_16__/* .PolymorpheusOutletDirective */ .Li, _angular_common__WEBPACK_IMPORTED_MODULE_1__.AsyncPipe],
-    styles: ["[_nghost-%COMP%]{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:0;border:0;background:none;font-size:inherit;line-height:inherit;font:var(--tui-font-text-s);color:var(--tui-text-01);position:relative;display:inline-block;flex-shrink:0;vertical-align:top;border-radius:var(--tui-radius-m);-webkit-user-select:none;-moz-user-select:none;user-select:none;text-decoration:none;outline:none;color:inherit}[data-shape=rounded][_nghost-%COMP%]{border-radius:6.25rem}[data-size=xs][_nghost-%COMP%]{height:var(--tui-height-xs);font-weight:normal}[data-size=xs][data-shape=square][_nghost-%COMP%], [data-size=xs][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-xs)}[data-size=s][_nghost-%COMP%]{height:var(--tui-height-s);font-weight:normal}[data-size=s][data-shape=square][_nghost-%COMP%], [data-size=s][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-s)}[data-size=m][_nghost-%COMP%]{height:var(--tui-height-m);font:var(--tui-font-text-m);font-weight:bold}[data-size=m][data-shape=square][_nghost-%COMP%], [data-size=m][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-m)}[data-size=l][_nghost-%COMP%]{height:var(--tui-height-l);font:var(--tui-font-text-m);font-weight:bold}[data-size=l][data-shape=square][_nghost-%COMP%], [data-size=l][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-l)}[data-size=xl][_nghost-%COMP%]{height:3.75rem;font:var(--tui-font-text-m);font-weight:bold}[data-size=xl][data-shape=square][_nghost-%COMP%], [data-size=xl][tuiIconButton][_nghost-%COMP%]{width:3.75rem}[tuiIconButton][_nghost-%COMP%]{font-size:0!important}[tuiIconButton][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [tuiIconButton][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{margin:0!important}.t-loader[_ngcontent-%COMP%]{position:absolute;top:0;left:0;width:100%;height:100%;cursor:default}.t-left[_ngcontent-%COMP%]{margin-right:.5rem}[data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%]{margin-right:.375rem}[data-size=xs][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%]{margin-right:.25rem}.t-right[_ngcontent-%COMP%]{margin:0 -.25rem 0 .25rem}[data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{margin:0 -.25rem 0 .375rem}[data-size=xs][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{margin:0 -.125rem 0 .25rem}.t-icon[_ngcontent-%COMP%]{display:flex;max-width:100%;max-height:100%;align-items:center;justify-content:center}.t-left[_ngcontent-%COMP%], .t-right[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:center;width:1.5rem;height:1.5rem}[data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%], [data-size=xs][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [data-size=xs][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{width:1rem;height:1rem}[tuiIconButton][data-appearance=icon][data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [tuiIconButton][data-appearance=icon][data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{width:1.5rem;height:1.5rem}.t-wrapper[_ngcontent-%COMP%]{box-sizing:border-box;cursor:pointer;isolation:isolate}[data-size=xs][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, .375rem)}[data-size=xs][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:after{border-width:1px}[data-size=s][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, .75rem)}[data-size=m][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, 1.5rem)}[data-size=l][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, 2.25rem)}[data-size=xl][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, 2.5rem)}[data-shape=square][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%], [tuiIconButton][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0}.t-content[_ngcontent-%COMP%]{display:flex;height:100%;align-items:center;justify-content:center;text-align:center}._loading[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{opacity:0}"],
+    styles: ["[_nghost-%COMP%]{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:0;border:0;background:none;font-size:inherit;line-height:inherit;text-decoration:none;font:var(--tui-font-text-s);color:var(--tui-text-01);position:relative;display:inline-block;flex-shrink:0;vertical-align:top;border-radius:var(--tui-radius-m);-webkit-user-select:none;-moz-user-select:none;user-select:none;outline:none;color:inherit}[data-shape=rounded][_nghost-%COMP%]{border-radius:6.25rem}[data-size=xs][_nghost-%COMP%]{height:var(--tui-height-xs);font-weight:normal}[data-size=xs][data-shape=square][_nghost-%COMP%], [data-size=xs][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-xs)}[data-size=s][_nghost-%COMP%]{height:var(--tui-height-s);font-weight:normal}[data-size=s][data-shape=square][_nghost-%COMP%], [data-size=s][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-s)}[data-size=m][_nghost-%COMP%]{height:var(--tui-height-m);font:var(--tui-font-text-m);font-weight:bold}[data-size=m][data-shape=square][_nghost-%COMP%], [data-size=m][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-m)}[data-size=l][_nghost-%COMP%]{height:var(--tui-height-l);font:var(--tui-font-text-m);font-weight:bold}[data-size=l][data-shape=square][_nghost-%COMP%], [data-size=l][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-l)}[data-size=xl][_nghost-%COMP%]{height:3.75rem;font:var(--tui-font-text-m);font-weight:bold}[data-size=xl][data-shape=square][_nghost-%COMP%], [data-size=xl][tuiIconButton][_nghost-%COMP%]{width:3.75rem}[tuiIconButton][_nghost-%COMP%]{font-size:0!important}[tuiIconButton][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [tuiIconButton][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{margin:0!important}.t-loader[_ngcontent-%COMP%]{position:absolute;top:0;left:0;width:100%;height:100%;cursor:default}.t-left[_ngcontent-%COMP%]{margin-right:.5rem}[data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%]{margin-right:.375rem}[data-size=xs][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%]{margin-right:.25rem}.t-right[_ngcontent-%COMP%]{margin:0 -.25rem 0 .25rem}[data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{margin:0 -.25rem 0 .375rem}[data-size=xs][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{margin:0 -.125rem 0 .25rem}.t-icon[_ngcontent-%COMP%]{display:flex;max-width:100%;max-height:100%;align-items:center;justify-content:center}.t-left[_ngcontent-%COMP%], .t-right[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:center;width:1.5rem;height:1.5rem}[data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%], [data-size=xs][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [data-size=xs][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{width:1rem;height:1rem}[tuiIconButton][data-appearance=icon][data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [tuiIconButton][data-appearance=icon][data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{width:1.5rem;height:1.5rem}.t-wrapper[_ngcontent-%COMP%]{box-sizing:border-box;cursor:pointer;isolation:isolate}[data-size=xs][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, .375rem)}[data-size=xs][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:after{border-width:1px}[data-size=s][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, .75rem)}[data-size=m][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, 1.5rem)}[data-size=l][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, 2.25rem)}[data-size=xl][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, 2.5rem)}[data-shape=square][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%], [tuiIconButton][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0}.t-content[_ngcontent-%COMP%]{display:flex;height:100%;align-items:center;justify-content:center;text-align:center}._loading[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{opacity:0}"],
     changeDetection: 0
   });
   return TuiButtonComponent;
@@ -25738,7 +25733,7 @@ let TuiLinkComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [_taiga_ui_core_components_svg__WEBPACK_IMPORTED_MODULE_11__/* .TuiSvgComponent */ .PN, _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgIf],
-    styles: ["[_nghost-%COMP%]{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:0;border:0;background:none;font-size:inherit;line-height:inherit;transition-property:color;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;color:var(--tui-link);text-decoration:none;text-align:left;text-transform:inherit;font-weight:inherit;cursor:pointer;outline:none}[_nghost-%COMP%]:hover{color:var(--tui-link-hover)}[_nghost-%COMP%]:disabled{opacity:var(--tui-disabled-opacity);cursor:default}[data-mode=onLight][_nghost-%COMP%]{color:var(--tui-text-02)}[data-mode=onLight][_nghost-%COMP%]:hover, [data-mode=onLight]._active[_nghost-%COMP%]{color:var(--tui-text-01)}[data-mode=onLight]._pseudo[_nghost-%COMP%]{color:var(--tui-text-01)}[data-mode=onLight]._pseudo[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{-webkit-text-decoration-color:rgba(0,0,0,.48);text-decoration-color:#0000007a}[data-mode=onLight]._pseudo[_nghost-%COMP%]:hover, [data-mode=onLight]._pseudo._active[_nghost-%COMP%]{color:var(--tui-text-03)}[data-mode=onLight][data-host-mode=negative][_nghost-%COMP%]{color:var(--tui-negative-night)}[data-mode=onLight][data-host-mode=negative][_nghost-%COMP%]:hover, [data-mode=onLight][data-host-mode=negative][_nghost-%COMP%]:active, [data-mode=onLight][data-host-mode=negative]._active[_nghost-%COMP%]{color:var(--tui-negative-night-hover)}[data-mode=onDark][_nghost-%COMP%]{color:var(--tui-text-03-night)}[data-mode=onDark][_nghost-%COMP%]:hover, [data-mode=onDark][_nghost-%COMP%]:active, [data-mode=onDark]._active[_nghost-%COMP%]{color:var(--tui-text-01-night)}[data-mode=onDark]._pseudo[_nghost-%COMP%]{color:var(--tui-text-01-night)}[data-mode=onDark]._pseudo[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{-webkit-text-decoration-color:rgba(255,255,255,.48);text-decoration-color:#ffffff7a}[data-mode=onDark]._pseudo[_nghost-%COMP%]:hover, [data-mode=onDark]._pseudo[_nghost-%COMP%]:active, [data-mode=onDark]._pseudo._active[_nghost-%COMP%]{color:var(--tui-text-03-night)}[data-mode=onDark][data-host-mode=positive][_nghost-%COMP%]{color:var(--tui-positive-night)}[data-mode=onDark][data-host-mode=positive][_nghost-%COMP%]:hover, [data-mode=onDark][data-host-mode=positive][_nghost-%COMP%]:active, [data-mode=onDark][data-host-mode=positive]._active[_nghost-%COMP%]{color:var(--tui-positive-night-hover)}[data-host-mode=negative][_nghost-%COMP%]{color:var(--tui-negative)}[data-host-mode=negative][_nghost-%COMP%]:hover{color:var(--tui-negative-hover)}[data-host-mode=negative]._pseudo[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{-webkit-text-decoration-color:rgba(222,76,30,.48);text-decoration-color:#de4c1e7a}[data-host-mode=positive][_nghost-%COMP%]{color:var(--tui-positive)}[data-host-mode=positive][_nghost-%COMP%]:hover{color:var(--tui-positive-hover)}[data-host-mode=positive]._pseudo[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{-webkit-text-decoration-color:rgba(58,169,129,.48);text-decoration-color:#3aa9817a}._focus-visible[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{background:var(--tui-selection)}[data-mode=onLight]._focus-visible[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{background:var(--tui-clear);color:var(--tui-text-01)}[data-mode=onDark]._focus-visible[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{background:var(--tui-clear-inverse);color:var(--tui-text-01-night)}[data-host-mode=positive]._focus-visible[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{background:var(--tui-success-bg)}[data-host-mode=negative]._focus-visible[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{background:var(--tui-error-bg)}._pseudo[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding-bottom:.15em;-webkit-text-decoration:underline dashed rgba(51,111,238,.48);text-decoration:underline dashed rgba(51,111,238,.48);text-underline-offset:.2em;text-decoration-thickness:.7px}.t-icon[_ngcontent-%COMP%]{transition-property:transform;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;width:var(--tui-link-icon-size, 1.5rem);height:var(--tui-link-icon-size, 1.5rem);margin-top:-.125rem}.t-icon_left[_ngcontent-%COMP%]{margin-right:.25rem}.t-icon_right[_ngcontent-%COMP%]{margin-left:.25rem}._icon-rotated[_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{transform:rotate(180deg)}"],
+    styles: ["[_nghost-%COMP%]{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:0;border:0;background:none;font-size:inherit;line-height:inherit;text-decoration:none;transition-property:color;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;color:var(--tui-link);text-align:left;text-transform:inherit;font-weight:inherit;cursor:pointer;outline:none}[_nghost-%COMP%]:hover{color:var(--tui-link-hover)}[_nghost-%COMP%]:disabled{opacity:var(--tui-disabled-opacity);cursor:default}[data-mode=onLight][_nghost-%COMP%]{color:var(--tui-text-02)}[data-mode=onLight][_nghost-%COMP%]:hover, [data-mode=onLight]._active[_nghost-%COMP%]{color:var(--tui-text-01)}[data-mode=onLight]._pseudo[_nghost-%COMP%]{color:var(--tui-text-01)}[data-mode=onLight]._pseudo[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{-webkit-text-decoration-color:rgba(0,0,0,.48);text-decoration-color:#0000007a}[data-mode=onLight]._pseudo[_nghost-%COMP%]:hover, [data-mode=onLight]._pseudo._active[_nghost-%COMP%]{color:var(--tui-text-03)}[data-mode=onLight][data-host-mode=negative][_nghost-%COMP%]{color:var(--tui-negative-night)}[data-mode=onLight][data-host-mode=negative][_nghost-%COMP%]:hover, [data-mode=onLight][data-host-mode=negative][_nghost-%COMP%]:active, [data-mode=onLight][data-host-mode=negative]._active[_nghost-%COMP%]{color:var(--tui-negative-night-hover)}[data-mode=onDark][_nghost-%COMP%]{color:var(--tui-text-03-night)}[data-mode=onDark][_nghost-%COMP%]:hover, [data-mode=onDark][_nghost-%COMP%]:active, [data-mode=onDark]._active[_nghost-%COMP%]{color:var(--tui-text-01-night)}[data-mode=onDark]._pseudo[_nghost-%COMP%]{color:var(--tui-text-01-night)}[data-mode=onDark]._pseudo[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{-webkit-text-decoration-color:rgba(255,255,255,.48);text-decoration-color:#ffffff7a}[data-mode=onDark]._pseudo[_nghost-%COMP%]:hover, [data-mode=onDark]._pseudo[_nghost-%COMP%]:active, [data-mode=onDark]._pseudo._active[_nghost-%COMP%]{color:var(--tui-text-03-night)}[data-mode=onDark][data-host-mode=positive][_nghost-%COMP%]{color:var(--tui-positive-night)}[data-mode=onDark][data-host-mode=positive][_nghost-%COMP%]:hover, [data-mode=onDark][data-host-mode=positive][_nghost-%COMP%]:active, [data-mode=onDark][data-host-mode=positive]._active[_nghost-%COMP%]{color:var(--tui-positive-night-hover)}[data-host-mode=negative][_nghost-%COMP%]{color:var(--tui-negative)}[data-host-mode=negative][_nghost-%COMP%]:hover{color:var(--tui-negative-hover)}[data-host-mode=negative]._pseudo[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{-webkit-text-decoration-color:rgba(222,76,30,.48);text-decoration-color:#de4c1e7a}[data-host-mode=positive][_nghost-%COMP%]{color:var(--tui-positive)}[data-host-mode=positive][_nghost-%COMP%]:hover{color:var(--tui-positive-hover)}[data-host-mode=positive]._pseudo[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{-webkit-text-decoration-color:rgba(58,169,129,.48);text-decoration-color:#3aa9817a}._focus-visible[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{background:var(--tui-selection)}[data-mode=onLight]._focus-visible[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{background:var(--tui-clear);color:var(--tui-text-01)}[data-mode=onDark]._focus-visible[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{background:var(--tui-clear-inverse);color:var(--tui-text-01-night)}[data-host-mode=positive]._focus-visible[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{background:var(--tui-success-bg)}[data-host-mode=negative]._focus-visible[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{background:var(--tui-error-bg)}._pseudo[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding-bottom:.15em;-webkit-text-decoration:underline dashed rgba(51,111,238,.48);text-decoration:underline dashed rgba(51,111,238,.48);text-underline-offset:.2em;text-decoration-thickness:.7px}.t-icon[_ngcontent-%COMP%]{transition-property:transform;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;width:var(--tui-link-icon-size, 1.5rem);height:var(--tui-link-icon-size, 1.5rem);margin-top:-.125rem}.t-icon_left[_ngcontent-%COMP%]{margin-right:.25rem}.t-icon_right[_ngcontent-%COMP%]{margin-left:.25rem}._icon-rotated[_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{transform:rotate(180deg)}"],
     changeDetection: 0
   });
   return TuiLinkComponent;
@@ -26100,7 +26095,7 @@ let TuiNotificationComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [_taiga_ui_core_components_svg__WEBPACK_IMPORTED_MODULE_4__/* .TuiSvgComponent */ .PN, _taiga_ui_core_components_button__WEBPACK_IMPORTED_MODULE_5__/* .TuiButtonComponent */ .v0, _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgIf, _tinkoff_ng_polymorpheus__WEBPACK_IMPORTED_MODULE_6__/* .PolymorpheusOutletDirective */ .Li, _angular_common__WEBPACK_IMPORTED_MODULE_1__.AsyncPipe],
-    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);position:relative;display:flex;padding:.75rem 1rem;border-radius:var(--tui-radius-m);background:#fff;background:var(--tui-base-01);box-sizing:border-box;overflow:hidden}[data-size=s][_nghost-%COMP%]{padding:.375rem .625rem}[data-size=s][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{width:1rem;height:1.25rem;margin:0 .375rem 0 -.125rem}[data-size=s][_nghost-%COMP%]   .t-close[_ngcontent-%COMP%]{margin:-.125rem -.375rem -.125rem .75rem}[data-size=m][_nghost-%COMP%]{padding:.75rem}[data-size=m][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{width:1.25rem;height:1.25rem;margin-right:.5rem}[data-size=m][_nghost-%COMP%]   .t-close[_ngcontent-%COMP%]{margin:-.125rem -.125rem -.125rem 1rem}[data-size=l][_nghost-%COMP%]{padding:1rem;font:var(--tui-font-text-m);border-radius:var(--tui-radius-l)}[data-size=l][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{width:1.5rem;height:1.5rem;margin-right:.5rem}[data-status=info][_nghost-%COMP%]{color:var(--tui-info-fill);background:linear-gradient(var(--tui-info-bg),var(--tui-info-bg)),var(--tui-base-01)}[data-status=success][_nghost-%COMP%]{color:var(--tui-success-fill);background:linear-gradient(var(--tui-success-bg),var(--tui-success-bg)),var(--tui-base-01)}[data-status=error][_nghost-%COMP%]{color:var(--tui-error-fill);background:linear-gradient(var(--tui-error-bg),var(--tui-error-bg)),var(--tui-base-01)}[data-status=warning][_nghost-%COMP%]{color:var(--tui-warning-fill);background:linear-gradient(var(--tui-warning-bg),var(--tui-warning-bg)),var(--tui-base-01)}[data-status=neutral][_nghost-%COMP%]{color:var(--tui-neutral-fill);background:linear-gradient(var(--tui-neutral-bg),var(--tui-neutral-bg)),var(--tui-base-01)}.t-content[_ngcontent-%COMP%]{flex:1;overflow:hidden;word-wrap:break-word;color:var(--tui-text-01)}"],
+    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);position:relative;display:flex;padding:.75rem 1rem;border-radius:var(--tui-radius-m);background:#fff;background:var(--tui-base-01);box-sizing:border-box;overflow:hidden}[data-size=s][_nghost-%COMP%]{padding:.375rem .625rem}[data-size=s][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{width:1rem;height:1.25rem;margin:0 .375rem 0 -.125rem}[data-size=s][_nghost-%COMP%]   .t-close[_ngcontent-%COMP%]{margin:-.125rem -.375rem -.125rem .75rem}[data-size=m][_nghost-%COMP%]{padding:.75rem}[data-size=m][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{width:1.25rem;height:1.25rem;margin-right:.5rem}[data-size=m][_nghost-%COMP%]   .t-close[_ngcontent-%COMP%]{margin:-.125rem -.125rem -.125rem 1rem}[data-size=l][_nghost-%COMP%]{padding:1rem;font:var(--tui-font-text-m);border-radius:var(--tui-radius-l)}[data-size=l][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{width:1.5rem;height:1.5rem;margin-right:.5rem}[data-status=info][_nghost-%COMP%]{color:var(--tui-info-fill);background:linear-gradient(var(--tui-info-bg),var(--tui-info-bg)),var(--tui-base-01)}[data-status=success][_nghost-%COMP%]{color:var(--tui-success-fill);background:linear-gradient(var(--tui-success-bg),var(--tui-success-bg)),var(--tui-base-01)}[data-status=error][_nghost-%COMP%]{color:var(--tui-error-fill);background:linear-gradient(var(--tui-error-bg),var(--tui-error-bg)),var(--tui-base-01)}[data-status=warning][_nghost-%COMP%]{color:var(--tui-warning-fill);background:linear-gradient(var(--tui-warning-bg),var(--tui-warning-bg)),var(--tui-base-01)}[data-status=neutral][_nghost-%COMP%]{color:var(--tui-neutral-fill);background:linear-gradient(var(--tui-neutral-bg),var(--tui-neutral-bg)),var(--tui-base-01)}.t-content[_ngcontent-%COMP%]{flex:1;word-wrap:break-word;overflow-wrap:anywhere;color:var(--tui-text-01)}"],
     changeDetection: 0
   });
   return TuiNotificationComponent;
@@ -26639,7 +26634,7 @@ let TuiModeModule = /*#__PURE__*/(() => {
 
 /***/ }),
 
-/***/ 1713:
+/***/ 6626:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -27709,7 +27704,6 @@ function tuiGetViewportWidth({
  * @param currentRange a range to clone
  * @return modified range
  */
-// eslint-disable-next-line max-statements
 function tuiGetWordRange(currentRange) {
   const range = currentRange.cloneRange();
   const {
@@ -30835,7 +30829,7 @@ var Ruler = __webpack_require__(4104);
 ////////////////////////////////////////////////////////////////////////////////
 // Parser rules
 
-var _rules = [['text', __webpack_require__(5164)], ['linkify', __webpack_require__(3754)], ['newline', __webpack_require__(5161)], ['escape', __webpack_require__(6116)], ['backticks', __webpack_require__(6434)], ['strikethrough', (__webpack_require__(4178)/* .tokenize */ .w)], ['emphasis', (__webpack_require__(8620)/* .tokenize */ .w)], ['link', __webpack_require__(1491)], ['image', __webpack_require__(5025)], ['autolink', __webpack_require__(8035)], ['html_inline', __webpack_require__(3213)], ['entity', __webpack_require__(528)]];
+var _rules = [['text', __webpack_require__(5164)], ['linkify', __webpack_require__(3754)], ['newline', __webpack_require__(5161)], ['escape', __webpack_require__(6116)], ['backticks', __webpack_require__(6434)], ['strikethrough', (__webpack_require__(4178)/* .tokenize */ .w)], ['emphasis', (__webpack_require__(8620)/* .tokenize */ .w)], ['link', __webpack_require__(1491)], ['image', __webpack_require__(5025)], ['autolink', __webpack_require__(8035)], ['html_inline', __webpack_require__(3213)], ['entity', __webpack_require__(1713)]];
 
 // `rule2` ruleset was created specifically for emphasis/strikethrough
 // post-processing and may be changed in the future.
@@ -34457,7 +34451,7 @@ module.exports.g = function emphasis(state) {
 
 /***/ }),
 
-/***/ 528:
+/***/ 1713:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
