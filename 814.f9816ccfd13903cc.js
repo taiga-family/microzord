@@ -106,9 +106,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵparseCookieValue": () => (/* binding */ parseCookieValue),
 /* harmony export */   "ɵsetRootDomAdapter": () => (/* binding */ setRootDomAdapter)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9796);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5247);
 /**
- * @license Angular v17.0.3
+ * @license Angular v17.0.4
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -5434,7 +5434,7 @@ function isPlatformWorkerUi(platformId) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.0.3');
+const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.0.4');
 
 /**
  * Defines a scroll position manager. Implemented by `BrowserViewportScroller`.
@@ -6750,8 +6750,9 @@ function assertGreaterThanZero(dir, inputValue, inputName) {
  * - Whether image styling is "correct" (see below for a longer explanation).
  */
 function assertNoImageDistortion(dir, img, renderer) {
-  const removeListenerFn = renderer.listen(img, 'load', () => {
-    removeListenerFn();
+  const removeLoadListenerFn = renderer.listen(img, 'load', () => {
+    removeLoadListenerFn();
+    removeErrorListenerFn();
     const computedStyle = window.getComputedStyle(img);
     let renderedWidth = parseFloat(computedStyle.getPropertyValue('width'));
     let renderedHeight = parseFloat(computedStyle.getPropertyValue('height'));
@@ -6794,6 +6795,14 @@ function assertNoImageDistortion(dir, img, renderer) {
       }
     }
   });
+  // We only listen to the `error` event to remove the `load` event listener because it will not be
+  // fired if the image fails to load. This is done to prevent memory leaks in development mode
+  // because image elements aren't garbage-collected properly. It happens because zone.js stores the
+  // event listener directly on the element and closures capture `dir`.
+  const removeErrorListenerFn = renderer.listen(img, 'error', () => {
+    removeLoadListenerFn();
+    removeErrorListenerFn();
+  });
 }
 /**
  * Verifies that a specified input is set.
@@ -6820,12 +6829,18 @@ function assertEmptyWidthAndHeight(dir) {
  * guidance that this can be caused by the containing element's CSS position property.
  */
 function assertNonZeroRenderedHeight(dir, img, renderer) {
-  const removeListenerFn = renderer.listen(img, 'load', () => {
-    removeListenerFn();
+  const removeLoadListenerFn = renderer.listen(img, 'load', () => {
+    removeLoadListenerFn();
+    removeErrorListenerFn();
     const renderedHeight = img.clientHeight;
     if (dir.fill && renderedHeight === 0) {
       console.warn((0,_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵformatRuntimeError"])(2952 /* RuntimeErrorCode.INVALID_INPUT */, `${imgDirectiveDetails(dir.ngSrc)} the height of the fill-mode image is zero. ` + `This is likely because the containing element does not have the CSS 'position' ` + `property set to one of the following: "relative", "fixed", or "absolute". ` + `To fix this problem, make sure the container element has the CSS 'position' ` + `property defined and the height of the element is not zero.`));
     }
+  });
+  // See comments in the `assertNoImageDistortion`.
+  const removeErrorListenerFn = renderer.listen(img, 'error', () => {
+    removeLoadListenerFn();
+    removeErrorListenerFn();
   });
 }
 /**

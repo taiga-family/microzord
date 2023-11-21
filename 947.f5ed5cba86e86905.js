@@ -830,7 +830,7 @@ __webpack_require__.d(__webpack_exports__, {
 
 ;// CONCATENATED MODULE: ./node_modules/@angular/core/fesm2022/primitives/signals.mjs
 /**
- * @license Angular v17.0.3
+ * @license Angular v17.0.4
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -1404,7 +1404,7 @@ var distinctUntilChanged = __webpack_require__(3997);
 var first = __webpack_require__(1374);
 ;// CONCATENATED MODULE: ./node_modules/@angular/core/fesm2022/core.mjs
 /**
- * @license Angular v17.0.3
+ * @license Angular v17.0.4
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -11564,7 +11564,7 @@ class Version {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new Version('17.0.3');
+const VERSION = /*#__PURE__*/new Version('17.0.4');
 
 // This default value is when checking the hierarchy for a token.
 //
@@ -14592,7 +14592,7 @@ function detectChangesInViewIfAttached(lView, mode) {
  *
  * The view is refreshed if:
  * - If the view is CheckAlways or Dirty and ChangeDetectionMode is `Global`
- * - If the view has the `RefreshTransplantedView` flag
+ * - If the view has the `RefreshView` flag
  *
  * The view is not refreshed, but descendants are traversed in `ChangeDetectionMode.Targeted` if the
  * view HasChildViewsToRefresh flag is set.
@@ -21179,7 +21179,7 @@ function ɵɵconditional(containerIndex, matchingTemplateIndex, value) {
       // Index -1 is a special case where none of the conditions evaluates to
       // a truthy value and as the consequence we've got no view to show.
       if (matchingTemplateIndex !== -1) {
-        const templateTNode = getExistingTNode(hostLView[TVIEW], matchingTemplateIndex);
+        const templateTNode = getExistingTNode(hostLView[TVIEW], HEADER_OFFSET + matchingTemplateIndex);
         const dehydratedView = findMatchingDehydratedView(lContainer, templateTNode.tView.ssrId);
         const embeddedLView = createAndRenderEmbeddedLView(hostLView, templateTNode, value, {
           dehydratedView
@@ -21336,21 +21336,19 @@ class LiveCollectionLContainerImpl extends LiveCollection {
  * The repeater instruction does update-time diffing of a provided collection (against the
  * collection seen previously) and maps changes in the collection to views structure (by adding,
  * removing or moving views as needed).
- * @param metadataSlotIdx - index in data where we can find an instance of RepeaterMetadata with
- *     additional information (ex. differ) needed to process collection diffing and view
- *     manipulation
  * @param collection - the collection instance to be checked for changes
  * @codeGenApi
  */
-function ɵɵrepeater(metadataSlotIdx, collection) {
+function ɵɵrepeater(collection) {
   const prevConsumer = setActiveConsumer(null);
+  const metadataSlotIdx = getSelectedIndex();
   try {
     const hostLView = getLView();
     const hostTView = hostLView[TVIEW];
-    const metadata = hostLView[HEADER_OFFSET + metadataSlotIdx];
+    const metadata = hostLView[metadataSlotIdx];
     if (metadata.liveCollection === undefined) {
       const containerIndex = metadataSlotIdx + 1;
-      const lContainer = getLContainer(hostLView, HEADER_OFFSET + containerIndex);
+      const lContainer = getLContainer(hostLView, containerIndex);
       const itemTemplateTNode = getExistingTNode(hostTView, containerIndex);
       metadata.liveCollection = new LiveCollectionLContainerImpl(lContainer, hostLView, itemTemplateTNode);
     } else {
@@ -21366,7 +21364,7 @@ function ɵɵrepeater(metadataSlotIdx, collection) {
       const isCollectionEmpty = liveCollection.length === 0;
       if (bindingUpdated(hostLView, bindingIndex, isCollectionEmpty)) {
         const emptyTemplateIndex = metadataSlotIdx + 2;
-        const lContainerForEmpty = getLContainer(hostLView, HEADER_OFFSET + emptyTemplateIndex);
+        const lContainerForEmpty = getLContainer(hostLView, emptyTemplateIndex);
         if (isCollectionEmpty) {
           const emptyTemplateTNode = getExistingTNode(hostTView, emptyTemplateIndex);
           const dehydratedView = findMatchingDehydratedView(lContainerForEmpty, emptyTemplateTNode.tView.ssrId);
@@ -21399,7 +21397,7 @@ function getExistingLViewFromLContainer(lContainer, index) {
   return existingLView;
 }
 function getExistingTNode(tView, index) {
-  const tNode = getTNode(tView, index + HEADER_OFFSET);
+  const tNode = getTNode(tView, index);
   ngDevMode && assertTNode(tNode);
   return tNode;
 }
@@ -21621,7 +21619,7 @@ function assertDeferredDependenciesLoaded(tDetails) {
  * that a primary template exists. All the other template options are optional.
  */
 function isTDeferBlockDetails(value) {
-  return typeof value === 'object' && typeof value.primaryTmplIndex === 'number';
+  return value !== null && typeof value === 'object' && typeof value.primaryTmplIndex === 'number';
 }
 
 /*!
@@ -22677,10 +22675,11 @@ function triggerResourceLoading(tDetails, lView, tNode) {
     }
   }
   // The `dependenciesFn` might be `null` when all dependencies within
-  // a given defer block were eagerly references elsewhere in a file,
+  // a given defer block were eagerly referenced elsewhere in a file,
   // thus no dynamic `import()`s were produced.
   if (!dependenciesFn) {
     tDetails.loadingPromise = Promise.resolve().then(() => {
+      tDetails.loadingPromise = null;
       tDetails.loadingState = DeferDependenciesLoadingState.COMPLETE;
     });
     return;
@@ -30988,7 +30987,8 @@ let ImagePerformanceWarning = /*#__PURE__*/(() => {
         return;
       }
       this.observer = this.initPerformanceObserver();
-      const win = getDocument().defaultView;
+      const doc = getDocument();
+      const win = doc.defaultView;
       if (typeof win !== 'undefined') {
         this.window = win;
         // Wait to avoid race conditions where LCP image triggers
@@ -30999,7 +30999,18 @@ let ImagePerformanceWarning = /*#__PURE__*/(() => {
         // Angular doesn't have to run change detection whenever any asynchronous tasks are invoked in
         // the scope of this functionality.
         this.ngZone.runOutsideAngular(() => {
-          this.window?.addEventListener('load', waitToScan);
+          // Consider the case when the application is created and destroyed multiple times.
+          // Typically, applications are created instantly once the page is loaded, and the
+          // `window.load` listener is always triggered. However, the `window.load` event will never
+          // be fired if the page is loaded, and the application is created later. Checking for
+          // `readyState` is the easiest way to determine whether the page has been loaded or not.
+          if (doc.readyState === 'complete') {
+            waitToScan();
+          } else {
+            this.window?.addEventListener('load', waitToScan, {
+              once: true
+            });
+          }
         });
       }
     }
