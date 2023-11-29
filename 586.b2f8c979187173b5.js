@@ -1792,7 +1792,6 @@ class GuardsCheckStart extends RouterEvent {
     this.state = state;
     this.type = 7 /* EventType.GuardsCheckStart */;
   }
-
   toString() {
     return `GuardsCheckStart(id: ${this.id}, url: '${this.url}', urlAfterRedirects: '${this.urlAfterRedirects}', state: ${this.state})`;
   }
@@ -1817,7 +1816,6 @@ class GuardsCheckEnd extends RouterEvent {
     this.shouldActivate = shouldActivate;
     this.type = 8 /* EventType.GuardsCheckEnd */;
   }
-
   toString() {
     return `GuardsCheckEnd(id: ${this.id}, url: '${this.url}', urlAfterRedirects: '${this.urlAfterRedirects}', state: ${this.state}, shouldActivate: ${this.shouldActivate})`;
   }
@@ -1843,7 +1841,6 @@ class ResolveStart extends RouterEvent {
     this.state = state;
     this.type = 5 /* EventType.ResolveStart */;
   }
-
   toString() {
     return `ResolveStart(id: ${this.id}, url: '${this.url}', urlAfterRedirects: '${this.urlAfterRedirects}', state: ${this.state})`;
   }
@@ -1865,7 +1862,6 @@ class ResolveEnd extends RouterEvent {
     this.state = state;
     this.type = 6 /* EventType.ResolveEnd */;
   }
-
   toString() {
     return `ResolveEnd(id: ${this.id}, url: '${this.url}', urlAfterRedirects: '${this.urlAfterRedirects}', state: ${this.state})`;
   }
@@ -1883,7 +1879,6 @@ class RouteConfigLoadStart {
     this.route = route;
     this.type = 9 /* EventType.RouteConfigLoadStart */;
   }
-
   toString() {
     return `RouteConfigLoadStart(path: ${this.route.path})`;
   }
@@ -1901,7 +1896,6 @@ class RouteConfigLoadEnd {
     this.route = route;
     this.type = 10 /* EventType.RouteConfigLoadEnd */;
   }
-
   toString() {
     return `RouteConfigLoadEnd(path: ${this.route.path})`;
   }
@@ -1920,7 +1914,6 @@ class ChildActivationStart {
     this.snapshot = snapshot;
     this.type = 11 /* EventType.ChildActivationStart */;
   }
-
   toString() {
     const path = this.snapshot.routeConfig && this.snapshot.routeConfig.path || '';
     return `ChildActivationStart(path: '${path}')`;
@@ -1939,7 +1932,6 @@ class ChildActivationEnd {
     this.snapshot = snapshot;
     this.type = 12 /* EventType.ChildActivationEnd */;
   }
-
   toString() {
     const path = this.snapshot.routeConfig && this.snapshot.routeConfig.path || '';
     return `ChildActivationEnd(path: '${path}')`;
@@ -1959,7 +1951,6 @@ class ActivationStart {
     this.snapshot = snapshot;
     this.type = 13 /* EventType.ActivationStart */;
   }
-
   toString() {
     const path = this.snapshot.routeConfig && this.snapshot.routeConfig.path || '';
     return `ActivationStart(path: '${path}')`;
@@ -1979,7 +1970,6 @@ class ActivationEnd {
     this.snapshot = snapshot;
     this.type = 14 /* EventType.ActivationEnd */;
   }
-
   toString() {
     const path = this.snapshot.routeConfig && this.snapshot.routeConfig.path || '';
     return `ActivationEnd(path: '${path}')`;
@@ -2000,7 +1990,6 @@ class Scroll {
     this.anchor = anchor;
     this.type = 15 /* EventType.Scroll */;
   }
-
   toString() {
     const pos = this.position ? `${this.position[0]}, ${this.position[1]}` : null;
     return `Scroll(anchor: '${this.anchor}', position: '${pos}')`;
@@ -3768,7 +3757,6 @@ function namedOutletsRedirect(redirectTo) {
 function canLoadFails(route) {
   return (0,observable_throwError/* throwError */._)(navigationCancelingError((typeof ngDevMode === 'undefined' || ngDevMode) && `Cannot load children because the guard of the route "path: '${route.path}'" returned false`, 3 /* NavigationCancellationCode.GuardRejected */));
 }
-
 class ApplyRedirects {
   constructor(urlSerializer, urlTree) {
     this.urlSerializer = urlSerializer;
@@ -5091,7 +5079,6 @@ let NavigationTransitions = /*#__PURE__*/(() => {
         // casting because `pipe` returns observable({}) when called with 8+ arguments
       }));
     }
-
     cancelNavigationTransition(t, reason, code) {
       const navCancel = new NavigationCancel(t.id, this.urlSerializer.serialize(t.extractedUrl), reason, code);
       this.events.next(navCancel);
@@ -7078,7 +7065,6 @@ function withDisabledInitialNavigation() {
     provide: INITIAL_NAVIGATION,
     useValue: 2 /* InitialNavigation.Disabled */
   }];
-
   return routerFeature(3 /* RouterFeatureKind.DisabledInitialNavigationFeature */, providers);
 }
 /**

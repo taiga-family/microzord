@@ -920,7 +920,6 @@ function producerAccessed(node) {
       // `activeConsumer.producerNode[idx]` which will be overwritten below.
     }
   }
-
   if (activeConsumer.producerNode[idx] !== node) {
     // We're a new dependency of the consumer (at `idx`).
     activeConsumer.producerNode[idx] = node;
@@ -2415,7 +2414,6 @@ function convertToBitFlags(flags) {
   // comment to force a line break in the formatter
   flags.optional && 8 /* InternalInjectFlags.Optional */) | (flags.host && 1 /* InternalInjectFlags.Host */) | (flags.self && 2 /* InternalInjectFlags.Self */) | (flags.skipSelf && 4 /* InternalInjectFlags.SkipSelf */);
 }
-
 function injectArgs(types) {
   const args = [];
   for (let i = 0; i < types.length; i++) {
@@ -2697,7 +2695,6 @@ function setUpAttributes(renderer, native, attrs) {
 function isNameOnlyAttributeMarker(marker) {
   return marker === 3 /* AttributeMarker.Bindings */ || marker === 4 /* AttributeMarker.Template */ || marker === 6 /* AttributeMarker.I18n */;
 }
-
 function isAnimationProp(name) {
   // Perf note: accessing charCodeAt to check for the first character of a string is faster as
   // compared to accessing a character at index 0 (ex. name[0]). The main reason for this is that
@@ -3608,7 +3605,6 @@ function isComponentHost(tNode) {
 function isDirectiveHost(tNode) {
   return (tNode.flags & 1 /* TNodeFlags.isDirectiveHost */) === 1 /* TNodeFlags.isDirectiveHost */;
 }
-
 function isComponentDef(def) {
   return !!def.template;
 }
@@ -3618,11 +3614,9 @@ function isRootView(target) {
 function isProjectionTNode(tNode) {
   return (tNode.type & 16 /* TNodeType.Projection */) === 16 /* TNodeType.Projection */;
 }
-
 function hasI18n(lView) {
   return (lView[FLAGS] & 32 /* LViewFlags.HasI18n */) === 32 /* LViewFlags.HasI18n */;
 }
-
 function isDestroyed(lView) {
   return (lView[FLAGS] & 256 /* LViewFlags.Destroyed */) === 256 /* LViewFlags.Destroyed */;
 }
@@ -4823,7 +4817,6 @@ function callHooks(currentView, arr, initPhase, currentNodeIndex) {
       if (isInitHook) {
         currentView[PREORDER_HOOK_FLAGS] += 65536 /* PreOrderHookFlags.NumberOfInitHooksCalledIncrementer */;
       }
-
       if (lastNodeIndexFound < nodeIndexLimit || nodeIndexLimit == -1) {
         callHook(currentView, initPhase, arr, i);
         currentView[PREORDER_HOOK_FLAGS] = (currentView[PREORDER_HOOK_FLAGS] & 4294901760 /* PreOrderHookFlags.NumberOfInitHooksCalledMask */) + i + 2;
@@ -5102,7 +5095,6 @@ function getParentInjectorIndex(parentLocation) {
   ngDevMode && assertGreaterThan(parentInjectorIndex, HEADER_OFFSET, 'Parent injector must be pointing past HEADER_OFFSET.');
   return parentLocation & 32767 /* RelativeInjectorLocationFlags.InjectorIndexMask */;
 }
-
 function getParentInjectorViewOffset(parentLocation) {
   return parentLocation >> 16 /* RelativeInjectorLocationFlags.ViewOffsetShift */;
 }
@@ -5311,7 +5303,6 @@ function getParentInjectorLocation(tNode, lView) {
       return parentTNode.injectorIndex | declarationViewOffset << 16 /* RelativeInjectorLocationFlags.ViewOffsetShift */;
     }
   }
-
   return NO_PARENT_INJECTOR;
 }
 /**
@@ -6369,7 +6360,6 @@ function _arrayIndexOfSorted(array, value, shift) {
       start = middle + 1; // We already searched middle so make it non-inclusive by adding 1
     }
   }
-
   return ~(end << shift);
 }
 
@@ -6673,7 +6663,6 @@ const Host =
 // Disable tslint because `InternalInjectFlags` is a const enum which gets inlined.
 // tslint:disable-next-line: no-toplevel-property-access
 attachInjectFlag( /*#__PURE__*/makeParamDecorator('Host'), 1 /* InternalInjectFlags.Host */);
-
 let _reflect = null;
 function getReflect() {
   return _reflect = _reflect || new ReflectionCapabilities();
@@ -6864,7 +6853,6 @@ const INJECTOR = /*#__PURE__*/new InjectionToken('INJECTOR',
 // Disable tslint because this is const enum which gets inlined not top level prop access.
 // tslint:disable-next-line: no-toplevel-property-access
 -1 /* InjectorMarkers.Injector */);
-
 const INJECTOR_DEF_TYPES = /*#__PURE__*/new InjectionToken('INJECTOR_DEF_TYPES');
 class NullInjector {
   get(token, notFoundValue = THROW_IF_NOT_FOUND) {
@@ -9457,7 +9445,6 @@ function detachView(lContainer, removeIndex) {
     // Unsets the attached flag
     viewToDetach[FLAGS] &= ~128 /* LViewFlags.Attached */;
   }
-
   return viewToDetach;
 }
 /**
@@ -9881,7 +9868,6 @@ function applyNodes(renderer, action, tNode, lView, parentRElement, beforeNode, 
         tNode.flags |= 2 /* TNodeFlags.isProjected */;
       }
     }
-
     if ((tNode.flags & 32 /* TNodeFlags.isDetached */) !== 32 /* TNodeFlags.isDetached */) {
       if (tNodeType & 8 /* TNodeType.ElementContainer */) {
         applyNodes(renderer, action, tNode.child, lView, parentRElement, beforeNode, false);
@@ -9960,7 +9946,6 @@ function applyProjectionRecursive(renderer, action, lView, tProjectionNode, pare
     if (hasInSkipHydrationBlockFlag(tProjectionNode)) {
       nodeToProject.flags |= 128 /* TNodeFlags.inSkipHydrationBlock */;
     }
-
     applyNodes(renderer, action, nodeToProject, projectedComponentLView, parentRElement, beforeNode, true);
   }
 }
@@ -10326,31 +10311,26 @@ class SafeHtmlImpl extends SafeValueImpl {
     return "HTML" /* BypassType.Html */;
   }
 }
-
 class SafeStyleImpl extends SafeValueImpl {
   getTypeName() {
     return "Style" /* BypassType.Style */;
   }
 }
-
 class SafeScriptImpl extends SafeValueImpl {
   getTypeName() {
     return "Script" /* BypassType.Script */;
   }
 }
-
 class SafeUrlImpl extends SafeValueImpl {
   getTypeName() {
     return "URL" /* BypassType.Url */;
   }
 }
-
 class SafeResourceUrlImpl extends SafeValueImpl {
   getTypeName() {
     return "ResourceURL" /* BypassType.ResourceUrl */;
   }
 }
-
 function unwrapSafeValue(value) {
   return value instanceof SafeValueImpl ? value.changingThisBreaksApplicationSecurity : value;
 }
@@ -11650,7 +11630,6 @@ function isListLikeIterable(obj) {
   // JS Map are iterables but return entries as [k, v]
   Symbol.iterator in obj; // JS Iterable have a Symbol.iterator prop
 }
-
 function areIterablesEqual(a, b, comparator) {
   const iterator1 = a[Symbol.iterator]();
   const iterator2 = b[Symbol.iterator]();
@@ -13110,7 +13089,6 @@ function createLView(parentLView, tView, context, flags, host, tHostNode, enviro
   if (embeddedViewInjector !== null || parentLView && parentLView[FLAGS] & 2048 /* LViewFlags.HasEmbeddedViewInjector */) {
     lView[FLAGS] |= 2048 /* LViewFlags.HasEmbeddedViewInjector */;
   }
-
   resetPreOrderHookFlags(lView);
   ngDevMode && tView.declTNode && parentLView && assertTNodeForLView(tView.declTNode, parentLView);
   lView[PARENT] = lView[DECLARATION_VIEW] = parentLView;
@@ -13468,7 +13446,6 @@ function createTNode(tView, tParent, type, index, value, attrs) {
   if (isInSkipHydrationBlock$1()) {
     flags |= 128 /* TNodeFlags.inSkipHydrationBlock */;
   }
-
   const tNode = {
     type,
     index,
@@ -13579,12 +13556,10 @@ function initializeInputAndOutputAliases(tView, tNode, hostDirectiveDefinitionMa
     if (inputsStore.hasOwnProperty('class')) {
       tNode.flags |= 8 /* TNodeFlags.hasClassInput */;
     }
-
     if (inputsStore.hasOwnProperty('style')) {
       tNode.flags |= 16 /* TNodeFlags.hasStyleInput */;
     }
   }
-
   tNode.initialInputs = inputsFromAttrs;
   tNode.inputs = inputsStore;
   tNode.outputs = outputsStore;
@@ -13648,7 +13623,6 @@ function markDirtyIfOnPush(lView, viewIndex) {
     childComponentLView[FLAGS] |= 64 /* LViewFlags.Dirty */;
   }
 }
-
 function setNgReflectProperty(lView, element, type, attrName, value) {
   const renderer = lView[RENDERER];
   attrName = normalizeDebugBindingName(attrName);
@@ -14013,7 +13987,6 @@ function addComponentLogic(lView, hostTNode, def) {
   } else if (def.onPush) {
     lViewFlags = 64 /* LViewFlags.Dirty */;
   }
-
   const componentView = addToViewTree(lView, createLView(lView, tView, null, lViewFlags, native, hostTNode, null, rendererFactory.createRenderer(native, def), null, null, null));
   // Component view will always be created before any injected LContainers,
   // so this is a regular element, wrap it with the component view
@@ -14144,7 +14117,6 @@ function createLContainer(hostNative, currentView, native, tNode) {
   ngDevMode && assertLView(currentView);
   const lContainer = [hostNative, true, 0, currentView, null, tNode, null, native, null, null // moved views
   ];
-
   ngDevMode && assertEqual(lContainer.length, CONTAINER_HEADER_OFFSET, 'Should allocate correct number of slots for LContainer header.');
   return lContainer;
 }
@@ -14360,7 +14332,6 @@ function detectChangesInViewWhileDirty(lView) {
     detectChangesInView(lView, 1 /* ChangeDetectionMode.Targeted */);
   }
 }
-
 function checkNoChangesInternal(lView, notifyErrorHandler = true) {
   setIsInCheckNoChangesMode(true);
   try {
@@ -14440,11 +14411,9 @@ function refreshView(tView, lView, templateFn, context) {
         if (contentHooks !== null) {
           executeInitAndCheckHooks(lView, contentHooks, 1 /* InitPhaseState.AfterContentInitHooksToBeRun */);
         }
-
         incrementInitPhaseFlags(lView, 1 /* InitPhaseState.AfterContentInitHooksToBeRun */);
       }
     }
-
     processHostBindingOpCodes(tView, lView);
     // Refresh child component views.
     const components = tView.components;
@@ -14471,11 +14440,9 @@ function refreshView(tView, lView, templateFn, context) {
         if (viewHooks !== null) {
           executeInitAndCheckHooks(lView, viewHooks, 2 /* InitPhaseState.AfterViewInitHooksToBeRun */);
         }
-
         incrementInitPhaseFlags(lView, 2 /* InitPhaseState.AfterViewInitHooksToBeRun */);
       }
     }
-
     if (tView.firstUpdatePass === true) {
       // We need to make sure that we only flip the flag on successful `refreshView` only
       // Don't do this in `finally` block.
@@ -14713,7 +14680,6 @@ class ViewRef$1 {
   get destroyed() {
     return (this._lView[FLAGS] & 256 /* LViewFlags.Destroyed */) === 256 /* LViewFlags.Destroyed */;
   }
-
   destroy() {
     if (this._appRef) {
       this._appRef.detachView(this);
@@ -15187,7 +15153,6 @@ class ZoneAwareMicrotaskScheduler {
       // tslint:disable-next-line:semicolon
     };
   }
-
   scheduleEffect(handle) {
     this.delegate.scheduleEffect(handle);
     if (!this.hasQueuedFlush) {
@@ -16629,7 +16594,6 @@ function createRootComponentView(tNode, hostRNode, rootComponentDef, rootDirecti
   } else if (rootComponentDef.onPush) {
     lViewFlags = 64 /* LViewFlags.Dirty */;
   }
-
   const componentView = createLView(rootView, getOrCreateComponentTView(rootComponentDef), null, lViewFlags, rootView[tNode.index], tNode, environment, viewRenderer, null, null, hydrationInfo);
   if (tView.firstCreatePass) {
     markAsComponentHost(tView, tNode, rootDirectives.length - 1);
@@ -17698,33 +17662,27 @@ function toTStylingRange(prev, next) {
   ngDevMode && assertNumberInRange(next, 0, 32767 /* StylingRange.UNSIGNED_MASK */);
   return prev << 17 /* StylingRange.PREV_SHIFT */ | next << 2 /* StylingRange.NEXT_SHIFT */;
 }
-
 function getTStylingRangePrev(tStylingRange) {
   ngDevMode && assertNumber(tStylingRange, 'expected number');
   return tStylingRange >> 17 /* StylingRange.PREV_SHIFT */ & 32767 /* StylingRange.UNSIGNED_MASK */;
 }
-
 function getTStylingRangePrevDuplicate(tStylingRange) {
   ngDevMode && assertNumber(tStylingRange, 'expected number');
   return (tStylingRange & 2 /* StylingRange.PREV_DUPLICATE */) == 2 /* StylingRange.PREV_DUPLICATE */;
 }
-
 function setTStylingRangePrev(tStylingRange, previous) {
   ngDevMode && assertNumber(tStylingRange, 'expected number');
   ngDevMode && assertNumberInRange(previous, 0, 32767 /* StylingRange.UNSIGNED_MASK */);
   return tStylingRange & ~4294836224 /* StylingRange.PREV_MASK */ | previous << 17 /* StylingRange.PREV_SHIFT */;
 }
-
 function setTStylingRangePrevDuplicate(tStylingRange) {
   ngDevMode && assertNumber(tStylingRange, 'expected number');
   return tStylingRange | 2 /* StylingRange.PREV_DUPLICATE */;
 }
-
 function getTStylingRangeNext(tStylingRange) {
   ngDevMode && assertNumber(tStylingRange, 'expected number');
   return (tStylingRange & 131068 /* StylingRange.NEXT_MASK */) >> 2 /* StylingRange.NEXT_SHIFT */;
 }
-
 function setTStylingRangeNext(tStylingRange, next) {
   ngDevMode && assertNumber(tStylingRange, 'expected number');
   ngDevMode && assertNumberInRange(next, 0, 32767 /* StylingRange.UNSIGNED_MASK */);
@@ -17732,17 +17690,14 @@ function setTStylingRangeNext(tStylingRange, next) {
   //
   next << 2 /* StylingRange.NEXT_SHIFT */;
 }
-
 function getTStylingRangeNextDuplicate(tStylingRange) {
   ngDevMode && assertNumber(tStylingRange, 'expected number');
   return (tStylingRange & 1 /* StylingRange.NEXT_DUPLICATE */) === 1 /* StylingRange.NEXT_DUPLICATE */;
 }
-
 function setTStylingRangeNextDuplicate(tStylingRange) {
   ngDevMode && assertNumber(tStylingRange, 'expected number');
   return tStylingRange | 1 /* StylingRange.NEXT_DUPLICATE */;
 }
-
 function getTStylingRangeTail(tStylingRange) {
   ngDevMode && assertNumber(tStylingRange, 'expected number');
   const next = getTStylingRangeNext(tStylingRange);
@@ -18132,7 +18087,6 @@ function isStylingMatch(tStylingKeyCursor, tStylingKey) {
     // statics and we need to check those as well.
     return keyValueArrayIndexOf(tStylingKeyCursor, tStylingKey) >= 0; // see if we are matching the key
   }
-
   return false;
 }
 
@@ -18349,7 +18303,6 @@ function consumeStyleValue(text, startIndex, endIndex) {
     ch2 = ch1;
     ch1 = ch & -33 /* CharCode.UPPER_CASE */;
   }
-
   return lastChIndex;
 }
 /**
@@ -22276,7 +22229,6 @@ function ɵɵdefer(index, primaryTmplIndex, dependencyResolverFn, loadingTmplInd
   // Init instance-specific defer details and store it.
   const lDetails = [null, DeferBlockInternalState.Initial, null, null, null, null // PREFETCH_TRIGGER_CLEANUP_FNS
   ];
-
   setLDeferBlockDetails(lView, adjustedIndex, lDetails);
   const cleanupTriggersFn = () => invokeAllTriggerCleanupFns(lDetails);
   // When defer block is triggered - unsubscribe from LView destroy cleanup.
@@ -23508,7 +23460,6 @@ function addTNodeAndUpdateInsertBeforeIndex(previousTNodes, newTNode) {
 function isI18nText(tNode) {
   return !(tNode.type & 64 /* TNodeType.Placeholder */);
 }
-
 function isNewTNodeCreatedBefore(existingTNode, newTNode) {
   return isI18nText(newTNode) || existingTNode.index > newTNode.index;
 }
@@ -23619,15 +23570,12 @@ function getCurrentICUCaseIndex(tIcu, lView) {
 function getParentFromIcuCreateOpCode(mergedCode) {
   return mergedCode >>> 17 /* IcuCreateOpCode.SHIFT_PARENT */;
 }
-
 function getRefFromIcuCreateOpCode(mergedCode) {
   return (mergedCode & 131070 /* IcuCreateOpCode.MASK_REF */) >>> 1 /* IcuCreateOpCode.SHIFT_REF */;
 }
-
 function getInstructionFromIcuCreateOpCode(mergedCode) {
   return mergedCode & 1 /* IcuCreateOpCode.MASK_INSTRUCTION */;
 }
-
 function icuCreateOpCode(opCode, parentIdx, refIdx) {
   ngDevMode && assertGreaterThanOrEqual(parentIdx, 0, 'Missing parent index');
   ngDevMode && assertGreaterThan(refIdx, 0, 'Missing ref index');
@@ -24683,7 +24631,6 @@ function parseICUBlock(pattern) {
     } else {
       icuType = 1 /* IcuType.plural */;
     }
-
     mainBinding = parseInt(binding.slice(1), 10);
     return '';
   });
@@ -24860,15 +24807,12 @@ function addRemoveNestedIcu(remove, index, depth) {
     remove.push(index); // remove ICU comment at `index`
   }
 }
-
 function addUpdateIcuSwitch(update, icuExpression, index) {
   update.push(toMaskBit(icuExpression.mainBinding), 2, -1 - icuExpression.mainBinding, index << 2 /* I18nUpdateOpCode.SHIFT_REF */ | 2 /* I18nUpdateOpCode.IcuSwitch */);
 }
-
 function addUpdateIcuUpdate(update, bindingMask, index) {
   update.push(bindingMask, 1, index << 2 /* I18nUpdateOpCode.SHIFT_REF */ | 3 /* I18nUpdateOpCode.IcuUpdate */);
 }
-
 function addCreateNodeAndAppend(create, marker, text, appendToParentIdx, createAtIdx) {
   if (marker !== null) {
     create.push(marker);
@@ -25038,7 +24982,6 @@ function ɵɵi18nStart(index, messageIndex, subTemplateIndex = -1) {
   } else {
     lView[FLAGS] |= 32 /* LViewFlags.HasI18n */;
   }
-
   const tI18n = tView.data[adjustedIndex];
   const sameViewParentTNode = parentTNode === lView[T_HOST] ? null : parentTNode;
   const parentRNode = getClosestRElement(tView, sameViewParentTNode, lView);
@@ -25426,7 +25369,6 @@ function matchingProjectionSlotIndex(tNode, projectionSlots) {
       return i; // first matching selector "captures" a given node
     }
   }
-
   return wildcardNgContentIndex;
 }
 /**
@@ -27059,7 +27001,6 @@ function resolveProvider(provider, tInjectables, lInjectablesBlueprint, isCompon
         if (isViewProvider) {
           tNode.providerIndexes += 1048576 /* TNodeProviderIndexes.CptViewProvidersCountShifter */;
         }
-
         lInjectablesBlueprint.push(factory);
         lView.push(factory);
       } else {
@@ -27105,7 +27046,6 @@ function resolveProvider(provider, tInjectables, lInjectablesBlueprint, isCompon
         if (isViewProvider) {
           tNode.providerIndexes += 1048576 /* TNodeProviderIndexes.CptViewProvidersCountShifter */;
         }
-
         lInjectablesBlueprint.push(factory);
         lView.push(factory);
       } else {
@@ -34294,7 +34234,6 @@ function core_producerAccessed(node) {
       // `activeConsumer.producerNode[idx]` which will be overwritten below.
     }
   }
-
   if (core_activeConsumer.producerNode[idx] !== node) {
     // We're a new dependency of the consumer (at `idx`).
     core_activeConsumer.producerNode[idx] = node;
@@ -35182,7 +35121,6 @@ function serializeLView(lView, context) {
             context.corruptedTextNodes.set(rNode, "ngtns" /* TextNodeMarker.Separator */);
           }
         }
-
         if (tNode.projectionNext && tNode.projectionNext !== tNode.next && !isInSkipHydrationBlock(tNode.projectionNext)) {
           // Check if projection next is not the same as next, in which case
           // the node would not be found at creation time at runtime and we
@@ -35417,7 +35355,6 @@ function withDomHydration() {
       }
       return () => {}; // noop
     },
-
     multi: true
   }]);
 }

@@ -76,8 +76,7 @@ function inherit$1(original, ...objects) {
       result[key] = obj[key];
     }
   });
-  return (/** @type {T} */result
-  );
+  return /** @type {T} */result;
 }
 
 /**
@@ -606,7 +605,6 @@ const COMMENT = function (begin, end, modeOptions = {}) {
     // necessary to prevent us gobbling up doctags like /* @author Bob Mcgill */
     '(', ENGLISH_WORD, /[.]?[:]?([.][ ]|[ ])/, '){3}') // look for 3 words in a row
   });
-
   return mode;
 };
 const C_LINE_COMMENT_MODE = COMMENT('//', '$');
@@ -832,7 +830,6 @@ const COMMON_KEYWORDS = ['of', 'and', 'for', 'in', 'not', 'or', 'if', 'then', 'p
 // common variable name
 'value' // common variable name
 ];
-
 const DEFAULT_KEYWORD_SCOPE = "keyword";
 
 /**

@@ -44,7 +44,6 @@ const ERROR_TYPES = ["Error", "EvalError", "InternalError", "RangeError", "Refer
 const BUILT_IN_GLOBALS = ["setInterval", "setTimeout", "clearInterval", "clearTimeout", "require", "exports", "eval", "isFinite", "isNaN", "parseFloat", "parseInt", "decodeURI", "decodeURIComponent", "encodeURI", "encodeURIComponent", "escape", "unescape"];
 const BUILT_IN_VARIABLES = ["arguments", "this", "super", "console", "window", "document", "localStorage", "sessionStorage", "module", "global" // Node.js
 ];
-
 const BUILT_INS = [].concat(BUILT_IN_GLOBALS, TYPES, ERROR_TYPES);
 
 /*
@@ -186,7 +185,6 @@ function javascript(hljs) {
     keywords: KEYWORDS$1,
     contains: [] // defined later
   };
-
   const HTML_TEMPLATE = {
     begin: 'html`',
     end: '',
@@ -265,7 +263,6 @@ function javascript(hljs) {
   // See https://github.com/highlightjs/highlight.js/issues/3288
   // hljs.REGEXP_MODE
   ];
-
   SUBST.contains = SUBST_INTERNALS.concat({
     // we need to pair up {} inside our subst to prevent
     // it from ending too early by matching another }
@@ -331,7 +328,6 @@ function javascript(hljs) {
     // BLAH
     // this will be flagged as a UPPER_CASE_CONSTANT instead
     ),
-
     className: "title.class",
     keywords: {
       _: [

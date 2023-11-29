@@ -1645,7 +1645,6 @@ let KeyEventsPlugin = /*#__PURE__*/(() => {
       } else if (keycode === '.') {
         keycode = 'dot'; // because '.' is used as a separator in event names
       }
-
       MODIFIER_KEYS.forEach(modifierName => {
         if (modifierName !== keycode) {
           const modifierGetter = MODIFIER_KEY_GETTERS[modifierName];
