@@ -717,11 +717,11 @@ function mapOneOrManyArgs(fn) {
 /* harmony export */   se: () => (/* binding */ DomRendererFactory2)
 /* harmony export */ });
 /* unused harmony exports By, EventManager, EventManagerPlugin, HAMMER_GESTURE_CONFIG, HAMMER_LOADER, HammerGestureConfig, HammerModule, Meta, REMOVE_STYLES_ON_COMPONENT_DESTROY, TransferState, VERSION, bootstrapApplication, createApplication, disableDebugTools, enableDebugTools, makeStateKey, provideClientHydration, provideProtractorTestingSupport, withHttpTransferCacheOptions, withNoHttpTransferCache, ɵBrowserDomAdapter, ɵBrowserGetTestability, ɵDomEventsPlugin, ɵDomSanitizerImpl, ɵHammerGesturesPlugin, ɵINTERNAL_BROWSER_PLATFORM_PROVIDERS, ɵKeyEventsPlugin, ɵSharedStylesHost, ɵinitDomAdapter */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5247);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8620);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6059);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4316);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1911);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1192);
 /**
- * @license Angular v17.0.4
+ * @license Angular v17.0.5
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -818,13 +818,10 @@ function getBaseElementHref() {
   baseElement = baseElement || document.querySelector('base');
   return baseElement ? baseElement.getAttribute('href') : null;
 }
-// based on urlUtils.js in AngularJS 1
-let urlParsingNode;
 function relativePath(url) {
-  urlParsingNode = urlParsingNode || document.createElement('a');
-  urlParsingNode.setAttribute('href', url);
-  const pathName = urlParsingNode.pathname;
-  return pathName.charAt(0) === '/' ? pathName : `/${pathName}`;
+  // The base URL doesn't really matter, we just need it so relative paths have something
+  // to resolve against. In the browser `HTMLBaseElement.href` is always absolute.
+  return new URL(url, 'http://a').pathname;
 }
 class BrowserGetTestability {
   addToWindow(registry) {
@@ -2830,7 +2827,7 @@ function provideClientHydration(...features) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.0.4');
+const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.0.5');
 
 // Re-export TransferState to the public API of the `platform-browser` for backwards-compatibility.
 /**

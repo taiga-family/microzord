@@ -96,8 +96,8 @@ function _asyncToGenerator(fn) {
     });
   };
 }
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.4 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(5247);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.5 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(4316);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/of.js
 var of = __webpack_require__(2096);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Observable.js
@@ -116,12 +116,12 @@ var finalize = __webpack_require__(4716);
 var switchMap = __webpack_require__(4664);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/tap.js
 var tap = __webpack_require__(9397);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.4 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(8620);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.5 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(1911);
 ;// CONCATENATED MODULE: ./node_modules/@angular/common/fesm2022/http.mjs
 
 /**
- * @license Angular v17.0.4
+ * @license Angular v17.0.5
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -1779,7 +1779,7 @@ function adaptLegacyInterceptorToChain(chainTailFn, interceptor) {
  */
 function chainedInterceptorFn(chainTailFn, interceptorFn, injector) {
   // clang-format off
-  return (initialRequest, finalHandlerFn) => injector.runInContext(() => interceptorFn(initialRequest, downstreamRequest => chainTailFn(downstreamRequest, finalHandlerFn)));
+  return (initialRequest, finalHandlerFn) => (0,core_mjs_.runInInjectionContext)(injector, () => interceptorFn(initialRequest, downstreamRequest => chainTailFn(downstreamRequest, finalHandlerFn)));
   // clang-format on
 }
 /**
@@ -2123,7 +2123,7 @@ let JsonpInterceptor = /*#__PURE__*/(() => {
      * @returns An observable of the event stream.
      */
     intercept(initialRequest, next) {
-      return this.injector.runInContext(() => jsonpInterceptorFn(initialRequest, downstreamRequest => next.handle(downstreamRequest)));
+      return (0,core_mjs_.runInInjectionContext)(this.injector, () => jsonpInterceptorFn(initialRequest, downstreamRequest => next.handle(downstreamRequest)));
     }
     static #_ = this.ɵfac = function JsonpInterceptor_Factory(t) {
       return new (t || JsonpInterceptor)(core_mjs_["ɵɵinject"](core_mjs_.EnvironmentInjector));
@@ -2526,7 +2526,7 @@ let HttpXsrfInterceptor = /*#__PURE__*/(() => {
       this.injector = injector;
     }
     intercept(initialRequest, next) {
-      return this.injector.runInContext(() => xsrfInterceptorFn(initialRequest, downstreamRequest => next.handle(downstreamRequest)));
+      return (0,core_mjs_.runInInjectionContext)(this.injector, () => xsrfInterceptorFn(initialRequest, downstreamRequest => next.handle(downstreamRequest)));
     }
     static #_ = this.ɵfac = function HttpXsrfInterceptor_Factory(t) {
       return new (t || HttpXsrfInterceptor)(core_mjs_["ɵɵinject"](core_mjs_.EnvironmentInjector));

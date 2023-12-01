@@ -830,7 +830,7 @@ __webpack_require__.d(__webpack_exports__, {
 
 ;// CONCATENATED MODULE: ./node_modules/@angular/core/fesm2022/primitives/signals.mjs
 /**
- * @license Angular v17.0.4
+ * @license Angular v17.0.5
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -1403,7 +1403,7 @@ var distinctUntilChanged = __webpack_require__(3997);
 var first = __webpack_require__(1374);
 ;// CONCATENATED MODULE: ./node_modules/@angular/core/fesm2022/core.mjs
 /**
- * @license Angular v17.0.4
+ * @license Angular v17.0.5
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -4043,20 +4043,18 @@ function walkUpViews(nestingLevel, currentView) {
   }
   return currentView;
 }
+function requiresRefreshOrTraversal(lView) {
+  return lView[FLAGS] & (1024 /* LViewFlags.RefreshView */ | 8192 /* LViewFlags.HasChildViewsToRefresh */) || lView[REACTIVE_TEMPLATE_CONSUMER]?.dirty;
+}
 /**
- * Updates the `DESCENDANT_VIEWS_TO_REFRESH` counter on the parents of the `LView` as well as the
- * parents above that whose
- *  1. counter goes from 0 to 1, indicating that there is a new child that has a view to refresh
- *  or
- *  2. counter goes from 1 to 0, indicating there are no more descendant views to refresh
- * When attaching/re-attaching an `LView` to the change detection tree, we need to ensure that the
- * views above it are traversed during change detection if this one is marked for refresh or has
- * some child or descendant that needs to be refreshed.
+ * Updates the `HasChildViewsToRefresh` flag on the parents of the `LView` as well as the
+ * parents above.
  */
 function updateAncestorTraversalFlagsOnAttach(lView) {
-  if (lView[FLAGS] & (1024 /* LViewFlags.RefreshView */ | 8192 /* LViewFlags.HasChildViewsToRefresh */)) {
-    markAncestorsForTraversal(lView);
+  if (!requiresRefreshOrTraversal(lView)) {
+    return;
   }
+  markAncestorsForTraversal(lView);
 }
 /**
  * Ensures views above the given `lView` are traversed during change detection even when they are
@@ -11544,7 +11542,7 @@ class Version {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new Version('17.0.4');
+const VERSION = /*#__PURE__*/new Version('17.0.5');
 
 // This default value is when checking the hierarchy for a token.
 //
@@ -14322,7 +14320,7 @@ function detectChangesInViewWhileDirty(lView) {
   // descendants views that need to be refreshed due to re-dirtying during the change detection
   // run, detect changes on the view again. We run change detection in `Targeted` mode to only
   // refresh views with the `RefreshView` flag.
-  while (lView[FLAGS] & (1024 /* LViewFlags.RefreshView */ | 8192 /* LViewFlags.HasChildViewsToRefresh */) || lView[REACTIVE_TEMPLATE_CONSUMER]?.dirty) {
+  while (requiresRefreshOrTraversal(lView)) {
     if (retries === MAXIMUM_REFRESH_RERUNS) {
       throw new RuntimeError(103 /* RuntimeErrorCode.INFINITE_CHANGE_DETECTION */, ngDevMode && 'Infinite change detection while trying to refresh views. ' + 'There may be components which each cause the other to require a refresh, ' + 'causing an infinite loop.');
     }
@@ -16934,9 +16932,8 @@ function ɵɵCopyDefinitionFeature(definition) {
  * @codeGenApi
  */
 function ɵɵHostDirectivesFeature(rawHostDirectives) {
-  return definition => {
-    definition.findHostDirectiveDefs = findHostDirectiveDefs;
-    definition.hostDirectives = (Array.isArray(rawHostDirectives) ? rawHostDirectives : rawHostDirectives()).map(dir => {
+  const feature = definition => {
+    const resolved = (Array.isArray(rawHostDirectives) ? rawHostDirectives : rawHostDirectives()).map(dir => {
       return typeof dir === 'function' ? {
         directive: resolveForwardRef(dir),
         inputs: EMPTY_OBJ,
@@ -16947,7 +16944,15 @@ function ɵɵHostDirectivesFeature(rawHostDirectives) {
         outputs: bindingArrayToMap(dir.outputs)
       };
     });
+    if (definition.hostDirectives === null) {
+      definition.findHostDirectiveDefs = findHostDirectiveDefs;
+      definition.hostDirectives = resolved;
+    } else {
+      definition.hostDirectives.unshift(...resolved);
+    }
   };
+  feature.ngInherit = true;
+  return feature;
 }
 function findHostDirectiveDefs(currentDef, matchedDefs, hostDirectiveDefs) {
   if (currentDef.hostDirectives !== null) {
@@ -30621,7 +30626,7 @@ const ITS_JUST_ANGULAR = true;
  *     provideHttpClient(),
  *     {
  *       provide: APP_INITIALIZER,
- *       useFactory: initializeApp,
+ *       useFactory: initializeAppFactory,
  *       multi: true,
  *       deps: [HttpClient],
  *     },

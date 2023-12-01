@@ -200,8 +200,8 @@ __webpack_require__.d(__webpack_exports__, {
   "ɵloadChildren": () => (/* binding */ loadChildren)
 });
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.4 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(5247);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.5 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(4316);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/isObservable.js
 var isObservable = __webpack_require__(2664);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/from.js + 9 modules
@@ -321,8 +321,8 @@ class ConnectableObservable extends Observable/* Observable */.y {
 //# sourceMappingURL=ConnectableObservable.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Subject.js + 1 modules
 var Subject = __webpack_require__(8645);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.4 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(8620);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.5 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(1911);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/map.js
 var map = __webpack_require__(7398);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/switchMap.js
@@ -419,7 +419,7 @@ var mergeAll = __webpack_require__(7537);
 var platform_browser = __webpack_require__(6593);
 ;// CONCATENATED MODULE: ./node_modules/@angular/router/fesm2022/router.mjs
 /**
- * @license Angular v17.0.4
+ * @license Angular v17.0.5
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -3673,7 +3673,7 @@ function runCanActivate(futureRSS, futureARS, injector) {
     return (0,defer/* defer */.P)(() => {
       const closestInjector = getClosestRouteInjector(futureARS) ?? injector;
       const guard = getTokenOrFunctionIdentity(canActivate, closestInjector);
-      const guardVal = isCanActivate(guard) ? guard.canActivate(futureARS, futureRSS) : closestInjector.runInContext(() => guard(futureARS, futureRSS));
+      const guardVal = isCanActivate(guard) ? guard.canActivate(futureARS, futureRSS) : (0,core_mjs_.runInInjectionContext)(closestInjector, () => guard(futureARS, futureRSS));
       return wrapIntoObservable(guardVal).pipe((0,first/* first */.P)());
     });
   });
@@ -3687,7 +3687,7 @@ function runCanActivateChild(futureRSS, path, injector) {
       const guardsMapped = d.guards.map(canActivateChild => {
         const closestInjector = getClosestRouteInjector(d.node) ?? injector;
         const guard = getTokenOrFunctionIdentity(canActivateChild, closestInjector);
-        const guardVal = isCanActivateChild(guard) ? guard.canActivateChild(futureARS, futureRSS) : closestInjector.runInContext(() => guard(futureARS, futureRSS));
+        const guardVal = isCanActivateChild(guard) ? guard.canActivateChild(futureARS, futureRSS) : (0,core_mjs_.runInInjectionContext)(closestInjector, () => guard(futureARS, futureRSS));
         return wrapIntoObservable(guardVal).pipe((0,first/* first */.P)());
       });
       return (0,of.of)(guardsMapped).pipe(prioritizedGuardValue());
@@ -3701,7 +3701,7 @@ function runCanDeactivate(component, currARS, currRSS, futureRSS, injector) {
   const canDeactivateObservables = canDeactivate.map(c => {
     const closestInjector = getClosestRouteInjector(currARS) ?? injector;
     const guard = getTokenOrFunctionIdentity(c, closestInjector);
-    const guardVal = isCanDeactivate(guard) ? guard.canDeactivate(component, currARS, currRSS, futureRSS) : closestInjector.runInContext(() => guard(component, currARS, currRSS, futureRSS));
+    const guardVal = isCanDeactivate(guard) ? guard.canDeactivate(component, currARS, currRSS, futureRSS) : (0,core_mjs_.runInInjectionContext)(closestInjector, () => guard(component, currARS, currRSS, futureRSS));
     return wrapIntoObservable(guardVal).pipe((0,first/* first */.P)());
   });
   return (0,of.of)(canDeactivateObservables).pipe(prioritizedGuardValue());
@@ -3713,7 +3713,7 @@ function runCanLoadGuards(injector, route, segments, urlSerializer) {
   }
   const canLoadObservables = canLoad.map(injectionToken => {
     const guard = getTokenOrFunctionIdentity(injectionToken, injector);
-    const guardVal = isCanLoad(guard) ? guard.canLoad(route, segments) : injector.runInContext(() => guard(route, segments));
+    const guardVal = isCanLoad(guard) ? guard.canLoad(route, segments) : (0,core_mjs_.runInInjectionContext)(injector, () => guard(route, segments));
     return wrapIntoObservable(guardVal);
   });
   return (0,of.of)(canLoadObservables).pipe(prioritizedGuardValue(), redirectIfUrlTree(urlSerializer));
@@ -3729,7 +3729,7 @@ function runCanMatchGuards(injector, route, segments, urlSerializer) {
   if (!canMatch || canMatch.length === 0) return (0,of.of)(true);
   const canMatchObservables = canMatch.map(injectionToken => {
     const guard = getTokenOrFunctionIdentity(injectionToken, injector);
-    const guardVal = isCanMatch(guard) ? guard.canMatch(route, segments) : injector.runInContext(() => guard(route, segments));
+    const guardVal = isCanMatch(guard) ? guard.canMatch(route, segments) : (0,core_mjs_.runInInjectionContext)(injector, () => guard(route, segments));
     return wrapIntoObservable(guardVal);
   });
   return (0,of.of)(canMatchObservables).pipe(prioritizedGuardValue(), redirectIfUrlTree(urlSerializer));
@@ -4329,25 +4329,29 @@ function resolveData(paramsInheritanceStrategy, injector) {
     if (!canActivateChecks.length) {
       return (0,of.of)(t);
     }
-    const routesWithResolversToRun = canActivateChecks.map(check => check.route);
-    const routesWithResolversSet = new Set(routesWithResolversToRun);
-    const routesNeedingDataUpdates =
-    // List all ActivatedRoutes in an array, starting from the parent of the first route to run
-    // resolvers. We go from the parent because the first route might have siblings that also
-    // run resolvers.
-    flattenRouteTree(routesWithResolversToRun[0].parent)
-    // Remove the parent from the list -- we do not need to recompute its inherited data
-    // because no resolvers at or above it run.
-    .slice(1);
+    // Iterating a Set in javascript  happens in insertion order so it is safe to use a `Set` to
+    // preserve the correct order that the resolvers should run in.
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set#description
+    const routesWithResolversToRun = new Set(canActivateChecks.map(check => check.route));
+    const routesNeedingDataUpdates = new Set();
+    for (const route of routesWithResolversToRun) {
+      if (routesNeedingDataUpdates.has(route)) {
+        continue;
+      }
+      // All children under the route with a resolver to run need to recompute inherited data.
+      for (const newRoute of flattenRouteTree(route)) {
+        routesNeedingDataUpdates.add(newRoute);
+      }
+    }
     let routesProcessed = 0;
     return (0,from/* from */.D)(routesNeedingDataUpdates).pipe((0,concatMap/* concatMap */.b)(route => {
-      if (routesWithResolversSet.has(route)) {
+      if (routesWithResolversToRun.has(route)) {
         return runResolve(route, targetSnapshot, paramsInheritanceStrategy, injector);
       } else {
         route.data = getInherited(route, route.parent, paramsInheritanceStrategy).resolve;
         return (0,of.of)(void 0);
       }
-    }), (0,tap/* tap */.b)(() => routesProcessed++), takeLast(1), (0,mergeMap/* mergeMap */.z)(_ => routesProcessed === routesNeedingDataUpdates.length ? (0,of.of)(t) : empty/* EMPTY */.E));
+    }), (0,tap/* tap */.b)(() => routesProcessed++), takeLast(1), (0,mergeMap/* mergeMap */.z)(_ => routesProcessed === routesNeedingDataUpdates.size ? (0,of.of)(t) : empty/* EMPTY */.E));
   });
 }
 /**
@@ -4382,7 +4386,7 @@ function resolveNode(resolve, futureARS, futureRSS, injector) {
 function getResolver(injectionToken, futureARS, futureRSS, injector) {
   const closestInjector = getClosestRouteInjector(futureARS) ?? injector;
   const resolver = getTokenOrFunctionIdentity(injectionToken, closestInjector);
-  const resolverValue = resolver.resolve ? resolver.resolve(futureARS, futureRSS) : closestInjector.runInContext(() => resolver(futureARS, futureRSS));
+  const resolverValue = resolver.resolve ? resolver.resolve(futureARS, futureRSS) : (0,core_mjs_.runInInjectionContext)(closestInjector, () => resolver(futureARS, futureRSS));
   return wrapIntoObservable(resolverValue);
 }
 
@@ -7254,7 +7258,7 @@ function withNavigationErrorHandler(fn) {
       const injector = (0,core_mjs_.inject)(core_mjs_.EnvironmentInjector);
       (0,core_mjs_.inject)(Router).events.subscribe(e => {
         if (e instanceof NavigationError) {
-          injector.runInContext(() => fn(e));
+          (0,core_mjs_.runInInjectionContext)(injector, () => fn(e));
         }
       });
     }
@@ -7591,7 +7595,7 @@ function mapToResolve(provider) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new core_mjs_.Version('17.0.4');
+const VERSION = /*#__PURE__*/new core_mjs_.Version('17.0.5');
 
 /**
  * @module
