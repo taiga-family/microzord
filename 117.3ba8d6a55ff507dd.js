@@ -12,16 +12,16 @@ __webpack_require__.d(__webpack_exports__, {
   AngularChildModule: () => (/* binding */ AngularChildModule)
 });
 
-// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.0.5 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
-var router_mjs_ = __webpack_require__(8993);
+// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.0.6 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
+var router_mjs_ = __webpack_require__(4398);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc.js
 var taiga_ui_addon_doc = __webpack_require__(5322);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-utils.js
 var taiga_ui_addon_doc_utils = __webpack_require__(8836);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-link.js
 var taiga_ui_core_components_link = __webpack_require__(2114);
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.5 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(4316);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.6 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(7460);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-components.js + 85 modules
 var taiga_ui_addon_doc_components = __webpack_require__(2406);
 ;// CONCATENATED MODULE: ./apps/demo/src/app/modules/angular-child/angular-child.component.ts

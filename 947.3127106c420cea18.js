@@ -830,7 +830,7 @@ __webpack_require__.d(__webpack_exports__, {
 
 ;// CONCATENATED MODULE: ./node_modules/@angular/core/fesm2022/primitives/signals.mjs
 /**
- * @license Angular v17.0.5
+ * @license Angular v17.0.6
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -1403,7 +1403,7 @@ var distinctUntilChanged = __webpack_require__(3997);
 var first = __webpack_require__(1374);
 ;// CONCATENATED MODULE: ./node_modules/@angular/core/fesm2022/core.mjs
 /**
- * @license Angular v17.0.5
+ * @license Angular v17.0.6
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -9455,7 +9455,6 @@ function detachView(lContainer, removeIndex) {
 function destroyLView(tView, lView) {
   if (!(lView[FLAGS] & 256 /* LViewFlags.Destroyed */)) {
     const renderer = lView[RENDERER];
-    lView[REACTIVE_TEMPLATE_CONSUMER] && consumerDestroy(lView[REACTIVE_TEMPLATE_CONSUMER]);
     if (renderer.destroyNode) {
       applyView(tView, lView, renderer, 3 /* WalkTNodeTreeAction.Destroy */, null, null);
     }
@@ -9481,6 +9480,7 @@ function cleanUpView(tView, lView) {
     // This also aligns with the ViewEngine behavior. It also means that the onDestroy hook is
     // really more of an "afterDestroy" hook if you think about it.
     lView[FLAGS] |= 256 /* LViewFlags.Destroyed */;
+    lView[REACTIVE_TEMPLATE_CONSUMER] && consumerDestroy(lView[REACTIVE_TEMPLATE_CONSUMER]);
     executeOnDestroys(tView, lView);
     processCleanups(tView, lView);
     // For component views only, the local renderer is destroyed at clean up time.
@@ -11542,7 +11542,7 @@ class Version {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new Version('17.0.5');
+const VERSION = /*#__PURE__*/new Version('17.0.6');
 
 // This default value is when checking the hierarchy for a token.
 //
@@ -19966,6 +19966,16 @@ function getNoOffsetIndex(tNode) {
   return tNode.index - HEADER_OFFSET;
 }
 /**
+ * Check whether a given node exists, but is disconnected from the DOM.
+ *
+ * Note: we leverage the fact that we have this information available in the DOM emulation
+ * layer (in Domino) for now. Longer-term solution should not rely on the DOM emulation and
+ * only use internal data structures and state to compute this information.
+ */
+function isDisconnectedNode(tNode, lView) {
+  return !(tNode.type & 16 /* TNodeType.Projection */) && !!lView[tNode.index] && !unwrapRNode(lView[tNode.index])?.isConnected;
+}
+/**
  * Locate a node in DOM tree that corresponds to a given TNode.
  *
  * @param hydrationInfo The hydration annotation data
@@ -20152,10 +20162,20 @@ function calcPathBetween(from, to, fromNodeName) {
  * instructions needs to be generated for a TNode.
  */
 function calcPathForNode(tNode, lView) {
-  const parentTNode = tNode.parent;
+  let parentTNode = tNode.parent;
   let parentIndex;
   let parentRNode;
   let referenceNodeName;
+  // Skip over all parent nodes that are disconnected from the DOM, such nodes
+  // can not be used as anchors.
+  //
+  // This might happen in certain content projection-based use-cases, where
+  // a content of an element is projected and used, when a parent element
+  // itself remains detached from DOM. In this scenario we try to find a parent
+  // element that is attached to DOM and can act as an anchor instead.
+  while (parentTNode !== null && isDisconnectedNode(parentTNode, lView)) {
+    parentTNode = parentTNode.parent;
+  }
   if (parentTNode === null || !(parentTNode.type & 3 /* TNodeType.AnyRNode */)) {
     // If there is no parent TNode or a parent TNode does not represent an RNode
     // (i.e. not a DOM node), use component host element as a reference node.
@@ -20574,13 +20594,13 @@ function getLViewFromLContainer(lContainer, index) {
  * block (in which case view contents was re-created, thus needing insertion).
  */
 function shouldAddViewToDom(tNode, dehydratedView) {
-  return !dehydratedView || hasInSkipHydrationBlockFlag(tNode);
+  return !dehydratedView || dehydratedView.firstChild === null || hasInSkipHydrationBlockFlag(tNode);
 }
 function addLViewToLContainer(lContainer, lView, index, addToDOM = true) {
   const tView = lView[TVIEW];
-  // insert to the view tree so the new view can be change-detected
+  // Insert into the view tree so the new view can be change-detected
   insertView(tView, lView, lContainer, index);
-  // insert to the view to the DOM tree
+  // Insert elements that belong to this view into the DOM tree
   if (addToDOM) {
     const beforeNode = getBeforeNodeForView(index, lContainer);
     const renderer = lView[RENDERER];
@@ -20588,6 +20608,13 @@ function addLViewToLContainer(lContainer, lView, index, addToDOM = true) {
     if (parentRNode !== null) {
       addViewToDOM(tView, lContainer[T_HOST], renderer, lView, parentRNode, beforeNode);
     }
+  }
+  // When in hydration mode, reset the pointer to the first child in
+  // the dehydrated view. This indicates that the view was hydrated and
+  // further attaching/detaching should work with this view as normal.
+  const hydrationInfo = lView[HYDRATION];
+  if (hydrationInfo !== null && hydrationInfo.firstChild !== null) {
+    hydrationInfo.firstChild = null;
   }
 }
 function removeLViewFromLContainer(lContainer, index) {
@@ -35040,6 +35067,7 @@ function serializeLView(lView, context) {
         }
       }
     }
+    conditionallyAnnotateNodePath(ngh, tNode, lView);
     if (isLContainer(lView[i])) {
       // Serialize information about a template.
       const embeddedTView = tNode.tView;
@@ -35126,16 +35154,35 @@ function serializeLView(lView, context) {
             context.corruptedTextNodes.set(rNode, "ngtns" /* TextNodeMarker.Separator */);
           }
         }
-        if (tNode.projectionNext && tNode.projectionNext !== tNode.next && !isInSkipHydrationBlock(tNode.projectionNext)) {
-          // Check if projection next is not the same as next, in which case
-          // the node would not be found at creation time at runtime and we
-          // need to provide a location for that node.
-          appendSerializedNodePath(ngh, tNode.projectionNext, lView);
-        }
       }
     }
   }
   return ngh;
+}
+/**
+ * Serializes node location in cases when it's needed, specifically:
+ *
+ *  1. If `tNode.projectionNext` is different from `tNode.next` - it means that
+ *     the next `tNode` after projection is different from the one in the original
+ *     template. Since hydration relies on `tNode.next`, this serialized info
+ *     if required to help runtime code find the node at the correct location.
+ *  2. In certain content projection-based use-cases, it's possible that only
+ *     a content of a projected element is rendered. In this case, content nodes
+ *     require an extra annotation, since runtime logic can't rely on parent-child
+ *     connection to identify the location of a node.
+ */
+function conditionallyAnnotateNodePath(ngh, tNode, lView) {
+  // Handle case #1 described above.
+  if (tNode.projectionNext && tNode.projectionNext !== tNode.next && !isInSkipHydrationBlock(tNode.projectionNext)) {
+    appendSerializedNodePath(ngh, tNode.projectionNext, lView);
+  }
+  // Handle case #2 described above.
+  // Note: we only do that for the first node (i.e. when `tNode.prev === null`),
+  // the rest of the nodes would rely on the current node location, so no extra
+  // annotation is needed.
+  if (tNode.prev === null && tNode.parent !== null && isDisconnectedNode(tNode.parent, lView) && !isDisconnectedNode(tNode, lView)) {
+    appendSerializedNodePath(ngh, tNode, lView);
+  }
 }
 /**
  * Determines whether a component instance that is represented
@@ -35204,16 +35251,6 @@ function isContentProjectedNode(tNode) {
     currentTNode = currentTNode.parent;
   }
   return false;
-}
-/**
- * Check whether a given node exists, but is disconnected from the DOM.
- *
- * Note: we leverage the fact that we have this information available in the DOM emulation
- * layer (in Domino) for now. Longer-term solution should not rely on the DOM emulation and
- * only use internal data structures and state to compute this information.
- */
-function isDisconnectedNode(tNode, lView) {
-  return !(tNode.type & 16 /* TNodeType.Projection */) && !!lView[tNode.index] && !unwrapRNode(lView[tNode.index]).isConnected;
 }
 
 /**

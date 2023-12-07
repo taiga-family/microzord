@@ -717,11 +717,11 @@ function mapOneOrManyArgs(fn) {
 /* harmony export */   se: () => (/* binding */ DomRendererFactory2)
 /* harmony export */ });
 /* unused harmony exports By, EventManager, EventManagerPlugin, HAMMER_GESTURE_CONFIG, HAMMER_LOADER, HammerGestureConfig, HammerModule, Meta, REMOVE_STYLES_ON_COMPONENT_DESTROY, TransferState, VERSION, bootstrapApplication, createApplication, disableDebugTools, enableDebugTools, makeStateKey, provideClientHydration, provideProtractorTestingSupport, withHttpTransferCacheOptions, withNoHttpTransferCache, ɵBrowserDomAdapter, ɵBrowserGetTestability, ɵDomEventsPlugin, ɵDomSanitizerImpl, ɵHammerGesturesPlugin, ɵINTERNAL_BROWSER_PLATFORM_PROVIDERS, ɵKeyEventsPlugin, ɵSharedStylesHost, ɵinitDomAdapter */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4316);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1911);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1192);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7460);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4887);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6000);
 /**
- * @license Angular v17.0.5
+ * @license Angular v17.0.6
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -2827,7 +2827,7 @@ function provideClientHydration(...features) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.0.5');
+const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.0.6');
 
 // Re-export TransferState to the public API of the `platform-browser` for backwards-compatibility.
 /**

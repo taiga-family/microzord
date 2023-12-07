@@ -2805,7 +2805,7 @@ Zone.__load_patch('queueMicrotask', (global, Zone, api) => {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + (chunkId === 592 ? "common" : chunkId) + "." + {"193":"a955cdf4dad80266","316":"18fc92f2acfafe64","474":"365a0cb4d6fdf48f","542":"a72db9572f95bb22","586":"e3440fa26cb1670c","592":"89363744b774ea5a","603":"c72660edad55bced","814":"ac4d785fdfef7fe6","911":"e678d60b6c2b6595","947":"9c0dbcee6854eb4c"}[chunkId] + ".js";
+/******/ 			return "" + (chunkId === 592 ? "common" : chunkId) + "." + {"193":"1f6d2f2444ba307c","460":"724069e16b1b95b6","474":"bebf66f0930bf77b","542":"a72db9572f95bb22","586":"117d77f838c3d76b","592":"4d4e4bbc4cb1bc3d","603":"c72660edad55bced","814":"d8b155133be6dcd9","887":"ac08aca12a1ca18a","947":"3127106c420cea18"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -2926,10 +2926,10 @@ Zone.__load_patch('queueMicrotask', (global, Zone, api) => {
 /******/ 			var promises = [];
 /******/ 			switch(name) {
 /******/ 				case "default": {
-/******/ 					register("@angular/common/http", "17.0.5", () => (Promise.all([__webpack_require__.e(603), __webpack_require__.e(316), __webpack_require__.e(911), __webpack_require__.e(474), __webpack_require__.e(542)]).then(() => (() => (__webpack_require__(1474))))));
-/******/ 					register("@angular/common", "17.0.5", () => (Promise.all([__webpack_require__.e(316), __webpack_require__.e(814)]).then(() => (() => (__webpack_require__(6814))))));
-/******/ 					register("@angular/core", "17.0.5", () => (Promise.all([__webpack_require__.e(603), __webpack_require__.e(592), __webpack_require__.e(947)]).then(() => (() => (__webpack_require__(9212))))));
-/******/ 					register("@angular/router", "17.0.5", () => (Promise.all([__webpack_require__.e(603), __webpack_require__.e(316), __webpack_require__.e(911), __webpack_require__.e(586), __webpack_require__.e(193)]).then(() => (() => (__webpack_require__(7586))))));
+/******/ 					register("@angular/common/http", "17.0.6", () => (Promise.all([__webpack_require__.e(603), __webpack_require__.e(460), __webpack_require__.e(887), __webpack_require__.e(474), __webpack_require__.e(542)]).then(() => (() => (__webpack_require__(1474))))));
+/******/ 					register("@angular/common", "17.0.6", () => (Promise.all([__webpack_require__.e(460), __webpack_require__.e(814)]).then(() => (() => (__webpack_require__(6814))))));
+/******/ 					register("@angular/core", "17.0.6", () => (Promise.all([__webpack_require__.e(603), __webpack_require__.e(592), __webpack_require__.e(947)]).then(() => (() => (__webpack_require__(9212))))));
+/******/ 					register("@angular/router", "17.0.6", () => (Promise.all([__webpack_require__.e(603), __webpack_require__.e(460), __webpack_require__.e(887), __webpack_require__.e(586), __webpack_require__.e(193)]).then(() => (() => (__webpack_require__(7586))))));
 /******/ 				}
 /******/ 				break;
 /******/ 			}
@@ -3109,20 +3109,20 @@ Zone.__load_patch('queueMicrotask', (global, Zone, api) => {
 /******/ 		});
 /******/ 		var installedModules = {};
 /******/ 		var moduleToHandlerMapping = {
-/******/ 			4316: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/core", [4,17,0,5], () => (Promise.all([__webpack_require__.e(603), __webpack_require__.e(592), __webpack_require__.e(947)]).then(() => (() => (__webpack_require__(9212))))))),
-/******/ 			1911: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/common", [4,17,0,5], () => (__webpack_require__.e(814).then(() => (() => (__webpack_require__(6814))))))),
-/******/ 			1192: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/common/http", [4,17,0,5], () => (__webpack_require__.e(474).then(() => (() => (__webpack_require__(1474)))))))
+/******/ 			7460: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/core", [4,17,0,6], () => (Promise.all([__webpack_require__.e(603), __webpack_require__.e(592), __webpack_require__.e(947)]).then(() => (() => (__webpack_require__(9212))))))),
+/******/ 			4887: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/common", [4,17,0,6], () => (__webpack_require__.e(814).then(() => (() => (__webpack_require__(6814))))))),
+/******/ 			6000: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/common/http", [4,17,0,6], () => (__webpack_require__.e(474).then(() => (() => (__webpack_require__(1474)))))))
 /******/ 		};
 /******/ 		// no consumes in initial chunks
 /******/ 		var chunkMapping = {
 /******/ 			"193": [
-/******/ 				1192
+/******/ 				6000
 /******/ 			],
-/******/ 			"316": [
-/******/ 				4316
+/******/ 			"460": [
+/******/ 				7460
 /******/ 			],
-/******/ 			"911": [
-/******/ 				1911
+/******/ 			"887": [
+/******/ 				4887
 /******/ 			]
 /******/ 		};
 /******/ 		__webpack_require__.f.consumes = (chunkId, promises) => {
@@ -3174,7 +3174,7 @@ Zone.__load_patch('queueMicrotask', (global, Zone, api) => {
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if(!/^(316|911)$/.test(chunkId)) {
+/******/ 						if(!/^(460|887)$/.test(chunkId)) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
 /******/ 							promises.push(installedChunkData[2] = promise);

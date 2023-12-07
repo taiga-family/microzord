@@ -200,8 +200,8 @@ __webpack_require__.d(__webpack_exports__, {
   "ɵloadChildren": () => (/* binding */ loadChildren)
 });
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.5 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(4316);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.6 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(7460);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/isObservable.js
 var isObservable = __webpack_require__(2664);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/from.js + 9 modules
@@ -321,8 +321,8 @@ class ConnectableObservable extends Observable/* Observable */.y {
 //# sourceMappingURL=ConnectableObservable.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Subject.js + 1 modules
 var Subject = __webpack_require__(8645);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.5 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(1911);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.6 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(4887);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/map.js
 var map = __webpack_require__(7398);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/switchMap.js
@@ -419,7 +419,7 @@ var mergeAll = __webpack_require__(7537);
 var platform_browser = __webpack_require__(6593);
 ;// CONCATENATED MODULE: ./node_modules/@angular/router/fesm2022/router.mjs
 /**
- * @license Angular v17.0.5
+ * @license Angular v17.0.6
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -3851,6 +3851,9 @@ function matchWithChecks(segmentGroup, route, segments, injector, urlSerializer)
   }));
 }
 function match(segmentGroup, route, segments) {
+  if (route.path === '**') {
+    return createWildcardMatchResult(segments);
+  }
   if (route.path === '') {
     if (route.pathMatch === 'full' && (segmentGroup.hasChildren() || segments.length > 0)) {
       return {
@@ -3885,6 +3888,15 @@ function match(segmentGroup, route, segments) {
     // TODO(atscott): investigate combining parameters and positionalParamSegments
     parameters,
     positionalParamSegments: res.posParams ?? {}
+  };
+}
+function createWildcardMatchResult(segments) {
+  return {
+    matched: true,
+    parameters: segments.length > 0 ? router_last(segments).parameters : {},
+    consumedSegments: segments,
+    remainingSegments: [],
+    positionalParamSegments: {}
   };
 }
 function split(segmentGroup, consumedSegments, slicedSegments, config) {
@@ -3963,9 +3975,6 @@ function isImmediateMatch(route, rawSegment, segments, outlet) {
   // This should only match if the url is `/(x:b)`.
   if (getOutlet(route) !== outlet && (outlet === PRIMARY_OUTLET || !emptyPathMatch(rawSegment, segments, route))) {
     return false;
-  }
-  if (route.path === '**') {
-    return true;
   }
   return match(rawSegment, route, segments).matched;
 }
@@ -4126,7 +4135,7 @@ class Recognizer {
       consumedSegments,
       positionalParamSegments,
       remainingSegments
-    } = route.path === '**' ? createWildcardMatchResult(segments) : match(segmentGroup, route, segments);
+    } = match(segmentGroup, route, segments);
     if (!matched) return noMatch$1(segmentGroup);
     // TODO(atscott): Move all of this under an if(ngDevMode) as a breaking change and allow stack
     // size exceeded in production
@@ -4145,16 +4154,13 @@ class Recognizer {
     }));
   }
   matchSegmentAgainstRoute(injector, rawSegment, route, segments, outlet) {
-    let matchResult;
+    const matchResult = matchWithChecks(rawSegment, route, segments, injector, this.urlSerializer);
     if (route.path === '**') {
-      matchResult = (0,of.of)(createWildcardMatchResult(segments));
       // Prior versions of the route matching algorithm would stop matching at the wildcard route.
       // We should investigate a better strategy for any existing children. Otherwise, these
       // child segments are silently dropped from the navigation.
       // https://github.com/angular/angular/issues/40089
       rawSegment.children = {};
-    } else {
-      matchResult = matchWithChecks(rawSegment, route, segments, injector, this.urlSerializer);
     }
     return matchResult.pipe((0,switchMap/* switchMap */.w)(result => {
       if (!result.matched) {
@@ -4296,15 +4302,6 @@ function getData(route) {
 }
 function getResolve(route) {
   return route.resolve || {};
-}
-function createWildcardMatchResult(segments) {
-  return {
-    matched: true,
-    parameters: segments.length > 0 ? router_last(segments).parameters : {},
-    consumedSegments: segments,
-    remainingSegments: [],
-    positionalParamSegments: {}
-  };
 }
 function recognize(injector, configLoader, rootComponentType, config, serializer, paramsInheritanceStrategy) {
   return (0,mergeMap/* mergeMap */.z)(t => recognize$1(injector, configLoader, rootComponentType, config, t.extractedUrl, serializer, paramsInheritanceStrategy).pipe((0,map/* map */.U)(({
@@ -7595,7 +7592,7 @@ function mapToResolve(provider) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new core_mjs_.Version('17.0.5');
+const VERSION = /*#__PURE__*/new core_mjs_.Version('17.0.6');
 
 /**
  * @module
