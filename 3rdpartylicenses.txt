@@ -1788,7 +1788,7 @@ IN THE SOFTWARE.
 ngx-highlightjs
 MIT
 
-punycode
+punycode.js
 MIT
 Copyright Mathias Bynens <https://mathiasbynens.be/>
 

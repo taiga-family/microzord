@@ -16,8 +16,8 @@ __webpack_require__.d(__webpack_exports__, {
 var router_mjs_ = __webpack_require__(4398);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc.js
 var taiga_ui_addon_doc = __webpack_require__(5322);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-utils.js
-var taiga_ui_addon_doc_utils = __webpack_require__(8836);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-utils.js + 75 modules
+var taiga_ui_addon_doc_utils = __webpack_require__(1569);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-link.js
 var taiga_ui_core_components_link = __webpack_require__(2114);
 // EXTERNAL MODULE: ./apps/demo/src/app/shared/host-child-warning/host-child-warning.module.ts
