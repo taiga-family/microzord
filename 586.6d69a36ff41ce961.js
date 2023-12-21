@@ -200,8 +200,8 @@ __webpack_require__.d(__webpack_exports__, {
   "ɵloadChildren": () => (/* binding */ loadChildren)
 });
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.7 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(7097);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(2258);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/isObservable.js
 var isObservable = __webpack_require__(2664);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/from.js + 9 modules
@@ -321,8 +321,8 @@ class ConnectableObservable extends Observable/* Observable */.y {
 //# sourceMappingURL=ConnectableObservable.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Subject.js + 1 modules
 var Subject = __webpack_require__(8645);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.7 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(4577);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(3732);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/map.js
 var map = __webpack_require__(7398);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/switchMap.js
@@ -419,7 +419,7 @@ var mergeAll = __webpack_require__(7537);
 var platform_browser = __webpack_require__(6593);
 ;// CONCATENATED MODULE: ./node_modules/@angular/router/fesm2022/router.mjs
 /**
- * @license Angular v17.0.7
+ * @license Angular v17.0.8
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -2403,8 +2403,12 @@ function getInherited(route, parent, paramsInheritanceStrategy = 'emptyOnly') {
     };
   } else {
     inherited = {
-      params: route.params,
-      data: route.data,
+      params: {
+        ...route.params
+      },
+      data: {
+        ...route.data
+      },
       resolve: {
         ...route.data,
         ...(route._resolvedData ?? {})
@@ -4988,7 +4992,7 @@ let NavigationTransitions = /*#__PURE__*/(() => {
             }
             return loaders;
           };
-          return (0,combineLatest/* combineLatest */.a)(loadComponents(t.targetSnapshot.root)).pipe((0,defaultIfEmpty/* defaultIfEmpty */.d)(), (0,take/* take */.q)(1));
+          return (0,combineLatest/* combineLatest */.a)(loadComponents(t.targetSnapshot.root)).pipe((0,defaultIfEmpty/* defaultIfEmpty */.d)(null), (0,take/* take */.q)(1));
         }), switchTap(() => this.afterPreactivation()), (0,switchMap/* switchMap */.w)(() => {
           const {
             currentSnapshot,
@@ -5506,7 +5510,7 @@ let Router = /*#__PURE__*/(() => {
       this.options = (0,core_mjs_.inject)(ROUTER_CONFIGURATION, {
         optional: true
       }) || {};
-      this.pendingTasks = (0,core_mjs_.inject)(core_mjs_["ɵInitialRenderPendingTasks"]);
+      this.pendingTasks = (0,core_mjs_.inject)(core_mjs_["ɵPendingTasks"]);
       this.urlUpdateStrategy = this.options.urlUpdateStrategy || 'deferred';
       this.navigationTransitions = (0,core_mjs_.inject)(NavigationTransitions);
       this.urlSerializer = (0,core_mjs_.inject)(UrlSerializer);
@@ -7589,7 +7593,7 @@ function mapToResolve(provider) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new core_mjs_.Version('17.0.7');
+const VERSION = /*#__PURE__*/new core_mjs_.Version('17.0.8');
 
 /**
  * @module

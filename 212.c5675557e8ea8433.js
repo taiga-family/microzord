@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[947],{
+(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[212],{
 
 /***/ 5619:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -39,6 +39,112 @@ class BehaviorSubject extends _Subject__WEBPACK_IMPORTED_MODULE_0__/* .Subject *
   }
 }
 //# sourceMappingURL=BehaviorSubject.js.map
+
+/***/ }),
+
+/***/ 5592:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   y: () => (/* binding */ Observable)
+/* harmony export */ });
+/* harmony import */ var _Subscriber__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(305);
+/* harmony import */ var _Subscription__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7394);
+/* harmony import */ var _symbol_observable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4850);
+/* harmony import */ var _util_pipe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8407);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2653);
+/* harmony import */ var _util_isFunction__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4674);
+/* harmony import */ var _util_errorContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1441);
+
+
+
+
+
+
+
+let Observable = /*#__PURE__*/(() => {
+  class Observable {
+    constructor(subscribe) {
+      if (subscribe) {
+        this._subscribe = subscribe;
+      }
+    }
+    lift(operator) {
+      const observable = new Observable();
+      observable.source = this;
+      observable.operator = operator;
+      return observable;
+    }
+    subscribe(observerOrNext, error, complete) {
+      const subscriber = isSubscriber(observerOrNext) ? observerOrNext : new _Subscriber__WEBPACK_IMPORTED_MODULE_0__/* .SafeSubscriber */ .Hp(observerOrNext, error, complete);
+      (0,_util_errorContext__WEBPACK_IMPORTED_MODULE_1__/* .errorContext */ .x)(() => {
+        const {
+          operator,
+          source
+        } = this;
+        subscriber.add(operator ? operator.call(subscriber, source) : source ? this._subscribe(subscriber) : this._trySubscribe(subscriber));
+      });
+      return subscriber;
+    }
+    _trySubscribe(sink) {
+      try {
+        return this._subscribe(sink);
+      } catch (err) {
+        sink.error(err);
+      }
+    }
+    forEach(next, promiseCtor) {
+      promiseCtor = getPromiseCtor(promiseCtor);
+      return new promiseCtor((resolve, reject) => {
+        const subscriber = new _Subscriber__WEBPACK_IMPORTED_MODULE_0__/* .SafeSubscriber */ .Hp({
+          next: value => {
+            try {
+              next(value);
+            } catch (err) {
+              reject(err);
+              subscriber.unsubscribe();
+            }
+          },
+          error: reject,
+          complete: resolve
+        });
+        this.subscribe(subscriber);
+      });
+    }
+    _subscribe(subscriber) {
+      var _a;
+      return (_a = this.source) === null || _a === void 0 ? void 0 : _a.subscribe(subscriber);
+    }
+    [_symbol_observable__WEBPACK_IMPORTED_MODULE_2__/* .observable */ .L]() {
+      return this;
+    }
+    pipe(...operations) {
+      return (0,_util_pipe__WEBPACK_IMPORTED_MODULE_3__/* .pipeFromArray */ .U)(operations)(this);
+    }
+    toPromise(promiseCtor) {
+      promiseCtor = getPromiseCtor(promiseCtor);
+      return new promiseCtor((resolve, reject) => {
+        let value;
+        this.subscribe(x => value = x, err => reject(err), () => resolve(value));
+      });
+    }
+  }
+  Observable.create = subscribe => {
+    return new Observable(subscribe);
+  };
+  return Observable;
+})();
+function getPromiseCtor(promiseCtor) {
+  var _a;
+  return (_a = promiseCtor !== null && promiseCtor !== void 0 ? promiseCtor : _config__WEBPACK_IMPORTED_MODULE_4__.config.Promise) !== null && _a !== void 0 ? _a : Promise;
+}
+function isObserver(value) {
+  return value && (0,_util_isFunction__WEBPACK_IMPORTED_MODULE_5__/* .isFunction */ .m)(value.next) && (0,_util_isFunction__WEBPACK_IMPORTED_MODULE_5__/* .isFunction */ .m)(value.error) && (0,_util_isFunction__WEBPACK_IMPORTED_MODULE_5__/* .isFunction */ .m)(value.complete);
+}
+function isSubscriber(value) {
+  return value && value instanceof _Subscriber__WEBPACK_IMPORTED_MODULE_0__/* .Subscriber */ .Lv || isObserver(value) && (0,_Subscription__WEBPACK_IMPORTED_MODULE_6__/* .isSubscription */ .Nn)(value);
+}
+//# sourceMappingURL=Observable.js.map
 
 /***/ }),
 
@@ -223,6 +329,394 @@ class AnonymousSubject extends Subject {
 
 /***/ }),
 
+/***/ 305:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  Hp: () => (/* binding */ SafeSubscriber),
+  Lv: () => (/* binding */ Subscriber)
+});
+
+// UNUSED EXPORTS: EMPTY_OBSERVER
+
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/isFunction.js
+var isFunction = __webpack_require__(4674);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Subscription.js + 1 modules
+var Subscription = __webpack_require__(7394);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/config.js
+var config = __webpack_require__(2653);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/reportUnhandledError.js
+var reportUnhandledError = __webpack_require__(3894);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/noop.js
+var noop = __webpack_require__(2420);
+;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/NotificationFactories.js
+const COMPLETE_NOTIFICATION = (() => createNotification('C', undefined, undefined))();
+function errorNotification(error) {
+  return createNotification('E', undefined, error);
+}
+function nextNotification(value) {
+  return createNotification('N', value, undefined);
+}
+function createNotification(kind, value, error) {
+  return {
+    kind,
+    value,
+    error
+  };
+}
+//# sourceMappingURL=NotificationFactories.js.map
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/scheduler/timeoutProvider.js
+var timeoutProvider = __webpack_require__(7599);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/errorContext.js
+var errorContext = __webpack_require__(1441);
+;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/Subscriber.js
+
+
+
+
+
+
+
+
+class Subscriber extends Subscription/* Subscription */.w0 {
+  constructor(destination) {
+    super();
+    this.isStopped = false;
+    if (destination) {
+      this.destination = destination;
+      if ((0,Subscription/* isSubscription */.Nn)(destination)) {
+        destination.add(this);
+      }
+    } else {
+      this.destination = EMPTY_OBSERVER;
+    }
+  }
+  static create(next, error, complete) {
+    return new SafeSubscriber(next, error, complete);
+  }
+  next(value) {
+    if (this.isStopped) {
+      handleStoppedNotification(nextNotification(value), this);
+    } else {
+      this._next(value);
+    }
+  }
+  error(err) {
+    if (this.isStopped) {
+      handleStoppedNotification(errorNotification(err), this);
+    } else {
+      this.isStopped = true;
+      this._error(err);
+    }
+  }
+  complete() {
+    if (this.isStopped) {
+      handleStoppedNotification(COMPLETE_NOTIFICATION, this);
+    } else {
+      this.isStopped = true;
+      this._complete();
+    }
+  }
+  unsubscribe() {
+    if (!this.closed) {
+      this.isStopped = true;
+      super.unsubscribe();
+      this.destination = null;
+    }
+  }
+  _next(value) {
+    this.destination.next(value);
+  }
+  _error(err) {
+    try {
+      this.destination.error(err);
+    } finally {
+      this.unsubscribe();
+    }
+  }
+  _complete() {
+    try {
+      this.destination.complete();
+    } finally {
+      this.unsubscribe();
+    }
+  }
+}
+const _bind = Function.prototype.bind;
+function bind(fn, thisArg) {
+  return _bind.call(fn, thisArg);
+}
+class ConsumerObserver {
+  constructor(partialObserver) {
+    this.partialObserver = partialObserver;
+  }
+  next(value) {
+    const {
+      partialObserver
+    } = this;
+    if (partialObserver.next) {
+      try {
+        partialObserver.next(value);
+      } catch (error) {
+        handleUnhandledError(error);
+      }
+    }
+  }
+  error(err) {
+    const {
+      partialObserver
+    } = this;
+    if (partialObserver.error) {
+      try {
+        partialObserver.error(err);
+      } catch (error) {
+        handleUnhandledError(error);
+      }
+    } else {
+      handleUnhandledError(err);
+    }
+  }
+  complete() {
+    const {
+      partialObserver
+    } = this;
+    if (partialObserver.complete) {
+      try {
+        partialObserver.complete();
+      } catch (error) {
+        handleUnhandledError(error);
+      }
+    }
+  }
+}
+class SafeSubscriber extends Subscriber {
+  constructor(observerOrNext, error, complete) {
+    super();
+    let partialObserver;
+    if ((0,isFunction/* isFunction */.m)(observerOrNext) || !observerOrNext) {
+      partialObserver = {
+        next: observerOrNext !== null && observerOrNext !== void 0 ? observerOrNext : undefined,
+        error: error !== null && error !== void 0 ? error : undefined,
+        complete: complete !== null && complete !== void 0 ? complete : undefined
+      };
+    } else {
+      let context;
+      if (this && config.config.useDeprecatedNextContext) {
+        context = Object.create(observerOrNext);
+        context.unsubscribe = () => this.unsubscribe();
+        partialObserver = {
+          next: observerOrNext.next && bind(observerOrNext.next, context),
+          error: observerOrNext.error && bind(observerOrNext.error, context),
+          complete: observerOrNext.complete && bind(observerOrNext.complete, context)
+        };
+      } else {
+        partialObserver = observerOrNext;
+      }
+    }
+    this.destination = new ConsumerObserver(partialObserver);
+  }
+}
+function handleUnhandledError(error) {
+  if (config.config.useDeprecatedSynchronousErrorHandling) {
+    (0,errorContext/* captureError */.O)(error);
+  } else {
+    (0,reportUnhandledError/* reportUnhandledError */.h)(error);
+  }
+}
+function defaultErrorHandler(err) {
+  throw err;
+}
+function handleStoppedNotification(notification, subscriber) {
+  const {
+    onStoppedNotification
+  } = config.config;
+  onStoppedNotification && timeoutProvider/* timeoutProvider */.z.setTimeout(() => onStoppedNotification(notification, subscriber));
+}
+const EMPTY_OBSERVER = {
+  closed: true,
+  next: noop/* noop */.Z,
+  error: defaultErrorHandler,
+  complete: noop/* noop */.Z
+};
+//# sourceMappingURL=Subscriber.js.map
+
+/***/ }),
+
+/***/ 7394:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  Lc: () => (/* binding */ EMPTY_SUBSCRIPTION),
+  w0: () => (/* binding */ Subscription),
+  Nn: () => (/* binding */ isSubscription)
+});
+
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/isFunction.js
+var isFunction = __webpack_require__(4674);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/createErrorClass.js
+var createErrorClass = __webpack_require__(2306);
+;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/util/UnsubscriptionError.js
+
+const UnsubscriptionError = (0,createErrorClass/* createErrorClass */.d)(_super => function UnsubscriptionErrorImpl(errors) {
+  _super(this);
+  this.message = errors ? `${errors.length} errors occurred during unsubscription:
+${errors.map((err, i) => `${i + 1}) ${err.toString()}`).join('\n  ')}` : '';
+  this.name = 'UnsubscriptionError';
+  this.errors = errors;
+});
+//# sourceMappingURL=UnsubscriptionError.js.map
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/arrRemove.js
+var arrRemove = __webpack_require__(9039);
+;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/Subscription.js
+
+
+
+class Subscription {
+  constructor(initialTeardown) {
+    this.initialTeardown = initialTeardown;
+    this.closed = false;
+    this._parentage = null;
+    this._finalizers = null;
+  }
+  unsubscribe() {
+    let errors;
+    if (!this.closed) {
+      this.closed = true;
+      const {
+        _parentage
+      } = this;
+      if (_parentage) {
+        this._parentage = null;
+        if (Array.isArray(_parentage)) {
+          for (const parent of _parentage) {
+            parent.remove(this);
+          }
+        } else {
+          _parentage.remove(this);
+        }
+      }
+      const {
+        initialTeardown: initialFinalizer
+      } = this;
+      if ((0,isFunction/* isFunction */.m)(initialFinalizer)) {
+        try {
+          initialFinalizer();
+        } catch (e) {
+          errors = e instanceof UnsubscriptionError ? e.errors : [e];
+        }
+      }
+      const {
+        _finalizers
+      } = this;
+      if (_finalizers) {
+        this._finalizers = null;
+        for (const finalizer of _finalizers) {
+          try {
+            execFinalizer(finalizer);
+          } catch (err) {
+            errors = errors !== null && errors !== void 0 ? errors : [];
+            if (err instanceof UnsubscriptionError) {
+              errors = [...errors, ...err.errors];
+            } else {
+              errors.push(err);
+            }
+          }
+        }
+      }
+      if (errors) {
+        throw new UnsubscriptionError(errors);
+      }
+    }
+  }
+  add(teardown) {
+    var _a;
+    if (teardown && teardown !== this) {
+      if (this.closed) {
+        execFinalizer(teardown);
+      } else {
+        if (teardown instanceof Subscription) {
+          if (teardown.closed || teardown._hasParent(this)) {
+            return;
+          }
+          teardown._addParent(this);
+        }
+        (this._finalizers = (_a = this._finalizers) !== null && _a !== void 0 ? _a : []).push(teardown);
+      }
+    }
+  }
+  _hasParent(parent) {
+    const {
+      _parentage
+    } = this;
+    return _parentage === parent || Array.isArray(_parentage) && _parentage.includes(parent);
+  }
+  _addParent(parent) {
+    const {
+      _parentage
+    } = this;
+    this._parentage = Array.isArray(_parentage) ? (_parentage.push(parent), _parentage) : _parentage ? [_parentage, parent] : parent;
+  }
+  _removeParent(parent) {
+    const {
+      _parentage
+    } = this;
+    if (_parentage === parent) {
+      this._parentage = null;
+    } else if (Array.isArray(_parentage)) {
+      (0,arrRemove/* arrRemove */.P)(_parentage, parent);
+    }
+  }
+  remove(teardown) {
+    const {
+      _finalizers
+    } = this;
+    _finalizers && (0,arrRemove/* arrRemove */.P)(_finalizers, teardown);
+    if (teardown instanceof Subscription) {
+      teardown._removeParent(this);
+    }
+  }
+}
+Subscription.EMPTY = (() => {
+  const empty = new Subscription();
+  empty.closed = true;
+  return empty;
+})();
+const EMPTY_SUBSCRIPTION = Subscription.EMPTY;
+function isSubscription(value) {
+  return value instanceof Subscription || value && 'closed' in value && (0,isFunction/* isFunction */.m)(value.remove) && (0,isFunction/* isFunction */.m)(value.add) && (0,isFunction/* isFunction */.m)(value.unsubscribe);
+}
+function execFinalizer(finalizer) {
+  if ((0,isFunction/* isFunction */.m)(finalizer)) {
+    finalizer();
+  } else {
+    finalizer.unsubscribe();
+  }
+}
+//# sourceMappingURL=Subscription.js.map
+
+/***/ }),
+
+/***/ 2653:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   config: () => (/* binding */ config)
+/* harmony export */ });
+const config = {
+  onUnhandledError: null,
+  onStoppedNotification: null,
+  Promise: undefined,
+  useDeprecatedSynchronousErrorHandling: false,
+  useDeprecatedNextContext: false
+};
+//# sourceMappingURL=config.js.map
+
+/***/ }),
+
 /***/ 6232:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -240,6 +734,64 @@ function emptyScheduled(scheduler) {
   return new Observable(subscriber => scheduler.schedule(() => subscriber.complete()));
 }
 //# sourceMappingURL=empty.js.map
+
+/***/ }),
+
+/***/ 8251:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   x: () => (/* binding */ createOperatorSubscriber)
+/* harmony export */ });
+/* unused harmony export OperatorSubscriber */
+/* harmony import */ var _Subscriber__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(305);
+
+function createOperatorSubscriber(destination, onNext, onComplete, onError, onFinalize) {
+  return new OperatorSubscriber(destination, onNext, onComplete, onError, onFinalize);
+}
+class OperatorSubscriber extends _Subscriber__WEBPACK_IMPORTED_MODULE_0__/* .Subscriber */ .Lv {
+  constructor(destination, onNext, onComplete, onError, onFinalize, shouldUnsubscribe) {
+    super(destination);
+    this.onFinalize = onFinalize;
+    this.shouldUnsubscribe = shouldUnsubscribe;
+    this._next = onNext ? function (value) {
+      try {
+        onNext(value);
+      } catch (err) {
+        destination.error(err);
+      }
+    } : super._next;
+    this._error = onError ? function (err) {
+      try {
+        onError(err);
+      } catch (err) {
+        destination.error(err);
+      } finally {
+        this.unsubscribe();
+      }
+    } : super._error;
+    this._complete = onComplete ? function () {
+      try {
+        onComplete();
+      } catch (err) {
+        destination.error(err);
+      } finally {
+        this.unsubscribe();
+      }
+    } : super._complete;
+  }
+  unsubscribe() {
+    var _a;
+    if (!this.shouldUnsubscribe || this.shouldUnsubscribe()) {
+      const {
+        closed
+      } = this;
+      super.unsubscribe();
+      !closed && ((_a = this.onFinalize) === null || _a === void 0 ? void 0 : _a.call(this));
+    }
+  }
+}
+//# sourceMappingURL=OperatorSubscriber.js.map
 
 /***/ }),
 
@@ -271,6 +823,26 @@ function defaultIfEmpty(defaultValue) {
 
 /***/ }),
 
+/***/ 2181:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   h: () => (/* binding */ filter)
+/* harmony export */ });
+/* harmony import */ var _util_lift__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9360);
+/* harmony import */ var _OperatorSubscriber__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8251);
+
+
+function filter(predicate, thisArg) {
+  return (0,_util_lift__WEBPACK_IMPORTED_MODULE_0__/* .operate */ .e)((source, subscriber) => {
+    let index = 0;
+    source.subscribe((0,_OperatorSubscriber__WEBPACK_IMPORTED_MODULE_1__/* .createOperatorSubscriber */ .x)(subscriber, value => predicate.call(thisArg, value, index++) && subscriber.next(value)));
+  });
+}
+//# sourceMappingURL=filter.js.map
+
+/***/ }),
+
 /***/ 1374:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -297,20 +869,25 @@ function first(predicate, defaultValue) {
 
 /***/ }),
 
-/***/ 7537:
+/***/ 7398:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   J: () => (/* binding */ mergeAll)
+/* harmony export */   U: () => (/* binding */ map)
 /* harmony export */ });
-/* harmony import */ var _mergeMap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1631);
-/* harmony import */ var _util_identity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2737);
+/* harmony import */ var _util_lift__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9360);
+/* harmony import */ var _OperatorSubscriber__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8251);
 
 
-function mergeAll(concurrent = Infinity) {
-  return (0,_mergeMap__WEBPACK_IMPORTED_MODULE_0__/* .mergeMap */ .z)(_util_identity__WEBPACK_IMPORTED_MODULE_1__/* .identity */ .y, concurrent);
+function map(project, thisArg) {
+  return (0,_util_lift__WEBPACK_IMPORTED_MODULE_0__/* .operate */ .e)((source, subscriber) => {
+    let index = 0;
+    source.subscribe((0,_OperatorSubscriber__WEBPACK_IMPORTED_MODULE_1__/* .createOperatorSubscriber */ .x)(subscriber, value => {
+      subscriber.next(project.call(thisArg, value, index++));
+    }));
+  });
 }
-//# sourceMappingURL=mergeAll.js.map
+//# sourceMappingURL=map.js.map
 
 /***/ }),
 
@@ -371,6 +948,45 @@ function defaultErrorFactory() {
 
 /***/ }),
 
+/***/ 7599:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   z: () => (/* binding */ timeoutProvider)
+/* harmony export */ });
+const timeoutProvider = {
+  setTimeout(handler, timeout, ...args) {
+    const {
+      delegate
+    } = timeoutProvider;
+    if (delegate === null || delegate === void 0 ? void 0 : delegate.setTimeout) {
+      return delegate.setTimeout(handler, timeout, ...args);
+    }
+    return setTimeout(handler, timeout, ...args);
+  },
+  clearTimeout(handle) {
+    const {
+      delegate
+    } = timeoutProvider;
+    return ((delegate === null || delegate === void 0 ? void 0 : delegate.clearTimeout) || clearTimeout)(handle);
+  },
+  delegate: undefined
+};
+//# sourceMappingURL=timeoutProvider.js.map
+
+/***/ }),
+
+/***/ 4850:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   L: () => (/* binding */ observable)
+/* harmony export */ });
+const observable = (() => typeof Symbol === 'function' && Symbol.observable || '@@observable')();
+//# sourceMappingURL=observable.js.map
+
+/***/ }),
+
 /***/ 6973:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -385,6 +1001,206 @@ const EmptyError = (0,_createErrorClass__WEBPACK_IMPORTED_MODULE_0__/* .createEr
   this.message = 'no elements in sequence';
 });
 //# sourceMappingURL=EmptyError.js.map
+
+/***/ }),
+
+/***/ 9039:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   P: () => (/* binding */ arrRemove)
+/* harmony export */ });
+function arrRemove(arr, item) {
+  if (arr) {
+    const index = arr.indexOf(item);
+    0 <= index && arr.splice(index, 1);
+  }
+}
+//# sourceMappingURL=arrRemove.js.map
+
+/***/ }),
+
+/***/ 2306:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   d: () => (/* binding */ createErrorClass)
+/* harmony export */ });
+function createErrorClass(createImpl) {
+  const _super = instance => {
+    Error.call(instance);
+    instance.stack = new Error().stack;
+  };
+  const ctorFunc = createImpl(_super);
+  ctorFunc.prototype = Object.create(Error.prototype);
+  ctorFunc.prototype.constructor = ctorFunc;
+  return ctorFunc;
+}
+//# sourceMappingURL=createErrorClass.js.map
+
+/***/ }),
+
+/***/ 1441:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   O: () => (/* binding */ captureError),
+/* harmony export */   x: () => (/* binding */ errorContext)
+/* harmony export */ });
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2653);
+
+let context = null;
+function errorContext(cb) {
+  if (_config__WEBPACK_IMPORTED_MODULE_0__.config.useDeprecatedSynchronousErrorHandling) {
+    const isRoot = !context;
+    if (isRoot) {
+      context = {
+        errorThrown: false,
+        error: null
+      };
+    }
+    cb();
+    if (isRoot) {
+      const {
+        errorThrown,
+        error
+      } = context;
+      context = null;
+      if (errorThrown) {
+        throw error;
+      }
+    }
+  } else {
+    cb();
+  }
+}
+function captureError(err) {
+  if (_config__WEBPACK_IMPORTED_MODULE_0__.config.useDeprecatedSynchronousErrorHandling && context) {
+    context.errorThrown = true;
+    context.error = err;
+  }
+}
+//# sourceMappingURL=errorContext.js.map
+
+/***/ }),
+
+/***/ 2737:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   y: () => (/* binding */ identity)
+/* harmony export */ });
+function identity(x) {
+  return x;
+}
+//# sourceMappingURL=identity.js.map
+
+/***/ }),
+
+/***/ 4674:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   m: () => (/* binding */ isFunction)
+/* harmony export */ });
+function isFunction(value) {
+  return typeof value === 'function';
+}
+//# sourceMappingURL=isFunction.js.map
+
+/***/ }),
+
+/***/ 9360:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ hasLift),
+/* harmony export */   e: () => (/* binding */ operate)
+/* harmony export */ });
+/* harmony import */ var _isFunction__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4674);
+
+function hasLift(source) {
+  return (0,_isFunction__WEBPACK_IMPORTED_MODULE_0__/* .isFunction */ .m)(source === null || source === void 0 ? void 0 : source.lift);
+}
+function operate(init) {
+  return source => {
+    if (hasLift(source)) {
+      return source.lift(function (liftedSource) {
+        try {
+          return init(liftedSource, this);
+        } catch (err) {
+          this.error(err);
+        }
+      });
+    }
+    throw new TypeError('Unable to lift unknown Observable type');
+  };
+}
+//# sourceMappingURL=lift.js.map
+
+/***/ }),
+
+/***/ 2420:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Z: () => (/* binding */ noop)
+/* harmony export */ });
+function noop() {}
+//# sourceMappingURL=noop.js.map
+
+/***/ }),
+
+/***/ 8407:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   U: () => (/* binding */ pipeFromArray),
+/* harmony export */   z: () => (/* binding */ pipe)
+/* harmony export */ });
+/* harmony import */ var _identity__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2737);
+
+function pipe(...fns) {
+  return pipeFromArray(fns);
+}
+function pipeFromArray(fns) {
+  if (fns.length === 0) {
+    return _identity__WEBPACK_IMPORTED_MODULE_0__/* .identity */ .y;
+  }
+  if (fns.length === 1) {
+    return fns[0];
+  }
+  return function piped(input) {
+    return fns.reduce((prev, fn) => fn(prev), input);
+  };
+}
+//# sourceMappingURL=pipe.js.map
+
+/***/ }),
+
+/***/ 3894:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   h: () => (/* binding */ reportUnhandledError)
+/* harmony export */ });
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2653);
+/* harmony import */ var _scheduler_timeoutProvider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7599);
+
+
+function reportUnhandledError(err) {
+  _scheduler_timeoutProvider__WEBPACK_IMPORTED_MODULE_0__/* .timeoutProvider */ .z.setTimeout(() => {
+    const {
+      onUnhandledError
+    } = _config__WEBPACK_IMPORTED_MODULE_1__.config;
+    if (onUnhandledError) {
+      onUnhandledError(err);
+    } else {
+      throw err;
+    }
+  });
+}
+//# sourceMappingURL=reportUnhandledError.js.map
 
 /***/ }),
 
@@ -526,6 +1342,7 @@ __webpack_require__.d(__webpack_exports__, {
   "ɵALLOW_MULTIPLE_PLATFORMS": () => (/* binding */ ALLOW_MULTIPLE_PLATFORMS),
   "ɵAfterRenderEventManager": () => (/* binding */ AfterRenderEventManager),
   "ɵCONTAINER_HEADER_OFFSET": () => (/* binding */ CONTAINER_HEADER_OFFSET),
+  "ɵChangeDetectionScheduler": () => (/* binding */ ChangeDetectionScheduler),
   "ɵComponentFactory": () => (/* binding */ ComponentFactory$1),
   "ɵConsole": () => (/* binding */ Console),
   "ɵDEFAULT_LOCALE_ID": () => (/* binding */ DEFAULT_LOCALE_ID),
@@ -538,7 +1355,6 @@ __webpack_require__.d(__webpack_exports__, {
   "ɵIMAGE_CONFIG_DEFAULTS": () => (/* binding */ IMAGE_CONFIG_DEFAULTS),
   "ɵINJECTOR_SCOPE": () => (/* binding */ INJECTOR_SCOPE),
   "ɵIS_HYDRATION_DOM_REUSE_ENABLED": () => (/* binding */ IS_HYDRATION_DOM_REUSE_ENABLED),
-  "ɵInitialRenderPendingTasks": () => (/* binding */ InitialRenderPendingTasks),
   "ɵLContext": () => (/* binding */ LContext),
   "ɵLifecycleHooksFeature": () => (/* binding */ LifecycleHooksFeature),
   "ɵLocaleDataIndex": () => (/* binding */ LocaleDataIndex),
@@ -553,6 +1369,7 @@ __webpack_require__.d(__webpack_exports__, {
   "ɵNO_CHANGE": () => (/* binding */ NO_CHANGE),
   "ɵNgModuleFactory": () => (/* binding */ NgModuleFactory),
   "ɵNoopNgZone": () => (/* binding */ NoopNgZone),
+  "ɵPendingTasks": () => (/* binding */ PendingTasks),
   "ɵReflectionCapabilities": () => (/* binding */ ReflectionCapabilities),
   "ɵRender3ComponentFactory": () => (/* binding */ ComponentFactory),
   "ɵRender3ComponentRef": () => (/* binding */ ComponentRef),
@@ -595,6 +1412,7 @@ __webpack_require__.d(__webpack_exports__, {
   "ɵgetDebugNode": () => (/* binding */ getDebugNode),
   "ɵgetDeferBlocks": () => (/* binding */ getDeferBlocks),
   "ɵgetDirectives": () => (/* binding */ getDirectives),
+  "ɵgetEnsureDirtyViewsAreAlwaysReachable": () => (/* binding */ getEnsureDirtyViewsAreAlwaysReachable),
   "ɵgetHostElement": () => (/* binding */ getHostElement),
   "ɵgetInjectableDef": () => (/* binding */ getInjectableDef),
   "ɵgetLContext": () => (/* binding */ getLContext),
@@ -632,6 +1450,7 @@ __webpack_require__.d(__webpack_exports__, {
   "ɵsetClassMetadataAsync": () => (/* binding */ setClassMetadataAsync),
   "ɵsetCurrentInjector": () => (/* binding */ setCurrentInjector),
   "ɵsetDocument": () => (/* binding */ setDocument),
+  "ɵsetEnsureDirtyViewsAreAlwaysReachable": () => (/* binding */ setEnsureDirtyViewsAreAlwaysReachable),
   "ɵsetInjectorProfilerContext": () => (/* binding */ setInjectorProfilerContext),
   "ɵsetLocaleId": () => (/* binding */ setLocaleId),
   "ɵsetUnknownElementStrictMode": () => (/* binding */ ɵsetUnknownElementStrictMode),
@@ -830,7 +1649,7 @@ __webpack_require__.d(__webpack_exports__, {
 
 ;// CONCATENATED MODULE: ./node_modules/@angular/core/fesm2022/primitives/signals.mjs
 /**
- * @license Angular v17.0.7
+ * @license Angular v17.0.8
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -1380,25 +2199,15 @@ function setAlternateWeakRefImpl(impl) {
 var Subject = __webpack_require__(8645);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Subscription.js + 1 modules
 var Subscription = __webpack_require__(7394);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Observable.js
-var Observable = __webpack_require__(5592);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/merge.js
-var merge = __webpack_require__(3019);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/BehaviorSubject.js
 var BehaviorSubject = __webpack_require__(5619);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/of.js
-var of = __webpack_require__(2096);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/share.js
-var share = __webpack_require__(3020);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/switchMap.js
-var switchMap = __webpack_require__(4664);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/distinctUntilChanged.js
-var distinctUntilChanged = __webpack_require__(3997);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/map.js
+var map = __webpack_require__(7398);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/first.js
 var first = __webpack_require__(1374);
 ;// CONCATENATED MODULE: ./node_modules/@angular/core/fesm2022/core.mjs
 /**
- * @license Angular v17.0.7
+ * @license Angular v17.0.8
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -3884,6 +4693,15 @@ const profiler = function (event, instance, hookOrListener) {
 const SVG_NAMESPACE = 'svg';
 const MATH_ML_NAMESPACE = 'math';
 
+// TODO(atscott): flip default internally ASAP and externally for v18 (#52928)
+let _ensureDirtyViewsAreAlwaysReachable = false;
+function getEnsureDirtyViewsAreAlwaysReachable() {
+  return _ensureDirtyViewsAreAlwaysReachable;
+}
+function setEnsureDirtyViewsAreAlwaysReachable(v) {
+  _ensureDirtyViewsAreAlwaysReachable = v;
+}
+
 /**
  * For efficiency reasons we often put several different data types (`RNode`, `LView`, `LContainer`)
  * in same location in `LView`. This is because we don't want to pre-allocate space for it
@@ -4046,10 +4864,19 @@ function requiresRefreshOrTraversal(lView) {
  * parents above.
  */
 function updateAncestorTraversalFlagsOnAttach(lView) {
-  if (!requiresRefreshOrTraversal(lView)) {
-    return;
+  // TODO(atscott): Simplify if...else cases once getEnsureDirtyViewsAreAlwaysReachable is always
+  // `true`. When we attach a view that's marked `Dirty`, we should ensure that it is reached during
+  // the next CD traversal so we add the `RefreshView` flag and mark ancestors accordingly.
+  if (requiresRefreshOrTraversal(lView)) {
+    markAncestorsForTraversal(lView);
+  } else if (lView[FLAGS] & 64 /* LViewFlags.Dirty */) {
+    if (getEnsureDirtyViewsAreAlwaysReachable()) {
+      lView[FLAGS] |= 1024 /* LViewFlags.RefreshView */;
+      markAncestorsForTraversal(lView);
+    } else {
+      lView[ENVIRONMENT].changeDetectionScheduler?.notify();
+    }
   }
-  markAncestorsForTraversal(lView);
 }
 /**
  * Ensures views above the given `lView` are traversed during change detection even when they are
@@ -4059,6 +4886,7 @@ function updateAncestorTraversalFlagsOnAttach(lView) {
  * flag is already `true` or the `lView` is detached.
  */
 function markAncestorsForTraversal(lView) {
+  lView[ENVIRONMENT].changeDetectionScheduler?.notify();
   let parent = lView[PARENT];
   while (parent !== null) {
     // We stop adding markers to the ancestors once we reach one that already has the marker. This
@@ -10511,7 +11339,7 @@ function tagSet(tags) {
   for (const t of tags.split(',')) res[t] = true;
   return res;
 }
-function core_merge(...sets) {
+function merge(...sets) {
   const res = {};
   for (const s of sets) {
     for (const v in s) {
@@ -10530,12 +11358,12 @@ const VOID_ELEMENTS = /*#__PURE__*/tagSet('area,br,col,hr,img,wbr');
 // https://html.spec.whatwg.org/#optional-tags
 const OPTIONAL_END_TAG_BLOCK_ELEMENTS = /*#__PURE__*/tagSet('colgroup,dd,dt,li,p,tbody,td,tfoot,th,thead,tr');
 const OPTIONAL_END_TAG_INLINE_ELEMENTS = /*#__PURE__*/tagSet('rp,rt');
-const OPTIONAL_END_TAG_ELEMENTS = /*#__PURE__*/core_merge(OPTIONAL_END_TAG_INLINE_ELEMENTS, OPTIONAL_END_TAG_BLOCK_ELEMENTS);
+const OPTIONAL_END_TAG_ELEMENTS = /*#__PURE__*/merge(OPTIONAL_END_TAG_INLINE_ELEMENTS, OPTIONAL_END_TAG_BLOCK_ELEMENTS);
 // Safe Block Elements - HTML5
-const BLOCK_ELEMENTS = /*#__PURE__*/core_merge(OPTIONAL_END_TAG_BLOCK_ELEMENTS, /*#__PURE__*/tagSet('address,article,' + 'aside,blockquote,caption,center,del,details,dialog,dir,div,dl,figure,figcaption,footer,h1,h2,h3,h4,h5,' + 'h6,header,hgroup,hr,ins,main,map,menu,nav,ol,pre,section,summary,table,ul'));
+const BLOCK_ELEMENTS = /*#__PURE__*/merge(OPTIONAL_END_TAG_BLOCK_ELEMENTS, /*#__PURE__*/tagSet('address,article,' + 'aside,blockquote,caption,center,del,details,dialog,dir,div,dl,figure,figcaption,footer,h1,h2,h3,h4,h5,' + 'h6,header,hgroup,hr,ins,main,map,menu,nav,ol,pre,section,summary,table,ul'));
 // Inline Elements - HTML5
-const INLINE_ELEMENTS = /*#__PURE__*/core_merge(OPTIONAL_END_TAG_INLINE_ELEMENTS, /*#__PURE__*/tagSet('a,abbr,acronym,audio,b,' + 'bdi,bdo,big,br,cite,code,del,dfn,em,font,i,img,ins,kbd,label,map,mark,picture,q,ruby,rp,rt,s,' + 'samp,small,source,span,strike,strong,sub,sup,time,track,tt,u,var,video'));
-const VALID_ELEMENTS = /*#__PURE__*/core_merge(VOID_ELEMENTS, BLOCK_ELEMENTS, INLINE_ELEMENTS, OPTIONAL_END_TAG_ELEMENTS);
+const INLINE_ELEMENTS = /*#__PURE__*/merge(OPTIONAL_END_TAG_INLINE_ELEMENTS, /*#__PURE__*/tagSet('a,abbr,acronym,audio,b,' + 'bdi,bdo,big,br,cite,code,del,dfn,em,font,i,img,ins,kbd,label,map,mark,picture,q,ruby,rp,rt,s,' + 'samp,small,source,span,strike,strong,sub,sup,time,track,tt,u,var,video'));
+const VALID_ELEMENTS = /*#__PURE__*/merge(VOID_ELEMENTS, BLOCK_ELEMENTS, INLINE_ELEMENTS, OPTIONAL_END_TAG_ELEMENTS);
 // Attributes that have href and hence need to be sanitized
 const URI_ATTRS = /*#__PURE__*/tagSet('background,cite,href,itemtype,longdesc,poster,src,xlink:href');
 const HTML_ATTRS = /*#__PURE__*/tagSet('abbr,accesskey,align,alt,autoplay,axis,bgcolor,border,cellpadding,cellspacing,class,clear,color,cols,colspan,' + 'compact,controls,coords,datetime,default,dir,download,face,headers,height,hidden,hreflang,hspace,' + 'ismap,itemscope,itemprop,kind,label,lang,language,loop,media,muted,nohref,nowrap,open,preload,rel,rev,role,rows,rowspan,rules,' + 'scope,scrolling,shape,size,sizes,span,srclang,srcset,start,summary,tabindex,target,title,translate,type,usemap,' + 'valign,value,vspace,width');
@@ -10547,7 +11375,7 @@ const ARIA_ATTRS = /*#__PURE__*/tagSet('aria-activedescendant,aria-atomic,aria-a
 // NB: Sanitization does not allow <form> elements or other active elements (<button> etc). Those
 // can be sanitized, but they increase security surface area without a legitimate use case, so they
 // are left out here.
-const VALID_ATTRS = /*#__PURE__*/core_merge(URI_ATTRS, HTML_ATTRS, ARIA_ATTRS);
+const VALID_ATTRS = /*#__PURE__*/merge(URI_ATTRS, HTML_ATTRS, ARIA_ATTRS);
 // Elements whose content should not be traversed/preserved, if the elements themselves are invalid.
 //
 // Typically, `<invalid>Some content</invalid>` would traverse (and in this case preserve)
@@ -10947,6 +11775,11 @@ function getSanitizer() {
   const lView = getLView();
   return lView && lView[ENVIRONMENT].sanitizer;
 }
+
+/**
+ * Injectable that is notified when an `LView` is made aware of changes to application state.
+ */
+class ChangeDetectionScheduler {}
 
 /**
  * Create a `StateKey<T>` that can be used to store value of type T with `TransferState`.
@@ -11520,26 +12353,7 @@ let Sanitizer = /*#__PURE__*/(() => {
     });
   }
   return Sanitizer;
-})();
-/**
- * @description Represents the version of Angular
- *
- * @publicApi
- */
-class Version {
-  constructor(full) {
-    this.full = full;
-    this.major = full.split('.')[0];
-    this.minor = full.split('.')[1];
-    this.patch = full.split('.').slice(2).join('.');
-  }
-}
-/**
- * @publicApi
- */
-const VERSION = /*#__PURE__*/new Version('17.0.7');
-
-// This default value is when checking the hierarchy for a token.
+})(); // This default value is when checking the hierarchy for a token.
 //
 // It means both:
 // - the token is not provided by the current injector,
@@ -13091,7 +13905,7 @@ function processHostBindingOpCodes(tView, lView) {
 function createLView(parentLView, tView, context, flags, host, tHostNode, environment, renderer, injector, embeddedViewInjector, hydrationInfo) {
   const lView = tView.blueprint.slice();
   lView[HOST] = host;
-  lView[FLAGS] = flags | 4 /* LViewFlags.CreationMode */ | 128 /* LViewFlags.Attached */ | 8 /* LViewFlags.FirstLViewPass */;
+  lView[FLAGS] = flags | 4 /* LViewFlags.CreationMode */ | 128 /* LViewFlags.Attached */ | 8 /* LViewFlags.FirstLViewPass */ | 64 /* LViewFlags.Dirty */;
   if (embeddedViewInjector !== null || parentLView && parentLView[FLAGS] & 2048 /* LViewFlags.HasEmbeddedViewInjector */) {
     lView[FLAGS] |= 2048 /* LViewFlags.HasEmbeddedViewInjector */;
   }
@@ -14621,6 +15435,7 @@ function detectChangesInChildComponents(hostLView, components, mode) {
  * @returns the root LView
  */
 function markViewDirty(lView) {
+  lView[ENVIRONMENT].changeDetectionScheduler?.notify();
   while (lView) {
     lView[FLAGS] |= 64 /* LViewFlags.Dirty */;
     const parent = getLViewParent(lView);
@@ -14911,6 +15726,7 @@ class ViewRef$1 {
       throw new RuntimeError(902 /* RuntimeErrorCode.VIEW_ALREADY_ATTACHED */, ngDevMode && 'This view is already attached to a ViewContainer!');
     }
     this._appRef = appRef;
+    updateAncestorTraversalFlagsOnAttach(this._lView);
   }
 }
 
@@ -15267,8 +16083,6 @@ function performanceMarkFeature(feature) {
     }
   });
 }
-
-/// <reference types="rxjs" />
 class EventEmitter_ extends Subject/* Subject */.x {
   constructor(isAsync = false) {
     super();
@@ -15765,63 +16579,6 @@ class NoopNgZone {
     return fn.apply(applyThis, applyArgs);
   }
 }
-/**
- * Token used to drive ApplicationRef.isStable
- *
- * TODO: This should be moved entirely to NgZone (as a breaking change) so it can be tree-shakeable
- * for `NoopNgZone` which is always just an `Observable` of `true`. Additionally, we should consider
- * whether the property on `NgZone` should be `Observable` or `Signal`.
- */
-const ZONE_IS_STABLE_OBSERVABLE = /*#__PURE__*/new InjectionToken(ngDevMode ? 'isStable Observable' : '', {
-  providedIn: 'root',
-  // TODO(atscott): Replace this with a suitable default like `new
-  // BehaviorSubject(true).asObservable`. Again, long term this won't exist on ApplicationRef at
-  // all but until we can remove it, we need a default value zoneless.
-  factory: isStableFactory
-});
-function isStableFactory() {
-  const zone = inject(NgZone);
-  let _stable = true;
-  const isCurrentlyStable = new Observable/* Observable */.y(observer => {
-    _stable = zone.isStable && !zone.hasPendingMacrotasks && !zone.hasPendingMicrotasks;
-    zone.runOutsideAngular(() => {
-      observer.next(_stable);
-      observer.complete();
-    });
-  });
-  const isStable = new Observable/* Observable */.y(observer => {
-    // Create the subscription to onStable outside the Angular Zone so that
-    // the callback is run outside the Angular Zone.
-    let stableSub;
-    zone.runOutsideAngular(() => {
-      stableSub = zone.onStable.subscribe(() => {
-        NgZone.assertNotInAngularZone();
-        // Check whether there are no pending macro/micro tasks in the next tick
-        // to allow for NgZone to update the state.
-        queueMicrotask(() => {
-          if (!_stable && !zone.hasPendingMacrotasks && !zone.hasPendingMicrotasks) {
-            _stable = true;
-            observer.next(true);
-          }
-        });
-      });
-    });
-    const unstableSub = zone.onUnstable.subscribe(() => {
-      NgZone.assertInAngularZone();
-      if (_stable) {
-        _stable = false;
-        zone.runOutsideAngular(() => {
-          observer.next(false);
-        });
-      }
-    });
-    return () => {
-      stableSub.unsubscribe();
-      unstableSub.unsubscribe();
-    };
-  });
-  return (0,merge/* merge */.T)(isCurrentlyStable, isStable.pipe((0,share/* share */.B)()));
-}
 function shouldBeIgnoredByZone(applyArgs) {
   if (!Array.isArray(applyArgs)) {
     return false;
@@ -15843,8 +16600,6 @@ function getNgZone(ngZoneToUse = 'zone.js', options) {
   }
   return ngZoneToUse;
 }
-
-// Public API for Zone
 
 /**
  * The phase to run an `afterRender` or `afterNextRender` callback in.
@@ -16453,23 +17208,26 @@ class ComponentFactory extends ComponentFactory$1 {
     }
     const sanitizer = rootViewInjector.get(Sanitizer, null);
     const afterRenderEventManager = rootViewInjector.get(AfterRenderEventManager, null);
+    const changeDetectionScheduler = rootViewInjector.get(ChangeDetectionScheduler, null);
     const environment = {
       rendererFactory,
       sanitizer,
       // We don't use inline effects (yet).
       inlineEffectRunner: null,
-      afterRenderEventManager
+      afterRenderEventManager,
+      changeDetectionScheduler
     };
     const hostRenderer = rendererFactory.createRenderer(null, this.componentDef);
     // Determine a tag name used for creating host elements when this component is created
     // dynamically. Default to 'div' if this component did not specify any tag name in its selector.
     const elementName = this.componentDef.selectors[0][0] || 'div';
     const hostRNode = rootSelectorOrNode ? locateHostElement(hostRenderer, rootSelectorOrNode, this.componentDef.encapsulation, rootViewInjector) : createElementNode(hostRenderer, elementName, getNamespace(elementName));
-    // Signal components use the granular "RefreshView"  for change detection
-    const signalFlags = 4096 /* LViewFlags.SignalView */ | 512 /* LViewFlags.IsRoot */;
-    // Non-signal components use the traditional "CheckAlways or OnPush/Dirty" change detection
-    const nonSignalFlags = this.componentDef.onPush ? 64 /* LViewFlags.Dirty */ | 512 /* LViewFlags.IsRoot */ : 16 /* LViewFlags.CheckAlways */ | 512 /* LViewFlags.IsRoot */;
-    const rootFlags = this.componentDef.signals ? signalFlags : nonSignalFlags;
+    let rootFlags = 512 /* LViewFlags.IsRoot */;
+    if (this.componentDef.signals) {
+      rootFlags |= 4096 /* LViewFlags.SignalView */;
+    } else if (!this.componentDef.onPush) {
+      rootFlags |= 16 /* LViewFlags.CheckAlways */;
+    }
     let hydrationInfo = null;
     if (hostRNode !== null) {
       hydrationInfo = retrieveHydrationInfo(hostRNode, rootViewInjector, true /* isRootView */);
@@ -16670,7 +17428,8 @@ function createRootComponent(componentView, rootComponentDef, rootDirectives, ho
 /** Sets the static attributes on a root component. */
 function setRootNodeAttributes(hostRenderer, componentDef, hostRNode, rootSelectorOrNode) {
   if (rootSelectorOrNode) {
-    setUpAttributes(hostRenderer, hostRNode, ['ng-version', VERSION.full]);
+    // The placeholder will be replaced with the actual version at build time.
+    setUpAttributes(hostRenderer, hostRNode, ['ng-version', '17.0.8']);
   } else {
     // If host element is created as a part of this function call (i.e. `rootSelectorOrNode`
     // is not defined), also apply attributes and classes extracted from component selector.
@@ -21548,6 +22307,8 @@ function invokeAllTriggerCleanupFns(lDetails) {
   invokeTriggerCleanupFns(1 /* TriggerType.Prefetch */, lDetails);
   invokeTriggerCleanupFns(0 /* TriggerType.Regular */, lDetails);
 }
+
+// Public API for Zone
 
 /**
  * Calculates a data slot index for defer block info (either static or
@@ -30576,6 +31337,25 @@ const NgModule = /*#__PURE__*/makeDecorator('NgModule', ngModule => ngModule, un
  * to be used by the decorator versions of these annotations.
  */
 
+/**
+ * @description Represents the version of Angular
+ *
+ * @publicApi
+ */
+class Version {
+  constructor(full) {
+    this.full = full;
+    const parts = full.split('.');
+    this.major = parts[0];
+    this.minor = parts[1];
+    this.patch = parts.slice(2).join('.');
+  }
+}
+/**
+ * @publicApi
+ */
+const VERSION = /*#__PURE__*/new Version('17.0.8');
+
 /*
  * This file exists to support compilation of @angular/core in Ivy mode.
  *
@@ -30622,58 +31402,6 @@ let Console = /*#__PURE__*/(() => {
     type: Injectable,
     args: [{
       providedIn: 'platform'
-    }]
-  }], null, null);
-})();
-
-/**
- * *Internal* service that keeps track of pending tasks happening in the system
- * during the initial rendering. No tasks are tracked after an initial
- * rendering.
- *
- * This information is needed to make sure that the serialization on the server
- * is delayed until all tasks in the queue (such as an initial navigation or a
- * pending HTTP request) are completed.
- */
-let InitialRenderPendingTasks = /*#__PURE__*/(() => {
-  class InitialRenderPendingTasks {
-    constructor() {
-      this.taskId = 0;
-      this.pendingTasks = new Set();
-      this.hasPendingTasks = new BehaviorSubject/* BehaviorSubject */.X(false);
-    }
-    add() {
-      this.hasPendingTasks.next(true);
-      const taskId = this.taskId++;
-      this.pendingTasks.add(taskId);
-      return taskId;
-    }
-    remove(taskId) {
-      this.pendingTasks.delete(taskId);
-      if (this.pendingTasks.size === 0) {
-        this.hasPendingTasks.next(false);
-      }
-    }
-    ngOnDestroy() {
-      this.pendingTasks.clear();
-      this.hasPendingTasks.next(false);
-    }
-    static #_ = this.ɵfac = function InitialRenderPendingTasks_Factory(t) {
-      return new (t || InitialRenderPendingTasks)();
-    };
-    static #_2 = this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
-      token: InitialRenderPendingTasks,
-      factory: InitialRenderPendingTasks.ɵfac,
-      providedIn: 'root'
-    });
-  }
-  return InitialRenderPendingTasks;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(InitialRenderPendingTasks, [{
-    type: Injectable,
-    args: [{
-      providedIn: 'root'
     }]
   }], null, null);
 })();
@@ -30794,6 +31522,66 @@ const COMPILER_OPTIONS = /*#__PURE__*/new InjectionToken('compilerOptions');
  * additional context.
  */
 class CompilerFactory {}
+
+/**
+ * *Internal* service that keeps track of pending tasks happening in the system.
+ *
+ * This information is needed to make sure that the serialization on the server
+ * is delayed until all tasks in the queue (such as an initial navigation or a
+ * pending HTTP request) are completed.
+ *
+ * Pending tasks continue to contribute to the stableness of `ApplicationRef`
+ * throughout the lifetime of the application.
+ */
+let PendingTasks = /*#__PURE__*/(() => {
+  class PendingTasks {
+    constructor() {
+      this.taskId = 0;
+      this.pendingTasks = new Set();
+      this.hasPendingTasks = new BehaviorSubject/* BehaviorSubject */.X(false);
+    }
+    get _hasPendingTasks() {
+      return this.hasPendingTasks.value;
+    }
+    add() {
+      if (!this._hasPendingTasks) {
+        this.hasPendingTasks.next(true);
+      }
+      const taskId = this.taskId++;
+      this.pendingTasks.add(taskId);
+      return taskId;
+    }
+    remove(taskId) {
+      this.pendingTasks.delete(taskId);
+      if (this.pendingTasks.size === 0 && this._hasPendingTasks) {
+        this.hasPendingTasks.next(false);
+      }
+    }
+    ngOnDestroy() {
+      this.pendingTasks.clear();
+      if (this._hasPendingTasks) {
+        this.hasPendingTasks.next(false);
+      }
+    }
+    static #_ = this.ɵfac = function PendingTasks_Factory(t) {
+      return new (t || PendingTasks)();
+    };
+    static #_2 = this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
+      token: PendingTasks,
+      factory: PendingTasks.ɵfac,
+      providedIn: 'root'
+    });
+  }
+  return PendingTasks;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(PendingTasks, [{
+    type: Injectable,
+    args: [{
+      providedIn: 'root'
+    }]
+  }], null, null);
+})();
 
 /**
  * These are the data structures that our framework injector profiler will fill with data in order
@@ -32429,7 +33217,6 @@ let ApplicationRef = /*#__PURE__*/(() => {
       /** @internal */
       this._views = [];
       this.internalErrorHandler = inject(INTERNAL_APPLICATION_ERROR_HANDLER);
-      this.zoneIsStable = inject(ZONE_IS_STABLE_OBSERVABLE);
       /**
        * Get a list of component types registered to this application.
        * This list is populated even before the component is created.
@@ -32442,7 +33229,7 @@ let ApplicationRef = /*#__PURE__*/(() => {
       /**
        * Returns an Observable that indicates when the application is stable or unstable.
        */
-      this.isStable = inject(InitialRenderPendingTasks).hasPendingTasks.pipe((0,switchMap/* switchMap */.w)(hasPendingTasks => hasPendingTasks ? (0,of.of)(false) : this.zoneIsStable), (0,distinctUntilChanged/* distinctUntilChanged */.x)());
+      this.isStable = inject(PendingTasks).hasPendingTasks.pipe((0,map/* map */.U)(pending => !pending));
       this._injector = inject(EnvironmentInjector);
     }
     /**
@@ -32761,11 +33548,17 @@ function internalProvideZoneChangeDetection(ngZoneFactory) {
       return () => ngZoneChangeDetectionScheduler.initialize();
     }
   }, {
+    provide: ENVIRONMENT_INITIALIZER,
+    multi: true,
+    useFactory: () => {
+      const service = inject(ZoneStablePendingTask);
+      return () => {
+        service.initialize();
+      };
+    }
+  }, {
     provide: INTERNAL_APPLICATION_ERROR_HANDLER,
     useFactory: ngZoneApplicationErrorHandlerFactory
-  }, {
-    provide: ZONE_IS_STABLE_OBSERVABLE,
-    useFactory: isStableFactory
   }];
 }
 function ngZoneApplicationErrorHandlerFactory() {
@@ -32810,6 +33603,63 @@ function getNgZoneOptions(options) {
     shouldCoalesceRunChangeDetection: options?.runCoalescing ?? false
   };
 }
+let ZoneStablePendingTask = /*#__PURE__*/(() => {
+  class ZoneStablePendingTask {
+    constructor() {
+      this.subscription = new Subscription/* Subscription */.w0();
+      this.initialized = false;
+      this.zone = inject(NgZone);
+      this.pendingTasks = inject(PendingTasks);
+    }
+    initialize() {
+      if (this.initialized) {
+        return;
+      }
+      this.initialized = true;
+      let task = null;
+      if (!this.zone.isStable && !this.zone.hasPendingMacrotasks && !this.zone.hasPendingMicrotasks) {
+        task = this.pendingTasks.add();
+      }
+      this.zone.runOutsideAngular(() => {
+        this.subscription.add(this.zone.onStable.subscribe(() => {
+          NgZone.assertNotInAngularZone();
+          // Check whether there are no pending macro/micro tasks in the next tick
+          // to allow for NgZone to update the state.
+          queueMicrotask(() => {
+            if (task !== null && !this.zone.hasPendingMacrotasks && !this.zone.hasPendingMicrotasks) {
+              this.pendingTasks.remove(task);
+              task = null;
+            }
+          });
+        }));
+      });
+      this.subscription.add(this.zone.onUnstable.subscribe(() => {
+        NgZone.assertInAngularZone();
+        task ??= this.pendingTasks.add();
+      }));
+    }
+    ngOnDestroy() {
+      this.subscription.unsubscribe();
+    }
+    static #_ = this.ɵfac = function ZoneStablePendingTask_Factory(t) {
+      return new (t || ZoneStablePendingTask)();
+    };
+    static #_2 = this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
+      token: ZoneStablePendingTask,
+      factory: ZoneStablePendingTask.ɵfac,
+      providedIn: 'root'
+    });
+  }
+  return ZoneStablePendingTask;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ZoneStablePendingTask, [{
+    type: Injectable,
+    args: [{
+      providedIn: 'root'
+    }]
+  }], null, null);
+})();
 
 /**
  * Work out the locale from the potential global properties.
