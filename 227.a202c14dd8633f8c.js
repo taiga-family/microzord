@@ -1188,9 +1188,9 @@ let TuiHoveredService = /*#__PURE__*/(() => {
       super(subscriber => this.stream$.subscribe(subscriber));
       this.el = el;
       this.zone = zone;
-      this.stream$ = (0,merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.el.nativeElement, `mouseenter`).pipe((0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_TRUE_HANDLER */.Ye)), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.el.nativeElement, `mouseleave`).pipe((0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_FALSE_HANDLER */.Iy)),
+      this.stream$ = (0,merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.el.nativeElement, 'mouseenter').pipe((0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_TRUE_HANDLER */.Ye)), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.el.nativeElement, 'mouseleave').pipe((0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_FALSE_HANDLER */.Iy)),
       // Hello, Safari
-      (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.el.nativeElement, `mouseout`).pipe((0,filter/* filter */.h)(movedOut), (0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_FALSE_HANDLER */.Iy))).pipe((0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(this.zone));
+      (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.el.nativeElement, 'mouseout').pipe((0,filter/* filter */.h)(movedOut), (0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_FALSE_HANDLER */.Iy))).pipe((0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(this.zone));
     }
   }
   TuiHoveredService.ɵfac = function TuiHoveredService_Factory(t) {
@@ -1259,7 +1259,7 @@ var taiga_ui_cdk_classes = __webpack_require__(7178);
  * Adds 'px' to the number and turns it into a string
  */
 function taiga_ui_cdk_utils_format_tuiPx(value) {
-  ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert(Number.isFinite(value), `Value must be finite number`);
+  ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert(Number.isFinite(value), 'Value must be finite number');
   return `${value}px`;
 }
 
@@ -1275,267 +1275,267 @@ var taiga_ui_core_abstract = __webpack_require__(9315);
 var animations = __webpack_require__(6825);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-animations.js
 
-const TRANSITION = `{{duration}}ms ease-in-out`;
+const TRANSITION = '{{duration}}ms ease-in-out';
 const DURATION = {
   params: {
     duration: 300
   }
 };
 const STAGGER = 300;
-const tuiHeightCollapse = (0,animations/* trigger */.X$)(`tuiHeightCollapse`, [(0,animations/* transition */.eR)(`:enter`, [(0,animations/* style */.oB)({
+const tuiHeightCollapse = (0,animations/* trigger */.X$)('tuiHeightCollapse', [(0,animations/* transition */.eR)(':enter', [(0,animations/* style */.oB)({
   height: 0
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  height: `*`
-}))], DURATION), (0,animations/* transition */.eR)(`:leave`, [(0,animations/* style */.oB)({
-  height: `*`
+  height: '*'
+}))], DURATION), (0,animations/* transition */.eR)(':leave', [(0,animations/* style */.oB)({
+  height: '*'
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
   height: 0
 }))], DURATION)]);
-const tuiHeightCollapseList = (0,animations/* trigger */.X$)(`tuiHeightCollapseList`, [(0,animations/* transition */.eR)(`* => *`, [(0,animations/* query */.IO)(`:enter`, [(0,animations/* style */.oB)({
+const tuiHeightCollapseList = (0,animations/* trigger */.X$)('tuiHeightCollapseList', [(0,animations/* transition */.eR)('* => *', [(0,animations/* query */.IO)(':enter', [(0,animations/* style */.oB)({
   height: 0
 }), (0,animations/* stagger */.EY)(STAGGER, [(0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  height: `*`
+  height: '*'
 }))])], {
   optional: true
-}), (0,animations/* query */.IO)(`:leave`, [(0,animations/* style */.oB)({
-  height: `*`
+}), (0,animations/* query */.IO)(':leave', [(0,animations/* style */.oB)({
+  height: '*'
 }), (0,animations/* stagger */.EY)(STAGGER, [(0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
   height: 0
 }))])], {
   optional: true
 })], DURATION)]);
-const tuiWidthCollapse = (0,animations/* trigger */.X$)(`tuiWidthCollapse`, [(0,animations/* transition */.eR)(`:enter`, [(0,animations/* style */.oB)({
+const tuiWidthCollapse = (0,animations/* trigger */.X$)('tuiWidthCollapse', [(0,animations/* transition */.eR)(':enter', [(0,animations/* style */.oB)({
   width: 0
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  width: `*`
-}))], DURATION), (0,animations/* transition */.eR)(`:leave`, [(0,animations/* style */.oB)({
-  width: `*`
+  width: '*'
+}))], DURATION), (0,animations/* transition */.eR)(':leave', [(0,animations/* style */.oB)({
+  width: '*'
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
   width: 0
 }))], DURATION)]);
-const tuiWidthCollapseList = (0,animations/* trigger */.X$)(`tuiWidthCollapseList`, [(0,animations/* transition */.eR)(`* => *`, [(0,animations/* query */.IO)(`:enter`, [(0,animations/* style */.oB)({
+const tuiWidthCollapseList = (0,animations/* trigger */.X$)('tuiWidthCollapseList', [(0,animations/* transition */.eR)('* => *', [(0,animations/* query */.IO)(':enter', [(0,animations/* style */.oB)({
   width: 0
 }), (0,animations/* stagger */.EY)(STAGGER, [(0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  width: `*`
+  width: '*'
 }))])], {
   optional: true
-}), (0,animations/* query */.IO)(`:leave`, [(0,animations/* style */.oB)({
-  width: `*`
+}), (0,animations/* query */.IO)(':leave', [(0,animations/* style */.oB)({
+  width: '*'
 }), (0,animations/* stagger */.EY)(STAGGER, [(0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
   width: 0
-}))])], {
-  optional: true
-})], DURATION)]);
-const tuiFadeIn = (0,animations/* trigger */.X$)(`tuiFadeIn`, [(0,animations/* transition */.eR)(`:enter`, [(0,animations/* style */.oB)({
-  opacity: 0
-}), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  opacity: 1
-}))], DURATION), (0,animations/* transition */.eR)(`:leave`, [(0,animations/* style */.oB)({
-  opacity: 1
-}), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  opacity: 0
-}))], DURATION)]);
-const tuiFadeInList = (0,animations/* trigger */.X$)(`tuiFadeInList`, [(0,animations/* transition */.eR)(`* => *`, [(0,animations/* query */.IO)(`:enter`, [(0,animations/* style */.oB)({
-  opacity: 0
-}), (0,animations/* stagger */.EY)(STAGGER, [(0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  opacity: 1
-}))])], {
-  optional: true
-}), (0,animations/* query */.IO)(`:leave`, [(0,animations/* style */.oB)({
-  opacity: 1
-}), (0,animations/* stagger */.EY)(STAGGER, [(0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  opacity: 0
 }))])], {
   optional: true
 })], DURATION)]);
-const tuiFadeInTop = (0,animations/* trigger */.X$)(`tuiFadeInTop`, [(0,animations/* transition */.eR)(`:enter`, [(0,animations/* style */.oB)({
-  transform: `translateY(-10px)`,
+const tuiFadeIn = (0,animations/* trigger */.X$)('tuiFadeIn', [(0,animations/* transition */.eR)(':enter', [(0,animations/* style */.oB)({
   opacity: 0
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateY(0)`,
   opacity: 1
-}))], DURATION), (0,animations/* transition */.eR)(`:leave`, [(0,animations/* style */.oB)({
-  transform: `translateY(0)`,
+}))], DURATION), (0,animations/* transition */.eR)(':leave', [(0,animations/* style */.oB)({
   opacity: 1
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateY(-10px)`,
   opacity: 0
 }))], DURATION)]);
-const tuiFadeInBottom = (0,animations/* trigger */.X$)(`tuiFadeInBottom`, [(0,animations/* transition */.eR)(`:enter`, [(0,animations/* style */.oB)({
-  transform: `translateY(10px)`,
+const tuiFadeInList = (0,animations/* trigger */.X$)('tuiFadeInList', [(0,animations/* transition */.eR)('* => *', [(0,animations/* query */.IO)(':enter', [(0,animations/* style */.oB)({
+  opacity: 0
+}), (0,animations/* stagger */.EY)(STAGGER, [(0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
+  opacity: 1
+}))])], {
+  optional: true
+}), (0,animations/* query */.IO)(':leave', [(0,animations/* style */.oB)({
+  opacity: 1
+}), (0,animations/* stagger */.EY)(STAGGER, [(0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
+  opacity: 0
+}))])], {
+  optional: true
+})], DURATION)]);
+const tuiFadeInTop = (0,animations/* trigger */.X$)('tuiFadeInTop', [(0,animations/* transition */.eR)(':enter', [(0,animations/* style */.oB)({
+  transform: 'translateY(-10px)',
   opacity: 0
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateY(0)`,
+  transform: 'translateY(0)',
   opacity: 1
-}))], DURATION), (0,animations/* transition */.eR)(`:leave`, [(0,animations/* style */.oB)({
-  transform: `translateY(0)`,
+}))], DURATION), (0,animations/* transition */.eR)(':leave', [(0,animations/* style */.oB)({
+  transform: 'translateY(0)',
   opacity: 1
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateY(10px)`,
+  transform: 'translateY(-10px)',
   opacity: 0
 }))], DURATION)]);
-const tuiDropdownAnimation = (0,animations/* trigger */.X$)(`tuiDropdownAnimation`, [(0,animations/* transition */.eR)(`:enter`, [(0,animations/* style */.oB)({
-  transform: `translateY(-10px)`,
+const tuiFadeInBottom = (0,animations/* trigger */.X$)('tuiFadeInBottom', [(0,animations/* transition */.eR)(':enter', [(0,animations/* style */.oB)({
+  transform: 'translateY(10px)',
   opacity: 0
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateY(0)`,
+  transform: 'translateY(0)',
   opacity: 1
-}))], DURATION), (0,animations/* transition */.eR)(`:leave`, [(0,animations/* style */.oB)({
-  transform: `translateY(0)`,
+}))], DURATION), (0,animations/* transition */.eR)(':leave', [(0,animations/* style */.oB)({
+  transform: 'translateY(0)',
   opacity: 1
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateY(-10px)`,
+  transform: 'translateY(10px)',
   opacity: 0
 }))], DURATION)]);
-const tuiScaleIn = (0,animations/* trigger */.X$)(`tuiScaleIn`, [(0,animations/* transition */.eR)(`:enter`, [(0,animations/* style */.oB)({
-  transform: `scale(0)`
+const tuiDropdownAnimation = (0,animations/* trigger */.X$)('tuiDropdownAnimation', [(0,animations/* transition */.eR)(':enter', [(0,animations/* style */.oB)({
+  transform: 'translateY(-10px)',
+  opacity: 0
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `scale(1)`
-}))], DURATION), (0,animations/* transition */.eR)(`:leave`, [(0,animations/* style */.oB)({
-  transform: `scale(1)`
+  transform: 'translateY(0)',
+  opacity: 1
+}))], DURATION), (0,animations/* transition */.eR)(':leave', [(0,animations/* style */.oB)({
+  transform: 'translateY(0)',
+  opacity: 1
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `scale(0)`
+  transform: 'translateY(-10px)',
+  opacity: 0
 }))], DURATION)]);
-const tuiPop = (0,animations/* trigger */.X$)(`tuiPop`, [(0,animations/* transition */.eR)(`:enter`, [(0,animations/* style */.oB)({
-  transform: `scale(0)`
+const tuiScaleIn = (0,animations/* trigger */.X$)('tuiScaleIn', [(0,animations/* transition */.eR)(':enter', [(0,animations/* style */.oB)({
+  transform: 'scale(0)'
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `scale(1.1)`
+  transform: 'scale(1)'
+}))], DURATION), (0,animations/* transition */.eR)(':leave', [(0,animations/* style */.oB)({
+  transform: 'scale(1)'
+}), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
+  transform: 'scale(0)'
+}))], DURATION)]);
+const tuiPop = (0,animations/* trigger */.X$)('tuiPop', [(0,animations/* transition */.eR)(':enter', [(0,animations/* style */.oB)({
+  transform: 'scale(0)'
+}), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
+  transform: 'scale(1.1)'
 })), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `scale(1)`
-}))], DURATION), (0,animations/* transition */.eR)(`:leave`, [(0,animations/* style */.oB)({
-  transform: `scale(1)`
+  transform: 'scale(1)'
+}))], DURATION), (0,animations/* transition */.eR)(':leave', [(0,animations/* style */.oB)({
+  transform: 'scale(1)'
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `scale(1.1)`
+  transform: 'scale(1.1)'
 })), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `scale(0)`
+  transform: 'scale(0)'
 }))], DURATION)]);
-const tuiScaleInList = (0,animations/* trigger */.X$)(`tuiScaleInList`, [(0,animations/* transition */.eR)(`* => *`, [(0,animations/* query */.IO)(`:enter`, [(0,animations/* style */.oB)({
-  transform: `scale(0)`
+const tuiScaleInList = (0,animations/* trigger */.X$)('tuiScaleInList', [(0,animations/* transition */.eR)('* => *', [(0,animations/* query */.IO)(':enter', [(0,animations/* style */.oB)({
+  transform: 'scale(0)'
 }), (0,animations/* stagger */.EY)(STAGGER, [(0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `scale(1)`
+  transform: 'scale(1)'
 }))])], {
   optional: true
-}), (0,animations/* query */.IO)(`:leave`, [(0,animations/* style */.oB)({
-  transform: `scale(1)`
+}), (0,animations/* query */.IO)(':leave', [(0,animations/* style */.oB)({
+  transform: 'scale(1)'
 }), (0,animations/* stagger */.EY)(STAGGER, [(0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `scale(0)`
+  transform: 'scale(0)'
 }))])], {
   optional: true
 })], DURATION)]);
-const tuiSlideIn = (0,animations/* trigger */.X$)(`tuiSlideIn`, [(0,animations/* transition */.eR)(`* => left`, [(0,animations/* style */.oB)({
-  transform: `translateX(-100%)`
+const tuiSlideIn = (0,animations/* trigger */.X$)('tuiSlideIn', [(0,animations/* transition */.eR)('* => left', [(0,animations/* style */.oB)({
+  transform: 'translateX(-100%)'
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateX(0)`
-}))], DURATION), (0,animations/* transition */.eR)(`left => *`, [(0,animations/* style */.oB)({
-  transform: `translateX(0)`
+  transform: 'translateX(0)'
+}))], DURATION), (0,animations/* transition */.eR)('left => *', [(0,animations/* style */.oB)({
+  transform: 'translateX(0)'
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateX(-100%)`
-}))], DURATION), (0,animations/* transition */.eR)(`* => right`, [(0,animations/* style */.oB)({
-  transform: `translateX(100%)`
+  transform: 'translateX(-100%)'
+}))], DURATION), (0,animations/* transition */.eR)('* => right', [(0,animations/* style */.oB)({
+  transform: 'translateX(100%)'
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateX(0)`
-}))], DURATION), (0,animations/* transition */.eR)(`right => *`, [(0,animations/* style */.oB)({
-  transform: `translateX(0)`
+  transform: 'translateX(0)'
+}))], DURATION), (0,animations/* transition */.eR)('right => *', [(0,animations/* style */.oB)({
+  transform: 'translateX(0)'
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateX(100%)`
+  transform: 'translateX(100%)'
 }))], DURATION)]);
-const tuiSlideInLeft = (0,animations/* trigger */.X$)(`tuiSlideInLeft`, [(0,animations/* transition */.eR)(`:enter`, [(0,animations/* style */.oB)({
-  transform: `translateX(-100%)`
+const tuiSlideInLeft = (0,animations/* trigger */.X$)('tuiSlideInLeft', [(0,animations/* transition */.eR)(':enter', [(0,animations/* style */.oB)({
+  transform: 'translateX(-100%)'
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateX(0)`
-}))], DURATION), (0,animations/* transition */.eR)(`:leave`, [(0,animations/* style */.oB)({
-  transform: `translateX(0)`
+  transform: 'translateX(0)'
+}))], DURATION), (0,animations/* transition */.eR)(':leave', [(0,animations/* style */.oB)({
+  transform: 'translateX(0)'
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateX(-100%)`
+  transform: 'translateX(-100%)'
 }))], DURATION)]);
-const tuiSlideInLeftList = (0,animations/* trigger */.X$)(`tuiSlideInLeftList`, [(0,animations/* transition */.eR)(`* => *`, [(0,animations/* query */.IO)(`:enter`, [(0,animations/* style */.oB)({
-  transform: `translateX(-100%)`
+const tuiSlideInLeftList = (0,animations/* trigger */.X$)('tuiSlideInLeftList', [(0,animations/* transition */.eR)('* => *', [(0,animations/* query */.IO)(':enter', [(0,animations/* style */.oB)({
+  transform: 'translateX(-100%)'
 }), (0,animations/* stagger */.EY)(STAGGER, [(0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateX(0)`
+  transform: 'translateX(0)'
 }))])], {
   optional: true
-}), (0,animations/* query */.IO)(`:leave`, [(0,animations/* style */.oB)({
-  transform: `translateX(0)`
+}), (0,animations/* query */.IO)(':leave', [(0,animations/* style */.oB)({
+  transform: 'translateX(0)'
 }), (0,animations/* stagger */.EY)(STAGGER, [(0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateX(-100%)`
+  transform: 'translateX(-100%)'
 }))])], {
   optional: true
 })], DURATION)]);
-const tuiSlideInRight = (0,animations/* trigger */.X$)(`tuiSlideInRight`, [(0,animations/* transition */.eR)(`:enter`, [(0,animations/* style */.oB)({
-  transform: `translateX(100%)`
+const tuiSlideInRight = (0,animations/* trigger */.X$)('tuiSlideInRight', [(0,animations/* transition */.eR)(':enter', [(0,animations/* style */.oB)({
+  transform: 'translateX(100%)'
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateX(0)`
-}))], DURATION), (0,animations/* transition */.eR)(`:leave`, [(0,animations/* style */.oB)({
-  transform: `translateX(0)`
+  transform: 'translateX(0)'
+}))], DURATION), (0,animations/* transition */.eR)(':leave', [(0,animations/* style */.oB)({
+  transform: 'translateX(0)'
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateX(100%)`
+  transform: 'translateX(100%)'
 }))], DURATION)]);
-const tuiSlideInRightList = (0,animations/* trigger */.X$)(`tuiSlideInRightList`, [(0,animations/* transition */.eR)(`* => *`, [(0,animations/* query */.IO)(`:enter`, [(0,animations/* style */.oB)({
-  transform: `translateX(100%)`
+const tuiSlideInRightList = (0,animations/* trigger */.X$)('tuiSlideInRightList', [(0,animations/* transition */.eR)('* => *', [(0,animations/* query */.IO)(':enter', [(0,animations/* style */.oB)({
+  transform: 'translateX(100%)'
 }), (0,animations/* stagger */.EY)(STAGGER, [(0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateX(0)`
+  transform: 'translateX(0)'
 }))])], {
   optional: true
-}), (0,animations/* query */.IO)(`:leave`, [(0,animations/* style */.oB)({
-  transform: `translateX(0)`
+}), (0,animations/* query */.IO)(':leave', [(0,animations/* style */.oB)({
+  transform: 'translateX(0)'
 }), (0,animations/* stagger */.EY)(STAGGER, [(0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateX(100%)`
+  transform: 'translateX(100%)'
 }))])], {
   optional: true
 })], DURATION)]);
-const tuiSlideInTop = (0,animations/* trigger */.X$)(`tuiSlideInTop`, [(0,animations/* transition */.eR)(`:enter`, [(0,animations/* style */.oB)({
-  transform: `translate3d(0,{{start}},0)`
+const tuiSlideInTop = (0,animations/* trigger */.X$)('tuiSlideInTop', [(0,animations/* transition */.eR)(':enter', [(0,animations/* style */.oB)({
+  transform: 'translate3d(0,{{start}},0)'
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translate3d(0,{{end}},0)`
+  transform: 'translate3d(0,{{end}},0)'
 }))], {
   params: {
     end: 0,
-    start: `100%`,
+    start: '100%',
     duration: 300
   }
-}), (0,animations/* transition */.eR)(`:leave`, [(0,animations/* style */.oB)({
-  transform: `translate3d(0,{{end}},0)`
+}), (0,animations/* transition */.eR)(':leave', [(0,animations/* style */.oB)({
+  transform: 'translate3d(0,{{end}},0)'
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translate3d(0,{{start}},0)`
+  transform: 'translate3d(0,{{start}},0)'
 }))], {
   params: {
     end: 0,
-    start: `100%`,
+    start: '100%',
     duration: 300
   }
 })]);
-const tuiSlideInTopList = (0,animations/* trigger */.X$)(`tuiSlideInTopList`, [(0,animations/* transition */.eR)(`* => *`, [(0,animations/* query */.IO)(`:enter`, [(0,animations/* style */.oB)({
-  transform: `translateY(100%)`
+const tuiSlideInTopList = (0,animations/* trigger */.X$)('tuiSlideInTopList', [(0,animations/* transition */.eR)('* => *', [(0,animations/* query */.IO)(':enter', [(0,animations/* style */.oB)({
+  transform: 'translateY(100%)'
 }), (0,animations/* stagger */.EY)(STAGGER, [(0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateY(0)`
+  transform: 'translateY(0)'
 }))])], {
   optional: true
-}), (0,animations/* query */.IO)(`:leave`, [(0,animations/* style */.oB)({
-  transform: `translateY(0)`
+}), (0,animations/* query */.IO)(':leave', [(0,animations/* style */.oB)({
+  transform: 'translateY(0)'
 }), (0,animations/* stagger */.EY)(STAGGER, [(0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateY(100%)`
+  transform: 'translateY(100%)'
 }))])], {
   optional: true
 })], DURATION)]);
-const tuiSlideInBottom = (0,animations/* trigger */.X$)(`tuiSlideInBottom`, [(0,animations/* transition */.eR)(`:enter`, [(0,animations/* style */.oB)({
-  transform: `translateY(-100%)`
+const tuiSlideInBottom = (0,animations/* trigger */.X$)('tuiSlideInBottom', [(0,animations/* transition */.eR)(':enter', [(0,animations/* style */.oB)({
+  transform: 'translateY(-100%)'
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateY(0)`
-}))], DURATION), (0,animations/* transition */.eR)(`:leave`, [(0,animations/* style */.oB)({
-  transform: `translateY(0)`
+  transform: 'translateY(0)'
+}))], DURATION), (0,animations/* transition */.eR)(':leave', [(0,animations/* style */.oB)({
+  transform: 'translateY(0)'
 }), (0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateY(-100%)`
+  transform: 'translateY(-100%)'
 }))], DURATION)]);
-const tuiSlideInBottomList = (0,animations/* trigger */.X$)(`tuiSlideInBottomList`, [(0,animations/* transition */.eR)(`* => *`, [(0,animations/* query */.IO)(`:enter`, [(0,animations/* style */.oB)({
-  transform: `translateY(-100%)`
+const tuiSlideInBottomList = (0,animations/* trigger */.X$)('tuiSlideInBottomList', [(0,animations/* transition */.eR)('* => *', [(0,animations/* query */.IO)(':enter', [(0,animations/* style */.oB)({
+  transform: 'translateY(-100%)'
 }), (0,animations/* stagger */.EY)(STAGGER, [(0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateY(0)`
+  transform: 'translateY(0)'
 }))])], {
   optional: true
-}), (0,animations/* query */.IO)(`:leave`, [(0,animations/* style */.oB)({
-  transform: `translateY(0)`
+}), (0,animations/* query */.IO)(':leave', [(0,animations/* style */.oB)({
+  transform: 'translateY(0)'
 }), (0,animations/* stagger */.EY)(STAGGER, [(0,animations/* animate */.jt)(TRANSITION, (0,animations/* style */.oB)({
-  transform: `translateY(-100%)`
+  transform: 'translateY(-100%)'
 }))])], {
   optional: true
 })], DURATION)]);
@@ -2276,7 +2276,7 @@ class TuiTextfieldController {
     return this.cleanerDirective.cleaner;
   }
   get customContent() {
-    return this.customContentDirective.customContent || ``;
+    return this.customContentDirective.customContent || '';
   }
   get icon() {
     return this.iconDirective.icon;
@@ -2303,7 +2303,7 @@ class TuiTextfieldController {
 
 /** Default values for primitive textfield options */
 const taiga_ui_core_directives_textfield_controller_TUI_TEXTFIELD_DEFAULT_OPTIONS = {
-  iconCleaner: `tuiIconClose`,
+  iconCleaner: 'tuiIconClose',
   hintOnDisabled: false
 };
 /**
@@ -2616,7 +2616,7 @@ let TuiTextfieldControllerModule = /*#__PURE__*/(() => {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-const TUI_TEXTFIELD_WATCHED_CONTROLLER = new core_mjs_.InjectionToken(`[TUI_TEXTFIELD_WATCHED_CONTROLLER]`);
+const TUI_TEXTFIELD_WATCHED_CONTROLLER = new core_mjs_.InjectionToken('[TUI_TEXTFIELD_WATCHED_CONTROLLER]');
 const TEXTFIELD_CONTROLLER_PROVIDER = [taiga_ui_cdk_services/* TuiDestroyService */.a3, {
   provide: TUI_TEXTFIELD_WATCHED_CONTROLLER,
   deps: [core_mjs_.ChangeDetectorRef, taiga_ui_cdk_services/* TuiDestroyService */.a3, TUI_TEXTFIELD_OPTIONS, taiga_ui_core_tokens/* TUI_TEXTFIELD_APPEARANCE */.jt, TUI_TEXTFIELD_APPEARANCE_DIRECTIVE, TUI_TEXTFIELD_CLEANER, TUI_TEXTFIELD_CUSTOM_CONTENT, TUI_TEXTFIELD_ICON, TUI_TEXTFIELD_ICON_LEFT, TUI_TEXTFIELD_LABEL_OUTSIDE, TUI_TEXTFIELD_SIZE, TUI_TEXTFIELD_PREFIX, TUI_TEXTFIELD_POSTFIX, TUI_TEXTFIELD_FILLER],
@@ -3678,7 +3678,7 @@ let TuiDropdownPortalService = /*#__PURE__*/(() => {
   TuiDropdownPortalService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
     token: TuiDropdownPortalService,
     factory: TuiDropdownPortalService.ɵfac,
-    providedIn: `root`
+    providedIn: 'root'
   });
   return TuiDropdownPortalService;
 })();
@@ -6890,7 +6890,7 @@ let TuiRootComponent = /*#__PURE__*/(() => {
   TuiRootComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiRootComponent,
     selectors: [["tui-root"]],
-    hostAttrs: ["data-tui-version", "3.60.0"],
+    hostAttrs: ["data-tui-version", "3.61.0"],
     hostVars: 9,
     hostBindings: function TuiRootComponent_HostBindings(rf, ctx) {
       if (rf & 1) {
@@ -6932,7 +6932,7 @@ let TuiRootComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [TuiScrollControlsComponent, TuiSvgDefsHostComponent, TuiDropdownHostComponent, TuiDialogHostComponent, TuiAlertHostComponent, TuiHintsHostComponent, common_mjs_.NgIf, common_mjs_.AsyncPipe],
-    styles: ["@keyframes tuiPresent{to{content:\"1\"}}@keyframes tuiSkeletonVibe{to{opacity:.5}}html,.tui-zero-scrollbar{scrollbar-width:none;-ms-overflow-style:none}html::-webkit-scrollbar,.tui-zero-scrollbar::-webkit-scrollbar,html::-webkit-scrollbar-thumb,.tui-zero-scrollbar::-webkit-scrollbar-thumb{background:transparent;width:0;height:0}body{font:var(--tui-font-text-s);color:var(--tui-text-01);background:var(--tui-base-01);margin:0}tui-root{position:relative;display:block;flex:1;-webkit-tap-highlight-color:transparent}tui-root>.t-root-scrollbar{position:fixed;top:0;left:0;bottom:0;right:0;margin:0}.t-root-content{height:100%;isolation:isolate}.t-overscroll-none{overscroll-behavior:none;overflow:hidden}\n"],
+    styles: ["@keyframes tuiPresent{to{content:\"1\"}}@keyframes tuiSkeletonVibe{to{opacity:.5}}html,.tui-zero-scrollbar{scrollbar-width:none;-ms-overflow-style:none}html::-webkit-scrollbar,.tui-zero-scrollbar::-webkit-scrollbar,html::-webkit-scrollbar-thumb,.tui-zero-scrollbar::-webkit-scrollbar-thumb{background:transparent;width:0;height:0}body{font:var(--tui-font-text-s);color:var(--tui-text-01);background:var(--tui-base-01);margin:0}tui-root{position:relative;display:block;flex:1;-webkit-tap-highlight-color:transparent}tui-root>.t-root-scrollbar{position:fixed;top:0;left:0;bottom:0;right:0;margin:0}.t-root-content{height:100%;isolation:isolate}.t-overscroll-none{overscroll-behavior:none}\n"],
     encapsulation: 2
   });
   return TuiRootComponent;
@@ -7013,7 +7013,7 @@ function TuiAlertComponent_div_3_Template(rf, ctx) {
     core_mjs_["ɵɵproperty"]("innerHTML", text_r4, core_mjs_["ɵɵsanitizeHtml"]);
   }
 }
-const TUI_ALERT_POSITION = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,core_mjs_.inject)(taiga_ui_cdk_tokens/* TUI_IS_MOBILE */.fL) ? `1rem 1rem 0 auto` : `2rem 3rem 0 auto`);
+const TUI_ALERT_POSITION = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,core_mjs_.inject)(taiga_ui_cdk_tokens/* TUI_IS_MOBILE */.fL) ? '1rem 1rem 0 auto' : '2rem 3rem 0 auto');
 
 // TODO: get rid of $any in template
 let TuiAlertComponent = /*#__PURE__*/(() => {
@@ -7117,7 +7117,7 @@ let taiga_ui_core_components_alert_TuiAlertService = /*#__PURE__*/(() => {
   TuiAlertService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
     token: TuiAlertService,
     factory: TuiAlertService.ɵfac,
-    providedIn: `root`
+    providedIn: 'root'
   });
   return TuiAlertService;
 })();
@@ -7357,7 +7357,7 @@ let TuiAccessorProxyDirective = /*#__PURE__*/(() => {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-const TUI_HOSTED_DROPDOWN_COMPONENT = new core_mjs_.InjectionToken(`[TUI_HOSTED_DROPDOWN_COMPONENT]`);
+const TUI_HOSTED_DROPDOWN_COMPONENT = new core_mjs_.InjectionToken('[TUI_HOSTED_DROPDOWN_COMPONENT]');
 let TuiDropdownOpenMonitorDirective = /*#__PURE__*/(() => {
   class TuiDropdownOpenMonitorDirective {
     constructor(destroy$, hosted, dropdown, open) {
@@ -7661,7 +7661,7 @@ let TuiHostedDropdownModule = /*#__PURE__*/(() => {
  * @example {@link https://material.angular.io/cdk/coercion/api#functions}
  */
 function tuiCoerceBooleanProperty(value) {
-  return value !== null && typeof value !== `undefined` && `${value}` !== `false`;
+  return value !== null && typeof value !== 'undefined' && `${value}` !== 'false';
 }
 
 /**
@@ -7734,7 +7734,7 @@ let AbstractTuiAutofocusHandler = /*#__PURE__*/(() => {
       return ((_a = this.focusable) === null || _a === void 0 ? void 0 : _a.nativeFocusableElement) || this.el.nativeElement;
     }
     get isTextFieldElement() {
-      return this.element.matches(`input, textarea, [contenteditable]`);
+      return this.element.matches('input, textarea, [contenteditable]');
     }
   }
   AbstractTuiAutofocusHandler.ɵfac = function AbstractTuiAutofocusHandler_Factory(t) {
@@ -7749,7 +7749,7 @@ let AbstractTuiAutofocusHandler = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 const TIMEOUT = 1000;
-const NG_ANIMATION_SELECTOR = `.ng-animating`;
+const NG_ANIMATION_SELECTOR = '.ng-animating';
 let TuiDefaultAutofocusHandler = /*#__PURE__*/(() => {
   class TuiDefaultAutofocusHandler extends AbstractTuiAutofocusHandler {
     constructor(focusable, el, animationFrame$) {
@@ -7780,7 +7780,7 @@ let TuiDefaultAutofocusHandler = /*#__PURE__*/(() => {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-const TEXTFIELD_ATTRS = [`type`, `inputMode`, `autocomplete`, `accept`, `min`, `max`, `step`, `pattern`, `size`, `maxlength`];
+const TEXTFIELD_ATTRS = ['type', 'inputMode', 'autocomplete', 'accept', 'min', 'max', 'step', 'pattern', 'size', 'maxlength'];
 let TuiIosAutofocusHandler = /*#__PURE__*/(() => {
   class TuiIosAutofocusHandler extends AbstractTuiAutofocusHandler {
     constructor(focusable, el, renderer, zone, win) {
@@ -7812,8 +7812,8 @@ let TuiIosAutofocusHandler = /*#__PURE__*/(() => {
         clearTimeout(fakeFocusTimeoutId);
         fakeFocusTimeoutId = this.win.setTimeout(() => {
           clearTimeout(elementFocusTimeoutId);
-          fakeInput.removeEventListener(`blur`, blurHandler);
-          fakeInput.removeEventListener(`focus`, focusHandler);
+          fakeInput.removeEventListener('blur', blurHandler);
+          fakeInput.removeEventListener('focus', focusHandler);
           elementFocusTimeoutId = this.win.setTimeout(() => {
             this.element.focus({
               preventScroll: false
@@ -7822,10 +7822,10 @@ let TuiIosAutofocusHandler = /*#__PURE__*/(() => {
           }, duration);
         });
       };
-      fakeInput.addEventListener(`blur`, blurHandler, {
+      fakeInput.addEventListener('blur', blurHandler, {
         once: true
       });
-      fakeInput.addEventListener(`focus`, focusHandler);
+      fakeInput.addEventListener('focus', focusHandler);
       if (this.insideDialog()) {
         this.win.document.body.appendChild(fakeInput);
       } else {
@@ -7854,26 +7854,26 @@ let TuiIosAutofocusHandler = /*#__PURE__*/(() => {
      * emulate position cursor before focus to real textfield element
      */
     makeFakeInput() {
-      const fakeInput = this.renderer.createElement(`input`);
+      const fakeInput = this.renderer.createElement('input');
       const rect = this.element.getBoundingClientRect();
       this.patchFakeInputFromFocusableElement(fakeInput);
       fakeInput.style.height = taiga_ui_cdk_utils_format_tuiPx(rect.height);
       fakeInput.style.width = taiga_ui_cdk_utils_format_tuiPx(rect.width / 2);
-      fakeInput.style.position = `fixed`;
-      fakeInput.style.zIndex = `-99999999`;
-      fakeInput.style.caretColor = `transparent`;
-      fakeInput.style.border = `none`;
-      fakeInput.style.outline = `none`;
-      fakeInput.style.color = `transparent`;
-      fakeInput.style.background = `transparent`;
-      fakeInput.style.cursor = `none`;
+      fakeInput.style.position = 'fixed';
+      fakeInput.style.zIndex = '-99999999';
+      fakeInput.style.caretColor = 'transparent';
+      fakeInput.style.border = 'none';
+      fakeInput.style.outline = 'none';
+      fakeInput.style.color = 'transparent';
+      fakeInput.style.background = 'transparent';
+      fakeInput.style.cursor = 'none';
       fakeInput.style.fontSize = taiga_ui_cdk_utils_format_tuiPx(16);
       fakeInput.style.top = taiga_ui_cdk_utils_format_tuiPx(rect.top);
       fakeInput.style.left = taiga_ui_cdk_utils_format_tuiPx(rect.left);
       return fakeInput;
     }
     getDurationTimeBeforeFocus() {
-      return parseFloat(this.win.getComputedStyle(this.element).getPropertyValue(`--tui-duration`)) || 0;
+      return parseFloat(this.win.getComputedStyle(this.element).getPropertyValue('--tui-duration')) || 0;
     }
     /**
      * @note:
@@ -7883,7 +7883,7 @@ let TuiIosAutofocusHandler = /*#__PURE__*/(() => {
      * and then that dialog will be shaking
      */
     insideDialog() {
-      return !!this.element.closest(`tui-dialog`);
+      return !!this.element.closest('tui-dialog');
     }
     /**
      * @note:
@@ -7895,8 +7895,8 @@ let TuiIosAutofocusHandler = /*#__PURE__*/(() => {
      */
     patchCssStyles() {
       [this.win.document.documentElement, this.win.document.body].forEach(element => {
-        element.style.setProperty(`overflow`, `auto`);
-        element.style.setProperty(`height`, `100%`);
+        element.style.setProperty('overflow', 'auto');
+        element.style.setProperty('height', '100%');
       });
     }
     /**
@@ -7933,7 +7933,7 @@ const TUI_AUTOFOCUS_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTok
 function tuiAutoFocusOptionsProvider(options) {
   return tuiProvideOptions(TUI_AUTOFOCUS_OPTIONS, options, TUI_AUTOFOCUS_DEFAULT_OPTIONS);
 }
-const TUI_AUTOFOCUS_HANDLER = new core_mjs_.InjectionToken(`[TUI_AUTOFOCUS_HANDLER]`);
+const TUI_AUTOFOCUS_HANDLER = new core_mjs_.InjectionToken('[TUI_AUTOFOCUS_HANDLER]');
 const TUI_AUTOFOCUS_PROVIDERS = [{
   provide: TUI_AUTOFOCUS_HANDLER,
   useFactory: (focusable, el, animationFrame$, renderer, zone, win, isIos) => isIos ? new TuiIosAutofocusHandler(focusable, el, renderer, zone, win) : new TuiDefaultAutofocusHandler(focusable, el, animationFrame$),
@@ -8110,12 +8110,12 @@ function TuiDialogComponent_div_6_Template(rf, ctx) {
   }
 }
 const TUI_DIALOG_DEFAULT_OPTIONS = {
-  size: `m`,
+  size: 'm',
   required: false,
   closeable: true,
   dismissible: true,
-  label: ``,
-  header: ``
+  label: '',
+  header: ''
 };
 /**
  * A stream to close dialogs
@@ -8136,11 +8136,11 @@ let TuiDialogCloseService = /*#__PURE__*/(() => {
       this.win = win;
       this.doc = doc;
       this.el = el;
-      this.esc$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, `keydown`).pipe((0,filter/* filter */.h)(event => {
+      this.esc$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, 'keydown').pipe((0,filter/* filter */.h)(event => {
         const target = (0,taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA)(event);
-        return event.key === `Escape` && !event.defaultPrevented && (this.element.contains(target) || this.isOutside(target));
+        return event.key === 'Escape' && !event.defaultPrevented && (this.element.contains(target) || this.isOutside(target));
       }));
-      this.mousedown$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, `mousedown`).pipe((0,filter/* filter */.h)(event => (0,taiga_ui_core_utils_dom/* tuiGetViewportWidth */.ic)(this.win) - event.clientX > SCROLLBAR_PLACEHOLDER && this.isOutside((0,taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA)(event))), (0,operators_switchMap/* switchMap */.w)(() => (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, `mouseup`).pipe((0,take/* take */.q)(1), (0,operators_map/* map */.U)(taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA), (0,filter/* filter */.h)(target => this.isOutside(target)))));
+      this.mousedown$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, 'mousedown').pipe((0,filter/* filter */.h)(event => (0,taiga_ui_core_utils_dom/* tuiGetViewportWidth */.ic)(this.win) - event.clientX > SCROLLBAR_PLACEHOLDER && this.isOutside((0,taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA)(event))), (0,operators_switchMap/* switchMap */.w)(() => (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(this.doc, 'mouseup').pipe((0,take/* take */.q)(1), (0,operators_map/* map */.U)(taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA), (0,filter/* filter */.h)(target => this.isOutside(target)))));
     }
     get element() {
       return this.el.nativeElement;
@@ -8282,7 +8282,7 @@ let TuiDialogService = /*#__PURE__*/(() => {
   TuiDialogService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
     token: TuiDialogService,
     factory: TuiDialogService.ɵfac,
-    providedIn: `root`
+    providedIn: 'root'
   });
   return TuiDialogService;
 })();
@@ -8661,7 +8661,7 @@ let TuiReplacePipe = /*#__PURE__*/(() => {
       var _a;
       return (_a = value === null || value === void 0 ? void 0 : value.replace(search,
       // TS bug: https://github.com/microsoft/TypeScript/issues/22378
-      replaceValue)) !== null && _a !== void 0 ? _a : ``;
+      replaceValue)) !== null && _a !== void 0 ? _a : '';
     }
   }
   TuiReplacePipe.ɵfac = function TuiReplacePipe_Factory(t) {
@@ -8855,16 +8855,16 @@ let TuiResizerModule = /*#__PURE__*/(() => {
 //# sourceMappingURL=taiga-ui-cdk-directives-resizer.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-color.js
 function tuiHexToRgb(hex) {
-  const matches = hex.replace(`#`, ``).split(``).map((char, _, array) => array.length === 3 ? char + char : char).join(``).match(/.{2}/g);
+  const matches = hex.replace('#', '').split('').map((char, _, array) => array.length === 3 ? char + char : char).join('').match(/.{2}/g);
   return matches ? matches.map(x => Number.parseInt(x, 16)) : [0, 0, 0];
 }
-const getChunksFromString = (hex, chunkSize) => hex.match(new RegExp(`.{${chunkSize}}`, `g`));
+const getChunksFromString = (hex, chunkSize) => hex.match(new RegExp(`.{${chunkSize}}`, 'g'));
 const convertHexUnitTo256 = hexStr => parseInt(hexStr.repeat(2 / hexStr.length), 16);
 const getAlphaFloat = (a, alpha) => {
-  if (typeof a !== `undefined`) {
+  if (typeof a !== 'undefined') {
     return Number((a / 255).toFixed(2));
   }
-  if (typeof alpha !== `number` || alpha < 0 || alpha > 1) {
+  if (typeof alpha !== 'number' || alpha < 0 || alpha > 1) {
     return 1;
   }
   return alpha;
@@ -8880,7 +8880,7 @@ function tuiIsValidHex(hex) {
 function tuiParseHex(hex, alpha) {
   var _a;
   if (!tuiIsValidHex(hex)) {
-    throw new Error(`Invalid HEX`);
+    throw new Error('Invalid HEX');
   }
   const chunkSize = Math.floor((hex.length - 1) / 3);
   const hexArr = getChunksFromString(hex.slice(1), chunkSize);
@@ -8900,15 +8900,15 @@ function tuiHsvToRgb(h, s, v) {
 }
 const DEFAULT = (/* unused pure expression or super */ null && ([0, 0, 0, 1]));
 function tuiParseColor(color) {
-  const stripped = color.replace(`#`, ``).replace(`rgba(`, ``).replace(`rgb(`, ``).replace(`)`, ``);
-  const array = stripped.split(`,`).map(item => parseFloat(item));
+  const stripped = color.replace('#', '').replace('rgba(', '').replace('rgb(', '').replace(')', '');
+  const array = stripped.split(',').map(item => parseFloat(item));
   if (array.length === 4) {
     return array;
   }
   if (array.length === 3) {
     return array.concat(1);
   }
-  const matches = stripped.match(new RegExp(`(.{${stripped.length / 3}})`, `g`));
+  const matches = stripped.match(new RegExp(`(.{${stripped.length / 3}})`, 'g'));
   if (!matches) {
     return DEFAULT;
   }
@@ -8916,7 +8916,7 @@ function tuiParseColor(color) {
   return [parsed[0] || DEFAULT[0], parsed[1] || DEFAULT[1], parsed[2] || DEFAULT[2], parsed[3] === undefined ? DEFAULT[3] : parsed[3]];
 }
 function tuiRgbToHex(r, g, b) {
-  return `#${[r, g, b].map(x => x.toString(16).padStart(2, `0`)).join(``)}`;
+  return `#${[r, g, b].map(x => x.toString(16).padStart(2, '0')).join('')}`;
 }
 function tuiRgbToHsv(r, g, b) {
   const v = Math.max(r, g, b);
@@ -8928,21 +8928,21 @@ function tuiRgbToHsv(r, g, b) {
 function tuiRgbaToHex(color) {
   var _a, _b;
   if (!tuiIsValidRgba(color)) {
-    throw new Error(`Invalid RGBa`);
+    throw new Error('Invalid RGBa');
   }
-  const rgb = (_a = color.replace(/\s/g, ``)
+  const rgb = (_a = color.replace(/\s/g, '')
   // eslint-disable-next-line unicorn/no-unsafe-regex
   .match(/^rgba?\((\d+),(\d+),(\d+),?([^,\s)]+)?/i)) !== null && _a !== void 0 ? _a : [];
-  let alpha = ((_b = rgb === null || rgb === void 0 ? void 0 : rgb[4]) !== null && _b !== void 0 ? _b : ``).toString().trim();
+  let alpha = ((_b = rgb === null || rgb === void 0 ? void 0 : rgb[4]) !== null && _b !== void 0 ? _b : '').toString().trim();
   let hex = rgb ? (rgb[1] | 1 << 8).toString(16).slice(1) + (rgb[2] | 1 << 8).toString(16).slice(1) + (rgb[3] | 1 << 8).toString(16).slice(1) : color;
-  alpha = alpha !== `` ? alpha : 0o1;
+  alpha = alpha !== '' ? alpha : 0o1;
   alpha = (Number(alpha) * 255 | 1 << 8).toString(16).slice(1);
   hex += alpha;
   return `#${hex.toUpperCase()}`;
 }
 function tuiIsValidRgba(rgba) {
-  const range = `(\\d|[1-9]\\d|1\\d{2}|2[0-4]\\d|2[0-5]{2})`;
-  const alpha = `([01]|0?\\.\\d+)`;
+  const range = '(\\d|[1-9]\\d|1\\d{2}|2[0-4]\\d|2[0-5]{2})';
+  const alpha = '([01]|0?\\.\\d+)';
   return new RegExp(`^(?:rgb\\(\\s*${range}\\s*,\\s*${range}\\s*,\\s*${range}\\s*\\)|rgba\\(\\s*${range}\\s*,\\s*${range}\\s*,\\s*${range}\\s*,\\s*${alpha}\\s*\\))$`).test(rgba);
 }
 
@@ -9129,12 +9129,12 @@ const DATE_RANGE_FILLER_LENGTH = 2 * DATE_FILLER_LENGTH + RANGE_SEPARATOR_CHAR.l
 /**
  * Active date format for Taiga UI
  */
-const TUI_DATE_FORMAT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(`DMY`);
+const TUI_DATE_FORMAT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)('DMY');
 
 /**
  * Date separator for Taiga UI components
  */
-const TUI_DATE_SEPARATOR = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(`.`);
+const TUI_DATE_SEPARATOR = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)('.');
 const changeDateSeparator = (dateString, newDateSeparator) => dateString.replace(/[^0-9A-Za-zА-Яа-я]/gi, newDateSeparator);
 
 /**
@@ -9176,7 +9176,7 @@ class TuiYear {
     return (0,taiga_ui_cdk_utils_math/* tuiNormalizeToIntNumber */.G1)(year, MIN_YEAR, MAX_YEAR);
   }
   get formattedYear() {
-    return String(this.year).padStart(4, `0`);
+    return String(this.year).padStart(4, '0');
   }
   get isLeapYear() {
     return TuiYear.isLeapYear(this.year);
@@ -9326,7 +9326,7 @@ class TuiMonth extends TuiYear {
     return Number.isInteger(month) && (0,taiga_ui_cdk_utils_math/* tuiInRange */.wf)(month, MIN_MONTH, MAX_MONTH + 1);
   }
   get formattedMonthPart() {
-    return String(this.month + 1).padStart(2, `0`);
+    return String(this.month + 1).padStart(2, '0');
   }
   /**
    * Returns days in a month
@@ -9470,22 +9470,22 @@ class TuiDay extends TuiMonth {
   static lengthBetween(from, to) {
     return Math.round((to.toLocalNativeDate().getTime() - from.toLocalNativeDate().getTime()) / (1000 * 60 * 60 * 24));
   }
-  static parseRawDateString(date, dateMode = `DMY`) {
-    ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert(date.length === DATE_FILLER_LENGTH, `[parseRawDateString]: wrong date string length`);
+  static parseRawDateString(date, dateMode = 'DMY') {
+    ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert(date.length === DATE_FILLER_LENGTH, '[parseRawDateString]: wrong date string length');
     switch (dateMode) {
-      case `YMD`:
+      case 'YMD':
         return {
           day: parseInt(date.slice(8, 10), 10),
           month: parseInt(date.slice(5, 7), 10) - 1,
           year: parseInt(date.slice(0, 4), 10)
         };
-      case `MDY`:
+      case 'MDY':
         return {
           day: parseInt(date.slice(3, 5), 10),
           month: parseInt(date.slice(0, 2), 10) - 1,
           year: parseInt(date.slice(6, 10), 10)
         };
-      case `DMY`:
+      case 'DMY':
       default:
         return {
           day: parseInt(date.slice(0, 2), 10),
@@ -9502,7 +9502,7 @@ class TuiDay extends TuiMonth {
    * @param dateMode date format of the date string (DMY | MDY | YMD)
    * @return normalized date
    */
-  static normalizeParse(rawDate, dateMode = `DMY`) {
+  static normalizeParse(rawDate, dateMode = 'DMY') {
     const {
       day,
       month,
@@ -9521,7 +9521,7 @@ class TuiDay extends TuiMonth {
       day,
       month,
       year
-    } = this.parseRawDateString(yearMonthDayString, `YMD`);
+    } = this.parseRawDateString(yearMonthDayString, 'YMD');
     if (!TuiYear.isValidYear(year)) {
       throw new taiga_ui_cdk_exceptions/* TuiInvalidYearException */.JY(year);
     }
@@ -9539,7 +9539,7 @@ class TuiDay extends TuiMonth {
     return (0,taiga_ui_cdk_utils_math/* tuiNormalizeToIntNumber */.G1)(day, 1, monthDaysCount);
   }
   get formattedDayPart() {
-    return String(this.day).padStart(2, `0`);
+    return String(this.day).padStart(2, '0');
   }
   get isWeekend() {
     const dayOfWeek = this.dayOfWeek(false);
@@ -9644,21 +9644,21 @@ class TuiDay extends TuiMonth {
    * Returns formatted whole date
    */
   getFormattedDay(dateFormat, separator) {
-    ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert(separator.length === 1, `Separator should consist of only 1 symbol`);
+    ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert(separator.length === 1, 'Separator should consist of only 1 symbol');
     const dd = this.formattedDayPart;
     const mm = this.formattedMonthPart;
     const yyyy = this.formattedYear;
     switch (dateFormat) {
-      case `YMD`:
+      case 'YMD':
         return `${yyyy}${separator}${mm}${separator}${dd}`;
-      case `MDY`:
+      case 'MDY':
         return `${mm}${separator}${dd}${separator}${yyyy}`;
-      case `DMY`:
+      case 'DMY':
       default:
         return `${dd}${separator}${mm}${separator}${yyyy}`;
     }
   }
-  toString(dateFormat = `DMY`, separator = `.`) {
+  toString(dateFormat = 'DMY', separator = '.') {
     return this.getFormattedDay(dateFormat, separator);
   }
   toJSON() {
@@ -9728,7 +9728,7 @@ class TuiDayRange extends (/* unused pure expression or super */ null && (TuiMon
    * @param dateMode {@link TuiDateMode}
    * @return normalized day range object
    */
-  static normalizeParse(rangeString, dateMode = `DMY`) {
+  static normalizeParse(rangeString, dateMode = 'DMY') {
     const leftDay = TuiDay.normalizeParse(rangeString.slice(0, DATE_FILLER_LENGTH), dateMode);
     if (rangeString.length < DATE_RANGE_FILLER_LENGTH) {
       return new TuiDayRange(leftDay, leftDay);
@@ -9765,7 +9765,7 @@ class TuiDayRange extends (/* unused pure expression or super */ null && (TuiMon
     const to = this.to.getFormattedDay(dateFormat, dateSeparator);
     return `${from}${RANGE_SEPARATOR_CHAR}${to}`;
   }
-  toString(dateFormat = `DMY`, dateSeparator = `.`) {
+  toString(dateFormat = 'DMY', dateSeparator = '.') {
     return this.getFormattedDayRange(dateFormat, dateSeparator);
   }
 }
@@ -9781,7 +9781,7 @@ class TuiTime {
     this.minutes = minutes;
     this.seconds = seconds;
     this.ms = ms;
-    ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert(TuiTime.isValidTime(hours, minutes, seconds, ms), `Time must be real, but got:`, hours, minutes, seconds, ms);
+    ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.z.assert(TuiTime.isValidTime(hours, minutes, seconds, ms), 'Time must be real, but got:', hours, minutes, seconds, ms);
   }
   /**
    * Checks if time is valid
@@ -9856,9 +9856,9 @@ class TuiTime {
    * Converts TuiTime to string
    */
   toString(mode) {
-    const needAddMs = mode === `HH:MM:SS.MSS` || !mode && this.ms > 0;
-    const needAddSeconds = needAddMs || mode === `HH:MM:SS` || !mode && this.seconds > 0;
-    return `${this.formatTime(this.hours)}:${this.formatTime(this.minutes)}` + `${needAddSeconds ? `:${this.formatTime(this.seconds)}` : ``}` + `${needAddMs ? `.${this.formatTime(this.ms, 3)}` : ``}`;
+    const needAddMs = mode === 'HH:MM:SS.MSS' || !mode && this.ms > 0;
+    const needAddSeconds = needAddMs || mode === 'HH:MM:SS' || !mode && this.seconds > 0;
+    return `${this.formatTime(this.hours)}:${this.formatTime(this.minutes)}` + `${needAddSeconds ? `:${this.formatTime(this.seconds)}` : ''}` + `${needAddMs ? `.${this.formatTime(this.ms, 3)}` : ''}`;
   }
   valueOf() {
     return this.toAbsoluteMilliseconds();
@@ -9878,7 +9878,7 @@ class TuiTime {
     return this.hours * MILLISECONDS_IN_HOUR + this.minutes * MILLISECONDS_IN_MINUTE + this.seconds * 1000 + this.ms;
   }
   formatTime(time, digits = 2) {
-    return String(time).padStart(digits, `0`);
+    return String(time).padStart(digits, '0');
   }
 }
 
@@ -9902,7 +9902,7 @@ var taiga_ui_i18n_tools = __webpack_require__(7042);
 /**
  * Stream that emits calendar data change
  */
-const TUI_CALENDAR_DATE_STREAM = new core_mjs_.InjectionToken(`[TUI_CALENDAR_DATE_STREAM]`);
+const TUI_CALENDAR_DATE_STREAM = new core_mjs_.InjectionToken('[TUI_CALENDAR_DATE_STREAM]');
 function tuiDateStreamWithTransformer(transformer) {
   return {
     provide: TUI_CALENDAR_DATE_STREAM,
@@ -9911,261 +9911,261 @@ function tuiDateStreamWithTransformer(transformer) {
   };
 }
 const TUI_COUNTRIES_MASKS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)({
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AD]: `+376###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AE]: `+971-##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AF]: `+93##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AG]: `+1(268) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AI]: `+1(264) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AL]: `+355(###) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AM]: `+374##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AO]: `+244(###) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AR]: `+54(###) ####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AT]: `+43(###) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AU]: `+61#-####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AW]: `+297###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AZ]: `+994##-###-##-##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BA]: `+387 ###-####-##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BB]: `+1(246) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BD]: `+880##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BE]: `+32(###) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BF]: `+226##-##-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BG]: `+359(###) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BH]: `+973####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BI]: `+257##-##-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BJ]: `+229##-##-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BL]: `+590 ## ## ## ## ##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BM]: `+1(441) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BN]: `+673###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BO]: `+591#-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BQ]: `+599-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BR]: `+55(##) ####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BS]: `+1(242) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BT]: `+975#-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BW]: `+267##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BY]: `+375(##) ###-##-##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BZ]: `+501###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CA]: `+1(###) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CD]: `+243(###) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CF]: `+236-##-##-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CG]: `+242##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CH]: `+41##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CI]: `+225##-##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CL]: `+56#-####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CM]: `+237#####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CN]: `+86(###) ####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CO]: `+57(###) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CR]: `+506####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CU]: `+53#-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CV]: `+238(###) ##-##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CW]: `+5999-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CY]: `+357##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CZ]: `+420(###) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DE]: `+49(###) ###-###-##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DJ]: `+253##-##-##-##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DK]: `+45##-##-##-##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DM]: `+1(767) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DO]: `+1(###) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DZ]: `+213##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.EC]: `+593##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.EE]: `+372####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.EG]: `+20(###) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ER]: `+291#-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ES]: `+34(###) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ET]: `+251##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.FI]: `+358(###) ###-##-##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.FJ]: `+679##-#####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.FK]: `+500#####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.FM]: `+691###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.FR]: `+33 ## ## ## ## ##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GA]: `+241##-##-##-##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GB]: `+44##-####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GD]: `+1(473) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GE]: `+995(###) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GF]: `+594 ## ## ## ## ##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GH]: `+233(###) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GI]: `+350###-#####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GL]: `+299##-##-##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GM]: `+220(###) ##-##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GN]: `+224##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GP]: `+590 ## ## ## ## ##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GQ]: `+240##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GR]: `+30(###) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GT]: `+502#-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GW]: `+245#-######`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GY]: `+592###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.HK]: `+852####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.HN]: `+504####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.HR]: `+385##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.HT]: `+509##-##-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.HU]: `+36(###) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ID]: `+62(###) ###-##-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IE]: `+353(###) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IL]: `+972##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IN]: `+91(####) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IQ]: `+964(###) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IR]: `+98(###) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IS]: `+354###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IT]: `+39(###) ####-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.JM]: `+1(876) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.JO]: `+962#-####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.JP]: `+81-##-####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KE]: `+254###-######`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KG]: `+996(###) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KH]: `+855##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KM]: `+269##-#####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KN]: `+1(869) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KP]: `+850####-#############`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KR]: `+82##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KW]: `+965####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KY]: `+1(345) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KZ]: `+7(###) ###-##-##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LA]: `+856##-##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LB]: `+961##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LC]: `+1(758) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LI]: `+423(###) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LK]: `+94##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LR]: `+231##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LS]: `+266#-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LT]: `+370(###) ##-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LU]: `+352(###) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LV]: `+371##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LY]: `+218##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MA]: `+212##-####-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MC]: `+377###-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MD]: `+373####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ME]: `+382##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MF]: `+590 ## ## ## ## ##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MG]: `+261##-##-#####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MK]: `+389##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ML]: `+223##-##-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MM]: `+95##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MN]: `+976##-##-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MO]: `+853####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MQ]: `+596 ## ## ## ## ##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MR]: `+222##-##-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MS]: `+1(664) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MT]: `+356####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MU]: `+230####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MV]: `+960###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MW]: `+265#-####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MX]: `+52(###) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MY]: `+60(###) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MZ]: `+258##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NA]: `+264##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NC]: `+687 ### ###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NE]: `+227##-##-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NG]: `+234(###) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NI]: `+505####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NL]: `+31##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NO]: `+47(###) ##-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NP]: `+977##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NZ]: `+64(###) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.OM]: `+968##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PA]: `+507###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PE]: `+51(###) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PF]: `+689 ## ## ## ##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PG]: `+675(###) ##-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PH]: `+63(###) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PK]: `+92(###) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PL]: `+48(###) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PT]: `+351##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PW]: `+680###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PY]: `+595(###) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.QA]: `+974####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.RE]: `+262 ## ## ## ## ##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.RO]: `+40##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.RS]: `+381##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.RU]: `+7### ###-##-##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.RW]: `+250(###) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SA]: `+966#-####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SB]: `+677###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SC]: `+248#-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SD]: `+249##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SE]: `+46##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SG]: `+65####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SH]: `+290####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SI]: `+386##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SK]: `+421(###) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SL]: `+232##-######`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SM]: `+378####-######`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SN]: `+221##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SO]: `+252##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SR]: `+597###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ST]: `+239##-#####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SV]: `+503##-##-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SX]: `+1(721) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SY]: `+963##-####-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SZ]: `+268##-##-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TC]: `+1(649) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TD]: `+235##-##-##-##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TG]: `+228##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TH]: `+66##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TJ]: `+992##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TL]: `+670###-#####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TM]: `+993#-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TN]: `+216##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TO]: `+676#####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TR]: `+90(###) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TT]: `+1(868) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TW]: `+886#-####-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TZ]: `+255##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.UA]: `+380(##) ###-##-##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.UG]: `+256(###) ###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.US]: `+1(###) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.UY]: `+598#-###-##-##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.UZ]: `+998##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.VC]: `+1(784) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.VE]: `+58(###) ###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.VG]: `+1(284)###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.VN]: `+84(###) ####-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.VU]: `+678##-#####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.WS]: `+685##-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.XK]: `+383##-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.YE]: `+967###-###-###`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.YT]: `+262 ## ## ## ## ##`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ZA]: `+27##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ZM]: `+260##-###-####`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ZW]: `+263#-######`
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AD]: '+376###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AE]: '+971-##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AF]: '+93##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AG]: '+1(268) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AI]: '+1(264) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AL]: '+355(###) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AM]: '+374##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AO]: '+244(###) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AR]: '+54(###) ####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AT]: '+43(###) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AU]: '+61#-####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AW]: '+297###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AZ]: '+994##-###-##-##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BA]: '+387 ###-####-##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BB]: '+1(246) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BD]: '+880##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BE]: '+32(###) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BF]: '+226##-##-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BG]: '+359(###) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BH]: '+973####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BI]: '+257##-##-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BJ]: '+229##-##-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BL]: '+590 ## ## ## ## ##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BM]: '+1(441) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BN]: '+673###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BO]: '+591#-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BQ]: '+599-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BR]: '+55(##) ####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BS]: '+1(242) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BT]: '+975#-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BW]: '+267##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BY]: '+375(##) ###-##-##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BZ]: '+501###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CA]: '+1(###) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CD]: '+243(###) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CF]: '+236-##-##-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CG]: '+242##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CH]: '+41##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CI]: '+225##-##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CL]: '+56#-####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CM]: '+237#####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CN]: '+86(###) ####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CO]: '+57(###) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CR]: '+506####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CU]: '+53#-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CV]: '+238(###) ##-##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CW]: '+5999-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CY]: '+357##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CZ]: '+420(###) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DE]: '+49(###) ###-###-##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DJ]: '+253##-##-##-##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DK]: '+45##-##-##-##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DM]: '+1(767) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DO]: '+1(###) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DZ]: '+213##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.EC]: '+593##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.EE]: '+372####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.EG]: '+20(###) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ER]: '+291#-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ES]: '+34(###) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ET]: '+251##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.FI]: '+358(###) ###-##-##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.FJ]: '+679##-#####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.FK]: '+500#####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.FM]: '+691###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.FR]: '+33 ## ## ## ## ##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GA]: '+241##-##-##-##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GB]: '+44##-####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GD]: '+1(473) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GE]: '+995(###) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GF]: '+594 ## ## ## ## ##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GH]: '+233(###) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GI]: '+350###-#####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GL]: '+299##-##-##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GM]: '+220(###) ##-##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GN]: '+224##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GP]: '+590 ## ## ## ## ##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GQ]: '+240##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GR]: '+30(###) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GT]: '+502#-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GW]: '+245#-######',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GY]: '+592###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.HK]: '+852####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.HN]: '+504####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.HR]: '+385##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.HT]: '+509##-##-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.HU]: '+36(###) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ID]: '+62(###) ###-##-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IE]: '+353(###) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IL]: '+972##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IN]: '+91(####) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IQ]: '+964(###) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IR]: '+98(###) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IS]: '+354###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IT]: '+39(###) ####-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.JM]: '+1(876) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.JO]: '+962#-####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.JP]: '+81-##-####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KE]: '+254###-######',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KG]: '+996(###) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KH]: '+855##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KM]: '+269##-#####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KN]: '+1(869) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KP]: '+850####-#############',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KR]: '+82##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KW]: '+965####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KY]: '+1(345) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KZ]: '+7(###) ###-##-##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LA]: '+856##-##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LB]: '+961##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LC]: '+1(758) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LI]: '+423(###) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LK]: '+94##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LR]: '+231##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LS]: '+266#-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LT]: '+370(###) ##-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LU]: '+352(###) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LV]: '+371##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LY]: '+218##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MA]: '+212##-####-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MC]: '+377###-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MD]: '+373####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ME]: '+382##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MF]: '+590 ## ## ## ## ##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MG]: '+261##-##-#####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MK]: '+389##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ML]: '+223##-##-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MM]: '+95##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MN]: '+976##-##-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MO]: '+853####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MQ]: '+596 ## ## ## ## ##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MR]: '+222##-##-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MS]: '+1(664) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MT]: '+356####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MU]: '+230####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MV]: '+960###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MW]: '+265#-####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MX]: '+52(###) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MY]: '+60(###) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MZ]: '+258##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NA]: '+264##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NC]: '+687 ### ###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NE]: '+227##-##-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NG]: '+234(###) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NI]: '+505####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NL]: '+31##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NO]: '+47(###) ##-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NP]: '+977##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NZ]: '+64(###) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.OM]: '+968##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PA]: '+507###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PE]: '+51(###) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PF]: '+689 ## ## ## ##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PG]: '+675(###) ##-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PH]: '+63(###) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PK]: '+92(###) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PL]: '+48(###) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PT]: '+351##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PW]: '+680###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PY]: '+595(###) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.QA]: '+974####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.RE]: '+262 ## ## ## ## ##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.RO]: '+40##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.RS]: '+381##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.RU]: '+7### ###-##-##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.RW]: '+250(###) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SA]: '+966#-####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SB]: '+677###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SC]: '+248#-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SD]: '+249##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SE]: '+46##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SG]: '+65####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SH]: '+290####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SI]: '+386##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SK]: '+421(###) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SL]: '+232##-######',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SM]: '+378####-######',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SN]: '+221##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SO]: '+252##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SR]: '+597###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ST]: '+239##-#####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SV]: '+503##-##-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SX]: '+1(721) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SY]: '+963##-####-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SZ]: '+268##-##-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TC]: '+1(649) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TD]: '+235##-##-##-##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TG]: '+228##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TH]: '+66##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TJ]: '+992##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TL]: '+670###-#####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TM]: '+993#-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TN]: '+216##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TO]: '+676#####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TR]: '+90(###) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TT]: '+1(868) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TW]: '+886#-####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TZ]: '+255##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.UA]: '+380(##) ###-##-##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.UG]: '+256(###) ###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.US]: '+1(###) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.UY]: '+598#-###-##-##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.UZ]: '+998##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.VC]: '+1(784) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.VE]: '+58(###) ###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.VG]: '+1(284)###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.VN]: '+84(###) ####-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.VU]: '+678##-#####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.WS]: '+685##-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.XK]: '+383##-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.YE]: '+967###-###-###',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.YT]: '+262 ## ## ## ## ##',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ZA]: '+27##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ZM]: '+260##-###-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ZW]: '+263#-######'
 });
 
 // TODO: Refactor to use `AbstractTuiValueTransformer` and add ability to provide it for all controls
 /**
  * Control value transformer of TuiDay to custom value format for InputDate* components
  */
-const TUI_DATE_VALUE_TRANSFORMER = new core_mjs_.InjectionToken(`[TUI_DATE_VALUE_TRANSFORMER]`);
+const TUI_DATE_VALUE_TRANSFORMER = new core_mjs_.InjectionToken('[TUI_DATE_VALUE_TRANSFORMER]');
 /**
  * Control value transformer for InputDateRange component
  */
-const TUI_DATE_RANGE_VALUE_TRANSFORMER = new core_mjs_.InjectionToken(`[TUI_DATE_RANGE_VALUE_TRANSFORMER]`);
+const TUI_DATE_RANGE_VALUE_TRANSFORMER = new core_mjs_.InjectionToken('[TUI_DATE_RANGE_VALUE_TRANSFORMER]');
 /**
  * Control value transformer for InputDateTime component
  */
-const TUI_DATE_TIME_VALUE_TRANSFORMER = new core_mjs_.InjectionToken(`[TUI_DATE_TIME_VALUE_TRANSFORMER]`);
-const TUI_PROMPT_WORDS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`prompt`));
-const TUI_CANCEL_WORD = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`cancel`));
-const TUI_DONE_WORD = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`done`));
-const TUI_MORE_WORD = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`more`));
-const TUI_HIDE_TEXT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`hide`));
-const TUI_SHOW_ALL_TEXT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`showAll`));
-const TUI_OTHER_DATE_TEXT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`otherDate`));
-const TUI_CHOOSE_DAY_OR_RANGE_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`mobileCalendarTexts`));
-const TUI_FROM_TO_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`range`));
-const TUI_PLUS_MINUS_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`countTexts`));
-const TUI_TIME_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`time`));
-const TUI_DATE_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`dateTexts`));
-const TUI_DIGITAL_INFORMATION_UNITS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`digitalInformationUnits`));
-const taiga_ui_kit_tokens_TUI_COPY_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`copyTexts`));
-const TUI_PASSWORD_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`passwordTexts`));
-const TUI_CALENDAR_MONTHS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`shortCalendarMonths`));
-const TUI_FILE_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`fileTexts`));
-const TUI_PAGINATION_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`pagination`));
-const TUI_INPUT_FILE_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`inputFileTexts`));
-const TUI_MULTI_SELECT_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`multiSelectTexts`));
-const TUI_COUNTRIES = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`countries`));
+const TUI_DATE_TIME_VALUE_TRANSFORMER = new core_mjs_.InjectionToken('[TUI_DATE_TIME_VALUE_TRANSFORMER]');
+const TUI_PROMPT_WORDS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('prompt'));
+const TUI_CANCEL_WORD = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('cancel'));
+const TUI_DONE_WORD = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('done'));
+const TUI_MORE_WORD = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('more'));
+const TUI_HIDE_TEXT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('hide'));
+const TUI_SHOW_ALL_TEXT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('showAll'));
+const TUI_OTHER_DATE_TEXT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('otherDate'));
+const TUI_CHOOSE_DAY_OR_RANGE_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('mobileCalendarTexts'));
+const TUI_FROM_TO_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('range'));
+const TUI_PLUS_MINUS_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('countTexts'));
+const TUI_TIME_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('time'));
+const TUI_DATE_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('dateTexts'));
+const TUI_DIGITAL_INFORMATION_UNITS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('digitalInformationUnits'));
+const taiga_ui_kit_tokens_TUI_COPY_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('copyTexts'));
+const TUI_PASSWORD_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('passwordTexts'));
+const TUI_CALENDAR_MONTHS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('shortCalendarMonths'));
+const TUI_FILE_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('fileTexts'));
+const TUI_PAGINATION_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('pagination'));
+const TUI_INPUT_FILE_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('inputFileTexts'));
+const TUI_MULTI_SELECT_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('multiSelectTexts'));
+const TUI_COUNTRIES = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('countries'));
 const TUI_INPUT_DATE_DEFAULT_OPTIONS = {
   icon: ({
     $implicit
-  }) => $implicit === `s` ? `tuiIconCalendar` : `tuiIconCalendarLarge`,
+  }) => $implicit === 's' ? 'tuiIconCalendar' : 'tuiIconCalendarLarge',
   min: TUI_FIRST_DAY,
   max: TUI_LAST_DAY,
   nativePicker: false
@@ -10193,12 +10193,12 @@ function tuiItemsHandlersProvider(options) {
 /**
  * A component for mobile data picker
  */
-const TUI_MOBILE_CALENDAR = new core_mjs_.InjectionToken(`[TUI_MOBILE_CALENDAR]`);
+const TUI_MOBILE_CALENDAR = new core_mjs_.InjectionToken('[TUI_MOBILE_CALENDAR]');
 
 /**
  * A function to get localized formatted month
  */
-const TUI_MONTH_FORMATTER = new core_mjs_.InjectionToken(`[TUI_MONTH_FORMATTER]`);
+const TUI_MONTH_FORMATTER = new core_mjs_.InjectionToken('[TUI_MONTH_FORMATTER]');
 
 /**
  * Margin between tabs
@@ -10699,8 +10699,8 @@ function TuiArrowComponent_ng_container_1_Template(rf, ctx) {
   }
 }
 const TUI_ARROW_DEFAULT_OPTIONS = {
-  iconSmall: `tuiIconChevronDown`,
-  iconLarge: `tuiIconChevronDownLarge`
+  iconSmall: 'tuiIconChevronDown',
+  iconLarge: 'tuiIconChevronDownLarge'
 };
 /**
  * Default parameters for arrow component
@@ -11051,11 +11051,11 @@ var identity = __webpack_require__(2737);
 const TUI_MONTH_FORMATTER_PROVIDER = {
   provide: TUI_MONTH_FORMATTER,
   deps: [TuiMonthPipe],
-  useFactory: pipe => month => month ? pipe.transform(month).pipe((0,operators_map/* map */.U)(formatted => `${formatted} ${month.formattedYear}`)) : (0,of.of)(``)
+  useFactory: pipe => month => month ? pipe.transform(month).pipe((0,operators_map/* map */.U)(formatted => `${formatted} ${month.formattedYear}`)) : (0,of.of)('')
 };
 const FIXED_DROPDOWN_CONTROLLER_PROVIDER = tuiDropdownOptionsProvider({
-  limitWidth: `fixed`,
-  align: `right`
+  limitWidth: 'fixed',
+  align: 'right'
 });
 const TUI_VALUE_ACCESSOR_PROVIDER = {
   provide: taiga_ui_core_tokens/* TUI_VALUE_ACCESSOR */.sE,
@@ -11370,7 +11370,7 @@ let TuiNativeSelectGroupComponent = /*#__PURE__*/(/* unused pure expression or s
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 const TUI_SELECT_DEFAULT_OPTIONS = {
-  valueContent: ``
+  valueContent: ''
 };
 /**
  * Default parameters for Select component
@@ -11905,12 +11905,12 @@ const TUI_TOGGLE_DEFAULT_OPTIONS = {
     toggleOff({
       $implicit
     }) {
-      return $implicit === `m` ? `tuiIconToggleOff` : `tuiIconToggleOffLarge`;
+      return $implicit === 'm' ? 'tuiIconToggleOff' : 'tuiIconToggleOffLarge';
     },
     toggleOn({
       $implicit
     }) {
-      return $implicit === `m` ? `tuiIconToggleOn` : `tuiIconToggleOnLarge`;
+      return $implicit === 'm' ? 'tuiIconToggleOn' : 'tuiIconToggleOnLarge';
     }
   },
   appearances: {
@@ -11919,7 +11919,7 @@ const TUI_TOGGLE_DEFAULT_OPTIONS = {
   },
   singleColor: false,
   showIcons: false,
-  size: `m`
+  size: 'm'
 };
 /**
  * Default parameters for Toggle component
@@ -14425,10 +14425,10 @@ function taiga_ui_core_utils_format_tuiCapitalizeFirstLetter(value) {
  */
 function tuiNumberToStringWithoutExp(value) {
   const valueAsString = String(value);
-  const [numberPart, expPart] = valueAsString.split(`e-`);
+  const [numberPart, expPart] = valueAsString.split('e-');
   let valueWithoutExp = valueAsString;
   if (expPart) {
-    const [, fractionalPart] = numberPart.split(`.`);
+    const [, fractionalPart] = numberPart.split('.');
     const decimalDigits = Number(expPart) + ((fractionalPart === null || fractionalPart === void 0 ? void 0 : fractionalPart.length) || 0);
     valueWithoutExp = value.toFixed(decimalDigits);
   }
@@ -14443,7 +14443,7 @@ function tuiNumberToStringWithoutExp(value) {
  * @return the fractional part of number
  */
 function tuiGetFractionPartPadded(value, precision) {
-  const [, fractionPartPadded = ``] = tuiNumberToStringWithoutExp(value).split(`.`);
+  const [, fractionPartPadded = ''] = tuiNumberToStringWithoutExp(value).split('.');
   return (0,taiga_ui_cdk_utils_miscellaneous/* tuiIsNumber */.dt)(precision) ? fractionPartPadded.slice(0, Math.max(0, precision)) : fractionPartPadded;
 }
 
@@ -14473,14 +14473,14 @@ function tuiFormatNumber(value, settings = {}) {
   if (Number.isFinite(decimalLimit)) {
     if (zeroPadding) {
       const zeroPaddingSize = Math.max(decimalLimit - fractionPartPadded.length, 0);
-      const zeroPartString = `0`.repeat(zeroPaddingSize);
+      const zeroPartString = '0'.repeat(zeroPaddingSize);
       fractionPartPadded = `${fractionPartPadded}${zeroPartString}`;
     } else {
-      fractionPartPadded = fractionPartPadded.replace(/0*$/, ``);
+      fractionPartPadded = fractionPartPadded.replace(/0*$/, '');
     }
   }
   const remainder = integerPartString.length % 3;
-  const sign = value < 0 ? taiga_ui_cdk_constants/* CHAR_HYPHEN */.fv : ``;
+  const sign = value < 0 ? taiga_ui_cdk_constants/* CHAR_HYPHEN */.fv : '';
   let result = sign + integerPartString.charAt(0);
   for (let i = 1; i < integerPartString.length; i++) {
     if (i % 3 === remainder && integerPartString.length > 3) {
@@ -14512,16 +14512,16 @@ function tuiFormatNumber(value, settings = {}) {
  */
 function tuiFormatPhone(value, countryCode, phoneMask) {
   if (!value) {
-    return ``;
+    return '';
   }
   let result = countryCode;
-  countryCode = countryCode.replace(/[()]/g, ``);
+  countryCode = countryCode.replace(/[()]/g, '');
   if (!value.startsWith(countryCode)) {
-    value = countryCode + value.replace(CHAR_PLUS, ``);
+    value = countryCode + value.replace(CHAR_PLUS, '');
   }
-  const splitPhoneMask = phoneMask.split(``);
-  const splitValue = value.slice(countryCode.length).split(``);
-  result += ` `;
+  const splitPhoneMask = phoneMask.split('');
+  const splitValue = value.slice(countryCode.length).split('');
+  result += ' ';
   if (splitValue.length === 0) {
     return result;
   }
@@ -14529,8 +14529,8 @@ function tuiFormatPhone(value, countryCode, phoneMask) {
     if (splitValue.length === 0) {
       break;
     }
-    if (mask === `#`) {
-      result += splitValue[0] || ``;
+    if (mask === '#') {
+      result += splitValue[0] || '';
       splitValue.splice(0, 1);
     } else {
       result += mask;
@@ -14539,7 +14539,7 @@ function tuiFormatPhone(value, countryCode, phoneMask) {
   return result;
 }
 function tuiOtherDecimalSymbol(symbol) {
-  return symbol === `.` ? `,` : `.`;
+  return symbol === '.' ? ',' : '.';
 }
 
 /**
@@ -14825,13 +14825,13 @@ const taiga_ui_kit_components_input_number_c0 = ["*", [["input"]], [["tuiContent
 const taiga_ui_kit_components_input_number_c1 = ["*", "input", "tuiContent"];
 const TUI_INPUT_NUMBER_DEFAULT_OPTIONS = {
   icons: {
-    up: `tuiIconPlus`,
-    down: `tuiIconMinus`
+    up: 'tuiIconPlus',
+    down: 'tuiIconMinus'
   },
   min: Number.MIN_SAFE_INTEGER,
   max: Number.MAX_SAFE_INTEGER,
   step: 0,
-  decimal: `not-zero`,
+  decimal: 'not-zero',
   precision: 2
 };
 /**
@@ -15706,8 +15706,8 @@ let TuiAccordionModule = /*#__PURE__*/(() => {
  */
 // @bad TODO: convert stringHashToHsl to stringHashToRgb
 function tuiStringHashToHsl(value) {
-  if (value === ``) {
-    return ``;
+  if (value === '') {
+    return '';
   }
   let hash = 0;
   for (let i = 0; i < value.length; i++) {
@@ -15820,8 +15820,8 @@ function TuiTagComponent_input_5_Template(rf, ctx) {
   }
 }
 const TUI_TAG_DEFAULT_OPTIONS = {
-  size: `m`,
-  status: `default`,
+  size: 'm',
+  status: 'default',
   autoColor: false
 };
 /**
@@ -16341,8 +16341,8 @@ function TuiTabsWithMoreComponent_tui_underline_12_Template(rf, ctx) {
     core_mjs_["ɵɵproperty"]("element", ctx_r7.activeElement);
   }
 }
-const TUI_TAB_EVENT = new core_mjs_.InjectionToken(`[TUI_TAB_EVENT]`);
-const TUI_TAB_ACTIVATE = `tui-tab-activate`;
+const TUI_TAB_EVENT = new core_mjs_.InjectionToken('[TUI_TAB_EVENT]');
+const TUI_TAB_ACTIVATE = 'tui-tab-activate';
 const TUI_TAB_PROVIDERS = [taiga_ui_cdk_services/* TuiDestroyService */.a3, taiga_ui_cdk_services/* TuiFocusVisibleService */.ku, taiga_ui_core_services/* TuiRouterLinkActiveService */.Ok, {
   provide: TUI_TAB_EVENT,
   deps: [core_mjs_.ElementRef, taiga_ui_core_services/* TuiRouterLinkActiveService */.Ok, [new core_mjs_.Optional(), MutationObserverService], [new core_mjs_.Optional(), router_mjs_.RouterLinkActive]],
@@ -16350,7 +16350,7 @@ const TUI_TAB_PROVIDERS = [taiga_ui_cdk_services/* TuiDestroyService */.a3, taig
     nativeElement
   }, routerLinkActiveService, mutationObserverService, routerLinkActive) => {
     const mutationObserver = routerLinkActive && mutationObserverService ? mutationObserverService.pipe((0,filter/* filter */.h)(() => routerLinkActive.isActive)) : empty/* EMPTY */.E;
-    return (0,merge/* merge */.T)(mutationObserver, routerLinkActiveService.pipe((0,filter/* filter */.h)(identity/* identity */.y)), nativeElement.matches(`button`) ? (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, `click`) : empty/* EMPTY */.E).pipe((0,operators_map/* map */.U)(() => nativeElement.dispatchEvent(new CustomEvent(TUI_TAB_ACTIVATE, {
+    return (0,merge/* merge */.T)(mutationObserver, routerLinkActiveService.pipe((0,filter/* filter */.h)(identity/* identity */.y)), nativeElement.matches('button') ? (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, 'click') : empty/* EMPTY */.E).pipe((0,operators_map/* map */.U)(() => nativeElement.dispatchEvent(new CustomEvent(TUI_TAB_ACTIVATE, {
       bubbles: true
     }))));
   }
@@ -16721,9 +16721,9 @@ let TuiTabsVerticalComponent = /*#__PURE__*/(/* unused pure expression or super 
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-const TUI_TABS_REFRESH = new core_mjs_.InjectionToken(`[TUI_TABS_REFRESH]`);
+const TUI_TABS_REFRESH = new core_mjs_.InjectionToken('[TUI_TABS_REFRESH]');
 const TUI_TABS_PROVIDERS = [taiga_ui_cdk_services/* TuiResizeService */.tl, taiga_ui_cdk_services/* TuiDestroyService */.a3, MutationObserverService, tuiDropdownOptionsProvider({
-  align: `right`
+  align: 'right'
 }), {
   provide: MUTATION_OBSERVER_INIT,
   useValue: {
@@ -17032,7 +17032,7 @@ let TuiTabsModule = /*#__PURE__*/(() => {
 /** Default values for the checkbox options. */
 const taiga_ui_kit_components_radio_c0 = (/* unused pure expression or super */ null && (["focusableElement"]));
 const TUI_RADIO_DEFAULT_OPTIONS = {
-  size: `m`,
+  size: 'm',
   appearances: {
     unchecked: taiga_ui_core_enums/* TuiAppearance */.Nm.Outline,
     checked: taiga_ui_core_enums/* TuiAppearance */.Nm.Primary
@@ -17366,7 +17366,7 @@ const taiga_ui_core_components_primitive_checkbox_c0 = a0 => ({
 });
 const taiga_ui_core_components_primitive_checkbox_c1 = (/* unused pure expression or super */ null && (["*"]));
 const TUI_CHECKBOX_DEFAULT_OPTIONS = {
-  size: `m`,
+  size: 'm',
   appearances: {
     unchecked: taiga_ui_core_enums/* TuiAppearance */.Nm.Outline,
     checked: taiga_ui_core_enums/* TuiAppearance */.Nm.Primary,
@@ -17375,10 +17375,10 @@ const TUI_CHECKBOX_DEFAULT_OPTIONS = {
   icons: {
     checked: ({
       $implicit
-    }) => $implicit === `m` ? `tuiIconCheck` : `tuiIconCheckLarge`,
+    }) => $implicit === 'm' ? 'tuiIconCheck' : 'tuiIconCheckLarge',
     indeterminate: ({
       $implicit
-    }) => $implicit === `m` ? `tuiIconMinus` : `tuiIconMinusLarge`
+    }) => $implicit === 'm' ? 'tuiIconMinus' : 'tuiIconMinusLarge'
   }
 };
 /**
@@ -17735,9 +17735,9 @@ let TuiCheckboxLabeledModule = /*#__PURE__*/(() => {
 //# sourceMappingURL=taiga-ui-kit-components-checkbox-labeled.js.map
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-interfaces.js
 const TUI_EXAMPLE_PRIMARY_FILE_NAME = {
-  TS: `TypeScript`,
-  LESS: `LESS`,
-  HTML: `HTML`
+  TS: 'TypeScript',
+  LESS: 'LESS',
+  HTML: 'HTML'
 };
 
 /**
@@ -18025,8 +18025,8 @@ let TuiTextCodeModule = /*#__PURE__*/(/* unused pure expression or super */ null
 
 
 
-const TUI_THEME_STORAGE_DEFAULT_KEY = `tuiTheme`;
-const TUI_THEME_DEFAULT_NAME = `Taiga UI`;
+const TUI_THEME_STORAGE_DEFAULT_KEY = 'tuiTheme';
+const TUI_THEME_DEFAULT_NAME = 'Taiga UI';
 const TUI_THEME_STORAGE_KEY = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_THEME_STORAGE_DEFAULT_KEY);
 const TUI_THEME_NAME = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_THEME_DEFAULT_NAME);
 let TuiThemeService = /*#__PURE__*/(() => {
@@ -18051,20 +18051,20 @@ let TuiThemeService = /*#__PURE__*/(() => {
   TuiThemeService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
     token: TuiThemeService,
     factory: TuiThemeService.ɵfac,
-    providedIn: `root`
+    providedIn: 'root'
   });
   return TuiThemeService;
 })();
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-const TUI_THEME_NIGHT_STORAGE_DEFAULT_KEY = `tuiNight`;
+const TUI_THEME_NIGHT_STORAGE_DEFAULT_KEY = 'tuiNight';
 const TUI_THEME_NIGHT_STORAGE_KEY = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(TUI_THEME_NIGHT_STORAGE_DEFAULT_KEY);
 const TUI_USE_DEFAULT_NIGHT_THEME = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(true);
 let TuiThemeNightService = /*#__PURE__*/(() => {
   class TuiThemeNightService extends internal_BehaviorSubject/* BehaviorSubject */.X {
     constructor(win, storage, key, useDefaultNightTheme) {
-      super(storage.getItem(key) === `true` || storage.getItem(key) === null && win.matchMedia(`(prefers-color-scheme: dark)`).matches);
+      super(storage.getItem(key) === 'true' || storage.getItem(key) === null && win.matchMedia('(prefers-color-scheme: dark)').matches);
       this.win = win;
       this.storage = storage;
       this.key = key;
@@ -18084,7 +18084,7 @@ let TuiThemeNightService = /*#__PURE__*/(() => {
   TuiThemeNightService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
     token: TuiThemeNightService,
     factory: TuiThemeNightService.ɵfac,
-    providedIn: `root`
+    providedIn: 'root'
   });
   return TuiThemeNightService;
 })();
@@ -20067,15 +20067,15 @@ let TuiGetColorPipe = /*#__PURE__*/(() => {
   class TuiGetColorPipe {
     transform(color) {
       if (color.length === 4) {
-        return color.split(``).reduce((result, current) => [...result, current, current], []).join(``).replace(`#`, ``);
+        return color.split('').reduce((result, current) => [...result, current, current], []).join('').replace('#', '');
       }
-      if (color.startsWith(`#`)) {
+      if (color.startsWith('#')) {
         return color;
       }
-      if (color === `transparent`) {
-        return `#000000`;
+      if (color === 'transparent') {
+        return '#000000';
       }
-      const parsed = color.replace(`rgb(`, ``).replace(`rgba(`, ``).replace(`)`, ``).replace(` `, ``).split(`,`).map(v => Number.parseInt(v, 10));
+      const parsed = color.replace('rgb(', '').replace('rgba(', '').replace(')', '').replace(' ', '').split(',').map(v => Number.parseInt(v, 10));
       return tuiRgbToHex(...parsed);
     }
   }
@@ -20095,14 +20095,14 @@ let TuiGetColorPipe = /*#__PURE__*/(() => {
 let TuiGetOpacityPipe = /*#__PURE__*/(() => {
   class TuiGetOpacityPipe {
     transform(color) {
-      if (color.startsWith(`#`) || color.startsWith(`rgb(`)) {
+      if (color.startsWith('#') || color.startsWith('rgb(')) {
         return 100;
       }
-      if (color === `transparent`) {
+      if (color === 'transparent') {
         return 0;
       }
-      const lastComma = color.lastIndexOf(`,`);
-      const parsed = color.slice(lastComma).replace(`)`, ``).replace(` `, ``).replace(`,`, ``);
+      const lastComma = color.lastIndexOf(',');
+      const parsed = color.slice(lastComma).replace(')', '').replace(' ', '').replace(',', '');
       return Math.round(Number.parseFloat(parsed) * 100);
     }
   }
@@ -20152,7 +20152,7 @@ let TuiInputOpacityDirective = /*#__PURE__*/(() => {
 let TuiStripOptionalPipe = /*#__PURE__*/(() => {
   class TuiStripOptionalPipe {
     transform(name) {
-      return name.replace(`?`, ``);
+      return name.replace('?', '');
     }
   }
   TuiStripOptionalPipe.ɵfac = function TuiStripOptionalPipe_Factory(t) {
@@ -20171,7 +20171,7 @@ let TuiStripOptionalPipe = /*#__PURE__*/(() => {
 let TuiIsOptionalPipe = /*#__PURE__*/(() => {
   class TuiIsOptionalPipe {
     transform(name) {
-      return name.includes(`?`);
+      return name.includes('?');
     }
   }
   TuiIsOptionalPipe.ɵfac = function TuiIsOptionalPipe_Factory(t) {
@@ -20206,7 +20206,7 @@ let TuiDocTypeReferencePipe = /*#__PURE__*/(() => {
         };
       }).sort((a, b) => {
         var _a, _b, _c;
-        return (_c = (_a = b.reference) === null || _a === void 0 ? void 0 : _a.localeCompare((_b = a.reference) !== null && _b !== void 0 ? _b : ``)) !== null && _c !== void 0 ? _c : -1;
+        return (_c = (_a = b.reference) === null || _a === void 0 ? void 0 : _a.localeCompare((_b = a.reference) !== null && _b !== void 0 ? _b : '')) !== null && _c !== void 0 ? _c : -1;
       });
     }
   }
@@ -20226,7 +20226,7 @@ let TuiDocTypeReferencePipe = /*#__PURE__*/(() => {
 let TuiShowCleanerPipe = /*#__PURE__*/(() => {
   class TuiShowCleanerPipe {
     transform(type) {
-      return type.includes(`null`);
+      return type.includes('null');
     }
   }
   TuiShowCleanerPipe.ɵfac = function TuiShowCleanerPipe_Factory(t) {
@@ -20248,7 +20248,7 @@ let TuiInspectPipe = /*#__PURE__*/(() => {
       this.isE2E = isE2E;
     }
     transform(value, depth = 2) {
-      if (this.isE2E && typeof value === `function`) {
+      if (this.isE2E && typeof value === 'function') {
         /**
          * @description:
          * When developing in production mode the webpack bundler minify
@@ -20256,7 +20256,7 @@ let TuiInspectPipe = /*#__PURE__*/(() => {
          * of the function may differ from build to build, which can be to
          * various problems when screenshot testing on e2e.
          */
-        return `λ(x) => y`;
+        return 'λ(x) => y';
       }
       return (0,taiga_ui_addon_doc_utils/* tuiInspectAny */.sj)(value, depth);
     }
@@ -20424,7 +20424,7 @@ const TUI_DOC_EXAMPLE_DEFAULT_OPTIONS = {
   codeEditorVisibilityHandler: files => Boolean(files[TUI_EXAMPLE_PRIMARY_FILE_NAME.TS] && files[TUI_EXAMPLE_PRIMARY_FILE_NAME.HTML]),
   tabTitles: new Map(),
   fullsize: true,
-  linkIcon: `tuiIconLink`
+  linkIcon: 'tuiIconLink'
 };
 /**
  * Default parameters for DocExample component
@@ -20582,15 +20582,15 @@ function labelsProviderFactory(pages) {
 /**
  * Page title
  */
-const NAVIGATION_TITLE = new core_mjs_.InjectionToken(`[NAVIGATION_TITLE]`);
+const NAVIGATION_TITLE = new core_mjs_.InjectionToken('[NAVIGATION_TITLE]');
 /**
  * Navigation sections labels for search
  */
-const NAVIGATION_LABELS = new core_mjs_.InjectionToken(`[NAVIGATION_LABELS]`);
+const NAVIGATION_LABELS = new core_mjs_.InjectionToken('[NAVIGATION_LABELS]');
 /**
  * Navigation pages
  */
-const NAVIGATION_ITEMS = new core_mjs_.InjectionToken(`[NAVIGATION_ITEMS]`);
+const NAVIGATION_ITEMS = new core_mjs_.InjectionToken('[NAVIGATION_ITEMS]');
 const NAVIGATION_PROVIDERS = [taiga_ui_cdk_services/* TuiDestroyService */.a3, {
   provide: NAVIGATION_TITLE,
   deps: [router_mjs_.Router, router_mjs_.ActivatedRoute, taiga_ui_addon_doc_tokens/* TUI_DOC_TITLE */.Yx, taiga_ui_cdk_services/* TuiDestroyService */.a3],
@@ -21197,16 +21197,16 @@ let TuiDocMainModule = /*#__PURE__*/(() => {
 /**
  * Array if related page titles
  */
-const PAGE_SEE_ALSO = new core_mjs_.InjectionToken(`[PAGE_SEE_ALSO]`);
+const PAGE_SEE_ALSO = new core_mjs_.InjectionToken('[PAGE_SEE_ALSO]');
 const PAGE_PROVIDERS = [{
   provide: PAGE_SEE_ALSO,
   deps: [core_mjs_.ElementRef, taiga_ui_addon_doc_tokens/* TUI_DOC_SEE_ALSO */.UL],
   useFactory: ({
     nativeElement
   }, seeAlsoGroups) => {
-    const currentHeader = nativeElement.getAttribute(`header`);
+    const currentHeader = nativeElement.getAttribute('header');
     const groups = seeAlsoGroups.filter(group => group.includes(currentHeader)) || [];
-    const seeAlsoSet = new Set(groups.join().split(`,`).filter(component => component && component !== currentHeader));
+    const seeAlsoSet = new Set(groups.join().split(',').filter(component => component && component !== currentHeader));
     return Array.from(seeAlsoSet);
   }
 }];
@@ -21389,23 +21389,23 @@ let TuiDocPageModule = /*#__PURE__*/(() => {
 /**
  * Code actions for the opened tab with code example
  */
-const TUI_DOC_CODE_ACTIONS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(``);
+const TUI_DOC_CODE_ACTIONS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)('');
 
 /**
  * Service for opening online IDE e.g. Stackblitz
  */
-const TUI_DOC_CODE_EDITOR = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(`[TUI_DOC_CODE_EDITOR]`);
+const TUI_DOC_CODE_EDITOR = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('[TUI_DOC_CODE_EDITOR]');
 
 /**
  * Array of default tab names
  */
 const TUI_DOC_DEFAULT_TABS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)([]);
 const TUI_DOC_DEFAULT_ICONS = {
-  search: `tuiIconSearch`,
-  day: `tuiIconSun`,
-  night: `tuiIconMoon`,
-  code: `tuiIconCode`,
-  menu: `tuiIconMenuLarge`
+  search: 'tuiIconSearch',
+  day: 'tuiIconSun',
+  night: 'tuiIconMoon',
+  code: 'tuiIconCode',
+  menu: 'tuiIconMenuLarge'
 };
 const TUI_DOC_ICONS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(TUI_DOC_DEFAULT_ICONS);
 function tuiDocIconsProvider(icons) {
@@ -21440,7 +21440,7 @@ function tuiDocExcludeProperties(properties) {
  * Works with a tuple
  * [@string tuiMode tooltip content, @string word 'background', @string 'form value']
  */
-const TUI_DOC_DEMO_TEXTS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)([`Read more more about modes: `, `Background`, `Form value`]);
+const TUI_DOC_DEMO_TEXTS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(['Read more more about modes: ', 'Background', 'Form value']);
 /**
  * tui-doc-documentation i18n texts
  * Works with a tuple
@@ -21452,7 +21452,7 @@ const TUI_DOC_DEMO_TEXTS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiC
  * @string message for tooltip about ng-polymorpheus
  * ]
  */
-const TUI_DOC_DOCUMENTATION_TEXTS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)([`Argument`, `Type`, `Name and description`, `Value`, `Learn about our dynamic templates from `]);
+const TUI_DOC_DOCUMENTATION_TEXTS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(['Argument', 'Type', 'Name and description', 'Value', 'Learn about our dynamic templates from ']);
 /**
  * tui-doc-example i18n texts
  * Works with a tuple
@@ -21462,16 +21462,16 @@ const TUI_DOC_DOCUMENTATION_TEXTS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1_
  * @string link to a sample copied message label
  * ]
  */
-const TUI_DOC_EXAMPLE_TEXTS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)([`Preview`, `Link to a sample was successfully copied`, `Done`]);
-const TUI_DOC_MENU_TEXT = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(`Menu`);
-const TUI_DOC_SEARCH_TEXT = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(`Search`);
-const TUI_DOC_SEE_ALSO_TEXT = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(`See also`);
-const TUI_DOC_SOURCE_CODE_TEXT = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(`Source code`);
+const TUI_DOC_EXAMPLE_TEXTS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(['Preview', 'Link to a sample was successfully copied', 'Done']);
+const TUI_DOC_MENU_TEXT = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)('Menu');
+const TUI_DOC_SEARCH_TEXT = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)('Search');
+const TUI_DOC_SEE_ALSO_TEXT = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)('See also');
+const TUI_DOC_SOURCE_CODE_TEXT = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)('Source code');
 
 /**
  * Main logo
  */
-const TUI_DOC_LOGO = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(``);
+const TUI_DOC_LOGO = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)('');
 
 /**
  * Stream that emits if loading of page is over (for example, to begin scrollIntoView)
@@ -21488,7 +21488,7 @@ const TUI_DOC_MAP_PAGES = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCr
  * Defines the transition animation for scroll
  * @deprecated will be remove in v4.0
  */
-const TUI_DOC_SCROLL_BEHAVIOR = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateTokenFromFactory */ .N1)(() => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_taiga_ui_core__WEBPACK_IMPORTED_MODULE_8__/* .TUI_REDUCED_MOTION */ .TK) ? `auto` : `smooth`);
+const TUI_DOC_SCROLL_BEHAVIOR = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateTokenFromFactory */ .N1)(() => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_taiga_ui_core__WEBPACK_IMPORTED_MODULE_8__/* .TUI_REDUCED_MOTION */ .TK) ? 'auto' : 'smooth');
 
 /**
  * Array of arrays of related pages
@@ -21503,7 +21503,7 @@ const TUI_DOC_SOURCE_CODE = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tui
 /**
  * Page title prefix
  */
-const TUI_DOC_TITLE = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(``);
+const TUI_DOC_TITLE = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)('');
 const TUI_DOC_TYPE_REFERENCE_HANDLER = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(null);
 const TUI_DOC_TYPE_REFERENCE_PARSER = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(_taiga_ui_addon_doc_utils__WEBPACK_IMPORTED_MODULE_3__/* .tuiTypeReferenceParser */ .TN);
 const TUI_DOC_URL_STATE_HANDLER = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiCreateToken */ .JN)(String);
@@ -29830,22 +29830,22 @@ var tslib_es6 = __webpack_require__(7582);
 
 
 function tuiCoerceValueIsTrue(value) {
-  return (value === null || value === void 0 ? void 0 : value.toString()) === `true`;
+  return (value === null || value === void 0 ? void 0 : value.toString()) === 'true';
 }
 function isEmptyParamValue(value) {
-  return [`undefined`, `null`, `NaN`].includes(value);
+  return ['undefined', 'null', 'NaN'].includes(value);
 }
 function isBooleanParamValue(value) {
-  return value === `true` || value === `false`;
+  return value === 'true' || value === 'false';
 }
 function isNumberParamValue(value) {
-  return !!value.trim() && !Number.isNaN(Number(value)) && !value.startsWith(`+`);
+  return !!value.trim() && !Number.isNaN(Number(value)) && !value.startsWith('+');
 }
 function isPossibleArray(value) {
-  return value.startsWith(`[`) && value.endsWith(`]`);
+  return value.startsWith('[') && value.endsWith(']');
 }
 function isPossibleObject(value) {
-  return value.startsWith(`{`) && value.endsWith(`}`);
+  return value.startsWith('{') && value.endsWith('}');
 }
 function tuiCoerceValue(value) {
   const prepared = String(value).trim();
@@ -29853,7 +29853,7 @@ function tuiCoerceValue(value) {
     return null;
   }
   if (isBooleanParamValue(prepared)) {
-    return String(prepared) === `true`;
+    return String(prepared) === 'true';
   }
   if (isNumberParamValue(prepared)) {
     return Number(prepared);
@@ -29867,35 +29867,35 @@ function tuiCoerceValue(value) {
 }
 function tuiGenerateRoutes(type) {
   return [{
-    path: ``,
+    path: '',
     component: type,
     children: [{
-      path: `:tab`,
+      path: ':tab',
       component: type
     }]
   }];
 }
 function inspectArray(array, depth) {
   if (depth === 0) {
-    return `[…]`;
+    return '[…]';
   }
-  let result = ``;
+  let result = '';
   let first = true;
   for (let index = 0; index < array.length; index++) {
     if (first) {
       first = false;
     } else {
-      result += `, `;
+      result += ', ';
     }
-    result += index in array ? tuiInspectAny(array[index], depth - 1) : `empty`;
+    result += index in array ? tuiInspectAny(array[index], depth - 1) : 'empty';
   }
   return `[${result}]`;
 }
 function inspectObject(object, depth) {
   if (depth === 0) {
-    return `{…}`;
+    return '{…}';
   }
-  let result = ``;
+  let result = '';
   let first = true;
   for (const key in object) {
     if (!object.hasOwnProperty(key)) {
@@ -29904,7 +29904,7 @@ function inspectObject(object, depth) {
     if (first) {
       first = false;
     } else {
-      result += `, `;
+      result += ', ';
     }
     result += `${key}: ${tuiInspectAny(object[key], depth - 1)}`;
   }
@@ -29918,15 +29918,15 @@ function inspectObject(object, depth) {
  */
 function tuiInspectAny(data, depth) {
   if (data === null) {
-    return `null`;
+    return 'null';
   }
   switch (typeof data) {
-    case `string`:
+    case 'string':
       return `'${data}'`;
-    case `undefined`:
-    case `number`:
-    case `boolean`:
-    case `function`:
+    case 'undefined':
+    case 'number':
+    case 'boolean':
+    case 'function':
       return String(data);
     default:
       break;
@@ -29940,14 +29940,14 @@ function tuiInspectAny(data, depth) {
   return inspectObject(data, depth);
 }
 function tuiIsPageGroup(page) {
-  return `subPages` in page;
+  return 'subPages' in page;
 }
-function tuiTryParseMarkdownCodeBlock(text = ``) {
+function tuiTryParseMarkdownCodeBlock(text = '') {
   const tokens = new markdown_it_lib().parse(text, {});
   const result = tokens.filter(({
     tag,
     type
-  }) => tag === `code` && type === `fence`).map(({
+  }) => tag === 'code' && type === 'fence').map(({
     content
   }) => content.trim());
   return result.length ? result : [text];
@@ -29972,7 +29972,7 @@ function tuiSortPages(pages, excludeSections = new Set()) {
   const sections = Array.from(new Set(pages.map(page => page.section)));
   const sortedPages = pages.slice().sort((a, b) => {
     var _a, _b;
-    if (excludeSections.has((_a = a.section) !== null && _a !== void 0 ? _a : ``) || excludeSections.has((_b = b.section) !== null && _b !== void 0 ? _b : ``)) {
+    if (excludeSections.has((_a = a.section) !== null && _a !== void 0 ? _a : '') || excludeSections.has((_b = b.section) !== null && _b !== void 0 ? _b : '')) {
       return 0;
     }
     const aSectionIndex = sections.indexOf(a.section);
@@ -29992,13 +29992,13 @@ function tuiSortPages(pages, excludeSections = new Set()) {
 function assertTitle(page, map) {
   var _a;
   if (map.has(page.title) && ((_a = map.get(page.title)) === null || _a === void 0 ? void 0 : _a.route) !== page.route) {
-    console.error(`Title for page should be unique for prevent inconsistent page names`, page, `<== Collisions between ==>`, map.get(page.title));
+    console.error('Title for page should be unique for prevent inconsistent page names', page, '<== Collisions between ==>', map.get(page.title));
   }
 }
 function tuiToFlatMapPages(pages) {
   const map = new Map();
   pages.forEach(page => {
-    if (`subPages` in page) {
+    if ('subPages' in page) {
       page.subPages.forEach(subPage => {
         ngDevMode && assertTitle(subPage, map);
         map.set(subPage.title, subPage);
@@ -30011,38 +30011,38 @@ function tuiToFlatMapPages(pages) {
   return map;
 }
 const MAP = {
-  а: `f`,
-  б: `,`,
-  в: `d`,
-  г: `u`,
-  д: `l`,
-  е: `t`,
-  ё: `\``,
-  ж: `;`,
-  з: `p`,
-  и: `b`,
-  й: `q`,
-  к: `r`,
-  л: `k`,
-  м: `v`,
-  н: `y`,
-  о: `j`,
-  п: `g`,
-  р: `h`,
-  с: `c`,
-  т: `n`,
-  у: `e`,
-  ф: `a`,
-  х: `[`,
-  ц: `w`,
-  ч: `x`,
-  ш: `i`,
-  щ: `o`,
-  ъ: `]`,
-  ы: `s`,
-  ь: `m`,
-  ю: `.`,
-  я: `z`
+  а: 'f',
+  б: ',',
+  в: 'd',
+  г: 'u',
+  д: 'l',
+  е: 't',
+  ё: '`',
+  ж: ';',
+  з: 'p',
+  и: 'b',
+  й: 'q',
+  к: 'r',
+  л: 'k',
+  м: 'v',
+  н: 'y',
+  о: 'j',
+  п: 'g',
+  р: 'h',
+  с: 'c',
+  т: 'n',
+  у: 'e',
+  ф: 'a',
+  х: '[',
+  ц: 'w',
+  ч: 'x',
+  ш: 'i',
+  щ: 'o',
+  ъ: ']',
+  ы: 's',
+  ь: 'm',
+  ю: '.',
+  я: 'z'
 };
 /**
  * Translates text mistakenly typed in the Russian layout into English
@@ -30050,7 +30050,7 @@ const MAP = {
  * @return string with English layout characters
  */
 function tuiTransliterateKeyboardLayout(string) {
-  let newStr = ``;
+  let newStr = '';
   for (let i = 0; i < string.length; i++) {
     newStr += string.charAt(i) in MAP ? MAP[string.charAt(i)] : string.charAt(i);
   }
@@ -30058,18 +30058,18 @@ function tuiTransliterateKeyboardLayout(string) {
 }
 function tuiTypeReferenceParser(types) {
   const generics = types.match(/<([^>]+)>/g);
-  const escaped = generics ? generics.reduce((result, current) => result.replace(current, current.replace(/\|/g, `&`)), types).split(`|`).map(item => item.trim()) : types.split(`|`).map(item => item.trim());
+  const escaped = generics ? generics.reduce((result, current) => result.replace(current, current.replace(/\|/g, '&')), types).split('|').map(item => item.trim()) : types.split('|').map(item => item.trim());
   return escaped.reduce((result, type) => {
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
-    let extracted = type.trim().replace(/readonly /g, ``).replace(/\[\]/g, ``);
-    extracted = (_d = (_c = (_b = (_a = extracted.match(/ReadonlyArray<([^>]+)>/)) === null || _a === void 0 ? void 0 : _a[1]) === null || _b === void 0 ? void 0 : _b.split(`&`)) === null || _c === void 0 ? void 0 : _c[0]) !== null && _d !== void 0 ? _d : extracted;
-    extracted = (_h = (_g = (_f = (_e = extracted.match(/\[([^\]]+)\]/)) === null || _e === void 0 ? void 0 : _e[1]) === null || _f === void 0 ? void 0 : _f.split(`,`)) === null || _g === void 0 ? void 0 : _g[0]) !== null && _h !== void 0 ? _h : extracted;
-    extracted = (_m = (_l = (_k = (_j = extracted.split(`<`)) === null || _j === void 0 ? void 0 : _j[0]) !== null && _k !== void 0 ? _k : extracted) === null || _l === void 0 ? void 0 : _l.trim()) !== null && _m !== void 0 ? _m : ``;
-    extracted = Number.isNaN(parseFloat(extracted)) ? extracted : `number`;
-    extracted = /^'(.+)'$|^"(.+)"$|^`(.+)`$/.test(extracted) ? `string` : extracted;
-    extracted = extracted.length === 1 ? `unknown` : extracted;
+    let extracted = type.trim().replace(/readonly /g, '').replace(/\[\]/g, '');
+    extracted = (_d = (_c = (_b = (_a = extracted.match(/ReadonlyArray<([^>]+)>/)) === null || _a === void 0 ? void 0 : _a[1]) === null || _b === void 0 ? void 0 : _b.split('&')) === null || _c === void 0 ? void 0 : _c[0]) !== null && _d !== void 0 ? _d : extracted;
+    extracted = (_h = (_g = (_f = (_e = extracted.match(/\[([^\]]+)\]/)) === null || _e === void 0 ? void 0 : _e[1]) === null || _f === void 0 ? void 0 : _f.split(',')) === null || _g === void 0 ? void 0 : _g[0]) !== null && _h !== void 0 ? _h : extracted;
+    extracted = (_m = (_l = (_k = (_j = extracted.split('<')) === null || _j === void 0 ? void 0 : _j[0]) !== null && _k !== void 0 ? _k : extracted) === null || _l === void 0 ? void 0 : _l.trim()) !== null && _m !== void 0 ? _m : '';
+    extracted = Number.isNaN(parseFloat(extracted)) ? extracted : 'number';
+    extracted = /^'(.+)'$|^"(.+)"$|^`(.+)`$/.test(extracted) ? 'string' : extracted;
+    extracted = extracted.length === 1 ? 'unknown' : extracted;
     return result.concat({
-      type: type.replace(/&/g, `|`),
+      type: type.replace(/&/g, '|'),
       extracted
     });
   }, []);
@@ -30137,7 +30137,7 @@ function tuiTypeReferenceParser(types) {
 
 
 const _c0 = ["viewContainer"];
-const TUI = `tui_interactive_`;
+const TUI = 'tui_interactive_';
 /**
  * The most basic class for interactive components
  */
@@ -30151,7 +30151,7 @@ let AbstractTuiInteractive = /*#__PURE__*/(() => {
        * Determines if component is focusable with keyboard.
        */
       this.focusable = true;
-      this.nativeId = ``;
+      this.nativeId = '';
       /**
        * Emits 'true' on focus and 'false' on blur.
        */
@@ -30239,7 +30239,7 @@ let AbstractTuiControl = /*#__PURE__*/(() => {
       this.readOnly = false;
       this.pseudoInvalid = null;
       if (ngDevMode && this.ngControl === null) {
-        _taiga_ui_cdk_classes__WEBPACK_IMPORTED_MODULE_4__/* .tuiAssert */ .z.assert(false, `NgControl not injected in ${this.constructor.name}!\n`, `Use [(ngModel)] or [formControl] or formControlName for correct work.`);
+        _taiga_ui_cdk_classes__WEBPACK_IMPORTED_MODULE_4__/* .tuiAssert */ .z.assert(false, `NgControl not injected in ${this.constructor.name}!\n`, 'Use [(ngModel)] or [formControl] or formControlName for correct work.');
       }
       if (this.ngControl) {
         this.ngControl.valueAccessor = this;
@@ -30655,7 +30655,7 @@ let AbstractTuiThemeSwitcher = /*#__PURE__*/(() => {
         this.addTheme();
         return;
       }
-      const styles = this.doc.head.querySelectorAll(`style`);
+      const styles = this.doc.head.querySelectorAll('style');
       this.constructor.style = styles[styles.length - 1];
     }
     get style() {
@@ -30834,23 +30834,23 @@ const TUI_DEFAULT_IDENTITY_MATCHER = (item1, item2) => item1 === item2 || bothEm
 /**
  * Add to enable child :leave animation (fixes https://github.com/angular/angular/issues/15753)
  */
-const TUI_PARENT_ANIMATION = (0,_angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .trigger */ .X$)(`tuiParentAnimation`, [(0,_angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .transition */ .eR)(`:leave`, [(0,_angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .query */ .IO)(`:scope > *`, [(0,_angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .animateChild */ .pV)()], {
+const TUI_PARENT_ANIMATION = (0,_angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .trigger */ .X$)('tuiParentAnimation', [(0,_angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .transition */ .eR)(':leave', [(0,_angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .query */ .IO)(':scope > *', [(0,_angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .animateChild */ .pV)()], {
   optional: true
 })])]);
 /**
  * Add on parent to stop initial :enter animation for children
  */
-const TUI_PARENT_STOP = (0,_angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .trigger */ .X$)(`tuiParentStop`, [(0,_angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .transition */ .eR)(`:enter`, [])]);
+const TUI_PARENT_STOP = (0,_angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .trigger */ .X$)('tuiParentStop', [(0,_angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .transition */ .eR)(':enter', [])]);
 const POLLING_TIME = 1000 / 15;
 
 // Filtering SVGElements for TreeWalker
 // Filter must be a function in IE, other modern browsers are compliant to this format
-const svgNodeFilter = node => `ownerSVGElement` in node ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+const svgNodeFilter = node => 'ownerSVGElement' in node ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
 
 /**
  * {@link https://unicode-table.com/en/00A0/ Non-breaking space}.
  */
-const CHAR_NO_BREAK_SPACE = `\u00A0`;
+const CHAR_NO_BREAK_SPACE = '\u00A0';
 /**
  * {@link https://unicode-table.com/en/2013/ EN dash}
  * is used to indicate a range of numbers or a span of time.
@@ -30858,7 +30858,7 @@ const CHAR_NO_BREAK_SPACE = `\u00A0`;
  * ___
  * Don't confuse with {@link CHAR_EM_DASH} or {@link CHAR_HYPHEN}!
  */
-const CHAR_EN_DASH = `\u2013`;
+const CHAR_EN_DASH = '\u2013';
 /**
  * {@link https://unicode-table.com/en/2014/ EM dash}
  * is used to mark a break in a sentence.
@@ -30866,15 +30866,15 @@ const CHAR_EN_DASH = `\u2013`;
  * ___
  * Don't confuse with {@link CHAR_EN_DASH} or {@link CHAR_HYPHEN}!
  */
-const CHAR_EM_DASH = (/* unused pure expression or super */ null && (`\u2014`));
+const CHAR_EM_DASH = '\u2014';
 /**
  * {@link https://unicode-table.com/en/00AB/ Left-Pointing Double Angle Quotation Mark}
  */
-const CHAR_LAQUO = (/* unused pure expression or super */ null && (`\u00AB`));
+const CHAR_LAQUO = '\u00AB';
 /**
  * {@link https://unicode-table.com/en/00BB/ Right-Pointing Double Angle Quotation Mark}
  */
-const CHAR_RAQUO = (/* unused pure expression or super */ null && (`\u00BB`));
+const CHAR_RAQUO = '\u00BB';
 /**
  * {@link https://unicode-table.com/en/002D/ Hyphen (minus sign)}
  * is used to combine words.
@@ -30882,34 +30882,34 @@ const CHAR_RAQUO = (/* unused pure expression or super */ null && (`\u00BB`));
  * ___
  * Don't confuse with {@link CHAR_EN_DASH} or {@link CHAR_EM_DASH}!
  */
-const CHAR_HYPHEN = `\u002D`;
+const CHAR_HYPHEN = '\u002D';
 /**
  * {@link https://unicode-table.com/en/2212/ Minus}
  * is used as math operator symbol or before negative digits.
  * ---
  * Can be used as `&minus;`. Don't confuse with {@link CHAR_HYPHEN}
  */
-const CHAR_MINUS = `\u2212`;
+const CHAR_MINUS = '\u2212';
 /**
  * {@link https://unicode-table.com/en/002B/ Plus}
  */
-const CHAR_PLUS = (/* unused pure expression or super */ null && (`\u002B`));
+const CHAR_PLUS = '\u002B';
 /**
  * {@link https://unicode-table.com/en/2022/ Bullet}.
  */
-const CHAR_BULLET = (/* unused pure expression or super */ null && (`\u2022`));
+const CHAR_BULLET = '\u2022';
 /**
  * {@link https://unicode-table.com/en/2026/ Suspension points}.
  */
-const CHAR_ELLIPSIS = (/* unused pure expression or super */ null && (`\u2026`));
+const CHAR_ELLIPSIS = '\u2026';
 /**
  * {@link https://unicode-table.com/en/00A4/ Suspension points}.
  */
-const CHAR_CURRENCY_SIGN = (/* unused pure expression or super */ null && (`\u00A4`));
+const CHAR_CURRENCY_SIGN = '\u00A4';
 /**
  * {@link https://unicode-table.com/en/200b/ Suspension points}.
  */
-const CHAR_ZERO_WIDTH_SPACE = (/* unused pure expression or super */ null && (`\u200B`));
+const CHAR_ZERO_WIDTH_SPACE = '\u200B';
 
 /**
  * @description:
@@ -30917,8 +30917,8 @@ const CHAR_ZERO_WIDTH_SPACE = (/* unused pure expression or super */ null && (`\
  *
  * Array of icons used in taiga-ui components
  */
-const TUI_USED_ICONS = (/* unused pure expression or super */ null && ([`tuiIconMirMono`, `tuiIconVisaMono`, `tuiIconElectronMono`, `tuiIconMastercard`, `tuiIconMaestro`, `tuiIconAmex`, `tuiIconDinersClub`, `tuiIconDiscover`, `tuiIconHumo`, `tuiIconJCB`, `tuiIconRuPay`, `tuiIconUnionPay`, `tuiIconUzcard`, `tuiIconVerve`, `tuiIconCopyLarge`, `tuiIconCheckLarge`, `tuiIconLink`, `tuiIconSearch`, `tuiIconSun`, `tuiIconMoon`, `tuiIconCode`, `tuiIconMenuLarge`, `tuiIconRotate`, `tuiIconArrowLeft`, `tuiIconArrowRight`, `tuiIconPlus`, `tuiIconMinus`, `tuiIconMinimize`, `tuiIconEye`, `tuiIconEyeOff`, `tuiIconDrag`, `tuiIconSortAscending`, `tuiIconSortDescending`, `tuiIconSortOff`, `tuiIconCheck`, `tuiIconMinusLarge`, `tuiIconChevronUp`, `tuiIconHelpCircle`, `tuiIconClose`, `tuiIconAlertCircle`, `tuiIconChevronRight`, `tuiIconInfo`, `tuiIconCheckCircle`, `tuiIconXCircle`, `tuiIconChevronLeft`, `tuiIconStarLarge`, `tuiIconChevronDown`, `tuiIconChevronDownLarge`, `tuiIconFileLarge`, `tuiIconTrashLarge`, `tuiIconAlertCircleLarge`, `tuiIconCheckCircleLarge`, `tuiIconCopy`, `tuiIconEyeOffLarge`, `tuiIconEyeLarge`, `tuiIconClock`, `tuiIconClockLarge`, `tuiIconToggleOff`, `tuiIconToggleOffLarge`, `tuiIconToggleOn`, `tuiIconToggleOnLarge`, `tuiIconCalendar`, `tuiIconCalendarLarge`]));
-const TUI_VERSION = `3.60.0`;
+const TUI_USED_ICONS = (/* unused pure expression or super */ null && (['tuiIconMirMono', 'tuiIconVisaMono', 'tuiIconElectronMono', 'tuiIconMastercard', 'tuiIconMaestro', 'tuiIconAmex', 'tuiIconDinersClub', 'tuiIconDiscover', 'tuiIconHumo', 'tuiIconJCB', 'tuiIconRuPay', 'tuiIconUnionPay', 'tuiIconUzcard', 'tuiIconVerve', 'tuiIconCopyLarge', 'tuiIconCheckLarge', 'tuiIconLink', 'tuiIconSearch', 'tuiIconSun', 'tuiIconMoon', 'tuiIconCode', 'tuiIconMenuLarge', 'tuiIconRotate', 'tuiIconArrowLeft', 'tuiIconArrowRight', 'tuiIconPlus', 'tuiIconMinus', 'tuiIconMinimize', 'tuiIconEye', 'tuiIconEyeOff', 'tuiIconDrag', 'tuiIconSortAscending', 'tuiIconSortDescending', 'tuiIconSortOff', 'tuiIconCheck', 'tuiIconMinusLarge', 'tuiIconChevronUp', 'tuiIconHelpCircle', 'tuiIconClose', 'tuiIconAlertCircle', 'tuiIconChevronRight', 'tuiIconInfo', 'tuiIconCheckCircle', 'tuiIconXCircle', 'tuiIconChevronLeft', 'tuiIconStarLarge', 'tuiIconChevronDown', 'tuiIconChevronDownLarge', 'tuiIconFileLarge', 'tuiIconTrashLarge', 'tuiIconAlertCircleLarge', 'tuiIconCheckCircleLarge', 'tuiIconCopy', 'tuiIconEyeOffLarge', 'tuiIconEyeLarge', 'tuiIconClock', 'tuiIconClockLarge', 'tuiIconToggleOff', 'tuiIconToggleOffLarge', 'tuiIconToggleOn', 'tuiIconToggleOnLarge', 'tuiIconCalendar', 'tuiIconCalendarLarge']));
+const TUI_VERSION = `3.61.0`;
 
 /**
  * Generated bundle index. Do not edit.
@@ -31041,12 +31041,12 @@ function decorateGetter(originalGetter, propertyKey, enumerable = true) {
   };
 }
 function tuiPure(target, propertyKeyOrContext, descriptor) {
-  if (typeof target === `function`) {
+  if (typeof target === 'function') {
     const context = propertyKeyOrContext;
-    if (context.kind === `getter`) {
+    if (context.kind === 'getter') {
       return decorateGetter(target, context.name);
     }
-    if (context.kind === `method`) {
+    if (context.kind === 'method') {
       return decorateMethod(target);
     }
     throw new _taiga_ui_cdk_exceptions__WEBPACK_IMPORTED_MODULE_0__/* .TuiPureException */ .jw();
@@ -31064,7 +31064,7 @@ function tuiPure(target, propertyKeyOrContext, descriptor) {
       get: decorateGetter(get, propertyKey, enumerable)
     };
   }
-  if (typeof value !== `function`) {
+  if (typeof value !== 'function') {
     throw new _taiga_ui_cdk_exceptions__WEBPACK_IMPORTED_MODULE_0__/* .TuiPureException */ .jw();
   }
   const original = value;
@@ -31288,67 +31288,67 @@ var TuiMonthNumber = /*#__PURE__*/function (TuiMonthNumber) {
 /* unused harmony exports TuiComputedDocumentException, TuiDocumentSelectionException, TuiTableSortKeyException, TuiTsParserException, TuiValuePresentException, TuiXmlParsingException */
 class TuiComputedDocumentException extends (/* unused pure expression or super */ null && (Error)) {
   constructor() {
-    super(ngDevMode ? `Only use computedDocument after load event` : ``);
+    super(ngDevMode ? 'Only use computedDocument after load event' : '');
   }
 }
 class TuiDocumentSelectionException extends (/* unused pure expression or super */ null && (Error)) {
   constructor() {
-    super(ngDevMode ? `Failed to get document selection` : ``);
+    super(ngDevMode ? 'Failed to get document selection' : '');
   }
 }
 class TuiInvalidDayException extends Error {
   constructor(day) {
-    super(ngDevMode ? `Invalid day: ${day}` : ``);
+    super(ngDevMode ? `Invalid day: ${day}` : '');
   }
 }
 class TuiInvalidMonthException extends Error {
   constructor(month) {
-    super(ngDevMode ? `Invalid month: ${month}` : ``);
+    super(ngDevMode ? `Invalid month: ${month}` : '');
   }
 }
 class TuiInvalidYearException extends Error {
   constructor(year) {
-    super(ngDevMode ? `Invalid year: ${year}` : ``);
+    super(ngDevMode ? `Invalid year: ${year}` : '');
   }
 }
 class TuiNoHostException extends Error {
   constructor() {
-    super(ngDevMode ? `Portals cannot be used without TuiPortalHostComponent` : ``);
+    super(ngDevMode ? 'Portals cannot be used without TuiPortalHostComponent' : '');
   }
 }
 class TuiOwnerDocumentException extends Error {
   constructor() {
-    super(ngDevMode ? `Element does not have ownerDocument` : ``);
+    super(ngDevMode ? 'Element does not have ownerDocument' : '');
   }
 }
 class TuiPureException extends Error {
   constructor() {
-    super(ngDevMode ? `tuiPure can only be used with functions or getters` : ``);
+    super(ngDevMode ? 'tuiPure can only be used with functions or getters' : '');
   }
 }
 class TuiTableSortKeyException extends (/* unused pure expression or super */ null && (Error)) {
   constructor() {
-    super(ngDevMode ? `Trying to sort with no key` : ``);
+    super(ngDevMode ? 'Trying to sort with no key' : '');
   }
 }
 class TuiTsParserException extends (/* unused pure expression or super */ null && (Error)) {
   constructor() {
-    super(ngDevMode ? `TsFileParser: 1 component/module per ts-file` : ``);
+    super(ngDevMode ? 'TsFileParser: 1 component/module per ts-file' : '');
   }
 }
 class TuiValueChangesException extends Error {
   constructor() {
-    super(ngDevMode ? `Control does not have valueChanges` : ``);
+    super(ngDevMode ? 'Control does not have valueChanges' : '');
   }
 }
 class TuiValuePresentException extends (/* unused pure expression or super */ null && (Error)) {
   constructor() {
-    super(ngDevMode ? `Value must present` : ``);
+    super(ngDevMode ? 'Value must present' : '');
   }
 }
 class TuiXmlParsingException extends (/* unused pure expression or super */ null && (Error)) {
   constructor() {
-    super(ngDevMode ? `Error parsing XML string` : ``);
+    super(ngDevMode ? 'Error parsing XML string' : '');
   }
 }
 
@@ -31432,7 +31432,7 @@ function tuiTypedFromEvent(target, event, options = {}) {
  * @param target
  */
 function tuiMouseDragFinishFrom(target) {
-  return merge(tuiTypedFromEvent(target, `mouseup`), tuiTypedFromEvent(target, `dragend`));
+  return merge(tuiTypedFromEvent(target, 'mouseup'), tuiTypedFromEvent(target, 'dragend'));
 }
 
 // TODO: change type in v4.0
@@ -31456,7 +31456,7 @@ function tuiDragAndDropFrom(element) {
   if (!ownerDocument) {
     throw new TuiOwnerDocumentException();
   }
-  return concat(tuiTypedFromEvent(element, `mousedown`).pipe(take(1), map(event => new TuiDragState(TuiDragStage.Start, event))), merge(tuiTypedFromEvent(ownerDocument, `mousemove`).pipe(map(event => new TuiDragState(TuiDragStage.Continues, event))), tuiMouseDragFinishFrom(ownerDocument).pipe(take(1), map(event => new TuiDragState(TuiDragStage.End, event)), endWith(null))).pipe(takeWhile(tuiIsPresent))).pipe(repeat());
+  return concat(tuiTypedFromEvent(element, 'mousedown').pipe(take(1), map(event => new TuiDragState(TuiDragStage.Start, event))), merge(tuiTypedFromEvent(ownerDocument, 'mousemove').pipe(map(event => new TuiDragState(TuiDragStage.Continues, event))), tuiMouseDragFinishFrom(ownerDocument).pipe(take(1), map(event => new TuiDragState(TuiDragStage.End, event)), endWith(null))).pipe(takeWhile(tuiIsPresent))).pipe(repeat());
 }
 
 /**
@@ -31468,7 +31468,7 @@ function tuiIsAlive(lifespan = 0) {
 let documentMouseUpIsAlive$;
 let documentMouseDownIsAlive$;
 function tuiFocusVisibleObservable(element) {
-  const elementBlur$ = tuiTypedFromEvent(element, `blur`);
+  const elementBlur$ = tuiTypedFromEvent(element, 'blur');
   const {
     ownerDocument
   } = element;
@@ -31476,13 +31476,13 @@ function tuiFocusVisibleObservable(element) {
     throw new _taiga_ui_cdk_exceptions__WEBPACK_IMPORTED_MODULE_1__/* .TuiOwnerDocumentException */ .aq();
   }
   if (!documentMouseDownIsAlive$ || !documentMouseUpIsAlive$) {
-    documentMouseUpIsAlive$ = tuiTypedFromEvent(ownerDocument, `mouseup`, {
+    documentMouseUpIsAlive$ = tuiTypedFromEvent(ownerDocument, 'mouseup', {
       capture: true
     }).pipe(tuiIsAlive(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__/* .startWith */ .O)(false), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__/* .shareReplay */ .d)({
       bufferSize: 1,
       refCount: true
     }));
-    documentMouseDownIsAlive$ = tuiTypedFromEvent(ownerDocument, `mousedown`, {
+    documentMouseDownIsAlive$ = tuiTypedFromEvent(ownerDocument, 'mousedown', {
       capture: true
     }).pipe(tuiIsAlive(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__/* .startWith */ .O)(false), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__/* .shareReplay */ .d)({
       bufferSize: 1,
@@ -31491,7 +31491,7 @@ function tuiFocusVisibleObservable(element) {
   }
   return (0,rxjs__WEBPACK_IMPORTED_MODULE_11__/* .merge */ .T)(
   // focus events excluding ones that came right after mouse action
-  (0,rxjs__WEBPACK_IMPORTED_MODULE_12__/* .concat */ .z)(tuiTypedFromEvent(element, `focus`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__/* .take */ .q)(1)),
+  (0,rxjs__WEBPACK_IMPORTED_MODULE_12__/* .concat */ .z)(tuiTypedFromEvent(element, 'focus').pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__/* .take */ .q)(1)),
   // filtering out blur events when element remains focused so that we ignore browser tab focus loss
   elementBlur$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__/* .filter */ .h)(() => !(0,_taiga_ui_cdk_utils_focus__WEBPACK_IMPORTED_MODULE_15__/* .tuiIsNativeFocused */ .V8)(element)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__/* .take */ .q)(1), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_16__/* .ignoreElements */ .l)())).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_17__/* .repeat */ .r)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_18__/* .withLatestFrom */ .M)(documentMouseDownIsAlive$, documentMouseUpIsAlive$, (_event, elementActual, documentActual) => elementActual || documentActual), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_14__/* .filter */ .h)(_taiga_ui_cdk_utils__WEBPACK_IMPORTED_MODULE_19__/* .tuiIsFalsy */ .Mv))).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__/* .switchMap */ .w)(() => elementBlur$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__/* .map */ .U)(_taiga_ui_cdk_constants__WEBPACK_IMPORTED_MODULE_8__/* .ALWAYS_FALSE_HANDLER */ .Iy), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_13__/* .take */ .q)(1), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__/* .startWith */ .O)(true))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__/* .distinctUntilChanged */ .x)());
 }
@@ -31500,7 +31500,7 @@ function tuiIfMap(project, predicate = Boolean) {
 }
 function tuiIsObserved(observable) {
   var _a, _b;
-  return `observed` in observable ? observable.observed : !!((_b = (_a = observable) === null || _a === void 0 ? void 0 : _a.observers) === null || _b === void 0 ? void 0 : _b.length);
+  return 'observed' in observable ? observable.observed : !!((_b = (_a = observable) === null || _a === void 0 ? void 0 : _a.observers) === null || _b === void 0 ? void 0 : _b.length);
 }
 
 /**
@@ -31532,7 +31532,7 @@ function tuiPressedObservable(element, {
   if (!ownerDocument) {
     throw new TuiOwnerDocumentException();
   }
-  return tuiTypedFromEvent(element, `mousedown`).pipe(filter(({
+  return tuiTypedFromEvent(element, 'mousedown').pipe(filter(({
     isTrusted
   }) => isTrusted || !onlyTrusted), switchMap(() => tuiMouseDragFinishFrom(ownerDocument).pipe(map(ALWAYS_FALSE_HANDLER), take(1), startWith(true))));
 }
@@ -31544,7 +31544,7 @@ function tuiPreventDefault() {
  * Normalizes scroll event in case element is `html` (document.documentElement)
  */
 function tuiScrollFrom(element) {
-  return tuiTypedFromEvent(element === element.ownerDocument.documentElement ? element.ownerDocument : element, `scroll`);
+  return tuiTypedFromEvent(element === element.ownerDocument.documentElement ? element.ownerDocument : element, 'scroll');
 }
 function tuiStopPropagation() {
   return (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_21__/* .tap */ .b)(e => {
@@ -31907,6 +31907,9 @@ let TuiDirectiveStylesService = /*#__PURE__*/(() => {
         this.map.set(component, this.resolver.resolveComponentFactory(component).create(this.injector));
       }
     }
+    ngOnDestroy() {
+      this.map.forEach(value => value.destroy());
+    }
   }
   TuiDirectiveStylesService.ɵfac = function TuiDirectiveStylesService_Factory(t) {
     return new (t || TuiDirectiveStylesService)(core_mjs_["ɵɵinject"](core_mjs_.ComponentFactoryResolver), core_mjs_["ɵɵinject"](core_mjs_.INJECTOR));
@@ -31914,7 +31917,7 @@ let TuiDirectiveStylesService = /*#__PURE__*/(() => {
   TuiDirectiveStylesService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
     token: TuiDirectiveStylesService,
     factory: TuiDirectiveStylesService.ɵfac,
-    providedIn: `root`
+    providedIn: 'root'
   });
   return TuiDirectiveStylesService;
 })();
@@ -31948,7 +31951,7 @@ let TuiFocusVisibleService = /*#__PURE__*/(() => {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-const TUI = `tui_`;
+const TUI = 'tui_';
 /**
  * Generates unique ids
  */
@@ -31965,7 +31968,7 @@ let TuiIdService = /*#__PURE__*/(() => {
   TuiIdService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
     token: TuiIdService,
     factory: TuiIdService.ɵfac,
-    providedIn: `root`
+    providedIn: 'root'
   });
   return TuiIdService;
 })();
@@ -31991,7 +31994,7 @@ let TuiParentsScrollService = /*#__PURE__*/(() => {
           nativeElement = nativeElement.parentElement;
           eventTargets.push(nativeElement);
         }
-        return (0,observable_merge/* merge */.T)(...eventTargets.map(element => (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(element, `scroll`)));
+        return (0,observable_merge/* merge */.T)(...eventTargets.map(element => (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(element, 'scroll')));
       });
     }
   }
@@ -32022,7 +32025,7 @@ let TuiObscuredService = /*#__PURE__*/(() => {
       super(subscriber => this.obscured$.subscribe(subscriber));
       this.obscured$ = (0,observable_merge/* merge */.T)(
       // delay is added so it will not interfere with other listeners
-      (0,observable_merge/* merge */.T)(parentsScroll$, (0,fromEvent/* fromEvent */.R)(win, `resize`)).pipe((0,delay/* delay */.g)(0)), animationFrame$.pipe((0,throttleTime/* throttleTime */.p)(taiga_ui_cdk_constants/* POLLING_TIME */.Yg))).pipe((0,operators_map/* map */.U)(() => (0,taiga_ui_cdk_utils_dom/* tuiGetElementObscures */.PU)(nativeElement)), (0,startWith/* startWith */.O)(null), (0,distinctUntilChanged/* distinctUntilChanged */.x)(), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(zone), (0,operators_takeUntil/* takeUntil */.R)(destroy$));
+      (0,observable_merge/* merge */.T)(parentsScroll$, (0,fromEvent/* fromEvent */.R)(win, 'resize')).pipe((0,delay/* delay */.g)(0)), animationFrame$.pipe((0,throttleTime/* throttleTime */.p)(taiga_ui_cdk_constants/* POLLING_TIME */.Yg))).pipe((0,operators_map/* map */.U)(() => (0,taiga_ui_cdk_utils_dom/* tuiGetElementObscures */.PU)(nativeElement)), (0,startWith/* startWith */.O)(null), (0,distinctUntilChanged/* distinctUntilChanged */.x)(), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)(zone), (0,operators_takeUntil/* takeUntil */.R)(destroy$));
     }
   }
   TuiObscuredService.ɵfac = function TuiObscuredService_Factory(t) {
@@ -32043,21 +32046,21 @@ let TuiPanService = /*#__PURE__*/(/* unused pure expression or super */ null && 
       nativeElement
     }, doc) {
       super(subscriber => {
-        merge(tuiTypedFromEvent(nativeElement, `touchstart`, {
+        merge(tuiTypedFromEvent(nativeElement, 'touchstart', {
           passive: true
-        }), tuiTypedFromEvent(nativeElement, `mousedown`)).pipe(switchMap(() => merge(tuiTypedFromEvent(doc, `touchmove`, {
+        }), tuiTypedFromEvent(nativeElement, 'mousedown')).pipe(switchMap(() => merge(tuiTypedFromEvent(doc, 'touchmove', {
           passive: true
         }).pipe(filter(({
           touches
         }) => touches.length < 2), map(({
           touches
-        }) => touches[0])), tuiTypedFromEvent(doc, `mousemove`))), pairwise(), map(([first, second]) => {
+        }) => touches[0])), tuiTypedFromEvent(doc, 'mousemove'))), pairwise(), map(([first, second]) => {
           const deltaX = second.clientX - first.clientX;
           const deltaY = second.clientY - first.clientY;
           return [deltaX, deltaY];
         }),
         // eslint-disable-next-line rxjs/no-unsafe-takeuntil
-        takeUntil(merge(tuiTypedFromEvent(doc, `touchend`), tuiTypedFromEvent(doc, `mouseup`))), repeat()).subscribe(subscriber);
+        takeUntil(merge(tuiTypedFromEvent(doc, 'touchend'), tuiTypedFromEvent(doc, 'mouseup'))), repeat()).subscribe(subscriber);
       });
     }
   }
@@ -32101,10 +32104,10 @@ let TuiResizeService = /*#__PURE__*/(() => {
 })();
 const SCROLL_TIME = 300;
 function getX(elementOrWindow) {
-  return `scrollX` in elementOrWindow ? elementOrWindow.scrollX : elementOrWindow.scrollLeft;
+  return 'scrollX' in elementOrWindow ? elementOrWindow.scrollX : elementOrWindow.scrollLeft;
 }
 function getY(elementOrWindow) {
-  return `scrollY` in elementOrWindow ? elementOrWindow.scrollY : elementOrWindow.scrollTop;
+  return 'scrollY' in elementOrWindow ? elementOrWindow.scrollY : elementOrWindow.scrollTop;
 }
 let TuiScrollService = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
   class TuiScrollService {
@@ -32113,9 +32116,9 @@ let TuiScrollService = /*#__PURE__*/(/* unused pure expression or super */ null 
       this.animationFrame$ = animationFrame$;
     }
     scroll$(elementOrWindow, scrollTop, scrollLeft = getX(elementOrWindow), duration = SCROLL_TIME) {
-      ngDevMode && tuiAssert.assert(duration >= 0, `Duration cannot be negative`);
-      ngDevMode && tuiAssert.assert(scrollTop >= 0, `scrollTop cannot be negative`);
-      ngDevMode && tuiAssert.assert(scrollLeft >= 0, `scrollLeft cannot be negative`);
+      ngDevMode && tuiAssert.assert(duration >= 0, 'Duration cannot be negative');
+      ngDevMode && tuiAssert.assert(scrollTop >= 0, 'scrollTop cannot be negative');
+      ngDevMode && tuiAssert.assert(scrollLeft >= 0, 'scrollLeft cannot be negative');
       const initialTop = getY(elementOrWindow);
       const initialLeft = getX(elementOrWindow);
       const deltaTop = scrollTop - initialTop;
@@ -32133,7 +32136,7 @@ let TuiScrollService = /*#__PURE__*/(/* unused pure expression or super */ null 
   TuiScrollService.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
     token: TuiScrollService,
     factory: TuiScrollService.ɵfac,
-    providedIn: `root`
+    providedIn: 'root'
   });
   return TuiScrollService;
 })()));
@@ -32152,7 +32155,7 @@ let TuiStaticRequestService = /*#__PURE__*/(() => {
       if (cache) {
         return cache;
       }
-      const response$ = `AbortController` in this.win || (0,common_mjs_.isPlatformServer)(this.platformId) ? fromFetch(url) :
+      const response$ = 'AbortController' in this.win || (0,common_mjs_.isPlatformServer)(this.platformId) ? fromFetch(url) :
       /**
        * Fallback for Firefox 55 and 56
        * TODO: drop after browser support bump
@@ -32177,7 +32180,7 @@ let TuiStaticRequestService = /*#__PURE__*/(() => {
   TuiStaticRequestService.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
     token: TuiStaticRequestService,
     factory: TuiStaticRequestService.ɵfac,
-    providedIn: `root`
+    providedIn: 'root'
   });
   return TuiStaticRequestService;
 })();
@@ -32193,9 +32196,9 @@ let TuiSwipeService = /*#__PURE__*/(() => {
       threshold
     }, doc) {
       super(subscriber => {
-        (0,observable_merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, `touchstart`, {
+        (0,observable_merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(nativeElement, 'touchstart', {
           passive: true
-        }), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, `touchend`)).pipe((0,operators_pairwise/* pairwise */.G)(), (0,operators_filter/* filter */.h)(([first, second]) => !!first.touches.length && first.touches[0].identifier === second.changedTouches[0].identifier), (0,operators_map/* map */.U)(([start, end]) => {
+        }), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, 'touchend')).pipe((0,operators_pairwise/* pairwise */.G)(), (0,operators_filter/* filter */.h)(([first, second]) => !!first.touches.length && first.touches[0].identifier === second.changedTouches[0].identifier), (0,operators_map/* map */.U)(([start, end]) => {
           const startX = start.touches[0].clientX;
           const startY = start.touches[0].clientY;
           const endX = end.changedTouches[0].clientX;
@@ -32235,11 +32238,11 @@ let TuiZoomService = /*#__PURE__*/(/* unused pure expression or super */ null &&
       wheelSensitivity
     }) {
       super(subscriber => {
-        merge(tuiTypedFromEvent(nativeElement, `touchstart`, {
+        merge(tuiTypedFromEvent(nativeElement, 'touchstart', {
           passive: true
         }).pipe(filter(({
           touches
-        }) => touches.length > 1), switchMap(startEvent => tuiTypedFromEvent(nativeElement, `touchmove`, {
+        }) => touches.length > 1), switchMap(startEvent => tuiTypedFromEvent(nativeElement, 'touchmove', {
           passive: true
         }).pipe(tuiPreventDefault(), scan((prev, event) => {
           const distance = tuiDistanceBetweenTouches(event);
@@ -32264,7 +32267,7 @@ let TuiZoomService = /*#__PURE__*/(/* unused pure expression or super */ null &&
             delta,
             event
           };
-        }), takeUntil(tuiTypedFromEvent(nativeElement, `touchend`))))), tuiTypedFromEvent(nativeElement, `wheel`, {
+        }), takeUntil(tuiTypedFromEvent(nativeElement, 'touchend'))))), tuiTypedFromEvent(nativeElement, 'wheel', {
           passive: false
         }).pipe(tuiPreventDefault(), map(wheel => ({
           clientX: wheel.clientX,
@@ -32348,7 +32351,7 @@ var taiga_ui_cdk_utils_dom = __webpack_require__(7995);
  * https://developer.mozilla.org/en-US/docs/Web/API/Navigator/platform
  */
 function tuiIsApplePlatform(navigator) {
-  return navigator.platform.startsWith(`Mac`) || navigator.platform === `iPhone`;
+  return navigator.platform.startsWith('Mac') || navigator.platform === 'iPhone';
 }
 const IOS_REG_EXP = /ipad|iphone|ipod/;
 function tuiIsIos(navigator) {
@@ -32439,15 +32442,15 @@ function isValidFocusout(target, removedElement = null) {
     // Not due to switching tabs/going to DevTools
     (0,taiga_ui_cdk_utils_dom/* tuiGetDocumentOrShadowRoot */.Wf)(target).activeElement !== target &&
     // Not due to button/input becoming disabled or under disabled fieldset
-    !target.matches(`:disabled`) &&
+    !target.matches(':disabled') &&
     // Not due to element being removed from DOM
     !(removedElement === null || removedElement === void 0 ? void 0 : removedElement.contains(target))
   );
 }
 function shadowRootActiveElement(root) {
-  return (0,merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(root, `focusin`).pipe((0,map/* map */.U)(({
+  return (0,merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(root, 'focusin').pipe((0,map/* map */.U)(({
     target
-  }) => target)), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(root, `focusout`).pipe((0,filter/* filter */.h)(({
+  }) => target)), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(root, 'focusout').pipe((0,filter/* filter */.h)(({
     target,
     relatedTarget
   }) => !!relatedTarget && isValidFocusout(target)), (0,map/* map */.U)(({
@@ -32461,11 +32464,11 @@ const TUI_ACTIVE_ELEMENT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenF
   const removedElement$ = (0,core_mjs_.inject)(TUI_REMOVED_ELEMENT);
   const win = (0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9);
   const doc = (0,core_mjs_.inject)(common_mjs_.DOCUMENT);
-  const focusout$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(win, `focusout`);
-  const focusin$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(win, `focusin`);
-  const blur$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(win, `blur`);
-  const mousedown$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(win, `mousedown`);
-  const mouseup$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(win, `mouseup`);
+  const focusout$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(win, 'focusout');
+  const focusin$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(win, 'focusin');
+  const blur$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(win, 'blur');
+  const mousedown$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(win, 'mousedown');
+  const mouseup$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(win, 'mouseup');
   return (0,merge/* merge */.T)(focusout$.pipe(
   // eslint-disable-next-line rxjs/no-unsafe-takeuntil
   (0,takeUntil/* takeUntil */.R)(mousedown$),
@@ -32477,7 +32480,7 @@ const TUI_ACTIVE_ELEMENT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenF
   // eslint-disable-next-line rxjs/no-ignored-notifier
   (0,repeatWhen/* repeatWhen */.a)(() => mouseup$), (0,withLatestFrom/* withLatestFrom */.M)(removedElement$), (0,filter/* filter */.h)(([event, removedElement]) => isValidFocusout((0,taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA)(event), removedElement)), (0,map/* map */.U)(([{
     relatedTarget
-  }]) => relatedTarget)), blur$.pipe((0,map/* map */.U)(() => doc.activeElement), (0,filter/* filter */.h)(element => !!(element === null || element === void 0 ? void 0 : element.matches(`iframe`)))), focusin$.pipe((0,switchMap/* switchMap */.w)(event => {
+  }]) => relatedTarget)), blur$.pipe((0,map/* map */.U)(() => doc.activeElement), (0,filter/* filter */.h)(element => !!(element === null || element === void 0 ? void 0 : element.matches('iframe')))), focusin$.pipe((0,switchMap/* switchMap */.w)(event => {
     const target = (0,taiga_ui_cdk_utils_dom/* tuiGetActualTarget */.mA)(event);
     const root = (0,taiga_ui_cdk_utils_dom/* tuiGetDocumentOrShadowRoot */.Wf)(target);
     return root === doc ? (0,of.of)(target) : shadowRootActiveElement(root).pipe((0,startWith/* startWith */.O)(target));
@@ -32505,7 +32508,7 @@ function tuiAsAlerts(useExisting) {
 }
 const TUI_BASE_HREF = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => {
   var _a, _b;
-  return (_b = (_a = (0,core_mjs_.inject)(common_mjs_.DOCUMENT).querySelector(`base`)) === null || _a === void 0 ? void 0 : _a.href) !== null && _b !== void 0 ? _b : ``;
+  return (_b = (_a = (0,core_mjs_.inject)(common_mjs_.DOCUMENT).querySelector('base')) === null || _a === void 0 ? void 0 : _a.href) !== null && _b !== void 0 ? _b : '';
 });
 
 /**
@@ -32536,26 +32539,26 @@ function tuiAsDialog(useExisting) {
  */
 const TUI_ENSURE_BASE_HREF = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => {
   var _a;
-  const baseHref = (_a = (0,core_mjs_.inject)(common_mjs_.DOCUMENT).querySelector(`base`)) === null || _a === void 0 ? void 0 : _a.href;
+  const baseHref = (_a = (0,core_mjs_.inject)(common_mjs_.DOCUMENT).querySelector('base')) === null || _a === void 0 ? void 0 : _a.href;
   if (baseHref) {
     return baseHref;
   }
-  const link = (0,core_mjs_.inject)(common_mjs_.DOCUMENT).createElement(`a`);
-  link.href = ``;
+  const link = (0,core_mjs_.inject)(common_mjs_.DOCUMENT).createElement('a');
+  link.href = '';
   return link.pathname;
 });
 
 /**
  * A component that can be focused
  */
-const TUI_FOCUSABLE_ITEM_ACCESSOR = new core_mjs_.InjectionToken(`[TUI_FOCUSABLE_ITEM_ACCESSOR]`);
+const TUI_FOCUSABLE_ITEM_ACCESSOR = new core_mjs_.InjectionToken('[TUI_FOCUSABLE_ITEM_ACCESSOR]');
 function tuiAsFocusableItemAccessor(useExisting) {
   return {
     provide: TUI_FOCUSABLE_ITEM_ACCESSOR,
     useExisting
   };
 }
-const TUI_FONTS_READY = new core_mjs_.InjectionToken(`[TUI_FONTS_READY]`, {
+const TUI_FONTS_READY = new core_mjs_.InjectionToken('[TUI_FONTS_READY]', {
   factory: () => {
     var _a;
     return (0,from/* from */.D)(((_a = (0,core_mjs_.inject)(common_mjs_.DOCUMENT).fonts) === null || _a === void 0 ? void 0 : _a.ready) || empty/* EMPTY */.E).pipe((0,shareReplay/* shareReplay */.d)({
@@ -32614,9 +32617,9 @@ const TUI_IS_E2E = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFacto
  */
 const TUI_IS_FIREFOX = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => {
   var _a;
-  return typeof ((_a = (0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9)) === null || _a === void 0 ? void 0 : _a.mozCancelFullScreen) !== `undefined`;
+  return typeof ((_a = (0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9)) === null || _a === void 0 ? void 0 : _a.mozCancelFullScreen) !== 'undefined';
 });
-const TUI_IS_STACKBLITZ = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9).location.host.endsWith(`stackblitz.io`));
+const TUI_IS_STACKBLITZ = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9).location.host.endsWith('stackblitz.io'));
 
 /**
  * Webkit browser engine detection
@@ -32627,15 +32630,15 @@ const TUI_IS_WEBKIT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFa
 });
 
 // TODO: Switch to factory in 4.0
-const TUI_PLATFORM = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(`web`);
+const TUI_PLATFORM = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)('web');
 function tuiPlatformFactory() {
   if (inject(TUI_IS_IOS)) {
-    return `ios`;
+    return 'ios';
   }
   if (inject(TUI_IS_ANDROID)) {
-    return `android`;
+    return 'android';
   }
-  return `web`;
+  return 'web';
 }
 
 /**
@@ -32663,14 +32666,14 @@ const TUI_SWIPE_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken *
  * modified by a script or dispatched via EventTarget.dispatchEvent().
  */
 const TUI_TAKE_ONLY_TRUSTED_EVENTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(taiga_ui_cdk_constants/* ALWAYS_TRUE_HANDLER */.Ye);
-const TUI_TOUCH_SUPPORTED = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9).matchMedia(`(any-pointer: coarse)`).matches);
-const TUI_WINDOW_SIZE = new core_mjs_.InjectionToken(`[TUI_WINDOW_SIZE]`, {
+const TUI_TOUCH_SUPPORTED = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9).matchMedia('(any-pointer: coarse)').matches);
+const TUI_WINDOW_SIZE = new core_mjs_.InjectionToken('[TUI_WINDOW_SIZE]', {
   factory: () => {
     const w = (0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9);
-    return (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(w, `resize`).pipe((0,startWith/* startWith */.O)(null), (0,map/* map */.U)(() => {
+    return (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(w, 'resize').pipe((0,startWith/* startWith */.O)(null), (0,map/* map */.U)(() => {
       var _a, _b;
-      const width = Math.max(w.innerWidth, ((_a = w.visualViewport) === null || _a === void 0 ? void 0 : _a.width) || 0);
-      const height = Math.max(w.innerHeight, ((_b = w.visualViewport) === null || _b === void 0 ? void 0 : _b.height) || 0);
+      const width = Math.max(w.document.documentElement.clientWidth || 0, w.innerWidth || 0, ((_a = w.visualViewport) === null || _a === void 0 ? void 0 : _a.width) || 0);
+      const height = Math.max(w.document.documentElement.clientHeight || 0, w.innerHeight || 0, ((_b = w.visualViewport) === null || _b === void 0 ? void 0 : _b.height) || 0);
       return {
         width,
         height,
@@ -32718,23 +32721,23 @@ const TUI_ZOOM_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */
 /* harmony export */ });
 /* unused harmony exports tuiIsEdge, tuiIsEdgeOlderThan */
 function tuiIsEdge(userAgent) {
-  return userAgent.toLowerCase().includes(`edge`);
+  return userAgent.toLowerCase().includes('edge');
 }
-const EDGE = (/* unused pure expression or super */ null && (`edge/`));
+const EDGE = 'edge/';
 function tuiIsEdgeOlderThan(version, userAgent) {
   const currentVersion = parseInt(userAgent.slice(userAgent.toLowerCase().indexOf(EDGE) + EDGE.length), 10);
   return currentVersion < version;
 }
 function tuiIsFirefox(userAgent) {
-  return userAgent.toLowerCase().includes(`firefox`);
+  return userAgent.toLowerCase().includes('firefox');
 }
 function tuiIsSafari({
   ownerDocument: doc
 }) {
   var _a, _b, _c, _d, _e, _f, _g, _h;
   const win = doc === null || doc === void 0 ? void 0 : doc.defaultView;
-  const isMacOsSafari = typeof win.safari !== `undefined` && ((_b = (_a = win.safari) === null || _a === void 0 ? void 0 : _a.pushNotification) === null || _b === void 0 ? void 0 : _b.toString()) === `[object SafariRemoteNotification]`;
-  const isIosSafari = !!((_d = (_c = win.navigator) === null || _c === void 0 ? void 0 : _c.vendor) === null || _d === void 0 ? void 0 : _d.includes(`Apple`)) && !((_f = (_e = win.navigator) === null || _e === void 0 ? void 0 : _e.userAgent) === null || _f === void 0 ? void 0 : _f.includes(`CriOS`)) && !((_h = (_g = win.navigator) === null || _g === void 0 ? void 0 : _g.userAgent) === null || _h === void 0 ? void 0 : _h.includes(`FxiOS`));
+  const isMacOsSafari = typeof win.safari !== 'undefined' && ((_b = (_a = win.safari) === null || _a === void 0 ? void 0 : _a.pushNotification) === null || _b === void 0 ? void 0 : _b.toString()) === '[object SafariRemoteNotification]';
+  const isIosSafari = !!((_d = (_c = win.navigator) === null || _c === void 0 ? void 0 : _c.vendor) === null || _d === void 0 ? void 0 : _d.includes('Apple')) && !((_f = (_e = win.navigator) === null || _e === void 0 ? void 0 : _e.userAgent) === null || _f === void 0 ? void 0 : _f.includes('CriOS')) && !((_h = (_g = win.navigator) === null || _g === void 0 ? void 0 : _g.userAgent) === null || _h === void 0 ? void 0 : _h.includes('FxiOS'));
   return isMacOsSafari || isIosSafari;
 }
 
@@ -32810,16 +32813,16 @@ function tuiContainsOrAfter(current, node) {
   }
 }
 function tuiIsInput(element) {
-  return element.matches(`input`);
+  return element.matches('input');
 }
 function tuiIsTextarea(element) {
-  return element.matches(`textarea`);
+  return element.matches('textarea');
 }
 function tuiIsTextfield(element) {
   return tuiIsInput(element) || tuiIsTextarea(element);
 }
 function tuiIsElement(node) {
-  return !!node && `nodeType` in node && node.nodeType === Node.ELEMENT_NODE;
+  return !!node && 'nodeType' in node && node.nodeType === Node.ELEMENT_NODE;
 }
 function tuiIsHTMLElement(node) {
   // TODO: iframe warning
@@ -32835,15 +32838,15 @@ function tuiIsTextNode(node) {
 function tuiGetActualTarget(event) {
   return event.composedPath()[0];
 }
-const DEFAULT_FORMAT = (/* unused pure expression or super */ null && (`text/plain`));
+const DEFAULT_FORMAT = 'text/plain';
 /**
  * Gets text from data of clipboardEvent, it also works in IE and Edge browsers
  */
 function tuiGetClipboardDataText(event, format = DEFAULT_FORMAT) {
-  return `clipboardData` in event && event.clipboardData !== null ? event.clipboardData.getData(format) || event.clipboardData.getData(DEFAULT_FORMAT) : event.target.ownerDocument.defaultView.clipboardData.getData(`text`);
+  return 'clipboardData' in event && event.clipboardData !== null ? event.clipboardData.getData(format) || event.clipboardData.getData(DEFAULT_FORMAT) : event.target.ownerDocument.defaultView.clipboardData.getData('text');
 }
 function tuiGetDocumentOrShadowRoot(node) {
-  return `getRootNode` in node && node.isConnected ? node.getRootNode() : node.ownerDocument;
+  return 'getRootNode' in node && node.isConnected ? node.getRootNode() : node.ownerDocument;
 }
 
 /**
@@ -32894,7 +32897,7 @@ function tuiGetElementObscures(element) {
  * @return object with offsetTop and offsetLeft number properties
  */
 function tuiGetElementOffset(host, element) {
-  ngDevMode && _taiga_ui_cdk_classes__WEBPACK_IMPORTED_MODULE_2__/* .tuiAssert */ .z.assert(host.contains(element), `Host must contain element`);
+  ngDevMode && _taiga_ui_cdk_classes__WEBPACK_IMPORTED_MODULE_2__/* .tuiAssert */ .z.assert(host.contains(element), 'Host must contain element');
   let {
     offsetTop,
     offsetLeft,
@@ -32992,15 +32995,15 @@ function tuiPointToClientRect(x = 0, y = 0) {
 }
 function tuiRetargetedBoundaryCrossing(event) {
   // firefox
-  if (`explicitOriginalTarget` in event) {
+  if ('explicitOriginalTarget' in event) {
     return (event === null || event === void 0 ? void 0 : event.explicitOriginalTarget) !== event.target;
   }
   // chrome
-  if (`pointerId` in event) {
+  if ('pointerId' in event) {
     return event.pointerId === -1;
   }
   // safari
-  if (`detail` in event && `webkitForce` in event) {
+  if ('detail' in event && 'webkitForce' in event) {
     return (event === null || event === void 0 ? void 0 : event.detail) === 0;
   }
   return false;
@@ -33069,31 +33072,31 @@ function tuiBlurNativeFocused(doc) {
  * circumstances could prevent actual focus.
  */
 function tuiIsNativeKeyboardFocusable(element) {
-  if (element.hasAttribute(`disabled`) || element.getAttribute(`tabIndex`) === `-1`) {
+  if (element.hasAttribute('disabled') || element.getAttribute('tabIndex') === '-1') {
     return false;
   }
-  if ((0,_taiga_ui_cdk_utils_dom__WEBPACK_IMPORTED_MODULE_0__/* .tuiIsHTMLElement */ .dW)(element) && element.isContentEditable || element.getAttribute(`tabIndex`) === `0`) {
+  if ((0,_taiga_ui_cdk_utils_dom__WEBPACK_IMPORTED_MODULE_0__/* .tuiIsHTMLElement */ .dW)(element) && element.isContentEditable || element.getAttribute('tabIndex') === '0') {
     return true;
   }
   switch (element.tagName) {
-    case `BUTTON`:
-    case `SELECT`:
-    case `TEXTAREA`:
+    case 'BUTTON':
+    case 'SELECT':
+    case 'TEXTAREA':
       return true;
-    case `VIDEO`:
-    case `AUDIO`:
-      return element.hasAttribute(`controls`);
-    case `INPUT`:
-      return element.getAttribute(`type`) !== `hidden`;
-    case `A`:
-    case `LINK`:
-      return element.hasAttribute(`href`);
+    case 'VIDEO':
+    case 'AUDIO':
+      return element.hasAttribute('controls');
+    case 'INPUT':
+      return element.getAttribute('type') !== 'hidden';
+    case 'A':
+    case 'LINK':
+      return element.hasAttribute('href');
     default:
       return false;
   }
 }
 function tuiIsNativeMouseFocusable(element) {
-  return !element.hasAttribute(`disabled`) && (element.getAttribute(`tabIndex`) === `-1` || tuiIsNativeKeyboardFocusable(element));
+  return !element.hasAttribute('disabled') && (element.getAttribute('tabIndex') === '-1' || tuiIsNativeKeyboardFocusable(element));
 }
 
 /**
@@ -33179,14 +33182,14 @@ function tuiSetNativeMouseFocused(element, focused = true, preventScroll = false
   if (!element.ownerDocument) {
     return;
   }
-  if (typeof Event === `function`) {
-    element.dispatchEvent(new Event(`mousedown`, {
+  if (typeof Event === 'function') {
+    element.dispatchEvent(new Event('mousedown', {
       bubbles: true,
       cancelable: true
     }));
   } else {
-    const event = element.ownerDocument.createEvent(`Event`);
-    event.initEvent(`mousedown`, true, true);
+    const event = element.ownerDocument.createEvent('Event');
+    event.initEvent('mousedown', true, true);
     element.dispatchEvent(event);
   }
   if (focused) {
@@ -33289,12 +33292,12 @@ function calculate(value, precision, func) {
   if (value === Infinity) {
     return value;
   }
-  ngDevMode && _taiga_ui_cdk_classes__WEBPACK_IMPORTED_MODULE_0__/* .tuiAssert */ .z.assert(!Number.isNaN(value), `Value must be number`);
-  ngDevMode && _taiga_ui_cdk_classes__WEBPACK_IMPORTED_MODULE_0__/* .tuiAssert */ .z.assert(Number.isInteger(precision), `Precision must be integer`);
+  ngDevMode && _taiga_ui_cdk_classes__WEBPACK_IMPORTED_MODULE_0__/* .tuiAssert */ .z.assert(!Number.isNaN(value), 'Value must be number');
+  ngDevMode && _taiga_ui_cdk_classes__WEBPACK_IMPORTED_MODULE_0__/* .tuiAssert */ .z.assert(Number.isInteger(precision), 'Precision must be integer');
   precision = Math.min(precision, MAX_PRECISION);
-  const pair = `${value}e`.split(`e`);
+  const pair = `${value}e`.split('e');
   const tempValue = func(Number(`${pair[0]}e${Number(pair[1]) + precision}`));
-  const processedPair = `${tempValue}e`.split(`e`);
+  const processedPair = `${tempValue}e`.split('e');
   return Number(`${processedPair[0]}e${Number(processedPair[1]) - precision}`);
 }
 function tuiRound(value, precision = 0) {
@@ -33315,11 +33318,11 @@ function tuiRoundWith({
   method
 }) {
   switch (method) {
-    case `round`:
+    case 'round':
       return tuiRound(value, precision);
-    case `ceil`:
+    case 'ceil':
       return tuiCeil(value, precision);
-    case `floor`:
+    case 'floor':
       return tuiFloor(value, precision);
     default:
       return tuiTrunc(value, precision);
@@ -33387,11 +33390,11 @@ function tuiArrayToggle(array, item) {
   return index === -1 ? [...array, item] : tuiArrayRemove(array, index);
 }
 function tuiIsString(value) {
-  return typeof value === `string`;
+  return typeof value === 'string';
 }
 function checkValueIsEmpty(value) {
   const nextValue = tuiIsString(value) ? value.trim() : value;
-  return [undefined, null, NaN, ``].includes(nextValue);
+  return [undefined, null, NaN, ''].includes(nextValue);
 }
 function tuiCleanObject(object) {
   return JSON.parse(JSON.stringify(object, (_key, value) => checkValueIsEmpty(value) ? undefined : value));
@@ -33400,7 +33403,7 @@ function tuiCreateToken(defaults) {
   return tuiCreateTokenFromFactory(() => defaults);
 }
 function tuiCreateTokenFromFactory(factory) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(``, {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('', {
     factory
   });
 }
@@ -33424,7 +33427,7 @@ function tuiDistanceBetweenTouches({
   return Math.hypot(touches[0].clientX - touches[1].clientX, touches[0].clientY - touches[1].clientY);
 }
 function tuiEaseInOutQuad(t) {
-  ngDevMode && tuiAssert.assert(t >= 0 && t <= 1, `Input must be between 0 and 1 inclusive but received `, t);
+  ngDevMode && tuiAssert.assert(t >= 0 && t <= 1, 'Input must be between 0 and 1 inclusive but received ', t);
   return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 }
 
@@ -33453,36 +33456,36 @@ function tuiGetOriginalArrayFromQueryList(queryList) {
 }
 function tuiGetSwipeDirection(deltaX, deltaY) {
   if (Math.abs(deltaY) > Math.abs(deltaX)) {
-    return deltaY > 0 ? `top` : `bottom`;
+    return deltaY > 0 ? 'top' : 'bottom';
   }
-  return deltaX > 0 ? `left` : `right`;
+  return deltaX > 0 ? 'left' : 'right';
 }
 function tuiIsFalsy(value) {
   return !value;
 }
 function tuiIsNumber(value) {
-  return typeof value === `number`;
+  return typeof value === 'number';
 }
 function tuiIsObject(value) {
-  return typeof value === `object` && !!value;
+  return typeof value === 'object' && !!value;
 }
 function tuiIsPresent(value) {
   return value !== null && value !== undefined;
 }
 function tuiIsValidUrl(url) {
-  const pattern = new RegExp(`^([a-zA-Z]+:\\/\\/)?` +
+  const pattern = new RegExp('^([a-zA-Z]+:\\/\\/)?' +
   // protocol
-  `((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|localhost|` +
+  '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|localhost|' +
   // domain name
-  `((\\d{1,3}\\.){3}\\d{1,3}))` +
+  '((\\d{1,3}\\.){3}\\d{1,3}))' +
   // OR IP (v4) address
-  `(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*` +
+  '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' +
   // port and path
-  `(\\?[;&a-z\\d%_.~+=-]*)?` +
+  '(\\?[;&a-z\\d%_.~+=-]*)?' +
   // query string
-  `(\\#[-a-z\\d_]*)?$`,
+  '(\\#[-a-z\\d_]*)?$',
   // fragment locator
-  `i`);
+  'i');
   return pattern.test(url);
 }
 function tuiMarkControlAsTouchedAndValidate(control) {
@@ -33563,11 +33566,11 @@ function makeRandomSalt() {
   return Math.floor(Math.random() * Date.now());
 }
 function escapeRegExp(search) {
-  return search.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, `\\$&`);
+  return search.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
 }
 function extractLinearGradientIdsFromSvg(svg) {
   var _a;
-  const ids = ((_a = svg.match(/url\(("?)('*)#(.*?)('*)\)/g)) !== null && _a !== void 0 ? _a : []).map(url => url.slice(4, url.length - 1).replace(/['"#]+/g, ``));
+  const ids = ((_a = svg.match(/url\(("?)('*)#(.*?)('*)\)/g)) !== null && _a !== void 0 ? _a : []).map(url => url.slice(4, url.length - 1).replace(/['"#]+/g, ''));
   return Array.from(new Set(ids));
 }
 /**
@@ -33576,9 +33579,9 @@ function extractLinearGradientIdsFromSvg(svg) {
  */
 function setFallbackForGradientFill(svg, fallback) {
   try {
-    const tree = new DOMParser().parseFromString(svg, `text/html`);
-    tree.body.querySelectorAll(`[fill^=url]`) // only gradient
-    .forEach(element => element.setAttribute(`fill`, `${element.getAttribute(`fill`)} ${fallback}`.trim()));
+    const tree = new DOMParser().parseFromString(svg, 'text/html');
+    tree.body.querySelectorAll('[fill^=url]') // only gradient
+    .forEach(element => element.setAttribute('fill', `${element.getAttribute('fill')} ${fallback}`.trim()));
     return tree.body.innerHTML.trim();
   } catch (_a) {
     return svg;
@@ -33603,13 +33606,13 @@ function tuiSvgLinearGradientProcessor(svg, salt = makeRandomSalt(),
  * TODO: remove in v4.0
  * @deprecated
  */
-fallback = `rgba(0, 0, 0, 0.7)`) {
+fallback = 'rgba(0, 0, 0, 0.7)') {
   if ((0,_taiga_ui_cdk_utils_miscellaneous__WEBPACK_IMPORTED_MODULE_0__/* .tuiIsString */ .Aj)(svg)) {
     const uniqueIds = extractLinearGradientIdsFromSvg(svg);
     const rawSvg = uniqueIds.reduce((newSvg, previousId) => {
       const escapedId = escapeRegExp(previousId);
       const newId = `id_${salt}_${previousId}`;
-      return newSvg.replace(new RegExp(`"${escapedId}"`, `g`), `"${newId}"`).replace(new RegExp(`'${escapedId}'`, `g`), `'${newId}'`).replace(new RegExp(`url\\('#${escapedId}'\\)`, `g`), `url('#${newId}')`).replace(new RegExp(`url\\("#${escapedId}"\\)`, `g`), `url("#${newId}")`).replace(new RegExp(`url\\(#${escapedId}\\)`, `g`), `url(#${newId})`);
+      return newSvg.replace(new RegExp(`"${escapedId}"`, 'g'), `"${newId}"`).replace(new RegExp(`'${escapedId}'`, 'g'), `'${newId}'`).replace(new RegExp(`url\\('#${escapedId}'\\)`, 'g'), `url('#${newId}')`).replace(new RegExp(`url\\("#${escapedId}"\\)`, 'g'), `url("#${newId}")`).replace(new RegExp(`url\\(#${escapedId}\\)`, 'g'), `url(#${newId})`);
     }, svg);
     return setFallbackForGradientFill(rawSvg, fallback);
   }
@@ -33724,11 +33727,11 @@ let AbstractTuiTextfieldHost = /*#__PURE__*/(() => {
       return this.host.computedFocusable;
     }
     get inputMode() {
-      return `text`;
+      return 'text';
     }
     get value() {
       var _a;
-      return ((_a = this.host.value) === null || _a === void 0 ? void 0 : _a.toString()) || ``;
+      return ((_a = this.host.value) === null || _a === void 0 ? void 0 : _a.toString()) || '';
     }
     process(_input) {}
   }
@@ -33895,7 +33898,7 @@ function TuiButtonComponent_tui_loader_7_Template(rf, ctx) {
 }
 const _c1 = ["*"];
 const TUI_BUTTON_DEFAULT_OPTIONS = {
-  size: `l`,
+  size: 'l',
   shape: null,
   appearance: _taiga_ui_core_enums__WEBPACK_IMPORTED_MODULE_2__/* .TuiAppearance */ .Nm.Primary
 };
@@ -34286,7 +34289,7 @@ function TuiLoaderComponent_div_2_Template(rf, ctx) {
 }
 const _c0 = ["*"];
 const TUI_LOADER_DEFAULT_OPTIONS = {
-  size: `m`,
+  size: 'm',
   inheritColor: false,
   overlay: false
 };
@@ -34665,62 +34668,62 @@ function TuiSvgComponent_ng_container_0_Template(rf, ctx) {
   }
 }
 const TUI_DEPRECATED_ICONS = {
-  tuiIconAttach: `tuiIconPaperclip`,
-  tuiIconAttention: `tuiIconAlertCircle`,
-  tuiIconBackCircle: `tuiIconArrowLeftCircle`,
-  tuiIconCall: `tuiIconPhone`,
-  tuiIconCallIn: `tuiIconPhoneIncoming`,
-  tuiIconCallOut: `tuiIconPhoneOutgoing`,
-  tuiIconCallTransfer: `tuiIconPhoneForwarded`,
-  tuiIconCancel: `tuiIconXCircle`,
-  tuiIconCancelCircle: `tuiIconSlash`,
-  tuiIconCard: `tuiIconCreditCard`,
-  tuiIconCards: `tuiIconCreditCard`,
-  tuiIconChartBar: `tuiIconBarChart`,
-  tuiIconChart: `tuiIconBarChart`,
-  tuiIconCheckList: `tuiIconClipboard`,
-  tuiIconCloseCircle: `tuiIconXCircle`,
-  tuiIconCollapse: `tuiIconMinimize`,
-  tuiIconComment: `tuiIconMessageSquare`,
-  tuiIconCommentFw: `tuiIconMessageForward`,
-  tuiIconCompany: `tuiIconBriefcase`,
-  tuiIconDefaultDoc: `tuiIconFile`,
-  tuiIconDesktop: `tuiIconMonitor`,
-  tuiIconDesktopOff: `tuiIconMonitorOff`,
-  tuiIconDislike: `tuiIconThumbsDown`,
-  tuiIconDone: `tuiIconCheckCircle`,
-  tuiIconDraft: `tuiIconEdit2`,
-  tuiIconEyeOpen: `tuiIconEye`,
-  tuiIconEyeClosed: `tuiIconEyeOff`,
-  tuiIconExpand: `tuiIconMaximize`,
-  tuiIconExternal: `tuiIconExternalLink`,
-  tuiIconFrame: `tuiIconLayout`,
-  tuiIconGeo: `tuiIconMapPin`,
-  tuiIconHeartFilled: `tuiIconHeart`,
-  tuiIconHide: `tuiIconEyeOff`,
-  tuiIconImg: `tuiIconImage`,
-  tuiIconInfoCircle: `tuiIconInfo`,
-  tuiIconLike: `tuiIconThumbsUp`,
-  tuiIconLockOpen: `tuiIconUnlock`,
-  tuiIconMobile: `tuiIconSmartphone`,
-  tuiIconMoreHor: `tuiIconMoreHorizontal`,
-  tuiIconMoreVer: `tuiIconMoreVertical`,
-  tuiIconMoreVert: `tuiIconMoreVertical`,
-  tuiIconPicture: `tuiIconImage`,
-  tuiIconPin: `tuiIconMapPin`,
-  tuiIconPrint: `tuiIconPrinter`,
-  tuiIconRefresh: `tuiIconRefreshCw`,
-  tuiIconRemove: `tuiIconX`,
-  tuiIconShow: `tuiIconEye`,
-  tuiIconSound: `tuiIconVolume`,
-  tuiIconSoundOff: `tuiIconVolumeX`,
-  tuiIconStarFilled: `tuiIconStar`,
-  tuiIconStop: `tuiIconSquare`,
-  tuiIconStructure: `tuiIconGrid`,
-  tuiIconTime: `tuiIconClock`,
-  tuiIconTooltip: `tuiIconHelpCircle`,
-  tuiIconViewList: `tuiIconList`,
-  tuiIconWifiOn: `tuiIconWifi`
+  tuiIconAttach: 'tuiIconPaperclip',
+  tuiIconAttention: 'tuiIconAlertCircle',
+  tuiIconBackCircle: 'tuiIconArrowLeftCircle',
+  tuiIconCall: 'tuiIconPhone',
+  tuiIconCallIn: 'tuiIconPhoneIncoming',
+  tuiIconCallOut: 'tuiIconPhoneOutgoing',
+  tuiIconCallTransfer: 'tuiIconPhoneForwarded',
+  tuiIconCancel: 'tuiIconXCircle',
+  tuiIconCancelCircle: 'tuiIconSlash',
+  tuiIconCard: 'tuiIconCreditCard',
+  tuiIconCards: 'tuiIconCreditCard',
+  tuiIconChartBar: 'tuiIconBarChart',
+  tuiIconChart: 'tuiIconBarChart',
+  tuiIconCheckList: 'tuiIconClipboard',
+  tuiIconCloseCircle: 'tuiIconXCircle',
+  tuiIconCollapse: 'tuiIconMinimize',
+  tuiIconComment: 'tuiIconMessageSquare',
+  tuiIconCommentFw: 'tuiIconMessageForward',
+  tuiIconCompany: 'tuiIconBriefcase',
+  tuiIconDefaultDoc: 'tuiIconFile',
+  tuiIconDesktop: 'tuiIconMonitor',
+  tuiIconDesktopOff: 'tuiIconMonitorOff',
+  tuiIconDislike: 'tuiIconThumbsDown',
+  tuiIconDone: 'tuiIconCheckCircle',
+  tuiIconDraft: 'tuiIconEdit2',
+  tuiIconEyeOpen: 'tuiIconEye',
+  tuiIconEyeClosed: 'tuiIconEyeOff',
+  tuiIconExpand: 'tuiIconMaximize',
+  tuiIconExternal: 'tuiIconExternalLink',
+  tuiIconFrame: 'tuiIconLayout',
+  tuiIconGeo: 'tuiIconMapPin',
+  tuiIconHeartFilled: 'tuiIconHeart',
+  tuiIconHide: 'tuiIconEyeOff',
+  tuiIconImg: 'tuiIconImage',
+  tuiIconInfoCircle: 'tuiIconInfo',
+  tuiIconLike: 'tuiIconThumbsUp',
+  tuiIconLockOpen: 'tuiIconUnlock',
+  tuiIconMobile: 'tuiIconSmartphone',
+  tuiIconMoreHor: 'tuiIconMoreHorizontal',
+  tuiIconMoreVer: 'tuiIconMoreVertical',
+  tuiIconMoreVert: 'tuiIconMoreVertical',
+  tuiIconPicture: 'tuiIconImage',
+  tuiIconPin: 'tuiIconMapPin',
+  tuiIconPrint: 'tuiIconPrinter',
+  tuiIconRefresh: 'tuiIconRefreshCw',
+  tuiIconRemove: 'tuiIconX',
+  tuiIconShow: 'tuiIconEye',
+  tuiIconSound: 'tuiIconVolume',
+  tuiIconSoundOff: 'tuiIconVolumeX',
+  tuiIconStarFilled: 'tuiIconStar',
+  tuiIconStop: 'tuiIconSquare',
+  tuiIconStructure: 'tuiIconGrid',
+  tuiIconTime: 'tuiIconClock',
+  tuiIconTooltip: 'tuiIconHelpCircle',
+  tuiIconViewList: 'tuiIconList',
+  tuiIconWifiOn: 'tuiIconWifi'
 };
 const TUI_SVG_DEFAULT_OPTIONS = {
   iconsPlace: _taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_2__/* .TUI_DEFAULT_ICONS_PLACE */ .xp,
@@ -34728,9 +34731,9 @@ const TUI_SVG_DEFAULT_OPTIONS = {
   srcProcessor: rxjs__WEBPACK_IMPORTED_MODULE_4__/* .identity */ .y,
   contentProcessor: _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__/* .tuiSvgLinearGradientProcessor */ .N,
   deprecated: src => {
-    const oldIcon = src.replace(`Large`, ``).replace(`Outline`, ``);
+    const oldIcon = src.replace('Large', '').replace('Outline', '');
     const newIcon = TUI_DEPRECATED_ICONS[oldIcon];
-    return newIcon ? `${oldIcon}/(Large|Outline) is deprecated, use ${newIcon}/(Large|Outline) instead` : ``;
+    return newIcon ? `${oldIcon}/(Large|Outline) is deprecated, use ${newIcon}/(Large|Outline) instead` : '';
   }
 };
 /**
@@ -34743,7 +34746,7 @@ const TUI_SVG_OPTIONS = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_6__/* .tuiCrea
   srcProcessor: (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_2__/* .TUI_SVG_SRC_PROCESSOR */ .V5),
   contentProcessor: (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_2__/* .TUI_SVG_CONTENT_PROCESSOR */ .u_)
 }));
-const TUI_SVG_SRC_INTERCEPTORS = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(`[TUI_SVG_SRC_INTERCEPTORS]`);
+const TUI_SVG_SRC_INTERCEPTORS = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('[TUI_SVG_SRC_INTERCEPTORS]');
 function tuiSvgSrcInterceptors(interceptor) {
   return {
     provide: TUI_SVG_SRC_INTERCEPTORS,
@@ -34954,44 +34957,44 @@ const TUI_CACHE_BUSTING_PAYLOAD = `?v=${_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_0
  * @deprecated
  * TODO: delete in v4.0
  */
-const TUI_DECIMAL_SYMBOLS = (/* unused pure expression or super */ null && ([`,`, `.`]));
-const DEFAULT_ICONS_PATH = name => name.includes(`.svg#`) ? name : `#${name}`;
+const TUI_DECIMAL_SYMBOLS = (/* unused pure expression or super */ null && ([',', '.']));
+const DEFAULT_ICONS_PATH = name => name.includes('.svg#') ? name : `#${name}`;
 const TUI_DEFAULT_MARKER_HANDLER = () => EMPTY_ARRAY;
 const TUI_DEFAULT_NUMBER_FORMAT = {
   decimalLimit: Infinity,
-  decimalSeparator: `,`,
+  decimalSeparator: ',',
   thousandSeparator: _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_0__/* .CHAR_NO_BREAK_SPACE */ .f$,
   zeroPadding: true,
-  rounding: `truncate`,
-  decimal: `not-zero`
+  rounding: 'truncate',
+  decimal: 'not-zero'
 };
-const tuiEditingKeys = [`Spacebar`, `Backspace`, `Delete`, `ArrowLeft`, `ArrowRight`, `Left`, `Right`, `End`, `Home`];
+const tuiEditingKeys = ['Spacebar', 'Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Left', 'Right', 'End', 'Home'];
 
 /**
  * An event indicating that async data for expand has finished loading.
  * Dispatch to finish loading states for {@link TuiExpandComponent}.
  */
-const TUI_EXPAND_LOADED = (/* unused pure expression or super */ null && (`tui-expand-loaded`));
+const TUI_EXPAND_LOADED = 'tui-expand-loaded';
 /**
  * An event for scrolling an element into view within {@link TuiScrollbarComponent}.
  */
-const TUI_SCROLL_INTO_VIEW = `tui-scroll-into-view`;
+const TUI_SCROLL_INTO_VIEW = 'tui-scroll-into-view';
 /**
  * An event to notify {@link TuiScrollbarComponent} that
  * it should control a nested element.
  */
-const TUI_SCROLLABLE = (/* unused pure expression or super */ null && (`tui-scrollable`));
+const TUI_SCROLLABLE = 'tui-scrollable';
 /**
  * An event indicating and error during icon loading in {@link TuiSvgComponent}.
  */
-const TUI_ICON_ERROR = `tui-icon-error`;
-const TUI_HINT_DIRECTIONS = [`bottom-left`, `bottom`, `bottom-right`, `top-left`, `top`, `top-right`, `left-top`, `left`, `left-bottom`, `right-top`, `right`, `right-bottom`];
+const TUI_ICON_ERROR = 'tui-icon-error';
+const TUI_HINT_DIRECTIONS = ['bottom-left', 'bottom', 'bottom-right', 'top-left', 'top', 'top-right', 'left-top', 'left', 'left-bottom', 'right-top', 'right', 'right-bottom'];
 
 /**
  * @deprecated Use {@link https://github.com/taiga-family/maskito Maskito}
  * TODO: delete in v4.0
  */
-const MASK_CARET_TRAP = (/* unused pure expression or super */ null && (`[]`));
+const MASK_CARET_TRAP = '[]';
 const TUI_DIGIT_REGEXP = /\d/;
 const TUI_NON_DIGIT_REGEXP = /\D/;
 const TUI_NON_DIGITS_REGEXP = /\D+/g;
@@ -35293,7 +35296,7 @@ const TUI_IS_MOBILE_RES_PROVIDER = {
   useFactory: (mobile$, {
     nativeElement
   }) => {
-    nativeElement[`$.class._mobile`] = mobile$;
+    nativeElement['$.class._mobile'] = mobile$;
     return mobile$;
   }
 };
@@ -35304,7 +35307,7 @@ const MODE_PROVIDER = {
     nativeElement
   }) => {
     const mode$ = mode ? mode.change$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__/* .startWith */ .O)(null), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__/* .map */ .U)(() => mode.mode)) : (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.of)(null);
-    nativeElement[`$.data-mode.attr`] = mode$;
+    nativeElement['$.data-mode.attr'] = mode$;
     return mode$;
   }
 };
@@ -35403,7 +35406,7 @@ let TuiBreakpointService = /*#__PURE__*/(() => {
   TuiBreakpointService.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
     token: TuiBreakpointService,
     factory: TuiBreakpointService.ɵfac,
-    providedIn: `root`
+    providedIn: 'root'
   });
   return TuiBreakpointService;
 })();
@@ -35417,8 +35420,8 @@ let TuiFormatDateService = /*#__PURE__*/(/* unused pure expression or super */ n
     }
     format(timestamp) {
       return of(new Date(timestamp).toLocaleTimeString(this.locale, {
-        hour: `numeric`,
-        minute: `2-digit`
+        hour: 'numeric',
+        minute: '2-digit'
       }));
     }
   }
@@ -35428,7 +35431,7 @@ let TuiFormatDateService = /*#__PURE__*/(/* unused pure expression or super */ n
   TuiFormatDateService.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
     token: TuiFormatDateService,
     factory: TuiFormatDateService.ɵfac,
-    providedIn: `root`
+    providedIn: 'root'
   });
   return TuiFormatDateService;
 })()));
@@ -35459,7 +35462,7 @@ let TuiHintService = /*#__PURE__*/(() => {
   TuiHintService.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
     token: TuiHintService,
     factory: TuiHintService.ɵfac,
-    providedIn: `root`
+    providedIn: 'root'
   });
   return TuiHintService;
 })();
@@ -35469,8 +35472,8 @@ let TuiHintService = /*#__PURE__*/(() => {
 let TuiNightThemeService = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
   class TuiNightThemeService extends Observable {
     constructor(win) {
-      const media = win.matchMedia(`(prefers-color-scheme: dark)`);
-      const media$ = fromEvent(media, `change`).pipe(startWith(null), map(() => media.matches), share());
+      const media = win.matchMedia('(prefers-color-scheme: dark)');
+      const media$ = fromEvent(media, 'change').pipe(startWith(null), map(() => media.matches), share());
       super(subscriber => media$.subscribe(subscriber));
     }
   }
@@ -35480,7 +35483,7 @@ let TuiNightThemeService = /*#__PURE__*/(/* unused pure expression or super */ n
   TuiNightThemeService.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
     token: TuiNightThemeService,
     factory: TuiNightThemeService.ɵfac,
-    providedIn: `root`
+    providedIn: 'root'
   });
   return TuiNightThemeService;
 })()));
@@ -35561,7 +35564,7 @@ let TuiSvgService = /*#__PURE__*/(() => {
       }
       const parsed = this.parseSrc(name, src);
       if (!parsed) {
-        ngDevMode && _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_19__/* .tuiAssert */ .z.assert(false, `Unable to parse given SVG src`);
+        ngDevMode && _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_19__/* .tuiAssert */ .z.assert(false, 'Unable to parse given SVG src');
         return;
       }
       map.set(name, parsed);
@@ -35573,7 +35576,7 @@ let TuiSvgService = /*#__PURE__*/(() => {
       return this.sanitize((0,_taiga_ui_core_utils_dom__WEBPACK_IMPORTED_MODULE_20__/* .tuiProcessIcon */ .NK)(src, name));
     }
     sanitize(src) {
-      return this.sanitizer.bypassSecurityTrustHtml((this.tuiSanitizer ? this.tuiSanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_0__.SecurityContext.HTML, src) : this.sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_0__.SecurityContext.HTML, src)) || ``);
+      return this.sanitizer.bypassSecurityTrustHtml((this.tuiSanitizer ? this.tuiSanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_0__.SecurityContext.HTML, src) : this.sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_0__.SecurityContext.HTML, src)) || '');
     }
   }
   TuiSvgService.ɵfac = function TuiSvgService_Factory(t) {
@@ -35582,7 +35585,7 @@ let TuiSvgService = /*#__PURE__*/(() => {
   TuiSvgService.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
     token: TuiSvgService,
     factory: TuiSvgService.ɵfac,
-    providedIn: `root`
+    providedIn: 'root'
   });
   return TuiSvgService;
 })();
@@ -35607,7 +35610,7 @@ let TuiVisualViewportService = /*#__PURE__*/(() => {
   TuiVisualViewportService.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
     token: TuiVisualViewportService,
     factory: TuiVisualViewportService.ɵfac,
-    providedIn: `root`
+    providedIn: 'root'
   });
   return TuiVisualViewportService;
 })();
@@ -35734,7 +35737,7 @@ var taiga_ui_core_enums = __webpack_require__(7241);
 
 const TUI_REDUCED_MOTION = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => {
   var _a, _b, _c;
-  return (_c = (_b = (_a = (0,core_mjs_.inject)(common_mjs_.DOCUMENT).defaultView) === null || _a === void 0 ? void 0 : _a.matchMedia) === null || _b === void 0 ? void 0 : _b.call(_a, `(prefers-reduced-motion: reduce)`).matches) !== null && _c !== void 0 ? _c : false;
+  return (_c = (_b = (_a = (0,core_mjs_.inject)(common_mjs_.DOCUMENT).defaultView) === null || _a === void 0 ? void 0 : _a.matchMedia) === null || _b === void 0 ? void 0 : _b.call(_a, '(prefers-reduced-motion: reduce)').matches) !== null && _c !== void 0 ? _c : false;
 });
 const TUI_ANIMATIONS_DEFAULT_DURATION = 300;
 /**
@@ -35746,7 +35749,7 @@ const TUI_ANIMATIONS_DURATION = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateT
  * Options for Taiga UI animations
  */
 const TUI_ANIMATION_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => ({
-  value: ``,
+  value: '',
   params: {
     duration: (0,core_mjs_.inject)(TUI_ANIMATIONS_DURATION)
   }
@@ -35761,10 +35764,10 @@ const TUI_ANIMATION_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTok
  */
 const TUI_ASSERT_ENABLED = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => (0,core_mjs_.isDevMode)());
 const COMMON_ICONS = {
-  check: `tuiIconCheck`,
-  close: `tuiIconClose`,
-  error: `tuiIconAlertCircle`,
-  more: `tuiIconChevronRight`
+  check: 'tuiIconCheck',
+  close: 'tuiIconClose',
+  error: 'tuiIconAlertCircle',
+  more: 'tuiIconChevronRight'
 };
 const TUI_COMMON_ICONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(COMMON_ICONS);
 function tuiCommonIconsProvider(icons) {
@@ -35774,7 +35777,7 @@ function tuiCommonIconsProvider(icons) {
 /**
  * Accessor for data-list options
  */
-const TUI_DATA_LIST_ACCESSOR = new core_mjs_.InjectionToken(`[TUI_DATA_LIST_ACCESSOR]`);
+const TUI_DATA_LIST_ACCESSOR = new core_mjs_.InjectionToken('[TUI_DATA_LIST_ACCESSOR]');
 function tuiAsDataListAccessor(useExisting) {
   return {
     provide: TUI_DATA_LIST_ACCESSOR,
@@ -35785,7 +35788,7 @@ function tuiAsDataListAccessor(useExisting) {
 /**
  * DataList controller
  */
-const TUI_DATA_LIST_HOST = new core_mjs_.InjectionToken(`[TUI_DATA_LIST_HOST]`);
+const TUI_DATA_LIST_HOST = new core_mjs_.InjectionToken('[TUI_DATA_LIST_HOST]');
 function tuiAsDataListHost(useExisting) {
   return {
     provide: TUI_DATA_LIST_HOST,
@@ -35796,13 +35799,13 @@ function tuiAsDataListHost(useExisting) {
 /**
  * Token for adding data-type attribute to calendar cell
  */
-const TUI_DAY_TYPE_HANDLER = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(day => day.isWeekend ? `weekend` : `weekday`);
-const TUI_DOCUMENT_OR_SHADOW_ROOT = new core_mjs_.InjectionToken(`[TUI_DOCUMENT_OR_SHADOW_ROOT]`);
+const TUI_DAY_TYPE_HANDLER = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(day => day.isWeekend ? 'weekend' : 'weekday');
+const TUI_DOCUMENT_OR_SHADOW_ROOT = new core_mjs_.InjectionToken('[TUI_DOCUMENT_OR_SHADOW_ROOT]');
 
 /**
  * ElementRef when you cannot use @Input for single time injection
  */
-const TUI_ELEMENT_REF = new core_mjs_.InjectionToken(`[TUI_ELEMENT_REF]`);
+const TUI_ELEMENT_REF = new core_mjs_.InjectionToken('[TUI_ELEMENT_REF]');
 
 /**
  * The first day of the week index
@@ -35812,28 +35815,28 @@ const TUI_FIRST_DAY_OF_WEEK = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTok
 /**
  * Localized months names
  */
-const TUI_MONTHS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`months`));
+const TUI_MONTHS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('months'));
 /**
  * i18n 'close' word
  */
-const TUI_CLOSE_WORD = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`close`));
+const TUI_CLOSE_WORD = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('close'));
 /**
  * i18n 'Nothing found' message
  */
-const TUI_NOTHING_FOUND_MESSAGE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`nothingFoundMessage`));
+const TUI_NOTHING_FOUND_MESSAGE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('nothingFoundMessage'));
 /**
  * i18n of error message
  */
-const TUI_DEFAULT_ERROR_MESSAGE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`defaultErrorMessage`));
+const TUI_DEFAULT_ERROR_MESSAGE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('defaultErrorMessage'));
 /**
  * spin i18n texts
  */
-const TUI_SPIN_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`spinTexts`));
+const TUI_SPIN_TEXTS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('spinTexts'));
 /**
  * calendars i18n texts
  */
-const TUI_SHORT_WEEK_DAYS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)(`shortWeekDays`));
-const TUI_DEFAULT_ICONS_PLACE = `assets/taiga-ui/icons`;
+const TUI_SHORT_WEEK_DAYS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.v)('shortWeekDays'));
+const TUI_DEFAULT_ICONS_PLACE = 'assets/taiga-ui/icons';
 /**
  * Path to icons
  * @deprecated Use {@link TUI_SVG_OPTIONS} instead
@@ -35868,7 +35871,7 @@ const TUI_MEDIA = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)({
 const TUI_IS_MOBILE_RES = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => {
   const win = (0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9);
   const media = (0,core_mjs_.inject)(TUI_MEDIA);
-  return (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(win, `resize`).pipe((0,share/* share */.B)(), (0,startWith/* startWith */.O)(null), (0,map/* map */.U)(() => tuiIsMobile(win, media)), (0,distinctUntilChanged/* distinctUntilChanged */.x)(), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)((0,core_mjs_.inject)(core_mjs_.NgZone)));
+  return (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(win, 'resize').pipe((0,share/* share */.B)(), (0,startWith/* startWith */.O)(null), (0,map/* map */.U)(() => tuiIsMobile(win, media)), (0,distinctUntilChanged/* distinctUntilChanged */.x)(), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.Yr)((0,core_mjs_.inject)(core_mjs_.NgZone)));
 });
 
 /**
@@ -35876,31 +35879,31 @@ const TUI_IS_MOBILE_RES = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFr
  * @deprecated
  * Don't use it! Will be removed after changing the mask.
  */
-const TUI_LEGACY_MASK = new core_mjs_.InjectionToken(`[TUI_LEGACY_MASK]`);
+const TUI_LEGACY_MASK = new core_mjs_.InjectionToken('[TUI_LEGACY_MASK]');
 
 /**
  * Mode stream for private providers
  */
-const TUI_MODE = new core_mjs_.InjectionToken(`[TUI_MODE]`);
+const TUI_MODE = new core_mjs_.InjectionToken('[TUI_MODE]');
 
 /** @deprecated remove export */
 const STATUS_ICON = {
-  info: `tuiIconInfo`,
-  success: `tuiIconCheckCircle`,
-  error: `tuiIconXCircle`,
-  warning: `tuiIconAlertCircle`,
-  neutral: `tuiIconInfo`
+  info: 'tuiIconInfo',
+  success: 'tuiIconCheckCircle',
+  error: 'tuiIconXCircle',
+  warning: 'tuiIconAlertCircle',
+  neutral: 'tuiIconInfo'
 };
 /** Default values for the notification options. */
 const TUI_NOTIFICATION_DEFAULT_OPTIONS = {
   autoClose: 3000,
-  label: ``,
-  status: `info`,
+  label: '',
+  status: 'info',
   hasCloseButton: true,
   icon: ({
     $implicit
   }) => STATUS_ICON[$implicit],
-  size: `m`,
+  size: 'm',
   hasIcon: true,
   defaultAutoCloseTime: 3000
 };
@@ -35930,7 +35933,7 @@ const TUI_NUMBER_FORMAT_OBSERVABLE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCr
 /**
  * Content for tuiOption component
  */
-const TUI_OPTION_CONTENT = new core_mjs_.InjectionToken(`[TUI_OPTION_CONTENT]`);
+const TUI_OPTION_CONTENT = new core_mjs_.InjectionToken('[TUI_OPTION_CONTENT]');
 function tuiAsOptionContent(useValue) {
   return {
     provide: TUI_OPTION_CONTENT,
@@ -35957,7 +35960,7 @@ const TUI_ORDERED_SHORT_WEEK_DAYS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCre
 /**
  * A custom Sanitizer to sanitize source before inlining
  */
-const TUI_SANITIZER = new core_mjs_.InjectionToken(`[TUI_SANITIZER]`);
+const TUI_SANITIZER = new core_mjs_.InjectionToken('[TUI_SANITIZER]');
 
 /**
  * @deprecated import from `@taiga-ui/cdk` instead
@@ -35969,11 +35972,11 @@ const TUI_SCROLL_REF = (/* unused pure expression or super */ null && (TUI_SCROL
  */
 const TUI_SELECTION_STREAM = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => {
   const doc = (0,core_mjs_.inject)(common_mjs_.DOCUMENT);
-  return (0,merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, `selectionchange`), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, `mouseup`), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, `mousedown`).pipe((0,switchMap/* switchMap */.w)(() => (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, `mousemove`).pipe((0,takeUntil/* takeUntil */.R)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, `mouseup`))))), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, `keydown`), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, `keyup`)).pipe((0,share/* share */.B)());
+  return (0,merge/* merge */.T)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, 'selectionchange'), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, 'mouseup'), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, 'mousedown').pipe((0,switchMap/* switchMap */.w)(() => (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, 'mousemove').pipe((0,takeUntil/* takeUntil */.R)((0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, 'mouseup'))))), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, 'keydown'), (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.mL)(doc, 'keyup')).pipe((0,share/* share */.B)());
 });
 const TUI_SPIN_ICONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)({
-  decrement: `tuiIconChevronLeft`,
-  increment: `tuiIconChevronRight`
+  decrement: 'tuiIconChevronLeft',
+  increment: 'tuiIconChevronRight'
 });
 
 /**
@@ -35998,19 +36001,19 @@ const TUI_TEXTFIELD_APPEARANCE = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreate
 /**
  * An interface to communicate with textfield based controls
  */
-const TUI_TEXTFIELD_HOST = new core_mjs_.InjectionToken(`[TUI_TEXTFIELD_HOST]`);
+const TUI_TEXTFIELD_HOST = new core_mjs_.InjectionToken('[TUI_TEXTFIELD_HOST]');
 function tuiAsTextfieldHost(useExisting) {
   return {
     provide: TUI_TEXTFIELD_HOST,
     useExisting
   };
 }
-const TUI_THEME = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)(`Taiga`);
+const TUI_THEME = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.JN)('Taiga');
 
 /**
  * Buffer token to pass NG_VALUE_ACCESSOR to a different Injector
  */
-const TUI_VALUE_ACCESSOR = new core_mjs_.InjectionToken(`[TUI_VALUE_ACCESSOR]`);
+const TUI_VALUE_ACCESSOR = new core_mjs_.InjectionToken('[TUI_VALUE_ACCESSOR]');
 
 /**
  * Viewport accessor
@@ -36018,7 +36021,7 @@ const TUI_VALUE_ACCESSOR = new core_mjs_.InjectionToken(`[TUI_VALUE_ACCESSOR]`);
 const TUI_VIEWPORT = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.N1)(() => {
   const win = (0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.m9);
   return {
-    type: `viewport`,
+    type: 'viewport',
     getClientRect() {
       return {
         top: 0,
@@ -36058,11 +36061,11 @@ function tuiAsViewport(useExisting) {
 /* unused harmony exports tuiGetSafeAreaSize, tuiGetScreenWidth, tuiGetViewportHeight, tuiGetWordRange */
 
 function tuiCheckFixedPosition(element) {
-  if (!element || typeof getComputedStyle === `undefined`) {
+  if (!element || typeof getComputedStyle === 'undefined') {
     return false;
   }
   const style = getComputedStyle(element);
-  return style.getPropertyValue(`position`) === `fixed` || tuiCheckFixedPosition(element.parentElement);
+  return style.getPropertyValue('position') === 'fixed' || tuiCheckFixedPosition(element.parentElement);
 }
 
 /**
@@ -36071,11 +36074,11 @@ function tuiCheckFixedPosition(element) {
  * ATTENTION: Only use in browser environment
  */
 function tuiGetSafeAreaSize() {
-  if (!CSS.supports(`padding-top: env(safe-area-inset-top)`)) {
+  if (!CSS.supports('padding-top: env(safe-area-inset-top)')) {
     return 0;
   }
-  const div = document.createElement(`div`);
-  div.style.paddingTop = `env(safe-area-inset-top)`;
+  const div = document.createElement('div');
+  div.style.paddingTop = 'env(safe-area-inset-top)';
   document.body.appendChild(div);
   const safeAreaSize = parseInt(window.getComputedStyle(div).paddingTop, 10) || 0;
   document.body.removeChild(div);
@@ -36157,9 +36160,9 @@ function tuiGetWordRange(currentRange) {
   treeWalker.currentNode = startContainer;
   do {
     const container = treeWalker.currentNode;
-    const textContent = container.textContent || ``;
+    const textContent = container.textContent || '';
     const content = container === startContainer ? textContent.slice(0, Math.max(0, startOffset + 1)) : textContent;
-    const offset = Math.max(content.lastIndexOf(` `), content.lastIndexOf(CHAR_NO_BREAK_SPACE), content.lastIndexOf(CHAR_ZERO_WIDTH_SPACE)) + 1;
+    const offset = Math.max(content.lastIndexOf(' '), content.lastIndexOf(CHAR_NO_BREAK_SPACE), content.lastIndexOf(CHAR_ZERO_WIDTH_SPACE)) + 1;
     range.setStart(container, 0);
     if (offset) {
       range.setStart(container, offset);
@@ -36169,9 +36172,9 @@ function tuiGetWordRange(currentRange) {
   treeWalker.currentNode = endContainer;
   do {
     const container = treeWalker.currentNode;
-    const textContent = container.textContent || ``;
+    const textContent = container.textContent || '';
     const content = container === endContainer ? textContent.slice(endOffset + 1) : textContent;
-    const offset = [content.indexOf(` `), content.indexOf(CHAR_NO_BREAK_SPACE), content.indexOf(CHAR_ZERO_WIDTH_SPACE)].reduce((result, item) => result === -1 || item === -1 ? Math.max(result, item) : Math.min(result, item), -1);
+    const offset = [content.indexOf(' '), content.indexOf(CHAR_NO_BREAK_SPACE), content.indexOf(CHAR_ZERO_WIDTH_SPACE)].reduce((result, item) => result === -1 || item === -1 ? Math.max(result, item) : Math.min(result, item), -1);
     range.setEnd(container, textContent.length);
     if (offset !== -1) {
       range.setEnd(container, offset + textContent.length - content.length);
@@ -36180,15 +36183,15 @@ function tuiGetWordRange(currentRange) {
   } while (treeWalker.nextNode());
   return range;
 }
-const WIDTH_SEARCH = `width="`;
-const HEIGHT_SEARCH = `height="`;
-const START = `<svg`;
+const WIDTH_SEARCH = 'width="';
+const HEIGHT_SEARCH = 'height="';
+const START = '<svg';
 function tuiProcessIcon(source, name) {
   if (source.includes(`id="${name}"`)) {
     return source;
   }
   const src = source.slice(Math.max(0, source.indexOf(START)));
-  const attributes = src.slice(0, Math.max(0, src.indexOf(`>`)));
+  const attributes = src.slice(0, Math.max(0, src.indexOf('>')));
   if (!(attributes === null || attributes === void 0 ? void 0 : attributes.includes(WIDTH_SEARCH)) || !attributes.includes(HEIGHT_SEARCH)) {
     return `${src.replace(START, `<svg xmlns="http://www.w3.org/2000/svg"><g id="${name}" xmlns="http://www.w3.org/2000/svg"><svg`)}</g></svg>`;
   }
@@ -36196,9 +36199,9 @@ function tuiProcessIcon(source, name) {
   const indexOfHeight = attributes.indexOf(HEIGHT_SEARCH);
   const widthOffset = indexOfWidth + WIDTH_SEARCH.length;
   const heightOffset = indexOfHeight + HEIGHT_SEARCH.length;
-  const widthString = attributes.slice(widthOffset, attributes.indexOf(`"`, widthOffset));
-  const heightString = attributes.slice(heightOffset, attributes.indexOf(`"`, heightOffset));
-  if (!heightString || !widthString || widthString.includes(`%`) || heightString.includes(`%`) || widthString.includes(`em`) || heightString.includes(`em`)) {
+  const widthString = attributes.slice(widthOffset, attributes.indexOf('"', widthOffset));
+  const heightString = attributes.slice(heightOffset, attributes.indexOf('"', heightOffset));
+  if (!heightString || !widthString || widthString.includes('%') || heightString.includes('%') || widthString.includes('em') || heightString.includes('em')) {
     return src.replace(START, `<svg id="${name}"`);
   }
   const width = parseInt(widthString, 10);
@@ -36233,8 +36236,8 @@ function tuiProcessIcon(source, name) {
 
 const ITEM_SIZE = 1.5;
 const CONTENT_SIZE = 2.5;
-function tuiGetBorder(hasIcon, hasCleaner = false, hasTooltip = false, hasContent = false, size = `m`) {
-  const offset = size === `s` ? 0 : 0.25;
+function tuiGetBorder(hasIcon, hasCleaner = false, hasTooltip = false, hasContent = false, size = 'm') {
+  const offset = size === 's' ? 0 : 0.25;
   let border = 0;
   if (hasIcon) {
     border += ITEM_SIZE + offset;
@@ -36251,9 +36254,9 @@ function tuiGetBorder(hasIcon, hasCleaner = false, hasTooltip = false, hasConten
   return border;
 }
 function tuiIconsPathFactory(staticPath) {
-  const base = staticPath.endsWith(`/`) ? staticPath : `${staticPath}/`;
+  const base = staticPath.endsWith('/') ? staticPath : `${staticPath}/`;
   return name => {
-    if (name.startsWith(`tuiIcon`)) {
+    if (name.startsWith('tuiIcon')) {
       return `${base}${name}.svg${_taiga_ui_core_constants__WEBPACK_IMPORTED_MODULE_0__/* .TUI_CACHE_BUSTING_PAYLOAD */ .uJ}#${name}`;
     }
     return (0,_taiga_ui_core_constants__WEBPACK_IMPORTED_MODULE_0__/* .DEFAULT_ICONS_PATH */ .oA)(name);
@@ -36270,13 +36273,13 @@ function tuiIsEditingKey(key) {
 /**
  * @internal
  */
-function tuiIsObscured(el, exceptSelector = `tui-hints-host`) {
+function tuiIsObscured(el, exceptSelector = 'tui-hints-host') {
   var _a;
   return !!((_a = (0,_taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__/* .tuiGetElementObscures */ .PU)(el)) === null || _a === void 0 ? void 0 : _a.some(el => !el.closest(exceptSelector)));
 }
 function tuiIsPresumedHTMLString(candidate) {
   const trimmed = candidate.trim();
-  return trimmed.startsWith(`<`) && trimmed.endsWith(`>`);
+  return trimmed.startsWith('<') && trimmed.endsWith('>');
 }
 function tuiOverrideOptions(override, fallback) {
   return (directive, options) => {
@@ -36303,7 +36306,7 @@ const SIZES = {
  * @param size size that we need to compare
  * @param biggerThanSize size to compare with, 's' by default
  */
-function tuiSizeBigger(size, biggerThanSize = `s`) {
+function tuiSizeBigger(size, biggerThanSize = 's') {
   return SIZES[size] > SIZES[biggerThanSize];
 }
 
@@ -36567,365 +36570,365 @@ var taiga_ui_i18n_enums = __webpack_require__(8751);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/i18n/fesm2015/taiga-ui-i18n-languages-english.js
 
 const TUI_ENGLISH_LANGUAGE_ADDON_COMMERCE = {
-  cardNumber: [`Number`, `Card number`],
-  cardExpiry: [`Expires`, `Valid through`]
+  cardNumber: ['Number', 'Card number'],
+  cardExpiry: ['Expires', 'Valid through']
 };
 const TUI_ENGLISH_LANGUAGE_ADDON_EDITOR = {
-  colorSelectorModeNames: [`Solid color`, `Gradient`],
+  colorSelectorModeNames: ['Solid color', 'Gradient'],
   toolbarTools: {
-    undo: `Undo`,
-    redo: `Redo`,
-    font: `Font`,
-    fontStyle: `Font style`,
-    fontSize: `Font size`,
-    bold: `Bold`,
-    italic: `Italic`,
-    underline: `Underline`,
-    strikeThrough: `Strike through`,
-    justify: `Justify`,
-    justifyLeft: `Justify left`,
-    justifyCenter: `Justify center`,
-    justifyRight: `Justify right`,
-    justifyFull: `Justify full`,
-    list: `List`,
-    indent: `Indent`,
-    outdent: `Outdent`,
-    unorderedList: `Unordered list`,
-    orderedList: `Ordered list`,
-    quote: `Quote`,
-    foreColor: `Color`,
-    backColor: `Background color`,
-    hiliteColor: `Highlight color`,
-    clear: `Clear`,
-    link: `Link`,
-    attach: `Attach file`,
-    tex: `Insert TeX`,
-    code: `Code`,
-    image: `Insert image`,
-    insertHorizontalRule: `Insert horizontal rule`,
-    superscript: `Superscript`,
-    subscript: `Subscript`,
-    insertTable: `Insert table`,
-    insertGroup: `Insert group`,
-    hiliteGroup: `Hilite group`,
-    removeGroup: `Remove group`,
-    insertAnchor: `Insert anchor`,
-    mergeCells: `Merge cells`,
-    splitCells: `Split cells`,
-    rowsColumnsManaging: `Managing rows and columns`,
-    cellColor: `Cell color`,
-    setDetails: `Details`,
-    removeDetails: `Remove details`
+    undo: 'Undo',
+    redo: 'Redo',
+    font: 'Font',
+    fontStyle: 'Font style',
+    fontSize: 'Font size',
+    bold: 'Bold',
+    italic: 'Italic',
+    underline: 'Underline',
+    strikeThrough: 'Strike through',
+    justify: 'Justify',
+    justifyLeft: 'Justify left',
+    justifyCenter: 'Justify center',
+    justifyRight: 'Justify right',
+    justifyFull: 'Justify full',
+    list: 'List',
+    indent: 'Indent',
+    outdent: 'Outdent',
+    unorderedList: 'Unordered list',
+    orderedList: 'Ordered list',
+    quote: 'Quote',
+    foreColor: 'Color',
+    backColor: 'Background color',
+    hiliteColor: 'Highlight color',
+    clear: 'Clear',
+    link: 'Link',
+    attach: 'Attach file',
+    tex: 'Insert TeX',
+    code: 'Code',
+    image: 'Insert image',
+    insertHorizontalRule: 'Insert horizontal rule',
+    superscript: 'Superscript',
+    subscript: 'Subscript',
+    insertTable: 'Insert table',
+    insertGroup: 'Insert group',
+    hiliteGroup: 'Hilite group',
+    removeGroup: 'Remove group',
+    insertAnchor: 'Insert anchor',
+    mergeCells: 'Merge cells',
+    splitCells: 'Split cells',
+    rowsColumnsManaging: 'Managing rows and columns',
+    cellColor: 'Cell color',
+    setDetails: 'Details',
+    removeDetails: 'Remove details'
   },
   editorEditLink: {
-    urlExample: `example.com`,
-    anchorExample: `anchor`
+    urlExample: 'example.com',
+    anchorExample: 'anchor'
   },
-  editorTableCommands: [[`Insert column before`, `Insert column after`], [`Insert row before`, `Insert row after`], [`Delete column`, `Delete row`]],
-  editorCodeOptions: [`Code in the text`, `Code in block`],
+  editorTableCommands: [['Insert column before', 'Insert column after'], ['Insert row before', 'Insert row after'], ['Delete column', 'Delete row']],
+  editorCodeOptions: ['Code in the text', 'Code in block'],
   editorFontOptions: {
-    small: `Small`,
-    large: `Large`,
-    normal: `Normal`,
-    title: `Title`,
-    subtitle: `Subtitle`
+    small: 'Small',
+    large: 'Large',
+    normal: 'Normal',
+    title: 'Title',
+    subtitle: 'Subtitle'
   }
 };
 const TUI_ENGLISH_LANGUAGE_ADDON_PREVIEW = {
   previewTexts: {
-    rotate: `Rotate`
+    rotate: 'Rotate'
   },
   zoomTexts: {
-    zoomOut: `Zoom out`,
-    zoomIn: `Zoom in`,
-    reset: `Reset`
+    zoomOut: 'Zoom out',
+    zoomIn: 'Zoom in',
+    reset: 'Reset'
   }
 };
 const TUI_ENGLISH_LANGUAGE_ADDON_TABLE = {
-  showHideText: `Show/Hide`,
+  showHideText: 'Show/Hide',
   paginationTexts: {
-    pages: `Pages`,
-    linesPerPage: `Lines per page`,
-    of: `of`
+    pages: 'Pages',
+    linesPerPage: 'Lines per page',
+    of: 'of'
   }
 };
 const TUI_ENGLISH_LANGUAGE_COUNTRIES = {
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AD]: `Andorra`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AE]: `United Arab Emirates`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AF]: `Afghanistan`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AG]: `Antigua and Barbuda`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BL]: `Saint Barthélemy`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AI]: `Anguilla`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AL]: `Albania`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AM]: `Armenia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AO]: `Angola`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AR]: `Argentina`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AT]: `Austria`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AU]: `Australia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AW]: `Aruba`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AZ]: `Azerbaijan`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BA]: `Bosnia and Herzegovina`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BB]: `Barbados`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BD]: `Bangladesh`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BE]: `Belgium`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BF]: `Burkina Faso`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BG]: `Bulgaria`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BH]: `Bahrain`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BI]: `Burundi`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BJ]: `Benin`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GF]: `Guyana`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BM]: `Bermuda`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BN]: `Brunei Darussalam`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BO]: `Bolivia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BQ]: `Bonaire, Sint Eustatius and Saba`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BR]: `Brazil`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BS]: `Bahamas`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BT]: `Bhutan`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BW]: `Botswana`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BY]: `Belarus`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BZ]: `Belize`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CA]: `Canada`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CD]: `Dem. Rep. Congo (Kinshasa)`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CF]: `Central African Republic`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CG]: `Congo (Brazzaville)`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CH]: `Switzerland`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CI]: `Ivory Coast`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CL]: `Chile`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CM]: `Cameroon`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CN]: `China`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CO]: `Colombia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CR]: `Costa Rica`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CU]: `Cuba`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CV]: `Cape Verde`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CW]: `Curaçao`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CY]: `Cyprus`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CZ]: `Czech Republic`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DE]: `Germany`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DJ]: `Djibouti`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DK]: `Denmark`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DM]: `Dominica`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DO]: `Dominican Republic`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DZ]: `Algeria`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.EC]: `Ecuador`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.EE]: `Estonia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.EG]: `Egypt`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ER]: `Eritrea`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ES]: `Spain`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ET]: `Ethiopia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.FI]: `Finland`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.FJ]: `Fiji`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.FK]: `Falkland Islands`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.FM]: `F.S. of Micronesia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.FR]: `France`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GA]: `Gabon`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GB]: `United Kingdom`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GD]: `Grenada`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GE]: `Georgia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GP]: `Guadeloupe`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GH]: `Ghana`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GI]: `Gibraltar`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GL]: `Greenland`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GM]: `Gambia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GN]: `Guinea`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MF]: `Saint-Martin`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GQ]: `Equatorial Guinea`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GR]: `Greece`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GT]: `Guatemala`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GW]: `Guinea-Bissau`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GY]: `Guyana`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.HK]: `Hong Kong`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.HN]: `Honduras`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.HR]: `Croatia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.HT]: `Haiti`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.HU]: `Hungary`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ID]: `Indonesia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IE]: `Ireland`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IL]: `Israel`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IN]: `India`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IQ]: `Iraq`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IR]: `Iran`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IS]: `Iceland`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IT]: `Italy`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.JM]: `Jamaica`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.JO]: `Jordan`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.JP]: `Japan`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KE]: `Kenya`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KG]: `Kyrgyzstan`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KH]: `Cambodia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KM]: `Comoros`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KN]: `Saint Kitts and Nevis`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KP]: `Korean PDR`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KR]: `Rep. Korea`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KW]: `Kuwait`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KY]: `Cayman Islands`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KZ]: `Kazakhstan`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LA]: `Laos`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LB]: `Lebanon`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LC]: `Saint Lucia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LI]: `Liechtenstein`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LK]: `Sri Lanka`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LR]: `Liberia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LS]: `Lesotho`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LT]: `Lithuania`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LU]: `Luxembourg`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LV]: `Latvia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LY]: `Libya`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MA]: `Morocco`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MC]: `Monaco`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MD]: `Moldova`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ME]: `Montenegro`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MQ]: `Martinique`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MG]: `Madagascar`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MK]: `Rep. of North Macedonia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ML]: `Mali`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MM]: `Burma (Myanmar)`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MN]: `Mongolia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MO]: `Macau`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.RE]: `Réunion`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MR]: `Mauritania`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MS]: `Montserrat`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MT]: `Malta`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MU]: `Mauritius`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MV]: `Maldives`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MW]: `Malawi`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MX]: `Mexico`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MY]: `Malaysia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MZ]: `Mozambique`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NA]: `Namibia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NC]: `New Caledonia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NE]: `Niger`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NG]: `Nigeria`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NI]: `Nicaragua`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NL]: `Netherlands`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NO]: `Norway`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NP]: `Nepal`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NZ]: `New Zealand`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.OM]: `Oman`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PA]: `Panama`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PE]: `Peru`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PF]: `French Polynesia (Tahiti)`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PG]: `Papua New Guinea`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PH]: `Philippines`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PK]: `Pakistan`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PL]: `Poland`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PT]: `Portugal`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PW]: `Palau`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PY]: `Paraguay`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.QA]: `Qatar`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.YT]: `Mayotte`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.RO]: `Romania`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.RS]: `Serbia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.RU]: `Russia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.RW]: `Rwanda`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SA]: `Saudi Arabia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SB]: `Solomon Islands`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SC]: `Seychelles`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SD]: `Sudan`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SE]: `Sweden`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SG]: `Singapore`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SH]: `Saint Helena`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SI]: `Slovenia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SK]: `Slovakia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SL]: `Sierra Leone`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SM]: `San Marino`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SN]: `Senegal`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SO]: `Somalia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SR]: `Suriname`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ST]: `Sao Tome and Principe`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SV]: `El Salvador`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SX]: `Sint Maarten`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SY]: `Syrian Arab Republic`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SZ]: `Swaziland`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TC]: `Turks and Caicos`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TD]: `Chad`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TG]: `Togo`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TH]: `Thailand`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TJ]: `Tajikistan`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TL]: `East Timor`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TM]: `Turkmenistan`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TN]: `Tunisia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TO]: `Tonga`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TR]: `Turkey`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TT]: `Trinidad and Tobago`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TW]: `Taiwan`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TZ]: `Tanzania`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.UA]: `Ukraine`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.UG]: `Uganda`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.US]: `USA`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.UY]: `Uruguay`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.UZ]: `Uzbekistan`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.VC]: `Saint Vincent and the Grenadines`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.VE]: `Venezuela`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.VG]: `British Virgin Islands`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.VN]: `Vietnam`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.VU]: `Vanuatu`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.WS]: `Samoa`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.XK]: `Kosovo`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.YE]: `Yemen`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ZA]: `South Africa`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ZM]: `Zambia`,
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ZW]: `Zimbabwe`
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AD]: 'Andorra',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AE]: 'United Arab Emirates',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AF]: 'Afghanistan',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AG]: 'Antigua and Barbuda',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BL]: 'Saint Barthélemy',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AI]: 'Anguilla',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AL]: 'Albania',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AM]: 'Armenia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AO]: 'Angola',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AR]: 'Argentina',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AT]: 'Austria',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AU]: 'Australia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AW]: 'Aruba',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.AZ]: 'Azerbaijan',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BA]: 'Bosnia and Herzegovina',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BB]: 'Barbados',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BD]: 'Bangladesh',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BE]: 'Belgium',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BF]: 'Burkina Faso',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BG]: 'Bulgaria',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BH]: 'Bahrain',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BI]: 'Burundi',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BJ]: 'Benin',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GF]: 'Guyana',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BM]: 'Bermuda',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BN]: 'Brunei Darussalam',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BO]: 'Bolivia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BQ]: 'Bonaire, Sint Eustatius and Saba',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BR]: 'Brazil',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BS]: 'Bahamas',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BT]: 'Bhutan',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BW]: 'Botswana',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BY]: 'Belarus',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BZ]: 'Belize',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CA]: 'Canada',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CD]: 'Dem. Rep. Congo (Kinshasa)',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CF]: 'Central African Republic',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CG]: 'Congo (Brazzaville)',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CH]: 'Switzerland',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CI]: 'Ivory Coast',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CL]: 'Chile',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CM]: 'Cameroon',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CN]: 'China',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CO]: 'Colombia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CR]: 'Costa Rica',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CU]: 'Cuba',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CV]: 'Cape Verde',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CW]: 'Curaçao',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CY]: 'Cyprus',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.CZ]: 'Czech Republic',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DE]: 'Germany',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DJ]: 'Djibouti',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DK]: 'Denmark',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DM]: 'Dominica',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DO]: 'Dominican Republic',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.DZ]: 'Algeria',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.EC]: 'Ecuador',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.EE]: 'Estonia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.EG]: 'Egypt',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ER]: 'Eritrea',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ES]: 'Spain',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ET]: 'Ethiopia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.FI]: 'Finland',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.FJ]: 'Fiji',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.FK]: 'Falkland Islands',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.FM]: 'F.S. of Micronesia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.FR]: 'France',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GA]: 'Gabon',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GB]: 'United Kingdom',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GD]: 'Grenada',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GE]: 'Georgia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GP]: 'Guadeloupe',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GH]: 'Ghana',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GI]: 'Gibraltar',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GL]: 'Greenland',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GM]: 'Gambia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GN]: 'Guinea',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MF]: 'Saint-Martin',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GQ]: 'Equatorial Guinea',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GR]: 'Greece',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GT]: 'Guatemala',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GW]: 'Guinea-Bissau',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.GY]: 'Guyana',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.HK]: 'Hong Kong',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.HN]: 'Honduras',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.HR]: 'Croatia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.HT]: 'Haiti',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.HU]: 'Hungary',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ID]: 'Indonesia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IE]: 'Ireland',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IL]: 'Israel',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IN]: 'India',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IQ]: 'Iraq',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IR]: 'Iran',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IS]: 'Iceland',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.IT]: 'Italy',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.JM]: 'Jamaica',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.JO]: 'Jordan',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.JP]: 'Japan',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KE]: 'Kenya',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KG]: 'Kyrgyzstan',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KH]: 'Cambodia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KM]: 'Comoros',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KN]: 'Saint Kitts and Nevis',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KP]: 'Korean PDR',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KR]: 'Rep. Korea',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KW]: 'Kuwait',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KY]: 'Cayman Islands',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.KZ]: 'Kazakhstan',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LA]: 'Laos',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LB]: 'Lebanon',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LC]: 'Saint Lucia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LI]: 'Liechtenstein',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LK]: 'Sri Lanka',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LR]: 'Liberia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LS]: 'Lesotho',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LT]: 'Lithuania',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LU]: 'Luxembourg',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LV]: 'Latvia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.LY]: 'Libya',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MA]: 'Morocco',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MC]: 'Monaco',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MD]: 'Moldova',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ME]: 'Montenegro',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MQ]: 'Martinique',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MG]: 'Madagascar',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MK]: 'Rep. of North Macedonia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ML]: 'Mali',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MM]: 'Burma (Myanmar)',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MN]: 'Mongolia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MO]: 'Macau',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.RE]: 'Réunion',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MR]: 'Mauritania',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MS]: 'Montserrat',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MT]: 'Malta',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MU]: 'Mauritius',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MV]: 'Maldives',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MW]: 'Malawi',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MX]: 'Mexico',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MY]: 'Malaysia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.MZ]: 'Mozambique',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NA]: 'Namibia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NC]: 'New Caledonia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NE]: 'Niger',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NG]: 'Nigeria',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NI]: 'Nicaragua',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NL]: 'Netherlands',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NO]: 'Norway',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NP]: 'Nepal',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.NZ]: 'New Zealand',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.OM]: 'Oman',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PA]: 'Panama',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PE]: 'Peru',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PF]: 'French Polynesia (Tahiti)',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PG]: 'Papua New Guinea',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PH]: 'Philippines',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PK]: 'Pakistan',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PL]: 'Poland',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PT]: 'Portugal',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PW]: 'Palau',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.PY]: 'Paraguay',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.QA]: 'Qatar',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.YT]: 'Mayotte',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.RO]: 'Romania',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.RS]: 'Serbia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.RU]: 'Russia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.RW]: 'Rwanda',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SA]: 'Saudi Arabia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SB]: 'Solomon Islands',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SC]: 'Seychelles',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SD]: 'Sudan',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SE]: 'Sweden',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SG]: 'Singapore',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SH]: 'Saint Helena',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SI]: 'Slovenia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SK]: 'Slovakia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SL]: 'Sierra Leone',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SM]: 'San Marino',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SN]: 'Senegal',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SO]: 'Somalia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SR]: 'Suriname',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ST]: 'Sao Tome and Principe',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SV]: 'El Salvador',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SX]: 'Sint Maarten',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SY]: 'Syrian Arab Republic',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.SZ]: 'Swaziland',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TC]: 'Turks and Caicos',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TD]: 'Chad',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TG]: 'Togo',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TH]: 'Thailand',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TJ]: 'Tajikistan',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TL]: 'East Timor',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TM]: 'Turkmenistan',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TN]: 'Tunisia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TO]: 'Tonga',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TR]: 'Turkey',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TT]: 'Trinidad and Tobago',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TW]: 'Taiwan',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.TZ]: 'Tanzania',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.UA]: 'Ukraine',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.UG]: 'Uganda',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.US]: 'USA',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.UY]: 'Uruguay',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.UZ]: 'Uzbekistan',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.VC]: 'Saint Vincent and the Grenadines',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.VE]: 'Venezuela',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.VG]: 'British Virgin Islands',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.VN]: 'Vietnam',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.VU]: 'Vanuatu',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.WS]: 'Samoa',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.XK]: 'Kosovo',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.YE]: 'Yemen',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ZA]: 'South Africa',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ZM]: 'Zambia',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.ZW]: 'Zimbabwe'
 };
 const TUI_ENGLISH_LANGUAGE_CORE = {
-  months: [`January`, `February`, `March`, `April`, `May`, `June`, `July`, `August`, `September`, `October`, `November`, `December`],
-  close: `Close`,
-  nothingFoundMessage: `Nothing found`,
-  defaultErrorMessage: `Value is invalid`,
-  spinTexts: [`Previous`, `Next`],
-  shortWeekDays: [`Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`, `Sun`],
+  months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+  close: 'Close',
+  nothingFoundMessage: 'Nothing found',
+  defaultErrorMessage: 'Value is invalid',
+  spinTexts: ['Previous', 'Next'],
+  shortWeekDays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
   countries: TUI_ENGLISH_LANGUAGE_COUNTRIES
 };
 const TUI_ENGLISH_LANGUAGE_KIT = {
-  cancel: `Cancel`,
-  done: `Done`,
-  more: `More`,
-  otherDate: `Other date...`,
-  showAll: `Show all`,
-  hide: `Hide`,
-  mobileCalendarTexts: [`Choose day`, `Choose range`, `Choose days`],
-  range: [`from`, `to`],
-  countTexts: [`Plus`, `Minus`],
+  cancel: 'Cancel',
+  done: 'Done',
+  more: 'More',
+  otherDate: 'Other date...',
+  showAll: 'Show all',
+  hide: 'Hide',
+  mobileCalendarTexts: ['Choose day', 'Choose range', 'Choose days'],
+  range: ['from', 'to'],
+  countTexts: ['Plus', 'Minus'],
   time: {
-    'HH:MM': `HH:MM`,
-    'HH:MM:SS': `HH:MM:SS`,
-    'HH:MM:SS.MSS': `HH:MM:SS.MSS`
+    'HH:MM': 'HH:MM',
+    'HH:MM:SS': 'HH:MM:SS',
+    'HH:MM:SS.MSS': 'HH:MM:SS.MSS'
   },
   dateTexts: {
-    DMY: `dd.mm.yyyy`,
-    MDY: `mm.dd.yyyy`,
-    YMD: `yyyy.mm.dd`
+    DMY: 'dd.mm.yyyy',
+    MDY: 'mm.dd.yyyy',
+    YMD: 'yyyy.mm.dd'
   },
-  digitalInformationUnits: [`B`, `KiB`, `MiB`],
-  passwordTexts: [`Show password`, `Hide password`],
-  copyTexts: [`Copy`, `Copied`],
-  shortCalendarMonths: [`Jan`, `Feb`, `Mar`, `Apr`, `May`, `Jun`, `Jul`, `Aug`, `Sep`, `Oct`, `Nov`, `Dec`],
-  pagination: [`Previous page`, `Next page`],
+  digitalInformationUnits: ['B', 'KiB', 'MiB'],
+  passwordTexts: ['Show password', 'Hide password'],
+  copyTexts: ['Copy', 'Copied'],
+  shortCalendarMonths: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  pagination: ['Previous page', 'Next page'],
   fileTexts: {
-    loadingError: `Upload failed`,
-    preview: `Preview`,
-    remove: `Remove`
+    loadingError: 'Upload failed',
+    preview: 'Preview',
+    remove: 'Remove'
   },
   inputFileTexts: {
-    defaultLabelSingle: `or drop\u00A0it\u00A0here`,
-    defaultLabelMultiple: `or drop\u00A0them\u00A0here`,
-    defaultLinkSingle: `Choose a file`,
-    defaultLinkMultiple: `Choose files`,
-    maxSizeRejectionReason: `File is too large `,
-    formatRejectionReason: `Wrong file type`,
-    drop: `Drop file here`,
-    dropMultiple: `Drop files here`
+    defaultLabelSingle: 'or drop\u00A0it\u00A0here',
+    defaultLabelMultiple: 'or drop\u00A0them\u00A0here',
+    defaultLinkSingle: 'Choose a file',
+    defaultLinkMultiple: 'Choose files',
+    maxSizeRejectionReason: 'File is too large ',
+    formatRejectionReason: 'Wrong file type',
+    drop: 'Drop file here',
+    dropMultiple: 'Drop files here'
   },
   multiSelectTexts: {
-    all: `Select all`,
-    none: `Select none`
+    all: 'Select all',
+    none: 'Select none'
   },
   prompt: {
-    yes: `Yes`,
-    no: `No`
+    yes: 'Yes',
+    no: 'No'
   }
 };
 const TUI_ENGLISH_LANGUAGE = Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({
-  name: `english`
+  name: 'english'
 }, TUI_ENGLISH_LANGUAGE_CORE), TUI_ENGLISH_LANGUAGE_KIT), TUI_ENGLISH_LANGUAGE_ADDON_TABLE), TUI_ENGLISH_LANGUAGE_ADDON_COMMERCE), TUI_ENGLISH_LANGUAGE_ADDON_EDITOR), TUI_ENGLISH_LANGUAGE_ADDON_PREVIEW);
 
 /**
@@ -36944,13 +36947,13 @@ var of = __webpack_require__(2096);
 /**
  * Default Language for Taiga UI libraries i18n
  */
-const TUI_DEFAULT_LANGUAGE = new core_mjs_.InjectionToken(`[TUI_DEFAULT_LANGUAGE]`, {
+const TUI_DEFAULT_LANGUAGE = new core_mjs_.InjectionToken('[TUI_DEFAULT_LANGUAGE]', {
   factory: () => TUI_ENGLISH_LANGUAGE
 });
 /**
  * Language for Taiga UI libraries i18n
  */
-const TUI_LANGUAGE = new core_mjs_.InjectionToken(`[TUI_LANGUAGE]`, {
+const TUI_LANGUAGE = new core_mjs_.InjectionToken('[TUI_LANGUAGE]', {
   factory: () => (0,of.of)((0,core_mjs_.inject)(TUI_DEFAULT_LANGUAGE))
 });
 
@@ -36959,13 +36962,13 @@ const TUI_LANGUAGE = new core_mjs_.InjectionToken(`[TUI_LANGUAGE]`, {
  * @note: cannot be transferred to a shared file
  * ReferenceError: Cannot access 'TUI_LANGUAGE_LOADER' before initialization
  */
-const TUI_LANGUAGE_LOADER = new core_mjs_.InjectionToken(`[TUI_LANGUAGE_LOADER]`);
+const TUI_LANGUAGE_LOADER = new core_mjs_.InjectionToken('[TUI_LANGUAGE_LOADER]');
 
 /**
  * Default key for search value in storage
  */
-const TUI_LANGUAGE_STORAGE_KEY = new core_mjs_.InjectionToken(`[TUI_LANGUAGE_STORAGE_KEY]`, {
-  factory: () => `tuiLanguage`
+const TUI_LANGUAGE_STORAGE_KEY = new core_mjs_.InjectionToken('[TUI_LANGUAGE_STORAGE_KEY]', {
+  factory: () => 'tuiLanguage'
 });
 
 /**
