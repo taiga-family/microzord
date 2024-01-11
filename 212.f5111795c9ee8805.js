@@ -1435,8 +1435,7 @@ __webpack_require__.d(__webpack_exports__, {
   "ɵnoSideEffects": () => (/* binding */ noSideEffects),
   "ɵpatchComponentDefWithScope": () => (/* binding */ patchComponentDefWithScope),
   "ɵperformanceMarkFeature": () => (/* binding */ performanceMarkFeature),
-  "ɵpublishDefaultGlobalUtils": () => (/* binding */ publishDefaultGlobalUtils$1),
-  "ɵpublishGlobalUtil": () => (/* binding */ publishGlobalUtil),
+  "ɵprovideZonelessChangeDetection": () => (/* binding */ provideZonelessChangeDetection),
   "ɵregisterLocaleData": () => (/* binding */ registerLocaleData),
   "ɵrenderDeferBlockState": () => (/* binding */ renderDeferBlockState),
   "ɵresetCompiledComponents": () => (/* binding */ resetCompiledComponents),
@@ -1649,7 +1648,7 @@ __webpack_require__.d(__webpack_exports__, {
 
 ;// CONCATENATED MODULE: ./node_modules/@angular/core/fesm2022/primitives/signals.mjs
 /**
- * @license Angular v17.0.8
+ * @license Angular v17.0.9
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -2207,7 +2206,7 @@ var map = __webpack_require__(7398);
 var first = __webpack_require__(1374);
 ;// CONCATENATED MODULE: ./node_modules/@angular/core/fesm2022/core.mjs
 /**
- * @license Angular v17.0.8
+ * @license Angular v17.0.9
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -2519,8 +2518,8 @@ function throwInvalidProviderError(ngModuleType, providers, provider) {
 }
 /** Throws an error when a token is not found in DI. */
 function throwProviderNotFoundError(token, injectorName) {
-  const injectorDetails = injectorName ? ` in ${injectorName}` : '';
-  throw new RuntimeError(-201 /* RuntimeErrorCode.PROVIDER_NOT_FOUND */, ngDevMode && `No provider for ${stringifyForError(token)} found${injectorDetails}`);
+  const errorMessage = ngDevMode && `No provider for ${stringifyForError(token)} found${injectorName ? ` in ${injectorName}` : ''}`;
+  throw new RuntimeError(-201 /* RuntimeErrorCode.PROVIDER_NOT_FOUND */, errorMessage);
 }
 
 // The functions in this file verify that the assumptions we are making
@@ -2791,7 +2790,7 @@ function injectRootLimpMode(token, notFoundValue, flags) {
   }
   if (flags & InjectFlags.Optional) return null;
   if (notFoundValue !== undefined) return notFoundValue;
-  throwProviderNotFoundError(stringify(token), 'Injector');
+  throwProviderNotFoundError(token, 'Injector');
 }
 /**
  * Assert that `_injectImplementation` is not `fn`.
@@ -4379,11 +4378,6 @@ var LContainerFlags = /*#__PURE__*/function (LContainerFlags) {
    * This flag, once set, is never unset for the `LContainer`.
    */
   LContainerFlags[LContainerFlags["HasTransplantedViews"] = 2] = "HasTransplantedViews";
-  /**
-   * Indicates that this LContainer has a view underneath it that needs to be refreshed during
-   * change detection.
-   */
-  LContainerFlags[LContainerFlags["HasChildViewsToRefresh"] = 4] = "HasChildViewsToRefresh";
   return LContainerFlags;
 }(LContainerFlags || {});
 /**
@@ -4887,22 +4881,18 @@ function updateAncestorTraversalFlagsOnAttach(lView) {
  */
 function markAncestorsForTraversal(lView) {
   lView[ENVIRONMENT].changeDetectionScheduler?.notify();
-  let parent = lView[PARENT];
+  let parent = getLViewParent(lView);
   while (parent !== null) {
     // We stop adding markers to the ancestors once we reach one that already has the marker. This
     // is to avoid needlessly traversing all the way to the root when the marker already exists.
-    if (isLContainer(parent) && parent[FLAGS] & LContainerFlags.HasChildViewsToRefresh || isLView(parent) && parent[FLAGS] & 8192 /* LViewFlags.HasChildViewsToRefresh */) {
+    if (parent[FLAGS] & 8192 /* LViewFlags.HasChildViewsToRefresh */) {
       break;
     }
-    if (isLContainer(parent)) {
-      parent[FLAGS] |= LContainerFlags.HasChildViewsToRefresh;
-    } else {
-      parent[FLAGS] |= 8192 /* LViewFlags.HasChildViewsToRefresh */;
-      if (!viewAttachedToChangeDetector(parent)) {
-        break;
-      }
+    parent[FLAGS] |= 8192 /* LViewFlags.HasChildViewsToRefresh */;
+    if (!viewAttachedToChangeDetector(parent)) {
+      break;
     }
-    parent = parent[PARENT];
+    parent = getLViewParent(parent);
   }
 }
 /**
@@ -4926,6 +4916,16 @@ function removeLViewOnDestroy(lView, onDestroyCallback) {
   if (destroyCBIdx !== -1) {
     lView[ON_DESTROY_HOOKS].splice(destroyCBIdx, 1);
   }
+}
+/**
+ * Gets the parent LView of the passed LView, if the PARENT is an LContainer, will get the parent of
+ * that LContainer, which is an LView
+ * @param lView the lView whose parent to get
+ */
+function getLViewParent(lView) {
+  ngDevMode && assertLView(lView);
+  const parent = lView[PARENT];
+  return isLContainer(parent) ? parent[PARENT] : parent;
 }
 const instructionState = {
   lFrame: /*#__PURE__*/createLFrame(null),
@@ -5910,10 +5910,12 @@ function hasParentInjector(parentLocation) {
   return parentLocation !== NO_PARENT_INJECTOR;
 }
 function getParentInjectorIndex(parentLocation) {
-  ngDevMode && assertNumber(parentLocation, 'Number expected');
-  ngDevMode && assertNotEqual(parentLocation, -1, 'Not a valid state.');
-  const parentInjectorIndex = parentLocation & 32767 /* RelativeInjectorLocationFlags.InjectorIndexMask */;
-  ngDevMode && assertGreaterThan(parentInjectorIndex, HEADER_OFFSET, 'Parent injector must be pointing past HEADER_OFFSET.');
+  if (ngDevMode) {
+    assertNumber(parentLocation, 'Number expected');
+    assertNotEqual(parentLocation, -1, 'Not a valid state.');
+    const parentInjectorIndex = parentLocation & 32767 /* RelativeInjectorLocationFlags.InjectorIndexMask */;
+    assertGreaterThan(parentInjectorIndex, HEADER_OFFSET, 'Parent injector must be pointing past HEADER_OFFSET.');
+  }
   return parentLocation & 32767 /* RelativeInjectorLocationFlags.InjectorIndexMask */;
 }
 function getParentInjectorViewOffset(parentLocation) {
@@ -8227,9 +8229,11 @@ class R3Injector extends EnvironmentInjector {
       token = provider;
       multiRecord.multi.push(provider);
     } else {
-      const existing = this.records.get(token);
-      if (ngDevMode && existing && existing.multi !== undefined) {
-        throwMixedMultiProviderError();
+      if (ngDevMode) {
+        const existing = this.records.get(token);
+        if (existing && existing.multi !== undefined) {
+          throwMixedMultiProviderError();
+        }
       }
     }
     this.records.set(token, record);
@@ -8294,8 +8298,7 @@ function getUndecoratedInjectableFactory(token) {
   // If the token has parameters then it has dependencies that we cannot resolve implicitly.
   const paramLength = token.length;
   if (paramLength > 0) {
-    const args = newArray(paramLength, '?');
-    throw new RuntimeError(204 /* RuntimeErrorCode.INVALID_INJECTION_TOKEN */, ngDevMode && `Can't resolve all parameters for ${stringify(token)}: (${args.join(', ')}).`);
+    throw new RuntimeError(204 /* RuntimeErrorCode.INVALID_INJECTION_TOKEN */, ngDevMode && `Can't resolve all parameters for ${stringify(token)}: (${newArray(paramLength, '?').join(', ')}).`);
   }
   // The constructor function appears to have no parameters.
   // This might be because it inherits from a super-class. In which case, use an injectable
@@ -9940,62 +9943,6 @@ function ensureIcuContainerVisitorLoaded(loader) {
 }
 
 /**
- * Gets the parent LView of the passed LView, if the PARENT is an LContainer, will get the parent of
- * that LContainer, which is an LView
- * @param lView the lView whose parent to get
- */
-function getLViewParent(lView) {
-  ngDevMode && assertLView(lView);
-  const parent = lView[PARENT];
-  return isLContainer(parent) ? parent[PARENT] : parent;
-}
-/**
- * Retrieve the root view from any component or `LView` by walking the parent `LView` until
- * reaching the root `LView`.
- *
- * @param componentOrLView any component or `LView`
- */
-function getRootView(componentOrLView) {
-  ngDevMode && assertDefined(componentOrLView, 'component');
-  let lView = isLView(componentOrLView) ? componentOrLView : readPatchedLView(componentOrLView);
-  while (lView && !(lView[FLAGS] & 512 /* LViewFlags.IsRoot */)) {
-    lView = getLViewParent(lView);
-  }
-  ngDevMode && assertLView(lView);
-  return lView;
-}
-/**
- * Returns the context information associated with the application where the target is situated. It
- * does this by walking the parent views until it gets to the root view, then getting the context
- * off of that.
- *
- * @param viewOrComponent the `LView` or component to get the root context for.
- */
-function getRootContext(viewOrComponent) {
-  const rootView = getRootView(viewOrComponent);
-  ngDevMode && assertDefined(rootView[CONTEXT], 'Root view has no context. Perhaps it is disconnected?');
-  return rootView[CONTEXT];
-}
-/**
- * Gets the first `LContainer` in the LView or `null` if none exists.
- */
-function getFirstLContainer(lView) {
-  return getNearestLContainer(lView[CHILD_HEAD]);
-}
-/**
- * Gets the next `LContainer` that is a sibling of the given container.
- */
-function getNextLContainer(container) {
-  return getNearestLContainer(container[NEXT]);
-}
-function getNearestLContainer(viewOrContainer) {
-  while (viewOrContainer !== null && !isLContainer(viewOrContainer)) {
-    viewOrContainer = viewOrContainer[NEXT];
-  }
-  return viewOrContainer;
-}
-
-/**
  * NOTE: for performance reasons, the possible actions are inlined within the function instead of
  * being passed as an argument.
  */
@@ -10072,8 +10019,7 @@ function createElementNode(renderer, name, namespace) {
  * @param lView The view from which elements should be added or removed
  */
 function removeViewFromDOM(tView, lView) {
-  const renderer = lView[RENDERER];
-  applyView(tView, lView, renderer, 2 /* WalkTNodeTreeAction.Detach */, null, null);
+  detachViewFromDOM(tView, lView);
   lView[HOST] = null;
   lView[T_HOST] = null;
 }
@@ -10103,6 +10049,9 @@ function addViewToDOM(tView, parentTNode, renderer, lView, parentNativeNode, bef
  * @param lView the `LView` to be detached.
  */
 function detachViewFromDOM(tView, lView) {
+  // The scheduler must be notified because the animation engine is what actually does the DOM
+  // removal and only runs at the end of change detection.
+  lView[ENVIRONMENT].changeDetectionScheduler?.notify();
   applyView(tView, lView, lView[RENDERER], 2 /* WalkTNodeTreeAction.Detach */, null, null);
 }
 /**
@@ -10228,8 +10177,7 @@ function detachMovedView(declarationContainer, lView) {
   ngDevMode && assertDefined(declarationContainer[MOVED_VIEWS], 'A projected view should belong to a non-empty projected views collection');
   const movedViews = declarationContainer[MOVED_VIEWS];
   const declarationViewIndex = movedViews.indexOf(lView);
-  const insertionLContainer = lView[PARENT];
-  ngDevMode && assertLContainer(insertionLContainer);
+  ngDevMode && assertLContainer(lView[PARENT]);
   movedViews.splice(declarationViewIndex, 1);
 }
 /**
@@ -11961,7 +11909,7 @@ const SSR_CONTENT_INTEGRITY_MARKER = 'nghm';
  * @param injector Injector that this component has access to.
  * @param isRootView Specifies whether we trying to read hydration info for the root view.
  */
-let _retrieveHydrationInfoImpl = (rNode, injector, isRootView) => null;
+let _retrieveHydrationInfoImpl = () => null;
 function retrieveHydrationInfoImpl(rNode, injector, isRootView = false) {
   let nghAttrValue = rNode.getAttribute(NGH_ATTR_NAME);
   if (nghAttrValue == null) return null;
@@ -13569,6 +13517,52 @@ const REACTIVE_LVIEW_CONSUMER_NODE = {
     this.lView[REACTIVE_TEMPLATE_CONSUMER] = this;
   }
 };
+
+/**
+ * Retrieve the root view from any component or `LView` by walking the parent `LView` until
+ * reaching the root `LView`.
+ *
+ * @param componentOrLView any component or `LView`
+ */
+function getRootView(componentOrLView) {
+  ngDevMode && assertDefined(componentOrLView, 'component');
+  let lView = isLView(componentOrLView) ? componentOrLView : readPatchedLView(componentOrLView);
+  while (lView && !(lView[FLAGS] & 512 /* LViewFlags.IsRoot */)) {
+    lView = getLViewParent(lView);
+  }
+  ngDevMode && assertLView(lView);
+  return lView;
+}
+/**
+ * Returns the context information associated with the application where the target is situated. It
+ * does this by walking the parent views until it gets to the root view, then getting the context
+ * off of that.
+ *
+ * @param viewOrComponent the `LView` or component to get the root context for.
+ */
+function getRootContext(viewOrComponent) {
+  const rootView = getRootView(viewOrComponent);
+  ngDevMode && assertDefined(rootView[CONTEXT], 'Root view has no context. Perhaps it is disconnected?');
+  return rootView[CONTEXT];
+}
+/**
+ * Gets the first `LContainer` in the LView or `null` if none exists.
+ */
+function getFirstLContainer(lView) {
+  return getNearestLContainer(lView[CHILD_HEAD]);
+}
+/**
+ * Gets the next `LContainer` that is a sibling of the given container.
+ */
+function getNextLContainer(container) {
+  return getNearestLContainer(container[NEXT]);
+}
+function getNearestLContainer(viewOrContainer) {
+  while (viewOrContainer !== null && !isLContainer(viewOrContainer)) {
+    viewOrContainer = viewOrContainer[NEXT];
+  }
+  return viewOrContainer;
+}
 const ERROR_ORIGINAL_ERROR = 'ngOriginalError';
 function wrappedError(message, originalError) {
   const msg = `${message} caused by: ${originalError instanceof Error ? originalError.message : originalError}`;
@@ -13811,7 +13805,7 @@ const NO_CHANGE = typeof ngDevMode === 'undefined' || ngDevMode ? {
  *
  * @codeGenApi
  */
-function ɵɵadvance(delta) {
+function ɵɵadvance(delta = 1) {
   ngDevMode && assertGreaterThan(delta, 0, 'Can only advance forward');
   selectIndexInternal(getTView(), getLView(), getSelectedIndex() + delta, !!ngDevMode && isInCheckNoChangesMode());
 }
@@ -14204,7 +14198,7 @@ function applyRootElementTransform(rootElement) {
  *
  * @param rootElement the app root HTML Element
  */
-let _applyRootElementTransformImpl = rootElement => null;
+let _applyRootElementTransformImpl = () => null;
 /**
  * Processes text node markers before hydration begins. This replaces any special comment
  * nodes that were added prior to serialization are swapped out to restore proper text
@@ -15106,14 +15100,12 @@ const MAXIMUM_REFRESH_RERUNS = 100;
 function detectChangesInternal(lView, notifyErrorHandler = true) {
   const environment = lView[ENVIRONMENT];
   const rendererFactory = environment.rendererFactory;
-  const afterRenderEventManager = environment.afterRenderEventManager;
   // Check no changes mode is a dev only mode used to verify that bindings have not changed
   // since they were assigned. We do not want to invoke renderer factory functions in that mode
   // to avoid any possible side-effects.
   const checkNoChangesMode = !!ngDevMode && isInCheckNoChangesMode();
   if (!checkNoChangesMode) {
     rendererFactory.begin?.();
-    afterRenderEventManager?.begin();
   }
   try {
     detectChangesInViewWhileDirty(lView);
@@ -15128,8 +15120,6 @@ function detectChangesInternal(lView, notifyErrorHandler = true) {
       // One final flush of the effects queue to catch any effects created in `ngAfterViewInit` or
       // other post-order hooks.
       environment.inlineEffectRunner?.flush();
-      // Invoke all callbacks registered via `after*Render`, if needed.
-      afterRenderEventManager?.end();
     }
   }
 }
@@ -15325,7 +15315,6 @@ function viewShouldHaveReactiveConsumer(tView) {
  */
 function detectChangesInEmbeddedViews(lView, mode) {
   for (let lContainer = getFirstLContainer(lView); lContainer !== null; lContainer = getNextLContainer(lContainer)) {
-    lContainer[FLAGS] &= ~LContainerFlags.HasChildViewsToRefresh;
     for (let i = CONTAINER_HEADER_OFFSET; i < lContainer.length; i++) {
       const embeddedLView = lContainer[i];
       detectChangesInViewIfAttached(embeddedLView, mode);
@@ -15995,11 +15984,11 @@ class ZoneAwareMicrotaskScheduler {
  * available/requested.
  */
 class EffectHandle {
-  constructor(scheduler, effectFn, creationZone, destroyRef, errorHandler, allowSignalWrites) {
+  constructor(scheduler, effectFn, creationZone, destroyRef, injector, allowSignalWrites) {
     this.scheduler = scheduler;
     this.effectFn = effectFn;
     this.creationZone = creationZone;
-    this.errorHandler = errorHandler;
+    this.injector = injector;
     this.watcher = createWatch(onCleanup => this.runEffect(onCleanup), () => this.schedule(), allowSignalWrites);
     this.unregisterOnDestroy = destroyRef?.onDestroy(() => this.destroy());
   }
@@ -16007,7 +15996,12 @@ class EffectHandle {
     try {
       this.effectFn(onCleanup);
     } catch (err) {
-      this.errorHandler?.handleError(err);
+      // Inject the `ErrorHandler` here in order to avoid circular DI error
+      // if the effect is used inside of a custom `ErrorHandler`.
+      const errorHandler = this.injector.get(ErrorHandler, null, {
+        optional: true
+      });
+      errorHandler?.handleError(err);
     }
   }
   run() {
@@ -16032,11 +16026,8 @@ function effect(effectFn, options) {
   ngDevMode && assertNotInReactiveContext(effect, 'Call `effect` outside of a reactive context. For example, schedule the ' + 'effect inside the component constructor.');
   !options?.injector && assertInInjectionContext(effect);
   const injector = options?.injector ?? inject(Injector);
-  const errorHandler = injector.get(ErrorHandler, null, {
-    optional: true
-  });
   const destroyRef = options?.manualCleanup !== true ? injector.get(DestroyRef) : null;
-  const handle = new EffectHandle(injector.get(APP_EFFECT_SCHEDULER), effectFn, typeof Zone === 'undefined' ? null : Zone.current, destroyRef, errorHandler, options?.allowSignalWrites ?? false);
+  const handle = new EffectHandle(injector.get(APP_EFFECT_SCHEDULER), effectFn, typeof Zone === 'undefined' ? null : Zone.current, destroyRef, injector, options?.allowSignalWrites ?? false);
   // Effects need to be marked dirty manually to trigger their initial run. The timing of this
   // marking matters, because the effects may read signals that track component inputs, which are
   // only available after those components have had their first update pass.
@@ -16871,11 +16862,6 @@ class AfterRenderCallbackHandlerImpl {
     };
     this.deferredCallbacks = new Set();
   }
-  validateBegin() {
-    if (this.executingCallbacks) {
-      throw new RuntimeError(102 /* RuntimeErrorCode.RECURSIVE_APPLICATION_RENDER */, ngDevMode && 'A new render operation began before the previous operation ended. ' + 'Did you trigger change detection from afterRender or afterNextRender?');
-    }
-  }
   register(callback) {
     // If we're currently running callbacks, new callbacks should be deferred
     // until the next render operation.
@@ -16887,9 +16873,11 @@ class AfterRenderCallbackHandlerImpl {
     this.deferredCallbacks.delete(callback);
   }
   execute() {
+    let callbacksExecuted = false;
     this.executingCallbacks = true;
     for (const bucket of Object.values(this.buckets)) {
       for (const callback of bucket) {
+        callbacksExecuted = true;
         callback.invoke();
       }
     }
@@ -16898,6 +16886,7 @@ class AfterRenderCallbackHandlerImpl {
       this.buckets[callback.phase].add(callback);
     }
     this.deferredCallbacks.clear();
+    return callbacksExecuted;
   }
   destroy() {
     for (const bucket of Object.values(this.buckets)) {
@@ -16913,37 +16902,25 @@ class AfterRenderCallbackHandlerImpl {
 let AfterRenderEventManager = /*#__PURE__*/(() => {
   class AfterRenderEventManager {
     constructor() {
-      this.renderDepth = 0;
       /* @internal */
       this.handler = null;
       /* @internal */
       this.internalCallbacks = [];
     }
     /**
-     * Mark the beginning of a render operation (i.e. CD cycle).
-     * Throws if called while executing callbacks.
+     * Executes callbacks. Returns `true` if any callbacks executed.
      */
-    begin() {
-      this.handler?.validateBegin();
-      this.renderDepth++;
-    }
-    /**
-     * Mark the end of a render operation. Callbacks will be
-     * executed if there are no more pending operations.
-     */
-    end() {
-      ngDevMode && assertGreaterThan(this.renderDepth, 0, 'renderDepth must be greater than 0');
-      this.renderDepth--;
-      if (this.renderDepth === 0) {
-        // Note: internal callbacks power `internalAfterNextRender`. Since internal callbacks
-        // are fairly trivial, they are kept separate so that `AfterRenderCallbackHandlerImpl`
-        // can still be tree-shaken unless used by the application.
-        for (const callback of this.internalCallbacks) {
-          callback();
-        }
-        this.internalCallbacks.length = 0;
-        this.handler?.execute();
+    execute() {
+      // Note: internal callbacks power `internalAfterNextRender`. Since internal callbacks
+      // are fairly trivial, they are kept separate so that `AfterRenderCallbackHandlerImpl`
+      // can still be tree-shaken unless used by the application.
+      const callbacks = [...this.internalCallbacks];
+      this.internalCallbacks.length = 0;
+      for (const callback of callbacks) {
+        callback();
       }
+      const handlerCallbacksExecuted = this.handler?.execute();
+      return !!handlerCallbacksExecuted || callbacks.length > 0;
     }
     ngOnDestroy() {
       this.handler?.destroy();
@@ -17429,7 +17406,7 @@ function createRootComponent(componentView, rootComponentDef, rootDirectives, ho
 function setRootNodeAttributes(hostRenderer, componentDef, hostRNode, rootSelectorOrNode) {
   if (rootSelectorOrNode) {
     // The placeholder will be replaced with the actual version at build time.
-    setUpAttributes(hostRenderer, hostRNode, ['ng-version', '17.0.8']);
+    setUpAttributes(hostRenderer, hostRNode, ['ng-version', '17.0.9']);
   } else {
     // If host element is created as a part of this function call (i.e. `rootSelectorOrNode`
     // is not defined), also apply attributes and classes extracted from component selector.
@@ -18730,8 +18707,8 @@ function insertTStylingBinding(tData, tNode, tStylingKeyWithStatic, index, isHos
   if (isKeyDuplicateOfStatic) {
     tData[index + 1] = setTStylingRangePrevDuplicate(tData[index + 1]);
   }
-  markDuplicates(tData, tStylingKey, index, true, isClassBinding);
-  markDuplicates(tData, tStylingKey, index, false, isClassBinding);
+  markDuplicates(tData, tStylingKey, index, true);
+  markDuplicates(tData, tStylingKey, index, false);
   markDuplicateOfResidualStyling(tNode, tStylingKey, tData, index, isClassBinding);
   tBindings = toTStylingRange(tmplHead, tmplTail);
   if (isClassBinding) {
@@ -18813,7 +18790,7 @@ function markDuplicateOfResidualStyling(tNode, tStylingKey, tData, index, isClas
  *        - `true` for previous (lower priority);
  *        - `false` for next (higher priority).
  */
-function markDuplicates(tData, tStylingKey, index, isPrevDir, isClassBinding) {
+function markDuplicates(tData, tStylingKey, index, isPrevDir) {
   const tStylingAtIndex = tData[index + 1];
   const isMap = tStylingKey === null;
   let cursor = isPrevDir ? getTStylingRangePrev(tStylingAtIndex) : getTStylingRangeNext(tStylingAtIndex);
@@ -21037,7 +21014,7 @@ function locateDehydratedViewsInContainer(currentRNode, serializedViews) {
  * stored on a given lContainer.
  * Returns `null` by default, when hydration is not enabled.
  */
-let _findMatchingDehydratedViewImpl = (lContainer, template) => null;
+let _findMatchingDehydratedViewImpl = () => null;
 /**
  * Retrieves the next dehydrated view from the LContainer and verifies that
  * it matches a given template id (from the TView that was used to create this
@@ -21745,7 +21722,7 @@ function insertAnchorNode(hostLView, hostTNode) {
   return commentNode;
 }
 let _locateOrCreateAnchorNode = createAnchorNode;
-let _populateDehydratedViewsInLContainer = (lContainer, tNode, hostLView) => false; // noop by default
+let _populateDehydratedViewsInLContainer = () => false; // noop by default
 /**
  * Looks up dehydrated views that belong to a given LContainer and populates
  * this information into the `LContainer[DEHYDRATED_VIEWS]` slot. When running
@@ -22477,8 +22454,6 @@ function onInteraction(trigger, callback) {
     // are referencing it.
     entry = new DeferEventEntry();
     interactionTriggers.set(trigger, entry);
-    // Ensure that the handler runs in the NgZone
-    ngDevMode && NgZone.assertInAngularZone();
     for (const name of interactionEventNames) {
       trigger.addEventListener(name, entry.listener, eventListenerOptions);
     }
@@ -22509,8 +22484,6 @@ function onHover(trigger, callback) {
   if (!entry) {
     entry = new DeferEventEntry();
     hoverTriggers.set(trigger, entry);
-    // Ensure that the handler runs in the NgZone
-    ngDevMode && NgZone.assertInAngularZone();
     for (const name of hoverEventNames) {
       trigger.addEventListener(name, entry.listener, eventListenerOptions);
     }
@@ -31354,7 +31327,7 @@ class Version {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new Version('17.0.8');
+const VERSION = /*#__PURE__*/new Version('17.0.9');
 
 /*
  * This file exists to support compilation of @angular/core in Ivy mode.
@@ -32434,6 +32407,28 @@ function getModuleInjectorOfNodeInjector(injector) {
  * tools are patched (window.ng).
  * */
 const GLOBAL_PUBLISH_EXPANDO_KEY = 'ng';
+const globalUtilsFunctions = {
+  /**
+   * Warning: functions that start with `ɵ` are considered *INTERNAL* and should not be relied upon
+   * in application's code. The contract of those functions might be changed in any release and/or a
+   * function can be removed completely.
+   */
+  'ɵgetDependenciesFromInjectable': getDependenciesFromInjectable,
+  'ɵgetInjectorProviders': getInjectorProviders,
+  'ɵgetInjectorResolutionPath': getInjectorResolutionPath,
+  'ɵgetInjectorMetadata': getInjectorMetadata,
+  'ɵsetProfiler': setProfiler,
+  'getDirectiveMetadata': getDirectiveMetadata$1,
+  'getComponent': getComponent,
+  'getContext': getContext,
+  'getListeners': getListeners,
+  'getOwningComponent': getOwningComponent,
+  'getHostElement': getHostElement,
+  'getInjector': getInjector,
+  'getRootComponents': getRootComponents,
+  'getDirectives': getDirectives,
+  'applyChanges': applyChanges
+};
 let _published = false;
 /**
  * Publishes a collection of default debug tools onto`window.ng`.
@@ -32445,26 +32440,9 @@ function publishDefaultGlobalUtils$1() {
   if (!_published) {
     _published = true;
     setupFrameworkInjectorProfiler();
-    publishGlobalUtil('ɵgetDependenciesFromInjectable', getDependenciesFromInjectable);
-    publishGlobalUtil('ɵgetInjectorProviders', getInjectorProviders);
-    publishGlobalUtil('ɵgetInjectorResolutionPath', getInjectorResolutionPath);
-    publishGlobalUtil('ɵgetInjectorMetadata', getInjectorMetadata);
-    /**
-     * Warning: this function is *INTERNAL* and should not be relied upon in application's code.
-     * The contract of the function might be changed in any release and/or the function can be
-     * removed completely.
-     */
-    publishGlobalUtil('ɵsetProfiler', setProfiler);
-    publishGlobalUtil('getDirectiveMetadata', getDirectiveMetadata$1);
-    publishGlobalUtil('getComponent', getComponent);
-    publishGlobalUtil('getContext', getContext);
-    publishGlobalUtil('getListeners', getListeners);
-    publishGlobalUtil('getOwningComponent', getOwningComponent);
-    publishGlobalUtil('getHostElement', getHostElement);
-    publishGlobalUtil('getInjector', getInjector);
-    publishGlobalUtil('getRootComponents', getRootComponents);
-    publishGlobalUtil('getDirectives', getDirectives);
-    publishGlobalUtil('applyChanges', applyChanges);
+    for (const [methodName, method] of Object.entries(globalUtilsFunctions)) {
+      publishGlobalUtil(methodName, method);
+    }
   }
 }
 /**
@@ -32479,13 +32457,8 @@ function publishGlobalUtil(name, fn) {
     //   for typings for AngularJS (via `goog.provide('ng....')`).
     const w = _global;
     ngDevMode && assertDefined(fn, 'function not defined');
-    if (w) {
-      let container = w[GLOBAL_PUBLISH_EXPANDO_KEY];
-      if (!container) {
-        container = w[GLOBAL_PUBLISH_EXPANDO_KEY] = {};
-      }
-      container[name] = fn;
-    }
+    w[GLOBAL_PUBLISH_EXPANDO_KEY] ??= {};
+    w[GLOBAL_PUBLISH_EXPANDO_KEY][name] = fn;
   }
 }
 
@@ -33217,6 +33190,7 @@ let ApplicationRef = /*#__PURE__*/(() => {
       /** @internal */
       this._views = [];
       this.internalErrorHandler = inject(INTERNAL_APPLICATION_ERROR_HANDLER);
+      this.afterRenderEffectManager = inject(AfterRenderEventManager);
       /**
        * Get a list of component types registered to this application.
        * This list is populated even before the component is created.
@@ -33287,8 +33261,8 @@ let ApplicationRef = /*#__PURE__*/(() => {
       const initStatus = this._injector.get(ApplicationInitStatus);
       if (!initStatus.done) {
         const standalone = !isComponentFactory && isStandalone(componentOrFactory);
-        const errorMessage = 'Cannot bootstrap as there are still asynchronous initializers running.' + (standalone ? '' : ' Bootstrap components in the `ngDoBootstrap` method of the root module.');
-        throw new RuntimeError(405 /* RuntimeErrorCode.ASYNC_INITIALIZERS_STILL_RUNNING */, (typeof ngDevMode === 'undefined' || ngDevMode) && errorMessage);
+        const errorMessage = (typeof ngDevMode === 'undefined' || ngDevMode) && 'Cannot bootstrap as there are still asynchronous initializers running.' + (standalone ? '' : ' Bootstrap components in the `ngDoBootstrap` method of the root module.');
+        throw new RuntimeError(405 /* RuntimeErrorCode.ASYNC_INITIALIZERS_STILL_RUNNING */, errorMessage);
       }
       let componentFactory;
       if (isComponentFactory) {
@@ -33346,6 +33320,17 @@ let ApplicationRef = /*#__PURE__*/(() => {
         // Attention: Don't rethrow as it could cancel subscriptions to Observables!
         this.internalErrorHandler(e);
       } finally {
+        // Catch any `ExpressionChanged...` errors and report them to error handler like above
+        try {
+          const callbacksExecuted = this.afterRenderEffectManager.execute();
+          if ((typeof ngDevMode === 'undefined' || ngDevMode) && callbacksExecuted) {
+            for (let view of this._views) {
+              view.checkNoChanges();
+            }
+          }
+        } catch (e) {
+          this.internalErrorHandler(e);
+        }
         this._runningTick = false;
       }
     }
@@ -35603,6 +35588,62 @@ function internalCreateApplication(config) {
   } catch (e) {
     return Promise.reject(e);
   }
+}
+let ChangeDetectionSchedulerImpl = /*#__PURE__*/(() => {
+  class ChangeDetectionSchedulerImpl {
+    constructor() {
+      this.appRef = inject(ApplicationRef);
+      this.taskService = inject(PendingTasks);
+      this.pendingRenderTaskId = null;
+    }
+    notify() {
+      if (this.pendingRenderTaskId !== null) return;
+      this.pendingRenderTaskId = this.taskService.add();
+      setTimeout(() => {
+        try {
+          if (!this.appRef.destroyed) {
+            this.appRef.tick();
+          }
+        } finally {
+          // If this is the last task, the service will synchronously emit a stable notification. If
+          // there is a subscriber that then acts in a way that tries to notify the scheduler again,
+          // we need to be able to respond to schedule a new change detection. Therefore, we should
+          // clear the task ID before removing it from the pending tasks (or the tasks service should
+          // not synchronously emit stable, similar to how Zone stableness only happens if it's still
+          // stable after a microtask).
+          const taskId = this.pendingRenderTaskId;
+          this.pendingRenderTaskId = null;
+          this.taskService.remove(taskId);
+        }
+      });
+    }
+    static #_ = this.ɵfac = function ChangeDetectionSchedulerImpl_Factory(t) {
+      return new (t || ChangeDetectionSchedulerImpl)();
+    };
+    static #_2 = this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
+      token: ChangeDetectionSchedulerImpl,
+      factory: ChangeDetectionSchedulerImpl.ɵfac,
+      providedIn: 'root'
+    });
+  }
+  return ChangeDetectionSchedulerImpl;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ChangeDetectionSchedulerImpl, [{
+    type: Injectable,
+    args: [{
+      providedIn: 'root'
+    }]
+  }], null, null);
+})();
+function provideZonelessChangeDetection() {
+  return makeEnvironmentProviders([{
+    provide: ChangeDetectionScheduler,
+    useExisting: ChangeDetectionSchedulerImpl
+  }, {
+    provide: NgZone,
+    useClass: NoopNgZone
+  }]);
 }
 
 /**

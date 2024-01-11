@@ -106,9 +106,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵparseCookieValue": () => (/* binding */ parseCookieValue),
 /* harmony export */   "ɵsetRootDomAdapter": () => (/* binding */ setRootDomAdapter)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2258);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
 /**
- * @license Angular v17.0.8
+ * @license Angular v17.0.9
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -2861,11 +2861,7 @@ const EMPTY_ARRAY = [];
  */
 let NgClass = /*#__PURE__*/(() => {
   class NgClass {
-    constructor(
-    // leaving references to differs in place since flex layout is extending NgClass...
-    _iterableDiffers, _keyValueDiffers, _ngEl, _renderer) {
-      this._iterableDiffers = _iterableDiffers;
-      this._keyValueDiffers = _keyValueDiffers;
+    constructor(_ngEl, _renderer) {
       this._ngEl = _ngEl;
       this._renderer = _renderer;
       this.initialClasses = EMPTY_ARRAY;
@@ -2969,7 +2965,7 @@ let NgClass = /*#__PURE__*/(() => {
       }
     }
     static #_ = this.ɵfac = function NgClass_Factory(t) {
-      return new (t || NgClass)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.IterableDiffers), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.KeyValueDiffers), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2));
+      return new (t || NgClass)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2));
     };
     static #_2 = this.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
       type: NgClass,
@@ -5431,7 +5427,7 @@ function isPlatformWorkerUi(platformId) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.0.8');
+const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.0.9');
 
 /**
  * Defines a scroll position manager. Implemented by `BrowserViewportScroller`.
@@ -5446,7 +5442,7 @@ let ViewportScroller = /*#__PURE__*/(() => {
     static #_ = this.ɵprov = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"])({
       token: ViewportScroller,
       providedIn: 'root',
-      factory: () => new BrowserViewportScroller((0,_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"])(DOCUMENT), window)
+      factory: () => isPlatformBrowser((0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.PLATFORM_ID)) ? new BrowserViewportScroller((0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(DOCUMENT), window) : new NullViewportScroller()
     });
   }
   return ViewportScroller;
@@ -5478,20 +5474,14 @@ class BrowserViewportScroller {
    * @returns The position in screen coordinates.
    */
   getScrollPosition() {
-    if (this.supportsScrolling()) {
-      return [this.window.pageXOffset, this.window.pageYOffset];
-    } else {
-      return [0, 0];
-    }
+    return [this.window.scrollX, this.window.scrollY];
   }
   /**
    * Sets the scroll position.
    * @param position The new position in screen coordinates.
    */
   scrollToPosition(position) {
-    if (this.supportsScrolling()) {
-      this.window.scrollTo(position[0], position[1]);
-    }
+    this.window.scrollTo(position[0], position[1]);
   }
   /**
    * Scrolls to an element and attempts to focus the element.
@@ -5505,9 +5495,6 @@ class BrowserViewportScroller {
    * @see https://html.spec.whatwg.org/#scroll-to-fragid
    */
   scrollToAnchor(target) {
-    if (!this.supportsScrolling()) {
-      return;
-    }
     const elSelected = findAnchorFromDocument(this.document, target);
     if (elSelected) {
       this.scrollToElement(elSelected);
@@ -5524,9 +5511,7 @@ class BrowserViewportScroller {
    * Disables automatic scroll restoration provided by the browser.
    */
   setHistoryScrollRestoration(scrollRestoration) {
-    if (this.supportsScrolling()) {
-      this.window.history.scrollRestoration = scrollRestoration;
-    }
+    this.window.history.scrollRestoration = scrollRestoration;
   }
   /**
    * Scrolls to an element using the native offset and the specified offset set on this scroller.
@@ -5540,13 +5525,6 @@ class BrowserViewportScroller {
     const top = rect.top + this.window.pageYOffset;
     const offset = this.offset();
     this.window.scrollTo(left - offset[0], top - offset[1]);
-  }
-  supportsScrolling() {
-    try {
-      return !!this.window && !!this.window.scrollTo && 'pageXOffset' in this.window;
-    } catch {
-      return false;
-    }
   }
 }
 function findAnchorFromDocument(document, target) {

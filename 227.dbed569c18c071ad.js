@@ -14,7 +14,7 @@
 /* harmony export */   yZ: () => (/* binding */ USER_AGENT)
 /* harmony export */ });
 /* unused harmony exports CACHES, CRYPTO, LOCATION, MEDIA_DEVICES, NETWORK_INFORMATION, PAGE_VISIBILITY, PERFORMANCE, SCREEN, SESSION_STORAGE, SPEECH_RECOGNITION, SPEECH_SYNTHESIS */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2258);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5592);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2438);
@@ -23,7 +23,7 @@
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7398);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(3997);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(7081);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3732);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5897);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -138,7 +138,7 @@ const USER_AGENT = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken
 /* harmony export */   $: () => (/* binding */ HostChildWarningModule)
 /* harmony export */ });
 /* harmony import */ var _taiga_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8689);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2258);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -167,15 +167,15 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
 var platform_browser = __webpack_require__(6593);
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(2258);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(9649);
 // EXTERNAL MODULE: ./node_modules/@angular/animations/fesm2022/browser.mjs
 var browser = __webpack_require__(6108);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(3732);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(5897);
 ;// CONCATENATED MODULE: ./node_modules/@angular/platform-browser/fesm2022/animations.mjs
 /**
- * @license Angular v17.0.8
+ * @license Angular v17.0.9
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -432,8 +432,8 @@ let AppComponent = /*#__PURE__*/(() => {
   }
   return AppComponent;
 })();
-// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
-var router_mjs_ = __webpack_require__(7589);
+// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
+var router_mjs_ = __webpack_require__(9823);
 // EXTERNAL MODULE: ./node_modules/@tinkoff/ng-polymorpheus/fesm2015/tinkoff-ng-polymorpheus.js
 var tinkoff_ng_polymorpheus = __webpack_require__(2549);
 ;// CONCATENATED MODULE: ./apps/demo/src/app/logo/logo.component.ts
@@ -861,8 +861,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // UNUSED EXPORTS: PAGE_PROVIDERS, PAGE_SEE_ALSO, TUI_DOC_EXAMPLE_DEFAULT_OPTIONS, TUI_DOC_EXAMPLE_OPTIONS, TuiDocCopyComponent, TuiDocCopyModule, TuiDocDemoComponent, TuiDocExampleComponent, TuiDocExampleGetTabsPipe, TuiDocHeaderComponent, TuiDocHeaderModule, TuiDocNavigationComponent, TuiDocNavigationModule, TuiDocSeeAlsoComponent, TuiDocSeeAlsoModule, TuiDocSourceCodeComponent, TuiDocSourceCodeModule, TuiDocTabComponent, TuiDocTabModule, TuiDocTypeReferencePipe, TuiGetColorPipe, TuiGetOpacityPipe, TuiInputOpacityDirective, TuiInputOpacityModule, TuiInspectPipe, TuiIsOptionalPipe, TuiIsPrimitivePolymorpheusContentPipe, TuiLanguageSwitcherComponent, TuiLanguageSwitcherModule, TuiShowCleanerPipe, TuiStripOptionalPipe, tuiDocExampleOptionsProvider
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(2258);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(9649);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-tokens.js
 var taiga_ui_addon_doc_tokens = __webpack_require__(3594);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-utils.js + 75 modules
@@ -1609,8 +1609,8 @@ function debounce(durationSelector) {
 var of = __webpack_require__(2096);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/ReplaySubject.js
 var ReplaySubject = __webpack_require__(7328);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(3732);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(5897);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-constants.js
 var taiga_ui_core_constants = __webpack_require__(8103);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-directives-hint.js
@@ -1927,7 +1927,7 @@ let TuiHintComponent = /*#__PURE__*/(() => {
         core_mjs_["ɵɵtemplate"](1, TuiHintComponent_span_1_Template, 1, 1, "span", 0);
       }
       if (rf & 2) {
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx.content)("polymorpheusOutletContext", ctx.context);
       }
     },
@@ -2904,7 +2904,7 @@ function TuiPrimitiveTextfieldComponent_div_12_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r4 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r4.iconLeftContent)("polymorpheusOutletContext", core_mjs_["ɵɵpureFunction1"](2, _c2, ctx_r4.size));
   }
 }
@@ -2937,7 +2937,7 @@ function TuiPrimitiveTextfieldComponent_div_20_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r7 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r7.controller.customContent);
   }
 }
@@ -2964,7 +2964,7 @@ function TuiPrimitiveTextfieldComponent_span_21_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r8 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r8.iconCleaner || ctx_r8.controller.options.iconCleaner)("polymorpheusOutletContext", core_mjs_["ɵɵpureFunction1"](2, _c2, ctx_r8.size));
   }
 }
@@ -2994,7 +2994,7 @@ function TuiPrimitiveTextfieldComponent_div_23_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r10 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r10.iconContent)("polymorpheusOutletContext", core_mjs_["ɵɵpureFunction1"](2, _c2, ctx_r10.size));
   }
 }
@@ -3097,9 +3097,9 @@ let TuiValueDecorationComponent = /*#__PURE__*/(() => {
         core_mjs_["ɵɵproperty"]("textContent", ctx.prefix);
         core_mjs_["ɵɵadvance"](2);
         core_mjs_["ɵɵproperty"]("textContent", ctx.value);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("textContent", ctx.filler);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("textContent", ctx.postfix);
       }
     },
@@ -3392,11 +3392,11 @@ let TuiPrimitiveTextfieldComponent = /*#__PURE__*/(() => {
         core_mjs_["ɵɵclassProp"]("t-has-value", ctx.value);
         core_mjs_["ɵɵadvance"](4);
         core_mjs_["ɵɵproperty"]("ngIf", ctx.hasCustomContent);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", ctx.hasCleaner);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", ctx.showHint);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", ctx.iconContent);
       }
     },
@@ -3796,9 +3796,9 @@ function TuiScrollControlsComponent_ng_container_0_Template(rf, ctx) {
   }
   if (rf & 2) {
     const bars_r1 = ctx.ngIf;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngIf", bars_r1[0]);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngIf", bars_r1[1]);
   }
 }
@@ -4247,7 +4247,7 @@ function TuiDropdownComponent_div_3_Template(rf, ctx) {
   }
   if (rf & 2) {
     const text_r2 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", text_r2, " ");
   }
 }
@@ -5433,7 +5433,7 @@ function TuiOptionComponent_ng_container_0_Template(rf, ctx) {
   }
   if (rf & 2) {
     const text_r3 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", text_r3, "\n");
   }
 }
@@ -5453,7 +5453,7 @@ function TuiOptionComponent_ng_template_1_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r1 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngIf", ctx_r1.dropdown);
   }
 }
@@ -5469,7 +5469,7 @@ function TuiDataListComponent_div_2_ng_container_1_Template(rf, ctx) {
   }
   if (rf & 2) {
     const text_r2 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", text_r2, " ");
   }
 }
@@ -5482,7 +5482,7 @@ function TuiDataListComponent_div_2_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r0 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r0.emptyContent || core_mjs_["ɵɵpipeBind1"](2, 1, ctx_r0.defaultEmptyContent$));
   }
 }
@@ -5904,7 +5904,7 @@ function TuiExpandComponent_ng_container_2_tui_loader_2_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r2 = core_mjs_["ɵɵnextContext"](2);
     core_mjs_["ɵɵproperty"]("overlay", true)("showLoader", ctx_r2.loading);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngTemplateOutlet", ctx_r2.content);
   }
 }
@@ -6301,9 +6301,9 @@ function TuiDialogHostComponent_section_0_Template(rf, ctx) {
     const ctx_r0 = core_mjs_["ɵɵnextContext"]();
     core_mjs_["ɵɵproperty"]("@host", undefined);
     core_mjs_["ɵɵattribute"]("aria-labelledby", item_r2.id);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", item_r2.component)("polymorpheusOutletContext", item_r2);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngIf", !ctx_r0.isMobile);
   }
 }
@@ -6402,7 +6402,7 @@ let TuiDialogHostComponent = /*#__PURE__*/(() => {
       }
       if (rf & 2) {
         core_mjs_["ɵɵproperty"]("ngForOf", ctx.dialogs);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("tuiLet", core_mjs_["ɵɵpipeBind1"](2, 2, ctx.isDialogClosesOnBack$));
       }
     },
@@ -6525,7 +6525,7 @@ function TuiAlertHostComponent_div_0_Template(rf, ctx) {
   if (rf & 2) {
     const alert_r1 = ctx.$implicit;
     core_mjs_["ɵɵproperty"]("@tuiParentAnimation", undefined);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngForOf", alert_r1);
   }
 }
@@ -6639,7 +6639,7 @@ function TuiSvgDefsHostComponent__svg_ng_container_1_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r0 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngForOf", ctx_r0.items);
   }
 }
@@ -6652,7 +6652,7 @@ function TuiSvgDefsHostComponent__svg_ng_template_2__svg_defs_0_Template(rf, ctx
   }
   if (rf & 2) {
     const def_r6 = ctx.$implicit;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("outerHTML", def_r6, core_mjs_["ɵɵsanitizeHtml"]);
   }
 }
@@ -6702,7 +6702,7 @@ let TuiSvgDefsHostComponent = /*#__PURE__*/(() => {
       }
       if (rf & 2) {
         const _r2 = core_mjs_["ɵɵreference"](3);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", ctx.isBrowser)("ngIfElse", _r2);
       }
     },
@@ -6767,7 +6767,7 @@ function TuiHintsHostComponent_div_0_Template(rf, ctx) {
   if (rf & 2) {
     const hint_r1 = ctx.$implicit;
     core_mjs_["ɵɵproperty"]("@tuiParentAnimation", undefined)("tuiActiveZoneParent", hint_r1.activeZone || null);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", hint_r1.component)("polymorpheusOutletContext", core_mjs_["ɵɵpureFunction1"](4, taiga_ui_core_components_hints_host_c0, hint_r1));
   }
 }
@@ -6988,7 +6988,7 @@ function TuiAlertComponent_label_1_ng_container_1_Template(rf, ctx) {
   }
   if (rf & 2) {
     const text_r3 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", text_r3, " ");
   }
 }
@@ -7000,7 +7000,7 @@ function TuiAlertComponent_label_1_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r0 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r0.item.label)("polymorpheusOutletContext", ctx_r0.item);
   }
 }
@@ -7085,7 +7085,7 @@ let TuiAlertComponent = /*#__PURE__*/(() => {
       }
       if (rf & 2) {
         core_mjs_["ɵɵproperty"]("hasIcon", ctx.item.hasIcon)("hideClose", !ctx.item.hasCloseButton)("icon", ctx.item.icon)("status", ctx.item.status);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", ctx.item.label);
         core_mjs_["ɵɵadvance"](2);
         core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx.item.content)("polymorpheusOutletContext", ctx.item);
@@ -7270,7 +7270,7 @@ function TuiHostedDropdownComponent_div_0_ng_template_3_div_2_Template(rf, ctx) 
   }
   if (rf & 2) {
     const text_r7 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", text_r7, " ");
   }
 }
@@ -8048,7 +8048,7 @@ function TuiDialogComponent_header_0_ng_container_1_Template(rf, ctx) {
   }
   if (rf & 2) {
     const text_r4 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", text_r4, " ");
   }
 }
@@ -8060,7 +8060,7 @@ function TuiDialogComponent_header_0_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r0 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r0.header)("polymorpheusOutletContext", ctx_r0.context);
   }
 }
@@ -8083,7 +8083,7 @@ function TuiDialogComponent_ng_container_4_Template(rf, ctx) {
     const text_r5 = ctx.polymorpheusOutlet;
     const ctx_r1 = core_mjs_["ɵɵnextContext"]();
     let tmp_1_0;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("innerHTML", text_r5, core_mjs_["ɵɵsanitizeHtml"]);
     core_mjs_["ɵɵadvance"](3);
     core_mjs_["ɵɵtextInterpolate1"](" ", ((tmp_1_0 = ctx_r1.context.data) == null ? null : tmp_1_0.button) || "OK", " ");
@@ -8105,7 +8105,7 @@ function TuiDialogComponent_div_6_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r2 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("appearance", ctx_r2.fullscreen ? "secondary" : "")("icon", ctx_r2.icons.close)("title", core_mjs_["ɵɵpipeBind1"](2, 3, ctx_r2.closeWord$));
   }
 }
@@ -10354,7 +10354,7 @@ function TuiDataListGroupWrapperComponent_tui_data_list_0_tui_opt_group_1_button
   }
   if (rf & 2) {
     const text_r10 = ctx.polymorpheusOutlet;
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵtextInterpolate1(" ", text_r10, " ");
   }
 }
@@ -10391,7 +10391,7 @@ function TuiDataListGroupWrapperComponent_tui_data_list_0_tui_opt_group_1_Templa
     const index_r5 = ctx.index;
     const ctx_r3 = i0.ɵɵnextContext(2);
     i0.ɵɵproperty("label", ctx_r3.labels[index_r5]);
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("ngForOf", group_r4);
   }
 }
@@ -10404,7 +10404,7 @@ function TuiDataListGroupWrapperComponent_tui_data_list_0_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r0 = i0.ɵɵnextContext();
     i0.ɵɵproperty("emptyContent", ctx_r0.emptyContent)("size", ctx_r0.size);
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("ngForOf", ctx_r0.items);
   }
 }
@@ -10421,7 +10421,7 @@ function TuiDataListWrapperComponent_tui_data_list_0_button_1_ng_container_3_Tem
   }
   if (rf & 2) {
     const text_r7 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", text_r7, " ");
   }
 }
@@ -10457,7 +10457,7 @@ function TuiDataListWrapperComponent_tui_data_list_0_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r0 = core_mjs_["ɵɵnextContext"]();
     core_mjs_["ɵɵproperty"]("emptyContent", ctx_r0.emptyContent)("size", ctx_r0.size);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngForOf", ctx_r0.items);
   }
 }
@@ -10745,7 +10745,7 @@ let TuiArrowComponent = /*#__PURE__*/(() => {
       }
       if (rf & 2) {
         core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx.arrowIcon);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", core_mjs_["ɵɵpipeBind1"](2, 2, ctx.dropdown.openChange));
       }
     },
@@ -10951,7 +10951,7 @@ let TuiSelectOptionComponent = /*#__PURE__*/(() => {
       if (rf & 2) {
         const _r2 = core_mjs_["ɵɵreference"](4);
         core_mjs_["ɵɵproperty"]("ngTemplateOutlet", ctx.context.$implicit);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", core_mjs_["ɵɵpipeBind1"](2, 3, ctx.selected$))("ngIfElse", _r2);
       }
     },
@@ -11112,7 +11112,7 @@ function TuiNativeSelectComponent_option_1_Template(rf, ctx) {
     const option_r2 = ctx.$implicit;
     const ctx_r1 = i0.ɵɵnextContext();
     i0.ɵɵproperty("disabled", ctx_r1.disabledItemHandler ? ctx_r1.disabledItemHandler(option_r2) : ctx_r1.itemsHandlers.disabledItemHandler(option_r2))("selected", ctx_r1.selected(option_r2))("value", ctx_r1.stringify(option_r2));
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵtextInterpolate1(" ", ctx_r1.stringify(option_r2), "\n");
   }
 }
@@ -11137,7 +11137,7 @@ function TuiNativeSelectGroupComponent_optgroup_1_option_1_Template(rf, ctx) {
     const option_r5 = ctx.$implicit;
     const ctx_r4 = i0.ɵɵnextContext(2);
     i0.ɵɵproperty("disabled", ctx_r4.disabledItemHandler ? ctx_r4.disabledItemHandler(option_r5) : ctx_r4.itemsHandlers.disabledItemHandler(option_r5))("selected", ctx_r4.selected(option_r5))("value", ctx_r4.stringify(option_r5));
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵtextInterpolate1(" ", ctx_r4.stringify(option_r5), " ");
   }
 }
@@ -11152,7 +11152,7 @@ function TuiNativeSelectGroupComponent_optgroup_1_Template(rf, ctx) {
     const index_r3 = ctx.index;
     const ctx_r1 = i0.ɵɵnextContext();
     i0.ɵɵproperty("label", ctx_r1.labels[index_r3]);
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("ngForOf", group_r2);
   }
 }
@@ -11197,7 +11197,7 @@ function TuiSelectComponent_div_7_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r3 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r3.computedContent)("polymorpheusOutletContext", core_mjs_["ɵɵpureFunction2"](2, taiga_ui_kit_components_select_c3, ctx_r3.value, ctx_r3.computedFocused));
   }
 }
@@ -11214,7 +11214,7 @@ function TuiSelectComponent_ng_template_8_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r4 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r4.arrow);
   }
 }
@@ -11280,7 +11280,7 @@ let TuiNativeSelectComponent = /*#__PURE__*/(/* unused pure expression or super 
         i0.ɵɵtemplate(0, TuiNativeSelectComponent_tui_data_list_wrapper_0_Template, 2, 5, "tui-data-list-wrapper", 0)(1, TuiNativeSelectComponent_option_1_Template, 2, 4, "option", 1);
       }
       if (rf & 2) {
-        i0.ɵɵadvance(1);
+        i0.ɵɵadvance();
         i0.ɵɵproperty("ngForOf", ctx.items);
       }
     },
@@ -11356,7 +11356,7 @@ let TuiNativeSelectGroupComponent = /*#__PURE__*/(/* unused pure expression or s
         i0.ɵɵtemplate(0, TuiNativeSelectGroupComponent_tui_data_list_wrapper_0_Template, 2, 6, "tui-data-list-wrapper", 0)(1, TuiNativeSelectGroupComponent_optgroup_1_Template, 2, 2, "optgroup", 1);
       }
       if (rf & 2) {
-        i0.ɵɵadvance(1);
+        i0.ɵɵadvance();
         i0.ɵɵproperty("ngForOf", ctx.items);
       }
     },
@@ -11510,11 +11510,11 @@ let TuiSelectComponent = /*#__PURE__*/(() => {
         const _r1 = core_mjs_["ɵɵreference"](5);
         const _r5 = core_mjs_["ɵɵreference"](9);
         core_mjs_["ɵɵproperty"]("canOpen", ctx.interactive && !ctx.nativeDropdownMode)("content", ctx.datalist || "");
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("disabled", ctx.computedDisabled)("editable", false)("focusable", ctx.computedFocusable)("invalid", ctx.computedInvalid)("nativeId", ctx.nativeId)("pseudoActive", ctx.pseudoActive)("pseudoFocus", ctx.computedFocused)("pseudoHover", ctx.pseudoHover)("readOnly", ctx.readOnly)("tuiTextfieldIcon", ctx.arrow ? _r5 : "")("value", ctx.computedValue);
         core_mjs_["ɵɵadvance"](5);
         core_mjs_["ɵɵproperty"]("ngTemplateOutlet", _r1);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", ctx.value !== null);
       }
     },
@@ -11866,7 +11866,7 @@ function TuiToggleComponent_span_3_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r1 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r1.iconOn)("polymorpheusOutletContext", core_mjs_["ɵɵpureFunction1"](2, taiga_ui_kit_components_toggle_c1, ctx_r1.size));
   }
 }
@@ -11896,7 +11896,7 @@ function TuiToggleComponent_span_6_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r3 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r3.iconOff)("polymorpheusOutletContext", core_mjs_["ɵɵpureFunction1"](2, taiga_ui_kit_components_toggle_c1, ctx_r3.size));
   }
 }
@@ -12032,13 +12032,13 @@ let TuiToggleComponent = /*#__PURE__*/(() => {
         core_mjs_["ɵɵproperty"]("active", ctx.pseudoActive)("appearance", ctx.appearance)("disabled", ctx.computedDisabled)("focus", ctx.computedFocusVisible)("hover", ctx.pseudoHover)("invalid", ctx.computedInvalid)("readOnly", ctx.readOnly);
         core_mjs_["ɵɵadvance"](2);
         core_mjs_["ɵɵproperty"]("ngIf", ctx.showLoader);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", ctx.showIcons && !ctx.showLoader);
         core_mjs_["ɵɵadvance"](2);
         core_mjs_["ɵɵproperty"]("ngIf", ctx.showLoader);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", ctx.showIcons && !ctx.showLoader);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("disabled", ctx.disabled)("id", ctx.id)("tuiFocusable", ctx.focusable)("tuiChecked", ctx.value);
         core_mjs_["ɵɵattribute"]("aria-checked", ctx.value);
       }
@@ -14757,7 +14757,7 @@ function TuiInputNumberComponent_div_4_ng_container_1_Template(rf, ctx) {
   }
   if (rf & 2) {
     const text_r7 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", text_r7, " ");
   }
 }
@@ -14770,7 +14770,7 @@ function TuiInputNumberComponent_div_4_Template(rf, ctx) {
   if (rf & 2) {
     core_mjs_["ɵɵnextContext"]();
     const _r5 = core_mjs_["ɵɵreference"](9);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", _r5);
   }
 }
@@ -14805,7 +14805,7 @@ function TuiInputNumberComponent_section_5_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r2 = core_mjs_["ɵɵnextContext"]();
     const _r0 = core_mjs_["ɵɵreference"](1);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("appearance", _r0.appearance)("disabled", !ctx_r2.canIncrement)("focusable", false)("icon", ctx_r2.options.icons.up);
     core_mjs_["ɵɵadvance"](2);
     core_mjs_["ɵɵproperty"]("appearance", _r0.appearance)("disabled", !ctx_r2.canDecrement)("focusable", false)("icon", ctx_r2.options.icons.down);
@@ -15089,9 +15089,9 @@ let TuiInputNumberComponent = /*#__PURE__*/(() => {
         core_mjs_["ɵɵproperty"]("disabled", ctx.computedDisabled)("focusable", ctx.focusable)("invalid", ctx.computedInvalid)("maskito", ctx.mask)("pseudoActive", ctx.pseudoActive)("pseudoFocus", ctx.computedFocused)("pseudoHover", ctx.pseudoHover)("readOnly", ctx.readOnly)("value", ctx.computedValue);
         core_mjs_["ɵɵadvance"](4);
         core_mjs_["ɵɵproperty"]("ngIf", ctx.polymorpheusValueContent.length);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", ctx.step);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", core_mjs_["ɵɵpipeBind1"](7, 12, ctx.polymorpheusValueContent.changes));
       }
     },
@@ -15279,7 +15279,7 @@ let TuiInputComponent = /*#__PURE__*/(() => {
       }
       if (rf & 2) {
         core_mjs_["ɵɵproperty"]("canOpen", ctx.canOpen)("content", ctx.datalist || "")("open", ctx.open);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("disabled", ctx.computedDisabled)("focusable", ctx.computedFocusable)("invalid", ctx.computedInvalid)("nativeId", ctx.nativeId)("pseudoFocus", ctx.computedFocused)("pseudoHover", ctx.pseudoHover)("readOnly", ctx.readOnly)("value", ctx.value);
       }
     },
@@ -15374,7 +15374,7 @@ function TuiAccordionItemComponent_ng_container_5_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r1 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r1.options.iconLarge);
   }
 }
@@ -15386,7 +15386,7 @@ function TuiAccordionItemComponent_ng_template_7_div_0_ng_container_1_Template(r
   }
   if (rf & 2) {
     const text_r8 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", text_r8, " ");
   }
 }
@@ -15398,7 +15398,7 @@ function TuiAccordionItemComponent_ng_template_7_div_0_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r6 = core_mjs_["ɵɵnextContext"](2);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r6.lazyContent);
   }
 }
@@ -15587,12 +15587,12 @@ let TuiAccordionItemComponent = /*#__PURE__*/(() => {
         core_mjs_["ɵɵelementEnd"]()();
       }
       if (rf & 2) {
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵclassProp"]("t-header_hoverable", !ctx.disableHover)("t-header_open", ctx.open);
         core_mjs_["ɵɵproperty"]("disabled", ctx.computedDisabled)("tuiFocusable", ctx.computedFocusable);
         core_mjs_["ɵɵadvance"](4);
         core_mjs_["ɵɵproperty"]("ngIf", ctx.showArrow);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("async", ctx.async)("expanded", ctx.open);
         core_mjs_["ɵɵadvance"](2);
         core_mjs_["ɵɵproperty"]("ngIf", ctx.eagerContent);
@@ -15751,7 +15751,7 @@ function TuiTagComponent_div_1_ng_container_1_Template(rf, ctx) {
   }
   if (rf & 2) {
     const text_r5 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", text_r5, " ");
   }
 }
@@ -15763,7 +15763,7 @@ function TuiTagComponent_div_1_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r0 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx_r0.leftContent);
   }
 }
@@ -15997,15 +15997,15 @@ let TuiTagComponent = /*#__PURE__*/(() => {
       }
       if (rf & 2) {
         core_mjs_["ɵɵstyleProp"]("background-color", ctx.backgroundColor);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", ctx.leftContent);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("textContent", ctx.displayText);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", ctx.showLoader);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", ctx.canRemove);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", ctx.editing);
       }
     },
@@ -16041,8 +16041,8 @@ let TuiTagModule = /*#__PURE__*/(() => {
 
 
 //# sourceMappingURL=taiga-ui-kit-components-tag.js.map
-// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
-var router_mjs_ = __webpack_require__(7589);
+// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
+var router_mjs_ = __webpack_require__(9823);
 ;// CONCATENATED MODULE: ./node_modules/@ng-web-apis/mutation-observer/fesm2015/ng-web-apis-mutation-observer.js
 
 
@@ -16235,7 +16235,7 @@ function TuiTabsWithMoreComponent_ng_container_4_ng_template_2_Template(rf, ctx)
     const item_r8 = ctx_r14.$implicit;
     const ctx_r11 = core_mjs_["ɵɵnextContext"]();
     core_mjs_["ɵɵclassProp"]("t-overflown", ctx_r11.isOverflown(index_r9));
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngTemplateOutlet", item_r8);
   }
 }
@@ -16249,7 +16249,7 @@ function TuiTabsWithMoreComponent_ng_container_4_Template(rf, ctx) {
     const index_r9 = ctx.index;
     const _r12 = core_mjs_["ɵɵreference"](3);
     const ctx_r1 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngIf", index_r9 <= ctx_r1.lastVisibleIndex)("ngIfElse", _r12);
   }
 }
@@ -16261,7 +16261,7 @@ function TuiTabsWithMoreComponent_ng_container_7_Template(rf, ctx) {
   }
   if (rf & 2) {
     const text_r15 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", text_r15, " ");
   }
 }
@@ -16304,7 +16304,7 @@ function TuiTabsWithMoreComponent_ng_template_10_div_2_Template(rf, ctx) {
   if (rf & 2) {
     const index_r19 = ctx.index;
     const ctx_r17 = core_mjs_["ɵɵnextContext"](2);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngIf", ctx_r17.shouldShow(index_r19));
   }
 }
@@ -16970,15 +16970,15 @@ let TuiTabsWithMoreComponent = /*#__PURE__*/(() => {
         core_mjs_["ɵɵproperty"]("ngIf", core_mjs_["ɵɵpipeBind1"](1, 15, ctx.items.changes));
         core_mjs_["ɵɵadvance"](3);
         core_mjs_["ɵɵproperty"]("activeItemIndex", ctx.activeItemIndex)("underline", false);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngForOf", ctx.items);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵclassProp"]("t-overflown", !ctx.isMoreVisible);
         core_mjs_["ɵɵproperty"]("content", ctx.dropdownContent || _r6)("open", ctx.open);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵclassProp"]("_active", ctx.isMoreActive)("t-no-margin", ctx.isMoreAlone);
         core_mjs_["ɵɵproperty"]("tuiFocusable", ctx.isMoreFocusable);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx.moreContent || _r4);
         core_mjs_["ɵɵadvance"](5);
         core_mjs_["ɵɵproperty"]("ngIf", ctx.underline);
@@ -17141,9 +17141,9 @@ let taiga_ui_kit_components_radio_TuiRadioComponent = /*#__PURE__*/(/* unused pu
       }
       if (rf & 2) {
         i0.ɵɵproperty("active", ctx.pseudoActive)("appearance", ctx.appearance)("disabled", ctx.computedDisabled)("focus", ctx.computedFocusVisible)("hover", ctx.pseudoHover)("invalid", ctx.computedInvalid);
-        i0.ɵɵadvance(1);
+        i0.ɵɵadvance();
         i0.ɵɵclassProp("t-mark_visible", ctx.checked);
-        i0.ɵɵadvance(1);
+        i0.ɵɵadvance();
         i0.ɵɵproperty("disabled", ctx.computedDisabled)("id", ctx.id)("tuiChecked", ctx.checked)("tuiFocusable", ctx.isFocusable);
         i0.ɵɵattribute("name", ctx.computedName);
       }
@@ -17301,7 +17301,7 @@ let TuiRadioBlockComponent = /*#__PURE__*/(/* unused pure expression or super */
         i0.ɵɵproperty("ngIf", ctx.modeDirective && i0.ɵɵpipeBind1(1, 20, ctx.modeDirective.change$));
         i0.ɵɵadvance(2);
         i0.ɵɵproperty("active", ctx.pseudoActive)("appearance", ctx.appearance)("disabled", ctx.computedDisabled)("focus", ctx.computedFocusVisible)("hover", ctx.pseudoHover)("invalid", ctx.computedInvalid);
-        i0.ɵɵadvance(1);
+        i0.ɵɵadvance();
         i0.ɵɵproperty("focusable", ctx.focusable)("identityMatcher", ctx.identityMatcher)("item", ctx.item)("name", ctx.computedName || "")("nativeId", ctx.nativeId)("pseudoActive", ctx.pseudoActive)("pseudoDisabled", ctx.computedDisabled)("pseudoFocus", false)("pseudoHover", ctx.pseudoHover)("pseudoInvalid", ctx.computedInvalid)("readOnly", ctx.readOnly)("size", ctx.checkboxSize)("ngModel", ctx.value);
       }
     },
@@ -17459,7 +17459,7 @@ let TuiPrimitiveCheckboxComponent = /*#__PURE__*/(/* unused pure expression or s
       }
       if (rf & 2) {
         i0.ɵɵproperty("active", ctx.pressed)("appearance", ctx.appearance)("disabled", ctx.disabled)("focus", ctx.focused)("hover", ctx.hovered)("invalid", ctx.invalid);
-        i0.ɵɵadvance(1);
+        i0.ɵɵadvance();
         i0.ɵɵproperty("polymorpheusOutlet", ctx.icon)("polymorpheusOutletContext", i0.ɵɵpureFunction1(8, taiga_ui_core_components_primitive_checkbox_c0, ctx.size));
       }
     },
@@ -17575,7 +17575,7 @@ let taiga_ui_kit_components_checkbox_TuiCheckboxComponent = /*#__PURE__*/(/* unu
       }
       if (rf & 2) {
         i0.ɵɵproperty("disabled", ctx.disabled)("focused", ctx.computedFocusVisible)("hovered", ctx.pseudoHover)("invalid", ctx.computedInvalid)("pressed", ctx.pseudoActive)("size", ctx.size)("value", ctx.value);
-        i0.ɵɵadvance(1);
+        i0.ɵɵadvance();
         i0.ɵɵproperty("disabled", ctx.disabled)("id", ctx.id)("tuiFocusable", ctx.computedFocusable)("tuiChecked", ctx.value);
       }
     },
@@ -17695,9 +17695,9 @@ let TuiCheckboxLabeledComponent = /*#__PURE__*/(/* unused pure expression or sup
         i0.ɵɵelementEnd()();
       }
       if (rf & 2) {
-        i0.ɵɵadvance(1);
+        i0.ɵɵadvance();
         i0.ɵɵproperty("disabled", ctx.computedDisabled)("focusable", ctx.focusable)("nativeId", ctx.nativeId)("pseudoActive", ctx.pseudoActive)("pseudoFocus", ctx.pseudoFocus)("pseudoHover", ctx.pseudoHover)("pseudoInvalid", ctx.computedInvalid)("readOnly", ctx.readOnly)("size", ctx.size)("ngModel", ctx.value);
-        i0.ɵɵadvance(1);
+        i0.ɵɵadvance();
         i0.ɵɵclassProp("t-content_disabled", ctx.computedDisabled);
       }
     },
@@ -17763,7 +17763,7 @@ function TuiSidebarComponent_ng_container_1_Template(rf, ctx) {
   }
   if (rf & 2) {
     const text_r1 = ctx.polymorpheusOutlet;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", text_r1, " ");
   }
 }
@@ -17878,7 +17878,7 @@ let TuiSidebarComponent = /*#__PURE__*/(() => {
       }
       if (rf & 2) {
         core_mjs_["ɵɵclassProp"]("t-wrapper_auto-width", ctx.autoWidth);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx.content);
       }
     },
@@ -18146,7 +18146,7 @@ function TuiDocCodeComponent_p_0_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r0 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", ctx_r0.filename, "\n");
   }
 }
@@ -18206,7 +18206,7 @@ function TuiDocCopyComponent_button_0_Template(rf, ctx) {
     const texts_r1 = ctx.ngIf;
     const ctx_r0 = i0.ɵɵnextContext();
     i0.ɵɵproperty("title", texts_r1[0]);
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵclassProp("t-content_moved", i0.ɵɵpipeBind1(2, 5, ctx_r0.copied$));
     i0.ɵɵadvance(2);
     i0.ɵɵattribute("data-text", texts_r1[0]);
@@ -18255,7 +18255,7 @@ function TuiDocDemoComponent_ng_container_3_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r2 = i0.ɵɵnextContext();
     const _r1 = i0.ɵɵreference(2);
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("ngModel", ctx_r2.mode)("tuiHintContent", _r1)("tuiTextfieldCleaner", true);
   }
 }
@@ -18292,11 +18292,11 @@ function TuiDocDemoComponent_ng_template_4_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r3 = i0.ɵɵnextContext();
     const _r1 = i0.ɵɵreference(2);
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("content", _r1);
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("collapsed", true);
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("hideRadio", true)("item", null)("ngModel", ctx_r3.mode);
     i0.ɵɵadvance(2);
     i0.ɵɵproperty("hideRadio", true)("ngModel", ctx_r3.mode);
@@ -18351,7 +18351,7 @@ function TuiDocDemoComponent_form_12_ng_template_8_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r17 = i0.ɵɵnextContext(2);
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵtextInterpolate1("Form data: ", i0.ɵɵpipeBind1(2, 3, ctx_r17.testForm.value), "");
     i0.ɵɵadvance(3);
     i0.ɵɵproperty("ngModel", ctx_r17.updateOn)("ngModelOptions", i0.ɵɵpureFunction0(5, taiga_ui_addon_doc_components_c3));
@@ -18382,9 +18382,9 @@ function TuiDocDemoComponent_form_12_Template(rf, ctx) {
     i0.ɵɵproperty("formGroup", ctx_r6.testForm);
     i0.ɵɵadvance(2);
     i0.ɵɵproperty("ngTemplateOutlet", ctx_r6.template);
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("iconRight", _r16);
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵtextInterpolate1(" ", ctx_r6.texts[2], " ");
     i0.ɵɵadvance(3);
     i0.ɵɵproperty("expanded", ctx_r6.expanded);
@@ -18399,7 +18399,7 @@ function TuiDocDocumentationComponent_h1_0_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r0 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", ctx_r0.heading, "\n");
   }
 }
@@ -18411,7 +18411,7 @@ function TuiDocDocumentationComponent_ng_container_2_table_1_th_6_Template(rf, c
   }
   if (rf & 2) {
     const ctx_r4 = core_mjs_["ɵɵnextContext"](3);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", ctx_r4.texts[3], " ");
   }
 }
@@ -18434,7 +18434,7 @@ function TuiDocDocumentationComponent_ng_container_2_table_1_tr_7_ng_container_1
   if (rf & 2) {
     const item_r11 = core_mjs_["ɵɵnextContext"]().$implicit;
     core_mjs_["ɵɵattribute"]("href", item_r11.reference, core_mjs_["ɵɵsanitizeUrl"]);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", item_r11.type, " ");
   }
 }
@@ -18464,7 +18464,7 @@ function TuiDocDocumentationComponent_ng_container_2_table_1_tr_7_ng_container_1
     const item_r11 = ctx.$implicit;
     const last_r12 = ctx.last;
     const _r15 = core_mjs_["ɵɵreference"](3);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngIf", item_r11.reference)("ngIfElse", _r15);
     core_mjs_["ɵɵadvance"](3);
     core_mjs_["ɵɵproperty"]("ngIf", !last_r12);
@@ -18513,7 +18513,7 @@ function TuiDocDocumentationComponent_ng_container_2_table_1_tr_7_td_15_ng_conta
   }
   if (rf & 2) {
     const data_r33 = ctx.$implicit;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate"](core_mjs_["ɵɵpipeBind1"](2, 1, data_r33));
   }
 }
@@ -18576,7 +18576,7 @@ function TuiDocDocumentationComponent_ng_container_2_table_1_tr_7_td_15_ng_conta
   }
   if (rf & 2) {
     const propertyConnector_r6 = core_mjs_["ɵɵnextContext"](4).$implicit;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("tuiInputOpacity", core_mjs_["ɵɵpipeBind1"](2, 8, propertyConnector_r6.documentationPropertyValue))("tuiTextfieldLabelOutside", true)("value", core_mjs_["ɵɵpipeBind1"](3, 10, propertyConnector_r6.documentationPropertyValue));
     core_mjs_["ɵɵattribute"]("id", propertyConnector_r6.attrName);
     core_mjs_["ɵɵadvance"](4);
@@ -18625,7 +18625,7 @@ function TuiDocDocumentationComponent_ng_container_2_table_1_tr_7_td_15_ng_conta
   }
   if (rf & 2) {
     const propertyConnector_r6 = core_mjs_["ɵɵnextContext"](4).$implicit;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngIf", core_mjs_["ɵɵpipeBind1"](2, 1, propertyConnector_r6.documentationPropertyValue));
   }
 }
@@ -18638,15 +18638,15 @@ function TuiDocDocumentationComponent_ng_container_2_table_1_tr_7_td_15_ng_conta
   if (rf & 2) {
     const propertyConnector_r6 = core_mjs_["ɵɵnextContext"](3).$implicit;
     core_mjs_["ɵɵproperty"]("ngSwitch", propertyConnector_r6.documentationPropertyType);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngSwitchCase", "boolean");
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngSwitchCase", "string");
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngSwitchCase", "color");
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngSwitchCase", "number");
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngSwitchCase", "PolymorpheusContent");
   }
 }
@@ -18659,7 +18659,7 @@ function TuiDocDocumentationComponent_ng_container_2_table_1_tr_7_td_15_ng_conta
   if (rf & 2) {
     const _r26 = core_mjs_["ɵɵreference"](5);
     const propertyConnector_r6 = core_mjs_["ɵɵnextContext"](2).$implicit;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngIf", propertyConnector_r6.hasItems)("ngIfElse", _r26);
   }
 }
@@ -18684,7 +18684,7 @@ function TuiDocDocumentationComponent_ng_container_2_table_1_tr_7_td_15_Template
   if (rf & 2) {
     const _r21 = core_mjs_["ɵɵreference"](3);
     const propertyConnector_r6 = core_mjs_["ɵɵnextContext"]().$implicit;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngIf", propertyConnector_r6.shouldShowValues)("ngIfElse", _r21);
   }
 }
@@ -18713,13 +18713,13 @@ function TuiDocDocumentationComponent_ng_container_2_table_1_tr_7_Template(rf, c
     core_mjs_["ɵɵclassProp"]("t-deprecated", propertyConnector_r6.documentationPropertyDeprecated);
     core_mjs_["ɵɵadvance"](3);
     core_mjs_["ɵɵstyleProp"]("color", "var(--tui-accent-active)");
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", core_mjs_["ɵɵpipeBind1"](5, 10, propertyConnector_r6.attrName), " ");
     core_mjs_["ɵɵadvance"](2);
     core_mjs_["ɵɵproperty"]("ngIf", core_mjs_["ɵɵpipeBind1"](7, 12, propertyConnector_r6.attrName));
     core_mjs_["ɵɵadvance"](2);
     core_mjs_["ɵɵproperty"]("ngIf", propertyConnector_r6.documentationPropertyDeprecated);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngTemplateOutlet", propertyConnector_r6.template);
     core_mjs_["ɵɵadvance"](4);
     core_mjs_["ɵɵproperty"]("ngForOf", core_mjs_["ɵɵpipeBind1"](14, 14, propertyConnector_r6.documentationPropertyType));
@@ -18747,9 +18747,9 @@ function TuiDocDocumentationComponent_ng_container_2_table_1_Template(rf, ctx) {
     core_mjs_["ɵɵtextInterpolate"](ctx_r3.texts[2]);
     core_mjs_["ɵɵadvance"](2);
     core_mjs_["ɵɵtextInterpolate"](ctx_r3.type);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngIf", ctx_r3.showValues && !ctx_r3.isAPI);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngForOf", properties_r2);
   }
 }
@@ -18761,7 +18761,7 @@ function TuiDocDocumentationComponent_ng_container_2_Template(rf, ctx) {
   }
   if (rf & 2) {
     const properties_r2 = ctx.ngIf;
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngIf", properties_r2.length);
   }
 }
@@ -18799,9 +18799,9 @@ function TuiDocExampleComponent_h3_0_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r0 = i0.ɵɵnextContext();
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("polymorpheusOutlet", ctx_r0.heading);
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("ngIf", ctx_r0.id);
   }
 }
@@ -18813,7 +18813,7 @@ function TuiDocExampleComponent_h4_1_ng_container_1_Template(rf, ctx) {
   }
   if (rf & 2) {
     const text_r13 = ctx.polymorpheusOutlet;
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵtextInterpolate1(" ", text_r13, " ");
   }
 }
@@ -18825,7 +18825,7 @@ function TuiDocExampleComponent_h4_1_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r1 = i0.ɵɵnextContext();
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("polymorpheusOutlet", ctx_r1.description);
   }
 }
@@ -18837,7 +18837,7 @@ function TuiDocExampleComponent_div_2_ng_container_1_div_1_ng_container_2_button
   }
   if (rf & 2) {
     const text_r24 = ctx.polymorpheusOutlet;
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵtextInterpolate1(" ", text_r24, " ");
   }
 }
@@ -18850,7 +18850,7 @@ function TuiDocExampleComponent_div_2_ng_container_1_div_1_ng_container_2_button
   if (rf & 2) {
     const tab_r21 = i0.ɵɵnextContext().$implicit;
     const ctx_r22 = i0.ɵɵnextContext(4);
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("polymorpheusOutlet", ctx_r22.getTabTitle(tab_r21));
   }
 }
@@ -18869,7 +18869,7 @@ function TuiDocExampleComponent_div_2_ng_container_1_div_1_tui_loader_3_ng_conta
   }
   if (rf & 2) {
     const editContent_r31 = ctx.polymorpheusOutlet;
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵtextInterpolate1(" ", editContent_r31, " ");
   }
 }
@@ -18881,7 +18881,7 @@ function TuiDocExampleComponent_div_2_ng_container_1_div_1_tui_loader_3_ng_conta
   }
   if (rf & 2) {
     const content_r29 = ctx.ngIf;
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("polymorpheusOutlet", content_r29);
   }
 }
@@ -18893,7 +18893,7 @@ function TuiDocExampleComponent_div_2_ng_container_1_div_1_tui_loader_3_ng_templ
   }
   if (rf & 2) {
     const ctx_r27 = i0.ɵɵnextContext(5);
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵtextInterpolate1(" Edit on ", ctx_r27.codeEditor.name, " ");
   }
 }
@@ -18938,11 +18938,11 @@ function TuiDocExampleComponent_div_2_ng_container_1_div_1_Template(rf, ctx) {
     const tabs_r16 = i0.ɵɵnextContext().ngIf;
     const files_r14 = i0.ɵɵnextContext().ngIf;
     const ctx_r17 = i0.ɵɵnextContext();
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("activeItemIndex", ctx_r17.activeItemIndex);
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("ngForOf", tabs_r16);
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("ngIf", i0.ɵɵpipeBind2(4, 3, files_r14, ctx_r17.visible));
   }
 }
@@ -18982,7 +18982,7 @@ function TuiDocExampleComponent_div_2_ng_container_1_div_2_Template(rf, ctx) {
     const _r43 = i0.ɵɵreference(3);
     const ctx_r18 = i0.ɵɵnextContext(3);
     i0.ɵɵclassProp("t-content_animated", !ctx_r18.isE2E)("t-content_visible", ctx_r18.activeItemIndex === index_r40);
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("ngIf", index_r40 === ctx_r18.defaultTabIndex)("ngIfElse", _r43);
   }
 }
@@ -18994,9 +18994,9 @@ function TuiDocExampleComponent_div_2_ng_container_1_Template(rf, ctx) {
   }
   if (rf & 2) {
     const tabs_r16 = ctx.ngIf;
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("ngIf", tabs_r16.length > 1);
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("ngForOf", tabs_r16);
   }
 }
@@ -19010,7 +19010,7 @@ function TuiDocExampleComponent_div_2_Template(rf, ctx) {
   if (rf & 2) {
     const files_r14 = ctx.ngIf;
     const ctx_r2 = i0.ɵɵnextContext();
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("ngIf", i0.ɵɵpipeBind2(2, 1, files_r14, ctx_r2.defaultTab));
   }
 }
@@ -19029,7 +19029,7 @@ function TuiDocExampleComponent_ng_template_6_ng_container_1_ng_container_1_Temp
   }
   if (rf & 2) {
     const text_r50 = ctx.polymorpheusOutlet;
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵtextInterpolate1(" ", text_r50, " ");
   }
 }
@@ -19042,7 +19042,7 @@ function TuiDocExampleComponent_ng_template_6_ng_container_1_Template(rf, ctx) {
   if (rf & 2) {
     const action_r48 = ctx.$implicit;
     const code_r46 = i0.ɵɵnextContext().$implicit;
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("polymorpheusOutlet", action_r48)("polymorpheusOutletContext", i0.ɵɵpureFunction1(2, taiga_ui_addon_doc_components_c5, code_r46));
   }
 }
@@ -19056,7 +19056,7 @@ function TuiDocExampleComponent_ng_template_6_Template(rf, ctx) {
     const code_r46 = ctx.$implicit;
     const ctx_r5 = i0.ɵɵnextContext();
     i0.ɵɵproperty("code", code_r46);
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("ngForOf", ctx_r5.codeActions);
   }
 }
@@ -19086,9 +19086,9 @@ function TuiDocNavigationComponent_ng_container_3_tui_data_list_1_tui_opt_group_
   if (rf & 2) {
     const item_r11 = ctx.$implicit;
     core_mjs_["ɵɵproperty"]("fragment", item_r11.fragment)("routerLink", item_r11.route);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", item_r11.title, " ");
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", item_r11.icon);
   }
 }
@@ -19103,7 +19103,7 @@ function TuiDocNavigationComponent_ng_container_3_tui_data_list_1_tui_opt_group_
     const index_r9 = ctx.index;
     const ctx_r7 = core_mjs_["ɵɵnextContext"](3);
     core_mjs_["ɵɵproperty"]("label", ctx_r7.labels[index_r9] || "");
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngForOf", group_r8);
   }
 }
@@ -19116,7 +19116,7 @@ function TuiDocNavigationComponent_ng_container_3_tui_data_list_1_Template(rf, c
   }
   if (rf & 2) {
     const ctx_r6 = core_mjs_["ɵɵnextContext"](2);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngForOf", core_mjs_["ɵɵpipeBind1"](2, 1, ctx_r6.filtered$));
   }
 }
@@ -19153,7 +19153,7 @@ function TuiDocNavigationComponent_tui_accordion_item_8_ng_template_4_Template(r
   if (rf & 2) {
     const index_r17 = core_mjs_["ɵɵnextContext"]().index;
     const ctx_r18 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngForOf", ctx_r18.items[index_r17]);
   }
 }
@@ -19220,9 +19220,9 @@ function TuiDocNavigationComponent_ng_template_11_a_0_Template(rf, ctx) {
     const item_r29 = core_mjs_["ɵɵnextContext"]().item;
     const ctx_r30 = core_mjs_["ɵɵnextContext"]();
     core_mjs_["ɵɵproperty"]("routerLink", item_r29.route)("tuiScrollIntoViewLink", ctx_r30.isActive(item_r29.route));
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", item_r29.title, " ");
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", item_r29.icon);
   }
 }
@@ -19255,12 +19255,12 @@ function TuiDocNavigationComponent_ng_template_11_ng_template_1_button_1_Templat
     const index_r28 = ctx_r45.index;
     const item_r29 = ctx_r45.item;
     const ctx_r38 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵclassProp"]("t-chevron_active", !!ctx_r38.openPagesGroupsArr[index_r28]);
     core_mjs_["ɵɵproperty"]("src", ctx_r38.icons.more);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", item_r29.title, " ");
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", item_r29.icon);
   }
 }
@@ -19290,9 +19290,9 @@ function TuiDocNavigationComponent_ng_template_11_ng_template_1_a_4_Template(rf,
     const subPage_r46 = ctx.$implicit;
     const ctx_r39 = core_mjs_["ɵɵnextContext"](3);
     core_mjs_["ɵɵproperty"]("fragment", subPage_r46.fragment)("routerLink", subPage_r46.route)("tuiScrollIntoViewLink", ctx_r39.isActive(subPage_r46.route));
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", subPage_r46.title, " ");
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("polymorpheusOutlet", subPage_r46.icon);
   }
 }
@@ -19313,9 +19313,9 @@ function TuiDocNavigationComponent_ng_template_11_ng_template_1_Template(rf, ctx
     const index_r28 = ctx_r51.index;
     const ctx_r31 = core_mjs_["ɵɵnextContext"]();
     core_mjs_["ɵɵproperty"]("routerLinkActiveOptions", core_mjs_["ɵɵpureFunction0"](4, _c7));
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngIf", item_r29.subPages);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("expanded", !!ctx_r31.openPagesGroupsArr[index_r28]);
     core_mjs_["ɵɵadvance"](2);
     core_mjs_["ɵɵproperty"]("ngForOf", ctx_r31.$pages(item_r29.subPages));
@@ -19353,7 +19353,7 @@ function TuiDocSeeAlsoComponent_ng_container_2_ng_container_2_Template(rf, ctx) 
     core_mjs_["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate"](", ");
   }
 }
@@ -19368,9 +19368,9 @@ function TuiDocSeeAlsoComponent_ng_container_2_Template(rf, ctx) {
     const item_r1 = ctx.$implicit;
     const last_r2 = ctx.last;
     const ctx_r0 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("innerText", item_r1)("routerLink", ctx_r0.getRouterLink(item_r1));
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngIf", !last_r2);
   }
 }
@@ -19419,7 +19419,7 @@ function TuiLanguageSwitcherComponent_tui_data_list_2_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r0 = i0.ɵɵnextContext();
-    i0.ɵɵadvance(1);
+    i0.ɵɵadvance();
     i0.ɵɵproperty("ngForOf", ctx_r0.names);
   }
 }
@@ -19480,7 +19480,7 @@ function TuiDocPageComponent_tui_tabs_with_more_5_ng_container_1_Template(rf, ct
     const tab_r6 = ctx.$implicit;
     const index_r8 = ctx.index;
     const ctx_r5 = core_mjs_["ɵɵnextContext"](2);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngIf", tab_r6.pageTab || ctx_r5.defaultTabs[index_r8]);
   }
 }
@@ -19499,7 +19499,7 @@ function TuiDocPageComponent_tui_tabs_with_more_5_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r2 = core_mjs_["ɵɵnextContext"]();
     core_mjs_["ɵɵproperty"]("activeItemIndex", ctx_r2.activeItemIndex);
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngForOf", ctx_r2.tabConnectors);
   }
 }
@@ -19530,7 +19530,7 @@ function TuiDocPageComponent_ng_container_10_Template(rf, ctx) {
   if (rf & 2) {
     const index_r17 = ctx.index;
     const ctx_r4 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵadvance"](1);
+    core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngIf", index_r17 === ctx_r4.activeItemIndex);
   }
 }
@@ -19579,7 +19579,7 @@ let TuiDocCodeComponent = /*#__PURE__*/(() => {
       }
       if (rf & 2) {
         core_mjs_["ɵɵproperty"]("ngIf", ctx.filename);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngForOf", core_mjs_["ɵɵpipeBind1"](2, 2, ctx.processor$));
       }
     },
@@ -19860,9 +19860,9 @@ let TuiDocDemoComponent = /*#__PURE__*/(/* unused pure expression or super */ nu
         i0.ɵɵproperty("ngIf", ctx.isMobile)("ngIfElse", _r4);
         i0.ɵɵadvance(3);
         i0.ɵɵproperty("ngModel", ctx.opaque);
-        i0.ɵɵadvance(1);
+        i0.ɵɵadvance();
         i0.ɵɵtextInterpolate1(" ", ctx.texts[1], " ");
-        i0.ɵɵadvance(1);
+        i0.ɵɵadvance();
         i0.ɵɵclassProp("t-wrapper_dark", ctx.mode === "onDark")("t-wrapper_gray", ctx.mode === "onLight")("t-wrapper_transparent", !ctx.opaque);
         i0.ɵɵadvance(4);
         i0.ɵɵproperty("ngIf", ctx.testForm);
@@ -19924,7 +19924,7 @@ let TuiDocTabComponent = /*#__PURE__*/(/* unused pure expression or super */ nul
         i0.ɵɵelementEnd();
       }
       if (rf & 2) {
-        i0.ɵɵadvance(1);
+        i0.ɵɵadvance();
         i0.ɵɵproperty("src", ctx.src);
       }
     },
@@ -20543,9 +20543,9 @@ let TuiDocExampleComponent = /*#__PURE__*/(/* unused pure expression or super */
       }
       if (rf & 2) {
         i0.ɵɵproperty("ngIf", ctx.heading);
-        i0.ɵɵadvance(1);
+        i0.ɵɵadvance();
         i0.ɵɵproperty("ngIf", ctx.description);
-        i0.ɵɵadvance(1);
+        i0.ɵɵadvance();
         i0.ɵɵproperty("ngIf", i0.ɵɵpipeBind1(3, 3, ctx.processor$));
       }
     },
@@ -20765,13 +20765,13 @@ let TuiDocNavigationComponent = /*#__PURE__*/(() => {
         core_mjs_["ɵɵproperty"]("formControl", ctx.search)("tuiAutoFocus", !!ctx.sidebar)("tuiTextfieldCleaner", true)("tuiTextfieldIconLeft", ctx.docIcons.search)("tuiTextfieldLabelOutside", true);
         core_mjs_["ɵɵadvance"](2);
         core_mjs_["ɵɵtextInterpolate1"](" ", ctx.searchText, " ");
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", ctx.canOpen);
         core_mjs_["ɵɵadvance"](2);
         core_mjs_["ɵɵproperty"]("tuiMode", core_mjs_["ɵɵpipeBind1"](6, 12, ctx.mode$));
         core_mjs_["ɵɵadvance"](2);
         core_mjs_["ɵɵproperty"]("closeOthers", false)("rounded", false);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngForOf", ctx.labels);
         core_mjs_["ɵɵadvance"](2);
         core_mjs_["ɵɵproperty"]("ngForOf", ctx.itemsWithoutSections);
@@ -20838,7 +20838,7 @@ let TuiDocHeaderComponent = /*#__PURE__*/(() => {
       }
       if (rf & 2) {
         core_mjs_["ɵɵproperty"]("icon", ctx.icons.menu)("title", ctx.menu);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("tuiSidebar", !!core_mjs_["ɵɵpipeBind1"](2, 4, ctx.open$));
         core_mjs_["ɵɵadvance"](3);
         core_mjs_["ɵɵproperty"]("polymorpheusOutlet", ctx.logo);
@@ -20917,9 +20917,9 @@ let TuiDocSeeAlsoComponent = /*#__PURE__*/(() => {
         core_mjs_["ɵɵtemplate"](2, TuiDocSeeAlsoComponent_ng_container_2_Template, 3, 3, "ng-container", 1);
       }
       if (rf & 2) {
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵtextInterpolate"](ctx.text);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngForOf", ctx.seeAlso);
       }
     },
@@ -21295,17 +21295,17 @@ let TuiDocPageComponent = /*#__PURE__*/(() => {
       if (rf & 2) {
         core_mjs_["ɵɵadvance"](2);
         core_mjs_["ɵɵtextInterpolate1"](" ", ctx.header, " ");
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", !!ctx.deprecated || ctx.deprecated === "");
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", ctx.package);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", ctx.tabConnectors.length);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("header", ctx.header)("package", ctx.package)("path", ctx.path)("type", ctx.type);
         core_mjs_["ɵɵadvance"](3);
         core_mjs_["ɵɵproperty"]("ngIf", ctx.showSeeAlso);
-        core_mjs_["ɵɵadvance"](1);
+        core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngForOf", ctx.tabConnectors);
       }
     },
@@ -21370,7 +21370,7 @@ let TuiDocPageModule = /*#__PURE__*/(() => {
 /* harmony export */ });
 /* unused harmony exports TUI_DOC_CODE_ACTIONS, TUI_DOC_CODE_EDITOR, TUI_DOC_DEFAULT_ICONS, TUI_DOC_DEMO_TEXTS, TUI_DOC_EXAMPLE_CONTENT_PROCESSOR, TUI_DOC_EXAMPLE_TEXTS, TUI_DOC_SCROLL_BEHAVIOR, tuiDocExcludeProperties, tuiDocIconsProvider */
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8937);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2258);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_addon_doc_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1569);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2737);
@@ -30100,7 +30100,7 @@ function tuiTypeReferenceParser(types) {
 /* harmony export */   wB: () => (/* binding */ tuiAsControl)
 /* harmony export */ });
 /* unused harmony exports AbstractTuiDialogDirective, AbstractTuiMultipleControl */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2258);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(95);
 /* harmony import */ var _taiga_ui_cdk_classes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7178);
@@ -30119,7 +30119,7 @@ function tuiTypeReferenceParser(types) {
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(9773);
 /* harmony import */ var _taiga_ui_cdk_services__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(5423);
 /* harmony import */ var _taiga_ui_cdk_exceptions__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(7122);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3732);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5897);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -30754,7 +30754,7 @@ class TuiValidationError {
 /* harmony export */   yZ: () => (/* binding */ TUI_DEFAULT_STRINGIFY)
 /* harmony export */ });
 /* unused harmony exports CHAR_BULLET, CHAR_CURRENCY_SIGN, CHAR_ELLIPSIS, CHAR_EM_DASH, CHAR_LAQUO, CHAR_PLUS, CHAR_RAQUO, CHAR_ZERO_WIDTH_SPACE, CHROMIUM_EDGE_START_VERSION, TUI_DEFAULT_MATCHER, TUI_PARENT_STOP, TUI_STRICT_MATCHER, TUI_USED_ICONS */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2258);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6825);
 
@@ -31150,7 +31150,7 @@ function tuiRequiredSetter(assertion, ...args) {
 /* harmony export */   WD: () => (/* binding */ TuiLetModule)
 /* harmony export */ });
 /* unused harmony export TuiLetContext */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2258);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -31598,8 +31598,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // UNUSED EXPORTS: TuiPanService, TuiScrollService, TuiZoomService
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(2258);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(9649);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/ReplaySubject.js
 var ReplaySubject = __webpack_require__(7328);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Observable.js
@@ -31646,8 +31646,8 @@ var ng_web_apis_common = __webpack_require__(229);
 var taiga_ui_cdk_constants = __webpack_require__(6141);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-dom.js
 var taiga_ui_cdk_utils_dom = __webpack_require__(7995);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(3732);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(5897);
 ;// CONCATENATED MODULE: ./node_modules/@ng-web-apis/resize-observer/fesm2015/ng-web-apis-resize-observer.js
 
 
@@ -32327,10 +32327,10 @@ __webpack_require__.d(__webpack_exports__, {
 
 // UNUSED EXPORTS: TUI_DEFAULT_RENDERER, TUI_ENSURE_BASE_HREF, TUI_IS_APPLE, TUI_IS_CHROMIUM, TUI_IS_CYPRESS, TUI_IS_FIREFOX, TUI_IS_PLAYWRIGHT, TUI_IS_STACKBLITZ, TUI_PLATFORM, TUI_RANGE, TUI_REMOVED_ELEMENT, TUI_TAKE_ONLY_TRUSTED_EVENTS, TUI_TOUCH_SUPPORTED, TUI_WINDOW_HEIGHT, TUI_ZOOM_OPTIONS, tuiPlatformFactory
 
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(3732);
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(2258);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(5897);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(9649);
 // EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
 var ng_web_apis_common = __webpack_require__(229);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-observables.js
@@ -33374,7 +33374,7 @@ function tuiToRadians(deg) {
 /* harmony export */   pf: () => (/* binding */ tuiUniqBy)
 /* harmony export */ });
 /* unused harmony exports tuiArrayShallowEquals, tuiArrayToggle, tuiCleanObject, tuiCreateOptions, tuiDefaultSort, tuiDistanceBetweenTouches, tuiEaseInOutQuad, tuiFlatLength, tuiIsObject, tuiIsValidUrl, tuiMarkControlAsTouchedAndValidate, tuiNullableSame, tuiObjectFromEntries, tuiProvideOptions */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2258);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -33646,7 +33646,7 @@ fallback = 'rgba(0, 0, 0, 0.7)') {
 /* harmony export */   kk: () => (/* binding */ TuiDriver),
 /* harmony export */   uG: () => (/* binding */ TuiPositionAccessor)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2258);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5423);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(2461);
@@ -33802,7 +33802,7 @@ function tuiAsRectAccessor(useExisting) {
 /* harmony export */   v0: () => (/* binding */ TuiButtonComponent)
 /* harmony export */ });
 /* unused harmony exports TUI_BUTTON_DEFAULT_OPTIONS, TUI_BUTTON_OPTIONS, tuiButtonOptionsProvider */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2258);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8937);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2461);
@@ -33817,7 +33817,7 @@ function tuiAsRectAccessor(useExisting) {
 /* harmony import */ var _taiga_ui_core_enums__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7241);
 /* harmony import */ var _taiga_ui_core_components_svg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(7415);
 /* harmony import */ var _taiga_ui_core_components_loader__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(63);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3732);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5897);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _taiga_ui_core_directives_wrapper__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(1713);
 /* harmony import */ var _tinkoff_ng_polymorpheus__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(2549);
@@ -33862,7 +33862,7 @@ function TuiButtonComponent_span_4_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("polymorpheusOutlet", ctx_r1.icon);
   }
 }
@@ -33883,7 +33883,7 @@ function TuiButtonComponent_span_6_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("polymorpheusOutlet", ctx_r2.iconRight);
   }
 }
@@ -34005,7 +34005,7 @@ let TuiButtonComponent = /*#__PURE__*/(() => {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.icon);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.iconRight);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.showLoader);
       }
     },
@@ -34051,7 +34051,7 @@ let TuiButtonModule = /*#__PURE__*/(() => {
 /* harmony export */   V: () => (/* binding */ TuiLinkComponent),
 /* harmony export */   j: () => (/* binding */ TuiLinkModule)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2258);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5213);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6141);
@@ -34063,7 +34063,7 @@ let TuiButtonModule = /*#__PURE__*/(() => {
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3019);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7398);
 /* harmony import */ var _taiga_ui_core_components_svg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(7415);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3732);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5897);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -34222,9 +34222,9 @@ let TuiLinkModule = /*#__PURE__*/(() => {
 /* harmony export */   kM: () => (/* binding */ TuiLoaderComponent)
 /* harmony export */ });
 /* unused harmony exports TUI_LOADER_DEFAULT_OPTIONS, TUI_LOADER_OPTIONS, tuiLoaderOptionsProvider */
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3732);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5897);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2258);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9649);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8937);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2310);
@@ -34250,7 +34250,7 @@ function TuiLoaderComponent_div_2_div_3_ng_container_1_Template(rf, ctx) {
   }
   if (rf & 2) {
     const text_r3 = ctx.polymorpheusOutlet;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", text_r3, " ");
   }
 }
@@ -34265,7 +34265,7 @@ function TuiLoaderComponent_div_2_div_3_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassProp"]("t-text_horizontal", ctx_r1.isHorizontal);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("polymorpheusOutlet", ctx_r1.textContent);
   }
 }
@@ -34414,13 +34414,13 @@ let TuiLoaderModule = /*#__PURE__*/(() => {
 /* harmony export */   H: () => (/* binding */ TuiNotificationModule),
 /* harmony export */   L: () => (/* binding */ TuiNotificationComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2258);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5213);
 /* harmony import */ var _taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4862);
 /* harmony import */ var _taiga_ui_core_components_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7415);
 /* harmony import */ var _taiga_ui_core_components_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(631);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3732);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5897);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _tinkoff_ng_polymorpheus__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(2549);
 
@@ -34456,7 +34456,7 @@ function TuiNotificationComponent_ng_container_0_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("polymorpheusOutlet", ctx_r0.icon)("polymorpheusOutletContext", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](2, _c0, ctx_r0.status));
   }
 }
@@ -34583,9 +34583,9 @@ let TuiNotificationModule = /*#__PURE__*/(() => {
 /* harmony export */ });
 /* unused harmony exports TUI_DEPRECATED_ICONS, TUI_SVG_DEFAULT_OPTIONS, TUI_SVG_OPTIONS, TUI_SVG_SRC_INTERCEPTORS, tuiSvgOptionsProvider, tuiSvgSrcInterceptors */
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(7582);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3732);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5897);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2258);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9649);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(6593);
 /* harmony import */ var _ng_web_apis_common__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(229);
@@ -34650,7 +34650,7 @@ function TuiSvgComponent_ng_container_0_ng_template_2_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("href", ctx_r3.use, null, "xlink");
   }
 }
@@ -34663,7 +34663,7 @@ function TuiSvgComponent_ng_container_0_Template(rf, ctx) {
   if (rf & 2) {
     const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵreference"](3);
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r0.isInnerHTML)("ngIfElse", _r4);
   }
 }
@@ -35020,7 +35020,7 @@ const TUI_LATIN_AND_NUMBERS_REGEXP = /[A-z|0-9]/;
 /* harmony export */   w: () => (/* binding */ TuiModeDirective),
 /* harmony export */   z: () => (/* binding */ TuiModeModule)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2258);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2461);
 
@@ -35083,7 +35083,7 @@ let TuiModeModule = /*#__PURE__*/(() => {
 /* harmony export */   W: () => (/* binding */ TuiWrapperModule),
 /* harmony export */   o: () => (/* binding */ TuiWrapperDirective)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2258);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_core_enums__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7241);
 /* harmony import */ var _taiga_ui_core_providers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1379);
@@ -35273,7 +35273,7 @@ var TuiRangeState = /*#__PURE__*/function (TuiRangeState) {
 /* harmony export */   CV: () => (/* binding */ MODE_PROVIDER)
 /* harmony export */ });
 /* unused harmony exports TUI_IS_MOBILE_RES_PROVIDER, tuiWatchedControllerFactory */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2258);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4862);
 /* harmony import */ var _taiga_ui_core_directives_mode__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6371);
@@ -35337,7 +35337,7 @@ function tuiWatchedControllerFactory(controller, cdr, destroy$) {
 /* harmony export */   zE: () => (/* binding */ TuiBreakpointService)
 /* harmony export */ });
 /* unused harmony exports TuiFormatDateService, TuiNightThemeService */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2258);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5213);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(2918);
@@ -35357,7 +35357,7 @@ function tuiWatchedControllerFactory(controller, cdr, destroy$) {
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(9773);
 /* harmony import */ var _ng_web_apis_common__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(229);
 /* harmony import */ var _taiga_ui_core_abstract__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(9315);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7589);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9823);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_router__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(6593);
 /* harmony import */ var _taiga_ui_core_utils_dom__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(2103);
@@ -35668,8 +35668,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // UNUSED EXPORTS: STATUS_ICON, TUI_ANIMATIONS_DEFAULT_DURATION, TUI_ASSERT_ENABLED, TUI_DATA_LIST_ACCESSOR, TUI_DAY_TYPE_HANDLER, TUI_DEFAULT_ERROR_MESSAGE, TUI_DOCUMENT_OR_SHADOW_ROOT, TUI_ELEMENT_REF, TUI_FIRST_DAY_OF_WEEK, TUI_NOTIFICATION_DEFAULT_OPTIONS, TUI_NUMBER_FORMAT_OBSERVABLE, TUI_ORDERED_SHORT_WEEK_DAYS, TUI_SCROLL_REF, TUI_SELECTION_STREAM, TUI_SHORT_WEEK_DAYS, TUI_SPIN_ICONS, TUI_SPIN_TEXTS, tuiAsViewport, tuiCommonIconsProvider, tuiNotificationOptionsProvider, tuiNumberFormatProvider
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(2258);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(9649);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-miscellaneous.js
 var taiga_ui_cdk_utils_miscellaneous = __webpack_require__(8937);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-enums.js
@@ -35678,8 +35678,8 @@ var taiga_ui_cdk_enums = __webpack_require__(7344);
 var taiga_ui_cdk_observables = __webpack_require__(5213);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-svg.js
 var taiga_ui_cdk_utils_svg = __webpack_require__(651);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(3732);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(5897);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/i18n/fesm2015/taiga-ui-i18n-tools.js + 2 modules
 var taiga_ui_i18n_tools = __webpack_require__(7042);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-utils-miscellaneous.js
@@ -36563,8 +36563,8 @@ __webpack_require__.d(__webpack_exports__, {
   v: () => (/* binding */ tuiExtractI18n)
 });
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(2258);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(9649);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/i18n/fesm2015/taiga-ui-i18n-enums.js
 var taiga_ui_i18n_enums = __webpack_require__(8751);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/i18n/fesm2015/taiga-ui-i18n-languages-english.js
@@ -37011,7 +37011,7 @@ function tuiExtractI18n(key) {
 /* harmony export */   wq: () => (/* binding */ PolymorpheusModule),
 /* harmony export */   yf: () => (/* binding */ POLYMORPHEUS_CONTEXT)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2258);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -38253,10 +38253,10 @@ function argsOrArgArray(args) {
 /* harmony export */   vP: () => (/* binding */ sequence)
 /* harmony export */ });
 /* unused harmony exports AnimationBuilder, AnimationFactory, animation, group, keyframes, state, useAnimation, ɵBrowserAnimationBuilder */
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3732);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2258);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5897);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9649);
 /**
- * @license Angular v17.0.8
+ * @license Angular v17.0.9
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -39647,9 +39647,9 @@ const ɵPRE_STYLE = '!';
 /* harmony export */ });
 /* unused harmony exports ɵAnimation, ɵAnimationRenderer, ɵBaseAnimationRenderer, ɵNoopAnimationStyleNormalizer, ɵWebAnimationsPlayer, ɵallowPreviousPlayerStylesMerge, ɵcamelCaseToDashCase, ɵcontainsElement, ɵcreateEngine, ɵgetParentElement, ɵinvokeQuery, ɵnormalizeKeyframes, ɵvalidateStyleProperty, ɵvalidateWebAnimatableStyleProperty */
 /* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6825);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2258);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
 /**
- * @license Angular v17.0.8
+ * @license Angular v17.0.9
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -44196,10 +44196,10 @@ __webpack_require__.d(__webpack_exports__, {
 
 // UNUSED EXPORTS: AbstractControl, AbstractControlDirective, AbstractFormGroupDirective, COMPOSITION_BUFFER_MODE, CheckboxControlValueAccessor, CheckboxRequiredValidator, ControlContainer, EmailValidator, FormArray, FormArrayName, FormBuilder, FormControlName, FormGroup, FormGroupDirective, FormGroupName, FormRecord, MaxLengthValidator, MaxValidator, MinLengthValidator, MinValidator, NG_ASYNC_VALIDATORS, NG_VALIDATORS, NgControlStatusGroup, NgForm, NgModelGroup, NgSelectOption, NonNullableFormBuilder, NumberValueAccessor, PatternValidator, RadioControlValueAccessor, RangeValueAccessor, RequiredValidator, SelectControlValueAccessor, SelectMultipleControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, VERSION, Validators, isFormArray, isFormControl, isFormGroup, isFormRecord, ɵInternalFormsSharedModule, ɵNgNoValidate, ɵNgSelectMultipleOption
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(2258);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(3732);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(9649);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(5897);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/from.js + 9 modules
 var from = __webpack_require__(7715);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Observable.js
@@ -44266,7 +44266,7 @@ function forkJoin(...args) {
 var map = __webpack_require__(7398);
 ;// CONCATENATED MODULE: ./node_modules/@angular/forms/fesm2022/forms.mjs
 /**
- * @license Angular v17.0.8
+ * @license Angular v17.0.9
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -51542,7 +51542,7 @@ let UntypedFormBuilder = /*#__PURE__*/(/* unused pure expression or super */ nul
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new core_mjs_.Version('17.0.8');
+const VERSION = /*#__PURE__*/new core_mjs_.Version('17.0.9');
 
 /**
  * Exports the required providers and directives for template-driven forms,
@@ -51684,8 +51684,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // UNUSED EXPORTS: HighlightJS, HighlightLoader
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(2258);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(9649);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/BehaviorSubject.js
 var BehaviorSubject = __webpack_require__(5619);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/empty.js
@@ -51858,8 +51858,8 @@ var switchMap = __webpack_require__(4664);
 var tap = __webpack_require__(9397);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/catchError.js
 var catchError = __webpack_require__(6306);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(3732);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(5897);
 // EXTERNAL MODULE: ./node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
 var platform_browser = __webpack_require__(6593);
 ;// CONCATENATED MODULE: ./node_modules/ngx-highlightjs/fesm2020/ngx-highlightjs.mjs

@@ -200,8 +200,8 @@ __webpack_require__.d(__webpack_exports__, {
   "ɵloadChildren": () => (/* binding */ loadChildren)
 });
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(2258);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(9649);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/isObservable.js
 var isObservable = __webpack_require__(2664);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/from.js + 9 modules
@@ -321,8 +321,8 @@ class ConnectableObservable extends Observable/* Observable */.y {
 //# sourceMappingURL=ConnectableObservable.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Subject.js + 1 modules
 var Subject = __webpack_require__(8645);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.8 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(3732);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(5897);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/map.js
 var map = __webpack_require__(7398);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/switchMap.js
@@ -419,7 +419,7 @@ var mergeAll = __webpack_require__(7537);
 var platform_browser = __webpack_require__(6593);
 ;// CONCATENATED MODULE: ./node_modules/@angular/router/fesm2022/router.mjs
 /**
- * @license Angular v17.0.8
+ * @license Angular v17.0.9
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -564,12 +564,6 @@ function equalArraysOrString(a, b) {
   } else {
     return a === b;
   }
-}
-/**
- * Return the last element of an array.
- */
-function router_last(a) {
-  return a.length > 0 ? a[a.length - 1] : null;
 }
 function wrapIntoObservable(value) {
   if ((0,isObservable/* isObservable */.b)(value)) {
@@ -940,13 +934,12 @@ function serializePath(path) {
   return `${encodeUriSegment(path.path)}${serializeMatrixParams(path.parameters)}`;
 }
 function serializeMatrixParams(params) {
-  return Object.keys(params).map(key => `;${encodeUriSegment(key)}=${encodeUriSegment(params[key])}`).join('');
+  return Object.entries(params).map(([key, value]) => `;${encodeUriSegment(key)}=${encodeUriSegment(value)}`).join('');
 }
 function serializeQueryParams(params) {
-  const strParams = Object.keys(params).map(name => {
-    const value = params[name];
+  const strParams = Object.entries(params).map(([name, value]) => {
     return Array.isArray(value) ? value.map(v => `${encodeUriQuery(name)}=${encodeUriQuery(v)}`).join('&') : `${encodeUriQuery(name)}=${encodeUriQuery(value)}`;
-  }).filter(s => !!s);
+  }).filter(s => s);
   return strParams.length ? `?${strParams.join('&')}` : '';
 }
 const SEGMENT_RE = /^[^\/()?;#]+/;
@@ -1146,8 +1139,7 @@ function createRoot(rootCandidate) {
  */
 function squashSegmentGroup(segmentGroup) {
   const newChildren = {};
-  for (const childOutlet of Object.keys(segmentGroup.children)) {
-    const child = segmentGroup.children[childOutlet];
+  for (const [childOutlet, child] of Object.entries(segmentGroup.children)) {
     const childCandidate = squashSegmentGroup(child);
     // moves named children in an empty path primary child into this group
     if (childOutlet === PRIMARY_OUTLET && childCandidate.segments.length === 0 && childCandidate.hasChildren()) {
@@ -1326,7 +1318,7 @@ class Navigation {
       throw new core_mjs_["ɵRuntimeError"](4003 /* RuntimeErrorCode.ROOT_SEGMENT_MATRIX_PARAMS */, (typeof ngDevMode === 'undefined' || ngDevMode) && 'Root segment cannot have matrix parameters');
     }
     const cmdWithOutlet = commands.find(isCommandWithOutlets);
-    if (cmdWithOutlet && cmdWithOutlet !== router_last(commands)) {
+    if (cmdWithOutlet && cmdWithOutlet !== commands.at(-1)) {
       throw new core_mjs_["ɵRuntimeError"](4004 /* RuntimeErrorCode.MISPLACED_OUTLETS_COMMAND */, (typeof ngDevMode === 'undefined' || ngDevMode) && '{outlets:{}} has to be the last command');
     }
   }
@@ -2247,8 +2239,8 @@ class RouterState extends Tree {
     return this.snapshot.toString();
   }
 }
-function createEmptyState(urlTree, rootComponent) {
-  const snapshot = createEmptyStateSnapshot(urlTree, rootComponent);
+function createEmptyState(rootComponent) {
+  const snapshot = createEmptyStateSnapshot(rootComponent);
   const emptyUrl = new BehaviorSubject/* BehaviorSubject */.X([new UrlSegment('', {})]);
   const emptyParams = new BehaviorSubject/* BehaviorSubject */.X({});
   const emptyData = new BehaviorSubject/* BehaviorSubject */.X({});
@@ -2258,7 +2250,7 @@ function createEmptyState(urlTree, rootComponent) {
   activated.snapshot = snapshot.root;
   return new RouterState(new TreeNode(activated, []), snapshot);
 }
-function createEmptyStateSnapshot(urlTree, rootComponent) {
+function createEmptyStateSnapshot(rootComponent) {
   const emptyParams = {};
   const emptyData = {};
   const emptyQueryParams = {};
@@ -3302,8 +3294,8 @@ class ActivateRoutes {
     const context = parentContexts.getContext(route.value.outlet);
     const contexts = context && route.value.component ? context.children : parentContexts;
     const children = nodeChildrenAsMap(route);
-    for (const childOutlet of Object.keys(children)) {
-      this.deactivateRouteAndItsChildren(children[childOutlet], contexts);
+    for (const treeNode of Object.values(children)) {
+      this.deactivateRouteAndItsChildren(treeNode, contexts);
     }
     if (context && context.outlet) {
       const componentRef = context.outlet.detach();
@@ -3321,8 +3313,8 @@ class ActivateRoutes {
     // children that need deactivating.
     const contexts = context && route.value.component ? context.children : parentContexts;
     const children = nodeChildrenAsMap(route);
-    for (const childOutlet of Object.keys(children)) {
-      this.deactivateRouteAndItsChildren(children[childOutlet], contexts);
+    for (const treeNode of Object.values(children)) {
+      this.deactivateRouteAndItsChildren(treeNode, contexts);
     }
     if (context) {
       if (context.outlet) {
@@ -3894,7 +3886,7 @@ function match(segmentGroup, route, segments) {
 function createWildcardMatchResult(segments) {
   return {
     matched: true,
-    parameters: segments.length > 0 ? router_last(segments).parameters : {},
+    parameters: segments.at(-1)?.parameters ?? {},
     consumedSegments: segments,
     remainingSegments: [],
     positionalParamSegments: {}
@@ -3909,7 +3901,7 @@ function split(segmentGroup, consumedSegments, slicedSegments, config) {
     };
   }
   if (slicedSegments.length === 0 && containsEmptyPathMatches(segmentGroup, slicedSegments, config)) {
-    const s = new UrlSegmentGroup(segmentGroup.segments, addEmptyPathsToChildrenIfNeeded(segmentGroup, consumedSegments, slicedSegments, config, segmentGroup.children));
+    const s = new UrlSegmentGroup(segmentGroup.segments, addEmptyPathsToChildrenIfNeeded(segmentGroup, slicedSegments, config, segmentGroup.children));
     return {
       segmentGroup: s,
       slicedSegments
@@ -3921,7 +3913,7 @@ function split(segmentGroup, consumedSegments, slicedSegments, config) {
     slicedSegments
   };
 }
-function addEmptyPathsToChildrenIfNeeded(segmentGroup, consumedSegments, slicedSegments, routes, children) {
+function addEmptyPathsToChildrenIfNeeded(segmentGroup, slicedSegments, routes, children) {
   const res = {};
   for (const r of routes) {
     if (emptyPathMatch(segmentGroup, slicedSegments, r) && !children[getOutlet(r)]) {
@@ -4906,7 +4898,7 @@ let NavigationTransitions = /*#__PURE__*/(() => {
             } = t;
             const navStart = new NavigationStart(id, this.urlSerializer.serialize(extractedUrl), source, restoredState);
             this.events.next(navStart);
-            const targetSnapshot = createEmptyState(extractedUrl, this.rootComponentType).snapshot;
+            const targetSnapshot = createEmptyState(this.rootComponentType).snapshot;
             this.currentTransition = overallTransitionState = {
               ...t,
               targetSnapshot,
@@ -5257,7 +5249,7 @@ let HistoryStateManager = /*#__PURE__*/(() => {
        */
       this.currentPageId = 0;
       this.lastSuccessfulId = -1;
-      this.routerState = createEmptyState(this.currentUrlTree, null);
+      this.routerState = createEmptyState(null);
       this.stateMemento = this.createStateMemento();
     }
     getCurrentUrlTree() {
@@ -5941,8 +5933,7 @@ let Router = /*#__PURE__*/(() => {
       return containsTree(this.currentUrlTree, urlTree, options);
     }
     removeEmptyProps(params) {
-      return Object.keys(params).reduce((result, key) => {
-        const value = params[key];
+      return Object.entries(params).reduce((result, [key, value]) => {
         if (value !== null && value !== undefined) {
           result[key] = value;
         }
@@ -7593,7 +7584,7 @@ function mapToResolve(provider) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new core_mjs_.Version('17.0.8');
+const VERSION = /*#__PURE__*/new core_mjs_.Version('17.0.9');
 
 /**
  * @module
