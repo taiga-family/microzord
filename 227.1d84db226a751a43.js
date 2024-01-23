@@ -6890,7 +6890,7 @@ let TuiRootComponent = /*#__PURE__*/(() => {
   TuiRootComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiRootComponent,
     selectors: [["tui-root"]],
-    hostAttrs: ["data-tui-version", "3.62.0"],
+    hostAttrs: ["data-tui-version", "3.63.0"],
     hostVars: 9,
     hostBindings: function TuiRootComponent_HostBindings(rf, ctx) {
       if (rf & 1) {
@@ -6932,7 +6932,7 @@ let TuiRootComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [TuiScrollControlsComponent, TuiSvgDefsHostComponent, TuiDropdownHostComponent, TuiDialogHostComponent, TuiAlertHostComponent, TuiHintsHostComponent, common_mjs_.NgIf, common_mjs_.AsyncPipe],
-    styles: ["@keyframes tuiPresent{to{content:\"1\"}}@keyframes tuiSkeletonVibe{to{opacity:.5}}html,.tui-zero-scrollbar{scrollbar-width:none;-ms-overflow-style:none}html::-webkit-scrollbar,.tui-zero-scrollbar::-webkit-scrollbar,html::-webkit-scrollbar-thumb,.tui-zero-scrollbar::-webkit-scrollbar-thumb{background:transparent;width:0;height:0}body{font:var(--tui-font-text-s);color:var(--tui-text-01);background:var(--tui-base-01);margin:0}tui-root{position:relative;display:block;flex:1;-webkit-tap-highlight-color:transparent}tui-root>.t-root-scrollbar{position:fixed;top:0;left:0;bottom:0;right:0;margin:0}.t-root-content{height:100%;isolation:isolate}.t-overscroll-none{overscroll-behavior:none}\n"],
+    styles: ["@keyframes tuiPresent{to{content:\"1\"}}@keyframes tuiSkeletonVibe{to{opacity:.5}}html,.tui-zero-scrollbar{scrollbar-width:none;-ms-overflow-style:none}html::-webkit-scrollbar,.tui-zero-scrollbar::-webkit-scrollbar,html::-webkit-scrollbar-thumb,.tui-zero-scrollbar::-webkit-scrollbar-thumb{background:transparent;width:0;height:0}body[data-tui-theme]{font:var(--tui-font-text-s);color:var(--tui-text-01);background:var(--tui-base-01);margin:0}tui-root{position:relative;display:block;flex:1;-webkit-tap-highlight-color:transparent}tui-root>.t-root-scrollbar{position:fixed;top:0;left:0;bottom:0;right:0;margin:0}.t-root-content{height:100%;isolation:isolate}.t-overscroll-none{overscroll-behavior:none}\n"],
     encapsulation: 2
   });
   return TuiRootComponent;
@@ -9938,7 +9938,7 @@ const TUI_COUNTRIES_MASKS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken
   [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BN]: '+673###-####',
   [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BO]: '+591#-###-####',
   [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BQ]: '+599-###-####',
-  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BR]: '+55(##) ####-####',
+  [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BR]: '+55(##) ####-#####',
   [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BS]: '+1(242) ###-####',
   [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BT]: '+975#-###-###',
   [taiga_ui_i18n_enums/* TuiCountryIsoCode */.X.BW]: '+267##-###-###',
@@ -16357,16 +16357,12 @@ const TUI_TAB_PROVIDERS = [taiga_ui_cdk_services/* TuiDestroyService */.a3, taig
 }, taiga_ui_core_providers/* MODE_PROVIDER */.CV];
 let TuiTabComponent = /*#__PURE__*/(() => {
   class TuiTabComponent {
-    constructor(routerLinkActive, el, mode$, event$, margin, focusVisible$) {
+    constructor(routerLinkActive, el, mode$, event$, margin) {
       this.routerLinkActive = routerLinkActive;
       this.el = el;
       this.mode$ = mode$;
       this.event$ = event$;
       this.margin = margin;
-      this.focusVisible = false;
-      focusVisible$.subscribe(visible => {
-        this.focusVisible = visible;
-      });
     }
     get isActive() {
       return !!this.routerLinkActive && this.routerLinkActive.isActive;
@@ -16378,13 +16374,13 @@ let TuiTabComponent = /*#__PURE__*/(() => {
     }
   }
   TuiTabComponent.ɵfac = function TuiTabComponent_Factory(t) {
-    return new (t || TuiTabComponent)(core_mjs_["ɵɵdirectiveInject"](router_mjs_.RouterLinkActive, 8), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_MODE */.Au), core_mjs_["ɵɵdirectiveInject"](TUI_TAB_EVENT), core_mjs_["ɵɵdirectiveInject"](TUI_TAB_MARGIN), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiFocusVisibleService */.ku));
+    return new (t || TuiTabComponent)(core_mjs_["ɵɵdirectiveInject"](router_mjs_.RouterLinkActive, 8), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_MODE */.Au), core_mjs_["ɵɵdirectiveInject"](TUI_TAB_EVENT), core_mjs_["ɵɵdirectiveInject"](TUI_TAB_MARGIN));
   };
   TuiTabComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiTabComponent,
     selectors: [["a", "tuiTab", "", 3, "routerLink", ""], ["a", "tuiTab", "", "routerLink", "", "routerLinkActive", ""], ["button", "tuiTab", ""]],
     hostAttrs: ["type", "button"],
-    hostVars: 8,
+    hostVars: 6,
     hostBindings: function TuiTabComponent_HostBindings(rf, ctx) {
       if (rf & 1) {
         core_mjs_["ɵɵlistener"]("$.data-mode.attr", function TuiTabComponent___data_mode_attr_HostBindingHandler() {
@@ -16393,7 +16389,7 @@ let TuiTabComponent = /*#__PURE__*/(() => {
       }
       if (rf & 2) {
         core_mjs_["ɵɵstyleProp"]("cursor", "pointer")("--tui-tab-margin", ctx.margin, "px");
-        core_mjs_["ɵɵclassProp"]("_focus-visible", ctx.focusVisible)("_active", ctx.isActive);
+        core_mjs_["ɵɵclassProp"]("_active", ctx.isActive);
       }
     },
     features: [core_mjs_["ɵɵProvidersFeature"](TUI_TAB_PROVIDERS)],
@@ -16416,7 +16412,7 @@ let TuiTabComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [common_mjs_.NgIf, common_mjs_.AsyncPipe],
-    styles: ["._underline[_nghost-%COMP%]:hover, ._underline   [_nghost-%COMP%]:hover{box-shadow:inset 0 -2px var(--tui-base-03)}tui-tabs    > [_nghost-%COMP%]:first-child, tui-tabs    > [_nghost-%COMP%]:first-child, [tuiTabs]    > [_nghost-%COMP%]:first-child, [tuiTabs]    > [_nghost-%COMP%]:first-child, tui-tabs    > :first-child[_nghost-%COMP%], tui-tabs    > :first-child   [_nghost-%COMP%], [tuiTabs]    > :first-child[_nghost-%COMP%], [tuiTabs]    > :first-child   [_nghost-%COMP%]{margin-left:0}[_nghost-%COMP%]{transition-property:color,box-shadow,opacity,background;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:0;border:0;background:none;font-size:inherit;line-height:inherit;text-decoration:none;position:relative;display:flex;flex-shrink:0;height:100%;box-sizing:border-box;justify-content:space-between;align-items:center;white-space:nowrap;cursor:pointer;outline:none;color:inherit;margin-left:var(--tui-tab-margin, 1.5rem)}[_nghost-%COMP%]:disabled{opacity:var(--tui-disabled-opacity);pointer-events:none}[_nghost-%COMP%]:not([data-mode])._active{opacity:1;color:var(--tui-text-01);box-shadow:none}[data-mode=onDark][_nghost-%COMP%]{color:#ffffffb8}[data-mode=onDark][_nghost-%COMP%]:hover, [data-mode=onDark]._active[_nghost-%COMP%]{color:#fff}[data-mode=onDark]._focus-visible[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{background:var(--tui-clear-inverse);color:var(--tui-text-01)}[data-mode=onLight][_nghost-%COMP%]{color:var(--tui-text-02)}[data-mode=onLight][_nghost-%COMP%]:hover, [data-mode=onLight]._active[_nghost-%COMP%]{color:var(--tui-text-01)}[data-mode=onLight]._focus-visible[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{background:var(--tui-text-01);color:#fff}._focus-visible[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{background:var(--tui-selection)}._android[_nghost-%COMP%]{transition-property:opacity;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;height:3rem;flex:1;flex-shrink:0;justify-content:center;margin:0;text-transform:uppercase;color:var(--tui-base-09);opacity:.5;font-size:.875rem;font-weight:500;letter-spacing:-.008125rem;font-family:-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif}._android[_nghost-%COMP%]:hover{box-shadow:none}._android._active[_nghost-%COMP%]{opacity:1;color:var(--tui-base-09)}._android[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{width:auto}._ios[_nghost-%COMP%]{height:1.75rem;flex:1;flex-shrink:0;justify-content:center;margin:0;color:var(--tui-base-01);opacity:1;font-size:.8125rem;font-weight:500;letter-spacing:-.005rem;font-family:-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif}._ios[_nghost-%COMP%]:hover{box-shadow:none}._ios._active[_nghost-%COMP%]{font-size:.875rem;font-weight:600;color:var(--tui-link)}._ios[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{width:auto}@media (hover: hover){[_nghost-%COMP%]:hover{color:var(--tui-text-01)}}.t-highlight[_ngcontent-%COMP%]{display:inline-flex;width:100%;align-items:center;justify-content:inherit}.t-highlight[_ngcontent-%COMP%]    >*{flex-shrink:0}tui-tabs[data-vertical][_nghost-%COMP%], tui-tabs[data-vertical]   [_nghost-%COMP%], [tuiTabs][data-vertical][_nghost-%COMP%], [tuiTabs][data-vertical]   [_nghost-%COMP%]{min-height:2.75rem;height:auto;white-space:normal;margin:0;text-align:left;padding:.25rem 1.25rem .25rem 0}tui-tabs[data-vertical][_nghost-%COMP%]:after, tui-tabs[data-vertical]   [_nghost-%COMP%]:after, [tuiTabs][data-vertical][_nghost-%COMP%]:after, [tuiTabs][data-vertical]   [_nghost-%COMP%]:after{transition-property:transform;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;content:\"\";position:absolute;top:0;bottom:0;right:0;width:2px;background:var(--tui-primary);transform:scaleX(0);transform-origin:right}tui-tabs[data-vertical][_nghost-%COMP%]:hover, tui-tabs[data-vertical]   [_nghost-%COMP%]:hover, [tuiTabs][data-vertical][_nghost-%COMP%]:hover, [tuiTabs][data-vertical]   [_nghost-%COMP%]:hover{box-shadow:inset -2px 0 var(--tui-base-03)}tui-tabs[data-vertical]._active[_nghost-%COMP%]:after, tui-tabs[data-vertical]   ._active[_nghost-%COMP%]:after, [tuiTabs][data-vertical]._active[_nghost-%COMP%]:after, [tuiTabs][data-vertical]   ._active[_nghost-%COMP%]:after{transform:none}tui-tabs[data-vertical=\"right\"][_nghost-%COMP%], tui-tabs[data-vertical=\"right\"]   [_nghost-%COMP%], [tuiTabs][data-vertical=\"right\"][_nghost-%COMP%], [tuiTabs][data-vertical=\"right\"]   [_nghost-%COMP%]{text-align:right;padding:.25rem 0 .25rem 1.25rem}tui-tabs[data-vertical=\"right\"][_nghost-%COMP%]:after, tui-tabs[data-vertical=\"right\"]   [_nghost-%COMP%]:after, [tuiTabs][data-vertical=\"right\"][_nghost-%COMP%]:after, [tuiTabs][data-vertical=\"right\"]   [_nghost-%COMP%]:after{right:auto;left:0;transform-origin:left}tui-tabs[data-vertical=\"right\"][_nghost-%COMP%]:hover, tui-tabs[data-vertical=\"right\"]   [_nghost-%COMP%]:hover, [tuiTabs][data-vertical=\"right\"][_nghost-%COMP%]:hover, [tuiTabs][data-vertical=\"right\"]   [_nghost-%COMP%]:hover{box-shadow:inset 2px 0 var(--tui-base-03)}"],
+    styles: ["._underline[_nghost-%COMP%]:hover, ._underline   [_nghost-%COMP%]:hover{box-shadow:inset 0 -2px var(--tui-base-03)}tui-tabs    > [_nghost-%COMP%]:first-child, tui-tabs    > [_nghost-%COMP%]:first-child, [tuiTabs]    > [_nghost-%COMP%]:first-child, [tuiTabs]    > [_nghost-%COMP%]:first-child, tui-tabs    > :first-child[_nghost-%COMP%], tui-tabs    > :first-child   [_nghost-%COMP%], [tuiTabs]    > :first-child[_nghost-%COMP%], [tuiTabs]    > :first-child   [_nghost-%COMP%]{margin-left:0}[_nghost-%COMP%]{transition-property:color,box-shadow,opacity,background;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:0;border:0;background:none;font-size:inherit;line-height:inherit;text-decoration:none;position:relative;display:flex;flex-shrink:0;height:100%;box-sizing:border-box;justify-content:space-between;align-items:center;white-space:nowrap;cursor:pointer;outline:none;color:inherit;margin-left:var(--tui-tab-margin, 1.5rem)}[_nghost-%COMP%]:disabled{opacity:var(--tui-disabled-opacity);pointer-events:none}[_nghost-%COMP%]:not([data-mode])._active{opacity:1;color:var(--tui-text-01);box-shadow:none}[data-mode=onDark][_nghost-%COMP%]{color:#ffffffb8}[data-mode=onDark][_nghost-%COMP%]:hover, [data-mode=onDark]._active[_nghost-%COMP%]{color:#fff}[data-mode=onDark][_nghost-%COMP%]:focus-visible   .t-highlight[_ngcontent-%COMP%]{background:var(--tui-clear-inverse);color:var(--tui-text-01)}[data-mode=onLight][_nghost-%COMP%]{color:var(--tui-text-02)}[data-mode=onLight][_nghost-%COMP%]:hover, [data-mode=onLight]._active[_nghost-%COMP%]{color:var(--tui-text-01)}[data-mode=onLight][_nghost-%COMP%]:focus-visible   .t-highlight[_ngcontent-%COMP%]{background:var(--tui-text-01);color:#fff}[_nghost-%COMP%]:focus-visible   .t-highlight[_ngcontent-%COMP%]{background:var(--tui-selection)}._android[_nghost-%COMP%]{transition-property:opacity;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;height:3rem;flex:1;flex-shrink:0;justify-content:center;margin:0;text-transform:uppercase;color:var(--tui-base-09);opacity:.5;font-size:.875rem;font-weight:500;letter-spacing:-.008125rem;font-family:-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif}._android[_nghost-%COMP%]:hover{box-shadow:none}._android._active[_nghost-%COMP%]{opacity:1;color:var(--tui-base-09)}._android[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{width:auto}._ios[_nghost-%COMP%]{height:1.75rem;flex:1;flex-shrink:0;justify-content:center;margin:0;color:var(--tui-base-01);opacity:1;font-size:.8125rem;font-weight:500;letter-spacing:-.005rem;font-family:-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif}._ios[_nghost-%COMP%]:hover{box-shadow:none}._ios._active[_nghost-%COMP%]{font-size:.875rem;font-weight:600;color:var(--tui-link)}._ios[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{width:auto}@media (hover: hover){[_nghost-%COMP%]:hover{color:var(--tui-text-01)}}.t-highlight[_ngcontent-%COMP%]{display:inline-flex;width:100%;align-items:center;justify-content:inherit}.t-highlight[_ngcontent-%COMP%]    >*{flex-shrink:0}tui-tabs[data-vertical][_nghost-%COMP%], tui-tabs[data-vertical]   [_nghost-%COMP%], [tuiTabs][data-vertical][_nghost-%COMP%], [tuiTabs][data-vertical]   [_nghost-%COMP%]{min-height:2.75rem;height:auto;white-space:normal;margin:0;text-align:left;padding:.25rem 1.25rem .25rem 0}tui-tabs[data-vertical][_nghost-%COMP%]:after, tui-tabs[data-vertical]   [_nghost-%COMP%]:after, [tuiTabs][data-vertical][_nghost-%COMP%]:after, [tuiTabs][data-vertical]   [_nghost-%COMP%]:after{transition-property:transform;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;content:\"\";position:absolute;top:0;bottom:0;right:0;width:2px;background:var(--tui-primary);transform:scaleX(0);transform-origin:right}tui-tabs[data-vertical][_nghost-%COMP%]:hover, tui-tabs[data-vertical]   [_nghost-%COMP%]:hover, [tuiTabs][data-vertical][_nghost-%COMP%]:hover, [tuiTabs][data-vertical]   [_nghost-%COMP%]:hover{box-shadow:inset -2px 0 var(--tui-base-03)}tui-tabs[data-vertical]._active[_nghost-%COMP%]:after, tui-tabs[data-vertical]   ._active[_nghost-%COMP%]:after, [tuiTabs][data-vertical]._active[_nghost-%COMP%]:after, [tuiTabs][data-vertical]   ._active[_nghost-%COMP%]:after{transform:none}tui-tabs[data-vertical=\"right\"][_nghost-%COMP%], tui-tabs[data-vertical=\"right\"]   [_nghost-%COMP%], [tuiTabs][data-vertical=\"right\"][_nghost-%COMP%], [tuiTabs][data-vertical=\"right\"]   [_nghost-%COMP%]{text-align:right;padding:.25rem 0 .25rem 1.25rem}tui-tabs[data-vertical=\"right\"][_nghost-%COMP%]:after, tui-tabs[data-vertical=\"right\"]   [_nghost-%COMP%]:after, [tuiTabs][data-vertical=\"right\"][_nghost-%COMP%]:after, [tuiTabs][data-vertical=\"right\"]   [_nghost-%COMP%]:after{right:auto;left:0;transform-origin:left}tui-tabs[data-vertical=\"right\"][_nghost-%COMP%]:hover, tui-tabs[data-vertical=\"right\"]   [_nghost-%COMP%]:hover, [tuiTabs][data-vertical=\"right\"][_nghost-%COMP%]:hover, [tuiTabs][data-vertical=\"right\"]   [_nghost-%COMP%]:hover{box-shadow:inset 2px 0 var(--tui-base-03)}"],
     changeDetection: 0
   });
   return TuiTabComponent;
@@ -18774,27 +18770,27 @@ function TuiDocExampleComponent_h3_0_span_1_Template(rf, ctx) {
     i0.ɵɵproperty("textContent", text_r9);
   }
 }
-function TuiDocExampleComponent_h3_0_button_2_Template(rf, ctx) {
+function TuiDocExampleComponent_h3_0_a_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r11 = i0.ɵɵgetCurrentView();
-    i0.ɵɵelementStart(0, "button", 9);
-    i0.ɵɵlistener("click", function TuiDocExampleComponent_h3_0_button_2_Template_button_click_0_listener() {
+    i0.ɵɵelementStart(0, "a", 9);
+    i0.ɵɵlistener("click", function TuiDocExampleComponent_h3_0_a_2_Template_a_click_0_listener($event) {
       i0.ɵɵrestoreView(_r11);
       const ctx_r10 = i0.ɵɵnextContext(2);
-      return i0.ɵɵresetView(ctx_r10.copyExampleLink());
+      return i0.ɵɵresetView(ctx_r10.copyExampleLink($event.currentTarget));
     });
     i0.ɵɵpipe(1, "async");
     i0.ɵɵelementEnd();
   }
   if (rf & 2) {
     const ctx_r8 = i0.ɵɵnextContext(2);
-    i0.ɵɵproperty("icon", ctx_r8.options.linkIcon)("title", i0.ɵɵpipeBind1(1, 2, ctx_r8.copy$));
+    i0.ɵɵproperty("fragment", ctx_r8.id)("icon", ctx_r8.options.linkIcon)("title", i0.ɵɵpipeBind1(1, 3, ctx_r8.copy$));
   }
 }
 function TuiDocExampleComponent_h3_0_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementStart(0, "h3", 5);
-    i0.ɵɵtemplate(1, TuiDocExampleComponent_h3_0_span_1_Template, 1, 1, "span", 6)(2, TuiDocExampleComponent_h3_0_button_2_Template, 2, 4, "button", 7);
+    i0.ɵɵtemplate(1, TuiDocExampleComponent_h3_0_span_1_Template, 1, 1, "span", 6)(2, TuiDocExampleComponent_h3_0_a_2_Template, 2, 5, "a", 7);
     i0.ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -20454,7 +20450,7 @@ let TuiDocExampleGetTabsPipe = /*#__PURE__*/(/* unused pure expression or super 
 })();
 let TuiDocExampleComponent = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
   class TuiDocExampleComponent {
-    constructor(clipboard, alerts, location, copyTexts$, texts, codeEditor, processContent, isE2E, codeActions, router, route, ngLocation, options) {
+    constructor(clipboard, alerts, location, copyTexts$, texts, codeEditor, processContent, isE2E, codeActions, options) {
       this.clipboard = clipboard;
       this.alerts = alerts;
       this.location = location;
@@ -20464,9 +20460,6 @@ let TuiDocExampleComponent = /*#__PURE__*/(/* unused pure expression or super */
       this.processContent = processContent;
       this.isE2E = isE2E;
       this.codeActions = codeActions;
-      this.router = router;
-      this.route = route;
-      this.ngLocation = ngLocation;
       this.options = options;
       this.rawLoader$$ = new BehaviorSubject({});
       this.id = null;
@@ -20486,12 +20479,10 @@ let TuiDocExampleComponent = /*#__PURE__*/(/* unused pure expression or super */
     getTabTitle(fileName) {
       return this.options.tabTitles.get(fileName) || fileName;
     }
-    copyExampleLink() {
-      const hashPosition = this.location.href.indexOf('#');
-      const currentUrl = hashPosition > -1 ? this.location.href.slice(0, Math.max(0, hashPosition)) : this.location.href;
-      const url = `${currentUrl}#${this.id}`;
-      this.setFragmentWithoutRedirect(this.id);
-      this.clipboard.copy(url);
+    copyExampleLink({
+      href
+    }) {
+      this.clipboard.copy(href);
       this.alerts.open(this.texts[1], {
         label: this.texts[2],
         status: 'success'
@@ -20502,16 +20493,9 @@ let TuiDocExampleComponent = /*#__PURE__*/(/* unused pure expression or super */
       this.loading$.next(true);
       (_a = this.codeEditor) === null || _a === void 0 ? void 0 : _a.edit(this.componentName, this.id || '', files).then(() => this.loading$.next(false)).catch(() => this.loading$.next(false));
     }
-    setFragmentWithoutRedirect(id) {
-      const url = this.router.createUrlTree([], {
-        relativeTo: this.route,
-        fragment: id || ''
-      }).toString();
-      this.ngLocation.go(url);
-    }
   }
   TuiDocExampleComponent.ɵfac = function TuiDocExampleComponent_Factory(t) {
-    return new (t || TuiDocExampleComponent)(i0.ɵɵdirectiveInject(Clipboard), i0.ɵɵdirectiveInject(TuiAlertService), i0.ɵɵdirectiveInject(LOCATION), i0.ɵɵdirectiveInject(TUI_COPY_TEXTS), i0.ɵɵdirectiveInject(TUI_DOC_EXAMPLE_TEXTS), i0.ɵɵdirectiveInject(TUI_DOC_CODE_EDITOR, 8), i0.ɵɵdirectiveInject(TUI_DOC_EXAMPLE_CONTENT_PROCESSOR), i0.ɵɵdirectiveInject(TUI_IS_E2E), i0.ɵɵdirectiveInject(TUI_DOC_CODE_ACTIONS), i0.ɵɵdirectiveInject(Router), i0.ɵɵdirectiveInject(ActivatedRoute), i0.ɵɵdirectiveInject(Location$1), i0.ɵɵdirectiveInject(TUI_DOC_EXAMPLE_OPTIONS));
+    return new (t || TuiDocExampleComponent)(i0.ɵɵdirectiveInject(Clipboard), i0.ɵɵdirectiveInject(TuiAlertService), i0.ɵɵdirectiveInject(LOCATION), i0.ɵɵdirectiveInject(TUI_COPY_TEXTS), i0.ɵɵdirectiveInject(TUI_DOC_EXAMPLE_TEXTS), i0.ɵɵdirectiveInject(TUI_DOC_CODE_EDITOR, 8), i0.ɵɵdirectiveInject(TUI_DOC_EXAMPLE_CONTENT_PROCESSOR), i0.ɵɵdirectiveInject(TUI_IS_E2E), i0.ɵɵdirectiveInject(TUI_DOC_CODE_ACTIONS), i0.ɵɵdirectiveInject(TUI_DOC_EXAMPLE_OPTIONS));
   };
   TuiDocExampleComponent.ɵcmp = /* @__PURE__ */i0.ɵɵdefineComponent({
     type: TuiDocExampleComponent,
@@ -20533,7 +20517,7 @@ let TuiDocExampleComponent = /*#__PURE__*/(/* unused pure expression or super */
     ngContentSelectors: taiga_ui_addon_doc_components_c0,
     decls: 8,
     vars: 5,
-    consts: [["class", "t-title", 4, "ngIf"], ["class", "t-description", 4, "ngIf"], ["class", "t-example", 4, "ngIf"], ["preview", ""], ["codeSection", ""], [1, "t-title"], [3, "textContent", 4, "polymorpheusOutlet"], ["appearance", "icon", "size", "xs", "tuiIconButton", "", "type", "button", "class", "t-link-icon", 3, "icon", "title", "click", 4, "ngIf"], [3, "textContent"], ["appearance", "icon", "size", "xs", "tuiIconButton", "", "type", "button", 1, "t-link-icon", 3, "icon", "title", "click"], [1, "t-description"], [4, "polymorpheusOutlet"], [1, "t-example"], [4, "ngIf"], ["class", "t-tabs-wrapper", 4, "ngIf"], ["class", "t-content", 3, "t-content_animated", "t-content_visible", 4, "ngFor", "ngForOf"], [1, "t-tabs-wrapper"], [1, "t-tabs", 3, "activeItemIndex", "activeItemIndexChange"], [4, "ngFor", "ngForOf"], ["size", "xs", 3, "overlay", "showLoader", "click", 4, "ngIf"], ["tuiTab", "", 4, "tuiItem"], ["tuiTab", ""], ["size", "xs", 3, "overlay", "showLoader", "click"], [4, "ngIf", "ngIfElse"], ["defaultEditContent", ""], ["appearance", "flat", "size", "s", "tuiButton", "", "type", "button"], [1, "t-content"], [3, "ngTemplateOutlet", 4, "ngIf", "ngIfElse"], ["anotherTab", ""], [3, "ngTemplateOutlet"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], ["automation-id", "tui-doc-example", 1, "t-demo"], [3, "code"], [4, "polymorpheusOutlet", "polymorpheusOutletContext"]],
+    consts: [["class", "t-title", 4, "ngIf"], ["class", "t-description", 4, "ngIf"], ["class", "t-example", 4, "ngIf"], ["preview", ""], ["codeSection", ""], [1, "t-title"], [3, "textContent", 4, "polymorpheusOutlet"], ["appearance", "icon", "routerLink", ".", "size", "xs", "tuiIconButton", "", "type", "button", "class", "t-link-icon", 3, "fragment", "icon", "title", "click", 4, "ngIf"], [3, "textContent"], ["appearance", "icon", "routerLink", ".", "size", "xs", "tuiIconButton", "", "type", "button", 1, "t-link-icon", 3, "fragment", "icon", "title", "click"], [1, "t-description"], [4, "polymorpheusOutlet"], [1, "t-example"], [4, "ngIf"], ["class", "t-tabs-wrapper", 4, "ngIf"], ["class", "t-content", 3, "t-content_animated", "t-content_visible", 4, "ngFor", "ngForOf"], [1, "t-tabs-wrapper"], [1, "t-tabs", 3, "activeItemIndex", "activeItemIndexChange"], [4, "ngFor", "ngForOf"], ["size", "xs", 3, "overlay", "showLoader", "click", 4, "ngIf"], ["tuiTab", "", 4, "tuiItem"], ["tuiTab", ""], ["size", "xs", 3, "overlay", "showLoader", "click"], [4, "ngIf", "ngIfElse"], ["defaultEditContent", ""], ["appearance", "flat", "size", "s", "tuiButton", "", "type", "button"], [1, "t-content"], [3, "ngTemplateOutlet", 4, "ngIf", "ngIfElse"], ["anotherTab", ""], [3, "ngTemplateOutlet"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], ["automation-id", "tui-doc-example", 1, "t-demo"], [3, "code"], [4, "polymorpheusOutlet", "polymorpheusOutletContext"]],
     template: function TuiDocExampleComponent_Template(rf, ctx) {
       if (rf & 1) {
         i0.ɵɵprojectionDef();
@@ -20549,7 +20533,7 @@ let TuiDocExampleComponent = /*#__PURE__*/(/* unused pure expression or super */
         i0.ɵɵproperty("ngIf", i0.ɵɵpipeBind1(3, 3, ctx.processor$));
       }
     },
-    dependencies: [i2.TuiButtonComponent, i1.TuiTabsWithMoreComponent, i1.TuiTabComponent, i2.TuiLoaderComponent, TuiDocCodeComponent, i4.NgIf, i5$1.PolymorpheusOutletDirective, i4.NgForOf, i6$1.TuiItemDirective, i4.NgTemplateOutlet, i4.AsyncPipe, TuiDocExampleGetTabsPipe, i6$1.TuiMapperPipe],
+    dependencies: [i2.TuiButtonComponent, i1.TuiTabsWithMoreComponent, i1.TuiTabComponent, i2.TuiLoaderComponent, TuiDocCodeComponent, i4.NgIf, i5$1.PolymorpheusOutletDirective, i6.RouterLinkWithHref, i4.NgForOf, i6$1.TuiItemDirective, i4.NgTemplateOutlet, i4.AsyncPipe, TuiDocExampleGetTabsPipe, i6$1.TuiMapperPipe],
     styles: ["[_nghost-%COMP%]{position:relative;display:block;padding-top:3.5rem;clear:right}[_nghost-%COMP%]:target{animation:1s .3s tuiShaking}[_nghost-%COMP%]   tui-root._mobile[_nghost-%COMP%], tui-root._mobile   [_nghost-%COMP%]{padding-top:2rem}.t-title[_ngcontent-%COMP%]{font:var(--tui-font-heading-5);margin:0 0 .5rem}tui-root._mobile[_nghost-%COMP%]   .t-title[_ngcontent-%COMP%], tui-root._mobile   [_nghost-%COMP%]   .t-title[_ngcontent-%COMP%]{font:var(--tui-font-heading-6)}.t-description[_ngcontent-%COMP%]{font:var(--tui-font-text-m);font-weight:normal;margin:0}.t-title[_ngcontent-%COMP%]:first-letter, .t-description[_ngcontent-%COMP%]:first-letter{text-transform:capitalize}.t-example[_ngcontent-%COMP%]{position:relative;margin-top:1.5rem;border:1px solid var(--tui-base-03);border-radius:var(--tui-radius-m);box-shadow:0 .125rem .1875rem #0000001a;overflow:hidden}tui-root._mobile[_nghost-%COMP%]   .t-example[_ngcontent-%COMP%], tui-root._mobile   [_nghost-%COMP%]   .t-example[_ngcontent-%COMP%]{margin-top:.75rem}.t-tabs-wrapper[_ngcontent-%COMP%]{display:flex;padding:0 .875rem 0 2rem;box-shadow:inset 0 -1px var(--tui-base-03);justify-content:space-between;align-items:center}tui-root._mobile[_nghost-%COMP%]   .t-tabs-wrapper[_ngcontent-%COMP%], tui-root._mobile   [_nghost-%COMP%]   .t-tabs-wrapper[_ngcontent-%COMP%]{padding:0 .875rem 0 1rem}.t-tabs[_ngcontent-%COMP%]{flex-grow:1}.t-demo[_ngcontent-%COMP%]{padding:2rem;max-width:100%;box-sizing:border-box;overflow-x:auto}@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm){.t-demo[_ngcontent-%COMP%]::-webkit-scrollbar, .t-demo[_ngcontent-%COMP%]::-webkit-scrollbar-thumb{width:1rem;height:1rem;border-radius:6.25rem;background-clip:padding-box;border:.375rem solid transparent}.t-demo[_ngcontent-%COMP%]::-webkit-scrollbar{background-color:transparent}.t-demo[_ngcontent-%COMP%]::-webkit-scrollbar-thumb{background-color:var(--tui-clear-hover)}.t-demo[_ngcontent-%COMP%]::-webkit-scrollbar-thumb:hover{background-color:var(--tui-clear-active)}.t-demo[_ngcontent-%COMP%]::-webkit-scrollbar-thumb:active{background-color:var(--tui-text-03)}}tui-root._mobile[_nghost-%COMP%]   .t-demo[_ngcontent-%COMP%], tui-root._mobile   [_nghost-%COMP%]   .t-demo[_ngcontent-%COMP%]{padding:1rem}[_nghost-%COMP%]:not(._fullsize)   .t-demo[_ngcontent-%COMP%]{width:-webkit-min-content;width:min-content;min-width:20rem}.t-link-icon[_ngcontent-%COMP%]{margin-left:.3rem;vertical-align:baseline}.t-content[_ngcontent-%COMP%]{will-change:opacity;height:0;visibility:hidden;opacity:0}.t-content_animated[_ngcontent-%COMP%]{transition:opacity .3s ease-in-out}.t-content_visible[_ngcontent-%COMP%]{height:auto;visibility:visible;opacity:1}"],
     changeDetection: 0
   });
@@ -20567,7 +20551,7 @@ let TuiDocExampleModule = /*#__PURE__*/(() => {
     type: TuiDocExampleModule
   });
   TuiDocExampleModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-    imports: [[common_mjs_.CommonModule, ClipboardModule, TuiTabsModule, taiga_ui_core_components_button/* TuiButtonModule */.fN, TuiDocCopyModule, TuiDocCodeModule, tinkoff_ng_polymorpheus/* PolymorpheusModule */.wq, TuiMapperPipeModule, taiga_ui_core_components_loader/* TuiLoaderModule */.dS]]
+    imports: [[common_mjs_.CommonModule, ClipboardModule, TuiTabsModule, taiga_ui_core_components_button/* TuiButtonModule */.fN, TuiDocCopyModule, TuiDocCodeModule, tinkoff_ng_polymorpheus/* PolymorpheusModule */.wq, TuiMapperPipeModule, taiga_ui_core_components_loader/* TuiLoaderModule */.dS, router_mjs_.RouterModule]]
   });
   return TuiDocExampleModule;
 })();
@@ -30918,7 +30902,7 @@ const CHAR_ZERO_WIDTH_SPACE = '\u200B';
  * Array of icons used in taiga-ui components
  */
 const TUI_USED_ICONS = (/* unused pure expression or super */ null && (['tuiIconMirMono', 'tuiIconVisaMono', 'tuiIconElectronMono', 'tuiIconMastercard', 'tuiIconMaestro', 'tuiIconAmex', 'tuiIconDinersClub', 'tuiIconDiscover', 'tuiIconHumo', 'tuiIconJCB', 'tuiIconRuPay', 'tuiIconUnionPay', 'tuiIconUzcard', 'tuiIconVerve', 'tuiIconCopyLarge', 'tuiIconCheckLarge', 'tuiIconLink', 'tuiIconSearch', 'tuiIconSun', 'tuiIconMoon', 'tuiIconCode', 'tuiIconMenuLarge', 'tuiIconRotate', 'tuiIconArrowLeft', 'tuiIconArrowRight', 'tuiIconPlus', 'tuiIconMinus', 'tuiIconMinimize', 'tuiIconEye', 'tuiIconEyeOff', 'tuiIconDrag', 'tuiIconSortAscending', 'tuiIconSortDescending', 'tuiIconSortOff', 'tuiIconCheck', 'tuiIconMinusLarge', 'tuiIconChevronUp', 'tuiIconHelpCircle', 'tuiIconClose', 'tuiIconAlertCircle', 'tuiIconChevronRight', 'tuiIconInfo', 'tuiIconCheckCircle', 'tuiIconXCircle', 'tuiIconChevronLeft', 'tuiIconStarLarge', 'tuiIconChevronDown', 'tuiIconChevronDownLarge', 'tuiIconFileLarge', 'tuiIconCheckCircleLarge', 'tuiIconAlertCircleLarge', 'tuiIconTrashLarge', 'tuiIconCopy', 'tuiIconEyeOffLarge', 'tuiIconEyeLarge', 'tuiIconClock', 'tuiIconClockLarge', 'tuiIconToggleOff', 'tuiIconToggleOffLarge', 'tuiIconToggleOn', 'tuiIconToggleOnLarge', 'tuiIconCalendar', 'tuiIconCalendarLarge']));
-const TUI_VERSION = `3.62.0`;
+const TUI_VERSION = '3.63.0';
 
 /**
  * Generated bundle index. Do not edit.
@@ -32825,8 +32809,7 @@ function tuiIsElement(node) {
   return !!node && 'nodeType' in node && node.nodeType === Node.ELEMENT_NODE;
 }
 function tuiIsHTMLElement(node) {
-  // TODO: iframe warning
-  return node instanceof HTMLElement;
+  return !!node && node instanceof node.ownerDocument.defaultView.HTMLElement;
 }
 function tuiIsTextNode(node) {
   return node.nodeType === Node.TEXT_NODE;
