@@ -440,10 +440,12 @@ Promise.all(/* import() */[__webpack_require__.e(649), __webpack_require__.e(776
 /******/ 				494
 /******/ 			]
 /******/ 		};
+/******/ 		var startedInstallModules = {};
 /******/ 		__webpack_require__.f.consumes = (chunkId, promises) => {
 /******/ 			if(__webpack_require__.o(chunkMapping, chunkId)) {
 /******/ 				chunkMapping[chunkId].forEach((id) => {
 /******/ 					if(__webpack_require__.o(installedModules, id)) return promises.push(installedModules[id]);
+/******/ 					if(!startedInstallModules[id]) {
 /******/ 					var onFactory = (factory) => {
 /******/ 						installedModules[id] = 0;
 /******/ 						__webpack_require__.m[id] = (module) => {
@@ -451,6 +453,7 @@ Promise.all(/* import() */[__webpack_require__.e(649), __webpack_require__.e(776
 /******/ 							module.exports = factory();
 /******/ 						}
 /******/ 					};
+/******/ 					startedInstallModules[id] = true;
 /******/ 					var onError = (error) => {
 /******/ 						delete installedModules[id];
 /******/ 						__webpack_require__.m[id] = (module) => {
@@ -464,6 +467,7 @@ Promise.all(/* import() */[__webpack_require__.e(649), __webpack_require__.e(776
 /******/ 							promises.push(installedModules[id] = promise.then(onFactory)['catch'](onError));
 /******/ 						} else onFactory(promise);
 /******/ 					} catch(e) { onError(e); }
+/******/ 					}
 /******/ 				});
 /******/ 			}
 /******/ 		}

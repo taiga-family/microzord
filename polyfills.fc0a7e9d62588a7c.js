@@ -3156,10 +3156,12 @@ Zone.__load_patch('queueMicrotask', (global, Zone, api) => {
 /******/ 				494
 /******/ 			]
 /******/ 		};
+/******/ 		var startedInstallModules = {};
 /******/ 		__webpack_require__.f.consumes = (chunkId, promises) => {
 /******/ 			if(__webpack_require__.o(chunkMapping, chunkId)) {
 /******/ 				chunkMapping[chunkId].forEach((id) => {
 /******/ 					if(__webpack_require__.o(installedModules, id)) return promises.push(installedModules[id]);
+/******/ 					if(!startedInstallModules[id]) {
 /******/ 					var onFactory = (factory) => {
 /******/ 						installedModules[id] = 0;
 /******/ 						__webpack_require__.m[id] = (module) => {
@@ -3167,6 +3169,7 @@ Zone.__load_patch('queueMicrotask', (global, Zone, api) => {
 /******/ 							module.exports = factory();
 /******/ 						}
 /******/ 					};
+/******/ 					startedInstallModules[id] = true;
 /******/ 					var onError = (error) => {
 /******/ 						delete installedModules[id];
 /******/ 						__webpack_require__.m[id] = (module) => {
@@ -3180,6 +3183,7 @@ Zone.__load_patch('queueMicrotask', (global, Zone, api) => {
 /******/ 							promises.push(installedModules[id] = promise.then(onFactory)['catch'](onError));
 /******/ 						} else onFactory(promise);
 /******/ 					} catch(e) { onError(e); }
+/******/ 					}
 /******/ 				});
 /******/ 			}
 /******/ 		}
