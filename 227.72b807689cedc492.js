@@ -3971,7 +3971,7 @@ let TuiScrollControlsComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [common_mjs_.NgIf, TuiScrollbarDirective, common_mjs_.AsyncPipe],
-    styles: ["[_nghost-%COMP%]{position:-webkit-sticky;position:sticky;top:0;left:0;z-index:1;min-width:calc(100% - 1px);min-height:calc(100% - 1px);max-width:calc(100% - 1px);max-height:calc(100% - 1px);float:left;-webkit-margin-end:calc(-100% + 1px);margin-inline-end:calc(-100% + 1px);pointer-events:none}.t-bar[_ngcontent-%COMP%]{position:absolute;right:0;bottom:0;pointer-events:auto;animation:tuiFadeIn var(--tui-duration, .3s) ease-in-out}.t-bar_vertical[_ngcontent-%COMP%]{top:0;width:.875rem}.t-bar_horizontal[_ngcontent-%COMP%]{left:0;height:.875rem}.t-bar_has-horizontal[_ngcontent-%COMP%]{bottom:.5rem}.t-bar_has-vertical[_ngcontent-%COMP%]{right:.5rem}.t-thumb[_ngcontent-%COMP%]{position:absolute;border-radius:6.25rem;border:.25rem solid transparent;cursor:pointer;pointer-events:auto;-webkit-user-select:none;-moz-user-select:none;user-select:none;background:currentColor;background-clip:content-box;box-sizing:border-box;transition:all var(--tui-duration, .3s) ease-in-out;transition-property:width,height,opacity;opacity:.2}.t-thumb[_ngcontent-%COMP%]:hover{opacity:.24}.t-thumb[_ngcontent-%COMP%]:active{opacity:.48}.t-bar_vertical[_ngcontent-%COMP%]   .t-thumb[_ngcontent-%COMP%]{right:0;width:.75rem;min-height:1.25rem}.t-bar_vertical[_ngcontent-%COMP%]:hover   .t-thumb[_ngcontent-%COMP%], .t-bar_vertical[_ngcontent-%COMP%]   .t-thumb[_ngcontent-%COMP%]:active{width:.875rem}.t-bar_horizontal[_ngcontent-%COMP%]   .t-thumb[_ngcontent-%COMP%]{bottom:0;height:.75rem;min-width:1.25rem}.t-bar_horizontal[_ngcontent-%COMP%]:hover   .t-thumb[_ngcontent-%COMP%], .t-bar_horizontal[_ngcontent-%COMP%]   .t-thumb[_ngcontent-%COMP%]:active{height:.875rem}"],
+    styles: ["[_nghost-%COMP%]{position:-webkit-sticky;position:sticky;top:0;left:0;z-index:1;display:none;min-width:calc(100% - 1px);min-height:calc(100% - 1px);max-width:calc(100% - 1px);max-height:calc(100% - 1px);float:left;-webkit-margin-end:calc(-100% + 1px);margin-inline-end:calc(-100% + 1px);pointer-events:none}[data-tui-theme][_nghost-%COMP%] -no-combinator[_nghost-%COMP%], [data-tui-theme]   [_nghost-%COMP%]{display:block}.t-bar[_ngcontent-%COMP%]{position:absolute;right:0;bottom:0;pointer-events:auto;animation:tuiFadeIn var(--tui-duration, .3s) ease-in-out}.t-bar_vertical[_ngcontent-%COMP%]{top:0;width:.875rem}.t-bar_horizontal[_ngcontent-%COMP%]{left:0;height:.875rem}.t-bar_has-horizontal[_ngcontent-%COMP%]{bottom:.5rem}.t-bar_has-vertical[_ngcontent-%COMP%]{right:.5rem}.t-thumb[_ngcontent-%COMP%]{position:absolute;border-radius:6.25rem;border:.25rem solid transparent;cursor:pointer;pointer-events:auto;-webkit-user-select:none;-moz-user-select:none;user-select:none;background:currentColor;background-clip:content-box;box-sizing:border-box;transition:all var(--tui-duration, .3s) ease-in-out;transition-property:width,height,opacity;opacity:.2}.t-thumb[_ngcontent-%COMP%]:hover{opacity:.24}.t-thumb[_ngcontent-%COMP%]:active{opacity:.48}.t-bar_vertical[_ngcontent-%COMP%]   .t-thumb[_ngcontent-%COMP%]{right:0;width:.75rem;min-height:1.25rem}.t-bar_vertical[_ngcontent-%COMP%]:hover   .t-thumb[_ngcontent-%COMP%], .t-bar_vertical[_ngcontent-%COMP%]   .t-thumb[_ngcontent-%COMP%]:active{width:.875rem}.t-bar_horizontal[_ngcontent-%COMP%]   .t-thumb[_ngcontent-%COMP%]{bottom:0;height:.75rem;min-width:1.25rem}.t-bar_horizontal[_ngcontent-%COMP%]:hover   .t-thumb[_ngcontent-%COMP%], .t-bar_horizontal[_ngcontent-%COMP%]   .t-thumb[_ngcontent-%COMP%]:active{height:.875rem}"],
     changeDetection: 0
   });
   return TuiScrollControlsComponent;
@@ -6354,9 +6354,10 @@ let TuiDialogHostComponent = /*#__PURE__*/(() => {
       // Due to this view being parallel to app content, `markForCheck` from `async` pipe
       // can happen after view was checked, so calling `detectChanges` instead
       (0,observable_combineLatest/* combineLatest */.a)(this.dialogsByType).pipe((0,operators_map/* map */.U)(arr => [].concat(...arr).sort((a, b) => a.createdAt - b.createdAt)), (0,takeUntil/* takeUntil */.R)(this.destroy$)).subscribe(dialogs => {
+        var _a;
         this.dialogs = dialogs;
         this.cdr.markForCheck();
-        this.doc.documentElement.classList.toggle('t-overscroll-none', !!dialogs.length);
+        (_a = this.doc.defaultView) === null || _a === void 0 ? void 0 : _a.document.documentElement.classList.toggle('t-overscroll-none', !!dialogs.length);
       });
     }
     closeLast(dialogs, isDialogClosesOnBack) {
@@ -6867,9 +6868,8 @@ const taiga_ui_core_components_root_c0 = ["*", [["tuiOverContent"]], [["tuiOverD
 const taiga_ui_core_components_root_c1 = ["*", "tuiOverContent", "tuiOverDialogs", "tuiOverAlerts", "tuiOverPortals", "tuiOverHints"];
 let TuiRootComponent = /*#__PURE__*/(() => {
   class TuiRootComponent {
-    constructor(reducedMotion, duration, dialogs, isMobile, breakpoint, isIOS, isAndroid, {
-      body
-    }, theme) {
+    constructor(reducedMotion, duration, dialogs, isMobile, breakpoint, isIOS, isAndroid, document, theme) {
+      var _a;
       this.reducedMotion = reducedMotion;
       this.duration = duration;
       this.dialogs = dialogs;
@@ -6881,7 +6881,7 @@ let TuiRootComponent = /*#__PURE__*/(() => {
       this.scrollbars$ = this.dialogs.length && !this.isMobile ? (0,observable_combineLatest/* combineLatest */.a)([...this.dialogs]).pipe((0,operators_map/* map */.U)(dialogs => !dialogs.some(({
         length
       }) => length)), (0,debounceTime/* debounceTime */.b)(0)) : (0,of.of)(!this.isMobile);
-      body.setAttribute('data-tui-theme', theme.toLowerCase());
+      (_a = document.defaultView) === null || _a === void 0 ? void 0 : _a.document.body.setAttribute('data-tui-theme', theme.toLowerCase());
     }
   }
   TuiRootComponent.ɵfac = function TuiRootComponent_Factory(t) {
@@ -6890,7 +6890,7 @@ let TuiRootComponent = /*#__PURE__*/(() => {
   TuiRootComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiRootComponent,
     selectors: [["tui-root"]],
-    hostAttrs: ["data-tui-version", "3.63.0"],
+    hostAttrs: ["data-tui-version", "3.64.0"],
     hostVars: 9,
     hostBindings: function TuiRootComponent_HostBindings(rf, ctx) {
       if (rf & 1) {
@@ -6932,7 +6932,7 @@ let TuiRootComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [TuiScrollControlsComponent, TuiSvgDefsHostComponent, TuiDropdownHostComponent, TuiDialogHostComponent, TuiAlertHostComponent, TuiHintsHostComponent, common_mjs_.NgIf, common_mjs_.AsyncPipe],
-    styles: ["@keyframes tuiPresent{to{content:\"1\"}}@keyframes tuiSkeletonVibe{to{opacity:.5}}html,.tui-zero-scrollbar{scrollbar-width:none;-ms-overflow-style:none}html::-webkit-scrollbar,.tui-zero-scrollbar::-webkit-scrollbar,html::-webkit-scrollbar-thumb,.tui-zero-scrollbar::-webkit-scrollbar-thumb{background:transparent;width:0;height:0}body[data-tui-theme]{font:var(--tui-font-text-s);color:var(--tui-text-01);background:var(--tui-base-01);margin:0}tui-root{position:relative;display:block;flex:1;-webkit-tap-highlight-color:transparent}tui-root>.t-root-scrollbar{position:fixed;top:0;left:0;bottom:0;right:0;margin:0}.t-root-content{height:100%;isolation:isolate}.t-overscroll-none{overscroll-behavior:none}\n"],
+    styles: ["@keyframes tuiPresent{to{content:\"1\"}}@keyframes tuiSkeletonVibe{to{opacity:.5}}html,.tui-zero-scrollbar{scrollbar-width:none;-ms-overflow-style:none}html::-webkit-scrollbar,.tui-zero-scrollbar::-webkit-scrollbar,html::-webkit-scrollbar-thumb,.tui-zero-scrollbar::-webkit-scrollbar-thumb{display:none}body[data-tui-theme]{font:var(--tui-font-text-s);color:var(--tui-text-01);background:var(--tui-base-01);margin:0}tui-root{position:relative;display:block;flex:1;-webkit-tap-highlight-color:transparent}tui-root>.t-root-scrollbar{position:fixed;top:0;left:0;bottom:0;right:0;margin:0}.t-root-content{height:100%;isolation:isolate}.t-overscroll-none{overscroll-behavior:none}\n"],
     encapsulation: 2
   });
   return TuiRootComponent;
@@ -7413,7 +7413,6 @@ let TuiHostedDropdownComponent = /*#__PURE__*/(() => {
       this.canOpen = true;
       this.open$ = (0,merge/* merge */.T)(this.openChange$, this.hostHover$).pipe(skip(1), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)(), (0,share/* share */.B)());
       this.focusedChange = new core_mjs_.EventEmitter();
-      this.focus$ = new internal_BehaviorSubject/* BehaviorSubject */.X(false);
       /** TODO: rename in 4.0 */
       this.openChange = this.openChange$;
       this.close = () => this.updateOpen(false);
@@ -7446,7 +7445,7 @@ let TuiHostedDropdownComponent = /*#__PURE__*/(() => {
       return (0,taiga_ui_cdk_utils_focus/* tuiIsNativeFocusedIn */.zb)(this.host) || this.open && !!this.wrapper && (0,taiga_ui_cdk_utils_focus/* tuiIsNativeFocusedIn */.zb)(this.wrapper.nativeElement);
     }
     onFocusInOut() {
-      this.focus$.next(this.focused);
+      this.el.nativeElement.classList.toggle('_hosted_dropdown_focused', this.focused);
     }
     onFocusIn(target) {
       if (!this.computedHost.contains(target)) {
@@ -7564,12 +7563,9 @@ let TuiHostedDropdownComponent = /*#__PURE__*/(() => {
         core_mjs_["ɵɵqueryRefresh"](_t = core_mjs_["ɵɵloadQuery"]()) && (ctx.activeZone = _t.first);
       }
     },
-    hostVars: 1,
     hostBindings: function TuiHostedDropdownComponent_HostBindings(rf, ctx) {
       if (rf & 1) {
-        core_mjs_["ɵɵlistener"]("$.class._hosted_dropdown_focused", function TuiHostedDropdownComponent___class__hosted_dropdown_focused_HostBindingHandler() {
-          return ctx.focus$;
-        })("focusin.capture.silent", function TuiHostedDropdownComponent_focusin_capture_silent_HostBindingHandler() {
+        core_mjs_["ɵɵlistener"]("focusin.capture.silent", function TuiHostedDropdownComponent_focusin_capture_silent_HostBindingHandler() {
           return ctx.onFocusInOut();
         })("focusout.capture.silent", function TuiHostedDropdownComponent_focusout_capture_silent_HostBindingHandler() {
           return ctx.onFocusInOut();
@@ -7584,9 +7580,6 @@ let TuiHostedDropdownComponent = /*#__PURE__*/(() => {
         })("keydown.arrowUp", function TuiHostedDropdownComponent_keydown_arrowUp_HostBindingHandler($event) {
           return ctx.onArrow($event, false);
         });
-      }
-      if (rf & 2) {
-        core_mjs_["ɵɵhostProperty"]("$.class._hosted_dropdown_focused", ctx.focus$);
       }
     },
     inputs: {
@@ -16658,7 +16651,7 @@ let TuiTabsComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [TuiUnderlineComponent, common_mjs_.NgIf, common_mjs_.AsyncPipe],
-    styles: ["[_nghost-%COMP%]{scrollbar-width:none;-ms-overflow-style:none;position:relative;display:flex;font:var(--tui-font-text-m);height:var(--tui-height-l);color:var(--tui-text-02);box-shadow:inset 0 -1px var(--tui-base-03);overflow:auto;isolation:isolate}[_nghost-%COMP%]::-webkit-scrollbar, [_nghost-%COMP%]::-webkit-scrollbar-thumb{background:transparent;width:0;height:0}.t-underline[_ngcontent-%COMP%]{z-index:-1}"],
+    styles: ["[_nghost-%COMP%]{scrollbar-width:none;-ms-overflow-style:none;position:relative;display:flex;font:var(--tui-font-text-m);height:var(--tui-height-l);color:var(--tui-text-02);box-shadow:inset 0 -1px var(--tui-base-03);overflow:auto;isolation:isolate}[_nghost-%COMP%]::-webkit-scrollbar, [_nghost-%COMP%]::-webkit-scrollbar-thumb{display:none}.t-underline[_ngcontent-%COMP%]{z-index:-1}"],
     changeDetection: 0
   });
   (0,tslib_es6/* __decorate */.gn)([taiga_ui_cdk_decorators/* tuiPure */.UM], TuiTabsComponent.prototype, "scrollTo", null);
@@ -20774,14 +20767,13 @@ let TuiDocNavigationComponent = /*#__PURE__*/(() => {
 })();
 let TuiDocHeaderComponent = /*#__PURE__*/(() => {
   class TuiDocHeaderComponent {
-    constructor(icons, logo, menu, router, swipes$) {
+    constructor(icons, logo, menu, router) {
       this.icons = icons;
       this.logo = logo;
       this.menu = menu;
       this.router = router;
-      this.swipes$ = swipes$;
       this.stream$ = new internal_Subject/* Subject */.x();
-      this.open$ = (0,merge/* merge */.T)(this.router.events.pipe((0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_FALSE_HANDLER */.Iy)), this.stream$, this.swipes$.pipe((0,filter/* filter */.h)(swipe => swipe.direction === 'left' || swipe.direction === 'right'), (0,operators_map/* map */.U)(swipe => swipe.direction === 'right'))).pipe((0,operators_startWith/* startWith */.O)(false), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)());
+      this.open$ = (0,merge/* merge */.T)(this.router.events.pipe((0,operators_map/* map */.U)(taiga_ui_cdk_constants/* ALWAYS_FALSE_HANDLER */.Iy)), this.stream$).pipe((0,operators_startWith/* startWith */.O)(false), (0,operators_distinctUntilChanged/* distinctUntilChanged */.x)());
     }
     onClick() {
       this.stream$.next(true);
@@ -20793,7 +20785,7 @@ let TuiDocHeaderComponent = /*#__PURE__*/(() => {
     }
   }
   TuiDocHeaderComponent.ɵfac = function TuiDocHeaderComponent_Factory(t) {
-    return new (t || TuiDocHeaderComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_addon_doc_tokens/* TUI_DOC_ICONS */.oq), core_mjs_["ɵɵdirectiveInject"](taiga_ui_addon_doc_tokens/* TUI_DOC_LOGO */.Or), core_mjs_["ɵɵdirectiveInject"](taiga_ui_addon_doc_tokens/* TUI_DOC_MENU_TEXT */.gG), core_mjs_["ɵɵdirectiveInject"](router_mjs_.Router), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_services/* TuiSwipeService */.$D));
+    return new (t || TuiDocHeaderComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_addon_doc_tokens/* TUI_DOC_ICONS */.oq), core_mjs_["ɵɵdirectiveInject"](taiga_ui_addon_doc_tokens/* TUI_DOC_LOGO */.Or), core_mjs_["ɵɵdirectiveInject"](taiga_ui_addon_doc_tokens/* TUI_DOC_MENU_TEXT */.gG), core_mjs_["ɵɵdirectiveInject"](router_mjs_.Router));
   };
   TuiDocHeaderComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiDocHeaderComponent,
@@ -30902,7 +30894,7 @@ const CHAR_ZERO_WIDTH_SPACE = '\u200B';
  * Array of icons used in taiga-ui components
  */
 const TUI_USED_ICONS = (/* unused pure expression or super */ null && (['tuiIconMirMono', 'tuiIconVisaMono', 'tuiIconElectronMono', 'tuiIconMastercard', 'tuiIconMaestro', 'tuiIconAmex', 'tuiIconDinersClub', 'tuiIconDiscover', 'tuiIconHumo', 'tuiIconJCB', 'tuiIconRuPay', 'tuiIconUnionPay', 'tuiIconUzcard', 'tuiIconVerve', 'tuiIconCopyLarge', 'tuiIconCheckLarge', 'tuiIconLink', 'tuiIconSearch', 'tuiIconSun', 'tuiIconMoon', 'tuiIconCode', 'tuiIconMenuLarge', 'tuiIconRotate', 'tuiIconArrowLeft', 'tuiIconArrowRight', 'tuiIconPlus', 'tuiIconMinus', 'tuiIconMinimize', 'tuiIconEye', 'tuiIconEyeOff', 'tuiIconDrag', 'tuiIconSortAscending', 'tuiIconSortDescending', 'tuiIconSortOff', 'tuiIconCheck', 'tuiIconMinusLarge', 'tuiIconChevronUp', 'tuiIconHelpCircle', 'tuiIconClose', 'tuiIconAlertCircle', 'tuiIconChevronRight', 'tuiIconInfo', 'tuiIconCheckCircle', 'tuiIconXCircle', 'tuiIconChevronLeft', 'tuiIconStarLarge', 'tuiIconChevronDown', 'tuiIconChevronDownLarge', 'tuiIconFileLarge', 'tuiIconCheckCircleLarge', 'tuiIconAlertCircleLarge', 'tuiIconTrashLarge', 'tuiIconCopy', 'tuiIconEyeOffLarge', 'tuiIconEyeLarge', 'tuiIconClock', 'tuiIconClockLarge', 'tuiIconToggleOff', 'tuiIconToggleOffLarge', 'tuiIconToggleOn', 'tuiIconToggleOnLarge', 'tuiIconCalendar', 'tuiIconCalendarLarge']));
-const TUI_VERSION = '3.63.0';
+const TUI_VERSION = '3.64.0';
 
 /**
  * Generated bundle index. Do not edit.
@@ -31400,7 +31392,7 @@ function tuiControlValue(control) {
     if (!control.valueChanges) {
       throw new _taiga_ui_cdk_exceptions__WEBPACK_IMPORTED_MODULE_1__/* .TuiValueChangesException */ .j2();
     }
-    control.valueChanges.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__/* .startWith */ .O)(control.value)).subscribe(subscriber);
+    return control.valueChanges.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__/* .startWith */ .O)(control.value)).subscribe(subscriber);
   });
 }
 function tuiTypedFromEvent(target, event, options = {}) {
@@ -32107,7 +32099,7 @@ let TuiScrollService = /*#__PURE__*/(/* unused pure expression or super */ null 
       const initialLeft = getX(elementOrWindow);
       const deltaTop = scrollTop - initialTop;
       const deltaLeft = scrollLeft - initialLeft;
-      const observable = !duration ? of([scrollTop, scrollLeft]) : defer(() => of(this.performanceRef.now())).pipe(switchMap(start => this.animationFrame$.pipe(map(now => now - start))), map(elapsed => tuiEaseInOutQuad(tuiClamp(elapsed / duration, 0, 1))), map(percent => [initialTop + deltaTop * percent, initialLeft + deltaLeft * percent]), endWith([scrollTop, scrollLeft]), takeUntil(timer(duration)));
+      const observable = !duration ? of([scrollTop, scrollLeft]) : defer(() => of(this.performanceRef.now())).pipe(switchMap(start => this.animationFrame$.pipe(map(now => now - start))), map(elapsed => tuiEaseInOutQuad(tuiClamp(elapsed / duration, 0, 1))), map(percent => [initialTop + deltaTop * percent, initialLeft + deltaLeft * percent]), takeUntil(timer(duration)), endWith([scrollTop, scrollLeft]));
       return observable.pipe(tap(([scrollTop, scrollLeft]) => {
         var _a;
         (_a = elementOrWindow.scrollTo) === null || _a === void 0 ? void 0 : _a.call(elementOrWindow, scrollLeft, scrollTop);
@@ -33993,7 +33985,7 @@ let TuiButtonComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [_taiga_ui_core_components_svg__WEBPACK_IMPORTED_MODULE_13__/* .TuiSvgComponent */ .PN, _taiga_ui_core_components_loader__WEBPACK_IMPORTED_MODULE_14__/* .TuiLoaderComponent */ .kM, _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgIf, _taiga_ui_core_directives_wrapper__WEBPACK_IMPORTED_MODULE_15__/* .TuiWrapperDirective */ .o, _tinkoff_ng_polymorpheus__WEBPACK_IMPORTED_MODULE_16__/* .PolymorpheusOutletDirective */ .Li, _angular_common__WEBPACK_IMPORTED_MODULE_1__.AsyncPipe],
-    styles: ["[_nghost-%COMP%]{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:0;border:0;background:none;font-size:inherit;line-height:inherit;text-decoration:none;font:var(--tui-font-text-s);color:var(--tui-text-01);position:relative;display:inline-block;flex-shrink:0;vertical-align:top;border-radius:var(--tui-radius-m);-webkit-user-select:none;-moz-user-select:none;user-select:none;outline:none;color:inherit}[data-shape=rounded][_nghost-%COMP%]{border-radius:6.25rem}[data-size=xs][_nghost-%COMP%]{height:var(--tui-height-xs);font-weight:normal}[data-size=xs][data-shape=square][_nghost-%COMP%], [data-size=xs][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-xs)}[data-size=s][_nghost-%COMP%]{height:var(--tui-height-s);font-weight:normal}[data-size=s][data-shape=square][_nghost-%COMP%], [data-size=s][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-s)}[data-size=m][_nghost-%COMP%]{height:var(--tui-height-m);font:var(--tui-font-text-m);font-weight:bold}[data-size=m][data-shape=square][_nghost-%COMP%], [data-size=m][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-m)}[data-size=l][_nghost-%COMP%]{height:var(--tui-height-l);font:var(--tui-font-text-m);font-weight:bold}[data-size=l][data-shape=square][_nghost-%COMP%], [data-size=l][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-l)}[data-size=xl][_nghost-%COMP%]{height:3.75rem;font:var(--tui-font-text-m);font-weight:bold}[data-size=xl][data-shape=square][_nghost-%COMP%], [data-size=xl][tuiIconButton][_nghost-%COMP%]{width:3.75rem}[tuiIconButton][_nghost-%COMP%]{font-size:0!important}[tuiIconButton][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [tuiIconButton][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{margin:0!important}.t-loader[_ngcontent-%COMP%]{position:absolute;top:0;left:0;width:100%;height:100%;cursor:default}.t-left[_ngcontent-%COMP%]{margin-right:.5rem}[data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%]{margin-right:.375rem}[data-size=xs][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%]{margin-right:.25rem}.t-right[_ngcontent-%COMP%]{margin:0 -.25rem 0 .25rem}[data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{margin:0 -.25rem 0 .375rem}[data-size=xs][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{margin:0 -.125rem 0 .25rem}.t-icon[_ngcontent-%COMP%]{display:flex;max-width:100%;max-height:100%;align-items:center;justify-content:center}.t-left[_ngcontent-%COMP%], .t-right[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:center;width:1.5rem;height:1.5rem}[data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%], [data-size=xs][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [data-size=xs][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{width:1rem;height:1rem}[tuiIconButton][data-appearance=icon][data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [tuiIconButton][data-appearance=icon][data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{width:1.5rem;height:1.5rem}.t-wrapper[_ngcontent-%COMP%]{box-sizing:border-box;cursor:pointer;isolation:isolate}[data-size=xs][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, .375rem)}[data-size=xs][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:after{border-width:1px}[data-size=s][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, .75rem)}[data-size=m][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, 1.5rem)}[data-size=l][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, 2.25rem)}[data-size=xl][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, 2.5rem)}[data-shape=square][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%], [tuiIconButton][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0}.t-content[_ngcontent-%COMP%]{display:flex;height:100%;align-items:center;justify-content:center;text-align:center}._loading[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{opacity:0}"],
+    styles: ["[_nghost-%COMP%]{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:0;border:0;background:none;font-size:inherit;line-height:inherit;text-decoration:none;font:var(--tui-font-text-s);color:var(--tui-text-01);position:relative;display:inline-block;flex-shrink:0;vertical-align:top;border-radius:var(--tui-radius-m);-webkit-user-select:none;-moz-user-select:none;user-select:none;outline:none;color:inherit}[data-shape=rounded][_nghost-%COMP%]{border-radius:6.25rem}[data-size=xs][_nghost-%COMP%]{height:var(--tui-height-xs);font-weight:normal}[data-size=xs][data-shape=square][_nghost-%COMP%], [data-size=xs][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-xs)}[data-size=s][_nghost-%COMP%]{height:var(--tui-height-s);font-weight:normal}[data-size=s][data-shape=square][_nghost-%COMP%], [data-size=s][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-s)}[data-size=m][_nghost-%COMP%]{height:var(--tui-height-m);font:var(--tui-font-text-m);font-weight:bold}[data-size=m][data-shape=square][_nghost-%COMP%], [data-size=m][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-m)}[data-size=l][_nghost-%COMP%]{height:var(--tui-height-l);font:var(--tui-font-text-m);font-weight:bold}[data-size=l][data-shape=square][_nghost-%COMP%], [data-size=l][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-l)}[data-size=xl][_nghost-%COMP%]{height:3.75rem;font:var(--tui-font-text-m);font-weight:bold}[data-size=xl][data-shape=square][_nghost-%COMP%], [data-size=xl][tuiIconButton][_nghost-%COMP%]{width:3.75rem}[tuiIconButton][_nghost-%COMP%]{font-size:0!important}[tuiIconButton][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [tuiIconButton][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{margin:0!important}.t-loader[_ngcontent-%COMP%]{position:absolute;top:0;left:0;width:100%;height:100%;cursor:default}.t-left[_ngcontent-%COMP%]{margin-right:.5rem}[data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%]{margin-right:.375rem}[data-size=xs][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%]{margin-right:.25rem}.t-right[_ngcontent-%COMP%]{margin:0 -.25rem 0 .25rem}[data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{margin:0 -.25rem 0 .375rem}[data-size=xs][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{margin:0 -.125rem 0 .25rem}.t-icon[_ngcontent-%COMP%]{display:flex;max-width:100%;max-height:100%;align-items:center;justify-content:center}.t-left[_ngcontent-%COMP%], .t-right[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:center;width:1.5rem;height:1.5rem}[data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%], [data-size=xs][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [data-size=xs][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{width:1rem;height:1rem}[tuiIconButton][data-appearance=icon][data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [tuiIconButton][data-appearance=icon][data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%], [tuiIconButton][data-appearance=link][data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [tuiIconButton][data-appearance=link][data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{width:1.5rem;height:1.5rem}.t-wrapper[_ngcontent-%COMP%]{box-sizing:border-box;cursor:pointer;isolation:isolate}[data-size=xs][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, .375rem)}[data-size=xs][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:after{border-width:1px}[data-size=s][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, .75rem)}[data-size=m][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, 1.5rem)}[data-size=l][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, 2.25rem)}[data-size=xl][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, 2.5rem)}[data-shape=square][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%], [tuiIconButton][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0}.t-content[_ngcontent-%COMP%]{display:flex;height:100%;align-items:center;justify-content:center;text-align:center}._loading[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{opacity:0}"],
     changeDetection: 0
   });
   return TuiButtonComponent;
@@ -34523,7 +34515,7 @@ let TuiNotificationComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [_taiga_ui_core_components_svg__WEBPACK_IMPORTED_MODULE_4__/* .TuiSvgComponent */ .PN, _taiga_ui_core_components_button__WEBPACK_IMPORTED_MODULE_5__/* .TuiButtonComponent */ .v0, _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgIf, _tinkoff_ng_polymorpheus__WEBPACK_IMPORTED_MODULE_6__/* .PolymorpheusOutletDirective */ .Li, _angular_common__WEBPACK_IMPORTED_MODULE_1__.AsyncPipe],
-    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);position:relative;display:flex;padding:.75rem 1rem;border-radius:var(--tui-radius-m);background:#fff;background:var(--tui-base-01);box-sizing:border-box;overflow:hidden}[data-size=s][_nghost-%COMP%]{padding:.375rem .625rem}[data-size=s][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{width:1rem;height:1.25rem;margin:0 .375rem 0 -.125rem}[data-size=s][_nghost-%COMP%]   .t-close[_ngcontent-%COMP%]{margin:-.125rem -.375rem -.125rem .75rem}[data-size=m][_nghost-%COMP%]{padding:.75rem}[data-size=m][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{width:1.25rem;height:1.25rem;margin-right:.5rem}[data-size=m][_nghost-%COMP%]   .t-close[_ngcontent-%COMP%]{margin:-.125rem -.125rem -.125rem 1rem}[data-size=l][_nghost-%COMP%]{padding:1rem;font:var(--tui-font-text-m);border-radius:var(--tui-radius-l)}[data-size=l][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{width:1.5rem;height:1.5rem;margin-right:.5rem}[data-status=info][_nghost-%COMP%]{color:var(--tui-info-fill);background:linear-gradient(var(--tui-info-bg),var(--tui-info-bg)),var(--tui-base-01)}[data-status=success][_nghost-%COMP%]{color:var(--tui-success-fill);background:linear-gradient(var(--tui-success-bg),var(--tui-success-bg)),var(--tui-base-01)}[data-status=error][_nghost-%COMP%]{color:var(--tui-error-fill);background:linear-gradient(var(--tui-error-bg),var(--tui-error-bg)),var(--tui-base-01)}[data-status=warning][_nghost-%COMP%]{color:var(--tui-warning-fill);background:linear-gradient(var(--tui-warning-bg),var(--tui-warning-bg)),var(--tui-base-01)}[data-status=neutral][_nghost-%COMP%]{color:var(--tui-neutral-fill);background:linear-gradient(var(--tui-neutral-bg),var(--tui-neutral-bg)),var(--tui-base-01)}.t-content[_ngcontent-%COMP%]{flex:1;word-wrap:break-word;overflow-wrap:anywhere;color:var(--tui-text-01)}"],
+    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);position:relative;display:flex;padding:.75rem 1rem;border-radius:var(--tui-radius-m);background:#fff;background:var(--tui-base-01);box-sizing:border-box;overflow:hidden}[data-size=s][_nghost-%COMP%]{padding:.375rem .625rem}[data-size=s][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{width:1rem;height:1.25rem;margin:0 .375rem 0 -.125rem}[data-size=s][_nghost-%COMP%]   .t-close[_ngcontent-%COMP%]{margin:-.125rem -.375rem -.125rem .75rem}[data-size=m][_nghost-%COMP%]{padding:.75rem}[data-size=m][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{width:1.25rem;height:1.25rem;margin-right:.5rem}[data-size=m][_nghost-%COMP%]   .t-close[_ngcontent-%COMP%]{margin:-.125rem -.125rem -.125rem 1rem}[data-size=l][_nghost-%COMP%]{padding:1rem;font:var(--tui-font-text-m);border-radius:var(--tui-radius-l)}[data-size=l][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{width:1.5rem;height:1.5rem;margin-right:.5rem}[data-status=info][_nghost-%COMP%]{color:var(--tui-info-fill);background:linear-gradient(var(--tui-info-bg),var(--tui-info-bg)),var(--tui-base-01)}[data-status=success][_nghost-%COMP%]{color:var(--tui-success-fill);background:linear-gradient(var(--tui-success-bg),var(--tui-success-bg)),var(--tui-base-01)}[data-status=error][_nghost-%COMP%]{color:var(--tui-error-fill);background:linear-gradient(var(--tui-error-bg),var(--tui-error-bg)),var(--tui-base-01)}[data-status=warning][_nghost-%COMP%]{color:var(--tui-warning-fill);background:linear-gradient(var(--tui-warning-bg),var(--tui-warning-bg)),var(--tui-base-01)}[data-status=neutral][_nghost-%COMP%]{color:var(--tui-neutral-fill);background:linear-gradient(var(--tui-neutral-bg),var(--tui-neutral-bg)),var(--tui-base-01)}.t-content[_ngcontent-%COMP%]{flex:1;word-break:break-word;color:var(--tui-text-01)}"],
     changeDetection: 0
   });
   return TuiNotificationComponent;
