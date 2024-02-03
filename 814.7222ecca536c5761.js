@@ -106,9 +106,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵparseCookieValue": () => (/* binding */ parseCookieValue),
 /* harmony export */   "ɵsetRootDomAdapter": () => (/* binding */ setRootDomAdapter)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1073);
 /**
- * @license Angular v17.0.9
+ * @license Angular v17.1.2
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -121,9 +121,7 @@ function getDOM() {
   return _DOM;
 }
 function setRootDomAdapter(adapter) {
-  if (!_DOM) {
-    _DOM = adapter;
-  }
+  _DOM ??= adapter;
 }
 /* tslint:disable:requireParameterType */
 /**
@@ -141,7 +139,7 @@ class DomAdapter {}
  *
  * @publicApi
  */
-const DOCUMENT = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('DocumentToken');
+const DOCUMENT = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(ngDevMode ? 'DocumentToken' : '');
 
 /**
  * This class should not be used directly by an application developer. Instead, use
@@ -168,7 +166,7 @@ const DOCUMENT = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Inj
 let PlatformLocation = /*#__PURE__*/(() => {
   class PlatformLocation {
     historyGo(relativePosition) {
-      throw new Error('Not implemented');
+      throw new Error(ngDevMode ? 'Not implemented' : '');
     }
     static #_ = this.ɵfac = function PlatformLocation_Factory(t) {
       return new (t || PlatformLocation)();
@@ -190,7 +188,7 @@ let PlatformLocation = /*#__PURE__*/(() => {
  *
  * @publicApi
  */
-const LOCATION_INITIALIZED = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('Location Initialized');
+const LOCATION_INITIALIZED = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(ngDevMode ? 'Location Initialized' : '');
 /**
  * `PlatformLocation` encapsulates all of the direct calls to platform APIs.
  * This class should not be used directly by an application developer. Instead, use
@@ -353,7 +351,7 @@ function normalizeQueryParams(params) {
 let LocationStrategy = /*#__PURE__*/(() => {
   class LocationStrategy {
     historyGo(relativePosition) {
-      throw new Error('Not implemented');
+      throw new Error(ngDevMode ? 'Not implemented' : '');
     }
     static #_ = this.ɵfac = function LocationStrategy_Factory(t) {
       return new (t || LocationStrategy)();
@@ -392,7 +390,7 @@ let LocationStrategy = /*#__PURE__*/(() => {
  *
  * @publicApi
  */
-const APP_BASE_HREF = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('appBaseHref');
+const APP_BASE_HREF = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(ngDevMode ? 'appBaseHref' : '');
 /**
  * @description
  * A {@link LocationStrategy} used to configure the {@link Location} service to
@@ -531,8 +529,7 @@ let HashLocationStrategy = /*#__PURE__*/(() => {
     path(includeHash = false) {
       // the hash value is always prefixed with a `#`
       // and if it is empty then it will stay empty
-      let path = this._platformLocation.hash;
-      if (path == null) path = '#';
+      const path = this._platformLocation.hash ?? '#';
       return path.length > 0 ? path.substring(1) : path;
     }
     prepareExternalUrl(internal) {
@@ -758,11 +755,9 @@ let Location = /*#__PURE__*/(() => {
      */
     onUrlChange(fn) {
       this._urlChangeListeners.push(fn);
-      if (!this._urlChangeSubscription) {
-        this._urlChangeSubscription = this.subscribe(v => {
-          this._notifyUrlChangeListeners(v.url, v.state);
-        });
-      }
+      this._urlChangeSubscription ??= this.subscribe(v => {
+        this._notifyUrlChangeListeners(v.url, v.state);
+      });
       return () => {
         const fnIndex = this._urlChangeListeners.indexOf(fn);
         this._urlChangeListeners.splice(fnIndex, 1);
@@ -1707,7 +1702,7 @@ function formatDate(value, format, locale, timezone) {
   let text = '';
   parts.forEach(value => {
     const dateFormatter = getDateFormatter(value);
-    text += dateFormatter ? dateFormatter(date, locale, dateTimezoneOffset) : value === '\'\'' ? '\'' : value.replace(/(^'|'$)/g, '').replace(/''/g, '\'');
+    text += dateFormatter ? dateFormatter(date, locale, dateTimezoneOffset) : value === "''" ? "'" : value.replace(/(^'|'$)/g, '').replace(/''/g, "'");
   });
   return text;
 }
@@ -1741,7 +1736,7 @@ function createDate(year, month, date) {
 }
 function getNamedFormat(locale, format) {
   const localeId = getLocaleId(locale);
-  NAMED_FORMATS[localeId] = NAMED_FORMATS[localeId] || {};
+  NAMED_FORMATS[localeId] ??= {};
   if (NAMED_FORMATS[localeId][format]) {
     return NAMED_FORMATS[localeId][format];
   }
@@ -1975,8 +1970,15 @@ function getFirstThursdayOfYear(year) {
   const firstDayOfYear = createDate(year, JANUARY, 1).getDay();
   return createDate(year, 0, 1 + (firstDayOfYear <= THURSDAY ? THURSDAY : THURSDAY + 7) - firstDayOfYear);
 }
-function getThursdayThisWeek(datetime) {
-  return createDate(datetime.getFullYear(), datetime.getMonth(), datetime.getDate() + (THURSDAY - datetime.getDay()));
+/**
+ *  ISO Week starts on day 1 (Monday) and ends with day 0 (Sunday)
+ */
+function getThursdayThisIsoWeek(datetime) {
+  // getDay returns 0-6 range with sunday as 0.
+  const currentDay = datetime.getDay();
+  // On a Sunday, read the previous Thursday since ISO weeks start on Monday.
+  const deltaToThursday = currentDay === 0 ? -3 : THURSDAY - currentDay;
+  return createDate(datetime.getFullYear(), datetime.getMonth(), datetime.getDate() + deltaToThursday);
 }
 function weekGetter(size, monthBased = false) {
   return function (date, locale) {
@@ -1986,7 +1988,7 @@ function weekGetter(size, monthBased = false) {
       const today = date.getDate();
       result = 1 + Math.floor((today + nbDaysBefore1stDayOfMonth) / 7);
     } else {
-      const thisThurs = getThursdayThisWeek(date);
+      const thisThurs = getThursdayThisIsoWeek(date);
       // Some days of a year are part of next year according to ISO 8601.
       // Compute the firstThurs from the year of this week's Thursday
       const firstThurs = getFirstThursdayOfYear(thisThurs.getFullYear());
@@ -2001,7 +2003,7 @@ function weekGetter(size, monthBased = false) {
  */
 function weekNumberingYearGetter(size, trim = false) {
   return function (date, locale) {
-    const thisThurs = getThursdayThisWeek(date);
+    const thisThurs = getThursdayThisIsoWeek(date);
     const weekNumberingYear = thisThurs.getFullYear();
     return padNumber(weekNumberingYear, size, getLocaleNumberSymbol(locale, NumberSymbol.MinusSign), trim);
   };
@@ -2614,7 +2616,8 @@ function parseNumber(num) {
     integerLen = numStr.length;
   }
   // Count the number of leading zeros.
-  for (i = 0; numStr.charAt(i) === ZERO_CHAR; i++) {/* empty */
+  for (i = 0; numStr.charAt(i) === ZERO_CHAR; i++) {
+    /* empty */
   }
   if (i === (zeros = numStr.length)) {
     // The digits are all zero.
@@ -2971,7 +2974,7 @@ let NgClass = /*#__PURE__*/(() => {
       type: NgClass,
       selectors: [["", "ngClass", ""]],
       inputs: {
-        klass: ["class", "klass"],
+        klass: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInputFlags"].None, "class", "klass"],
         ngClass: "ngClass"
       },
       standalone: true
@@ -3794,7 +3797,7 @@ let NgSwitch = /*#__PURE__*/(() => {
       if ((typeof ngDevMode === 'undefined' || ngDevMode) && matched !== (value == this._ngSwitch)) {
         console.warn((0,_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵformatRuntimeError"])(2001 /* RuntimeErrorCode.EQUALITY_NG_SWITCH_DIFFERENCE */, 'As of Angular v17 the NgSwitch directive uses strict equality comparison === instead of == to match different cases. ' + `Previously the case value "${stringifyValue(value)}" matched switch expression value "${stringifyValue(this._ngSwitch)}", but this is no longer the case with the stricter equality check. ` + 'Your comparison results return different results using === vs. == and you should adjust your ngSwitch expression and / or values to conform with the strict equality requirements.'));
       }
-      this._lastCasesMatched = this._lastCasesMatched || matched;
+      this._lastCasesMatched ||= matched;
       this._lastCaseCheckIndex++;
       if (this._lastCaseCheckIndex === this._caseCount) {
         this._updateDefaultCases(!this._lastCasesMatched);
@@ -3853,8 +3856,8 @@ let NgSwitch = /*#__PURE__*/(() => {
  * that defines the subtree to be selected if the value of the match expression
  * matches the value of the switch expression.
  *
- * Unlike JavaScript, which uses strict equality, Angular uses loose equality.
- * This means that the empty string, `""` matches 0.
+ * As of Angular v17 the NgSwitch directive uses strict equality comparison (`===`) instead of
+ * loose equality (`==`) to match different cases.
  *
  * @publicApi
  * @see {@link NgSwitch}
@@ -4539,7 +4542,7 @@ const DEFAULT_DATE_FORMAT = 'mediumDate';
  *
  * @deprecated use DATE_PIPE_DEFAULT_OPTIONS token to configure DatePipe
  */
-const DATE_PIPE_DEFAULT_TIMEZONE = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('DATE_PIPE_DEFAULT_TIMEZONE');
+const DATE_PIPE_DEFAULT_TIMEZONE = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(ngDevMode ? 'DATE_PIPE_DEFAULT_TIMEZONE' : '');
 /**
  * DI token that allows to provide default configuration for the `DatePipe` instances in an
  * application. The value is an object which can include the following fields:
@@ -4571,7 +4574,7 @@ const DATE_PIPE_DEFAULT_TIMEZONE = /*#__PURE__*/new _angular_core__WEBPACK_IMPOR
  * ]
  * ```
  */
-const DATE_PIPE_DEFAULT_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('DATE_PIPE_DEFAULT_OPTIONS');
+const DATE_PIPE_DEFAULT_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(ngDevMode ? 'DATE_PIPE_DEFAULT_OPTIONS' : '');
 // clang-format off
 /**
  * @ngModule CommonModule
@@ -4629,70 +4632,70 @@ const DATE_PIPE_DEFAULT_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORT
  * Format details depend on the locale.
  * Fields marked with (*) are only available in the extra data set for the given locale.
  *
- *  | Field type          | Format      | Description                                                   | Example Value                                              |
- *  |-------------------- |-------------|---------------------------------------------------------------|------------------------------------------------------------|
- *  | Era                 | G, GG & GGG | Abbreviated                                                   | AD                                                         |
- *  |                     | GGGG        | Wide                                                          | Anno Domini                                                |
- *  |                     | GGGGG       | Narrow                                                        | A                                                          |
- *  | Year                | y           | Numeric: minimum digits                                       | 2, 20, 201, 2017, 20173                                    |
- *  |                     | yy          | Numeric: 2 digits + zero padded                               | 02, 20, 01, 17, 73                                         |
- *  |                     | yyy         | Numeric: 3 digits + zero padded                               | 002, 020, 201, 2017, 20173                                 |
- *  |                     | yyyy        | Numeric: 4 digits or more + zero padded                       | 0002, 0020, 0201, 2017, 20173                              |
- *  | Week-numbering year | Y           | Numeric: minimum digits                                       | 2, 20, 201, 2017, 20173                                    |
- *  |                     | YY          | Numeric: 2 digits + zero padded                               | 02, 20, 01, 17, 73                                         |
- *  |                     | YYY         | Numeric: 3 digits + zero padded                               | 002, 020, 201, 2017, 20173                                 |
- *  |                     | YYYY        | Numeric: 4 digits or more + zero padded                       | 0002, 0020, 0201, 2017, 20173                              |
- *  | Month               | M           | Numeric: 1 digit                                              | 9, 12                                                      |
- *  |                     | MM          | Numeric: 2 digits + zero padded                               | 09, 12                                                     |
- *  |                     | MMM         | Abbreviated                                                   | Sep                                                        |
- *  |                     | MMMM        | Wide                                                          | September                                                  |
- *  |                     | MMMMM       | Narrow                                                        | S                                                          |
- *  | Month standalone    | L           | Numeric: 1 digit                                              | 9, 12                                                      |
- *  |                     | LL          | Numeric: 2 digits + zero padded                               | 09, 12                                                     |
- *  |                     | LLL         | Abbreviated                                                   | Sep                                                        |
- *  |                     | LLLL        | Wide                                                          | September                                                  |
- *  |                     | LLLLL       | Narrow                                                        | S                                                          |
- *  | Week of year        | w           | Numeric: minimum digits                                       | 1... 53                                                    |
- *  |                     | ww          | Numeric: 2 digits + zero padded                               | 01... 53                                                   |
- *  | Week of month       | W           | Numeric: 1 digit                                              | 1... 5                                                     |
- *  | Day of month        | d           | Numeric: minimum digits                                       | 1                                                          |
- *  |                     | dd          | Numeric: 2 digits + zero padded                               | 01                                                         |
- *  | Week day            | E, EE & EEE | Abbreviated                                                   | Tue                                                        |
- *  |                     | EEEE        | Wide                                                          | Tuesday                                                    |
- *  |                     | EEEEE       | Narrow                                                        | T                                                          |
- *  |                     | EEEEEE      | Short                                                         | Tu                                                         |
- *  | Week day standalone | c, cc       | Numeric: 1 digit                                              | 2                                                          |
- *  |                     | ccc         | Abbreviated                                                   | Tue                                                        |
- *  |                     | cccc        | Wide                                                          | Tuesday                                                    |
- *  |                     | ccccc       | Narrow                                                        | T                                                          |
- *  |                     | cccccc      | Short                                                         | Tu                                                         |
- *  | Period              | a, aa & aaa | Abbreviated                                                   | am/pm or AM/PM                                             |
- *  |                     | aaaa        | Wide (fallback to `a` when missing)                           | ante meridiem/post meridiem                                |
- *  |                     | aaaaa       | Narrow                                                        | a/p                                                        |
- *  | Period*             | B, BB & BBB | Abbreviated                                                   | mid.                                                       |
- *  |                     | BBBB        | Wide                                                          | am, pm, midnight, noon, morning, afternoon, evening, night |
- *  |                     | BBBBB       | Narrow                                                        | md                                                         |
- *  | Period standalone*  | b, bb & bbb | Abbreviated                                                   | mid.                                                       |
- *  |                     | bbbb        | Wide                                                          | am, pm, midnight, noon, morning, afternoon, evening, night |
- *  |                     | bbbbb       | Narrow                                                        | md                                                         |
- *  | Hour 1-12           | h           | Numeric: minimum digits                                       | 1, 12                                                      |
- *  |                     | hh          | Numeric: 2 digits + zero padded                               | 01, 12                                                     |
- *  | Hour 0-23           | H           | Numeric: minimum digits                                       | 0, 23                                                      |
- *  |                     | HH          | Numeric: 2 digits + zero padded                               | 00, 23                                                     |
- *  | Minute              | m           | Numeric: minimum digits                                       | 8, 59                                                      |
- *  |                     | mm          | Numeric: 2 digits + zero padded                               | 08, 59                                                     |
- *  | Second              | s           | Numeric: minimum digits                                       | 0... 59                                                    |
- *  |                     | ss          | Numeric: 2 digits + zero padded                               | 00... 59                                                   |
- *  | Fractional seconds  | S           | Numeric: 1 digit                                              | 0... 9                                                     |
- *  |                     | SS          | Numeric: 2 digits + zero padded                               | 00... 99                                                   |
- *  |                     | SSS         | Numeric: 3 digits + zero padded (= milliseconds)              | 000... 999                                                 |
- *  | Zone                | z, zz & zzz | Short specific non location format (fallback to O)            | GMT-8                                                      |
- *  |                     | zzzz        | Long specific non location format (fallback to OOOO)          | GMT-08:00                                                  |
- *  |                     | Z, ZZ & ZZZ | ISO8601 basic format                                          | -0800                                                      |
- *  |                     | ZZZZ        | Long localized GMT format                                     | GMT-8:00                                                   |
- *  |                     | ZZZZZ       | ISO8601 extended format + Z indicator for offset 0 (= XXXXX)  | -08:00                                                     |
- *  |                     | O, OO & OOO | Short localized GMT format                                    | GMT-8                                                      |
- *  |                     | OOOO        | Long localized GMT format                                     | GMT-08:00                                                  |
+ *  | Field type              | Format      | Description                                                   | Example Value                                              |
+ *  |-------------------------|-------------|---------------------------------------------------------------|------------------------------------------------------------|
+ *  | Era                     | G, GG & GGG | Abbreviated                                                   | AD                                                         |
+ *  |                         | GGGG        | Wide                                                          | Anno Domini                                                |
+ *  |                         | GGGGG       | Narrow                                                        | A                                                          |
+ *  | Year                    | y           | Numeric: minimum digits                                       | 2, 20, 201, 2017, 20173                                    |
+ *  |                         | yy          | Numeric: 2 digits + zero padded                               | 02, 20, 01, 17, 73                                         |
+ *  |                         | yyy         | Numeric: 3 digits + zero padded                               | 002, 020, 201, 2017, 20173                                 |
+ *  |                         | yyyy        | Numeric: 4 digits or more + zero padded                       | 0002, 0020, 0201, 2017, 20173                              |
+ *  | ISO Week-numbering year | Y           | Numeric: minimum digits                                       | 2, 20, 201, 2017, 20173                                    |
+ *  |                         | YY          | Numeric: 2 digits + zero padded                               | 02, 20, 01, 17, 73                                         |
+ *  |                         | YYY         | Numeric: 3 digits + zero padded                               | 002, 020, 201, 2017, 20173                                 |
+ *  |                         | YYYY        | Numeric: 4 digits or more + zero padded                       | 0002, 0020, 0201, 2017, 20173                              |
+ *  | Month                   | M           | Numeric: 1 digit                                              | 9, 12                                                      |
+ *  |                         | MM          | Numeric: 2 digits + zero padded                               | 09, 12                                                     |
+ *  |                         | MMM         | Abbreviated                                                   | Sep                                                        |
+ *  |                         | MMMM        | Wide                                                          | September                                                  |
+ *  |                         | MMMMM       | Narrow                                                        | S                                                          |
+ *  | Month standalone        | L           | Numeric: 1 digit                                              | 9, 12                                                      |
+ *  |                         | LL          | Numeric: 2 digits + zero padded                               | 09, 12                                                     |
+ *  |                         | LLL         | Abbreviated                                                   | Sep                                                        |
+ *  |                         | LLLL        | Wide                                                          | September                                                  |
+ *  |                         | LLLLL       | Narrow                                                        | S                                                          |
+ *  | ISO Week of year        | w           | Numeric: minimum digits                                       | 1... 53                                                    |
+ *  |                         | ww          | Numeric: 2 digits + zero padded                               | 01... 53                                                   |
+ *  | Week of month           | W           | Numeric: 1 digit                                              | 1... 5                                                     |
+ *  | Day of month            | d           | Numeric: minimum digits                                       | 1                                                          |
+ *  |                         | dd          | Numeric: 2 digits + zero padded                               | 01                                                         |
+ *  | Week day                | E, EE & EEE | Abbreviated                                                   | Tue                                                        |
+ *  |                         | EEEE        | Wide                                                          | Tuesday                                                    |
+ *  |                         | EEEEE       | Narrow                                                        | T                                                          |
+ *  |                         | EEEEEE      | Short                                                         | Tu                                                         |
+ *  | Week day standalone     | c, cc       | Numeric: 1 digit                                              | 2                                                          |
+ *  |                         | ccc         | Abbreviated                                                   | Tue                                                        |
+ *  |                         | cccc        | Wide                                                          | Tuesday                                                    |
+ *  |                         | ccccc       | Narrow                                                        | T                                                          |
+ *  |                         | cccccc      | Short                                                         | Tu                                                         |
+ *  | Period                  | a, aa & aaa | Abbreviated                                                   | am/pm or AM/PM                                             |
+ *  |                         | aaaa        | Wide (fallback to `a` when missing)                           | ante meridiem/post meridiem                                |
+ *  |                         | aaaaa       | Narrow                                                        | a/p                                                        |
+ *  | Period*                 | B, BB & BBB | Abbreviated                                                   | mid.                                                       |
+ *  |                         | BBBB        | Wide                                                          | am, pm, midnight, noon, morning, afternoon, evening, night |
+ *  |                         | BBBBB       | Narrow                                                        | md                                                         |
+ *  | Period standalone*      | b, bb & bbb | Abbreviated                                                   | mid.                                                       |
+ *  |                         | bbbb        | Wide                                                          | am, pm, midnight, noon, morning, afternoon, evening, night |
+ *  |                         | bbbbb       | Narrow                                                        | md                                                         |
+ *  | Hour 1-12               | h           | Numeric: minimum digits                                       | 1, 12                                                      |
+ *  |                         | hh          | Numeric: 2 digits + zero padded                               | 01, 12                                                     |
+ *  | Hour 0-23               | H           | Numeric: minimum digits                                       | 0, 23                                                      |
+ *  |                         | HH          | Numeric: 2 digits + zero padded                               | 00, 23                                                     |
+ *  | Minute                  | m           | Numeric: minimum digits                                       | 8, 59                                                      |
+ *  |                         | mm          | Numeric: 2 digits + zero padded                               | 08, 59                                                     |
+ *  | Second                  | s           | Numeric: minimum digits                                       | 0... 59                                                    |
+ *  |                         | ss          | Numeric: 2 digits + zero padded                               | 00... 59                                                   |
+ *  | Fractional seconds      | S           | Numeric: 1 digit                                              | 0... 9                                                     |
+ *  |                         | SS          | Numeric: 2 digits + zero padded                               | 00... 99                                                   |
+ *  |                         | SSS         | Numeric: 3 digits + zero padded (= milliseconds)              | 000... 999                                                 |
+ *  | Zone                    | z, zz & zzz | Short specific non location format (fallback to O)            | GMT-8                                                      |
+ *  |                         | zzzz        | Long specific non location format (fallback to OOOO)          | GMT-08:00                                                  |
+ *  |                         | Z, ZZ & ZZZ | ISO8601 basic format                                          | -0800                                                      |
+ *  |                         | ZZZZ        | Long localized GMT format                                     | GMT-8:00                                                   |
+ *  |                         | ZZZZZ       | ISO8601 extended format + Z indicator for offset 0 (= XXXXX)  | -08:00                                                     |
+ *  |                         | O, OO & OOO | Short localized GMT format                                    | GMT-8                                                      |
+ *  |                         | OOOO        | Long localized GMT format                                     | GMT-08:00                                                  |
  *
  *
  * ### Format examples
@@ -4943,10 +4946,8 @@ let KeyValuePipe = /*#__PURE__*/(() => {
       if (!input || !(input instanceof Map) && typeof input !== 'object') {
         return null;
       }
-      if (!this.differ) {
-        // make a differ for whatever type we've been passed in
-        this.differ = this.differs.find(input).create();
-      }
+      // make a differ for whatever type we've been passed in
+      this.differ ??= this.differs.find(input).create();
       const differChanges = this.differ.diff(input);
       const compareFnChanged = compareFn !== this.compareFn;
       if (differChanges) {
@@ -5079,7 +5080,7 @@ let DecimalPipe = /*#__PURE__*/(() => {
      */
     transform(value, digitsInfo, locale) {
       if (!isValue(value)) return null;
-      locale = locale || this._locale;
+      locale ||= this._locale;
       try {
         const num = strToNumber(value);
         return formatNumber(num, locale, digitsInfo);
@@ -5145,7 +5146,7 @@ let PercentPipe = /*#__PURE__*/(() => {
      */
     transform(value, digitsInfo, locale) {
       if (!isValue(value)) return null;
-      locale = locale || this._locale;
+      locale ||= this._locale;
       try {
         const num = strToNumber(value);
         return formatPercent(num, locale, digitsInfo);
@@ -5230,7 +5231,7 @@ let CurrencyPipe = /*#__PURE__*/(() => {
      */
     transform(value, currencyCode = this._defaultCurrencyCode, display = 'symbol', digitsInfo, locale) {
       if (!isValue(value)) return null;
-      locale = locale || this._locale;
+      locale ||= this._locale;
       if (typeof display === 'boolean') {
         if ((typeof ngDevMode === 'undefined' || ngDevMode) && console && console.warn) {
           console.warn(`Warning: the currency pipe has been changed in Angular v5. The symbolDisplay option (third parameter) is now a string instead of a boolean. The accepted values are "code", "symbol" or "symbol-narrow".`);
@@ -5427,7 +5428,7 @@ function isPlatformWorkerUi(platformId) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.0.9');
+const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.1.2');
 
 /**
  * Defines a scroll position manager. Implemented by `BrowserViewportScroller`.
@@ -5636,7 +5637,7 @@ const noopImageLoader = config => config.src;
  * @see {@link NgOptimizedImage}
  * @publicApi
  */
-const IMAGE_LOADER = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('ImageLoader', {
+const IMAGE_LOADER = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(ngDevMode ? 'ImageLoader' : '', {
   providedIn: 'root',
   factory: () => noopImageLoader
 });
@@ -5970,7 +5971,7 @@ const INTERNAL_PRECONNECT_CHECK_BLOCKLIST = /*#__PURE__*/new Set(['localhost', '
  *
  * @publicApi
  */
-const PRECONNECT_CHECK_BLOCKLIST = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('PRECONNECT_CHECK_BLOCKLIST');
+const PRECONNECT_CHECK_BLOCKLIST = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(ngDevMode ? 'PRECONNECT_CHECK_BLOCKLIST' : '');
 /**
  * Contains the logic to detect whether an image, marked with the "priority" attribute
  * has a corresponding `<link rel="preconnect">` tag in the `document.head`.
@@ -6027,13 +6028,11 @@ let PreconnectLinkChecker = /*#__PURE__*/(() => {
       if (this.blocklist.has(imgUrl.hostname) || this.alreadySeen.has(imgUrl.origin)) return;
       // Register this origin as seen, so we don't check it again later.
       this.alreadySeen.add(imgUrl.origin);
-      if (!this.preconnectLinks) {
-        // Note: we query for preconnect links only *once* and cache the results
-        // for the entire lifespan of an application, since it's unlikely that the
-        // list would change frequently. This allows to make sure there are no
-        // performance implications of making extra DOM lookups for each image.
-        this.preconnectLinks = this.queryPreconnectLinks();
-      }
+      // Note: we query for preconnect links only *once* and cache the results
+      // for the entire lifespan of an application, since it's unlikely that the
+      // list would change frequently. This allows to make sure there are no
+      // performance implications of making extra DOM lookups for each image.
+      this.preconnectLinks ??= this.queryPreconnectLinks();
       if (!this.preconnectLinks.has(imgUrl.origin)) {
         console.warn((0,_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵformatRuntimeError"])(2956 /* RuntimeErrorCode.PRIORITY_IMG_MISSING_PRECONNECT_TAG */, `${imgDirectiveDetails(originalNgSrc)} there is no preconnect tag present for this ` + `image. Preconnecting to the origin(s) that serve priority images ensures that these ` + `images are delivered as soon as possible. To fix this, please add the following ` + `element into the <head> of the document:\n` + `  <link rel="preconnect" href="${imgUrl.origin}">`));
       }
@@ -6203,7 +6202,7 @@ const VIEWPORT_BREAKPOINT_CUTOFF = 640;
 /**
  * Used to determine whether two aspect ratios are similar in value.
  */
-const ASPECT_RATIO_TOLERANCE = .1;
+const ASPECT_RATIO_TOLERANCE = 0.1;
 /**
  * Used to determine whether the image has been requested at an overly
  * large size compared to the actual rendered image size (after taking
@@ -6403,9 +6402,7 @@ let NgOptimizedImage = /*#__PURE__*/(() => {
       // Must set width/height explicitly in case they are bound (in which case they will
       // only be reflected and not found by the browser)
       if (this.fill) {
-        if (!this.sizes) {
-          this.sizes = '100vw';
-        }
+        this.sizes ||= '100vw';
       } else {
         this.setHostAttribute('width', this.width.toString());
         this.setHostAttribute('height', this.height.toString());
@@ -6563,16 +6560,16 @@ let NgOptimizedImage = /*#__PURE__*/(() => {
         }
       },
       inputs: {
-        ngSrc: ["ngSrc", "ngSrc", unwrapSafeUrl],
+        ngSrc: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInputFlags"].HasDecoratorInputTransform, "ngSrc", "ngSrc", unwrapSafeUrl],
         ngSrcset: "ngSrcset",
         sizes: "sizes",
-        width: ["width", "width", _angular_core__WEBPACK_IMPORTED_MODULE_0__.numberAttribute],
-        height: ["height", "height", _angular_core__WEBPACK_IMPORTED_MODULE_0__.numberAttribute],
+        width: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInputFlags"].HasDecoratorInputTransform, "width", "width", _angular_core__WEBPACK_IMPORTED_MODULE_0__.numberAttribute],
+        height: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInputFlags"].HasDecoratorInputTransform, "height", "height", _angular_core__WEBPACK_IMPORTED_MODULE_0__.numberAttribute],
         loading: "loading",
-        priority: ["priority", "priority", _angular_core__WEBPACK_IMPORTED_MODULE_0__.booleanAttribute],
+        priority: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInputFlags"].HasDecoratorInputTransform, "priority", "priority", _angular_core__WEBPACK_IMPORTED_MODULE_0__.booleanAttribute],
         loaderParams: "loaderParams",
-        disableOptimizedSrcset: ["disableOptimizedSrcset", "disableOptimizedSrcset", _angular_core__WEBPACK_IMPORTED_MODULE_0__.booleanAttribute],
-        fill: ["fill", "fill", _angular_core__WEBPACK_IMPORTED_MODULE_0__.booleanAttribute],
+        disableOptimizedSrcset: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInputFlags"].HasDecoratorInputTransform, "disableOptimizedSrcset", "disableOptimizedSrcset", _angular_core__WEBPACK_IMPORTED_MODULE_0__.booleanAttribute],
+        fill: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInputFlags"].HasDecoratorInputTransform, "fill", "fill", _angular_core__WEBPACK_IMPORTED_MODULE_0__.booleanAttribute],
         src: "src",
         srcset: "srcset"
       },

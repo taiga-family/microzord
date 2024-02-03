@@ -14,7 +14,7 @@
 /* harmony export */   yZ: () => (/* binding */ USER_AGENT)
 /* harmony export */ });
 /* unused harmony exports CACHES, CRYPTO, LOCATION, MEDIA_DEVICES, NETWORK_INFORMATION, PAGE_VISIBILITY, PERFORMANCE, SCREEN, SESSION_STORAGE, SPEECH_RECOGNITION, SPEECH_SYNTHESIS */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1073);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5592);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2438);
@@ -23,7 +23,7 @@
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7398);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(3997);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(7081);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5897);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4482);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -138,7 +138,7 @@ const USER_AGENT = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken
 /* harmony export */   $: () => (/* binding */ HostChildWarningModule)
 /* harmony export */ });
 /* harmony import */ var _taiga_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8689);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1073);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -167,15 +167,15 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
 var platform_browser = __webpack_require__(6593);
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(9649);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.1.2 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(1073);
 // EXTERNAL MODULE: ./node_modules/@angular/animations/fesm2022/browser.mjs
 var browser = __webpack_require__(6108);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(5897);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.1.2 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(4482);
 ;// CONCATENATED MODULE: ./node_modules/@angular/platform-browser/fesm2022/animations.mjs
 /**
- * @license Angular v17.0.9
+ * @license Angular v17.1.2
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -192,14 +192,16 @@ let InjectableAnimationEngine = /*#__PURE__*/(() => {
     // The `ApplicationRef` is injected here explicitly to force the dependency ordering.
     // Since the `ApplicationRef` should be created earlier before the `AnimationEngine`, they
     // both have `ngOnDestroy` hooks and `flush()` must be called after all views are destroyed.
-    constructor(doc, driver, normalizer, appRef) {
-      super(doc, driver, normalizer);
+    constructor(doc, driver, normalizer) {
+      super(doc, driver, normalizer, (0,core_mjs_.inject)(core_mjs_["ɵChangeDetectionScheduler"], {
+        optional: true
+      }));
     }
     ngOnDestroy() {
       this.flush();
     }
     static #_ = this.ɵfac = function InjectableAnimationEngine_Factory(t) {
-      return new (t || InjectableAnimationEngine)(core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵinject"](browser/* AnimationDriver */.Vi), core_mjs_["ɵɵinject"](browser/* ɵAnimationStyleNormalizer */.NH), core_mjs_["ɵɵinject"](core_mjs_.ApplicationRef));
+      return new (t || InjectableAnimationEngine)(core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵinject"](browser/* AnimationDriver */.Vi), core_mjs_["ɵɵinject"](browser/* ɵAnimationStyleNormalizer */.NH));
     };
     static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
       token: InjectableAnimationEngine,
@@ -432,8 +434,8 @@ let AppComponent = /*#__PURE__*/(() => {
   }
   return AppComponent;
 })();
-// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
-var router_mjs_ = __webpack_require__(9823);
+// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.1.2 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
+var router_mjs_ = __webpack_require__(823);
 // EXTERNAL MODULE: ./node_modules/@tinkoff/ng-polymorpheus/fesm2015/tinkoff-ng-polymorpheus.js
 var tinkoff_ng_polymorpheus = __webpack_require__(2549);
 ;// CONCATENATED MODULE: ./apps/demo/src/app/logo/logo.component.ts
@@ -861,8 +863,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // UNUSED EXPORTS: PAGE_PROVIDERS, PAGE_SEE_ALSO, TUI_DOC_EXAMPLE_DEFAULT_OPTIONS, TUI_DOC_EXAMPLE_OPTIONS, TuiDocCopyComponent, TuiDocCopyModule, TuiDocDemoComponent, TuiDocExampleComponent, TuiDocExampleGetTabsPipe, TuiDocHeaderComponent, TuiDocHeaderModule, TuiDocNavigationComponent, TuiDocNavigationModule, TuiDocSeeAlsoComponent, TuiDocSeeAlsoModule, TuiDocSourceCodeComponent, TuiDocSourceCodeModule, TuiDocTabComponent, TuiDocTabModule, TuiDocTypeReferencePipe, TuiGetColorPipe, TuiGetOpacityPipe, TuiInputOpacityDirective, TuiInputOpacityModule, TuiInspectPipe, TuiIsOptionalPipe, TuiIsPrimitivePolymorpheusContentPipe, TuiLanguageSwitcherComponent, TuiLanguageSwitcherModule, TuiShowCleanerPipe, TuiStripOptionalPipe, tuiDocExampleOptionsProvider
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(9649);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.1.2 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(1073);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-tokens.js
 var taiga_ui_addon_doc_tokens = __webpack_require__(3594);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-utils.js + 75 modules
@@ -1026,7 +1028,7 @@ let TuiFocusableDirective = /*#__PURE__*/(() => {
       }
     },
     inputs: {
-      focusable: ["tuiFocusable", "focusable"]
+      focusable: [core_mjs_["ɵɵInputFlags"].None, "tuiFocusable", "focusable"]
     }
   });
   return TuiFocusableDirective;
@@ -1129,7 +1131,7 @@ let taiga_ui_cdk_directives_active_zone_TuiActiveZoneDirective = /*#__PURE__*/((
     type: TuiActiveZoneDirective,
     selectors: [["", "tuiActiveZone", "", 5, "ng-container"], ["", "tuiActiveZoneChange", "", 5, "ng-container"], ["", "tuiActiveZoneParent", "", 5, "ng-container"]],
     inputs: {
-      tuiActiveZoneParentSetter: ["tuiActiveZoneParent", "tuiActiveZoneParentSetter"]
+      tuiActiveZoneParentSetter: [core_mjs_["ɵɵInputFlags"].None, "tuiActiveZoneParent", "tuiActiveZoneParentSetter"]
     },
     outputs: {
       tuiActiveZoneChange: "tuiActiveZoneChange"
@@ -1609,8 +1611,8 @@ function debounce(durationSelector) {
 var of = __webpack_require__(2096);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/ReplaySubject.js
 var ReplaySubject = __webpack_require__(7328);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(5897);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.1.2 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(4482);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-constants.js
 var taiga_ui_core_constants = __webpack_require__(8103);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-directives-hint.js
@@ -1692,11 +1694,11 @@ let TuiHintOptionsDirective = /*#__PURE__*/(() => {
     type: TuiHintOptionsDirective,
     selectors: [["", "tuiHintContent", ""]],
     inputs: {
-      content: ["tuiHintContent", "content"],
-      direction: ["tuiHintDirection", "direction"],
-      appearance: ["tuiHintAppearance", "appearance"],
-      showDelay: ["tuiHintShowDelay", "showDelay"],
-      hideDelay: ["tuiHintHideDelay", "hideDelay"]
+      content: [core_mjs_["ɵɵInputFlags"].None, "tuiHintContent", "content"],
+      direction: [core_mjs_["ɵɵInputFlags"].None, "tuiHintDirection", "direction"],
+      appearance: [core_mjs_["ɵɵInputFlags"].None, "tuiHintAppearance", "appearance"],
+      showDelay: [core_mjs_["ɵɵInputFlags"].None, "tuiHintShowDelay", "showDelay"],
+      hideDelay: [core_mjs_["ɵɵInputFlags"].None, "tuiHintHideDelay", "hideDelay"]
     },
     features: [core_mjs_["ɵɵProvidersFeature"]([{
       provide: TUI_HINT_OPTIONS,
@@ -1749,8 +1751,8 @@ let TuiHintDirective = /*#__PURE__*/(() => {
     type: TuiHintDirective,
     selectors: [["", "tuiHint", "", 5, "ng-container", 5, "ng-template"]],
     inputs: {
-      content: ["tuiHint", "content"],
-      context: ["tuiHintContext", "context"],
+      content: [core_mjs_["ɵɵInputFlags"].None, "tuiHint", "content"],
+      context: [core_mjs_["ɵɵInputFlags"].None, "tuiHintContext", "context"],
       tuiHintAppearance: "tuiHintAppearance"
     },
     features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_abstract/* tuiAsRectAccessor */.Ic)(TuiHintDirective), (0,taiga_ui_core_abstract/* tuiAsVehicle */.Fe)(TuiHintDirective), {
@@ -1794,8 +1796,8 @@ let TuiHintHoverDirective = /*#__PURE__*/(() => {
     type: TuiHintHoverDirective,
     selectors: [["", "tuiHint", "", 5, "ng-container", 5, "ng-template"]],
     inputs: {
-      showDelay: ["tuiHintShowDelay", "showDelay"],
-      hideDelay: ["tuiHintHideDelay", "hideDelay"]
+      showDelay: [core_mjs_["ɵɵInputFlags"].None, "tuiHintShowDelay", "showDelay"],
+      hideDelay: [core_mjs_["ɵɵInputFlags"].None, "tuiHintHideDelay", "hideDelay"]
     },
     exportAs: ["tuiHintHover"],
     features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_abstract/* tuiAsDriver */.UK)(TuiHintHoverDirective), TuiHoveredService]), core_mjs_["ɵɵInheritDefinitionFeature"]]
@@ -2139,7 +2141,7 @@ let TuiHintPositionDirective = /*#__PURE__*/(() => {
     type: TuiHintPositionDirective,
     selectors: [["", "tuiHint", "", 3, "tuiHintCustomPosition", "", 5, "ng-container", 5, "ng-template"]],
     inputs: {
-      direction: ["tuiHintDirection", "direction"]
+      direction: [core_mjs_["ɵɵInputFlags"].None, "tuiHintDirection", "direction"]
     },
     features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_abstract/* tuiAsPositionAccessor */.P7)(TuiHintPositionDirective)]), core_mjs_["ɵɵInheritDefinitionFeature"]]
   });
@@ -2335,7 +2337,7 @@ let TuiTextfieldAppearanceDirective = /*#__PURE__*/(() => {
     type: TuiTextfieldAppearanceDirective,
     selectors: [["", "tuiTextfieldAppearance", ""]],
     inputs: {
-      appearance: ["tuiTextfieldAppearance", "appearance"]
+      appearance: [core_mjs_["ɵɵInputFlags"].None, "tuiTextfieldAppearance", "appearance"]
     },
     features: [core_mjs_["ɵɵProvidersFeature"]([{
       provide: TUI_TEXTFIELD_APPEARANCE_DIRECTIVE,
@@ -2365,7 +2367,7 @@ let TuiTextfieldCleanerDirective = /*#__PURE__*/(() => {
     type: TuiTextfieldCleanerDirective,
     selectors: [["", "tuiTextfieldCleaner", ""]],
     inputs: {
-      cleaner: ["tuiTextfieldCleaner", "cleaner"]
+      cleaner: [core_mjs_["ɵɵInputFlags"].None, "tuiTextfieldCleaner", "cleaner"]
     },
     features: [core_mjs_["ɵɵProvidersFeature"]([{
       provide: TUI_TEXTFIELD_CLEANER,
@@ -2390,7 +2392,7 @@ let TuiTextfieldCustomContentDirective = /*#__PURE__*/(() => {
     type: TuiTextfieldCustomContentDirective,
     selectors: [["", "tuiTextfieldCustomContent", ""]],
     inputs: {
-      customContent: ["tuiTextfieldCustomContent", "customContent"]
+      customContent: [core_mjs_["ɵɵInputFlags"].None, "tuiTextfieldCustomContent", "customContent"]
     },
     features: [core_mjs_["ɵɵProvidersFeature"]([{
       provide: TUI_TEXTFIELD_CUSTOM_CONTENT,
@@ -2420,7 +2422,7 @@ let TuiTextfieldFillerDirective = /*#__PURE__*/(() => {
     type: TuiTextfieldFillerDirective,
     selectors: [["", "tuiTextfieldFiller", ""]],
     inputs: {
-      filler: ["tuiTextfieldFiller", "filler"]
+      filler: [core_mjs_["ɵɵInputFlags"].None, "tuiTextfieldFiller", "filler"]
     },
     features: [core_mjs_["ɵɵProvidersFeature"]([{
       provide: TUI_TEXTFIELD_FILLER,
@@ -2445,7 +2447,7 @@ let TuiTextfieldIconDirective = /*#__PURE__*/(() => {
     type: TuiTextfieldIconDirective,
     selectors: [["", "tuiTextfieldIcon", ""]],
     inputs: {
-      icon: ["tuiTextfieldIcon", "icon"]
+      icon: [core_mjs_["ɵɵInputFlags"].None, "tuiTextfieldIcon", "icon"]
     },
     features: [core_mjs_["ɵɵProvidersFeature"]([{
       provide: TUI_TEXTFIELD_ICON,
@@ -2470,7 +2472,7 @@ let TuiTextfieldIconLeftDirective = /*#__PURE__*/(() => {
     type: TuiTextfieldIconLeftDirective,
     selectors: [["", "tuiTextfieldIconLeft", ""]],
     inputs: {
-      iconLeft: ["tuiTextfieldIconLeft", "iconLeft"]
+      iconLeft: [core_mjs_["ɵɵInputFlags"].None, "tuiTextfieldIconLeft", "iconLeft"]
     },
     features: [core_mjs_["ɵɵProvidersFeature"]([{
       provide: TUI_TEXTFIELD_ICON_LEFT,
@@ -2500,7 +2502,7 @@ let TuiTextfieldLabelOutsideDirective = /*#__PURE__*/(() => {
     type: TuiTextfieldLabelOutsideDirective,
     selectors: [["", "tuiTextfieldLabelOutside", ""]],
     inputs: {
-      labelOutside: ["tuiTextfieldLabelOutside", "labelOutside"]
+      labelOutside: [core_mjs_["ɵɵInputFlags"].None, "tuiTextfieldLabelOutside", "labelOutside"]
     },
     features: [core_mjs_["ɵɵProvidersFeature"]([{
       provide: TUI_TEXTFIELD_LABEL_OUTSIDE,
@@ -2530,7 +2532,7 @@ let TuiTextfieldPostfixDirective = /*#__PURE__*/(() => {
     type: TuiTextfieldPostfixDirective,
     selectors: [["", "tuiTextfieldPostfix", ""]],
     inputs: {
-      postfix: ["tuiTextfieldPostfix", "postfix"]
+      postfix: [core_mjs_["ɵɵInputFlags"].None, "tuiTextfieldPostfix", "postfix"]
     },
     features: [core_mjs_["ɵɵProvidersFeature"]([{
       provide: TUI_TEXTFIELD_POSTFIX,
@@ -2560,7 +2562,7 @@ let TuiTextfieldPrefixDirective = /*#__PURE__*/(() => {
     type: TuiTextfieldPrefixDirective,
     selectors: [["", "tuiTextfieldPrefix", ""]],
     inputs: {
-      prefix: ["tuiTextfieldPrefix", "prefix"]
+      prefix: [core_mjs_["ɵɵInputFlags"].None, "tuiTextfieldPrefix", "prefix"]
     },
     features: [core_mjs_["ɵɵProvidersFeature"]([{
       provide: TUI_TEXTFIELD_PREFIX,
@@ -2590,7 +2592,7 @@ let taiga_ui_core_directives_textfield_controller_TuiTextfieldSizeDirective = /*
     type: TuiTextfieldSizeDirective,
     selectors: [["", "tuiTextfieldSize", ""]],
     inputs: {
-      size: ["tuiTextfieldSize", "size"]
+      size: [core_mjs_["ɵɵInputFlags"].None, "tuiTextfieldSize", "size"]
     },
     features: [core_mjs_["ɵɵProvidersFeature"]([{
       provide: TUI_TEXTFIELD_SIZE,
@@ -3317,13 +3319,13 @@ let TuiPrimitiveTextfieldComponent = /*#__PURE__*/(() => {
     },
     inputs: {
       editable: "editable",
-      textfieldFiller: ["filler", "textfieldFiller"],
+      textfieldFiller: [core_mjs_["ɵɵInputFlags"].None, "filler", "textfieldFiller"],
       iconCleaner: "iconCleaner",
       readOnly: "readOnly",
       invalid: "invalid",
       disabled: "disabled",
-      textfieldPrefix: ["prefix", "textfieldPrefix"],
-      textfieldPostfix: ["postfix", "textfieldPostfix"],
+      textfieldPrefix: [core_mjs_["ɵɵInputFlags"].None, "prefix", "textfieldPrefix"],
+      textfieldPostfix: [core_mjs_["ɵɵInputFlags"].None, "postfix", "textfieldPostfix"],
       value: "value"
     },
     outputs: {
@@ -3628,7 +3630,7 @@ let TuiOverscrollDirective = /*#__PURE__*/(() => {
       }
     },
     inputs: {
-      mode: ["tuiOverscroll", "mode"]
+      mode: [core_mjs_["ɵɵInputFlags"].None, "tuiOverscroll", "mode"]
     },
     features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3])]
   });
@@ -4357,7 +4359,7 @@ let TuiDropdownDirective = /*#__PURE__*/(() => {
     type: TuiDropdownDirective,
     selectors: [["", "tuiDropdown", "", 5, "ng-container"]],
     inputs: {
-      content: ["tuiDropdown", "content"]
+      content: [core_mjs_["ɵɵInputFlags"].None, "tuiDropdown", "content"]
     },
     exportAs: ["tuiDropdown"],
     features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.a3, (0,taiga_ui_core_abstract/* tuiAsRectAccessor */.Ic)(TuiDropdownDirective), (0,taiga_ui_core_abstract/* tuiAsVehicle */.Fe)(TuiDropdownDirective)]), core_mjs_["ɵɵNgOnChangesFeature"]]
@@ -4410,8 +4412,8 @@ let TuiDropdownHoverDirective = /*#__PURE__*/(() => {
     type: TuiDropdownHoverDirective,
     selectors: [["", "tuiDropdownHover", "", 5, "ng-container"]],
     inputs: {
-      showDelay: ["tuiDropdownShowDelay", "showDelay"],
-      hideDelay: ["tuiDropdownHideDelay", "hideDelay"]
+      showDelay: [core_mjs_["ɵɵInputFlags"].None, "tuiDropdownShowDelay", "showDelay"],
+      hideDelay: [core_mjs_["ɵɵInputFlags"].None, "tuiDropdownHideDelay", "hideDelay"]
     },
     features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_abstract/* tuiAsDriver */.UK)(TuiDropdownHoverDirective), TuiHoveredService]), core_mjs_["ɵɵInheritDefinitionFeature"]]
   });
@@ -4460,13 +4462,13 @@ let TuiDropdownOptionsDirective = /*#__PURE__*/(() => {
     type: TuiDropdownOptionsDirective,
     selectors: [["", "tuiDropdownAlign", ""], ["", "tuiDropdownAppearance", ""], ["", "tuiDropdownDirection", ""], ["", "tuiDropdownLimitWidth", ""], ["", "tuiDropdownMinHeight", ""], ["", "tuiDropdownMaxHeight", ""], ["", "tuiDropdownOffset", ""]],
     inputs: {
-      align: ["tuiDropdownAlign", "align"],
-      appearance: ["tuiDropdownAppearance", "appearance"],
-      direction: ["tuiDropdownDirection", "direction"],
-      limitWidth: ["tuiDropdownLimitWidth", "limitWidth"],
-      minHeight: ["tuiDropdownMinHeight", "minHeight"],
-      maxHeight: ["tuiDropdownMaxHeight", "maxHeight"],
-      offset: ["tuiDropdownOffset", "offset"]
+      align: [core_mjs_["ɵɵInputFlags"].None, "tuiDropdownAlign", "align"],
+      appearance: [core_mjs_["ɵɵInputFlags"].None, "tuiDropdownAppearance", "appearance"],
+      direction: [core_mjs_["ɵɵInputFlags"].None, "tuiDropdownDirection", "direction"],
+      limitWidth: [core_mjs_["ɵɵInputFlags"].None, "tuiDropdownLimitWidth", "limitWidth"],
+      minHeight: [core_mjs_["ɵɵInputFlags"].None, "tuiDropdownMinHeight", "minHeight"],
+      maxHeight: [core_mjs_["ɵɵInputFlags"].None, "tuiDropdownMaxHeight", "maxHeight"],
+      offset: [core_mjs_["ɵɵInputFlags"].None, "tuiDropdownOffset", "offset"]
     },
     features: [core_mjs_["ɵɵProvidersFeature"]([{
       provide: TUI_DROPDOWN_OPTIONS,
@@ -5038,7 +5040,7 @@ let TuiDropdownSelectionDirective = /*#__PURE__*/(/* unused pure expression or s
     type: TuiDropdownSelectionDirective,
     selectors: [["", "tuiDropdown", "", "tuiDropdownSelection", ""]],
     inputs: {
-      position: ["tuiDropdownSelectionPosition", "position"],
+      position: [i0.ɵɵInputFlags.None, "tuiDropdownSelectionPosition", "position"],
       tuiDropdownSelection: "tuiDropdownSelection"
     },
     features: [i0.ɵɵProvidersFeature([tuiAsDriver(TuiDropdownSelectionDirective), tuiAsRectAccessor(TuiDropdownSelectionDirective)]), i0.ɵɵInheritDefinitionFeature]
@@ -6057,7 +6059,7 @@ let TuiExpandComponent = /*#__PURE__*/(() => {
     },
     inputs: {
       async: "async",
-      expandedSetter: ["expanded", "expandedSetter"]
+      expandedSetter: [core_mjs_["ɵɵInputFlags"].None, "expanded", "expandedSetter"]
     },
     ngContentSelectors: taiga_ui_core_components_expand_c1,
     decls: 3,
@@ -7136,8 +7138,8 @@ let TuiAlertDirective = /*#__PURE__*/(/* unused pure expression or super */ null
     type: TuiAlertDirective,
     selectors: [["ng-template", "tuiAlert", ""]],
     inputs: {
-      options: ["tuiAlertOptions", "options"],
-      open: ["tuiAlert", "open"]
+      options: [i0.ɵɵInputFlags.None, "tuiAlertOptions", "options"],
+      open: [i0.ɵɵInputFlags.None, "tuiAlert", "open"]
     },
     outputs: {
       openChange: "tuiAlertChange"
@@ -7960,7 +7962,7 @@ let TuiAutoFocusDirective = /*#__PURE__*/(() => {
     type: TuiAutoFocusDirective,
     selectors: [["", "tuiAutoFocus", ""]],
     inputs: {
-      autoFocus: ["tuiAutoFocus", "autoFocus"]
+      autoFocus: [core_mjs_["ɵɵInputFlags"].None, "tuiAutoFocus", "autoFocus"]
     },
     features: [core_mjs_["ɵɵProvidersFeature"](TUI_AUTOFOCUS_PROVIDERS)]
   });
@@ -8294,8 +8296,8 @@ let TuiDialogDirective = /*#__PURE__*/(/* unused pure expression or super */ nul
     type: TuiDialogDirective,
     selectors: [["ng-template", "tuiDialog", ""]],
     inputs: {
-      options: ["tuiDialogOptions", "options"],
-      open: ["tuiDialog", "open"]
+      options: [i0.ɵɵInputFlags.None, "tuiDialogOptions", "options"],
+      open: [i0.ɵɵInputFlags.None, "tuiDialog", "open"]
     },
     outputs: {
       openChange: "tuiDialogChange"
@@ -8525,12 +8527,13 @@ let CdkCopyToClipboard = /*#__PURE__*/(() => {
         }
       },
       inputs: {
-        text: ["cdkCopyToClipboard", "text"],
-        attempts: ["cdkCopyToClipboardAttempts", "attempts"]
+        text: [core_mjs_["ɵɵInputFlags"].None, "cdkCopyToClipboard", "text"],
+        attempts: [core_mjs_["ɵɵInputFlags"].None, "cdkCopyToClipboardAttempts", "attempts"]
       },
       outputs: {
         copied: "cdkCopyToClipboardCopied"
-      }
+      },
+      standalone: true
     });
   }
   return CdkCopyToClipboard;
@@ -16034,8 +16037,8 @@ let TuiTagModule = /*#__PURE__*/(() => {
 
 
 //# sourceMappingURL=taiga-ui-kit-components-tag.js.map
-// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
-var router_mjs_ = __webpack_require__(9823);
+// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.1.2 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
+var router_mjs_ = __webpack_require__(823);
 ;// CONCATENATED MODULE: ./node_modules/@ng-web-apis/mutation-observer/fesm2015/ng-web-apis-mutation-observer.js
 
 
@@ -16916,7 +16919,7 @@ let TuiTabsWithMoreComponent = /*#__PURE__*/(() => {
       moreContent: "moreContent",
       dropdownContent: "dropdownContent",
       underline: "underline",
-      itemIndex: ["activeItemIndex", "itemIndex"],
+      itemIndex: [core_mjs_["ɵɵInputFlags"].None, "activeItemIndex", "itemIndex"],
       itemsLimit: "itemsLimit"
     },
     outputs: {
@@ -17432,7 +17435,7 @@ let TuiPrimitiveCheckboxComponent = /*#__PURE__*/(/* unused pure expression or s
       hovered: "hovered",
       pressed: "pressed",
       invalid: "invalid",
-      valueSetter: ["value", "valueSetter"]
+      valueSetter: [i0.ɵɵInputFlags.None, "value", "valueSetter"]
     },
     ngContentSelectors: taiga_ui_core_components_primitive_checkbox_c1,
     decls: 3,
@@ -17800,8 +17803,8 @@ let TuiSidebarDirective = /*#__PURE__*/(() => {
     type: TuiSidebarDirective,
     selectors: [["", "tuiSidebar", ""]],
     inputs: {
-      direction: ["tuiSidebarDirection", "direction"],
-      autoWidth: ["tuiSidebarAutoWidth", "autoWidth"],
+      direction: [core_mjs_["ɵɵInputFlags"].None, "tuiSidebarDirection", "direction"],
+      autoWidth: [core_mjs_["ɵɵInputFlags"].None, "tuiSidebarAutoWidth", "autoWidth"],
       tuiSidebar: "tuiSidebar"
     },
     features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
@@ -17979,7 +17982,7 @@ let TuiTextCodeDirective = /*#__PURE__*/(/* unused pure expression or super */ n
       }
     },
     inputs: {
-      code: ["tuiText", "code"]
+      code: [i0.ɵɵInputFlags.None, "tuiText", "code"]
     }
   });
   return TuiTextCodeDirective;
@@ -21346,7 +21349,7 @@ let TuiDocPageModule = /*#__PURE__*/(() => {
 /* harmony export */ });
 /* unused harmony exports TUI_DOC_CODE_ACTIONS, TUI_DOC_CODE_EDITOR, TUI_DOC_DEFAULT_ICONS, TUI_DOC_DEMO_TEXTS, TUI_DOC_EXAMPLE_CONTENT_PROCESSOR, TUI_DOC_EXAMPLE_TEXTS, TUI_DOC_SCROLL_BEHAVIOR, tuiDocExcludeProperties, tuiDocIconsProvider */
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8937);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1073);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_addon_doc_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1569);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2737);
@@ -30076,7 +30079,7 @@ function tuiTypeReferenceParser(types) {
 /* harmony export */   wB: () => (/* binding */ tuiAsControl)
 /* harmony export */ });
 /* unused harmony exports AbstractTuiDialogDirective, AbstractTuiMultipleControl */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1073);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(95);
 /* harmony import */ var _taiga_ui_cdk_classes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7178);
@@ -30095,7 +30098,7 @@ function tuiTypeReferenceParser(types) {
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(9773);
 /* harmony import */ var _taiga_ui_cdk_services__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(5423);
 /* harmony import */ var _taiga_ui_cdk_exceptions__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(7122);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5897);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4482);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -30730,7 +30733,7 @@ class TuiValidationError {
 /* harmony export */   yZ: () => (/* binding */ TUI_DEFAULT_STRINGIFY)
 /* harmony export */ });
 /* unused harmony exports CHAR_BULLET, CHAR_CURRENCY_SIGN, CHAR_ELLIPSIS, CHAR_EM_DASH, CHAR_LAQUO, CHAR_PLUS, CHAR_RAQUO, CHAR_ZERO_WIDTH_SPACE, CHROMIUM_EDGE_START_VERSION, TUI_DEFAULT_MATCHER, TUI_PARENT_STOP, TUI_STRICT_MATCHER, TUI_USED_ICONS */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1073);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6825);
 
@@ -31126,7 +31129,7 @@ function tuiRequiredSetter(assertion, ...args) {
 /* harmony export */   WD: () => (/* binding */ TuiLetModule)
 /* harmony export */ });
 /* unused harmony export TuiLetContext */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1073);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -31574,8 +31577,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // UNUSED EXPORTS: TuiPanService, TuiScrollService, TuiZoomService
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(9649);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.1.2 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(1073);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/ReplaySubject.js
 var ReplaySubject = __webpack_require__(7328);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Observable.js
@@ -31622,8 +31625,8 @@ var ng_web_apis_common = __webpack_require__(229);
 var taiga_ui_cdk_constants = __webpack_require__(6141);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-dom.js
 var taiga_ui_cdk_utils_dom = __webpack_require__(7995);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(5897);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.1.2 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(4482);
 ;// CONCATENATED MODULE: ./node_modules/@ng-web-apis/resize-observer/fesm2015/ng-web-apis-resize-observer.js
 
 
@@ -32303,10 +32306,10 @@ __webpack_require__.d(__webpack_exports__, {
 
 // UNUSED EXPORTS: TUI_DEFAULT_RENDERER, TUI_ENSURE_BASE_HREF, TUI_IS_APPLE, TUI_IS_CHROMIUM, TUI_IS_CYPRESS, TUI_IS_FIREFOX, TUI_IS_PLAYWRIGHT, TUI_IS_STACKBLITZ, TUI_PLATFORM, TUI_RANGE, TUI_REMOVED_ELEMENT, TUI_TAKE_ONLY_TRUSTED_EVENTS, TUI_TOUCH_SUPPORTED, TUI_WINDOW_HEIGHT, TUI_ZOOM_OPTIONS, tuiPlatformFactory
 
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(5897);
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(9649);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.1.2 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(4482);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.1.2 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(1073);
 // EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
 var ng_web_apis_common = __webpack_require__(229);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-observables.js
@@ -33349,7 +33352,7 @@ function tuiToRadians(deg) {
 /* harmony export */   pf: () => (/* binding */ tuiUniqBy)
 /* harmony export */ });
 /* unused harmony exports tuiArrayShallowEquals, tuiArrayToggle, tuiCleanObject, tuiCreateOptions, tuiDefaultSort, tuiDistanceBetweenTouches, tuiEaseInOutQuad, tuiFlatLength, tuiIsObject, tuiIsValidUrl, tuiMarkControlAsTouchedAndValidate, tuiNullableSame, tuiObjectFromEntries, tuiProvideOptions */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1073);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -33621,7 +33624,7 @@ fallback = 'rgba(0, 0, 0, 0.7)') {
 /* harmony export */   kk: () => (/* binding */ TuiDriver),
 /* harmony export */   uG: () => (/* binding */ TuiPositionAccessor)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1073);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5423);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(2461);
@@ -33777,7 +33780,7 @@ function tuiAsRectAccessor(useExisting) {
 /* harmony export */   v0: () => (/* binding */ TuiButtonComponent)
 /* harmony export */ });
 /* unused harmony exports TUI_BUTTON_DEFAULT_OPTIONS, TUI_BUTTON_OPTIONS, tuiButtonOptionsProvider */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1073);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8937);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2461);
@@ -33792,7 +33795,7 @@ function tuiAsRectAccessor(useExisting) {
 /* harmony import */ var _taiga_ui_core_enums__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7241);
 /* harmony import */ var _taiga_ui_core_components_svg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(7415);
 /* harmony import */ var _taiga_ui_core_components_loader__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(63);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5897);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4482);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _taiga_ui_core_directives_wrapper__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(1713);
 /* harmony import */ var _tinkoff_ng_polymorpheus__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(2549);
@@ -34026,7 +34029,7 @@ let TuiButtonModule = /*#__PURE__*/(() => {
 /* harmony export */   V: () => (/* binding */ TuiLinkComponent),
 /* harmony export */   j: () => (/* binding */ TuiLinkModule)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1073);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5213);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6141);
@@ -34038,7 +34041,7 @@ let TuiButtonModule = /*#__PURE__*/(() => {
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3019);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7398);
 /* harmony import */ var _taiga_ui_core_components_svg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(7415);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5897);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4482);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -34197,9 +34200,9 @@ let TuiLinkModule = /*#__PURE__*/(() => {
 /* harmony export */   kM: () => (/* binding */ TuiLoaderComponent)
 /* harmony export */ });
 /* unused harmony exports TUI_LOADER_DEFAULT_OPTIONS, TUI_LOADER_OPTIONS, tuiLoaderOptionsProvider */
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5897);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4482);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9649);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1073);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8937);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2310);
@@ -34389,13 +34392,13 @@ let TuiLoaderModule = /*#__PURE__*/(() => {
 /* harmony export */   H: () => (/* binding */ TuiNotificationModule),
 /* harmony export */   L: () => (/* binding */ TuiNotificationComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1073);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5213);
 /* harmony import */ var _taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4862);
 /* harmony import */ var _taiga_ui_core_components_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7415);
 /* harmony import */ var _taiga_ui_core_components_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(631);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5897);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4482);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _tinkoff_ng_polymorpheus__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(2549);
 
@@ -34558,9 +34561,9 @@ let TuiNotificationModule = /*#__PURE__*/(() => {
 /* harmony export */ });
 /* unused harmony exports TUI_DEPRECATED_ICONS, TUI_SVG_DEFAULT_OPTIONS, TUI_SVG_OPTIONS, TUI_SVG_SRC_INTERCEPTORS, tuiSvgOptionsProvider, tuiSvgSrcInterceptors */
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(7582);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5897);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4482);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9649);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1073);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(6593);
 /* harmony import */ var _ng_web_apis_common__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(229);
@@ -34995,7 +34998,7 @@ const TUI_LATIN_AND_NUMBERS_REGEXP = /[A-z|0-9]/;
 /* harmony export */   w: () => (/* binding */ TuiModeDirective),
 /* harmony export */   z: () => (/* binding */ TuiModeModule)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1073);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2461);
 
@@ -35018,7 +35021,7 @@ let TuiModeDirective = /*#__PURE__*/(() => {
     type: TuiModeDirective,
     selectors: [["", "tuiMode", ""]],
     inputs: {
-      mode: ["tuiMode", "mode"]
+      mode: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInputFlags"].None, "tuiMode", "mode"]
     },
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]]
   });
@@ -35058,7 +35061,7 @@ let TuiModeModule = /*#__PURE__*/(() => {
 /* harmony export */   W: () => (/* binding */ TuiWrapperModule),
 /* harmony export */   o: () => (/* binding */ TuiWrapperDirective)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1073);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_core_enums__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7241);
 /* harmony import */ var _taiga_ui_core_providers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1379);
@@ -35248,7 +35251,7 @@ var TuiRangeState = /*#__PURE__*/function (TuiRangeState) {
 /* harmony export */   CV: () => (/* binding */ MODE_PROVIDER)
 /* harmony export */ });
 /* unused harmony exports TUI_IS_MOBILE_RES_PROVIDER, tuiWatchedControllerFactory */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1073);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4862);
 /* harmony import */ var _taiga_ui_core_directives_mode__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6371);
@@ -35312,7 +35315,7 @@ function tuiWatchedControllerFactory(controller, cdr, destroy$) {
 /* harmony export */   zE: () => (/* binding */ TuiBreakpointService)
 /* harmony export */ });
 /* unused harmony exports TuiFormatDateService, TuiNightThemeService */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1073);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5213);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(2918);
@@ -35332,7 +35335,7 @@ function tuiWatchedControllerFactory(controller, cdr, destroy$) {
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(9773);
 /* harmony import */ var _ng_web_apis_common__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(229);
 /* harmony import */ var _taiga_ui_core_abstract__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(9315);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9823);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(823);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_router__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(6593);
 /* harmony import */ var _taiga_ui_core_utils_dom__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(2103);
@@ -35643,8 +35646,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // UNUSED EXPORTS: STATUS_ICON, TUI_ANIMATIONS_DEFAULT_DURATION, TUI_ASSERT_ENABLED, TUI_DATA_LIST_ACCESSOR, TUI_DAY_TYPE_HANDLER, TUI_DEFAULT_ERROR_MESSAGE, TUI_DOCUMENT_OR_SHADOW_ROOT, TUI_ELEMENT_REF, TUI_FIRST_DAY_OF_WEEK, TUI_NOTIFICATION_DEFAULT_OPTIONS, TUI_NUMBER_FORMAT_OBSERVABLE, TUI_ORDERED_SHORT_WEEK_DAYS, TUI_SCROLL_REF, TUI_SELECTION_STREAM, TUI_SHORT_WEEK_DAYS, TUI_SPIN_ICONS, TUI_SPIN_TEXTS, tuiAsViewport, tuiCommonIconsProvider, tuiNotificationOptionsProvider, tuiNumberFormatProvider
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(9649);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.1.2 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(1073);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-miscellaneous.js
 var taiga_ui_cdk_utils_miscellaneous = __webpack_require__(8937);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-enums.js
@@ -35653,8 +35656,8 @@ var taiga_ui_cdk_enums = __webpack_require__(7344);
 var taiga_ui_cdk_observables = __webpack_require__(5213);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-svg.js
 var taiga_ui_cdk_utils_svg = __webpack_require__(651);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(5897);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.1.2 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(4482);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/i18n/fesm2015/taiga-ui-i18n-tools.js + 2 modules
 var taiga_ui_i18n_tools = __webpack_require__(7042);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-utils-miscellaneous.js
@@ -36538,8 +36541,8 @@ __webpack_require__.d(__webpack_exports__, {
   v: () => (/* binding */ tuiExtractI18n)
 });
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(9649);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.1.2 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(1073);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/i18n/fesm2015/taiga-ui-i18n-enums.js
 var taiga_ui_i18n_enums = __webpack_require__(8751);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/i18n/fesm2015/taiga-ui-i18n-languages-english.js
@@ -36986,7 +36989,7 @@ function tuiExtractI18n(key) {
 /* harmony export */   wq: () => (/* binding */ PolymorpheusModule),
 /* harmony export */   yf: () => (/* binding */ POLYMORPHEUS_CONTEXT)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1073);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -37133,8 +37136,8 @@ let PolymorpheusOutletDirective = /*#__PURE__*/(() => {
     type: PolymorpheusOutletDirective,
     selectors: [["", "polymorpheusOutlet", ""]],
     inputs: {
-      content: ["polymorpheusOutlet", "content"],
-      context: ["polymorpheusOutletContext", "context"]
+      content: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInputFlags"].None, "polymorpheusOutlet", "content"],
+      context: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInputFlags"].None, "polymorpheusOutletContext", "context"]
     },
     features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]]
   });
@@ -38223,15 +38226,16 @@ function argsOrArgArray(args) {
 /* harmony export */   jt: () => (/* binding */ animate),
 /* harmony export */   k1: () => (/* binding */ ɵPRE_STYLE),
 /* harmony export */   l3: () => (/* binding */ AUTO_STYLE),
+/* harmony export */   mo: () => (/* binding */ AnimationMetadataType),
 /* harmony export */   oB: () => (/* binding */ style),
 /* harmony export */   pV: () => (/* binding */ animateChild),
 /* harmony export */   vP: () => (/* binding */ sequence)
 /* harmony export */ });
 /* unused harmony exports AnimationBuilder, AnimationFactory, animation, group, keyframes, state, useAnimation, ɵBrowserAnimationBuilder */
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5897);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9649);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4482);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1073);
 /**
- * @license Angular v17.0.9
+ * @license Angular v17.1.2
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -38240,6 +38244,82 @@ function argsOrArgArray(args) {
 
 
 
+/**
+ * @description Constants for the categories of parameters that can be defined for animations.
+ *
+ * A corresponding function defines a set of parameters for each category, and
+ * collects them into a corresponding `AnimationMetadata` object.
+ *
+ * @publicApi
+ */
+var AnimationMetadataType = /*#__PURE__*/function (AnimationMetadataType) {
+  /**
+   * Associates a named animation state with a set of CSS styles.
+   * See [`state()`](api/animations/state)
+   */
+  AnimationMetadataType[AnimationMetadataType["State"] = 0] = "State";
+  /**
+   * Data for a transition from one animation state to another.
+   * See `transition()`
+   */
+  AnimationMetadataType[AnimationMetadataType["Transition"] = 1] = "Transition";
+  /**
+   * Contains a set of animation steps.
+   * See `sequence()`
+   */
+  AnimationMetadataType[AnimationMetadataType["Sequence"] = 2] = "Sequence";
+  /**
+   * Contains a set of animation steps.
+   * See `{@link animations/group group()}`
+   */
+  AnimationMetadataType[AnimationMetadataType["Group"] = 3] = "Group";
+  /**
+   * Contains an animation step.
+   * See `animate()`
+   */
+  AnimationMetadataType[AnimationMetadataType["Animate"] = 4] = "Animate";
+  /**
+   * Contains a set of animation steps.
+   * See `keyframes()`
+   */
+  AnimationMetadataType[AnimationMetadataType["Keyframes"] = 5] = "Keyframes";
+  /**
+   * Contains a set of CSS property-value pairs into a named style.
+   * See `style()`
+   */
+  AnimationMetadataType[AnimationMetadataType["Style"] = 6] = "Style";
+  /**
+   * Associates an animation with an entry trigger that can be attached to an element.
+   * See `trigger()`
+   */
+  AnimationMetadataType[AnimationMetadataType["Trigger"] = 7] = "Trigger";
+  /**
+   * Contains a re-usable animation.
+   * See `animation()`
+   */
+  AnimationMetadataType[AnimationMetadataType["Reference"] = 8] = "Reference";
+  /**
+   * Contains data to use in executing child animations returned by a query.
+   * See `animateChild()`
+   */
+  AnimationMetadataType[AnimationMetadataType["AnimateChild"] = 9] = "AnimateChild";
+  /**
+   * Contains animation parameters for a re-usable animation.
+   * See `useAnimation()`
+   */
+  AnimationMetadataType[AnimationMetadataType["AnimateRef"] = 10] = "AnimateRef";
+  /**
+   * Contains child-animation query data.
+   * See `query()`
+   */
+  AnimationMetadataType[AnimationMetadataType["Query"] = 11] = "Query";
+  /**
+   * Contains data for staggering an animation sequence.
+   * See `stagger()`
+   */
+  AnimationMetadataType[AnimationMetadataType["Stagger"] = 12] = "Stagger";
+  return AnimationMetadataType;
+}(AnimationMetadataType || {});
 /**
  * Specifies automatic styling.
  *
@@ -38396,7 +38476,7 @@ const AUTO_STYLE = '*';
  */
 function trigger(name, definitions) {
   return {
-    type: 7 /* AnimationMetadataType.Trigger */,
+    type: AnimationMetadataType.Trigger,
     name,
     definitions,
     options: {}
@@ -38462,7 +38542,7 @@ function trigger(name, definitions) {
  */
 function animate(timings, styles = null) {
   return {
-    type: 4 /* AnimationMetadataType.Animate */,
+    type: AnimationMetadataType.Animate,
     styles,
     timings
   };
@@ -38502,7 +38582,7 @@ function animate(timings, styles = null) {
  */
 function group(steps, options = null) {
   return {
-    type: 3 /* AnimationMetadataType.Group */,
+    type: AnimationMetadataType.Group,
     steps,
     options
   };
@@ -38542,7 +38622,7 @@ function group(steps, options = null) {
  **/
 function sequence(steps, options = null) {
   return {
-    type: 2 /* AnimationMetadataType.Sequence */,
+    type: AnimationMetadataType.Sequence,
     steps,
     options
   };
@@ -38588,7 +38668,7 @@ function sequence(steps, options = null) {
  **/
 function style(tokens) {
   return {
-    type: 6 /* AnimationMetadataType.Style */,
+    type: AnimationMetadataType.Style,
     styles: tokens,
     offset: null
   };
@@ -38624,7 +38704,7 @@ function style(tokens) {
  **/
 function state(name, styles, options) {
   return {
-    type: 0 /* AnimationMetadataType.State */,
+    type: AnimationMetadataType.State,
     name,
     styles,
     options
@@ -38677,7 +38757,7 @@ function state(name, styles, options) {
  */
 function keyframes(steps) {
   return {
-    type: 5 /* AnimationMetadataType.Keyframes */,
+    type: AnimationMetadataType.Keyframes,
     steps
   };
 }
@@ -38829,7 +38909,7 @@ function keyframes(steps) {
  **/
 function transition(stateChangeExpr, steps, options = null) {
   return {
-    type: 1 /* AnimationMetadataType.Transition */,
+    type: AnimationMetadataType.Transition,
     expr: stateChangeExpr,
     animation: steps,
     options
@@ -38882,7 +38962,7 @@ function transition(stateChangeExpr, steps, options = null) {
  */
 function animation(steps, options = null) {
   return {
-    type: 8 /* AnimationMetadataType.Reference */,
+    type: AnimationMetadataType.Reference,
     animation: steps,
     options
   };
@@ -38908,7 +38988,7 @@ function animation(steps, options = null) {
  */
 function animateChild(options = null) {
   return {
-    type: 9 /* AnimationMetadataType.AnimateChild */,
+    type: AnimationMetadataType.AnimateChild,
     options
   };
 }
@@ -38924,7 +39004,7 @@ function animateChild(options = null) {
  */
 function useAnimation(animation, options = null) {
   return {
-    type: 10 /* AnimationMetadataType.AnimateRef */,
+    type: AnimationMetadataType.AnimateRef,
     animation,
     options
   };
@@ -39051,7 +39131,7 @@ function useAnimation(animation, options = null) {
  */
 function query(selector, animation, options = null) {
   return {
-    type: 11 /* AnimationMetadataType.Query */,
+    type: AnimationMetadataType.Query,
     selector,
     animation,
     options
@@ -39139,7 +39219,7 @@ function query(selector, animation, options = null) {
  */
 function stagger(timings, animation) {
   return {
-    type: 12 /* AnimationMetadataType.Stagger */,
+    type: AnimationMetadataType.Stagger,
     timings,
     animation
   };
@@ -39622,9 +39702,9 @@ const ɵPRE_STYLE = '!';
 /* harmony export */ });
 /* unused harmony exports ɵAnimation, ɵAnimationRenderer, ɵBaseAnimationRenderer, ɵNoopAnimationStyleNormalizer, ɵWebAnimationsPlayer, ɵallowPreviousPlayerStylesMerge, ɵcamelCaseToDashCase, ɵcontainsElement, ɵcreateEngine, ɵgetParentElement, ɵinvokeQuery, ɵnormalizeKeyframes, ɵvalidateStyleProperty, ɵvalidateWebAnimatableStyleProperty */
 /* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6825);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1073);
 /**
- * @license Angular v17.0.9
+ * @license Angular v17.1.2
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -39655,7 +39735,7 @@ function invalidCssUnitValue(userProvidedProperty, value) {
   return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3005 /* RuntimeErrorCode.INVALID_CSS_UNIT_VALUE */, ngDevMode && `Please provide a CSS unit value for ${userProvidedProperty}:${value}`);
 }
 function invalidTrigger() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3006 /* RuntimeErrorCode.INVALID_TRIGGER */, ngDevMode && 'animation triggers cannot be prefixed with an `@` sign (e.g. trigger(\'@foo\', [...]))');
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3006 /* RuntimeErrorCode.INVALID_TRIGGER */, ngDevMode && "animation triggers cannot be prefixed with an `@` sign (e.g. trigger('@foo', [...]))");
 }
 function invalidDefinition() {
   return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3007 /* RuntimeErrorCode.INVALID_DEFINITION */, ngDevMode && 'only state() and transition() definitions can sit inside of a trigger()');
@@ -39712,7 +39792,7 @@ function registerFailed(errors) {
   return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3503 /* RuntimeErrorCode.REGISTRATION_FAILED */, ngDevMode && `Unable to build the animation due to the following errors: ${errors.map(err => err.message).join('\n')}`);
 }
 function missingOrDestroyedAnimation() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3300 /* RuntimeErrorCode.MISSING_OR_DESTROYED_ANIMATION */, ngDevMode && 'The requested animation doesn\'t exist or has already been destroyed');
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3300 /* RuntimeErrorCode.MISSING_OR_DESTROYED_ANIMATION */, ngDevMode && "The requested animation doesn't exist or has already been destroyed");
 }
 function createAnimationFailed(errors) {
   return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3504 /* RuntimeErrorCode.CREATE_ANIMATION_FAILED */, ngDevMode && `Unable to create the animation due to the following errors:${errors.map(err => err.message).join('\n')}`);
@@ -39976,15 +40056,12 @@ let NoopAnimationDriver = /*#__PURE__*/(() => {
 /**
  * @publicApi
  */
-let AnimationDriver = /*#__PURE__*/(() => {
-  class AnimationDriver {
-    /**
-     * @deprecated Use the NoopAnimationDriver class.
-     */
-    static #_ = this.NOOP = /* @__PURE__ */new NoopAnimationDriver();
-  }
-  return AnimationDriver;
-})();
+class AnimationDriver {
+  /**
+   * @deprecated Use the NoopAnimationDriver class.
+   */
+  static #_ = this.NOOP = /*#__PURE__*/new NoopAnimationDriver();
+}
 class AnimationStyleNormalizer {}
 class NoopAnimationStyleNormalizer {
   normalizePropertyName(propertyName, errors) {
@@ -40069,20 +40146,6 @@ function parseTimeExpression(exp, errors, allowNegativeValues) {
     easing
   };
 }
-function copyObj(obj, destination = {}) {
-  Object.keys(obj).forEach(prop => {
-    destination[prop] = obj[prop];
-  });
-  return destination;
-}
-function convertToMap(obj) {
-  const styleMap = new Map();
-  Object.keys(obj).forEach(prop => {
-    const val = obj[prop];
-    styleMap.set(prop, val);
-  });
-  return styleMap;
-}
 function normalizeKeyframes(keyframes) {
   if (!keyframes.length) {
     return [];
@@ -40090,27 +40153,10 @@ function normalizeKeyframes(keyframes) {
   if (keyframes[0] instanceof Map) {
     return keyframes;
   }
-  return keyframes.map(kf => convertToMap(kf));
+  return keyframes.map(kf => new Map(Object.entries(kf)));
 }
 function normalizeStyles(styles) {
-  const normalizedStyles = new Map();
-  if (Array.isArray(styles)) {
-    styles.forEach(data => copyStyles(data, normalizedStyles));
-  } else {
-    copyStyles(styles, normalizedStyles);
-  }
-  return normalizedStyles;
-}
-function copyStyles(styles, destination = new Map(), backfill) {
-  if (backfill) {
-    for (let [prop, val] of backfill) {
-      destination.set(prop, val);
-    }
-  }
-  for (let [prop, val] of styles) {
-    destination.set(prop, val);
-  }
-  return destination;
+  return Array.isArray(styles) ? new Map(...styles) : new Map(styles);
 }
 function setStyles(element, styles, formerStyles) {
   styles.forEach((val, prop) => {
@@ -40158,7 +40204,7 @@ function extractStyleParams(value) {
   return params;
 }
 function interpolateParams(value, params, errors) {
-  const original = value.toString();
+  const original = `${value}`;
   const str = original.replace(PARAM_REGEX, (_, varName) => {
     let localVal = params[varName];
     // this means that the value was never overridden by the data passed in by the user
@@ -40170,15 +40216,6 @@ function interpolateParams(value, params, errors) {
   });
   // we do this to assert that numeric values stay as they are
   return str == original ? value : str;
-}
-function iteratorToArray(iterator) {
-  const arr = [];
-  let item = iterator.next();
-  while (!item.done) {
-    arr.push(item.value);
-    item = iterator.next();
-  }
-  return arr;
 }
 const DASH_CASE_REGEXP = /-+([a-z0-9])/g;
 function dashCaseToCamelCase(input) {
@@ -40211,31 +40248,31 @@ function balancePreviousStylesIntoKeyframes(element, keyframes, previousStyles) 
 }
 function visitDslNode(visitor, node, context) {
   switch (node.type) {
-    case 7 /* AnimationMetadataType.Trigger */:
+    case _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Trigger:
       return visitor.visitTrigger(node, context);
-    case 0 /* AnimationMetadataType.State */:
+    case _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.State:
       return visitor.visitState(node, context);
-    case 1 /* AnimationMetadataType.Transition */:
+    case _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Transition:
       return visitor.visitTransition(node, context);
-    case 2 /* AnimationMetadataType.Sequence */:
+    case _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Sequence:
       return visitor.visitSequence(node, context);
-    case 3 /* AnimationMetadataType.Group */:
+    case _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Group:
       return visitor.visitGroup(node, context);
-    case 4 /* AnimationMetadataType.Animate */:
+    case _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Animate:
       return visitor.visitAnimate(node, context);
-    case 5 /* AnimationMetadataType.Keyframes */:
+    case _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Keyframes:
       return visitor.visitKeyframes(node, context);
-    case 6 /* AnimationMetadataType.Style */:
+    case _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Style:
       return visitor.visitStyle(node, context);
-    case 8 /* AnimationMetadataType.Reference */:
+    case _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Reference:
       return visitor.visitReference(node, context);
-    case 9 /* AnimationMetadataType.AnimateChild */:
+    case _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.AnimateChild:
       return visitor.visitAnimateChild(node, context);
-    case 10 /* AnimationMetadataType.AnimateRef */:
+    case _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.AnimateRef:
       return visitor.visitAnimateRef(node, context);
-    case 11 /* AnimationMetadataType.Query */:
+    case _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Query:
       return visitor.visitQuery(node, context);
-    case 12 /* AnimationMetadataType.Stagger */:
+    case _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Stagger:
       return visitor.visitStagger(node, context);
     default:
       throw invalidNodeType(node.type);
@@ -40429,7 +40466,7 @@ class AnimationAstBuilderVisitor {
     }
     metadata.definitions.forEach(def => {
       this._resetContextStyleTimingState(context);
-      if (def.type == 0 /* AnimationMetadataType.State */) {
+      if (def.type == _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.State) {
         const stateDef = def;
         const name = stateDef.name;
         name.toString().split(/\s*,\s*/).forEach(n => {
@@ -40437,7 +40474,7 @@ class AnimationAstBuilderVisitor {
           states.push(this.visitState(stateDef, context));
         });
         stateDef.name = name;
-      } else if (def.type == 1 /* AnimationMetadataType.Transition */) {
+      } else if (def.type == _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Transition) {
         const transition = this.visitTransition(def, context);
         queryCount += transition.queryCount;
         depCount += transition.depCount;
@@ -40447,7 +40484,7 @@ class AnimationAstBuilderVisitor {
       }
     });
     return {
-      type: 7 /* AnimationMetadataType.Trigger */,
+      type: _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Trigger,
       name: metadata.name,
       states,
       transitions,
@@ -40474,12 +40511,11 @@ class AnimationAstBuilderVisitor {
         }
       });
       if (missingSubs.size) {
-        const missingSubsArr = iteratorToArray(missingSubs.values());
-        context.errors.push(invalidState(metadata.name, missingSubsArr));
+        context.errors.push(invalidState(metadata.name, [...missingSubs.values()]));
       }
     }
     return {
-      type: 0 /* AnimationMetadataType.State */,
+      type: _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.State,
       name: metadata.name,
       style: styleAst,
       options: astParams ? {
@@ -40493,7 +40529,7 @@ class AnimationAstBuilderVisitor {
     const animation = visitDslNode(this, normalizeAnimationEntry(metadata.animation), context);
     const matchers = parseTransitionExpr(metadata.expr, context.errors);
     return {
-      type: 1 /* AnimationMetadataType.Transition */,
+      type: _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Transition,
       matchers,
       animation,
       queryCount: context.queryCount,
@@ -40503,7 +40539,7 @@ class AnimationAstBuilderVisitor {
   }
   visitSequence(metadata, context) {
     return {
-      type: 2 /* AnimationMetadataType.Sequence */,
+      type: _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Sequence,
       steps: metadata.steps.map(s => visitDslNode(this, s, context)),
       options: normalizeAnimationOptions(metadata.options)
     };
@@ -40519,7 +40555,7 @@ class AnimationAstBuilderVisitor {
     });
     context.currentTime = furthestTime;
     return {
-      type: 3 /* AnimationMetadataType.Group */,
+      type: _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Group,
       steps,
       options: normalizeAnimationOptions(metadata.options)
     };
@@ -40529,7 +40565,7 @@ class AnimationAstBuilderVisitor {
     context.currentAnimateTimings = timingAst;
     let styleAst;
     let styleMetadata = metadata.styles ? metadata.styles : (0,_angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .style */ .oB)({});
-    if (styleMetadata.type == 5 /* AnimationMetadataType.Keyframes */) {
+    if (styleMetadata.type == _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Keyframes) {
       styleAst = this.visitKeyframes(styleMetadata, context);
     } else {
       let styleMetadata = metadata.styles;
@@ -40549,7 +40585,7 @@ class AnimationAstBuilderVisitor {
     }
     context.currentAnimateTimings = null;
     return {
-      type: 4 /* AnimationMetadataType.Animate */,
+      type: _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Animate,
       timings: timingAst,
       style: styleAst,
       options: null
@@ -40571,7 +40607,7 @@ class AnimationAstBuilderVisitor {
           context.errors.push(invalidStyleValue(styleTuple));
         }
       } else {
-        styles.push(convertToMap(styleTuple));
+        styles.push(new Map(Object.entries(styleTuple)));
       }
     }
     let containsDynamicStyles = false;
@@ -40593,7 +40629,7 @@ class AnimationAstBuilderVisitor {
       }
     });
     return {
-      type: 6 /* AnimationMetadataType.Style */,
+      type: _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Style,
       styles,
       easing: collectedEasing,
       offset: metadata.offset,
@@ -40647,7 +40683,7 @@ class AnimationAstBuilderVisitor {
   }
   visitKeyframes(metadata, context) {
     const ast = {
-      type: 5 /* AnimationMetadataType.Keyframes */,
+      type: _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Keyframes,
       styles: [],
       options: null
     };
@@ -40705,7 +40741,7 @@ class AnimationAstBuilderVisitor {
   }
   visitReference(metadata, context) {
     return {
-      type: 8 /* AnimationMetadataType.Reference */,
+      type: _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Reference,
       animation: visitDslNode(this, normalizeAnimationEntry(metadata.animation), context),
       options: normalizeAnimationOptions(metadata.options)
     };
@@ -40713,13 +40749,13 @@ class AnimationAstBuilderVisitor {
   visitAnimateChild(metadata, context) {
     context.depCount++;
     return {
-      type: 9 /* AnimationMetadataType.AnimateChild */,
+      type: _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.AnimateChild,
       options: normalizeAnimationOptions(metadata.options)
     };
   }
   visitAnimateRef(metadata, context) {
     return {
-      type: 10 /* AnimationMetadataType.AnimateRef */,
+      type: _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.AnimateRef,
       animation: this.visitReference(metadata.animation, context),
       options: normalizeAnimationOptions(metadata.options)
     };
@@ -40736,7 +40772,7 @@ class AnimationAstBuilderVisitor {
     context.currentQuery = null;
     context.currentQuerySelector = parentSelector;
     return {
-      type: 11 /* AnimationMetadataType.Query */,
+      type: _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Query,
       selector,
       limit: options.limit || 0,
       optional: !!options.optional,
@@ -40756,7 +40792,7 @@ class AnimationAstBuilderVisitor {
       easing: 'full'
     } : resolveTiming(metadata.timings, context.errors, true);
     return {
-      type: 12 /* AnimationMetadataType.Stagger */,
+      type: _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Stagger,
       animation: visitDslNode(this, normalizeAnimationEntry(metadata.animation), context),
       timings,
       options: null
@@ -40774,7 +40810,9 @@ function normalizeSelector(selector) {
   return [selector, hasAmpersand];
 }
 function normalizeParams(obj) {
-  return obj ? copyObj(obj) : null;
+  return obj ? {
+    ...obj
+  } : null;
 }
 class AnimationAstBuilderContext {
   constructor(errors) {
@@ -40830,7 +40868,9 @@ function constructTimingAst(value, errors) {
 }
 function normalizeAnimationOptions(options) {
   if (options) {
-    options = copyObj(options);
+    options = {
+      ...options
+    };
     if (options['params']) {
       options['params'] = normalizeParams(options['params']);
     }
@@ -40954,8 +40994,7 @@ const LEAVE_TOKEN_REGEX = /*#__PURE__*/new RegExp(LEAVE_TOKEN, 'g');
  * from all previous animation steps. Therefore when a keyframe is created it would also be missing
  * from all previous keyframes up until where it is first used. For the timeline keyframe generation
  * to properly fill in the style it will place the previous value (the value from the parent
- * timeline) or a default value of `*` into the backFill map. The `copyStyles` method in util.ts
- * handles propagating that backfill map to the styles object.
+ * timeline) or a default value of `*` into the backFill map.
  *
  * When a sub-timeline is created it will have its own backFill property. This is done so that
  * styles present within the sub-timeline do not accidentally seep into the previous/future timeline
@@ -41066,7 +41105,7 @@ class AnimationTimelineBuilderVisitor {
       ctx = context.createSubContext(options);
       ctx.transformIntoNewTimeline();
       if (options.delay != null) {
-        if (ctx.previousNode.type == 6 /* AnimationMetadataType.Style */) {
+        if (ctx.previousNode.type == _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Style) {
           ctx.currentTimeline.snapshotCurrentStyles();
           ctx.previousNode = DEFAULT_NOOP_PREVIOUS_NODE;
         }
@@ -41128,7 +41167,7 @@ class AnimationTimelineBuilderVisitor {
       timeline.snapshotCurrentStyles();
     }
     const style = ast.style;
-    if (style.type == 5 /* AnimationMetadataType.Keyframes */) {
+    if (style.type == _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Keyframes) {
       this.visitKeyframes(style, context);
     } else {
       context.incrementTime(timings.duration);
@@ -41181,7 +41220,7 @@ class AnimationTimelineBuilderVisitor {
     const startTime = context.currentTimeline.currentTime;
     const options = ast.options || {};
     const delay = options.delay ? resolveTimingValue(options.delay) : 0;
-    if (delay && (context.previousNode.type === 6 /* AnimationMetadataType.Style */ || startTime == 0 && context.currentTimeline.hasCurrentStyleProperties())) {
+    if (delay && (context.previousNode.type === _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Style || startTime == 0 && context.currentTimeline.hasCurrentStyleProperties())) {
       context.currentTimeline.snapshotCurrentStyles();
       context.previousNode = DEFAULT_NOOP_PREVIOUS_NODE;
     }
@@ -41531,7 +41570,7 @@ class TimelineBuilder {
     const isEmpty = this._keyframes.size === 1 && this.duration === 0;
     let finalKeyframes = [];
     this._keyframes.forEach((keyframe, time) => {
-      const finalKeyframe = copyStyles(keyframe, new Map(), this._backFill);
+      const finalKeyframe = new Map([...this._backFill, ...keyframe]);
       finalKeyframe.forEach((value, prop) => {
         if (value === _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* ["ɵPRE_STYLE"] */ .k1) {
           preStyleProps.add(prop);
@@ -41544,8 +41583,8 @@ class TimelineBuilder {
       }
       finalKeyframes.push(finalKeyframe);
     });
-    const preProps = preStyleProps.size ? iteratorToArray(preStyleProps.values()) : [];
-    const postProps = postStyleProps.size ? iteratorToArray(postStyleProps.values()) : [];
+    const preProps = [...preStyleProps.values()];
+    const postProps = [...postStyleProps.values()];
     // special case for a 0-second animation (which is designed just to place styles onscreen)
     if (isEmpty) {
       const kf0 = finalKeyframes[0];
@@ -41585,10 +41624,10 @@ class SubTimelineBuilder extends TimelineBuilder {
       const totalTime = duration + delay;
       const startingGap = delay / totalTime;
       // the original starting keyframe now starts once the delay is done
-      const newFirstKeyframe = copyStyles(keyframes[0]);
+      const newFirstKeyframe = new Map(keyframes[0]);
       newFirstKeyframe.set('offset', 0);
       newKeyframes.push(newFirstKeyframe);
-      const oldFirstKeyframe = copyStyles(keyframes[0]);
+      const oldFirstKeyframe = new Map(keyframes[0]);
       oldFirstKeyframe.set('offset', roundOffset(startingGap));
       newKeyframes.push(oldFirstKeyframe);
       /*
@@ -41605,7 +41644,7 @@ class SubTimelineBuilder extends TimelineBuilder {
       // offsets between 1 ... n -1 are all warped by the keyframe stretch
       const limit = keyframes.length - 1;
       for (let i = 1; i <= limit; i++) {
-        let kf = copyStyles(keyframes[i]);
+        let kf = new Map(keyframes[i]);
         const oldOffset = kf.get('offset');
         const timeAtKeyframe = delay + oldOffset * duration;
         kf.set('offset', roundOffset(timeAtKeyframe / totalTime));
@@ -41629,12 +41668,14 @@ function flattenStyles(input, allStyles) {
   let allProperties;
   input.forEach(token => {
     if (token === '*') {
-      allProperties = allProperties || allStyles.keys();
+      allProperties ??= allStyles.keys();
       for (let prop of allProperties) {
         styles.set(prop, _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AUTO_STYLE */ .l3);
       }
     } else {
-      copyStyles(token, styles);
+      for (let [prop, val] of token) {
+        styles.set(prop, val);
+      }
     }
   });
   return styles;
@@ -41710,8 +41751,7 @@ class AnimationTransitionFactory {
     if (typeof ngDevMode === 'undefined' || ngDevMode) {
       checkNonAnimatableInTimelines(timelines, this._triggerName, driver);
     }
-    const queriedElementsList = iteratorToArray(queriedElements.values());
-    return createTransitionInstruction(element, this._triggerName, currentState, nextState, isRemoval, currentStateStyles, nextStateStyles, timelines, queriedElementsList, preStyleMap, postStyleMap, totalTime);
+    return createTransitionInstruction(element, this._triggerName, currentState, nextState, isRemoval, currentStateStyles, nextStateStyles, timelines, [...queriedElements.values()], preStyleMap, postStyleMap, totalTime);
   }
 }
 /**
@@ -41767,12 +41807,14 @@ function oneOrMoreTransitionsMatch(matchFns, currentState, nextState, element, p
   return matchFns.some(fn => fn(currentState, nextState, element, params));
 }
 function applyParamDefaults(userParams, defaults) {
-  const result = copyObj(defaults);
-  for (const key in userParams) {
-    if (userParams.hasOwnProperty(key) && userParams[key] != null) {
-      result[key] = userParams[key];
+  const result = {
+    ...defaults
+  };
+  Object.entries(userParams).forEach(([key, value]) => {
+    if (value != null) {
+      result[key] = value;
     }
-  }
+  });
   return result;
 }
 class AnimationStateStyles {
@@ -41783,13 +41825,7 @@ class AnimationStateStyles {
   }
   buildStyles(params, errors) {
     const finalStyles = new Map();
-    const combinedParams = copyObj(this.defaultParams);
-    Object.keys(params).forEach(key => {
-      const value = params[key];
-      if (value !== null) {
-        combinedParams[key] = value;
-      }
-    });
+    const combinedParams = applyParamDefaults(params, this.defaultParams);
     this.styles.styles.forEach(value => {
       if (typeof value !== 'string') {
         value.forEach((val, prop) => {
@@ -41840,12 +41876,12 @@ class AnimationTrigger {
 function createFallbackTransition(triggerName, states, normalizer) {
   const matchers = [(fromState, toState) => true];
   const animation = {
-    type: 2 /* AnimationMetadataType.Sequence */,
+    type: _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Sequence,
     steps: [],
     options: null
   };
   const transition = {
-    type: 1 /* AnimationMetadataType.Transition */,
+    type: _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AnimationMetadataType */ .mo.Transition,
     animation,
     matchers,
     options: null,
@@ -42017,8 +42053,11 @@ class StateValue {
     const value = isObj ? input['value'] : input;
     this.value = normalizeTriggerValue(value);
     if (isObj) {
-      const options = copyObj(input);
-      delete options['value'];
+      // we drop the value property from options.
+      const {
+        value,
+        ...options
+      } = input;
       this.options = options;
     } else {
       this.options = {};
@@ -42394,10 +42433,11 @@ class TransitionAnimationEngine {
   _onRemovalComplete(element, context) {
     this.onRemovalComplete(element, context);
   }
-  constructor(bodyNode, driver, _normalizer) {
+  constructor(bodyNode, driver, _normalizer, scheduler) {
     this.bodyNode = bodyNode;
     this.driver = driver;
     this._normalizer = _normalizer;
+    this.scheduler = scheduler;
     this.players = [];
     this.newHostElements = new Map();
     this.playersByElement = new Map();
@@ -42587,6 +42627,7 @@ class TransitionAnimationEngine {
   }
   removeNode(namespaceId, element, context) {
     if (isElementNode(element)) {
+      this.scheduler?.notify();
       const ns = namespaceId ? this._fetchNamespace(namespaceId) : null;
       if (ns) {
         ns.removeNode(element, context);
@@ -43443,13 +43484,13 @@ function replacePostStylesAsPre(element, allPreStyleElements, allPostStyleElemen
   return true;
 }
 class AnimationEngine {
-  constructor(doc, _driver, _normalizer) {
+  constructor(doc, _driver, _normalizer, scheduler) {
     this._driver = _driver;
     this._normalizer = _normalizer;
     this._triggerCache = {};
     // this method is designed to be overridden by the code that uses this engine
     this.onRemovalComplete = (element, context) => {};
-    this._transitionEngine = new TransitionAnimationEngine(doc.body, _driver, _normalizer);
+    this._transitionEngine = new TransitionAnimationEngine(doc.body, _driver, _normalizer, scheduler);
     this._timelineEngine = new TimelineAnimationEngine(doc.body, _driver, _normalizer);
     this._transitionEngine.onRemovalComplete = (element, context) => this.onRemovalComplete(element, context);
   }
@@ -43549,58 +43590,55 @@ function packageNonAnimatableStyles(element, styles) {
  * `endStyles` will be applied as well any any starting styles. Finally when
  * `destroy()` is called then all styles will be removed.
  */
-let SpecialCasedStyles = /*#__PURE__*/(() => {
-  class SpecialCasedStyles {
-    static #_ = this.initialStylesByElement = /* @__PURE__ */new WeakMap();
-    constructor(_element, _startStyles, _endStyles) {
-      this._element = _element;
-      this._startStyles = _startStyles;
-      this._endStyles = _endStyles;
-      this._state = 0 /* SpecialCasedStylesState.Pending */;
-      let initialStyles = SpecialCasedStyles.initialStylesByElement.get(_element);
-      if (!initialStyles) {
-        SpecialCasedStyles.initialStylesByElement.set(_element, initialStyles = new Map());
-      }
-      this._initialStyles = initialStyles;
+class SpecialCasedStyles {
+  static #_ = this.initialStylesByElement = /*#__PURE__*/new WeakMap();
+  constructor(_element, _startStyles, _endStyles) {
+    this._element = _element;
+    this._startStyles = _startStyles;
+    this._endStyles = _endStyles;
+    this._state = 0 /* SpecialCasedStylesState.Pending */;
+    let initialStyles = SpecialCasedStyles.initialStylesByElement.get(_element);
+    if (!initialStyles) {
+      SpecialCasedStyles.initialStylesByElement.set(_element, initialStyles = new Map());
     }
-    start() {
-      if (this._state < 1 /* SpecialCasedStylesState.Started */) {
-        if (this._startStyles) {
-          setStyles(this._element, this._startStyles, this._initialStyles);
-        }
-        this._state = 1 /* SpecialCasedStylesState.Started */;
+    this._initialStyles = initialStyles;
+  }
+  start() {
+    if (this._state < 1 /* SpecialCasedStylesState.Started */) {
+      if (this._startStyles) {
+        setStyles(this._element, this._startStyles, this._initialStyles);
       }
-    }
-    finish() {
-      this.start();
-      if (this._state < 2 /* SpecialCasedStylesState.Finished */) {
-        setStyles(this._element, this._initialStyles);
-        if (this._endStyles) {
-          setStyles(this._element, this._endStyles);
-          this._endStyles = null;
-        }
-        this._state = 1 /* SpecialCasedStylesState.Started */;
-      }
-    }
-    destroy() {
-      this.finish();
-      if (this._state < 3 /* SpecialCasedStylesState.Destroyed */) {
-        SpecialCasedStyles.initialStylesByElement.delete(this._element);
-        if (this._startStyles) {
-          eraseStyles(this._element, this._startStyles);
-          this._endStyles = null;
-        }
-        if (this._endStyles) {
-          eraseStyles(this._element, this._endStyles);
-          this._endStyles = null;
-        }
-        setStyles(this._element, this._initialStyles);
-        this._state = 3 /* SpecialCasedStylesState.Destroyed */;
-      }
+      this._state = 1 /* SpecialCasedStylesState.Started */;
     }
   }
-  return SpecialCasedStyles;
-})();
+  finish() {
+    this.start();
+    if (this._state < 2 /* SpecialCasedStylesState.Finished */) {
+      setStyles(this._element, this._initialStyles);
+      if (this._endStyles) {
+        setStyles(this._element, this._endStyles);
+        this._endStyles = null;
+      }
+      this._state = 1 /* SpecialCasedStylesState.Started */;
+    }
+  }
+  destroy() {
+    this.finish();
+    if (this._state < 3 /* SpecialCasedStylesState.Destroyed */) {
+      SpecialCasedStyles.initialStylesByElement.delete(this._element);
+      if (this._startStyles) {
+        eraseStyles(this._element, this._startStyles);
+        this._endStyles = null;
+      }
+      if (this._endStyles) {
+        eraseStyles(this._element, this._endStyles);
+        this._endStyles = null;
+      }
+      setStyles(this._element, this._initialStyles);
+      this._state = 3 /* SpecialCasedStylesState.Destroyed */;
+    }
+  }
+}
 function filterNonAnimatableStyles(styles) {
   let result = null;
   styles.forEach((val, prop) => {
@@ -43817,7 +43855,7 @@ class WebAnimationsDriver {
     return invokeQuery(element, selector, multi);
   }
   computeStyle(element, prop, defaultValue) {
-    return window.getComputedStyle(element)[prop];
+    return computeStyle(element, prop);
   }
   animate(element, keyframes, duration, delay, easing, previousPlayers = []) {
     const fill = delay == 0 ? 'both' : 'forwards';
@@ -43838,18 +43876,18 @@ class WebAnimationsDriver {
         player.currentSnapshot.forEach((val, prop) => previousStyles.set(prop, val));
       });
     }
-    let _keyframes = normalizeKeyframes(keyframes).map(styles => copyStyles(styles));
+    let _keyframes = normalizeKeyframes(keyframes).map(styles => new Map(styles));
     _keyframes = balancePreviousStylesIntoKeyframes(element, _keyframes, previousStyles);
     const specialStyles = packageNonAnimatableStyles(element, _keyframes);
     return new WebAnimationsPlayer(element, _keyframes, playerOptions, specialStyles);
   }
 }
-function createEngine(type, doc) {
+function createEngine(type, doc, scheduler) {
   // TODO: find a way to make this tree shakable.
   if (type === 'noop') {
-    return new AnimationEngine(doc, new NoopAnimationDriver(), new NoopAnimationStyleNormalizer());
+    return new AnimationEngine(doc, new NoopAnimationDriver(), new NoopAnimationStyleNormalizer(), scheduler);
   }
-  return new AnimationEngine(doc, new WebAnimationsDriver(), new WebAnimationsStyleNormalizer());
+  return new AnimationEngine(doc, new WebAnimationsDriver(), new WebAnimationsStyleNormalizer(), scheduler);
 }
 class Animation {
   constructor(_driver, input) {
@@ -44171,10 +44209,10 @@ __webpack_require__.d(__webpack_exports__, {
 
 // UNUSED EXPORTS: AbstractControl, AbstractControlDirective, AbstractFormGroupDirective, COMPOSITION_BUFFER_MODE, CheckboxControlValueAccessor, CheckboxRequiredValidator, ControlContainer, EmailValidator, FormArray, FormArrayName, FormBuilder, FormControlName, FormGroup, FormGroupDirective, FormGroupName, FormRecord, MaxLengthValidator, MaxValidator, MinLengthValidator, MinValidator, NG_ASYNC_VALIDATORS, NG_VALIDATORS, NgControlStatusGroup, NgForm, NgModelGroup, NgSelectOption, NonNullableFormBuilder, NumberValueAccessor, PatternValidator, RadioControlValueAccessor, RangeValueAccessor, RequiredValidator, SelectControlValueAccessor, SelectMultipleControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, VERSION, Validators, isFormArray, isFormControl, isFormGroup, isFormRecord, ɵInternalFormsSharedModule, ɵNgNoValidate, ɵNgSelectMultipleOption
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(9649);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(5897);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.1.2 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(1073);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.1.2 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(4482);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/from.js + 9 modules
 var from = __webpack_require__(7715);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Observable.js
@@ -44241,7 +44279,7 @@ function forkJoin(...args) {
 var map = __webpack_require__(7398);
 ;// CONCATENATED MODULE: ./node_modules/@angular/forms/fesm2022/forms.mjs
 /**
- * @license Angular v17.0.9
+ * @license Angular v17.1.2
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -44351,7 +44389,7 @@ let BuiltInControlValueAccessor = /*#__PURE__*/(() => {
  *
  * @publicApi
  */
-const NG_VALUE_ACCESSOR = /*#__PURE__*/new core_mjs_.InjectionToken('NgValueAccessor');
+const NG_VALUE_ACCESSOR = /*#__PURE__*/new core_mjs_.InjectionToken(ngDevMode ? 'NgValueAccessor' : '');
 const CHECKBOX_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: /*#__PURE__*/(0,core_mjs_.forwardRef)(() => CheckboxControlValueAccessor),
@@ -44434,7 +44472,7 @@ function _isAndroid() {
  * the "compositionend" event occurs.
  * @publicApi
  */
-const COMPOSITION_BUFFER_MODE = /*#__PURE__*/new core_mjs_.InjectionToken('CompositionEventMode');
+const COMPOSITION_BUFFER_MODE = /*#__PURE__*/new core_mjs_.InjectionToken(ngDevMode ? 'CompositionEventMode' : '');
 /**
  * The default `ControlValueAccessor` for writing a value and listening to changes on input
  * elements. The accessor is used by the `FormControlDirective`, `FormControlName`, and
@@ -44571,7 +44609,7 @@ function hasValidLength(value) {
  *
  * @publicApi
  */
-const NG_VALIDATORS = /*#__PURE__*/new core_mjs_.InjectionToken('NgValidators');
+const NG_VALIDATORS = /*#__PURE__*/new core_mjs_.InjectionToken(ngDevMode ? 'NgValidators' : '');
 /**
  * @description
  * An `InjectionToken` for registering additional asynchronous validators used with
@@ -44601,7 +44639,7 @@ const NG_VALIDATORS = /*#__PURE__*/new core_mjs_.InjectionToken('NgValidators');
  *
  * @publicApi
  */
-const NG_ASYNC_VALIDATORS = /*#__PURE__*/new core_mjs_.InjectionToken('NgAsyncValidators');
+const NG_ASYNC_VALIDATORS = /*#__PURE__*/new core_mjs_.InjectionToken(ngDevMode ? 'NgAsyncValidators' : '');
 /**
  * A regular expression that matches valid e-mail addresses.
  *
@@ -47840,7 +47878,7 @@ let NgForm = /*#__PURE__*/(() => {
         }
       },
       inputs: {
-        options: ["ngFormOptions", "options"]
+        options: [core_mjs_["ɵɵInputFlags"].None, "ngFormOptions", "options"]
       },
       outputs: {
         ngSubmit: "ngSubmit"
@@ -48134,7 +48172,7 @@ let NgModelGroup = /*#__PURE__*/(() => {
       type: NgModelGroup,
       selectors: [["", "ngModelGroup", ""]],
       inputs: {
-        name: ["ngModelGroup", "name"]
+        name: [core_mjs_["ɵɵInputFlags"].None, "ngModelGroup", "name"]
       },
       exportAs: ["ngModelGroup"],
       features: [core_mjs_["ɵɵProvidersFeature"]([modelGroupProvider]), core_mjs_["ɵɵInheritDefinitionFeature"]]
@@ -48407,9 +48445,9 @@ let NgModel = /*#__PURE__*/(() => {
       selectors: [["", "ngModel", "", 3, "formControlName", "", 3, "formControl", ""]],
       inputs: {
         name: "name",
-        isDisabled: ["disabled", "isDisabled"],
-        model: ["ngModel", "model"],
-        options: ["ngModelOptions", "options"]
+        isDisabled: [core_mjs_["ɵɵInputFlags"].None, "disabled", "isDisabled"],
+        model: [core_mjs_["ɵɵInputFlags"].None, "ngModel", "model"],
+        options: [core_mjs_["ɵɵInputFlags"].None, "ngModelOptions", "options"]
       },
       outputs: {
         update: "ngModelChange"
@@ -48544,27 +48582,6 @@ function throwNameError() {
     `);
 }
 /**
- * Internal-only NgModule that works as a host for the `RadioControlRegistry` tree-shakable
- * provider. Note: the `InternalFormsSharedModule` can not be used here directly, since it's
- * declared *after* the `RadioControlRegistry` class and the `providedIn` doesn't support
- * `forwardRef` logic.
- */
-let RadioControlRegistryModule = /*#__PURE__*/(() => {
-  class RadioControlRegistryModule {
-    static #_ = this.ɵfac = function RadioControlRegistryModule_Factory(t) {
-      return new (t || RadioControlRegistryModule)();
-    };
-    static #_2 = this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-      type: RadioControlRegistryModule
-    });
-    static #_3 = this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-  }
-  return RadioControlRegistryModule;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-/**
  * @description
  * Class used by Angular to track radio buttons. For internal use only.
  */
@@ -48613,7 +48630,7 @@ let RadioControlRegistry = /*#__PURE__*/(() => {
     static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
       token: RadioControlRegistry,
       factory: RadioControlRegistry.ɵfac,
-      providedIn: RadioControlRegistryModule
+      providedIn: 'root'
     });
   }
   return RadioControlRegistry;
@@ -48835,7 +48852,7 @@ let RangeValueAccessor = /*#__PURE__*/(() => {
 /**
  * Token to provide to turn off the ngModel warning on formControl and formControlName.
  */
-const NG_MODEL_WITH_FORM_CONTROL_WARNING = /*#__PURE__*/new core_mjs_.InjectionToken('NgModelWithFormControlWarning');
+const NG_MODEL_WITH_FORM_CONTROL_WARNING = /*#__PURE__*/new core_mjs_.InjectionToken(ngDevMode ? 'NgModelWithFormControlWarning' : '');
 const formControlBinding = {
   provide: NgControl,
   useExisting: /*#__PURE__*/(0,core_mjs_.forwardRef)(() => FormControlDirective)
@@ -48960,9 +48977,9 @@ let FormControlDirective = /*#__PURE__*/(() => {
       type: FormControlDirective,
       selectors: [["", "formControl", ""]],
       inputs: {
-        form: ["formControl", "form"],
-        isDisabled: ["disabled", "isDisabled"],
-        model: ["ngModel", "model"]
+        form: [core_mjs_["ɵɵInputFlags"].None, "formControl", "form"],
+        isDisabled: [core_mjs_["ɵɵInputFlags"].None, "disabled", "isDisabled"],
+        model: [core_mjs_["ɵɵInputFlags"].None, "ngModel", "model"]
       },
       outputs: {
         update: "ngModelChange"
@@ -49296,7 +49313,7 @@ let FormGroupDirective = /*#__PURE__*/(() => {
         }
       },
       inputs: {
-        form: ["formGroup", "form"]
+        form: [core_mjs_["ɵɵInputFlags"].None, "formGroup", "form"]
       },
       outputs: {
         ngSubmit: "ngSubmit"
@@ -49392,7 +49409,7 @@ let FormGroupName = /*#__PURE__*/(() => {
       type: FormGroupName,
       selectors: [["", "formGroupName", ""]],
       inputs: {
-        name: ["formGroupName", "name"]
+        name: [core_mjs_["ɵɵInputFlags"].None, "formGroupName", "name"]
       },
       features: [core_mjs_["ɵɵProvidersFeature"]([formGroupNameProvider]), core_mjs_["ɵɵInheritDefinitionFeature"]]
     });
@@ -49500,7 +49517,7 @@ let FormArrayName = /*#__PURE__*/(() => {
       type: FormArrayName,
       selectors: [["", "formArrayName", ""]],
       inputs: {
-        name: ["formArrayName", "name"]
+        name: [core_mjs_["ɵɵInputFlags"].None, "formArrayName", "name"]
       },
       features: [core_mjs_["ɵɵProvidersFeature"]([formArrayNameProvider]), core_mjs_["ɵɵInheritDefinitionFeature"]]
     });
@@ -49662,9 +49679,9 @@ let FormControlName = /*#__PURE__*/(() => {
       type: FormControlName,
       selectors: [["", "formControlName", ""]],
       inputs: {
-        name: ["formControlName", "name"],
-        isDisabled: ["disabled", "isDisabled"],
-        model: ["ngModel", "model"]
+        name: [core_mjs_["ɵɵInputFlags"].None, "formControlName", "name"],
+        isDisabled: [core_mjs_["ɵɵInputFlags"].None, "disabled", "isDisabled"],
+        model: [core_mjs_["ɵɵInputFlags"].None, "ngModel", "model"]
       },
       outputs: {
         update: "ngModelChange"
@@ -50771,9 +50788,7 @@ let ɵInternalFormsSharedModule = /*#__PURE__*/(() => {
     static #_2 = this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
       type: ɵInternalFormsSharedModule
     });
-    static #_3 = this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-      imports: [RadioControlRegistryModule]
-    });
+    static #_3 = this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
   }
   return ɵInternalFormsSharedModule;
 })();
@@ -51517,14 +51532,11 @@ let UntypedFormBuilder = /*#__PURE__*/(/* unused pure expression or super */ nul
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new core_mjs_.Version('17.0.9');
+const VERSION = /*#__PURE__*/new core_mjs_.Version('17.1.2');
 
 /**
  * Exports the required providers and directives for template-driven forms,
  * making them available for import by NgModules that import this module.
- *
- * Providers associated with this module:
- * * `RadioControlRegistry`
  *
  * @see [Forms Overview](/guide/forms-overview)
  * @see [Template-driven Forms Guide](/guide/forms)
@@ -51568,9 +51580,6 @@ let FormsModule = /*#__PURE__*/(() => {
 /**
  * Exports the required infrastructure and directives for reactive forms,
  * making them available for import by NgModules that import this module.
- *
- * Providers associated with this module:
- * * `RadioControlRegistry`
  *
  * @see [Forms Overview](guide/forms-overview)
  * @see [Reactive Forms Guide](guide/reactive-forms)
@@ -51659,8 +51668,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // UNUSED EXPORTS: HighlightJS, HighlightLoader
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(9649);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.1.2 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(1073);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/BehaviorSubject.js
 var BehaviorSubject = __webpack_require__(5619);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/empty.js
@@ -51833,8 +51842,8 @@ var switchMap = __webpack_require__(4664);
 var tap = __webpack_require__(9397);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/catchError.js
 var catchError = __webpack_require__(6306);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(5897);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.1.2 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(4482);
 // EXTERNAL MODULE: ./node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
 var platform_browser = __webpack_require__(6593);
 ;// CONCATENATED MODULE: ./node_modules/ngx-highlightjs/fesm2020/ngx-highlightjs.mjs
@@ -52199,7 +52208,7 @@ let Highlight = /*#__PURE__*/(() => {
       }
     },
     inputs: {
-      code: ["highlight", "code"],
+      code: [core_mjs_["ɵɵInputFlags"].None, "highlight", "code"],
       languages: "languages",
       lineNumbers: "lineNumbers"
     },

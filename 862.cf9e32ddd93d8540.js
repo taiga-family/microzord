@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[474],{
+(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[862],{
 
 /***/ 6328:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -18,110 +18,65 @@ function concatMap(project, resultSelector) {
 
 /***/ }),
 
-/***/ 1474:
+/***/ 9862:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  FetchBackend: () => (/* binding */ FetchBackend),
-  HTTP_INTERCEPTORS: () => (/* binding */ HTTP_INTERCEPTORS),
-  HttpBackend: () => (/* binding */ HttpBackend),
-  HttpClient: () => (/* binding */ HttpClient),
-  HttpClientJsonpModule: () => (/* binding */ HttpClientJsonpModule),
-  HttpClientModule: () => (/* binding */ HttpClientModule),
-  HttpClientXsrfModule: () => (/* binding */ HttpClientXsrfModule),
-  HttpContext: () => (/* binding */ HttpContext),
-  HttpContextToken: () => (/* binding */ HttpContextToken),
-  HttpErrorResponse: () => (/* binding */ HttpErrorResponse),
-  HttpEventType: () => (/* binding */ HttpEventType),
-  HttpFeatureKind: () => (/* binding */ HttpFeatureKind),
-  HttpHandler: () => (/* binding */ HttpHandler),
-  HttpHeaderResponse: () => (/* binding */ HttpHeaderResponse),
-  HttpHeaders: () => (/* binding */ HttpHeaders),
-  HttpParams: () => (/* binding */ HttpParams),
-  HttpRequest: () => (/* binding */ HttpRequest),
-  HttpResponse: () => (/* binding */ HttpResponse),
-  HttpResponseBase: () => (/* binding */ HttpResponseBase),
-  HttpUrlEncodingCodec: () => (/* binding */ HttpUrlEncodingCodec),
-  HttpXhrBackend: () => (/* binding */ HttpXhrBackend),
-  HttpXsrfTokenExtractor: () => (/* binding */ HttpXsrfTokenExtractor),
-  JsonpClientBackend: () => (/* binding */ JsonpClientBackend),
-  JsonpInterceptor: () => (/* binding */ JsonpInterceptor),
-  provideHttpClient: () => (/* binding */ provideHttpClient),
-  withFetch: () => (/* binding */ withFetch),
-  withInterceptors: () => (/* binding */ withInterceptors),
-  withInterceptorsFromDi: () => (/* binding */ withInterceptorsFromDi),
-  withJsonpSupport: () => (/* binding */ withJsonpSupport),
-  withNoXsrfProtection: () => (/* binding */ withNoXsrfProtection),
-  withRequestsMadeViaParent: () => (/* binding */ withRequestsMadeViaParent),
-  withXsrfConfiguration: () => (/* binding */ withXsrfConfiguration),
-  "ɵHTTP_ROOT_INTERCEPTOR_FNS": () => (/* binding */ HTTP_ROOT_INTERCEPTOR_FNS),
-  "ɵHttpInterceptingHandler": () => (/* binding */ HttpInterceptorHandler),
-  "ɵHttpInterceptorHandler": () => (/* binding */ HttpInterceptorHandler),
-  "ɵPRIMARY_HTTP_BACKEND": () => (/* binding */ PRIMARY_HTTP_BACKEND),
-  "ɵwithHttpTransferCache": () => (/* binding */ withHttpTransferCache)
-});
-
-;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
-  try {
-    var info = gen[key](arg);
-    var value = info.value;
-  } catch (error) {
-    reject(error);
-    return;
-  }
-  if (info.done) {
-    resolve(value);
-  } else {
-    Promise.resolve(value).then(_next, _throw);
-  }
-}
-function _asyncToGenerator(fn) {
-  return function () {
-    var self = this,
-      args = arguments;
-    return new Promise(function (resolve, reject) {
-      var gen = fn.apply(self, args);
-      function _next(value) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
-      }
-      function _throw(err) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
-      }
-      _next(undefined);
-    });
-  };
-}
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(9649);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/of.js
-var of = __webpack_require__(2096);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Observable.js
-var Observable = __webpack_require__(5592);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/from.js + 9 modules
-var from = __webpack_require__(7715);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/concatMap.js
-var concatMap = __webpack_require__(6328);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/filter.js
-var filter = __webpack_require__(2181);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/map.js
-var map = __webpack_require__(7398);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/finalize.js
-var finalize = __webpack_require__(4716);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/switchMap.js
-var switchMap = __webpack_require__(4664);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/tap.js
-var tap = __webpack_require__(9397);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.0.9 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(5897);
-;// CONCATENATED MODULE: ./node_modules/@angular/common/fesm2022/http.mjs
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   FetchBackend: () => (/* binding */ FetchBackend),
+/* harmony export */   HTTP_INTERCEPTORS: () => (/* binding */ HTTP_INTERCEPTORS),
+/* harmony export */   HttpBackend: () => (/* binding */ HttpBackend),
+/* harmony export */   HttpClient: () => (/* binding */ HttpClient),
+/* harmony export */   HttpClientJsonpModule: () => (/* binding */ HttpClientJsonpModule),
+/* harmony export */   HttpClientModule: () => (/* binding */ HttpClientModule),
+/* harmony export */   HttpClientXsrfModule: () => (/* binding */ HttpClientXsrfModule),
+/* harmony export */   HttpContext: () => (/* binding */ HttpContext),
+/* harmony export */   HttpContextToken: () => (/* binding */ HttpContextToken),
+/* harmony export */   HttpErrorResponse: () => (/* binding */ HttpErrorResponse),
+/* harmony export */   HttpEventType: () => (/* binding */ HttpEventType),
+/* harmony export */   HttpFeatureKind: () => (/* binding */ HttpFeatureKind),
+/* harmony export */   HttpHandler: () => (/* binding */ HttpHandler),
+/* harmony export */   HttpHeaderResponse: () => (/* binding */ HttpHeaderResponse),
+/* harmony export */   HttpHeaders: () => (/* binding */ HttpHeaders),
+/* harmony export */   HttpParams: () => (/* binding */ HttpParams),
+/* harmony export */   HttpRequest: () => (/* binding */ HttpRequest),
+/* harmony export */   HttpResponse: () => (/* binding */ HttpResponse),
+/* harmony export */   HttpResponseBase: () => (/* binding */ HttpResponseBase),
+/* harmony export */   HttpStatusCode: () => (/* binding */ HttpStatusCode),
+/* harmony export */   HttpUrlEncodingCodec: () => (/* binding */ HttpUrlEncodingCodec),
+/* harmony export */   HttpXhrBackend: () => (/* binding */ HttpXhrBackend),
+/* harmony export */   HttpXsrfTokenExtractor: () => (/* binding */ HttpXsrfTokenExtractor),
+/* harmony export */   JsonpClientBackend: () => (/* binding */ JsonpClientBackend),
+/* harmony export */   JsonpInterceptor: () => (/* binding */ JsonpInterceptor),
+/* harmony export */   provideHttpClient: () => (/* binding */ provideHttpClient),
+/* harmony export */   withFetch: () => (/* binding */ withFetch),
+/* harmony export */   withInterceptors: () => (/* binding */ withInterceptors),
+/* harmony export */   withInterceptorsFromDi: () => (/* binding */ withInterceptorsFromDi),
+/* harmony export */   withJsonpSupport: () => (/* binding */ withJsonpSupport),
+/* harmony export */   withNoXsrfProtection: () => (/* binding */ withNoXsrfProtection),
+/* harmony export */   withRequestsMadeViaParent: () => (/* binding */ withRequestsMadeViaParent),
+/* harmony export */   withXsrfConfiguration: () => (/* binding */ withXsrfConfiguration),
+/* harmony export */   "ɵHTTP_ROOT_INTERCEPTOR_FNS": () => (/* binding */ HTTP_ROOT_INTERCEPTOR_FNS),
+/* harmony export */   "ɵHttpInterceptingHandler": () => (/* binding */ HttpInterceptorHandler),
+/* harmony export */   "ɵHttpInterceptorHandler": () => (/* binding */ HttpInterceptorHandler),
+/* harmony export */   "ɵPRIMARY_HTTP_BACKEND": () => (/* binding */ PRIMARY_HTTP_BACKEND),
+/* harmony export */   "ɵwithHttpTransferCache": () => (/* binding */ withHttpTransferCache)
+/* harmony export */ });
+/* harmony import */ var _home_runner_work_microzord_microzord_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(5861);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1073);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2096);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(5592);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(7715);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6328);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2181);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7398);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(4716);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(4664);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(9397);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4482);
 
 /**
- * @license Angular v17.0.9
+ * @license Angular v17.1.2
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -908,13 +863,9 @@ class HttpRequest {
       this.transferCache = options.transferCache;
     }
     // If no headers have been passed in, construct a new HttpHeaders instance.
-    if (!this.headers) {
-      this.headers = new HttpHeaders();
-    }
+    this.headers ??= new HttpHeaders();
     // If no context have been passed in, construct a new HttpContext instance.
-    if (!this.context) {
-      this.context = new HttpContext();
-    }
+    this.context ??= new HttpContext();
     // If no parameters have been passed in, construct a new HttpUrlEncodedParams instance.
     if (!this.params) {
       this.params = new HttpParams();
@@ -1094,7 +1045,7 @@ class HttpResponseBase {
    * The single parameter accepted is an initialization hash. Any properties
    * of the response passed there will override the default values.
    */
-  constructor(init, defaultStatus = 200 /* HttpStatusCode.Ok */, defaultStatusText = 'OK') {
+  constructor(init, defaultStatus = HttpStatusCode.Ok, defaultStatusText = 'OK') {
     // If the hash has values passed, use them to initialize the response.
     // Otherwise use the default values.
     this.headers = init.headers || new HttpHeaders();
@@ -1198,7 +1149,77 @@ class HttpErrorResponse extends HttpResponseBase {
     this.error = init.error || null;
   }
 }
-
+/**
+ * Http status codes.
+ * As per https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
+ * @publicApi
+ */
+var HttpStatusCode = /*#__PURE__*/function (HttpStatusCode) {
+  HttpStatusCode[HttpStatusCode["Continue"] = 100] = "Continue";
+  HttpStatusCode[HttpStatusCode["SwitchingProtocols"] = 101] = "SwitchingProtocols";
+  HttpStatusCode[HttpStatusCode["Processing"] = 102] = "Processing";
+  HttpStatusCode[HttpStatusCode["EarlyHints"] = 103] = "EarlyHints";
+  HttpStatusCode[HttpStatusCode["Ok"] = 200] = "Ok";
+  HttpStatusCode[HttpStatusCode["Created"] = 201] = "Created";
+  HttpStatusCode[HttpStatusCode["Accepted"] = 202] = "Accepted";
+  HttpStatusCode[HttpStatusCode["NonAuthoritativeInformation"] = 203] = "NonAuthoritativeInformation";
+  HttpStatusCode[HttpStatusCode["NoContent"] = 204] = "NoContent";
+  HttpStatusCode[HttpStatusCode["ResetContent"] = 205] = "ResetContent";
+  HttpStatusCode[HttpStatusCode["PartialContent"] = 206] = "PartialContent";
+  HttpStatusCode[HttpStatusCode["MultiStatus"] = 207] = "MultiStatus";
+  HttpStatusCode[HttpStatusCode["AlreadyReported"] = 208] = "AlreadyReported";
+  HttpStatusCode[HttpStatusCode["ImUsed"] = 226] = "ImUsed";
+  HttpStatusCode[HttpStatusCode["MultipleChoices"] = 300] = "MultipleChoices";
+  HttpStatusCode[HttpStatusCode["MovedPermanently"] = 301] = "MovedPermanently";
+  HttpStatusCode[HttpStatusCode["Found"] = 302] = "Found";
+  HttpStatusCode[HttpStatusCode["SeeOther"] = 303] = "SeeOther";
+  HttpStatusCode[HttpStatusCode["NotModified"] = 304] = "NotModified";
+  HttpStatusCode[HttpStatusCode["UseProxy"] = 305] = "UseProxy";
+  HttpStatusCode[HttpStatusCode["Unused"] = 306] = "Unused";
+  HttpStatusCode[HttpStatusCode["TemporaryRedirect"] = 307] = "TemporaryRedirect";
+  HttpStatusCode[HttpStatusCode["PermanentRedirect"] = 308] = "PermanentRedirect";
+  HttpStatusCode[HttpStatusCode["BadRequest"] = 400] = "BadRequest";
+  HttpStatusCode[HttpStatusCode["Unauthorized"] = 401] = "Unauthorized";
+  HttpStatusCode[HttpStatusCode["PaymentRequired"] = 402] = "PaymentRequired";
+  HttpStatusCode[HttpStatusCode["Forbidden"] = 403] = "Forbidden";
+  HttpStatusCode[HttpStatusCode["NotFound"] = 404] = "NotFound";
+  HttpStatusCode[HttpStatusCode["MethodNotAllowed"] = 405] = "MethodNotAllowed";
+  HttpStatusCode[HttpStatusCode["NotAcceptable"] = 406] = "NotAcceptable";
+  HttpStatusCode[HttpStatusCode["ProxyAuthenticationRequired"] = 407] = "ProxyAuthenticationRequired";
+  HttpStatusCode[HttpStatusCode["RequestTimeout"] = 408] = "RequestTimeout";
+  HttpStatusCode[HttpStatusCode["Conflict"] = 409] = "Conflict";
+  HttpStatusCode[HttpStatusCode["Gone"] = 410] = "Gone";
+  HttpStatusCode[HttpStatusCode["LengthRequired"] = 411] = "LengthRequired";
+  HttpStatusCode[HttpStatusCode["PreconditionFailed"] = 412] = "PreconditionFailed";
+  HttpStatusCode[HttpStatusCode["PayloadTooLarge"] = 413] = "PayloadTooLarge";
+  HttpStatusCode[HttpStatusCode["UriTooLong"] = 414] = "UriTooLong";
+  HttpStatusCode[HttpStatusCode["UnsupportedMediaType"] = 415] = "UnsupportedMediaType";
+  HttpStatusCode[HttpStatusCode["RangeNotSatisfiable"] = 416] = "RangeNotSatisfiable";
+  HttpStatusCode[HttpStatusCode["ExpectationFailed"] = 417] = "ExpectationFailed";
+  HttpStatusCode[HttpStatusCode["ImATeapot"] = 418] = "ImATeapot";
+  HttpStatusCode[HttpStatusCode["MisdirectedRequest"] = 421] = "MisdirectedRequest";
+  HttpStatusCode[HttpStatusCode["UnprocessableEntity"] = 422] = "UnprocessableEntity";
+  HttpStatusCode[HttpStatusCode["Locked"] = 423] = "Locked";
+  HttpStatusCode[HttpStatusCode["FailedDependency"] = 424] = "FailedDependency";
+  HttpStatusCode[HttpStatusCode["TooEarly"] = 425] = "TooEarly";
+  HttpStatusCode[HttpStatusCode["UpgradeRequired"] = 426] = "UpgradeRequired";
+  HttpStatusCode[HttpStatusCode["PreconditionRequired"] = 428] = "PreconditionRequired";
+  HttpStatusCode[HttpStatusCode["TooManyRequests"] = 429] = "TooManyRequests";
+  HttpStatusCode[HttpStatusCode["RequestHeaderFieldsTooLarge"] = 431] = "RequestHeaderFieldsTooLarge";
+  HttpStatusCode[HttpStatusCode["UnavailableForLegalReasons"] = 451] = "UnavailableForLegalReasons";
+  HttpStatusCode[HttpStatusCode["InternalServerError"] = 500] = "InternalServerError";
+  HttpStatusCode[HttpStatusCode["NotImplemented"] = 501] = "NotImplemented";
+  HttpStatusCode[HttpStatusCode["BadGateway"] = 502] = "BadGateway";
+  HttpStatusCode[HttpStatusCode["ServiceUnavailable"] = 503] = "ServiceUnavailable";
+  HttpStatusCode[HttpStatusCode["GatewayTimeout"] = 504] = "GatewayTimeout";
+  HttpStatusCode[HttpStatusCode["HttpVersionNotSupported"] = 505] = "HttpVersionNotSupported";
+  HttpStatusCode[HttpStatusCode["VariantAlsoNegotiates"] = 506] = "VariantAlsoNegotiates";
+  HttpStatusCode[HttpStatusCode["InsufficientStorage"] = 507] = "InsufficientStorage";
+  HttpStatusCode[HttpStatusCode["LoopDetected"] = 508] = "LoopDetected";
+  HttpStatusCode[HttpStatusCode["NotExtended"] = 510] = "NotExtended";
+  HttpStatusCode[HttpStatusCode["NetworkAuthenticationRequired"] = 511] = "NetworkAuthenticationRequired";
+  return HttpStatusCode;
+}(HttpStatusCode || {});
 /**
  * Constructs an instance of `HttpRequestOptions<T>` from a source `HttpMethodOptions` and
  * the given `body`. This function clones the object and adds the body.
@@ -1353,7 +1374,7 @@ let HttpClient = /*#__PURE__*/(() => {
       // includes all interceptors) inside a concatMap(). This way, the handler runs
       // inside an Observable chain, which causes interceptors to be re-run on every
       // subscription (this also makes retries re-run the handler, including interceptors).
-      const events$ = (0,of.of)(req).pipe((0,concatMap/* concatMap */.b)(req => this.handler.handle(req)));
+      const events$ = (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(req).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__/* .concatMap */ .b)(req => this.handler.handle(req)));
       // If coming via the API signature which accepts a previously constructed HttpRequest,
       // the only option is to get the event stream. Otherwise, return the event stream if
       // that is what was requested.
@@ -1363,7 +1384,7 @@ let HttpClient = /*#__PURE__*/(() => {
       // The requested stream contains either the full response or the body. In either
       // case, the first step is to filter the event stream to extract a stream of
       // responses(s).
-      const res$ = events$.pipe((0,filter/* filter */.h)(event => event instanceof HttpResponse));
+      const res$ = events$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__/* .filter */ .h)(event => event instanceof HttpResponse));
       // Decide which stream to return.
       switch (options.observe || 'body') {
         case 'body':
@@ -1374,7 +1395,7 @@ let HttpClient = /*#__PURE__*/(() => {
           // requested type.
           switch (req.responseType) {
             case 'arraybuffer':
-              return res$.pipe((0,map/* map */.U)(res => {
+              return res$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__/* .map */ .U)(res => {
                 // Validate that the body is an ArrayBuffer.
                 if (res.body !== null && !(res.body instanceof ArrayBuffer)) {
                   throw new Error('Response is not an ArrayBuffer.');
@@ -1382,7 +1403,7 @@ let HttpClient = /*#__PURE__*/(() => {
                 return res.body;
               }));
             case 'blob':
-              return res$.pipe((0,map/* map */.U)(res => {
+              return res$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__/* .map */ .U)(res => {
                 // Validate that the body is a Blob.
                 if (res.body !== null && !(res.body instanceof Blob)) {
                   throw new Error('Response is not a Blob.');
@@ -1390,7 +1411,7 @@ let HttpClient = /*#__PURE__*/(() => {
                 return res.body;
               }));
             case 'text':
-              return res$.pipe((0,map/* map */.U)(res => {
+              return res$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__/* .map */ .U)(res => {
                 // Validate that the body is a string.
                 if (res.body !== null && typeof res.body !== 'string') {
                   throw new Error('Response is not a string.');
@@ -1400,7 +1421,7 @@ let HttpClient = /*#__PURE__*/(() => {
             case 'json':
             default:
               // No validation needed for JSON responses, as they can be of any type.
-              return res$.pipe((0,map/* map */.U)(res => res.body));
+              return res$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__/* .map */ .U)(res => res.body));
           }
         case 'response':
           // The response stream was requested directly, so return it.
@@ -1502,9 +1523,9 @@ let HttpClient = /*#__PURE__*/(() => {
       return this.request('PUT', url, addBody(options, body));
     }
     static #_ = this.ɵfac = function HttpClient_Factory(t) {
-      return new (t || HttpClient)(core_mjs_["ɵɵinject"](HttpHandler));
+      return new (t || HttpClient)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](HttpHandler));
     };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: HttpClient,
       factory: HttpClient.ɵfac
     });
@@ -1543,13 +1564,13 @@ let FetchBackend = /*#__PURE__*/(() => {
   class FetchBackend {
     constructor() {
       // We need to bind the native fetch to its context or it will throw an "illegal invocation"
-      this.fetchImpl = (0,core_mjs_.inject)(FetchFactory, {
+      this.fetchImpl = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(FetchFactory, {
         optional: true
       })?.fetch ?? fetch.bind(globalThis);
-      this.ngZone = (0,core_mjs_.inject)(core_mjs_.NgZone);
+      this.ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone);
     }
     handle(request) {
-      return new Observable/* Observable */.y(observer => {
+      return new rxjs__WEBPACK_IMPORTED_MODULE_6__/* .Observable */ .y(observer => {
         const aborter = new AbortController();
         this.doRequest(request, aborter.signal, observer).then(noop, error => observer.error(new HttpErrorResponse({
           error
@@ -1559,7 +1580,7 @@ let FetchBackend = /*#__PURE__*/(() => {
     }
     doRequest(request, signal, observer) {
       var _this = this;
-      return _asyncToGenerator(function* () {
+      return (0,_home_runner_work_microzord_microzord_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z)(function* () {
         const init = _this.createRequestInit(request);
         let response;
         try {
@@ -1613,7 +1634,7 @@ let FetchBackend = /*#__PURE__*/(() => {
           // Perform response processing outside of Angular zone to
           // ensure no excessive change detection runs are executed
           // Here calling the async ReadableStreamDefaultReader.read() is responsible for triggering CD
-          yield _this.ngZone.runOutsideAngular( /*#__PURE__*/_asyncToGenerator(function* () {
+          yield _this.ngZone.runOutsideAngular( /*#__PURE__*/(0,_home_runner_work_microzord_microzord_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z)(function* () {
             while (true) {
               const {
                 done,
@@ -1657,7 +1678,7 @@ let FetchBackend = /*#__PURE__*/(() => {
         }
         // Same behavior as the XhrBackend
         if (status === 0) {
-          status = body ? 200 /* HttpStatusCode.Ok */ : 0;
+          status = body ? HttpStatusCode.Ok : 0;
         }
         // ok determines whether the response will be transmitted on the event or
         // error channel. Unsuccessful status codes (not 2xx) will always be errors,
@@ -1737,7 +1758,7 @@ let FetchBackend = /*#__PURE__*/(() => {
     static #_ = this.ɵfac = function FetchBackend_Factory(t) {
       return new (t || FetchBackend)();
     };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: FetchBackend,
       factory: FetchBackend.ɵfac
     });
@@ -1779,7 +1800,7 @@ function adaptLegacyInterceptorToChain(chainTailFn, interceptor) {
  */
 function chainedInterceptorFn(chainTailFn, interceptorFn, injector) {
   // clang-format off
-  return (initialRequest, finalHandlerFn) => (0,core_mjs_.runInInjectionContext)(injector, () => interceptorFn(initialRequest, downstreamRequest => chainTailFn(downstreamRequest, finalHandlerFn)));
+  return (initialRequest, finalHandlerFn) => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.runInInjectionContext)(injector, () => interceptorFn(initialRequest, downstreamRequest => chainTailFn(downstreamRequest, finalHandlerFn)));
   // clang-format on
 }
 /**
@@ -1788,19 +1809,19 @@ function chainedInterceptorFn(chainTailFn, interceptorFn, injector) {
  *
  * @publicApi
  */
-const HTTP_INTERCEPTORS = /*#__PURE__*/new core_mjs_.InjectionToken(ngDevMode ? 'HTTP_INTERCEPTORS' : '');
+const HTTP_INTERCEPTORS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(ngDevMode ? 'HTTP_INTERCEPTORS' : '');
 /**
  * A multi-provided token of `HttpInterceptorFn`s.
  */
-const HTTP_INTERCEPTOR_FNS = /*#__PURE__*/new core_mjs_.InjectionToken(ngDevMode ? 'HTTP_INTERCEPTOR_FNS' : '');
+const HTTP_INTERCEPTOR_FNS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(ngDevMode ? 'HTTP_INTERCEPTOR_FNS' : '');
 /**
  * A multi-provided token of `HttpInterceptorFn`s that are only set in root.
  */
-const HTTP_ROOT_INTERCEPTOR_FNS = /*#__PURE__*/new core_mjs_.InjectionToken(ngDevMode ? 'HTTP_ROOT_INTERCEPTOR_FNS' : '');
+const HTTP_ROOT_INTERCEPTOR_FNS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(ngDevMode ? 'HTTP_ROOT_INTERCEPTOR_FNS' : '');
 /**
  * A provider to set a global primary http backend. If set, it will override the default one
  */
-const PRIMARY_HTTP_BACKEND = /*#__PURE__*/new core_mjs_.InjectionToken(ngDevMode ? 'PRIMARY_HTTP_BACKEND' : '');
+const PRIMARY_HTTP_BACKEND = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(ngDevMode ? 'PRIMARY_HTTP_BACKEND' : '');
 /**
  * Creates an `HttpInterceptorFn` which lazily initializes an interceptor chain from the legacy
  * class-based interceptors and runs the request through it.
@@ -1809,7 +1830,7 @@ function legacyInterceptorFnFactory() {
   let chain = null;
   return (req, handler) => {
     if (chain === null) {
-      const interceptors = (0,core_mjs_.inject)(HTTP_INTERCEPTORS, {
+      const interceptors = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(HTTP_INTERCEPTORS, {
         optional: true
       }) ?? [];
       // Note: interceptors are wrapped right-to-left so that final execution order is
@@ -1818,9 +1839,9 @@ function legacyInterceptorFnFactory() {
       // out.
       chain = interceptors.reduceRight(adaptLegacyInterceptorToChain, interceptorChainEndFn);
     }
-    const pendingTasks = (0,core_mjs_.inject)(core_mjs_["ɵPendingTasks"]);
+    const pendingTasks = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵPendingTasks"]);
     const taskId = pendingTasks.add();
-    return chain(req, handler).pipe((0,finalize/* finalize */.x)(() => pendingTasks.remove(taskId)));
+    return chain(req, handler).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__/* .finalize */ .x)(() => pendingTasks.remove(taskId)));
   };
 }
 let fetchBackendWarningDisplayed = false;
@@ -1835,11 +1856,11 @@ let HttpInterceptorHandler = /*#__PURE__*/(() => {
       this.backend = backend;
       this.injector = injector;
       this.chain = null;
-      this.pendingTasks = (0,core_mjs_.inject)(core_mjs_["ɵPendingTasks"]);
+      this.pendingTasks = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵPendingTasks"]);
       // Check if there is a preferred HTTP backend configured and use it if that's the case.
       // This is needed to enable `FetchBackend` globally for all HttpClient's when `withFetch`
       // is used.
-      const primaryHttpBackend = (0,core_mjs_.inject)(PRIMARY_HTTP_BACKEND, {
+      const primaryHttpBackend = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(PRIMARY_HTTP_BACKEND, {
         optional: true
       });
       this.backend = primaryHttpBackend ?? backend;
@@ -1847,10 +1868,10 @@ let HttpInterceptorHandler = /*#__PURE__*/(() => {
       // for an application. The logic below checks if that's the case and produces
       // a warning otherwise.
       if ((typeof ngDevMode === 'undefined' || ngDevMode) && !fetchBackendWarningDisplayed) {
-        const isServer = (0,common_mjs_.isPlatformServer)(injector.get(core_mjs_.PLATFORM_ID));
+        const isServer = (0,_angular_common__WEBPACK_IMPORTED_MODULE_1__.isPlatformServer)(injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__.PLATFORM_ID));
         if (isServer && !(this.backend instanceof FetchBackend)) {
           fetchBackendWarningDisplayed = true;
-          injector.get(core_mjs_["ɵConsole"]).warn((0,core_mjs_["ɵformatRuntimeError"])(2801 /* RuntimeErrorCode.NOT_USING_FETCH_BACKEND_IN_SSR */, 'Angular detected that `HttpClient` is not configured ' + 'to use `fetch` APIs. It\'s strongly recommended to ' + 'enable `fetch` for applications that use Server-Side Rendering ' + 'for better performance and compatibility. ' + 'To enable `fetch`, add the `withFetch()` to the `provideHttpClient()` ' + 'call at the root of the application.'));
+          injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵConsole"]).warn((0,_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵformatRuntimeError"])(2801 /* RuntimeErrorCode.NOT_USING_FETCH_BACKEND_IN_SSR */, 'Angular detected that `HttpClient` is not configured ' + "to use `fetch` APIs. It's strongly recommended to " + 'enable `fetch` for applications that use Server-Side Rendering ' + 'for better performance and compatibility. ' + 'To enable `fetch`, add the `withFetch()` to the `provideHttpClient()` ' + 'call at the root of the application.'));
         }
       }
     }
@@ -1864,12 +1885,12 @@ let HttpInterceptorHandler = /*#__PURE__*/(() => {
         this.chain = dedupedInterceptorFns.reduceRight((nextSequencedFn, interceptorFn) => chainedInterceptorFn(nextSequencedFn, interceptorFn, this.injector), interceptorChainEndFn);
       }
       const taskId = this.pendingTasks.add();
-      return this.chain(initialRequest, downstreamRequest => this.backend.handle(downstreamRequest)).pipe((0,finalize/* finalize */.x)(() => this.pendingTasks.remove(taskId)));
+      return this.chain(initialRequest, downstreamRequest => this.backend.handle(downstreamRequest)).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__/* .finalize */ .x)(() => this.pendingTasks.remove(taskId)));
     }
     static #_ = this.ɵfac = function HttpInterceptorHandler_Factory(t) {
-      return new (t || HttpInterceptorHandler)(core_mjs_["ɵɵinject"](HttpBackend), core_mjs_["ɵɵinject"](core_mjs_.EnvironmentInjector));
+      return new (t || HttpInterceptorHandler)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](HttpBackend), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.EnvironmentInjector));
     };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: HttpInterceptorHandler,
       factory: HttpInterceptorHandler.ɵfac
     });
@@ -1966,7 +1987,7 @@ let JsonpClientBackend = /*#__PURE__*/(() => {
         throw new Error(JSONP_ERR_HEADERS_NOT_SUPPORTED);
       }
       // Everything else happens inside the Observable boundary.
-      return new Observable/* Observable */.y(observer => {
+      return new rxjs__WEBPACK_IMPORTED_MODULE_6__/* .Observable */ .y(observer => {
         // The first step to make a request is to generate the callback name, and replace the
         // callback placeholder in the URL with the name. Care has to be taken here to ensure
         // a trailing &, if matched, gets inserted back into the URL in the correct place.
@@ -2030,7 +2051,7 @@ let JsonpClientBackend = /*#__PURE__*/(() => {
             // returned.
             observer.next(new HttpResponse({
               body,
-              status: 200 /* HttpStatusCode.Ok */,
+              status: HttpStatusCode.Ok,
               statusText: 'OK',
               url
             }));
@@ -2074,15 +2095,13 @@ let JsonpClientBackend = /*#__PURE__*/(() => {
       // Issue #34818
       // Changing <script>'s ownerDocument will prevent it from execution.
       // https://html.spec.whatwg.org/multipage/scripting.html#execute-the-script-block
-      if (!foreignDocument) {
-        foreignDocument = this.document.implementation.createHTMLDocument();
-      }
+      foreignDocument ??= this.document.implementation.createHTMLDocument();
       foreignDocument.adoptNode(script);
     }
     static #_ = this.ɵfac = function JsonpClientBackend_Factory(t) {
-      return new (t || JsonpClientBackend)(core_mjs_["ɵɵinject"](JsonpCallbackContext), core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT));
+      return new (t || JsonpClientBackend)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](JsonpCallbackContext), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
     };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: JsonpClientBackend,
       factory: JsonpClientBackend.ɵfac
     });
@@ -2097,7 +2116,7 @@ let JsonpClientBackend = /*#__PURE__*/(() => {
  */
 function jsonpInterceptorFn(req, next) {
   if (req.method === 'JSONP') {
-    return (0,core_mjs_.inject)(JsonpClientBackend).handle(req);
+    return (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(JsonpClientBackend).handle(req);
   }
   // Fall through for normal HTTP requests.
   return next(req);
@@ -2123,12 +2142,12 @@ let JsonpInterceptor = /*#__PURE__*/(() => {
      * @returns An observable of the event stream.
      */
     intercept(initialRequest, next) {
-      return (0,core_mjs_.runInInjectionContext)(this.injector, () => jsonpInterceptorFn(initialRequest, downstreamRequest => next.handle(downstreamRequest)));
+      return (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.runInInjectionContext)(this.injector, () => jsonpInterceptorFn(initialRequest, downstreamRequest => next.handle(downstreamRequest)));
     }
     static #_ = this.ɵfac = function JsonpInterceptor_Factory(t) {
-      return new (t || JsonpInterceptor)(core_mjs_["ɵɵinject"](core_mjs_.EnvironmentInjector));
+      return new (t || JsonpInterceptor)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.EnvironmentInjector));
     };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: JsonpInterceptor,
       factory: JsonpInterceptor.ɵfac
     });
@@ -2173,16 +2192,16 @@ let HttpXhrBackend = /*#__PURE__*/(() => {
       // Quick check to give a better error message when a user attempts to use
       // HttpClient.jsonp() without installing the HttpClientJsonpModule
       if (req.method === 'JSONP') {
-        throw new core_mjs_["ɵRuntimeError"](-2800 /* RuntimeErrorCode.MISSING_JSONP_MODULE */, (typeof ngDevMode === 'undefined' || ngDevMode) && `Cannot make a JSONP request without JSONP support. To fix the problem, either add the \`withJsonpSupport()\` call (if \`provideHttpClient()\` is used) or import the \`HttpClientJsonpModule\` in the root NgModule.`);
+        throw new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](-2800 /* RuntimeErrorCode.MISSING_JSONP_MODULE */, (typeof ngDevMode === 'undefined' || ngDevMode) && `Cannot make a JSONP request without JSONP support. To fix the problem, either add the \`withJsonpSupport()\` call (if \`provideHttpClient()\` is used) or import the \`HttpClientJsonpModule\` in the root NgModule.`);
       }
       // Check whether this factory has a special function to load an XHR implementation
       // for various non-browser environments. We currently limit it to only `ServerXhr`
       // class, which needs to load an XHR implementation.
       const xhrFactory = this.xhrFactory;
-      const source = xhrFactory.ɵloadImpl ? (0,from/* from */.D)(xhrFactory.ɵloadImpl()) : (0,of.of)(null);
-      return source.pipe((0,switchMap/* switchMap */.w)(() => {
+      const source = xhrFactory.ɵloadImpl ? (0,rxjs__WEBPACK_IMPORTED_MODULE_9__/* .from */ .D)(xhrFactory.ɵloadImpl()) : (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(null);
+      return source.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__/* .switchMap */ .w)(() => {
         // Everything happens on Observable subscription.
-        return new Observable/* Observable */.y(observer => {
+        return new rxjs__WEBPACK_IMPORTED_MODULE_6__/* .Observable */ .y(observer => {
           // Start by setting up the XHR object with request method, URL, and withCredentials
           // flag.
           const xhr = xhrFactory.build();
@@ -2257,13 +2276,13 @@ let HttpXhrBackend = /*#__PURE__*/(() => {
             } = partialFromXhr();
             // The body will be read out if present.
             let body = null;
-            if (status !== 204 /* HttpStatusCode.NoContent */) {
+            if (status !== HttpStatusCode.NoContent) {
               // Use XMLHttpRequest.response if set, responseText otherwise.
               body = typeof xhr.response === 'undefined' ? xhr.responseText : xhr.response;
             }
             // Normalize another potential bug (this one comes from CORS).
             if (status === 0) {
-              status = !!body ? 200 /* HttpStatusCode.Ok */ : 0;
+              status = !!body ? HttpStatusCode.Ok : 0;
             }
             // ok determines whether the response will be transmitted on the event or
             // error channel. Unsuccessful status codes (not 2xx) will always be errors,
@@ -2428,9 +2447,9 @@ let HttpXhrBackend = /*#__PURE__*/(() => {
       }));
     }
     static #_ = this.ɵfac = function HttpXhrBackend_Factory(t) {
-      return new (t || HttpXhrBackend)(core_mjs_["ɵɵinject"](common_mjs_.XhrFactory));
+      return new (t || HttpXhrBackend)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.XhrFactory));
     };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: HttpXhrBackend,
       factory: HttpXhrBackend.ɵfac
     });
@@ -2440,14 +2459,14 @@ let HttpXhrBackend = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-const XSRF_ENABLED = /*#__PURE__*/new core_mjs_.InjectionToken('XSRF_ENABLED');
+const XSRF_ENABLED = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(ngDevMode ? 'XSRF_ENABLED' : '');
 const XSRF_DEFAULT_COOKIE_NAME = 'XSRF-TOKEN';
-const XSRF_COOKIE_NAME = /*#__PURE__*/new core_mjs_.InjectionToken('XSRF_COOKIE_NAME', {
+const XSRF_COOKIE_NAME = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(ngDevMode ? 'XSRF_COOKIE_NAME' : '', {
   providedIn: 'root',
   factory: () => XSRF_DEFAULT_COOKIE_NAME
 });
 const XSRF_DEFAULT_HEADER_NAME = 'X-XSRF-TOKEN';
-const XSRF_HEADER_NAME = /*#__PURE__*/new core_mjs_.InjectionToken('XSRF_HEADER_NAME', {
+const XSRF_HEADER_NAME = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(ngDevMode ? 'XSRF_HEADER_NAME' : '', {
   providedIn: 'root',
   factory: () => XSRF_DEFAULT_HEADER_NAME
 });
@@ -2480,15 +2499,15 @@ let HttpXsrfCookieExtractor = /*#__PURE__*/(() => {
       const cookieString = this.doc.cookie || '';
       if (cookieString !== this.lastCookieString) {
         this.parseCount++;
-        this.lastToken = (0,common_mjs_["ɵparseCookieValue"])(cookieString, this.cookieName);
+        this.lastToken = (0,_angular_common__WEBPACK_IMPORTED_MODULE_1__["ɵparseCookieValue"])(cookieString, this.cookieName);
         this.lastCookieString = cookieString;
       }
       return this.lastToken;
     }
     static #_ = this.ɵfac = function HttpXsrfCookieExtractor_Factory(t) {
-      return new (t || HttpXsrfCookieExtractor)(core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵinject"](core_mjs_.PLATFORM_ID), core_mjs_["ɵɵinject"](XSRF_COOKIE_NAME));
+      return new (t || HttpXsrfCookieExtractor)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.PLATFORM_ID), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](XSRF_COOKIE_NAME));
     };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: HttpXsrfCookieExtractor,
       factory: HttpXsrfCookieExtractor.ɵfac
     });
@@ -2504,11 +2523,11 @@ function xsrfInterceptorFn(req, next) {
   // Non-mutating requests don't require a token, and absolute URLs require special handling
   // anyway as the cookie set
   // on our origin is not the same as the token expected by another origin.
-  if (!(0,core_mjs_.inject)(XSRF_ENABLED) || req.method === 'GET' || req.method === 'HEAD' || lcUrl.startsWith('http://') || lcUrl.startsWith('https://')) {
+  if (!(0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(XSRF_ENABLED) || req.method === 'GET' || req.method === 'HEAD' || lcUrl.startsWith('http://') || lcUrl.startsWith('https://')) {
     return next(req);
   }
-  const token = (0,core_mjs_.inject)(HttpXsrfTokenExtractor).getToken();
-  const headerName = (0,core_mjs_.inject)(XSRF_HEADER_NAME);
+  const token = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(HttpXsrfTokenExtractor).getToken();
+  const headerName = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(XSRF_HEADER_NAME);
   // Be careful not to overwrite an existing header of the same name.
   if (token != null && !req.headers.has(headerName)) {
     req = req.clone({
@@ -2526,12 +2545,12 @@ let HttpXsrfInterceptor = /*#__PURE__*/(() => {
       this.injector = injector;
     }
     intercept(initialRequest, next) {
-      return (0,core_mjs_.runInInjectionContext)(this.injector, () => xsrfInterceptorFn(initialRequest, downstreamRequest => next.handle(downstreamRequest)));
+      return (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.runInInjectionContext)(this.injector, () => xsrfInterceptorFn(initialRequest, downstreamRequest => next.handle(downstreamRequest)));
     }
     static #_ = this.ɵfac = function HttpXsrfInterceptor_Factory(t) {
-      return new (t || HttpXsrfInterceptor)(core_mjs_["ɵɵinject"](core_mjs_.EnvironmentInjector));
+      return new (t || HttpXsrfInterceptor)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.EnvironmentInjector));
     };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: HttpXsrfInterceptor,
       factory: HttpXsrfInterceptor.ɵfac
     });
@@ -2619,7 +2638,7 @@ function provideHttpClient(...features) {
   for (const feature of features) {
     providers.push(...feature.ɵproviders);
   }
-  return (0,core_mjs_.makeEnvironmentProviders)(providers);
+  return (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.makeEnvironmentProviders)(providers);
 }
 /**
  * Adds one or more functional-style HTTP interceptors to the configuration of the `HttpClient`
@@ -2638,7 +2657,7 @@ function withInterceptors(interceptorFns) {
     };
   }));
 }
-const LEGACY_INTERCEPTOR_FN = /*#__PURE__*/new core_mjs_.InjectionToken('LEGACY_INTERCEPTOR_FN');
+const LEGACY_INTERCEPTOR_FN = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(ngDevMode ? 'LEGACY_INTERCEPTOR_FN' : '');
 /**
  * Includes class-based interceptors configured using a multi-provider in the current injector into
  * the configured `HttpClient` instance.
@@ -2743,7 +2762,7 @@ function withRequestsMadeViaParent() {
   return makeHttpFeature(HttpFeatureKind.RequestsMadeViaParent, [{
     provide: HttpBackend,
     useFactory: () => {
-      const handlerFromParent = (0,core_mjs_.inject)(HttpHandler, {
+      const handlerFromParent = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(HttpHandler, {
         skipSelf: true,
         optional: true
       });
@@ -2819,10 +2838,10 @@ let HttpClientXsrfModule = /*#__PURE__*/(() => {
     static #_ = this.ɵfac = function HttpClientXsrfModule_Factory(t) {
       return new (t || HttpClientXsrfModule)();
     };
-    static #_2 = this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    static #_2 = this.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
       type: HttpClientXsrfModule
     });
-    static #_3 = this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    static #_3 = this.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
       providers: [HttpXsrfInterceptor, {
         provide: HTTP_INTERCEPTORS,
         useExisting: HttpXsrfInterceptor,
@@ -2858,10 +2877,10 @@ let HttpClientModule = /*#__PURE__*/(() => {
     static #_ = this.ɵfac = function HttpClientModule_Factory(t) {
       return new (t || HttpClientModule)();
     };
-    static #_2 = this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    static #_2 = this.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
       type: HttpClientModule
     });
-    static #_3 = this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    static #_3 = this.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
       providers: [provideHttpClient(withInterceptorsFromDi())]
     });
   }
@@ -2883,10 +2902,10 @@ let HttpClientJsonpModule = /*#__PURE__*/(() => {
     static #_ = this.ɵfac = function HttpClientJsonpModule_Factory(t) {
       return new (t || HttpClientJsonpModule)();
     };
-    static #_2 = this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    static #_2 = this.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
       type: HttpClientJsonpModule
     });
-    static #_3 = this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    static #_3 = this.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
       providers: [withJsonpSupport().ɵproviders]
     });
   }
@@ -2905,7 +2924,7 @@ const STATUS = 's';
 const STATUS_TEXT = 'st';
 const URL = 'u';
 const RESPONSE_TYPE = 'rt';
-const CACHE_OPTIONS = /*#__PURE__*/new core_mjs_.InjectionToken(ngDevMode ? 'HTTP_TRANSFER_STATE_CACHE_OPTIONS' : '');
+const CACHE_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(ngDevMode ? 'HTTP_TRANSFER_STATE_CACHE_OPTIONS' : '');
 /**
  * A list of allowed HTTP methods to cache.
  */
@@ -2914,7 +2933,7 @@ function transferCacheInterceptorFn(req, next) {
   const {
     isCacheActive,
     ...globalOptions
-  } = (0,core_mjs_.inject)(CACHE_OPTIONS);
+  } = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(CACHE_OPTIONS);
   const {
     transferCache: requestOptions,
     method: requestMethod
@@ -2927,7 +2946,7 @@ function transferCacheInterceptorFn(req, next) {
   globalOptions.filter?.(req) === false) {
     return next(req);
   }
-  const transferState = (0,core_mjs_.inject)(core_mjs_.TransferState);
+  const transferState = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.TransferState);
   const storeKey = makeCacheKey(req);
   const response = transferState.get(storeKey, null);
   let headersToInclude = globalOptions.includeHeaders;
@@ -2964,7 +2983,7 @@ function transferCacheInterceptorFn(req, next) {
       // and `has` calls.
       headers = appendMissingHeadersDetection(req.url, headers, headersToInclude ?? []);
     }
-    return (0,of.of)(new HttpResponse({
+    return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(new HttpResponse({
       body,
       headers,
       status,
@@ -2973,7 +2992,7 @@ function transferCacheInterceptorFn(req, next) {
     }));
   }
   // Request not found in cache. Make the request and cache it.
-  return next(req).pipe((0,tap/* tap */.b)(event => {
+  return next(req).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__/* .tap */ .b)(event => {
     if (event instanceof HttpResponse) {
       transferState.set(storeKey, {
         [BODY]: event.body,
@@ -3010,7 +3029,7 @@ function makeCacheKey(request) {
   const encodedParams = params.keys().sort().map(k => `${k}=${params.getAll(k)}`).join('&');
   const key = method + '.' + responseType + '.' + url + '?' + encodedParams;
   const hash = generateHash(key);
-  return (0,core_mjs_.makeStateKey)(hash);
+  return (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.makeStateKey)(hash);
 }
 /**
  * A method that returns a hash representation of a string using a variant of DJB2 hash
@@ -3043,7 +3062,7 @@ function withHttpTransferCache(cacheOptions) {
   return [{
     provide: CACHE_OPTIONS,
     useFactory: () => {
-      (0,core_mjs_["ɵperformanceMarkFeature"])('NgHttpTransferCache');
+      (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵperformanceMarkFeature"])('NgHttpTransferCache');
       return {
         isCacheActive: true,
         ...cacheOptions
@@ -3053,15 +3072,15 @@ function withHttpTransferCache(cacheOptions) {
     provide: HTTP_ROOT_INTERCEPTOR_FNS,
     useValue: transferCacheInterceptorFn,
     multi: true,
-    deps: [core_mjs_.TransferState, CACHE_OPTIONS]
+    deps: [_angular_core__WEBPACK_IMPORTED_MODULE_0__.TransferState, CACHE_OPTIONS]
   }, {
-    provide: core_mjs_.APP_BOOTSTRAP_LISTENER,
+    provide: _angular_core__WEBPACK_IMPORTED_MODULE_0__.APP_BOOTSTRAP_LISTENER,
     multi: true,
     useFactory: () => {
-      const appRef = (0,core_mjs_.inject)(core_mjs_.ApplicationRef);
-      const cacheState = (0,core_mjs_.inject)(CACHE_OPTIONS);
+      const appRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ApplicationRef);
+      const cacheState = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(CACHE_OPTIONS);
       return () => {
-        (0,core_mjs_["ɵwhenStable"])(appRef).then(() => {
+        (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵwhenStable"])(appRef).then(() => {
           cacheState.isCacheActive = false;
         });
       };
@@ -3086,9 +3105,9 @@ function appendMissingHeadersDetection(url, headers, headersToInclude) {
         const key = (prop + ':' + headerName).toLowerCase(); // e.g. `get:cache-control`
         if (!headersToInclude.includes(headerName) && !warningProduced.has(key)) {
           warningProduced.add(key);
-          const truncatedUrl = (0,core_mjs_["ɵtruncateMiddle"])(url);
+          const truncatedUrl = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵtruncateMiddle"])(url);
           // TODO: create Error guide for this warning
-          console.warn((0,core_mjs_["ɵformatRuntimeError"])(2802 /* RuntimeErrorCode.HEADERS_ALTERED_BY_TRANSFER_CACHE */, `Angular detected that the \`${headerName}\` header is accessed, but the value of the header ` + `was not transferred from the server to the client by the HttpTransferCache. ` + `To include the value of the \`${headerName}\` header for the \`${truncatedUrl}\` request, ` + `use the \`includeHeaders\` list. The \`includeHeaders\` can be defined either ` + `on a request level by adding the \`transferCache\` parameter, or on an application ` + `level by adding the \`httpCacheTransfer.includeHeaders\` argument to the ` + `\`provideClientHydration()\` call. `));
+          console.warn((0,_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵformatRuntimeError"])(2802 /* RuntimeErrorCode.HEADERS_ALTERED_BY_TRANSFER_CACHE */, `Angular detected that the \`${headerName}\` header is accessed, but the value of the header ` + `was not transferred from the server to the client by the HttpTransferCache. ` + `To include the value of the \`${headerName}\` header for the \`${truncatedUrl}\` request, ` + `use the \`includeHeaders\` list. The \`includeHeaders\` can be defined either ` + `on a request level by adding the \`transferCache\` parameter, or on an application ` + `level by adding the \`httpCacheTransfer.includeHeaders\` argument to the ` + `\`provideClientHydration()\` call. `));
         }
         // invoking the original method
         return value.apply(target, [headerName]);
@@ -3105,6 +3124,45 @@ function appendMissingHeadersDetection(url, headers, headersToInclude) {
 
 
 //# sourceMappingURL=http.mjs.map
+
+/***/ }),
+
+/***/ 5861:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Z: () => (/* binding */ _asyncToGenerator)
+/* harmony export */ });
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+  if (info.done) {
+    resolve(value);
+  } else {
+    Promise.resolve(value).then(_next, _throw);
+  }
+}
+function _asyncToGenerator(fn) {
+  return function () {
+    var self = this,
+      args = arguments;
+    return new Promise(function (resolve, reject) {
+      var gen = fn.apply(self, args);
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+      }
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+      _next(undefined);
+    });
+  };
+}
 
 /***/ })
 

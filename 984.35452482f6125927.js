@@ -644,12 +644,12 @@ function mapOneOrManyArgs(fn) {
 /* harmony export */   s3: () => (/* binding */ EVENT_MANAGER_PLUGINS),
 /* harmony export */   se: () => (/* binding */ DomRendererFactory2)
 /* harmony export */ });
-/* unused harmony exports By, EventManager, EventManagerPlugin, HAMMER_GESTURE_CONFIG, HAMMER_LOADER, HammerGestureConfig, HammerModule, Meta, REMOVE_STYLES_ON_COMPONENT_DESTROY, TransferState, VERSION, bootstrapApplication, createApplication, disableDebugTools, enableDebugTools, makeStateKey, provideClientHydration, provideProtractorTestingSupport, withHttpTransferCacheOptions, withNoHttpTransferCache, ɵBrowserDomAdapter, ɵBrowserGetTestability, ɵDomEventsPlugin, ɵDomSanitizerImpl, ɵHammerGesturesPlugin, ɵINTERNAL_BROWSER_PLATFORM_PROVIDERS, ɵKeyEventsPlugin, ɵSharedStylesHost, ɵinitDomAdapter */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9649);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5897);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(494);
+/* unused harmony exports By, EventManager, EventManagerPlugin, HAMMER_GESTURE_CONFIG, HAMMER_LOADER, HammerGestureConfig, HammerModule, HydrationFeatureKind, Meta, REMOVE_STYLES_ON_COMPONENT_DESTROY, TransferState, VERSION, bootstrapApplication, createApplication, disableDebugTools, enableDebugTools, makeStateKey, provideClientHydration, provideProtractorTestingSupport, withHttpTransferCacheOptions, withNoHttpTransferCache, ɵBrowserDomAdapter, ɵBrowserGetTestability, ɵDomEventsPlugin, ɵDomSanitizerImpl, ɵHammerGesturesPlugin, ɵINTERNAL_BROWSER_PLATFORM_PROVIDERS, ɵKeyEventsPlugin, ɵSharedStylesHost, ɵinitDomAdapter */
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1073);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4482);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1522);
 /**
- * @license Angular v17.0.9
+ * @license Angular v17.1.2
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -765,12 +765,10 @@ class BrowserGetTestability {
     const whenAllStable = callback => {
       const testabilities = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵglobal"]['getAllAngularTestabilities']();
       let count = testabilities.length;
-      let didWork = false;
-      const decrement = function (didWork_) {
-        didWork = didWork || didWork_;
+      const decrement = function () {
         count--;
         if (count == 0) {
-          callback(didWork);
+          callback();
         }
       };
       testabilities.forEach(testability => {
@@ -826,7 +824,7 @@ let BrowserXhr = /*#__PURE__*/(() => {
  *
  * @publicApi
  */
-const EVENT_MANAGER_PLUGINS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('EventManagerPlugins');
+const EVENT_MANAGER_PLUGINS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(ngDevMode ? 'EventManagerPlugins' : '');
 /**
  * An injectable service that provides event management for Angular
  * through a browser plug-in.
@@ -1078,7 +1076,7 @@ const REMOVE_STYLES_ON_COMPONENT_DESTROY_DEFAULT = true;
  * By default, the value is set to `true`.
  * @publicApi
  */
-const REMOVE_STYLES_ON_COMPONENT_DESTROY = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('RemoveStylesOnCompDestroy', {
+const REMOVE_STYLES_ON_COMPONENT_DESTROY = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(ngDevMode ? 'RemoveStylesOnCompDestroy' : '', {
   providedIn: 'root',
   factory: () => REMOVE_STYLES_ON_COMPONENT_DESTROY_DEFAULT
 });
@@ -1763,6 +1761,7 @@ const TESTABILITY_PROVIDERS = [{
   deps: [_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone, _angular_core__WEBPACK_IMPORTED_MODULE_0__.TestabilityRegistry, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵTESTABILITY_GETTER"]]
 }, {
   provide: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Testability,
+  // Also provide as `Testability` for backwards-compatibility.
   useClass: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Testability,
   deps: [_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone, _angular_core__WEBPACK_IMPORTED_MODULE_0__.TestabilityRegistry, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵTESTABILITY_GETTER"]]
 }];
@@ -1846,12 +1845,6 @@ let BrowserModule = /*#__PURE__*/(/* runtime-dependent pure expression or super 
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
-/**
- * Factory to create a `Meta` service instance for the current DOM document.
- */
-function createMeta() {
-  return new Meta(ɵɵinject(DOCUMENT));
-}
 /**
  * A service for managing HTML `<meta>` tags.
  *
@@ -2001,15 +1994,7 @@ let Meta = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
     };
     static #_2 = this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
       token: Meta,
-      factory: function Meta_Factory(t) {
-        let r = null;
-        if (t) {
-          r = new t();
-        } else {
-          r = createMeta();
-        }
-        return r;
-      },
+      factory: Meta.ɵfac,
       providedIn: 'root'
     });
   }
@@ -2025,12 +2010,6 @@ const META_KEYS_MAP = {
   httpEquiv: 'http-equiv'
 };
 
-/**
- * Factory to create Title service.
- */
-function createTitle() {
-  return new Title((0,_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"])(_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
-}
 /**
  * A service that can be used to get and set the title of a current HTML document.
  *
@@ -2064,15 +2043,7 @@ let Title = /*#__PURE__*/(() => {
     };
     static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: Title,
-      factory: function Title_Factory(t) {
-        let r = null;
-        if (t) {
-          r = new t();
-        } else {
-          r = createTitle();
-        }
-        return r;
-      },
+      factory: Title.ɵfac,
       providedIn: 'root'
     });
   }
@@ -2099,7 +2070,6 @@ function exportNgVar(name, value) {
     ng[name] = value;
   }
 }
-const win = typeof window !== 'undefined' && window || {};
 class ChangeDetectionPerfRecord {
   constructor(msPerTick, numTicks) {
     this.msPerTick = msPerTick;
@@ -2135,28 +2105,24 @@ class AngularProfiler {
     const record = config && config['record'];
     const profileName = 'Change Detection';
     // Profiler is not available in Android browsers without dev tools opened
-    const isProfilerAvailable = win.console.profile != null;
-    if (record && isProfilerAvailable) {
-      win.console.profile(profileName);
+    if (record && 'profile' in console && typeof console.profile === 'function') {
+      console.profile(profileName);
     }
-    const start = performanceNow();
+    const start = performance.now();
     let numTicks = 0;
-    while (numTicks < 5 || performanceNow() - start < 500) {
+    while (numTicks < 5 || performance.now() - start < 500) {
       this.appRef.tick();
       numTicks++;
     }
-    const end = performanceNow();
-    if (record && isProfilerAvailable) {
-      win.console.profileEnd(profileName);
+    const end = performance.now();
+    if (record && 'profileEnd' in console && typeof console.profileEnd === 'function') {
+      console.profileEnd(profileName);
     }
     const msPerTick = (end - start) / numTicks;
-    win.console.log(`ran ${numTicks} change detection cycles`);
-    win.console.log(`${msPerTick.toFixed(2)} ms per check`);
+    console.log(`ran ${numTicks} change detection cycles`);
+    console.log(`${msPerTick.toFixed(2)} ms per check`);
     return new ChangeDetectionPerfRecord(msPerTick, numTicks);
   }
-}
-function performanceNow() {
-  return win.performance && win.performance.now ? win.performance.now() : new Date().getTime();
 }
 const PROFILER_GLOBAL_NAME = 'profiler';
 /**
@@ -2548,9 +2514,6 @@ let DomSanitizer = /*#__PURE__*/(/* runtime-dependent pure expression or super *
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-function domSanitizerImplFactory(injector) {
-  return new DomSanitizerImpl(injector.get(_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
-}
 let DomSanitizerImpl = /*#__PURE__*/(/* runtime-dependent pure expression or super */ 179 == __webpack_require__.j ? ((() => {
   class DomSanitizerImpl extends DomSanitizer {
     constructor(_doc) {
@@ -2611,15 +2574,7 @@ let DomSanitizerImpl = /*#__PURE__*/(/* runtime-dependent pure expression or sup
     };
     static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: DomSanitizerImpl,
-      factory: function DomSanitizerImpl_Factory(t) {
-        let r = null;
-        if (t) {
-          r = new t();
-        } else {
-          r = domSanitizerImplFactory(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.Injector));
-        }
-        return r;
-      },
+      factory: DomSanitizerImpl.ɵfac,
       providedIn: 'root'
     });
   }
@@ -2629,6 +2584,17 @@ let DomSanitizerImpl = /*#__PURE__*/(/* runtime-dependent pure expression or sup
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+/**
+ * The list of features as an enum to uniquely type each `HydrationFeature`.
+ * @see {@link HydrationFeature}
+ *
+ * @publicApi
+ */
+var HydrationFeatureKind = /*#__PURE__*/function (HydrationFeatureKind) {
+  HydrationFeatureKind[HydrationFeatureKind["NoHttpTransferCache"] = 0] = "NoHttpTransferCache";
+  HydrationFeatureKind[HydrationFeatureKind["HttpTransferCacheOptions"] = 1] = "HttpTransferCacheOptions";
+  return HydrationFeatureKind;
+}(HydrationFeatureKind || {});
 /**
  * Helper function to create an object that represents a Hydration feature.
  */
@@ -2647,7 +2613,7 @@ function hydrationFeature(ɵkind, ɵproviders = [], ɵoptions = {}) {
 function withNoHttpTransferCache() {
   // This feature has no providers and acts as a flag that turns off
   // HTTP transfer cache (which otherwise is turned on by default).
-  return hydrationFeature(0 /* HydrationFeatureKind.NoHttpTransferCache */);
+  return hydrationFeature(HydrationFeatureKind.NoHttpTransferCache);
 }
 /**
  * The function accepts a an object, which allows to configure cache parameters,
@@ -2659,7 +2625,7 @@ function withNoHttpTransferCache() {
  */
 function withHttpTransferCacheOptions(options) {
   // This feature has no providers and acts as a flag to pass options to the HTTP transfer cache.
-  return hydrationFeature(1 /* HydrationFeatureKind.HttpTransferCacheOptions */, ɵwithHttpTransferCache(options));
+  return hydrationFeature(HydrationFeatureKind.HttpTransferCacheOptions, ɵwithHttpTransferCache(options));
 }
 /**
  * Returns an `ENVIRONMENT_INITIALIZER` token setup with a function
@@ -2730,7 +2696,7 @@ function provideZoneJsCompatibilityDetector() {
 function provideClientHydration(...features) {
   const providers = [];
   const featuresKind = new Set();
-  const hasHttpTransferCacheOptions = featuresKind.has(1 /* HydrationFeatureKind.HttpTransferCacheOptions */);
+  const hasHttpTransferCacheOptions = featuresKind.has(HydrationFeatureKind.HttpTransferCacheOptions);
   for (const {
     ɵproviders,
     ɵkind
@@ -2740,11 +2706,11 @@ function provideClientHydration(...features) {
       providers.push(ɵproviders);
     }
   }
-  if (typeof ngDevMode !== 'undefined' && ngDevMode && featuresKind.has(0 /* HydrationFeatureKind.NoHttpTransferCache */) && hasHttpTransferCacheOptions) {
+  if (typeof ngDevMode !== 'undefined' && ngDevMode && featuresKind.has(HydrationFeatureKind.NoHttpTransferCache) && hasHttpTransferCacheOptions) {
     // TODO: Make this a runtime error
     throw new Error('Configuration error: found both withHttpTransferCacheOptions() and withNoHttpTransferCache() in the same call to provideClientHydration(), which is a contradiction.');
   }
-  return makeEnvironmentProviders([typeof ngDevMode !== 'undefined' && ngDevMode ? provideZoneJsCompatibilityDetector() : [], ɵwithDomHydration(), featuresKind.has(0 /* HydrationFeatureKind.NoHttpTransferCache */) || hasHttpTransferCacheOptions ? [] : ɵwithHttpTransferCache({}), providers]);
+  return makeEnvironmentProviders([typeof ngDevMode !== 'undefined' && ngDevMode ? provideZoneJsCompatibilityDetector() : [], ɵwithDomHydration(), featuresKind.has(HydrationFeatureKind.NoHttpTransferCache) || hasHttpTransferCacheOptions ? [] : ɵwithHttpTransferCache({}), providers]);
 }
 
 /**
@@ -2755,7 +2721,7 @@ function provideClientHydration(...features) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.0.9');
+const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.1.2');
 
 // Re-export TransferState to the public API of the `platform-browser` for backwards-compatibility.
 /**
