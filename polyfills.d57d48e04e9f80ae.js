@@ -78,6 +78,7 @@
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
+// Initialize global `Zone` constant.
 (function (global) {
   const performance = global['performance'];
   function mark(name) {
@@ -2474,7 +2475,8 @@ function patchCustomElements(_global, api) {
   if (!isBrowser && !isMix || !_global['customElements'] || !('customElements' in _global)) {
     return;
   }
-  const callbacks = ['connectedCallback', 'disconnectedCallback', 'adoptedCallback', 'attributeChangedCallback'];
+  // https://html.spec.whatwg.org/multipage/custom-elements.html#concept-custom-element-definition-lifecycle-callbacks
+  const callbacks = ['connectedCallback', 'disconnectedCallback', 'adoptedCallback', 'attributeChangedCallback', 'formAssociatedCallback', 'formDisabledCallback', 'formResetCallback', 'formStateRestoreCallback'];
   api.patchCallbacks(api, _global.customElements, 'customElements', 'define', callbacks);
 }
 function eventTargetPatch(_global, api) {
