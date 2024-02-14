@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[631],{
+(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[496],{
 
-/***/ 6631:
+/***/ 3496:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -12,20 +12,20 @@ __webpack_require__.d(__webpack_exports__, {
   ApplicationModule: () => (/* binding */ ApplicationModule)
 });
 
-// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.1.3 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
-var router_mjs_ = __webpack_require__(8038);
+// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
+var router_mjs_ = __webpack_require__(6472);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc.js
-var taiga_ui_addon_doc = __webpack_require__(5322);
+var taiga_ui_addon_doc = __webpack_require__(176);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-utils.js + 75 modules
-var taiga_ui_addon_doc_utils = __webpack_require__(1569);
+var taiga_ui_addon_doc_utils = __webpack_require__(1040);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-link.js
-var taiga_ui_core_components_link = __webpack_require__(2114);
+var taiga_ui_core_components_link = __webpack_require__(1512);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-notification.js
-var taiga_ui_core_components_notification = __webpack_require__(8689);
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.1.3 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(5693);
+var taiga_ui_core_components_notification = __webpack_require__(8508);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(648);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-components.js + 85 modules
-var taiga_ui_addon_doc_components = __webpack_require__(2406);
+var taiga_ui_addon_doc_components = __webpack_require__(5748);
 ;// CONCATENATED MODULE: ./apps/demo/src/app/modules/application/application.component.ts
 
 
@@ -155,7 +155,7 @@ let ApplicationComponent = /*#__PURE__*/(() => {
           core_mjs_["ɵɵelementEnd"]();
         }
       },
-      dependencies: [taiga_ui_core_components_link/* TuiLinkComponent */.V, taiga_ui_addon_doc_components/* TuiDocDocumentationComponent */.zb, taiga_ui_addon_doc_components/* TuiDocDocumentationPropertyConnectorDirective */.B7, taiga_ui_addon_doc_components/* TuiDocPageComponent */.qo, taiga_ui_addon_doc_components/* TuiDocPageTabConnectorDirective */.nj, taiga_ui_core_components_notification/* TuiNotificationComponent */.L, router_mjs_.RouterLink],
+      dependencies: [taiga_ui_core_components_link/* TuiLinkComponent */.C, taiga_ui_addon_doc_components/* TuiDocDocumentationComponent */.Ix, taiga_ui_addon_doc_components/* TuiDocDocumentationPropertyConnectorDirective */.SA, taiga_ui_addon_doc_components/* TuiDocPageComponent */.EF, taiga_ui_addon_doc_components/* TuiDocPageTabConnectorDirective */.um, taiga_ui_core_components_notification/* TuiNotificationComponent */.e, router_mjs_.RouterLink],
       changeDetection: 0
     });
   }
@@ -177,7 +177,7 @@ let ApplicationModule = /*#__PURE__*/(() => {
       type: ApplicationModule
     });
     static #_3 = this.ɵinj = /*@__PURE__*/core_mjs_["ɵɵdefineInjector"]({
-      imports: [taiga_ui_core_components_link/* TuiLinkModule */.j, taiga_ui_addon_doc.TuiAddonDocModule, taiga_ui_core_components_notification/* TuiNotificationModule */.H, router_mjs_.RouterModule.forChild((0,taiga_ui_addon_doc_utils/* tuiGenerateRoutes */.Ve)(ApplicationComponent))]
+      imports: [taiga_ui_core_components_link/* TuiLinkModule */.w, taiga_ui_addon_doc.TuiAddonDocModule, taiga_ui_core_components_notification/* TuiNotificationModule */.O, router_mjs_.RouterModule.forChild((0,taiga_ui_addon_doc_utils/* tuiGenerateRoutes */._A)(ApplicationComponent))]
     });
   }
   return ApplicationModule;

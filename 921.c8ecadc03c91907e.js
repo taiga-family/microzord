@@ -1,37 +1,37 @@
 "use strict";
-(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[586],{
+(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[921],{
 
-/***/ 6328:
+/***/ 6020:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   b: () => (/* binding */ concatMap)
+/* harmony export */   m: () => (/* binding */ concatMap)
 /* harmony export */ });
-/* harmony import */ var _mergeMap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1631);
-/* harmony import */ var _util_isFunction__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4674);
+/* harmony import */ var _mergeMap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7400);
+/* harmony import */ var _util_isFunction__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8880);
 
 
 function concatMap(project, resultSelector) {
-  return (0,_util_isFunction__WEBPACK_IMPORTED_MODULE_0__/* .isFunction */ .m)(resultSelector) ? (0,_mergeMap__WEBPACK_IMPORTED_MODULE_1__/* .mergeMap */ .z)(project, resultSelector, 1) : (0,_mergeMap__WEBPACK_IMPORTED_MODULE_1__/* .mergeMap */ .z)(project, 1);
+  return (0,_util_isFunction__WEBPACK_IMPORTED_MODULE_0__/* .isFunction */ .m)(resultSelector) ? (0,_mergeMap__WEBPACK_IMPORTED_MODULE_1__/* .mergeMap */ .O)(project, resultSelector, 1) : (0,_mergeMap__WEBPACK_IMPORTED_MODULE_1__/* .mergeMap */ .O)(project, 1);
 }
 //# sourceMappingURL=concatMap.js.map
 
 /***/ }),
 
-/***/ 3572:
+/***/ 2156:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   d: () => (/* binding */ defaultIfEmpty)
+/* harmony export */   G: () => (/* binding */ defaultIfEmpty)
 /* harmony export */ });
-/* harmony import */ var _util_lift__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9360);
-/* harmony import */ var _OperatorSubscriber__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8251);
+/* harmony import */ var _util_lift__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5448);
+/* harmony import */ var _OperatorSubscriber__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7773);
 
 
 function defaultIfEmpty(defaultValue) {
-  return (0,_util_lift__WEBPACK_IMPORTED_MODULE_0__/* .operate */ .e)((source, subscriber) => {
+  return (0,_util_lift__WEBPACK_IMPORTED_MODULE_0__/* .operate */ .i)((source, subscriber) => {
     let hasValue = false;
-    source.subscribe((0,_OperatorSubscriber__WEBPACK_IMPORTED_MODULE_1__/* .createOperatorSubscriber */ .x)(subscriber, value => {
+    source.subscribe((0,_OperatorSubscriber__WEBPACK_IMPORTED_MODULE_1__/* .createOperatorSubscriber */ .e)(subscriber, value => {
       hasValue = true;
       subscriber.next(value);
     }, () => {
@@ -46,18 +46,18 @@ function defaultIfEmpty(defaultValue) {
 
 /***/ }),
 
-/***/ 1374:
+/***/ 5084:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   P: () => (/* binding */ first)
+/* harmony export */   K: () => (/* binding */ first)
 /* harmony export */ });
-/* harmony import */ var _util_EmptyError__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6973);
-/* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2181);
-/* harmony import */ var _take__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8180);
-/* harmony import */ var _defaultIfEmpty__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3572);
-/* harmony import */ var _throwIfEmpty__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3026);
-/* harmony import */ var _util_identity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2737);
+/* harmony import */ var _util_EmptyError__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7696);
+/* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6684);
+/* harmony import */ var _take__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3992);
+/* harmony import */ var _defaultIfEmpty__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2156);
+/* harmony import */ var _throwIfEmpty__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8124);
+/* harmony import */ var _util_identity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(528);
 
 
 
@@ -66,49 +66,49 @@ function defaultIfEmpty(defaultValue) {
 
 function first(predicate, defaultValue) {
   const hasDefaultValue = arguments.length >= 2;
-  return source => source.pipe(predicate ? (0,_filter__WEBPACK_IMPORTED_MODULE_0__/* .filter */ .h)((v, i) => predicate(v, i, source)) : _util_identity__WEBPACK_IMPORTED_MODULE_1__/* .identity */ .y, (0,_take__WEBPACK_IMPORTED_MODULE_2__/* .take */ .q)(1), hasDefaultValue ? (0,_defaultIfEmpty__WEBPACK_IMPORTED_MODULE_3__/* .defaultIfEmpty */ .d)(defaultValue) : (0,_throwIfEmpty__WEBPACK_IMPORTED_MODULE_4__/* .throwIfEmpty */ .T)(() => new _util_EmptyError__WEBPACK_IMPORTED_MODULE_5__/* .EmptyError */ .K()));
+  return source => source.pipe(predicate ? (0,_filter__WEBPACK_IMPORTED_MODULE_0__/* .filter */ .I)((v, i) => predicate(v, i, source)) : _util_identity__WEBPACK_IMPORTED_MODULE_1__/* .identity */ .Z, (0,_take__WEBPACK_IMPORTED_MODULE_2__/* .take */ .U)(1), hasDefaultValue ? (0,_defaultIfEmpty__WEBPACK_IMPORTED_MODULE_3__/* .defaultIfEmpty */ .G)(defaultValue) : (0,_throwIfEmpty__WEBPACK_IMPORTED_MODULE_4__/* .throwIfEmpty */ ._)(() => new _util_EmptyError__WEBPACK_IMPORTED_MODULE_5__/* .EmptyError */ .G()));
 }
 //# sourceMappingURL=first.js.map
 
 /***/ }),
 
-/***/ 3026:
+/***/ 8124:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   T: () => (/* binding */ throwIfEmpty)
+/* harmony export */   _: () => (/* binding */ throwIfEmpty)
 /* harmony export */ });
-/* harmony import */ var _util_EmptyError__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6973);
-/* harmony import */ var _util_lift__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9360);
-/* harmony import */ var _OperatorSubscriber__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8251);
+/* harmony import */ var _util_EmptyError__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7696);
+/* harmony import */ var _util_lift__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5448);
+/* harmony import */ var _OperatorSubscriber__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7773);
 
 
 
 function throwIfEmpty(errorFactory = defaultErrorFactory) {
-  return (0,_util_lift__WEBPACK_IMPORTED_MODULE_0__/* .operate */ .e)((source, subscriber) => {
+  return (0,_util_lift__WEBPACK_IMPORTED_MODULE_0__/* .operate */ .i)((source, subscriber) => {
     let hasValue = false;
-    source.subscribe((0,_OperatorSubscriber__WEBPACK_IMPORTED_MODULE_1__/* .createOperatorSubscriber */ .x)(subscriber, value => {
+    source.subscribe((0,_OperatorSubscriber__WEBPACK_IMPORTED_MODULE_1__/* .createOperatorSubscriber */ .e)(subscriber, value => {
       hasValue = true;
       subscriber.next(value);
     }, () => hasValue ? subscriber.complete() : subscriber.error(errorFactory())));
   });
 }
 function defaultErrorFactory() {
-  return new _util_EmptyError__WEBPACK_IMPORTED_MODULE_2__/* .EmptyError */ .K();
+  return new _util_EmptyError__WEBPACK_IMPORTED_MODULE_2__/* .EmptyError */ .G();
 }
 //# sourceMappingURL=throwIfEmpty.js.map
 
 /***/ }),
 
-/***/ 6973:
+/***/ 7696:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   K: () => (/* binding */ EmptyError)
+/* harmony export */   G: () => (/* binding */ EmptyError)
 /* harmony export */ });
-/* harmony import */ var _createErrorClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2306);
+/* harmony import */ var _createErrorClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4912);
 
-const EmptyError = (0,_createErrorClass__WEBPACK_IMPORTED_MODULE_0__/* .createErrorClass */ .d)(_super => function EmptyErrorImpl() {
+const EmptyError = (0,_createErrorClass__WEBPACK_IMPORTED_MODULE_0__/* .createErrorClass */ .w)(_super => function EmptyErrorImpl() {
   _super(this);
   this.name = 'EmptyError';
   this.message = 'no elements in sequence';
@@ -117,7 +117,7 @@ const EmptyError = (0,_createErrorClass__WEBPACK_IMPORTED_MODULE_0__/* .createEr
 
 /***/ }),
 
-/***/ 7586:
+/***/ 7921:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -203,46 +203,46 @@ __webpack_require__.d(__webpack_exports__, {
   "ɵloadChildren": () => (/* binding */ loadChildren)
 });
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.1.3 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(5693);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(648);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/isObservable.js
-var isObservable = __webpack_require__(2664);
+var isObservable = __webpack_require__(1116);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/from.js + 9 modules
-var from = __webpack_require__(7715);
+var from = __webpack_require__(4496);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/of.js
-var of = __webpack_require__(2096);
+var of = __webpack_require__(2700);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/BehaviorSubject.js
-var BehaviorSubject = __webpack_require__(5619);
+var BehaviorSubject = __webpack_require__(6700);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/combineLatest.js
-var combineLatest = __webpack_require__(2572);
+var combineLatest = __webpack_require__(6040);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/EmptyError.js
-var EmptyError = __webpack_require__(6973);
+var EmptyError = __webpack_require__(7696);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/concat.js + 1 modules
-var concat = __webpack_require__(5211);
+var concat = __webpack_require__(7228);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/defer.js
-var defer = __webpack_require__(4911);
+var defer = __webpack_require__(1424);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/pipe.js
-var pipe = __webpack_require__(8407);
+var pipe = __webpack_require__(3928);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/throwError.js
-var observable_throwError = __webpack_require__(8504);
+var observable_throwError = __webpack_require__(3800);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/empty.js
-var empty = __webpack_require__(6232);
+var empty = __webpack_require__(8960);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Observable.js
-var Observable = __webpack_require__(5592);
+var Observable = __webpack_require__(3252);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Subscription.js + 1 modules
-var Subscription = __webpack_require__(7394);
+var Subscription = __webpack_require__(6928);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/lift.js
-var lift = __webpack_require__(9360);
+var lift = __webpack_require__(5448);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/OperatorSubscriber.js
-var OperatorSubscriber = __webpack_require__(8251);
+var OperatorSubscriber = __webpack_require__(7773);
 ;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/operators/refCount.js
 
 
 function refCount() {
-  return (0,lift/* operate */.e)((source, subscriber) => {
+  return (0,lift/* operate */.i)((source, subscriber) => {
     let connection = null;
     source._refCount++;
-    const refCounter = (0,OperatorSubscriber/* createOperatorSubscriber */.x)(subscriber, undefined, undefined, undefined, () => {
+    const refCounter = (0,OperatorSubscriber/* createOperatorSubscriber */.e)(subscriber, undefined, undefined, undefined, () => {
       if (!source || source._refCount <= 0 || 0 < --source._refCount) {
         connection = null;
         return;
@@ -268,7 +268,7 @@ function refCount() {
 
 
 
-class ConnectableObservable extends Observable/* Observable */.y {
+class ConnectableObservable extends Observable/* Observable */._ {
   constructor(source, subjectFactory) {
     super();
     this.source = source;
@@ -276,7 +276,7 @@ class ConnectableObservable extends Observable/* Observable */.y {
     this._subject = null;
     this._refCount = 0;
     this._connection = null;
-    if ((0,lift/* hasLift */.A)(source)) {
+    if ((0,lift/* hasLift */.e)(source)) {
       this.lift = source.lift;
     }
   }
@@ -301,9 +301,9 @@ class ConnectableObservable extends Observable/* Observable */.y {
   connect() {
     let connection = this._connection;
     if (!connection) {
-      connection = this._connection = new Subscription/* Subscription */.w0();
+      connection = this._connection = new Subscription/* Subscription */.wH();
       const subject = this.getSubject();
-      connection.add(this.source.subscribe((0,OperatorSubscriber/* createOperatorSubscriber */.x)(subject, undefined, () => {
+      connection.add(this.source.subscribe((0,OperatorSubscriber/* createOperatorSubscriber */.e)(subject, undefined, () => {
         this._teardown();
         subject.complete();
       }, err => {
@@ -312,7 +312,7 @@ class ConnectableObservable extends Observable/* Observable */.y {
       }, () => this._teardown())));
       if (connection.closed) {
         this._connection = null;
-        connection = Subscription/* Subscription */.w0.EMPTY;
+        connection = Subscription/* Subscription */.wH.EMPTY;
       }
     }
     return connection;
@@ -323,29 +323,29 @@ class ConnectableObservable extends Observable/* Observable */.y {
 }
 //# sourceMappingURL=ConnectableObservable.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Subject.js + 1 modules
-var Subject = __webpack_require__(8645);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.1.3 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(5603);
+var Subject = __webpack_require__(5657);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(1268);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/map.js
-var map = __webpack_require__(7398);
+var map = __webpack_require__(4704);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/switchMap.js
-var switchMap = __webpack_require__(4664);
+var switchMap = __webpack_require__(7368);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/take.js
-var take = __webpack_require__(8180);
+var take = __webpack_require__(3992);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/startWith.js
-var startWith = __webpack_require__(7921);
+var startWith = __webpack_require__(5568);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/filter.js
-var filter = __webpack_require__(2181);
+var filter = __webpack_require__(6684);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/mergeMap.js + 1 modules
-var mergeMap = __webpack_require__(1631);
+var mergeMap = __webpack_require__(7400);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/first.js
-var first = __webpack_require__(1374);
+var first = __webpack_require__(5084);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/concatMap.js
-var concatMap = __webpack_require__(6328);
+var concatMap = __webpack_require__(6020);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/tap.js
-var tap = __webpack_require__(9397);
+var tap = __webpack_require__(9212);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/catchError.js
-var catchError = __webpack_require__(6306);
+var catchError = __webpack_require__(9144);
 ;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/operators/scanInternals.js
 
 function scanInternals(accumulator, seed, hasSeed, emitOnNext, emitBeforeComplete) {
@@ -353,7 +353,7 @@ function scanInternals(accumulator, seed, hasSeed, emitOnNext, emitBeforeComplet
     let hasState = hasSeed;
     let state = seed;
     let index = 0;
-    source.subscribe((0,OperatorSubscriber/* createOperatorSubscriber */.x)(subscriber, value => {
+    source.subscribe((0,OperatorSubscriber/* createOperatorSubscriber */.e)(subscriber, value => {
       const i = index++;
       state = hasState ? accumulator(state, value, i) : (hasState = true, value);
       emitOnNext && subscriber.next(state);
@@ -368,19 +368,19 @@ function scanInternals(accumulator, seed, hasSeed, emitOnNext, emitBeforeComplet
 
 
 function scan(accumulator, seed) {
-  return (0,lift/* operate */.e)(scanInternals(accumulator, seed, arguments.length >= 2, true));
+  return (0,lift/* operate */.i)(scanInternals(accumulator, seed, arguments.length >= 2, true));
 }
 //# sourceMappingURL=scan.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/defaultIfEmpty.js
-var defaultIfEmpty = __webpack_require__(3572);
+var defaultIfEmpty = __webpack_require__(2156);
 ;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/operators/takeLast.js
 
 
 
 function takeLast(count) {
-  return count <= 0 ? () => empty/* EMPTY */.E : (0,lift/* operate */.e)((source, subscriber) => {
+  return count <= 0 ? () => empty/* EMPTY */.k : (0,lift/* operate */.i)((source, subscriber) => {
     let buffer = [];
-    source.subscribe((0,OperatorSubscriber/* createOperatorSubscriber */.x)(subscriber, value => {
+    source.subscribe((0,OperatorSubscriber/* createOperatorSubscriber */.e)(subscriber, value => {
       buffer.push(value);
       count < buffer.length && buffer.shift();
     }, () => {
@@ -395,9 +395,9 @@ function takeLast(count) {
 }
 //# sourceMappingURL=takeLast.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/throwIfEmpty.js
-var throwIfEmpty = __webpack_require__(3026);
+var throwIfEmpty = __webpack_require__(8124);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/identity.js
-var identity = __webpack_require__(2737);
+var identity = __webpack_require__(528);
 ;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/operators/last.js
 
 
@@ -407,22 +407,22 @@ var identity = __webpack_require__(2737);
 
 function last(predicate, defaultValue) {
   const hasDefaultValue = arguments.length >= 2;
-  return source => source.pipe(predicate ? (0,filter/* filter */.h)((v, i) => predicate(v, i, source)) : identity/* identity */.y, takeLast(1), hasDefaultValue ? (0,defaultIfEmpty/* defaultIfEmpty */.d)(defaultValue) : (0,throwIfEmpty/* throwIfEmpty */.T)(() => new EmptyError/* EmptyError */.K()));
+  return source => source.pipe(predicate ? (0,filter/* filter */.I)((v, i) => predicate(v, i, source)) : identity/* identity */.Z, takeLast(1), hasDefaultValue ? (0,defaultIfEmpty/* defaultIfEmpty */.G)(defaultValue) : (0,throwIfEmpty/* throwIfEmpty */._)(() => new EmptyError/* EmptyError */.G()));
 }
 //# sourceMappingURL=last.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/mapTo.js
-var mapTo = __webpack_require__(975);
+var mapTo = __webpack_require__(320);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/finalize.js
-var finalize = __webpack_require__(4716);
+var finalize = __webpack_require__(8824);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/takeUntil.js
-var takeUntil = __webpack_require__(9773);
+var takeUntil = __webpack_require__(3616);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/mergeAll.js
-var mergeAll = __webpack_require__(7537);
+var mergeAll = __webpack_require__(267);
 // EXTERNAL MODULE: ./node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
-var platform_browser = __webpack_require__(6593);
+var platform_browser = __webpack_require__(4476);
 ;// CONCATENATED MODULE: ./node_modules/@angular/router/fesm2022/router.mjs
 /**
- * @license Angular v17.1.3
+ * @license Angular v17.2.0
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -575,14 +575,14 @@ function router_last(a) {
   return a.length > 0 ? a[a.length - 1] : null;
 }
 function wrapIntoObservable(value) {
-  if ((0,isObservable/* isObservable */.b)(value)) {
+  if ((0,isObservable/* isObservable */.X)(value)) {
     return value;
   }
   if ((0,core_mjs_["ɵisPromise"])(value)) {
     // Use `Promise.resolve()` to wrap promise-like instances.
     // Required ie when a Resolver returns a AngularJS `$q` promise to correctly trigger the
     // change detection.
-    return (0,from/* from */.D)(Promise.resolve(value));
+    return (0,from/* from */.Q)(Promise.resolve(value));
   }
   return (0,of.of)(value);
 }
@@ -1409,7 +1409,7 @@ function createPositionApplyingDoubleDots(group, index, numberOfDoubleDots) {
     dd -= ci;
     g = g.parent;
     if (!g) {
-      throw new core_mjs_["ɵRuntimeError"](4005 /* RuntimeErrorCode.INVALID_DOUBLE_DOTS */, (typeof ngDevMode === 'undefined' || ngDevMode) && 'Invalid number of \'../\'');
+      throw new core_mjs_["ɵRuntimeError"](4005 /* RuntimeErrorCode.INVALID_DOUBLE_DOTS */, (typeof ngDevMode === 'undefined' || ngDevMode) && "Invalid number of '../'");
     }
     ci = g.segments.length;
   }
@@ -2314,11 +2314,11 @@ class RouterState extends Tree {
 }
 function createEmptyState(rootComponent) {
   const snapshot = createEmptyStateSnapshot(rootComponent);
-  const emptyUrl = new BehaviorSubject/* BehaviorSubject */.X([new UrlSegment('', {})]);
-  const emptyParams = new BehaviorSubject/* BehaviorSubject */.X({});
-  const emptyData = new BehaviorSubject/* BehaviorSubject */.X({});
-  const emptyQueryParams = new BehaviorSubject/* BehaviorSubject */.X({});
-  const fragment = new BehaviorSubject/* BehaviorSubject */.X('');
+  const emptyUrl = new BehaviorSubject/* BehaviorSubject */.g([new UrlSegment('', {})]);
+  const emptyParams = new BehaviorSubject/* BehaviorSubject */.g({});
+  const emptyData = new BehaviorSubject/* BehaviorSubject */.g({});
+  const emptyQueryParams = new BehaviorSubject/* BehaviorSubject */.g({});
+  const fragment = new BehaviorSubject/* BehaviorSubject */.g('');
   const activated = new ActivatedRoute(emptyUrl, emptyParams, emptyQueryParams, fragment, emptyData, PRIMARY_OUTLET, rootComponent, snapshot.root);
   activated.snapshot = snapshot.root;
   return new RouterState(new TreeNode(activated, []), snapshot);
@@ -2368,7 +2368,7 @@ class ActivatedRoute {
     this.outlet = outlet;
     this.component = component;
     this._futureSnapshot = futureSnapshot;
-    this.title = this.dataSubject?.pipe((0,map/* map */.U)(d => d[RouteTitleKey])) ?? (0,of.of)(undefined);
+    this.title = this.dataSubject?.pipe((0,map/* map */.k)(d => d[RouteTitleKey])) ?? (0,of.of)(undefined);
     // TODO(atscott): Verify that these can be changed to `.asObservable()` with TGP.
     this.url = urlSubject;
     this.params = paramsSubject;
@@ -2406,7 +2406,7 @@ class ActivatedRoute {
    * The map supports retrieving single and multiple values from the same parameter.
    */
   get paramMap() {
-    this._paramMap ??= this.params.pipe((0,map/* map */.U)(p => convertToParamMap(p)));
+    this._paramMap ??= this.params.pipe((0,map/* map */.k)(p => convertToParamMap(p)));
     return this._paramMap;
   }
   /**
@@ -2414,7 +2414,7 @@ class ActivatedRoute {
    * The map supports retrieving single and multiple values from the query parameter.
    */
   get queryParamMap() {
-    this._queryParamMap ??= this.queryParams.pipe((0,map/* map */.U)(p => convertToParamMap(p)));
+    this._queryParamMap ??= this.queryParams.pipe((0,map/* map */.k)(p => convertToParamMap(p)));
     return this._queryParamMap;
   }
   toString() {
@@ -2958,7 +2958,7 @@ let RoutedComponentInputBinder = /*#__PURE__*/(() => {
       const {
         activatedRoute
       } = outlet;
-      const dataSubscription = (0,combineLatest/* combineLatest */.a)([activatedRoute.queryParams, activatedRoute.params, activatedRoute.data]).pipe((0,switchMap/* switchMap */.w)(([queryParams, params, data], index) => {
+      const dataSubscription = (0,combineLatest/* combineLatest */.E)([activatedRoute.queryParams, activatedRoute.params, activatedRoute.data]).pipe((0,switchMap/* switchMap */.G)(([queryParams, params, data], index) => {
         data = {
           ...queryParams,
           ...params,
@@ -3044,7 +3044,7 @@ function createOrReuseChildren(routeReuseStrategy, curr, prevState) {
   });
 }
 function createActivatedRoute(c) {
-  return new ActivatedRoute(new BehaviorSubject/* BehaviorSubject */.X(c.url), new BehaviorSubject/* BehaviorSubject */.X(c.params), new BehaviorSubject/* BehaviorSubject */.X(c.queryParams), new BehaviorSubject/* BehaviorSubject */.X(c.fragment), new BehaviorSubject/* BehaviorSubject */.X(c.data), c.outlet, c.component, c);
+  return new ActivatedRoute(new BehaviorSubject/* BehaviorSubject */.g(c.url), new BehaviorSubject/* BehaviorSubject */.g(c.params), new BehaviorSubject/* BehaviorSubject */.g(c.queryParams), new BehaviorSubject/* BehaviorSubject */.g(c.fragment), new BehaviorSubject/* BehaviorSubject */.g(c.data), c.outlet, c.component, c);
 }
 const NAVIGATION_CANCELING_ERROR = 'ngNavigationCancelingError';
 function redirectingNavigationError(urlSerializer, redirect) {
@@ -3288,7 +3288,7 @@ function getClosestRouteInjector(snapshot) {
   return null;
 }
 let warnedAboutUnsupportedInputBinding = false;
-const activateRoutes = (rootContexts, routeReuseStrategy, forwardEvent, inputBindingEnabled) => (0,map/* map */.U)(t => {
+const activateRoutes = (rootContexts, routeReuseStrategy, forwardEvent, inputBindingEnabled) => (0,map/* map */.k)(t => {
   new ActivateRoutes(routeReuseStrategy, t.targetRouterState, t.currentRouterState, forwardEvent, inputBindingEnabled).activate(rootContexts);
   return t;
 });
@@ -3629,12 +3629,12 @@ function isCanMatch(guard) {
   return guard && isFunction(guard.canMatch);
 }
 function isEmptyError(e) {
-  return e instanceof EmptyError/* EmptyError */.K || e?.name === 'EmptyError';
+  return e instanceof EmptyError/* EmptyError */.G || e?.name === 'EmptyError';
 }
 const INITIAL_VALUE = /* @__PURE__ */Symbol('INITIAL_VALUE');
 function prioritizedGuardValue() {
-  return (0,switchMap/* switchMap */.w)(obs => {
-    return (0,combineLatest/* combineLatest */.a)(obs.map(o => o.pipe((0,take/* take */.q)(1), (0,startWith/* startWith */.O)(INITIAL_VALUE)))).pipe((0,map/* map */.U)(results => {
+  return (0,switchMap/* switchMap */.G)(obs => {
+    return (0,combineLatest/* combineLatest */.E)(obs.map(o => o.pipe((0,take/* take */.U)(1), (0,startWith/* startWith */.W)(INITIAL_VALUE)))).pipe((0,map/* map */.k)(results => {
       for (const result of results) {
         if (result === true) {
           // If result is true, check the next one
@@ -3651,11 +3651,11 @@ function prioritizedGuardValue() {
       }
       // Everything resolved to true. Return true.
       return true;
-    }), (0,filter/* filter */.h)(item => item !== INITIAL_VALUE), (0,take/* take */.q)(1));
+    }), (0,filter/* filter */.I)(item => item !== INITIAL_VALUE), (0,take/* take */.U)(1));
   });
 }
 function checkGuards(injector, forwardEvent) {
-  return (0,mergeMap/* mergeMap */.z)(t => {
+  return (0,mergeMap/* mergeMap */.O)(t => {
     const {
       targetSnapshot,
       currentSnapshot,
@@ -3670,23 +3670,23 @@ function checkGuards(injector, forwardEvent) {
         guardsResult: true
       });
     }
-    return runCanDeactivateChecks(canDeactivateChecks, targetSnapshot, currentSnapshot, injector).pipe((0,mergeMap/* mergeMap */.z)(canDeactivate => {
+    return runCanDeactivateChecks(canDeactivateChecks, targetSnapshot, currentSnapshot, injector).pipe((0,mergeMap/* mergeMap */.O)(canDeactivate => {
       return canDeactivate && isBoolean(canDeactivate) ? runCanActivateChecks(targetSnapshot, canActivateChecks, injector, forwardEvent) : (0,of.of)(canDeactivate);
-    }), (0,map/* map */.U)(guardsResult => ({
+    }), (0,map/* map */.k)(guardsResult => ({
       ...t,
       guardsResult
     })));
   });
 }
 function runCanDeactivateChecks(checks, futureRSS, currRSS, injector) {
-  return (0,from/* from */.D)(checks).pipe((0,mergeMap/* mergeMap */.z)(check => runCanDeactivate(check.component, check.route, currRSS, futureRSS, injector)), (0,first/* first */.P)(result => {
+  return (0,from/* from */.Q)(checks).pipe((0,mergeMap/* mergeMap */.O)(check => runCanDeactivate(check.component, check.route, currRSS, futureRSS, injector)), (0,first/* first */.K)(result => {
     return result !== true;
   }, true));
 }
 function runCanActivateChecks(futureSnapshot, checks, injector, forwardEvent) {
-  return (0,from/* from */.D)(checks).pipe((0,concatMap/* concatMap */.b)(check => {
-    return (0,concat/* concat */.z)(fireChildActivationStart(check.route.parent, forwardEvent), fireActivationStart(check.route, forwardEvent), runCanActivateChild(futureSnapshot, check.path, injector), runCanActivate(futureSnapshot, check.route, injector));
-  }), (0,first/* first */.P)(result => {
+  return (0,from/* from */.Q)(checks).pipe((0,concatMap/* concatMap */.m)(check => {
+    return (0,concat/* concat */.W)(fireChildActivationStart(check.route.parent, forwardEvent), fireActivationStart(check.route, forwardEvent), runCanActivateChild(futureSnapshot, check.path, injector), runCanActivate(futureSnapshot, check.route, injector));
+  }), (0,first/* first */.K)(result => {
     return result !== true;
   }, true));
 }
@@ -3722,11 +3722,11 @@ function runCanActivate(futureRSS, futureARS, injector) {
   const canActivate = futureARS.routeConfig ? futureARS.routeConfig.canActivate : null;
   if (!canActivate || canActivate.length === 0) return (0,of.of)(true);
   const canActivateObservables = canActivate.map(canActivate => {
-    return (0,defer/* defer */.P)(() => {
+    return (0,defer/* defer */.Q)(() => {
       const closestInjector = getClosestRouteInjector(futureARS) ?? injector;
       const guard = getTokenOrFunctionIdentity(canActivate, closestInjector);
       const guardVal = isCanActivate(guard) ? guard.canActivate(futureARS, futureRSS) : (0,core_mjs_.runInInjectionContext)(closestInjector, () => guard(futureARS, futureRSS));
-      return wrapIntoObservable(guardVal).pipe((0,first/* first */.P)());
+      return wrapIntoObservable(guardVal).pipe((0,first/* first */.K)());
     });
   });
   return (0,of.of)(canActivateObservables).pipe(prioritizedGuardValue());
@@ -3735,12 +3735,12 @@ function runCanActivateChild(futureRSS, path, injector) {
   const futureARS = path[path.length - 1];
   const canActivateChildGuards = path.slice(0, path.length - 1).reverse().map(p => getCanActivateChild(p)).filter(_ => _ !== null);
   const canActivateChildGuardsMapped = canActivateChildGuards.map(d => {
-    return (0,defer/* defer */.P)(() => {
+    return (0,defer/* defer */.Q)(() => {
       const guardsMapped = d.guards.map(canActivateChild => {
         const closestInjector = getClosestRouteInjector(d.node) ?? injector;
         const guard = getTokenOrFunctionIdentity(canActivateChild, closestInjector);
         const guardVal = isCanActivateChild(guard) ? guard.canActivateChild(futureARS, futureRSS) : (0,core_mjs_.runInInjectionContext)(closestInjector, () => guard(futureARS, futureRSS));
-        return wrapIntoObservable(guardVal).pipe((0,first/* first */.P)());
+        return wrapIntoObservable(guardVal).pipe((0,first/* first */.K)());
       });
       return (0,of.of)(guardsMapped).pipe(prioritizedGuardValue());
     });
@@ -3754,7 +3754,7 @@ function runCanDeactivate(component, currARS, currRSS, futureRSS, injector) {
     const closestInjector = getClosestRouteInjector(currARS) ?? injector;
     const guard = getTokenOrFunctionIdentity(c, closestInjector);
     const guardVal = isCanDeactivate(guard) ? guard.canDeactivate(component, currARS, currRSS, futureRSS) : (0,core_mjs_.runInInjectionContext)(closestInjector, () => guard(component, currARS, currRSS, futureRSS));
-    return wrapIntoObservable(guardVal).pipe((0,first/* first */.P)());
+    return wrapIntoObservable(guardVal).pipe((0,first/* first */.K)());
   });
   return (0,of.of)(canDeactivateObservables).pipe(prioritizedGuardValue());
 }
@@ -3771,10 +3771,10 @@ function runCanLoadGuards(injector, route, segments, urlSerializer) {
   return (0,of.of)(canLoadObservables).pipe(prioritizedGuardValue(), redirectIfUrlTree(urlSerializer));
 }
 function redirectIfUrlTree(urlSerializer) {
-  return (0,pipe/* pipe */.z)((0,tap/* tap */.b)(result => {
+  return (0,pipe/* pipe */.W)((0,tap/* tap */.y)(result => {
     if (!isUrlTree(result)) return;
     throw redirectingNavigationError(urlSerializer, result);
-  }), (0,map/* map */.U)(result => result === true));
+  }), (0,map/* map */.k)(result => result === true));
 }
 function runCanMatchGuards(injector, route, segments, urlSerializer) {
   const canMatch = route.canMatch;
@@ -3798,16 +3798,16 @@ class AbsoluteRedirect extends Error {
   }
 }
 function noMatch$1(segmentGroup) {
-  return (0,observable_throwError/* throwError */._)(new NoMatch(segmentGroup));
+  return (0,observable_throwError/* throwError */.c)(new NoMatch(segmentGroup));
 }
 function absoluteRedirect(newTree) {
   return throwError(new AbsoluteRedirect(newTree));
 }
 function namedOutletsRedirect(redirectTo) {
-  return (0,observable_throwError/* throwError */._)(new core_mjs_["ɵRuntimeError"](4000 /* RuntimeErrorCode.NAMED_OUTLET_REDIRECT */, (typeof ngDevMode === 'undefined' || ngDevMode) && `Only absolute redirects can have named outlets. redirectTo: '${redirectTo}'`));
+  return (0,observable_throwError/* throwError */.c)(new core_mjs_["ɵRuntimeError"](4000 /* RuntimeErrorCode.NAMED_OUTLET_REDIRECT */, (typeof ngDevMode === 'undefined' || ngDevMode) && `Only absolute redirects can have named outlets. redirectTo: '${redirectTo}'`));
 }
 function canLoadFails(route) {
-  return (0,observable_throwError/* throwError */._)(navigationCancelingError((typeof ngDevMode === 'undefined' || ngDevMode) && `Cannot load children because the guard of the route "path: '${route.path}'" returned false`, NavigationCancellationCode.GuardRejected));
+  return (0,observable_throwError/* throwError */.c)(navigationCancelingError((typeof ngDevMode === 'undefined' || ngDevMode) && `Cannot load children because the guard of the route "path: '${route.path}'" returned false`, NavigationCancellationCode.GuardRejected));
 }
 class ApplyRedirects {
   constructor(urlSerializer, urlTree) {
@@ -3895,7 +3895,7 @@ function matchWithChecks(segmentGroup, route, segments, injector, urlSerializer)
   // Only create the Route's `EnvironmentInjector` if it matches the attempted
   // navigation
   injector = getOrCreateRouteInjectorIfNeeded(route, injector);
-  return runCanMatchGuards(injector, route, segments, urlSerializer).pipe((0,map/* map */.U)(v => v === true ? result : {
+  return runCanMatchGuards(injector, route, segments, urlSerializer).pipe((0,map/* map */.k)(v => v === true ? result : {
     ...noMatch
   }));
 }
@@ -4059,7 +4059,7 @@ class Recognizer {
   }
   recognize() {
     const rootSegmentGroup = split(this.urlTree.root, [], [], this.config).segmentGroup;
-    return this.match(rootSegmentGroup).pipe((0,map/* map */.U)(children => {
+    return this.match(rootSegmentGroup).pipe((0,map/* map */.k)(children => {
       // Use Object.freeze to prevent readers of the Router state from modifying it outside
       // of a navigation, resulting in the router being out of sync with the browser.
       const root = new ActivatedRouteSnapshot([], Object.freeze({}), Object.freeze({
@@ -4082,7 +4082,7 @@ class Recognizer {
   }
   match(rootSegmentGroup) {
     const expanded$ = this.processSegmentGroup(this.injector, this.config, rootSegmentGroup, PRIMARY_OUTLET);
-    return expanded$.pipe((0,catchError/* catchError */.K)(e => {
+    return expanded$.pipe((0,catchError/* catchError */.a)(e => {
       if (e instanceof AbsoluteRedirect) {
         this.urlTree = e.urlTree;
         return this.match(e.urlTree.root);
@@ -4104,7 +4104,7 @@ class Recognizer {
     if (segmentGroup.segments.length === 0 && segmentGroup.hasChildren()) {
       return this.processChildren(injector, config, segmentGroup);
     }
-    return this.processSegment(injector, config, segmentGroup, segmentGroup.segments, outlet, true).pipe((0,map/* map */.U)(child => child instanceof TreeNode ? [child] : []));
+    return this.processSegment(injector, config, segmentGroup, segmentGroup.segments, outlet, true).pipe((0,map/* map */.k)(child => child instanceof TreeNode ? [child] : []));
   }
   /**
    * Matches every child outlet in the `segmentGroup` to a `Route` in the config. Returns `null` if
@@ -4125,7 +4125,7 @@ class Recognizer {
         childOutlets.push(child);
       }
     }
-    return (0,from/* from */.D)(childOutlets).pipe((0,concatMap/* concatMap */.b)(childOutlet => {
+    return (0,from/* from */.Q)(childOutlets).pipe((0,concatMap/* concatMap */.m)(childOutlet => {
       const child = segmentGroup.children[childOutlet];
       // Sort the config so that routes with outlets that match the one being activated
       // appear first, followed by routes for other outlets, which might match if they have
@@ -4135,7 +4135,7 @@ class Recognizer {
     }), scan((children, outletChildren) => {
       children.push(...outletChildren);
       return children;
-    }), (0,defaultIfEmpty/* defaultIfEmpty */.d)(null), last(), (0,mergeMap/* mergeMap */.z)(children => {
+    }), (0,defaultIfEmpty/* defaultIfEmpty */.G)(null), last(), (0,mergeMap/* mergeMap */.O)(children => {
       if (children === null) return noMatch$1(segmentGroup);
       // Because we may have matched two outlets to the same empty path segment, we can have
       // multiple activated results for the same outlet. We should merge the children of
@@ -4151,14 +4151,14 @@ class Recognizer {
     }));
   }
   processSegment(injector, routes, segmentGroup, segments, outlet, allowRedirects) {
-    return (0,from/* from */.D)(routes).pipe((0,concatMap/* concatMap */.b)(r => {
-      return this.processSegmentAgainstRoute(r._injector ?? injector, routes, r, segmentGroup, segments, outlet, allowRedirects).pipe((0,catchError/* catchError */.K)(e => {
+    return (0,from/* from */.Q)(routes).pipe((0,concatMap/* concatMap */.m)(r => {
+      return this.processSegmentAgainstRoute(r._injector ?? injector, routes, r, segmentGroup, segments, outlet, allowRedirects).pipe((0,catchError/* catchError */.a)(e => {
         if (e instanceof NoMatch) {
           return (0,of.of)(null);
         }
         throw e;
       }));
-    }), (0,first/* first */.P)(x => !!x), (0,catchError/* catchError */.K)(e => {
+    }), (0,first/* first */.K)(x => !!x), (0,catchError/* catchError */.a)(e => {
       if (isEmptyError(e)) {
         if (noLeftoversInUrl(segmentGroup, segments, outlet)) {
           return (0,of.of)(new NoLeftoversInUrl());
@@ -4198,7 +4198,7 @@ class Recognizer {
       }
     }
     const newTree = this.applyRedirects.applyRedirectCommands(consumedSegments, route.redirectTo, positionalParamSegments);
-    return this.applyRedirects.lineralizeSegments(route, newTree).pipe((0,mergeMap/* mergeMap */.z)(newSegments => {
+    return this.applyRedirects.lineralizeSegments(route, newTree).pipe((0,mergeMap/* mergeMap */.O)(newSegments => {
       return this.processSegment(injector, routes, segmentGroup, newSegments.concat(remainingSegments), outlet, false);
     }));
   }
@@ -4211,13 +4211,13 @@ class Recognizer {
       // https://github.com/angular/angular/issues/40089
       rawSegment.children = {};
     }
-    return matchResult.pipe((0,switchMap/* switchMap */.w)(result => {
+    return matchResult.pipe((0,switchMap/* switchMap */.G)(result => {
       if (!result.matched) {
         return noMatch$1(rawSegment);
       }
       // If the route has an injector created from providers, we should start using that.
       injector = route._injector ?? injector;
-      return this.getChildConfig(injector, route, segments).pipe((0,switchMap/* switchMap */.w)(({
+      return this.getChildConfig(injector, route, segments).pipe((0,switchMap/* switchMap */.G)(({
         routes: childConfig
       }) => {
         const childInjector = route._loadedInjector ?? injector;
@@ -4234,7 +4234,7 @@ class Recognizer {
           slicedSegments
         } = split(rawSegment, consumedSegments, remainingSegments, childConfig);
         if (slicedSegments.length === 0 && segmentGroup.hasChildren()) {
-          return this.processChildren(childInjector, childConfig, segmentGroup).pipe((0,map/* map */.U)(children => {
+          return this.processChildren(childInjector, childConfig, segmentGroup).pipe((0,map/* map */.k)(children => {
             if (children === null) {
               return null;
             }
@@ -4253,7 +4253,7 @@ class Recognizer {
         //  {path: 'c', component: C},
         // ]}
         // Notice that the children of the named outlet are configured with the primary outlet
-        return this.processSegment(childInjector, childConfig, segmentGroup, slicedSegments, matchedOnOutlet ? PRIMARY_OUTLET : outlet, true).pipe((0,map/* map */.U)(child => {
+        return this.processSegment(childInjector, childConfig, segmentGroup, slicedSegments, matchedOnOutlet ? PRIMARY_OUTLET : outlet, true).pipe((0,map/* map */.k)(child => {
           return new TreeNode(snapshot, child instanceof TreeNode ? [child] : []);
         }));
       }));
@@ -4275,9 +4275,9 @@ class Recognizer {
           injector: route._loadedInjector
         });
       }
-      return runCanLoadGuards(injector, route, segments, this.urlSerializer).pipe((0,mergeMap/* mergeMap */.z)(shouldLoadResult => {
+      return runCanLoadGuards(injector, route, segments, this.urlSerializer).pipe((0,mergeMap/* mergeMap */.O)(shouldLoadResult => {
         if (shouldLoadResult) {
-          return this.configLoader.loadChildren(injector, route).pipe((0,tap/* tap */.b)(cfg => {
+          return this.configLoader.loadChildren(injector, route).pipe((0,tap/* tap */.y)(cfg => {
             route._loadedRoutes = cfg.routes;
             route._loadedInjector = cfg.injector;
           }));
@@ -4353,7 +4353,7 @@ function getResolve(route) {
   return route.resolve || {};
 }
 function recognize(injector, configLoader, rootComponentType, config, serializer, paramsInheritanceStrategy) {
-  return (0,mergeMap/* mergeMap */.z)(t => recognize$1(injector, configLoader, rootComponentType, config, t.extractedUrl, serializer, paramsInheritanceStrategy).pipe((0,map/* map */.U)(({
+  return (0,mergeMap/* mergeMap */.O)(t => recognize$1(injector, configLoader, rootComponentType, config, t.extractedUrl, serializer, paramsInheritanceStrategy).pipe((0,map/* map */.k)(({
     state: targetSnapshot,
     tree: urlAfterRedirects
   }) => {
@@ -4365,7 +4365,7 @@ function recognize(injector, configLoader, rootComponentType, config, serializer
   })));
 }
 function resolveData(paramsInheritanceStrategy, injector) {
-  return (0,mergeMap/* mergeMap */.z)(t => {
+  return (0,mergeMap/* mergeMap */.O)(t => {
     const {
       targetSnapshot,
       guards: {
@@ -4390,14 +4390,14 @@ function resolveData(paramsInheritanceStrategy, injector) {
       }
     }
     let routesProcessed = 0;
-    return (0,from/* from */.D)(routesNeedingDataUpdates).pipe((0,concatMap/* concatMap */.b)(route => {
+    return (0,from/* from */.Q)(routesNeedingDataUpdates).pipe((0,concatMap/* concatMap */.m)(route => {
       if (routesWithResolversToRun.has(route)) {
         return runResolve(route, targetSnapshot, paramsInheritanceStrategy, injector);
       } else {
         route.data = getInherited(route, route.parent, paramsInheritanceStrategy).resolve;
         return (0,of.of)(void 0);
       }
-    }), (0,tap/* tap */.b)(() => routesProcessed++), takeLast(1), (0,mergeMap/* mergeMap */.z)(_ => routesProcessed === routesNeedingDataUpdates.size ? (0,of.of)(t) : empty/* EMPTY */.E));
+    }), (0,tap/* tap */.y)(() => routesProcessed++), takeLast(1), (0,mergeMap/* mergeMap */.O)(_ => routesProcessed === routesNeedingDataUpdates.size ? (0,of.of)(t) : empty/* EMPTY */.k));
   });
 }
 /**
@@ -4413,7 +4413,7 @@ function runResolve(futureARS, futureRSS, paramsInheritanceStrategy, injector) {
   if (config?.title !== undefined && !hasStaticTitle(config)) {
     resolve[RouteTitleKey] = config.title;
   }
-  return resolveNode(resolve, futureARS, futureRSS, injector).pipe((0,map/* map */.U)(resolvedData => {
+  return resolveNode(resolve, futureARS, futureRSS, injector).pipe((0,map/* map */.k)(resolvedData => {
     futureARS._resolvedData = resolvedData;
     futureARS.data = getInherited(futureARS, futureARS.parent, paramsInheritanceStrategy).resolve;
     return null;
@@ -4425,9 +4425,9 @@ function resolveNode(resolve, futureARS, futureRSS, injector) {
     return (0,of.of)({});
   }
   const data = {};
-  return (0,from/* from */.D)(keys).pipe((0,mergeMap/* mergeMap */.z)(key => getResolver(resolve[key], futureARS, futureRSS, injector).pipe((0,first/* first */.P)(), (0,tap/* tap */.b)(value => {
+  return (0,from/* from */.Q)(keys).pipe((0,mergeMap/* mergeMap */.O)(key => getResolver(resolve[key], futureARS, futureRSS, injector).pipe((0,first/* first */.K)(), (0,tap/* tap */.y)(value => {
     data[key] = value;
-  }))), takeLast(1), (0,mapTo/* mapTo */.h)(data), (0,catchError/* catchError */.K)(e => isEmptyError(e) ? empty/* EMPTY */.E : (0,observable_throwError/* throwError */._)(e)));
+  }))), takeLast(1), (0,mapTo/* mapTo */.e)(data), (0,catchError/* catchError */.a)(e => isEmptyError(e) ? empty/* EMPTY */.k : (0,observable_throwError/* throwError */.c)(e)));
 }
 function getResolver(injectionToken, futureARS, futureRSS, injector) {
   const closestInjector = getClosestRouteInjector(futureARS) ?? injector;
@@ -4443,10 +4443,10 @@ function getResolver(injectionToken, futureARS, futureRSS, injector) {
  * it will wait before continuing with the original value.
  */
 function switchTap(next) {
-  return (0,switchMap/* switchMap */.w)(v => {
+  return (0,switchMap/* switchMap */.G)(v => {
     const nextResult = next(v);
     if (nextResult) {
-      return (0,from/* from */.D)(nextResult).pipe((0,map/* map */.U)(() => v));
+      return (0,from/* from */.Q)(nextResult).pipe((0,map/* map */.k)(() => v));
     }
     return (0,of.of)(v);
   });
@@ -4531,7 +4531,7 @@ let DefaultTitleStrategy = /*#__PURE__*/(() => {
       }
     }
     static #_ = this.ɵfac = function DefaultTitleStrategy_Factory(t) {
-      return new (t || DefaultTitleStrategy)(core_mjs_["ɵɵinject"](platform_browser/* Title */.Dx));
+      return new (t || DefaultTitleStrategy)(core_mjs_["ɵɵinject"](platform_browser/* Title */.OY));
     };
     static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
       token: DefaultTitleStrategy,
@@ -4582,17 +4582,17 @@ let RouterConfigLoader = /*#__PURE__*/(() => {
       if (this.onLoadStartListener) {
         this.onLoadStartListener(route);
       }
-      const loadRunner = wrapIntoObservable(route.loadComponent()).pipe((0,map/* map */.U)(maybeUnwrapDefaultExport), (0,tap/* tap */.b)(component => {
+      const loadRunner = wrapIntoObservable(route.loadComponent()).pipe((0,map/* map */.k)(maybeUnwrapDefaultExport), (0,tap/* tap */.y)(component => {
         if (this.onLoadEndListener) {
           this.onLoadEndListener(route);
         }
         (typeof ngDevMode === 'undefined' || ngDevMode) && assertStandalone(route.path ?? '', component);
         route._loadedComponent = component;
-      }), (0,finalize/* finalize */.x)(() => {
+      }), (0,finalize/* finalize */.U)(() => {
         this.componentLoaders.delete(route);
       }));
       // Use custom ConnectableObservable as share in runners pipe increasing the bundle size too much
-      const loader = new ConnectableObservable(loadRunner, () => new Subject/* Subject */.x()).pipe(refCount());
+      const loader = new ConnectableObservable(loadRunner, () => new Subject/* Subject */.E()).pipe(refCount());
       this.componentLoaders.set(route, loader);
       return loader;
     }
@@ -4609,11 +4609,11 @@ let RouterConfigLoader = /*#__PURE__*/(() => {
         this.onLoadStartListener(route);
       }
       const moduleFactoryOrRoutes$ = loadChildren(route, this.compiler, parentInjector, this.onLoadEndListener);
-      const loadRunner = moduleFactoryOrRoutes$.pipe((0,finalize/* finalize */.x)(() => {
+      const loadRunner = moduleFactoryOrRoutes$.pipe((0,finalize/* finalize */.U)(() => {
         this.childrenLoaders.delete(route);
       }));
       // Use custom ConnectableObservable as share in runners pipe increasing the bundle size too much
-      const loader = new ConnectableObservable(loadRunner, () => new Subject/* Subject */.x()).pipe(refCount());
+      const loader = new ConnectableObservable(loadRunner, () => new Subject/* Subject */.E()).pipe(refCount());
       this.childrenLoaders.set(route, loader);
       return loader;
     }
@@ -4640,13 +4640,13 @@ let RouterConfigLoader = /*#__PURE__*/(() => {
  * an update to the extractor.
  */
 function loadChildren(route, compiler, parentInjector, onLoadEndListener) {
-  return wrapIntoObservable(route.loadChildren()).pipe((0,map/* map */.U)(maybeUnwrapDefaultExport), (0,mergeMap/* mergeMap */.z)(t => {
+  return wrapIntoObservable(route.loadChildren()).pipe((0,map/* map */.k)(maybeUnwrapDefaultExport), (0,mergeMap/* mergeMap */.O)(t => {
     if (t instanceof core_mjs_.NgModuleFactory || Array.isArray(t)) {
       return (0,of.of)(t);
     } else {
-      return (0,from/* from */.D)(compiler.compileModuleAsync(t));
+      return (0,from/* from */.Q)(compiler.compileModuleAsync(t));
     }
-  }), (0,map/* map */.U)(factoryOrRoutes => {
+  }), (0,map/* map */.k)(factoryOrRoutes => {
     if (onLoadEndListener) {
       onLoadEndListener(route);
     }
@@ -4741,7 +4741,7 @@ let DefaultUrlHandlingStrategy = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
-/// <reference types="@types/dom-view-transitions" />
+/// <reference types="dom-view-transitions" />
 const CREATE_VIEW_TRANSITION = /*#__PURE__*/new core_mjs_.InjectionToken(ngDevMode ? 'view transition helper' : '');
 const VIEW_TRANSITION_OPTIONS = /*#__PURE__*/new core_mjs_.InjectionToken(ngDevMode ? 'view transition options' : '');
 /**
@@ -4808,11 +4808,11 @@ let NavigationTransitions = /*#__PURE__*/(() => {
        * Router wants to respond to these events in various ways. Because the `NavigationTransition`
        * class is not public, this event subject is not publicly exposed.
        */
-      this.events = new Subject/* Subject */.x();
+      this.events = new Subject/* Subject */.E();
       /**
        * Used to abort the current transition with an error.
        */
-      this.transitionAbortSubject = new Subject/* Subject */.x();
+      this.transitionAbortSubject = new Subject/* Subject */.E();
       this.configLoader = (0,core_mjs_.inject)(RouterConfigLoader);
       this.environmentInjector = (0,core_mjs_.inject)(core_mjs_.EnvironmentInjector);
       this.urlSerializer = (0,core_mjs_.inject)(UrlSerializer);
@@ -4857,7 +4857,7 @@ let NavigationTransitions = /*#__PURE__*/(() => {
       });
     }
     setupNavigations(router, initialUrlTree, initialRouterState) {
-      this.transitions = new BehaviorSubject/* BehaviorSubject */.X({
+      this.transitions = new BehaviorSubject/* BehaviorSubject */.g({
         id: 0,
         currentUrlTree: initialUrlTree,
         currentRawUrl: initialUrlTree,
@@ -4880,20 +4880,20 @@ let NavigationTransitions = /*#__PURE__*/(() => {
         },
         guardsResult: null
       });
-      return this.transitions.pipe((0,filter/* filter */.h)(t => t.id !== 0),
+      return this.transitions.pipe((0,filter/* filter */.I)(t => t.id !== 0),
       // Extract URL
-      (0,map/* map */.U)(t => ({
+      (0,map/* map */.k)(t => ({
         ...t,
         extractedUrl: this.urlHandlingStrategy.extract(t.rawUrl)
       })),
       // Using switchMap so we cancel executing navigations when a new one comes in
-      (0,switchMap/* switchMap */.w)(overallTransitionState => {
+      (0,switchMap/* switchMap */.G)(overallTransitionState => {
         this.currentTransition = overallTransitionState;
         let completed = false;
         let errored = false;
         return (0,of.of)(overallTransitionState).pipe(
         // Store the Navigation object
-        (0,tap/* tap */.b)(t => {
+        (0,tap/* tap */.y)(t => {
           this.currentNavigation = {
             id: t.id,
             initialUrl: t.rawUrl,
@@ -4905,23 +4905,23 @@ let NavigationTransitions = /*#__PURE__*/(() => {
               previousNavigation: null
             }
           };
-        }), (0,switchMap/* switchMap */.w)(t => {
+        }), (0,switchMap/* switchMap */.G)(t => {
           const urlTransition = !router.navigated || this.isUpdatingInternalState() || this.isUpdatedBrowserUrl();
           const onSameUrlNavigation = t.extras.onSameUrlNavigation ?? router.onSameUrlNavigation;
           if (!urlTransition && onSameUrlNavigation !== 'reload') {
             const reason = typeof ngDevMode === 'undefined' || ngDevMode ? `Navigation to ${t.rawUrl} was ignored because it is the same as the current Router URL.` : '';
             this.events.next(new NavigationSkipped(t.id, this.urlSerializer.serialize(t.rawUrl), reason, NavigationSkippedCode.IgnoredSameUrlNavigation));
             t.resolve(null);
-            return empty/* EMPTY */.E;
+            return empty/* EMPTY */.k;
           }
           if (this.urlHandlingStrategy.shouldProcessUrl(t.rawUrl)) {
             return (0,of.of)(t).pipe(
             // Fire NavigationStart event
-            (0,switchMap/* switchMap */.w)(t => {
+            (0,switchMap/* switchMap */.G)(t => {
               const transition = this.transitions?.getValue();
               this.events.next(new NavigationStart(t.id, this.urlSerializer.serialize(t.extractedUrl), t.source, t.restoredState));
               if (transition !== this.transitions?.getValue()) {
-                return empty/* EMPTY */.E;
+                return empty/* EMPTY */.k;
               }
               // This delay is required to match old behavior that forced
               // navigation to always be async
@@ -4930,7 +4930,7 @@ let NavigationTransitions = /*#__PURE__*/(() => {
             // Recognize
             recognize(this.environmentInjector, this.configLoader, this.rootComponentType, router.config, this.urlSerializer, this.paramsInheritanceStrategy),
             // Update URL if in `eager` update mode
-            (0,tap/* tap */.b)(t => {
+            (0,tap/* tap */.y)(t => {
               overallTransitionState.targetSnapshot = t.targetSnapshot;
               overallTransitionState.urlAfterRedirects = t.urlAfterRedirects;
               this.currentNavigation = {
@@ -4976,27 +4976,27 @@ let NavigationTransitions = /*#__PURE__*/(() => {
             const reason = typeof ngDevMode === 'undefined' || ngDevMode ? `Navigation was ignored because the UrlHandlingStrategy` + ` indicated neither the current URL ${t.currentRawUrl} nor target URL ${t.rawUrl} should be processed.` : '';
             this.events.next(new NavigationSkipped(t.id, this.urlSerializer.serialize(t.extractedUrl), reason, NavigationSkippedCode.IgnoredByUrlHandlingStrategy));
             t.resolve(null);
-            return empty/* EMPTY */.E;
+            return empty/* EMPTY */.k;
           }
         }),
         // --- GUARDS ---
-        (0,tap/* tap */.b)(t => {
+        (0,tap/* tap */.y)(t => {
           const guardsStart = new GuardsCheckStart(t.id, this.urlSerializer.serialize(t.extractedUrl), this.urlSerializer.serialize(t.urlAfterRedirects), t.targetSnapshot);
           this.events.next(guardsStart);
-        }), (0,map/* map */.U)(t => {
+        }), (0,map/* map */.k)(t => {
           this.currentTransition = overallTransitionState = {
             ...t,
             guards: getAllRouteGuards(t.targetSnapshot, t.currentSnapshot, this.rootContexts)
           };
           return overallTransitionState;
-        }), checkGuards(this.environmentInjector, evt => this.events.next(evt)), (0,tap/* tap */.b)(t => {
+        }), checkGuards(this.environmentInjector, evt => this.events.next(evt)), (0,tap/* tap */.y)(t => {
           overallTransitionState.guardsResult = t.guardsResult;
           if (isUrlTree(t.guardsResult)) {
             throw redirectingNavigationError(this.urlSerializer, t.guardsResult);
           }
           const guardsEnd = new GuardsCheckEnd(t.id, this.urlSerializer.serialize(t.extractedUrl), this.urlSerializer.serialize(t.urlAfterRedirects), t.targetSnapshot, !!t.guardsResult);
           this.events.next(guardsEnd);
-        }), (0,filter/* filter */.h)(t => {
+        }), (0,filter/* filter */.I)(t => {
           if (!t.guardsResult) {
             this.cancelNavigationTransition(t, '', NavigationCancellationCode.GuardRejected);
             return false;
@@ -5006,12 +5006,12 @@ let NavigationTransitions = /*#__PURE__*/(() => {
         // --- RESOLVE ---
         switchTap(t => {
           if (t.guards.canActivateChecks.length) {
-            return (0,of.of)(t).pipe((0,tap/* tap */.b)(t => {
+            return (0,of.of)(t).pipe((0,tap/* tap */.y)(t => {
               const resolveStart = new ResolveStart(t.id, this.urlSerializer.serialize(t.extractedUrl), this.urlSerializer.serialize(t.urlAfterRedirects), t.targetSnapshot);
               this.events.next(resolveStart);
-            }), (0,switchMap/* switchMap */.w)(t => {
+            }), (0,switchMap/* switchMap */.G)(t => {
               let dataResolved = false;
-              return (0,of.of)(t).pipe(resolveData(this.paramsInheritanceStrategy, this.environmentInjector), (0,tap/* tap */.b)({
+              return (0,of.of)(t).pipe(resolveData(this.paramsInheritanceStrategy, this.environmentInjector), (0,tap/* tap */.y)({
                 next: () => dataResolved = true,
                 complete: () => {
                   if (!dataResolved) {
@@ -5019,7 +5019,7 @@ let NavigationTransitions = /*#__PURE__*/(() => {
                   }
                 }
               }));
-            }), (0,tap/* tap */.b)(t => {
+            }), (0,tap/* tap */.y)(t => {
               const resolveEnd = new ResolveEnd(t.id, this.urlSerializer.serialize(t.extractedUrl), this.urlSerializer.serialize(t.urlAfterRedirects), t.targetSnapshot);
               this.events.next(resolveEnd);
             }));
@@ -5031,17 +5031,17 @@ let NavigationTransitions = /*#__PURE__*/(() => {
           const loadComponents = route => {
             const loaders = [];
             if (route.routeConfig?.loadComponent && !route.routeConfig._loadedComponent) {
-              loaders.push(this.configLoader.loadComponent(route.routeConfig).pipe((0,tap/* tap */.b)(loadedComponent => {
+              loaders.push(this.configLoader.loadComponent(route.routeConfig).pipe((0,tap/* tap */.y)(loadedComponent => {
                 route.component = loadedComponent;
-              }), (0,map/* map */.U)(() => void 0)));
+              }), (0,map/* map */.k)(() => void 0)));
             }
             for (const child of route.children) {
               loaders.push(...loadComponents(child));
             }
             return loaders;
           };
-          return (0,combineLatest/* combineLatest */.a)(loadComponents(t.targetSnapshot.root)).pipe((0,defaultIfEmpty/* defaultIfEmpty */.d)(null), (0,take/* take */.q)(1));
-        }), switchTap(() => this.afterPreactivation()), (0,switchMap/* switchMap */.w)(() => {
+          return (0,combineLatest/* combineLatest */.E)(loadComponents(t.targetSnapshot.root)).pipe((0,defaultIfEmpty/* defaultIfEmpty */.G)(null), (0,take/* take */.U)(1));
+        }), switchTap(() => this.afterPreactivation()), (0,switchMap/* switchMap */.G)(() => {
           const {
             currentSnapshot,
             targetSnapshot
@@ -5049,8 +5049,8 @@ let NavigationTransitions = /*#__PURE__*/(() => {
           const viewTransitionStarted = this.createViewTransition?.(this.environmentInjector, currentSnapshot.root, targetSnapshot.root);
           // If view transitions are enabled, block the navigation until the view
           // transition callback starts. Otherwise, continue immediately.
-          return viewTransitionStarted ? (0,from/* from */.D)(viewTransitionStarted).pipe((0,map/* map */.U)(() => overallTransitionState)) : (0,of.of)(overallTransitionState);
-        }), (0,map/* map */.U)(t => {
+          return viewTransitionStarted ? (0,from/* from */.Q)(viewTransitionStarted).pipe((0,map/* map */.k)(() => overallTransitionState)) : (0,of.of)(overallTransitionState);
+        }), (0,map/* map */.k)(t => {
           const targetRouterState = createRouterState(router.routeReuseStrategy, t.targetSnapshot, t.currentRouterState);
           this.currentTransition = overallTransitionState = {
             ...t,
@@ -5058,13 +5058,13 @@ let NavigationTransitions = /*#__PURE__*/(() => {
           };
           this.currentNavigation.targetRouterState = targetRouterState;
           return overallTransitionState;
-        }), (0,tap/* tap */.b)(() => {
+        }), (0,tap/* tap */.y)(() => {
           this.events.next(new BeforeActivateRoutes());
         }), activateRoutes(this.rootContexts, router.routeReuseStrategy, evt => this.events.next(evt), this.inputBindingEnabled),
         // Ensure that if some observable used to drive the transition doesn't
         // complete, the navigation still finalizes This should never happen, but
         // this is done as a safety measure to avoid surfacing this error (#49567).
-        (0,take/* take */.q)(1), (0,tap/* tap */.b)({
+        (0,take/* take */.U)(1), (0,tap/* tap */.y)({
           next: t => {
             completed = true;
             this.lastSuccessfulNavigation = this.currentNavigation;
@@ -5083,9 +5083,9 @@ let NavigationTransitions = /*#__PURE__*/(() => {
         // required in the future to support something like the abort signal of the
         // Navigation API where the navigation gets aborted from outside the
         // transition.
-        (0,takeUntil/* takeUntil */.R)(this.transitionAbortSubject.pipe((0,tap/* tap */.b)(err => {
+        (0,takeUntil/* takeUntil */.a)(this.transitionAbortSubject.pipe((0,tap/* tap */.y)(err => {
           throw err;
-        }))), (0,finalize/* finalize */.x)(() => {
+        }))), (0,finalize/* finalize */.U)(() => {
           /* When the navigation stream finishes either through error or success,
            * we set the `completed` or `errored` flag. However, there are some
            * situations where we could get here without either of those being set.
@@ -5101,7 +5101,7 @@ let NavigationTransitions = /*#__PURE__*/(() => {
           if (this.currentNavigation?.id === overallTransitionState.id) {
             this.currentNavigation = null;
           }
-        }), (0,catchError/* catchError */.K)(e => {
+        }), (0,catchError/* catchError */.a)(e => {
           errored = true;
           /* This error type is issued during Redirect, and is handled as a
            * cancellation rather than an error. */
@@ -5137,7 +5137,7 @@ let NavigationTransitions = /*#__PURE__*/(() => {
               }
             }
           }
-          return empty/* EMPTY */.E;
+          return empty/* EMPTY */.k;
         }));
         // casting because `pipe` returns observable({}) when called with 8+ arguments
       }));
@@ -5494,13 +5494,13 @@ var NavigationResult = /*#__PURE__*/function (NavigationResult) {
  * - `NavigationError`, `NavigationEnd`, or `NavigationSkipped` event emits
  */
 function afterNextNavigation(router, action) {
-  router.events.pipe((0,filter/* filter */.h)(e => e instanceof NavigationEnd || e instanceof NavigationCancel || e instanceof NavigationError || e instanceof NavigationSkipped), (0,map/* map */.U)(e => {
+  router.events.pipe((0,filter/* filter */.I)(e => e instanceof NavigationEnd || e instanceof NavigationCancel || e instanceof NavigationError || e instanceof NavigationSkipped), (0,map/* map */.k)(e => {
     if (e instanceof NavigationEnd || e instanceof NavigationSkipped) {
       return NavigationResult.COMPLETE;
     }
     const redirecting = e instanceof NavigationCancel ? e.code === NavigationCancellationCode.Redirect || e.code === NavigationCancellationCode.SupersededByNewNavigation : false;
     return redirecting ? NavigationResult.REDIRECTING : NavigationResult.FAILED;
-  }), (0,filter/* filter */.h)(result => result !== NavigationResult.REDIRECTING), (0,take/* take */.q)(1)).subscribe(() => {
+  }), (0,filter/* filter */.I)(result => result !== NavigationResult.REDIRECTING), (0,take/* take */.U)(1)).subscribe(() => {
     action();
   });
 }
@@ -5582,7 +5582,7 @@ let Router = /*#__PURE__*/(() => {
        * to push events to. The separate field allows us to expose separate types in the public API
        * (i.e., an Observable rather than the Subject).
        */
-      this._events = new Subject/* Subject */.x();
+      this._events = new Subject/* Subject */.E();
       /**
        * A handler for navigation errors in this NgModule.
        *
@@ -5625,7 +5625,7 @@ let Router = /*#__PURE__*/(() => {
       this.componentInputBindingEnabled = !!(0,core_mjs_.inject)(INPUT_BINDER, {
         optional: true
       });
-      this.eventsSubscription = new Subscription/* Subscription */.w0();
+      this.eventsSubscription = new Subscription/* Subscription */.wH();
       this.isNgZoneEnabled = (0,core_mjs_.inject)(core_mjs_.NgZone) instanceof core_mjs_.NgZone && core_mjs_.NgZone.isInAngularZone();
       this.resetConfig(this.config);
       this.navigationTransitions.setupNavigations(this, this.currentUrlTree, this.routerState).subscribe({
@@ -6191,7 +6191,7 @@ let RouterLink = /*#__PURE__*/(() => {
       this.href = null;
       this.commands = null;
       /** @internal */
-      this.onChanges = new Subject/* Subject */.x();
+      this.onChanges = new Subject/* Subject */.E();
       /**
        * Passed to {@link Router#createUrlTree} as part of the
        * `UrlCreationOptions`.
@@ -6488,7 +6488,7 @@ let RouterLinkActive = /*#__PURE__*/(() => {
     /** @nodoc */
     ngAfterContentInit() {
       // `of(null)` is used to force subscribe body to execute once immediately (like `startWith`).
-      (0,of.of)(this.links.changes, (0,of.of)(null)).pipe((0,mergeAll/* mergeAll */.J)()).subscribe(_ => {
+      (0,of.of)(this.links.changes, (0,of.of)(null)).pipe((0,mergeAll/* mergeAll */.u)()).subscribe(_ => {
         this.update();
         this.subscribeToEachLinkOnChanges();
       });
@@ -6496,7 +6496,7 @@ let RouterLinkActive = /*#__PURE__*/(() => {
     subscribeToEachLinkOnChanges() {
       this.linkInputChangesSubscription?.unsubscribe();
       const allLinkChanges = [...this.links.toArray(), this.link].filter(link => !!link).map(link => link.onChanges);
-      this.linkInputChangesSubscription = (0,from/* from */.D)(allLinkChanges).pipe((0,mergeAll/* mergeAll */.J)()).subscribe(link => {
+      this.linkInputChangesSubscription = (0,from/* from */.Q)(allLinkChanges).pipe((0,mergeAll/* mergeAll */.u)()).subscribe(link => {
         if (this._isActive !== this.isLinkActive(this.router)(link)) {
           this.update();
         }
@@ -6614,7 +6614,7 @@ class PreloadingStrategy {}
 let PreloadAllModules = /*#__PURE__*/(() => {
   class PreloadAllModules {
     preload(route, fn) {
-      return fn().pipe((0,catchError/* catchError */.K)(() => (0,of.of)(null)));
+      return fn().pipe((0,catchError/* catchError */.a)(() => (0,of.of)(null)));
     }
     static #_ = this.ɵfac = function PreloadAllModules_Factory(t) {
       return new (t || PreloadAllModules)();
@@ -6679,7 +6679,7 @@ let RouterPreloader = /*#__PURE__*/(() => {
       this.loader = loader;
     }
     setUpPreloading() {
-      this.subscription = this.router.events.pipe((0,filter/* filter */.h)(e => e instanceof NavigationEnd), (0,concatMap/* concatMap */.b)(() => this.preload())).subscribe(() => {});
+      this.subscription = this.router.events.pipe((0,filter/* filter */.I)(e => e instanceof NavigationEnd), (0,concatMap/* concatMap */.m)(() => this.preload())).subscribe(() => {});
     }
     preload() {
       return this.processRoutes(this.injector, this.router.config);
@@ -6713,7 +6713,7 @@ let RouterPreloader = /*#__PURE__*/(() => {
           res.push(this.processRoutes(injectorForChildren, route.children ?? route._loadedRoutes));
         }
       }
-      return (0,from/* from */.D)(res).pipe((0,mergeAll/* mergeAll */.J)());
+      return (0,from/* from */.Q)(res).pipe((0,mergeAll/* mergeAll */.u)());
     }
     preloadConfig(injector, route) {
       return this.preloadingStrategy.preload(route, () => {
@@ -6723,7 +6723,7 @@ let RouterPreloader = /*#__PURE__*/(() => {
         } else {
           loadedChildren$ = (0,of.of)(null);
         }
-        const recursiveLoadChildren$ = loadedChildren$.pipe((0,mergeMap/* mergeMap */.z)(config => {
+        const recursiveLoadChildren$ = loadedChildren$.pipe((0,mergeMap/* mergeMap */.O)(config => {
           if (config === null) {
             return (0,of.of)(void 0);
           }
@@ -6735,7 +6735,7 @@ let RouterPreloader = /*#__PURE__*/(() => {
         }));
         if (route.loadComponent && !route._loadedComponent) {
           const loadComponent$ = this.loader.loadComponent(route);
-          return (0,from/* from */.D)([recursiveLoadChildren$, loadComponent$]).pipe((0,mergeAll/* mergeAll */.J)());
+          return (0,from/* from */.Q)([recursiveLoadChildren$, loadComponent$]).pipe((0,mergeAll/* mergeAll */.u)());
         } else {
           return recursiveLoadChildren$;
         }
@@ -7027,7 +7027,7 @@ function getBootstrapListener() {
  */
 const BOOTSTRAP_DONE = /*#__PURE__*/new core_mjs_.InjectionToken(typeof ngDevMode === 'undefined' || ngDevMode ? 'bootstrap done indicator' : '', {
   factory: () => {
-    return new Subject/* Subject */.x();
+    return new Subject/* Subject */.E();
   }
 });
 const INITIAL_NAVIGATION = /*#__PURE__*/new core_mjs_.InjectionToken(typeof ngDevMode === 'undefined' || ngDevMode ? 'initial navigation' : '', {
@@ -7660,7 +7660,7 @@ function mapToResolve(provider) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new core_mjs_.Version('17.1.3');
+const VERSION = /*#__PURE__*/new core_mjs_.Version('17.2.0');
 
 /**
  * @module

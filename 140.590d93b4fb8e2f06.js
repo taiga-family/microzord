@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[845],{
+(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[140],{
 
-/***/ 5845:
+/***/ 6140:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -12,18 +12,18 @@ __webpack_require__.d(__webpack_exports__, {
   ReactInstallationModule: () => (/* binding */ ReactInstallationModule)
 });
 
-// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.1.3 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
-var router_mjs_ = __webpack_require__(8038);
+// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
+var router_mjs_ = __webpack_require__(6472);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc.js
-var taiga_ui_addon_doc = __webpack_require__(5322);
+var taiga_ui_addon_doc = __webpack_require__(176);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-utils.js + 75 modules
-var taiga_ui_addon_doc_utils = __webpack_require__(1569);
+var taiga_ui_addon_doc_utils = __webpack_require__(1040);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-link.js
-var taiga_ui_core_components_link = __webpack_require__(2114);
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.1.3 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(5693);
+var taiga_ui_core_components_link = __webpack_require__(1512);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(648);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-components.js + 85 modules
-var taiga_ui_addon_doc_components = __webpack_require__(2406);
+var taiga_ui_addon_doc_components = __webpack_require__(5748);
 ;// CONCATENATED MODULE: ./apps/demo/src/app/modules/react-installation/react-installation.component.ts
 
 
@@ -57,7 +57,7 @@ let ReactInstallationComponent = /*#__PURE__*/(() => {
           core_mjs_["ɵɵelementEnd"]()()();
         }
       },
-      dependencies: [taiga_ui_addon_doc_components/* TuiDocPageComponent */.qo],
+      dependencies: [taiga_ui_addon_doc_components/* TuiDocPageComponent */.EF],
       changeDetection: 0
     });
   }
@@ -79,7 +79,7 @@ let ReactInstallationModule = /*#__PURE__*/(() => {
       type: ReactInstallationModule
     });
     static #_3 = this.ɵinj = /*@__PURE__*/core_mjs_["ɵɵdefineInjector"]({
-      imports: [taiga_ui_core_components_link/* TuiLinkModule */.j, taiga_ui_addon_doc.TuiAddonDocModule, router_mjs_.RouterModule.forChild((0,taiga_ui_addon_doc_utils/* tuiGenerateRoutes */.Ve)(ReactInstallationComponent))]
+      imports: [taiga_ui_core_components_link/* TuiLinkModule */.w, taiga_ui_addon_doc.TuiAddonDocModule, router_mjs_.RouterModule.forChild((0,taiga_ui_addon_doc_utils/* tuiGenerateRoutes */._A)(ReactInstallationComponent))]
     });
   }
   return ReactInstallationModule;
