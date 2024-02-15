@@ -14,7 +14,7 @@
 /* harmony export */   sn: () => (/* binding */ WINDOW)
 /* harmony export */ });
 /* unused harmony exports CACHES, CRYPTO, LOCATION, MEDIA_DEVICES, NETWORK_INFORMATION, PAGE_VISIBILITY, PERFORMANCE, SCREEN, SESSION_STORAGE, SPEECH_RECOGNITION, SPEECH_SYNTHESIS */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(648);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2660);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3252);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(800);
@@ -23,7 +23,7 @@
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4704);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(4000);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(8716);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1268);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(232);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -138,7 +138,7 @@ const USER_AGENT = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken
 /* harmony export */   o: () => (/* binding */ HostChildWarningModule)
 /* harmony export */ });
 /* harmony import */ var _taiga_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8508);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(648);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2660);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -167,15 +167,15 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
 var platform_browser = __webpack_require__(4476);
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(648);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(2660);
 // EXTERNAL MODULE: ./node_modules/@angular/animations/fesm2022/browser.mjs
 var browser = __webpack_require__(8996);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(1268);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(232);
 ;// CONCATENATED MODULE: ./node_modules/@angular/platform-browser/fesm2022/animations.mjs
 /**
- * @license Angular v17.2.0
+ * @license Angular v17.2.1
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -434,8 +434,8 @@ let AppComponent = /*#__PURE__*/(() => {
   }
   return AppComponent;
 })();
-// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
-var router_mjs_ = __webpack_require__(6472);
+// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
+var router_mjs_ = __webpack_require__(236);
 // EXTERNAL MODULE: ./node_modules/@tinkoff/ng-polymorpheus/fesm2015/tinkoff-ng-polymorpheus.js
 var tinkoff_ng_polymorpheus = __webpack_require__(8660);
 ;// CONCATENATED MODULE: ./apps/demo/src/app/logo/logo.component.ts
@@ -863,8 +863,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // UNUSED EXPORTS: PAGE_PROVIDERS, PAGE_SEE_ALSO, TUI_DOC_EXAMPLE_DEFAULT_OPTIONS, TUI_DOC_EXAMPLE_OPTIONS, TuiDocCopyComponent, TuiDocCopyModule, TuiDocDemoComponent, TuiDocExampleComponent, TuiDocExampleGetTabsPipe, TuiDocHeaderComponent, TuiDocHeaderModule, TuiDocNavigationComponent, TuiDocNavigationModule, TuiDocSeeAlsoComponent, TuiDocSeeAlsoModule, TuiDocSourceCodeComponent, TuiDocSourceCodeModule, TuiDocTabComponent, TuiDocTabModule, TuiDocTypeReferencePipe, TuiGetColorPipe, TuiGetOpacityPipe, TuiInputOpacityDirective, TuiInputOpacityModule, TuiInspectPipe, TuiIsOptionalPipe, TuiIsPrimitivePolymorpheusContentPipe, TuiLanguageSwitcherComponent, TuiLanguageSwitcherModule, TuiShowCleanerPipe, TuiStripOptionalPipe, tuiDocExampleOptionsProvider
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(648);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(2660);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-tokens.js
 var taiga_ui_addon_doc_tokens = __webpack_require__(1944);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-utils.js + 75 modules
@@ -1611,8 +1611,8 @@ function debounce(durationSelector) {
 var of = __webpack_require__(2700);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/ReplaySubject.js
 var ReplaySubject = __webpack_require__(2540);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(1268);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(232);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-constants.js
 var taiga_ui_core_constants = __webpack_require__(3840);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-directives-hint.js
@@ -16094,8 +16094,8 @@ let TuiTagModule = /*#__PURE__*/(() => {
 
 
 //# sourceMappingURL=taiga-ui-kit-components-tag.js.map
-// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
-var router_mjs_ = __webpack_require__(6472);
+// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
+var router_mjs_ = __webpack_require__(236);
 ;// CONCATENATED MODULE: ./node_modules/@ng-web-apis/mutation-observer/fesm2015/ng-web-apis-mutation-observer.js
 
 
@@ -21421,7 +21421,7 @@ let TuiDocPageModule = /*#__PURE__*/(() => {
 /* harmony export */ });
 /* unused harmony exports TUI_DOC_CODE_ACTIONS, TUI_DOC_CODE_EDITOR, TUI_DOC_DEFAULT_ICONS, TUI_DOC_DEMO_TEXTS, TUI_DOC_EXAMPLE_CONTENT_PROCESSOR, TUI_DOC_EXAMPLE_TEXTS, TUI_DOC_SCROLL_BEHAVIOR, tuiDocExcludeProperties, tuiDocIconsProvider */
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2528);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(648);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2660);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_addon_doc_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1040);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(528);
@@ -30151,7 +30151,7 @@ function tuiTypeReferenceParser(types) {
 /* harmony export */   q4: () => (/* binding */ tuiAsControl)
 /* harmony export */ });
 /* unused harmony exports AbstractTuiDialogDirective, AbstractTuiMultipleControl */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(648);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2660);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4716);
 /* harmony import */ var _taiga_ui_cdk_classes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7308);
@@ -30170,7 +30170,7 @@ function tuiTypeReferenceParser(types) {
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(3616);
 /* harmony import */ var _taiga_ui_cdk_services__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(5554);
 /* harmony import */ var _taiga_ui_cdk_exceptions__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(3152);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1268);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(232);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -30805,7 +30805,7 @@ class TuiValidationError {
 /* harmony export */   yi: () => (/* binding */ svgNodeFilter)
 /* harmony export */ });
 /* unused harmony exports CHAR_BULLET, CHAR_CURRENCY_SIGN, CHAR_ELLIPSIS, CHAR_EM_DASH, CHAR_LAQUO, CHAR_PLUS, CHAR_RAQUO, CHAR_ZERO_WIDTH_SPACE, CHROMIUM_EDGE_START_VERSION, TUI_DEFAULT_MATCHER, TUI_PARENT_STOP, TUI_STRICT_MATCHER, TUI_USED_ICONS */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(648);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2660);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9684);
 
@@ -31201,7 +31201,7 @@ function tuiRequiredSetter(assertion, ...args) {
 /* harmony export */   kR: () => (/* binding */ TuiLetModule)
 /* harmony export */ });
 /* unused harmony export TuiLetContext */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(648);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2660);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -31649,8 +31649,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // UNUSED EXPORTS: TuiPanService, TuiScrollService, TuiZoomService
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(648);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(2660);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/ReplaySubject.js
 var ReplaySubject = __webpack_require__(2540);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Observable.js
@@ -31697,8 +31697,8 @@ var ng_web_apis_common = __webpack_require__(1300);
 var taiga_ui_cdk_constants = __webpack_require__(4392);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-dom.js
 var taiga_ui_cdk_utils_dom = __webpack_require__(8987);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(1268);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(232);
 ;// CONCATENATED MODULE: ./node_modules/@ng-web-apis/resize-observer/fesm2015/ng-web-apis-resize-observer.js
 
 
@@ -32378,10 +32378,10 @@ __webpack_require__.d(__webpack_exports__, {
 
 // UNUSED EXPORTS: TUI_DEFAULT_RENDERER, TUI_ENSURE_BASE_HREF, TUI_IS_APPLE, TUI_IS_CHROMIUM, TUI_IS_CYPRESS, TUI_IS_FIREFOX, TUI_IS_PLAYWRIGHT, TUI_IS_STACKBLITZ, TUI_PLATFORM, TUI_RANGE, TUI_REMOVED_ELEMENT, TUI_TAKE_ONLY_TRUSTED_EVENTS, TUI_TOUCH_SUPPORTED, TUI_WINDOW_HEIGHT, TUI_ZOOM_OPTIONS, tuiPlatformFactory
 
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(1268);
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(648);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(232);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(2660);
 // EXTERNAL MODULE: ./node_modules/@ng-web-apis/common/fesm2015/ng-web-apis-common.js
 var ng_web_apis_common = __webpack_require__(1300);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-observables.js
@@ -33424,7 +33424,7 @@ function tuiToRadians(deg) {
 /* harmony export */   o3: () => (/* binding */ tuiIsNumber)
 /* harmony export */ });
 /* unused harmony exports tuiArrayShallowEquals, tuiArrayToggle, tuiCleanObject, tuiCreateOptions, tuiDefaultSort, tuiDistanceBetweenTouches, tuiEaseInOutQuad, tuiFlatLength, tuiIsObject, tuiIsValidUrl, tuiMarkControlAsTouchedAndValidate, tuiNullableSame, tuiObjectFromEntries, tuiProvideOptions */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(648);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2660);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -33696,7 +33696,7 @@ fallback = 'rgba(0, 0, 0, 0.7)') {
 /* harmony export */   es: () => (/* binding */ TuiPositionAccessor),
 /* harmony export */   w: () => (/* binding */ TuiRectAccessor)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(648);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2660);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5554);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(1800);
@@ -33852,7 +33852,7 @@ function tuiAsRectAccessor(useExisting) {
 /* harmony export */   Kw: () => (/* binding */ TuiButtonComponent)
 /* harmony export */ });
 /* unused harmony exports TUI_BUTTON_DEFAULT_OPTIONS, TUI_BUTTON_OPTIONS, tuiButtonOptionsProvider */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(648);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2660);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2528);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1800);
@@ -33867,7 +33867,7 @@ function tuiAsRectAccessor(useExisting) {
 /* harmony import */ var _taiga_ui_core_enums__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4304);
 /* harmony import */ var _taiga_ui_core_components_svg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(3656);
 /* harmony import */ var _taiga_ui_core_components_loader__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(7692);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1268);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(232);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _taiga_ui_core_directives_wrapper__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(4108);
 /* harmony import */ var _tinkoff_ng_polymorpheus__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(8660);
@@ -34101,7 +34101,7 @@ let TuiButtonModule = /*#__PURE__*/(() => {
 /* harmony export */   C: () => (/* binding */ TuiLinkComponent),
 /* harmony export */   w: () => (/* binding */ TuiLinkModule)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(648);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2660);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(900);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4392);
@@ -34113,7 +34113,7 @@ let TuiButtonModule = /*#__PURE__*/(() => {
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3412);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4704);
 /* harmony import */ var _taiga_ui_core_components_svg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(3656);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1268);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(232);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -34272,9 +34272,9 @@ let TuiLinkModule = /*#__PURE__*/(() => {
 /* harmony export */   Sk: () => (/* binding */ TuiLoaderModule)
 /* harmony export */ });
 /* unused harmony exports TUI_LOADER_DEFAULT_OPTIONS, TUI_LOADER_OPTIONS, tuiLoaderOptionsProvider */
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1268);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(232);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(648);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2660);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2528);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4204);
@@ -34464,13 +34464,13 @@ let TuiLoaderModule = /*#__PURE__*/(() => {
 /* harmony export */   O: () => (/* binding */ TuiNotificationModule),
 /* harmony export */   e: () => (/* binding */ TuiNotificationComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(648);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2660);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(900);
 /* harmony import */ var _taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5944);
 /* harmony import */ var _taiga_ui_core_components_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3656);
 /* harmony import */ var _taiga_ui_core_components_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8212);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1268);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(232);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _tinkoff_ng_polymorpheus__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8660);
 
@@ -34636,9 +34636,9 @@ let TuiNotificationModule = /*#__PURE__*/(() => {
 /* harmony export */ });
 /* unused harmony exports TUI_DEPRECATED_ICONS, TUI_SVG_DEFAULT_OPTIONS, TUI_SVG_OPTIONS, TUI_SVG_SRC_INTERCEPTORS, tuiSvgOptionsProvider, tuiSvgSrcInterceptors */
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(1316);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1268);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(232);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(648);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2660);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(4476);
 /* harmony import */ var _ng_web_apis_common__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(1300);
@@ -35073,7 +35073,7 @@ const TUI_LATIN_AND_NUMBERS_REGEXP = /[A-z|0-9]/;
 /* harmony export */   Q: () => (/* binding */ TuiModeModule),
 /* harmony export */   Y: () => (/* binding */ TuiModeDirective)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(648);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2660);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1800);
 
@@ -35136,7 +35136,7 @@ let TuiModeModule = /*#__PURE__*/(() => {
 /* harmony export */   S: () => (/* binding */ TuiWrapperDirective),
 /* harmony export */   g: () => (/* binding */ TuiWrapperModule)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(648);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2660);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_core_enums__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4304);
 /* harmony import */ var _taiga_ui_core_providers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3972);
@@ -35326,7 +35326,7 @@ var TuiRangeState = /*#__PURE__*/function (TuiRangeState) {
 /* harmony export */   Ir: () => (/* binding */ MODE_PROVIDER)
 /* harmony export */ });
 /* unused harmony exports TUI_IS_MOBILE_RES_PROVIDER, tuiWatchedControllerFactory */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(648);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2660);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5944);
 /* harmony import */ var _taiga_ui_core_directives_mode__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1220);
@@ -35390,7 +35390,7 @@ function tuiWatchedControllerFactory(controller, cdr, destroy$) {
 /* harmony export */   qY: () => (/* binding */ TuiHintService)
 /* harmony export */ });
 /* unused harmony exports TuiFormatDateService, TuiNightThemeService */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(648);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2660);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(900);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(2296);
@@ -35410,7 +35410,7 @@ function tuiWatchedControllerFactory(controller, cdr, destroy$) {
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(3616);
 /* harmony import */ var _ng_web_apis_common__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(1300);
 /* harmony import */ var _taiga_ui_core_abstract__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(9371);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6472);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(236);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_router__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(4476);
 /* harmony import */ var _taiga_ui_core_utils_dom__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(9056);
@@ -35721,8 +35721,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // UNUSED EXPORTS: STATUS_ICON, TUI_ANIMATIONS_DEFAULT_DURATION, TUI_ASSERT_ENABLED, TUI_DATA_LIST_ACCESSOR, TUI_DAY_TYPE_HANDLER, TUI_DEFAULT_ERROR_MESSAGE, TUI_DOCUMENT_OR_SHADOW_ROOT, TUI_ELEMENT_REF, TUI_FIRST_DAY_OF_WEEK, TUI_NOTIFICATION_DEFAULT_OPTIONS, TUI_NUMBER_FORMAT_OBSERVABLE, TUI_ORDERED_SHORT_WEEK_DAYS, TUI_SCROLL_REF, TUI_SELECTION_STREAM, TUI_SHORT_WEEK_DAYS, TUI_SPIN_ICONS, TUI_SPIN_TEXTS, tuiAsViewport, tuiCommonIconsProvider, tuiNotificationOptionsProvider, tuiNumberFormatProvider
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(648);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(2660);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-miscellaneous.js
 var taiga_ui_cdk_utils_miscellaneous = __webpack_require__(2528);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-enums.js
@@ -35731,8 +35731,8 @@ var taiga_ui_cdk_enums = __webpack_require__(7268);
 var taiga_ui_cdk_observables = __webpack_require__(900);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-svg.js
 var taiga_ui_cdk_utils_svg = __webpack_require__(7864);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(1268);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(232);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/i18n/fesm2015/taiga-ui-i18n-tools.js + 2 modules
 var taiga_ui_i18n_tools = __webpack_require__(4472);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-utils-miscellaneous.js
@@ -36616,8 +36616,8 @@ __webpack_require__.d(__webpack_exports__, {
   u: () => (/* binding */ tuiExtractI18n)
 });
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(648);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(2660);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/i18n/fesm2015/taiga-ui-i18n-enums.js
 var taiga_ui_i18n_enums = __webpack_require__(3724);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/i18n/fesm2015/taiga-ui-i18n-languages-english.js
@@ -37064,7 +37064,7 @@ function tuiExtractI18n(key) {
 /* harmony export */   WO: () => (/* binding */ PolymorpheusComponent),
 /* harmony export */   sv: () => (/* binding */ PolymorpheusTemplate)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(648);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2660);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -38307,10 +38307,10 @@ function argsOrArgArray(args) {
 /* harmony export */   wb: () => (/* binding */ style)
 /* harmony export */ });
 /* unused harmony exports AnimationBuilder, AnimationFactory, animation, group, keyframes, state, useAnimation, ɵBrowserAnimationBuilder */
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1268);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(648);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(232);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2660);
 /**
- * @license Angular v17.2.0
+ * @license Angular v17.2.1
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -39777,9 +39777,9 @@ const ɵPRE_STYLE = '!';
 /* harmony export */ });
 /* unused harmony exports ɵAnimation, ɵAnimationRenderer, ɵBaseAnimationRenderer, ɵNoopAnimationStyleNormalizer, ɵWebAnimationsPlayer, ɵallowPreviousPlayerStylesMerge, ɵcamelCaseToDashCase, ɵcontainsElement, ɵcreateEngine, ɵgetParentElement, ɵinvokeQuery, ɵnormalizeKeyframes, ɵvalidateStyleProperty, ɵvalidateWebAnimatableStyleProperty */
 /* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9684);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(648);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2660);
 /**
- * @license Angular v17.2.0
+ * @license Angular v17.2.1
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -44284,10 +44284,10 @@ __webpack_require__.d(__webpack_exports__, {
 
 // UNUSED EXPORTS: AbstractControl, AbstractControlDirective, AbstractFormGroupDirective, COMPOSITION_BUFFER_MODE, CheckboxControlValueAccessor, CheckboxRequiredValidator, ControlContainer, EmailValidator, FormArray, FormArrayName, FormBuilder, FormControlName, FormGroup, FormGroupDirective, FormGroupName, FormRecord, MaxLengthValidator, MaxValidator, MinLengthValidator, MinValidator, NG_ASYNC_VALIDATORS, NG_VALIDATORS, NgControlStatusGroup, NgForm, NgModelGroup, NgSelectOption, NonNullableFormBuilder, NumberValueAccessor, PatternValidator, RadioControlValueAccessor, RangeValueAccessor, RequiredValidator, SelectControlValueAccessor, SelectMultipleControlValueAccessor, UntypedFormArray, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, VERSION, Validators, isFormArray, isFormControl, isFormGroup, isFormRecord, ɵInternalFormsSharedModule, ɵNgNoValidate, ɵNgSelectMultipleOption
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(648);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(1268);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(2660);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(232);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/from.js + 9 modules
 var from = __webpack_require__(4496);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Observable.js
@@ -44354,7 +44354,7 @@ function forkJoin(...args) {
 var map = __webpack_require__(4704);
 ;// CONCATENATED MODULE: ./node_modules/@angular/forms/fesm2022/forms.mjs
 /**
- * @license Angular v17.2.0
+ * @license Angular v17.2.1
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -51607,7 +51607,7 @@ let UntypedFormBuilder = /*#__PURE__*/(/* unused pure expression or super */ nul
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new core_mjs_.Version('17.2.0');
+const VERSION = /*#__PURE__*/new core_mjs_.Version('17.2.1');
 
 /**
  * Exports the required providers and directives for template-driven forms,
@@ -51743,8 +51743,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // UNUSED EXPORTS: HighlightJS, HighlightLoader
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(648);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(2660);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/BehaviorSubject.js
 var BehaviorSubject = __webpack_require__(6700);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/empty.js
@@ -51917,8 +51917,8 @@ var switchMap = __webpack_require__(7368);
 var tap = __webpack_require__(9212);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/catchError.js
 var catchError = __webpack_require__(9144);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(1268);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(232);
 // EXTERNAL MODULE: ./node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
 var platform_browser = __webpack_require__(4476);
 ;// CONCATENATED MODULE: ./node_modules/ngx-highlightjs/fesm2020/ngx-highlightjs.mjs

@@ -203,8 +203,8 @@ __webpack_require__.d(__webpack_exports__, {
   "ɵloadChildren": () => (/* binding */ loadChildren)
 });
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(648);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(2660);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/isObservable.js
 var isObservable = __webpack_require__(1116);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/from.js + 9 modules
@@ -324,8 +324,8 @@ class ConnectableObservable extends Observable/* Observable */._ {
 //# sourceMappingURL=ConnectableObservable.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Subject.js + 1 modules
 var Subject = __webpack_require__(5657);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.2.0 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(1268);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(232);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/map.js
 var map = __webpack_require__(4704);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/switchMap.js
@@ -422,7 +422,7 @@ var mergeAll = __webpack_require__(267);
 var platform_browser = __webpack_require__(4476);
 ;// CONCATENATED MODULE: ./node_modules/@angular/router/fesm2022/router.mjs
 /**
- * @license Angular v17.2.0
+ * @license Angular v17.2.1
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -7660,7 +7660,7 @@ function mapToResolve(provider) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new core_mjs_.Version('17.2.0');
+const VERSION = /*#__PURE__*/new core_mjs_.Version('17.2.1');
 
 /**
  * @module
