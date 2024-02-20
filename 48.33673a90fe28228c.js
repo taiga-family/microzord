@@ -3835,7 +3835,7 @@ let TuiScrollbarDirective = /*#__PURE__*/(() => {
       const mousemove$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.Ax)(this.doc, 'mousemove');
       const mouseup$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.Ax)(this.doc, 'mouseup');
       const mousedownWrapper$ = (0,taiga_ui_cdk_observables/* tuiTypedFromEvent */.Ax)(this.wrapper, 'mousedown');
-      (0,merge/* merge */.U)(mousedownWrapper$.pipe((0,operators_map/* map */.k)(event => this.getScrolled(event, 0.5, 0.5))), mousedown$.pipe((0,taiga_ui_cdk_observables/* tuiStopPropagation */.A1)(), (0,operators_switchMap/* switchMap */.G)(event => {
+      (0,merge/* merge */.U)(mousedownWrapper$.pipe((0,operators_map/* map */.k)(event => this.getScrolled(event, 0.5, 0.5))), mousedown$.pipe((0,operators_switchMap/* switchMap */.G)(event => {
         const rect = nativeElement.getBoundingClientRect();
         const vertical = getOffsetVertical(event, rect);
         const horizontal = getOffsetHorizontal(event, rect);
@@ -4095,10 +4095,12 @@ let TuiScrollbarComponent = /*#__PURE__*/(() => {
       this.el = el;
       this.userAgent = userAgent;
       this.isIos = isIos;
-      this.delegated = false;
       this.isLegacy = !this.cssRef.supports('position', 'sticky') || (0,taiga_ui_cdk_utils_browser/* tuiIsFirefox */.cR)(this.userAgent) && !this.cssRef.supports('scrollbar-width', 'none');
       this.hidden = false;
       this.browserScrollRef = new core_mjs_.ElementRef(this.el.nativeElement);
+    }
+    get delegated() {
+      return this.browserScrollRef.nativeElement !== this.el.nativeElement;
     }
     get showScrollbars() {
       return !this.hidden && !this.isIos && (!this.isLegacy || this.delegated);
@@ -4107,7 +4109,6 @@ let TuiScrollbarComponent = /*#__PURE__*/(() => {
       return this.isLegacy && !this.hidden && !this.delegated;
     }
     onScrollable(element) {
-      this.delegated = true;
       this.browserScrollRef.nativeElement = element;
     }
     scrollIntoView(detail) {
@@ -4167,7 +4168,7 @@ let TuiScrollbarComponent = /*#__PURE__*/(() => {
     }])],
     ngContentSelectors: taiga_ui_core_components_scrollbar_c0,
     decls: 3,
-    vars: 1,
+    vars: 3,
     consts: [["class", "t-bars", 4, "ngIf"], [1, "t-content"], [1, "t-bars"]],
     template: function TuiScrollbarComponent_Template(rf, ctx) {
       if (rf & 1) {
@@ -4179,10 +4180,12 @@ let TuiScrollbarComponent = /*#__PURE__*/(() => {
       }
       if (rf & 2) {
         core_mjs_["ɵɵproperty"]("ngIf", ctx.showScrollbars);
+        core_mjs_["ɵɵadvance"]();
+        core_mjs_["ɵɵclassProp"]("t-content_delegated", ctx.delegated);
       }
     },
     dependencies: [TuiScrollControlsComponent, common_mjs_.NgIf],
-    styles: ["[_nghost-%COMP%]{position:relative;display:flex;isolation:isolate;overflow:auto}[_nghost-%COMP%]:not(._legacy){scrollbar-width:none;-ms-overflow-style:none}[_nghost-%COMP%]:not(._legacy)::-webkit-scrollbar, [_nghost-%COMP%]:not(._legacy)::-webkit-scrollbar-thumb{background:transparent;width:0;height:0}._legacy[_nghost-%COMP%]{overflow:overlay}@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm){._legacy[_nghost-%COMP%]::-webkit-scrollbar, ._legacy[_nghost-%COMP%]::-webkit-scrollbar-thumb{width:1rem;height:1rem;border-radius:6.25rem;background-clip:padding-box;border:.375rem solid transparent}._legacy[_nghost-%COMP%]::-webkit-scrollbar{background-color:transparent}._legacy[_nghost-%COMP%]::-webkit-scrollbar-thumb{background-color:var(--tui-clear-hover)}._legacy[_nghost-%COMP%]::-webkit-scrollbar-thumb:hover{background-color:var(--tui-clear-active)}._legacy[_nghost-%COMP%]::-webkit-scrollbar-thumb:active{background-color:var(--tui-text-03)}}.t-content[_ngcontent-%COMP%]{isolation:isolate;flex:1;flex-basis:auto;width:100%;height:-webkit-max-content;height:max-content}.t-bars[_ngcontent-%COMP%]{color:var(--tui-text-01)}"],
+    styles: ["[_nghost-%COMP%]{position:relative;display:flex;isolation:isolate;overflow:auto}[_nghost-%COMP%]:not(._legacy){scrollbar-width:none;-ms-overflow-style:none}[_nghost-%COMP%]:not(._legacy)::-webkit-scrollbar, [_nghost-%COMP%]:not(._legacy)::-webkit-scrollbar-thumb{background:transparent;width:0;height:0}._legacy[_nghost-%COMP%]{overflow:overlay}@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm){._legacy[_nghost-%COMP%]::-webkit-scrollbar, ._legacy[_nghost-%COMP%]::-webkit-scrollbar-thumb{width:1rem;height:1rem;border-radius:6.25rem;background-clip:padding-box;border:.375rem solid transparent}._legacy[_nghost-%COMP%]::-webkit-scrollbar{background-color:transparent}._legacy[_nghost-%COMP%]::-webkit-scrollbar-thumb{background-color:var(--tui-clear-hover)}._legacy[_nghost-%COMP%]::-webkit-scrollbar-thumb:hover{background-color:var(--tui-clear-active)}._legacy[_nghost-%COMP%]::-webkit-scrollbar-thumb:active{background-color:var(--tui-text-03)}}.t-content[_ngcontent-%COMP%]{isolation:isolate;flex:1;flex-basis:auto;width:100%;height:-webkit-max-content;height:max-content}.t-content_delegated[_ngcontent-%COMP%]{height:100%}.t-bars[_ngcontent-%COMP%]{color:var(--tui-text-01)}"],
     changeDetection: 0
   });
   return TuiScrollbarComponent;
@@ -6941,7 +6944,7 @@ let TuiRootComponent = /*#__PURE__*/(() => {
   TuiRootComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiRootComponent,
     selectors: [["tui-root"]],
-    hostAttrs: ["data-tui-version", "3.66.0"],
+    hostAttrs: ["data-tui-version", "3.67.0"],
     hostVars: 9,
     hostBindings: function TuiRootComponent_HostBindings(rf, ctx) {
       if (rf & 1) {
@@ -16465,7 +16468,7 @@ let TuiTabComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [common_mjs_.NgIf, common_mjs_.AsyncPipe],
-    styles: ["._underline[_nghost-%COMP%]:hover, ._underline   [_nghost-%COMP%]:hover{box-shadow:inset 0 -2px var(--tui-base-03)}tui-tabs    > [_nghost-%COMP%]:first-child, tui-tabs    > [_nghost-%COMP%]:first-child, [tuiTabs]    > [_nghost-%COMP%]:first-child, [tuiTabs]    > [_nghost-%COMP%]:first-child, tui-tabs    > :first-child[_nghost-%COMP%], tui-tabs    > :first-child   [_nghost-%COMP%], [tuiTabs]    > :first-child[_nghost-%COMP%], [tuiTabs]    > :first-child   [_nghost-%COMP%]{margin-left:0}[_nghost-%COMP%]{transition-property:color,box-shadow,opacity,background;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:0;border:0;background:none;font-size:inherit;line-height:inherit;text-decoration:none;position:relative;display:flex;flex-shrink:0;height:100%;box-sizing:border-box;justify-content:space-between;line-height:1.5rem;align-items:center;white-space:nowrap;cursor:pointer;outline:none;color:inherit;margin-left:var(--tui-tab-margin, 1.5rem)}[_nghost-%COMP%]:disabled{opacity:var(--tui-disabled-opacity);pointer-events:none}[_nghost-%COMP%]:not([data-mode])._active{opacity:1;color:var(--tui-text-01);box-shadow:none}[data-mode=onDark][_nghost-%COMP%]{color:#ffffffb8}[data-mode=onDark][_nghost-%COMP%]:hover, [data-mode=onDark]._active[_nghost-%COMP%]{color:#fff}[data-mode=onDark][_nghost-%COMP%]:focus-visible   .t-highlight[_ngcontent-%COMP%]{background:var(--tui-clear-inverse);color:var(--tui-text-01)}[data-mode=onLight][_nghost-%COMP%]{color:var(--tui-text-02)}[data-mode=onLight][_nghost-%COMP%]:hover, [data-mode=onLight]._active[_nghost-%COMP%]{color:var(--tui-text-01)}[data-mode=onLight][_nghost-%COMP%]:focus-visible   .t-highlight[_ngcontent-%COMP%]{background:var(--tui-text-01);color:#fff}[_nghost-%COMP%]:focus-visible   .t-highlight[_ngcontent-%COMP%]{background:var(--tui-selection)}._android[_nghost-%COMP%]{transition-property:opacity;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;height:3rem;flex:1;flex-shrink:0;justify-content:center;margin:0;text-transform:uppercase;color:var(--tui-base-09);opacity:.5;font-size:.875rem;font-weight:500;letter-spacing:-.008125rem;font-family:-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif}._android[_nghost-%COMP%]:hover{box-shadow:none}._android._active[_nghost-%COMP%]{opacity:1;color:var(--tui-base-09)}._android[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{width:auto}._ios[_nghost-%COMP%]{height:1.75rem;flex:1;flex-shrink:0;justify-content:center;margin:0;color:var(--tui-base-01);opacity:1;font-size:.8125rem;font-weight:500;letter-spacing:-.005rem;font-family:-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif}._ios[_nghost-%COMP%]:hover{box-shadow:none}._ios._active[_nghost-%COMP%]{font-size:.875rem;font-weight:600;color:var(--tui-link)}._ios[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{width:auto}@media (hover: hover){[_nghost-%COMP%]:hover{color:var(--tui-text-01)}}.t-highlight[_ngcontent-%COMP%]{display:inline-flex;width:100%;align-items:center;justify-content:inherit}.t-highlight[_ngcontent-%COMP%]    >*{flex-shrink:0}tui-tabs[data-vertical][_nghost-%COMP%], tui-tabs[data-vertical]   [_nghost-%COMP%], [tuiTabs][data-vertical][_nghost-%COMP%], [tuiTabs][data-vertical]   [_nghost-%COMP%]{min-height:2.75rem;height:auto;white-space:normal;margin:0;text-align:left;padding:.25rem 1.25rem .25rem 0}tui-tabs[data-vertical][_nghost-%COMP%]:after, tui-tabs[data-vertical]   [_nghost-%COMP%]:after, [tuiTabs][data-vertical][_nghost-%COMP%]:after, [tuiTabs][data-vertical]   [_nghost-%COMP%]:after{transition-property:transform;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;content:\"\";position:absolute;top:0;bottom:0;right:0;width:2px;background:var(--tui-primary);transform:scaleX(0);transform-origin:right}tui-tabs[data-vertical][_nghost-%COMP%]:hover, tui-tabs[data-vertical]   [_nghost-%COMP%]:hover, [tuiTabs][data-vertical][_nghost-%COMP%]:hover, [tuiTabs][data-vertical]   [_nghost-%COMP%]:hover{box-shadow:inset -2px 0 var(--tui-base-03)}tui-tabs[data-vertical]._active[_nghost-%COMP%]:after, tui-tabs[data-vertical]   ._active[_nghost-%COMP%]:after, [tuiTabs][data-vertical]._active[_nghost-%COMP%]:after, [tuiTabs][data-vertical]   ._active[_nghost-%COMP%]:after{transform:none}tui-tabs[data-vertical=\"right\"][_nghost-%COMP%], tui-tabs[data-vertical=\"right\"]   [_nghost-%COMP%], [tuiTabs][data-vertical=\"right\"][_nghost-%COMP%], [tuiTabs][data-vertical=\"right\"]   [_nghost-%COMP%]{text-align:right;padding:.25rem 0 .25rem 1.25rem}tui-tabs[data-vertical=\"right\"][_nghost-%COMP%]:after, tui-tabs[data-vertical=\"right\"]   [_nghost-%COMP%]:after, [tuiTabs][data-vertical=\"right\"][_nghost-%COMP%]:after, [tuiTabs][data-vertical=\"right\"]   [_nghost-%COMP%]:after{right:auto;left:0;transform-origin:left}tui-tabs[data-vertical=\"right\"][_nghost-%COMP%]:hover, tui-tabs[data-vertical=\"right\"]   [_nghost-%COMP%]:hover, [tuiTabs][data-vertical=\"right\"][_nghost-%COMP%]:hover, [tuiTabs][data-vertical=\"right\"]   [_nghost-%COMP%]:hover{box-shadow:inset 2px 0 var(--tui-base-03)}"],
+    styles: ["._underline[_nghost-%COMP%]:hover:not(._active), ._underline   [_nghost-%COMP%]:hover:not(._active){box-shadow:inset 0 -2px var(--tui-base-03)}tui-tabs    > [_nghost-%COMP%]:first-child, tui-tabs    > [_nghost-%COMP%]:first-child, [tuiTabs]    > [_nghost-%COMP%]:first-child, [tuiTabs]    > [_nghost-%COMP%]:first-child, tui-tabs    > :first-child[_nghost-%COMP%], tui-tabs    > :first-child   [_nghost-%COMP%], [tuiTabs]    > :first-child[_nghost-%COMP%], [tuiTabs]    > :first-child   [_nghost-%COMP%]{margin-left:0}[_nghost-%COMP%]{transition-property:color,box-shadow,opacity,background;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:0;border:0;background:none;font-size:inherit;line-height:inherit;text-decoration:none;position:relative;display:flex;flex-shrink:0;height:100%;box-sizing:border-box;justify-content:space-between;line-height:1.5rem;align-items:center;white-space:nowrap;cursor:pointer;outline:none;color:inherit;margin-left:var(--tui-tab-margin, 1.5rem)}[_nghost-%COMP%]:disabled{opacity:var(--tui-disabled-opacity);pointer-events:none}[_nghost-%COMP%]:not([data-mode])._active{opacity:1;color:var(--tui-text-01);box-shadow:none}[data-mode=onDark][_nghost-%COMP%]{color:#ffffffb8}[data-mode=onDark][_nghost-%COMP%]:hover, [data-mode=onDark]._active[_nghost-%COMP%]{color:#fff}[data-mode=onDark][_nghost-%COMP%]:focus-visible   .t-highlight[_ngcontent-%COMP%]{background:var(--tui-clear-inverse);color:var(--tui-text-01)}[data-mode=onLight][_nghost-%COMP%]{color:var(--tui-text-02)}[data-mode=onLight][_nghost-%COMP%]:hover, [data-mode=onLight]._active[_nghost-%COMP%]{color:var(--tui-text-01)}[data-mode=onLight][_nghost-%COMP%]:focus-visible   .t-highlight[_ngcontent-%COMP%]{background:var(--tui-text-01);color:#fff}[_nghost-%COMP%]:focus-visible   .t-highlight[_ngcontent-%COMP%]{background:var(--tui-selection)}._android[_nghost-%COMP%]{transition-property:opacity;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;height:3rem;flex:1;flex-shrink:0;justify-content:center;margin:0;text-transform:uppercase;color:var(--tui-base-09);opacity:.5;font-size:.875rem;font-weight:500;letter-spacing:-.008125rem;font-family:-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif}._android[_nghost-%COMP%]:hover{box-shadow:none}._android._active[_nghost-%COMP%]{opacity:1;color:var(--tui-base-09)}._android[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{width:auto}._ios[_nghost-%COMP%]{height:1.75rem;flex:1;flex-shrink:0;justify-content:center;margin:0;color:var(--tui-base-01);opacity:1;font-size:.8125rem;font-weight:500;letter-spacing:-.005rem;font-family:-apple-system,BlinkMacSystemFont,Roboto,\"Helvetica Neue\",sans-serif}._ios[_nghost-%COMP%]:hover{box-shadow:none}._ios._active[_nghost-%COMP%]{font-size:.875rem;font-weight:600;color:var(--tui-link)}._ios[_nghost-%COMP%]   .t-highlight[_ngcontent-%COMP%]{width:auto}@media (hover: hover){[_nghost-%COMP%]:hover{color:var(--tui-text-01)}}.t-highlight[_ngcontent-%COMP%]{display:inline-flex;width:100%;align-items:center;justify-content:inherit}.t-highlight[_ngcontent-%COMP%]    >*{flex-shrink:0}tui-tabs[data-vertical][_nghost-%COMP%], tui-tabs[data-vertical]   [_nghost-%COMP%], [tuiTabs][data-vertical][_nghost-%COMP%], [tuiTabs][data-vertical]   [_nghost-%COMP%]{min-height:2.75rem;height:auto;white-space:normal;margin:0;text-align:left;padding:.25rem 1.25rem .25rem 0}tui-tabs[data-vertical][_nghost-%COMP%]:after, tui-tabs[data-vertical]   [_nghost-%COMP%]:after, [tuiTabs][data-vertical][_nghost-%COMP%]:after, [tuiTabs][data-vertical]   [_nghost-%COMP%]:after{transition-property:transform;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;content:\"\";position:absolute;top:0;bottom:0;right:0;width:2px;background:var(--tui-primary);transform:scaleX(0);transform-origin:right}tui-tabs[data-vertical][_nghost-%COMP%]:hover, tui-tabs[data-vertical]   [_nghost-%COMP%]:hover, [tuiTabs][data-vertical][_nghost-%COMP%]:hover, [tuiTabs][data-vertical]   [_nghost-%COMP%]:hover{box-shadow:inset -2px 0 var(--tui-base-03)}tui-tabs[data-vertical]._active[_nghost-%COMP%]:after, tui-tabs[data-vertical]   ._active[_nghost-%COMP%]:after, [tuiTabs][data-vertical]._active[_nghost-%COMP%]:after, [tuiTabs][data-vertical]   ._active[_nghost-%COMP%]:after{transform:none}tui-tabs[data-vertical=\"right\"][_nghost-%COMP%], tui-tabs[data-vertical=\"right\"]   [_nghost-%COMP%], [tuiTabs][data-vertical=\"right\"][_nghost-%COMP%], [tuiTabs][data-vertical=\"right\"]   [_nghost-%COMP%]{text-align:right;padding:.25rem 0 .25rem 1.25rem}tui-tabs[data-vertical=\"right\"][_nghost-%COMP%]:after, tui-tabs[data-vertical=\"right\"]   [_nghost-%COMP%]:after, [tuiTabs][data-vertical=\"right\"][_nghost-%COMP%]:after, [tuiTabs][data-vertical=\"right\"]   [_nghost-%COMP%]:after{right:auto;left:0;transform-origin:left}tui-tabs[data-vertical=\"right\"][_nghost-%COMP%]:hover, tui-tabs[data-vertical=\"right\"]   [_nghost-%COMP%]:hover, [tuiTabs][data-vertical=\"right\"][_nghost-%COMP%]:hover, [tuiTabs][data-vertical=\"right\"]   [_nghost-%COMP%]:hover{box-shadow:inset 2px 0 var(--tui-base-03)}"],
     changeDetection: 0
   });
   return TuiTabComponent;
@@ -30969,7 +30972,7 @@ const CHAR_ZERO_WIDTH_SPACE = '\u200B';
  * Array of icons used in taiga-ui components
  */
 const TUI_USED_ICONS = (/* unused pure expression or super */ null && (['tuiIconMirMono', 'tuiIconVisaMono', 'tuiIconElectronMono', 'tuiIconMastercard', 'tuiIconMaestro', 'tuiIconAmex', 'tuiIconDinersClub', 'tuiIconDiscover', 'tuiIconHumo', 'tuiIconJCB', 'tuiIconRuPay', 'tuiIconUnionPay', 'tuiIconUzcard', 'tuiIconVerve', 'tuiIconCopyLarge', 'tuiIconCheckLarge', 'tuiIconLink', 'tuiIconSearch', 'tuiIconSun', 'tuiIconMoon', 'tuiIconCode', 'tuiIconMenuLarge', 'tuiIconRotate', 'tuiIconArrowLeft', 'tuiIconArrowRight', 'tuiIconPlus', 'tuiIconMinus', 'tuiIconMinimize', 'tuiIconEye', 'tuiIconEyeOff', 'tuiIconDrag', 'tuiIconSortAscending', 'tuiIconSortDescending', 'tuiIconSortOff', 'tuiIconCheck', 'tuiIconMinusLarge', 'tuiIconChevronUp', 'tuiIconHelpCircle', 'tuiIconClose', 'tuiIconAlertCircle', 'tuiIconChevronRight', 'tuiIconInfo', 'tuiIconCheckCircle', 'tuiIconXCircle', 'tuiIconChevronLeft', 'tuiIconStarLarge', 'tuiIconChevronDown', 'tuiIconChevronDownLarge', 'tuiIconFileLarge', 'tuiIconCheckCircleLarge', 'tuiIconAlertCircleLarge', 'tuiIconTrashLarge', 'tuiIconCopy', 'tuiIconEyeOffLarge', 'tuiIconEyeLarge', 'tuiIconClock', 'tuiIconClockLarge', 'tuiIconToggleOff', 'tuiIconToggleOffLarge', 'tuiIconToggleOn', 'tuiIconToggleOnLarge', 'tuiIconCalendar', 'tuiIconCalendarLarge']));
-const TUI_VERSION = '3.66.0';
+const TUI_VERSION = '3.67.0';
 
 /**
  * Generated bundle index. Do not edit.
@@ -31416,7 +31419,6 @@ class TuiXmlParsingException extends Error {
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A1: () => (/* binding */ tuiStopPropagation),
 /* harmony export */   Ax: () => (/* binding */ tuiTypedFromEvent),
 /* harmony export */   G0: () => (/* binding */ tuiControlValue),
 /* harmony export */   OA: () => (/* binding */ tuiZoneOptimized),
@@ -31428,7 +31430,7 @@ class TuiXmlParsingException extends Error {
 /* harmony export */   jv: () => (/* binding */ tuiQueryListChanges),
 /* harmony export */   m0: () => (/* binding */ tuiFocusVisibleObservable)
 /* harmony export */ });
-/* unused harmony exports TuiDragStage, TuiDragState, tuiDragAndDropFrom, tuiIsAlive, tuiItemsQueryListObservable, tuiMouseDragFinishFrom, tuiMustBePresent, tuiPressedObservable, tuiPreventDefault, tuiZonefull */
+/* unused harmony exports TuiDragStage, TuiDragState, tuiDragAndDropFrom, tuiIsAlive, tuiItemsQueryListObservable, tuiMouseDragFinishFrom, tuiMustBePresent, tuiPressedObservable, tuiPreventDefault, tuiStopPropagation, tuiZonefull */
 /* harmony import */ var _taiga_ui_cdk_exceptions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3152);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3252);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(800);
@@ -31598,7 +31600,7 @@ function tuiScrollFrom(element) {
   return tuiTypedFromEvent(element === element.ownerDocument.documentElement ? element.ownerDocument : element, 'scroll');
 }
 function tuiStopPropagation() {
-  return (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_21__/* .tap */ .y)(e => {
+  return tap(e => {
     e.stopPropagation();
   });
 }
@@ -36966,7 +36968,7 @@ const TUI_ENGLISH_LANGUAGE_KIT = {
     defaultLabelMultiple: 'or drop\u00A0them\u00A0here',
     defaultLinkSingle: 'Choose a file',
     defaultLinkMultiple: 'Choose files',
-    maxSizeRejectionReason: 'File is too large ',
+    maxSizeRejectionReason: 'File is larger than ',
     formatRejectionReason: 'Wrong file type',
     drop: 'Drop file here',
     dropMultiple: 'Drop files here'
