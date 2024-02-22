@@ -1659,7 +1659,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵɵviewQuerySignal": () => (/* binding */ ɵɵviewQuerySignal)
 /* harmony export */ });
 /* harmony import */ var _home_runner_work_microzord_microzord_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(1528);
-/* harmony import */ var _angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(944);
+/* harmony import */ var _angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3450);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5657);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6928);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6700);
@@ -1667,7 +1667,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5084);
 
 /**
- * @license Angular v17.2.1
+ * @license Angular v17.2.2
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -11921,7 +11921,9 @@ function executeContentQueries(tView, tNode, lView) {
       for (let directiveIndex = start; directiveIndex < end; directiveIndex++) {
         const def = tView.data[directiveIndex];
         if (def.contentQueries) {
-          def.contentQueries(1 /* RenderFlags.Create */, lView[directiveIndex], directiveIndex);
+          const directiveInstance = lView[directiveIndex];
+          ngDevMode && assertDefined(directiveIndex, 'Incorrect reference to a directive defining a content query');
+          def.contentQueries(1 /* RenderFlags.Create */, directiveInstance, directiveIndex);
         }
       }
     } finally {
@@ -17925,14 +17927,14 @@ function createRootComponent(componentView, rootComponentDef, rootDirectives, ho
   }
   // We want to generate an empty QueryList for root content queries for backwards
   // compatibility with ViewEngine.
-  executeContentQueries(tView, rootTNode, componentView);
+  executeContentQueries(tView, rootTNode, rootLView);
   return component;
 }
 /** Sets the static attributes on a root component. */
 function setRootNodeAttributes(hostRenderer, componentDef, hostRNode, rootSelectorOrNode) {
   if (rootSelectorOrNode) {
     // The placeholder will be replaced with the actual version at build time.
-    setUpAttributes(hostRenderer, hostRNode, ['ng-version', '17.2.1']);
+    setUpAttributes(hostRenderer, hostRNode, ['ng-version', '17.2.2']);
   } else {
     // If host element is created as a part of this function call (i.e. `rootSelectorOrNode`
     // is not defined), also apply attributes and classes extracted from component selector.
@@ -31574,7 +31576,7 @@ class Version {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new Version('17.2.1');
+const VERSION = /*#__PURE__*/new Version('17.2.2');
 let Console = /*#__PURE__*/(() => {
   class Console {
     log(message) {

@@ -12,8 +12,8 @@ __webpack_require__.d(__webpack_exports__, {
   AngularInstallationModule: () => (/* binding */ AngularInstallationModule)
 });
 
-// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
-var router_mjs_ = __webpack_require__(236);
+// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.2.2 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
+var router_mjs_ = __webpack_require__(752);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc.js
 var taiga_ui_addon_doc = __webpack_require__(176);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-utils.js + 75 modules
@@ -22,8 +22,8 @@ var taiga_ui_addon_doc_utils = __webpack_require__(1040);
 var taiga_ui_core_components_link = __webpack_require__(1512);
 // EXTERNAL MODULE: ./apps/demo/src/app/shared/host-child-warning/host-child-warning.module.ts
 var host_child_warning_module = __webpack_require__(9664);
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.1 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(2660);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.2 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(8340);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-components.js + 85 modules
 var taiga_ui_addon_doc_components = __webpack_require__(5748);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-notification.js
