@@ -4547,7 +4547,7 @@ let TuiDropdownComponent = /*#__PURE__*/(() => {
       style.position = position;
       style.top = taiga_ui_cdk_utils_format_tuiPx(Math.max(top, offsetY + offset));
       style.left = taiga_ui_cdk_utils_format_tuiPx(left);
-      style.maxHeight = sided ? `min(100%, ${maxHeight}px)` : taiga_ui_cdk_utils_format_tuiPx(Math.min(maxHeight, Math.max(available, minHeight)));
+      style.maxHeight = sided ? `${maxHeight}px` : taiga_ui_cdk_utils_format_tuiPx(Math.min(maxHeight, Math.max(available, minHeight)));
       style.width = '';
       style.minWidth = '';
       this.updateWidth(rect.width);
@@ -6945,7 +6945,7 @@ let TuiRootComponent = /*#__PURE__*/(() => {
   TuiRootComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiRootComponent,
     selectors: [["tui-root"]],
-    hostAttrs: ["data-tui-version", "3.67.0"],
+    hostAttrs: ["data-tui-version", "3.68.0"],
     hostVars: 9,
     hostBindings: function TuiRootComponent_HostBindings(rf, ctx) {
       if (rf & 1) {
@@ -19150,7 +19150,8 @@ function TuiDocNavigationComponent_ng_container_3_tui_data_list_1_tui_opt_group_
   }
   if (rf & 2) {
     const item_r11 = ctx.$implicit;
-    core_mjs_["ɵɵproperty"]("fragment", item_r11.fragment)("routerLink", item_r11.route);
+    core_mjs_["ɵɵproperty"]("fragment", item_r11.fragment)("routerLink", item_r11.route)("target", item_r11.target || "_self");
+    core_mjs_["ɵɵattribute"]("rel", item_r11.rel);
     core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", item_r11.title, " ");
     core_mjs_["ɵɵadvance"]();
@@ -19160,7 +19161,7 @@ function TuiDocNavigationComponent_ng_container_3_tui_data_list_1_tui_opt_group_
 function TuiDocNavigationComponent_ng_container_3_tui_data_list_1_tui_opt_group_1_Template(rf, ctx) {
   if (rf & 1) {
     core_mjs_["ɵɵelementStart"](0, "tui-opt-group", 12);
-    core_mjs_["ɵɵtemplate"](1, TuiDocNavigationComponent_ng_container_3_tui_data_list_1_tui_opt_group_1_a_1_Template, 3, 4, "a", 13);
+    core_mjs_["ɵɵtemplate"](1, TuiDocNavigationComponent_ng_container_3_tui_data_list_1_tui_opt_group_1_a_1_Template, 3, 6, "a", 13);
     core_mjs_["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -19286,7 +19287,8 @@ function TuiDocNavigationComponent_ng_template_11_a_0_Template(rf, ctx) {
   if (rf & 2) {
     const item_r29 = core_mjs_["ɵɵnextContext"]().item;
     const ctx_r30 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵproperty"]("routerLink", item_r29.route)("tuiScrollIntoViewLink", ctx_r30.isActive(item_r29.route));
+    core_mjs_["ɵɵproperty"]("routerLink", item_r29.route)("target", item_r29.target || "_self")("tuiScrollIntoViewLink", ctx_r30.isActive(item_r29.route));
+    core_mjs_["ɵɵattribute"]("rel", item_r29.rel);
     core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", item_r29.title, " ");
     core_mjs_["ɵɵadvance"]();
@@ -19356,7 +19358,8 @@ function TuiDocNavigationComponent_ng_template_11_ng_template_1_a_4_Template(rf,
   if (rf & 2) {
     const subPage_r46 = ctx.$implicit;
     const ctx_r39 = core_mjs_["ɵɵnextContext"](3);
-    core_mjs_["ɵɵproperty"]("fragment", subPage_r46.fragment)("routerLink", subPage_r46.route)("tuiScrollIntoViewLink", ctx_r39.isActive(subPage_r46.route));
+    core_mjs_["ɵɵproperty"]("fragment", subPage_r46.fragment)("routerLink", subPage_r46.route)("target", subPage_r46.target || "_self")("tuiScrollIntoViewLink", ctx_r39.isActive(subPage_r46.route));
+    core_mjs_["ɵɵattribute"]("rel", subPage_r46.rel);
     core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵtextInterpolate1"](" ", subPage_r46.title, " ");
     core_mjs_["ɵɵadvance"]();
@@ -19371,7 +19374,7 @@ function TuiDocNavigationComponent_ng_template_11_ng_template_1_Template(rf, ctx
     core_mjs_["ɵɵelementStart"](0, "div", 25);
     core_mjs_["ɵɵtemplate"](1, TuiDocNavigationComponent_ng_template_11_ng_template_1_button_1_Template, 4, 5, "button", 26);
     core_mjs_["ɵɵelementStart"](2, "tui-expand", 27)(3, "div", 28);
-    core_mjs_["ɵɵtemplate"](4, TuiDocNavigationComponent_ng_template_11_ng_template_1_a_4_Template, 3, 5, "a", 29);
+    core_mjs_["ɵɵtemplate"](4, TuiDocNavigationComponent_ng_template_11_ng_template_1_a_4_Template, 3, 7, "a", 29);
     core_mjs_["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
@@ -19390,7 +19393,7 @@ function TuiDocNavigationComponent_ng_template_11_ng_template_1_Template(rf, ctx
 }
 function TuiDocNavigationComponent_ng_template_11_Template(rf, ctx) {
   if (rf & 1) {
-    core_mjs_["ɵɵtemplate"](0, TuiDocNavigationComponent_ng_template_11_a_0_Template, 3, 4, "a", 22)(1, TuiDocNavigationComponent_ng_template_11_ng_template_1_Template, 5, 5, "ng-template", null, 23, core_mjs_["ɵɵtemplateRefExtractor"]);
+    core_mjs_["ɵɵtemplate"](0, TuiDocNavigationComponent_ng_template_11_a_0_Template, 3, 6, "a", 22)(1, TuiDocNavigationComponent_ng_template_11_ng_template_1_Template, 5, 5, "ng-template", null, 23, core_mjs_["ɵɵtemplateRefExtractor"]);
   }
   if (rf & 2) {
     const item_r29 = ctx.item;
@@ -20797,7 +20800,7 @@ let TuiDocNavigationComponent = /*#__PURE__*/(() => {
     ngContentSelectors: taiga_ui_addon_doc_components_c0,
     decls: 14,
     vars: 14,
-    consts: [["tuiTextfieldSize", "m", 1, "t-input", 3, "formControl", "tuiAutoFocus", "tuiTextfieldCleaner", "tuiTextfieldIconLeft", "tuiTextfieldLabelOutside"], ["input", ""], [4, "ngIf"], [1, "t-navigation"], [1, "t-scrollbar", 3, "tuiMode"], [3, "closeOthers", "rounded"], ["size", "s", 3, "borders", "open", "openChange", 4, "ngFor", "ngForOf"], [1, "t-items-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf"], ["pages", ""], [4, "tuiDataList"], [3, "label", 4, "ngFor", "ngForOf"], [3, "label"], ["tuiOption", "", 3, "fragment", "routerLink", "click", 4, "ngFor", "ngForOf"], ["tuiOption", "", 3, "fragment", "routerLink", "click"], ["class", "t-icon", 3, "src", 4, "polymorpheusOutlet"], [1, "t-icon", 3, "src"], ["size", "s", 3, "borders", "open", "openChange"], [1, "t-label"], ["tuiAccordionItemContent", ""], [1, "t-section"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], ["routerLinkActive", "t-sublink_active", "tuiLink", "", "class", "t-sublink", 3, "routerLink", "tuiScrollIntoViewLink", "click", 4, "ngIf", "ngIfElse"], ["subPagesTemplate", ""], ["routerLinkActive", "t-sublink_active", "tuiLink", "", 1, "t-sublink", 3, "routerLink", "tuiScrollIntoViewLink", "click"], ["routerLinkActive", "", 1, "t-subsection", 3, "routerLinkActiveOptions"], ["tuiLink", "", "type", "button", "class", "t-sublink t-sublink_subsection", 3, "click", 4, "ngIf"], [1, "t-expand", 3, "expanded"], [1, "t-section", "t-section_bordered"], ["routerLinkActive", "t-sublink_active", "tuiLink", "", "class", "t-sublink t-sublink_small", 3, "fragment", "routerLink", "tuiScrollIntoViewLink", "click", 4, "ngFor", "ngForOf"], ["tuiLink", "", "type", "button", 1, "t-sublink", "t-sublink_subsection", 3, "click"], [1, "t-chevron", 3, "src"], ["routerLinkActive", "t-sublink_active", "tuiLink", "", 1, "t-sublink", "t-sublink_small", 3, "fragment", "routerLink", "tuiScrollIntoViewLink", "click"]],
+    consts: [["tuiTextfieldSize", "m", 1, "t-input", 3, "formControl", "tuiAutoFocus", "tuiTextfieldCleaner", "tuiTextfieldIconLeft", "tuiTextfieldLabelOutside"], ["input", ""], [4, "ngIf"], [1, "t-navigation"], [1, "t-scrollbar", 3, "tuiMode"], [3, "closeOthers", "rounded"], ["size", "s", 3, "borders", "open", "openChange", 4, "ngFor", "ngForOf"], [1, "t-items-container"], [3, "ngTemplateOutlet", "ngTemplateOutletContext", 4, "ngFor", "ngForOf"], ["pages", ""], [4, "tuiDataList"], [3, "label", 4, "ngFor", "ngForOf"], [3, "label"], ["tuiOption", "", 3, "fragment", "routerLink", "target", "click", 4, "ngFor", "ngForOf"], ["tuiOption", "", 3, "fragment", "routerLink", "target", "click"], ["class", "t-icon", 3, "src", 4, "polymorpheusOutlet"], [1, "t-icon", 3, "src"], ["size", "s", 3, "borders", "open", "openChange"], [1, "t-label"], ["tuiAccordionItemContent", ""], [1, "t-section"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], ["routerLinkActive", "t-sublink_active", "tuiLink", "", "class", "t-sublink", 3, "routerLink", "target", "tuiScrollIntoViewLink", "click", 4, "ngIf", "ngIfElse"], ["subPagesTemplate", ""], ["routerLinkActive", "t-sublink_active", "tuiLink", "", 1, "t-sublink", 3, "routerLink", "target", "tuiScrollIntoViewLink", "click"], ["routerLinkActive", "", 1, "t-subsection", 3, "routerLinkActiveOptions"], ["tuiLink", "", "type", "button", "class", "t-sublink t-sublink_subsection", 3, "click", 4, "ngIf"], [1, "t-expand", 3, "expanded"], [1, "t-section", "t-section_bordered"], ["routerLinkActive", "t-sublink_active", "tuiLink", "", "class", "t-sublink t-sublink_small", 3, "fragment", "routerLink", "target", "tuiScrollIntoViewLink", "click", 4, "ngFor", "ngForOf"], ["tuiLink", "", "type", "button", 1, "t-sublink", "t-sublink_subsection", 3, "click"], [1, "t-chevron", 3, "src"], ["routerLinkActive", "t-sublink_active", "tuiLink", "", 1, "t-sublink", "t-sublink_small", 3, "fragment", "routerLink", "target", "tuiScrollIntoViewLink", "click"]],
     template: function TuiDocNavigationComponent_Template(rf, ctx) {
       if (rf & 1) {
         core_mjs_["ɵɵprojectionDef"]();
@@ -30973,7 +30976,7 @@ const CHAR_ZERO_WIDTH_SPACE = '\u200B';
  * Array of icons used in taiga-ui components
  */
 const TUI_USED_ICONS = (/* unused pure expression or super */ null && (['tuiIconMirMono', 'tuiIconVisaMono', 'tuiIconElectronMono', 'tuiIconMastercard', 'tuiIconMaestro', 'tuiIconAmex', 'tuiIconDinersClub', 'tuiIconDiscover', 'tuiIconHumo', 'tuiIconJCB', 'tuiIconRuPay', 'tuiIconUnionPay', 'tuiIconUzcard', 'tuiIconVerve', 'tuiIconCopyLarge', 'tuiIconCheckLarge', 'tuiIconLink', 'tuiIconSearch', 'tuiIconSun', 'tuiIconMoon', 'tuiIconCode', 'tuiIconMenuLarge', 'tuiIconRotate', 'tuiIconArrowLeft', 'tuiIconArrowRight', 'tuiIconPlus', 'tuiIconMinus', 'tuiIconMinimize', 'tuiIconEye', 'tuiIconEyeOff', 'tuiIconDrag', 'tuiIconSortAscending', 'tuiIconSortDescending', 'tuiIconSortOff', 'tuiIconCheck', 'tuiIconMinusLarge', 'tuiIconChevronUp', 'tuiIconHelpCircle', 'tuiIconClose', 'tuiIconAlertCircle', 'tuiIconChevronRight', 'tuiIconInfo', 'tuiIconCheckCircle', 'tuiIconXCircle', 'tuiIconChevronLeft', 'tuiIconStarLarge', 'tuiIconChevronDown', 'tuiIconChevronDownLarge', 'tuiIconFileLarge', 'tuiIconCheckCircleLarge', 'tuiIconAlertCircleLarge', 'tuiIconTrashLarge', 'tuiIconCopy', 'tuiIconEyeOffLarge', 'tuiIconEyeLarge', 'tuiIconClock', 'tuiIconClockLarge', 'tuiIconToggleOff', 'tuiIconToggleOffLarge', 'tuiIconToggleOn', 'tuiIconToggleOnLarge', 'tuiIconCalendar', 'tuiIconCalendarLarge']));
-const TUI_VERSION = '3.67.0';
+const TUI_VERSION = '3.68.0';
 
 /**
  * Generated bundle index. Do not edit.
