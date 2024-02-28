@@ -1440,6 +1440,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵpatchComponentDefWithScope": () => (/* binding */ patchComponentDefWithScope),
 /* harmony export */   "ɵperformanceMarkFeature": () => (/* binding */ performanceMarkFeature),
 /* harmony export */   "ɵprovideZonelessChangeDetection": () => (/* binding */ provideZonelessChangeDetection),
+/* harmony export */   "ɵqueueStateUpdate": () => (/* binding */ queueStateUpdate),
 /* harmony export */   "ɵreadHydrationInfo": () => (/* binding */ readHydrationInfo),
 /* harmony export */   "ɵregisterLocaleData": () => (/* binding */ registerLocaleData),
 /* harmony export */   "ɵrenderDeferBlockState": () => (/* binding */ renderDeferBlockState),
@@ -1659,7 +1660,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵɵviewQuerySignal": () => (/* binding */ ɵɵviewQuerySignal)
 /* harmony export */ });
 /* harmony import */ var _home_runner_work_microzord_microzord_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(1528);
-/* harmony import */ var _angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3450);
+/* harmony import */ var _angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6008);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5657);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6928);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6700);
@@ -1667,7 +1668,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5084);
 
 /**
- * @license Angular v17.2.2
+ * @license Angular v17.2.3
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -15013,11 +15014,32 @@ const NOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR = {};
 function isSignal(value) {
   return typeof value === 'function' && value[_angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_0__.SIGNAL] !== undefined;
 }
+const markedFeatures = /*#__PURE__*/new Set();
+// tslint:disable:ban
+/**
+ * A guarded `performance.mark` for feature marking.
+ *
+ * This method exists because while all supported browser and node.js version supported by Angular
+ * support performance.mark API. This is not the case for other environments such as JSDOM and
+ * Cloudflare workers.
+ */
+function performanceMarkFeature(feature) {
+  if (markedFeatures.has(feature)) {
+    return;
+  }
+  markedFeatures.add(feature);
+  performance?.mark?.('mark_feature_usage', {
+    detail: {
+      feature
+    }
+  });
+}
 
 /**
  * Create a computed `Signal` which derives a reactive value from an expression.
  */
 function computed(computation, options) {
+  performanceMarkFeature('NgSignals');
   const getter = (0,_angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_0__.createComputed)(computation);
   if (options?.equal) {
     getter[_angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_0__.SIGNAL].equal = options.equal;
@@ -15044,6 +15066,7 @@ function ɵunwrapWritableSignal(value) {
  * Create a `Signal` that can be set or updated directly.
  */
 function signal(initialValue, options) {
+  performanceMarkFeature('NgSignals');
   const signalFn = (0,_angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_0__.createSignal)(initialValue);
   const node = signalFn[_angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_0__.SIGNAL];
   if (options?.equal) {
@@ -16412,6 +16435,7 @@ class EffectHandle {
  * @developerPreview
  */
 function effect(effectFn, options) {
+  performanceMarkFeature('NgSignals');
   ngDevMode && assertNotInReactiveContext(effect, 'Call `effect` outside of a reactive context. For example, schedule the ' + 'effect inside the component constructor.');
   !options?.injector && assertInInjectionContext(effect);
   const injector = options?.injector ?? inject(Injector);
@@ -16443,26 +16467,6 @@ function effect(effectFn, options) {
 // clang-format off
 // clang-format on
 
-const markedFeatures = /*#__PURE__*/new Set();
-// tslint:disable:ban
-/**
- * A guarded `performance.mark` for feature marking.
- *
- * This method exists because while all supported browser and node.js version supported by Angular
- * support performance.mark API. This is not the case for other environments such as JSDOM and
- * Cloudflare workers.
- */
-function performanceMarkFeature(feature) {
-  if (markedFeatures.has(feature)) {
-    return;
-  }
-  markedFeatures.add(feature);
-  performance?.mark?.('mark_feature_usage', {
-    detail: {
-      feature
-    }
-  });
-}
 function noop(...args) {
   // Do nothing.
 }
@@ -17016,8 +17020,8 @@ const NOOP_AFTER_RENDER_REF = {
 function internalAfterNextRender(callback, options) {
   const injector = options?.injector ?? inject(Injector);
   // Similarly to the public `afterNextRender` function, an internal one
-  // is only invoked in a browser.
-  if (!isPlatformBrowser(injector)) return;
+  // is only invoked in a browser as long as the runOnServer option is not set.
+  if (!options?.runOnServer && !isPlatformBrowser(injector)) return;
   const afterRenderEventManager = injector.get(AfterRenderEventManager);
   afterRenderEventManager.internalCallbacks.push(callback);
 }
@@ -17247,9 +17251,13 @@ let AfterRenderEventManager = /*#__PURE__*/(() => {
       this.internalCallbacks = [];
     }
     /**
-     * Executes callbacks. Returns `true` if any callbacks executed.
+     * Executes internal and user-provided callbacks.
      */
     execute() {
+      this.executeInternalCallbacks();
+      this.handler?.execute();
+    }
+    executeInternalCallbacks() {
       // Note: internal callbacks power `internalAfterNextRender`. Since internal callbacks
       // are fairly trivial, they are kept separate so that `AfterRenderCallbackHandlerImpl`
       // can still be tree-shaken unless used by the application.
@@ -17258,7 +17266,6 @@ let AfterRenderEventManager = /*#__PURE__*/(() => {
       for (const callback of callbacks) {
         callback();
       }
-      this.handler?.execute();
     }
     ngOnDestroy() {
       this.handler?.destroy();
@@ -17934,7 +17941,7 @@ function createRootComponent(componentView, rootComponentDef, rootDirectives, ho
 function setRootNodeAttributes(hostRenderer, componentDef, hostRNode, rootSelectorOrNode) {
   if (rootSelectorOrNode) {
     // The placeholder will be replaced with the actual version at build time.
-    setUpAttributes(hostRenderer, hostRNode, ['ng-version', '17.2.2']);
+    setUpAttributes(hostRenderer, hostRNode, ['ng-version', '17.2.3']);
   } else {
     // If host element is created as a part of this function call (i.e. `rootSelectorOrNode`
     // is not defined), also apply attributes and classes extracted from component selector.
@@ -19738,82 +19745,6 @@ function ɵɵInputTransformsFeature(definition) {
 }
 
 /**
- * The name of a field that Angular monkey-patches onto a component
- * class to store a function that loads defer-loadable dependencies
- * and applies metadata to a class.
- */
-const ASYNC_COMPONENT_METADATA_FN = '__ngAsyncComponentMetadataFn__';
-/**
- * If a given component has unresolved async metadata - returns a reference
- * to a function that applies component metadata after resolving defer-loadable
- * dependencies. Otherwise - this function returns `null`.
- */
-function getAsyncClassMetadataFn(type) {
-  const componentClass = type; // cast to `any`, so that we can read a monkey-patched field
-  return componentClass[ASYNC_COMPONENT_METADATA_FN] ?? null;
-}
-/**
- * Handles the process of applying metadata info to a component class in case
- * component template has defer blocks (thus some dependencies became deferrable).
- *
- * @param type Component class where metadata should be added
- * @param dependencyLoaderFn Function that loads dependencies
- * @param metadataSetterFn Function that forms a scope in which the `setClassMetadata` is invoked
- */
-function setClassMetadataAsync(type, dependencyLoaderFn, metadataSetterFn) {
-  const componentClass = type; // cast to `any`, so that we can monkey-patch it
-  componentClass[ASYNC_COMPONENT_METADATA_FN] = () => Promise.all(dependencyLoaderFn()).then(dependencies => {
-    metadataSetterFn(...dependencies);
-    // Metadata is now set, reset field value to indicate that this component
-    // can by used/compiled synchronously.
-    componentClass[ASYNC_COMPONENT_METADATA_FN] = null;
-    return dependencies;
-  });
-  return componentClass[ASYNC_COMPONENT_METADATA_FN];
-}
-/**
- * Adds decorator, constructor, and property metadata to a given type via static metadata fields
- * on the type.
- *
- * These metadata fields can later be read with Angular's `ReflectionCapabilities` API.
- *
- * Calls to `setClassMetadata` can be guarded by ngDevMode, resulting in the metadata assignments
- * being tree-shaken away during production builds.
- */
-function setClassMetadata(type, decorators, ctorParameters, propDecorators) {
-  return noSideEffects(() => {
-    const clazz = type;
-    if (decorators !== null) {
-      if (clazz.hasOwnProperty('decorators') && clazz.decorators !== undefined) {
-        clazz.decorators.push(...decorators);
-      } else {
-        clazz.decorators = decorators;
-      }
-    }
-    if (ctorParameters !== null) {
-      // Rather than merging, clobber the existing parameters. If other projects exist which
-      // use tsickle-style annotations and reflect over them in the same way, this could
-      // cause issues, but that is vanishingly unlikely.
-      clazz.ctorParameters = ctorParameters;
-    }
-    if (propDecorators !== null) {
-      // The property decorator objects are merged as it is possible different fields have
-      // different decorator types. Decorators on individual fields are not merged, as it's
-      // also incredibly unlikely that a field will be decorated both with an Angular
-      // decorator and a non-Angular decorator that's also been downleveled.
-      if (clazz.hasOwnProperty('propDecorators') && clazz.propDecorators !== undefined) {
-        clazz.propDecorators = {
-          ...clazz.propDecorators,
-          ...propDecorators
-        };
-      } else {
-        clazz.propDecorators = propDecorators;
-      }
-    }
-  });
-}
-
-/**
  * Represents an instance of an `NgModule` created by an `NgModuleFactory`.
  * Provides access to the `NgModule` instance and related objects.
  *
@@ -19955,6 +19886,121 @@ function createEnvironmentInjector(providers, parent, debugName = null) {
     runEnvironmentInitializers: true
   });
   return adapter.injector;
+}
+
+/**
+ * A service used by the framework to create and cache injector instances.
+ *
+ * This service is used to create a single injector instance for each defer
+ * block definition, to avoid creating an injector for each defer block instance
+ * of a certain type.
+ */
+let CachedInjectorService = /*#__PURE__*/(() => {
+  class CachedInjectorService {
+    constructor() {
+      this.cachedInjectors = new Map();
+    }
+    getOrCreateInjector(key, parentInjector, providers, debugName) {
+      if (!this.cachedInjectors.has(key)) {
+        const injector = providers.length > 0 ? createEnvironmentInjector(providers, parentInjector, debugName) : null;
+        this.cachedInjectors.set(key, injector);
+      }
+      return this.cachedInjectors.get(key);
+    }
+    ngOnDestroy() {
+      try {
+        for (const injector of this.cachedInjectors.values()) {
+          if (injector !== null) {
+            injector.destroy();
+          }
+        }
+      } finally {
+        this.cachedInjectors.clear();
+      }
+    }
+    /** @nocollapse */
+    static #_ = this.ɵprov = ɵɵdefineInjectable({
+      token: CachedInjectorService,
+      providedIn: 'environment',
+      factory: () => new CachedInjectorService()
+    });
+  }
+  return CachedInjectorService;
+})();
+/**
+ * The name of a field that Angular monkey-patches onto a component
+ * class to store a function that loads defer-loadable dependencies
+ * and applies metadata to a class.
+ */
+const ASYNC_COMPONENT_METADATA_FN = '__ngAsyncComponentMetadataFn__';
+/**
+ * If a given component has unresolved async metadata - returns a reference
+ * to a function that applies component metadata after resolving defer-loadable
+ * dependencies. Otherwise - this function returns `null`.
+ */
+function getAsyncClassMetadataFn(type) {
+  const componentClass = type; // cast to `any`, so that we can read a monkey-patched field
+  return componentClass[ASYNC_COMPONENT_METADATA_FN] ?? null;
+}
+/**
+ * Handles the process of applying metadata info to a component class in case
+ * component template has defer blocks (thus some dependencies became deferrable).
+ *
+ * @param type Component class where metadata should be added
+ * @param dependencyLoaderFn Function that loads dependencies
+ * @param metadataSetterFn Function that forms a scope in which the `setClassMetadata` is invoked
+ */
+function setClassMetadataAsync(type, dependencyLoaderFn, metadataSetterFn) {
+  const componentClass = type; // cast to `any`, so that we can monkey-patch it
+  componentClass[ASYNC_COMPONENT_METADATA_FN] = () => Promise.all(dependencyLoaderFn()).then(dependencies => {
+    metadataSetterFn(...dependencies);
+    // Metadata is now set, reset field value to indicate that this component
+    // can by used/compiled synchronously.
+    componentClass[ASYNC_COMPONENT_METADATA_FN] = null;
+    return dependencies;
+  });
+  return componentClass[ASYNC_COMPONENT_METADATA_FN];
+}
+/**
+ * Adds decorator, constructor, and property metadata to a given type via static metadata fields
+ * on the type.
+ *
+ * These metadata fields can later be read with Angular's `ReflectionCapabilities` API.
+ *
+ * Calls to `setClassMetadata` can be guarded by ngDevMode, resulting in the metadata assignments
+ * being tree-shaken away during production builds.
+ */
+function setClassMetadata(type, decorators, ctorParameters, propDecorators) {
+  return noSideEffects(() => {
+    const clazz = type;
+    if (decorators !== null) {
+      if (clazz.hasOwnProperty('decorators') && clazz.decorators !== undefined) {
+        clazz.decorators.push(...decorators);
+      } else {
+        clazz.decorators = decorators;
+      }
+    }
+    if (ctorParameters !== null) {
+      // Rather than merging, clobber the existing parameters. If other projects exist which
+      // use tsickle-style annotations and reflect over them in the same way, this could
+      // cause issues, but that is vanishingly unlikely.
+      clazz.ctorParameters = ctorParameters;
+    }
+    if (propDecorators !== null) {
+      // The property decorator objects are merged as it is possible different fields have
+      // different decorator types. Decorators on individual fields are not merged, as it's
+      // also incredibly unlikely that a field will be decorated both with an Angular
+      // decorator and a non-Angular decorator that's also been downleveled.
+      if (clazz.hasOwnProperty('propDecorators') && clazz.propDecorators !== undefined) {
+        clazz.propDecorators = {
+          ...clazz.propDecorators,
+          ...propDecorators
+        };
+      } else {
+        clazz.propDecorators = propDecorators;
+      }
+    }
+  });
 }
 
 /*
@@ -21075,7 +21121,8 @@ function ɵɵdefer(index, primaryTmplIndex, dependencyResolverFn, loadingTmplInd
       loadingBlockConfig: null,
       dependencyResolverFn: dependencyResolverFn ?? null,
       loadingState: DeferDependenciesLoadingState.NOT_STARTED,
-      loadingPromise: null
+      loadingPromise: null,
+      providers: null
     };
     enableTimerScheduling?.(tView, tDetails, placeholderConfigIndex, loadingConfigIndex);
     setTDeferBlockDetails(tView, adjustedIndex, tDetails);
@@ -21378,9 +21425,26 @@ function applyDeferBlockState(newState, lDetails, lContainer, tNode, hostLView) 
     // represents a defer block, so always refer to the first one.
     const viewIndex = 0;
     removeLViewFromLContainer(lContainer, viewIndex);
+    let injector;
+    if (newState === DeferBlockState.Complete) {
+      // When we render a defer block in completed state, there might be
+      // newly loaded standalone components used within the block, which may
+      // import NgModules with providers. In order to make those providers
+      // available for components declared in that NgModule, we create an instance
+      // of environment injector to host those providers and pass this injector
+      // to the logic that creates a view.
+      const tDetails = getTDeferBlockDetails(hostTView, tNode);
+      const providers = tDetails.providers;
+      if (providers && providers.length > 0) {
+        const parentInjector = hostLView[INJECTOR$1];
+        const parentEnvInjector = parentInjector.get(EnvironmentInjector);
+        injector = parentEnvInjector.get(CachedInjectorService).getOrCreateInjector(tDetails, parentEnvInjector, providers, ngDevMode ? 'DeferBlock Injector' : '');
+      }
+    }
     const dehydratedView = findMatchingDehydratedView(lContainer, activeBlockTNode.tView.ssrId);
     const embeddedLView = createAndRenderEmbeddedLView(hostLView, activeBlockTNode, null, {
-      dehydratedView
+      dehydratedView,
+      injector
     });
     addLViewToLContainer(lContainer, embeddedLView, viewIndex, shouldAddViewToDom(activeBlockTNode, dehydratedView));
     markViewDirty(embeddedLView);
@@ -21550,6 +21614,11 @@ function triggerResourceLoading(tDetails, lView, tNode) {
       const primaryBlockTView = primaryBlockTNode.tView;
       if (directiveDefs.length > 0) {
         primaryBlockTView.directiveRegistry = addDepsToRegistry(primaryBlockTView.directiveRegistry, directiveDefs);
+        // Extract providers from all NgModules imported by standalone components
+        // used within this defer block.
+        const directiveTypes = directiveDefs.map(def => def.type);
+        const providers = internalImportProvidersFrom(false, ...directiveTypes);
+        tDetails.providers = providers;
       }
       if (pipeDefs.length > 0) {
         primaryBlockTView.pipeRegistry = addDepsToRegistry(primaryBlockTView.pipeRegistry, pipeDefs);
@@ -31576,7 +31645,7 @@ class Version {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new Version('17.2.2');
+const VERSION = /*#__PURE__*/new Version('17.2.3');
 let Console = /*#__PURE__*/(() => {
   class Console {
     log(message) {
@@ -33340,9 +33409,10 @@ let ApplicationRef = /*#__PURE__*/(() => {
     }
     detectChangesInAttachedViews() {
       let runs = 0;
-      do {
+      const afterRenderEffectManager = this.afterRenderEffectManager;
+      while (true) {
         if (runs === MAXIMUM_REFRESH_RERUNS) {
-          throw new RuntimeError(103 /* RuntimeErrorCode.INFINITE_CHANGE_DETECTION */, ngDevMode && 'Changes in afterRender or afterNextRender hooks caused infinite change detection while refresh views.');
+          throw new RuntimeError(103 /* RuntimeErrorCode.INFINITE_CHANGE_DETECTION */, ngDevMode && 'Infinite change detection while refreshing application views. ' + 'Ensure afterRender or queueStateUpdate hooks are not continuously causing updates.');
         }
         const isFirstPass = runs === 0;
         for (let {
@@ -33355,11 +33425,24 @@ let ApplicationRef = /*#__PURE__*/(() => {
           }
           this.detectChangesInView(_lView, notifyErrorHandler, isFirstPass);
         }
-        this.afterRenderEffectManager.execute();
         runs++;
-      } while (this._views.some(({
-        _lView
-      }) => shouldRecheckView(_lView)));
+        afterRenderEffectManager.executeInternalCallbacks();
+        // If we have a newly dirty view after running internal callbacks, recheck the views again
+        // before running user-provided callbacks
+        if (this._views.some(({
+          _lView
+        }) => shouldRecheckView(_lView))) {
+          continue;
+        }
+        afterRenderEffectManager.execute();
+        // If after running all afterRender callbacks we have no more views that need to be refreshed,
+        // we can break out of the loop
+        if (!this._views.some(({
+          _lView
+        }) => shouldRecheckView(_lView))) {
+          break;
+        }
+      }
     }
     detectChangesInView(lView, notifyErrorHandler, isFirstPass) {
       let mode;
@@ -35548,6 +35631,38 @@ const WATCH_NODE = /* @__PURE__ */(/* unused pure expression or super */ null &&
 })()));
 function setAlternateWeakRefImpl(impl) {
   // TODO: remove this function
+}
+
+/**
+ * Queue a state update to be performed asynchronously.
+ *
+ * This is useful to safely update application state that is used in an expression that was already
+ * checked during change detection. This defers the update until later and prevents
+ * `ExpressionChangedAfterItHasBeenChecked` errors. Using signals for state is recommended instead,
+ * but it's not always immediately possible to change the state to a signal because it would be a
+ * breaking change. When the callback updates state used in an expression, this needs to be
+ * accompanied by an explicit notification to the framework that something has changed (i.e.
+ * updating a signal or calling `ChangeDetectorRef.markForCheck()`) or may still cause
+ * `ExpressionChangedAfterItHasBeenChecked` in dev mode or fail to synchronize the state to the DOM
+ * in production.
+ */
+function queueStateUpdate(callback, options) {
+  !options && assertInInjectionContext(queueStateUpdate);
+  const injector = options?.injector ?? inject(Injector);
+  const appRef = injector.get(ApplicationRef);
+  let executed = false;
+  const runCallbackOnce = () => {
+    if (executed || appRef.destroyed) return;
+    executed = true;
+    callback();
+  };
+  internalAfterNextRender(runCallbackOnce, {
+    injector,
+    runOnServer: true
+  });
+  queueMicrotask(() => {
+    runCallbackOnce();
+  });
 }
 
 // A delay in milliseconds before the scan is run after onLoad, to avoid any

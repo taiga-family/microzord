@@ -108,9 +108,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵparseCookieValue": () => (/* binding */ parseCookieValue),
 /* harmony export */   "ɵsetRootDomAdapter": () => (/* binding */ setRootDomAdapter)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8340);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9760);
 /**
- * @license Angular v17.2.2
+ * @license Angular v17.2.3
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -4355,6 +4355,7 @@ let AsyncPipe = /*#__PURE__*/(() => {
   class AsyncPipe {
     constructor(ref) {
       this._latestValue = null;
+      this.markForCheckOnValueUpdate = true;
       this._subscription = null;
       this._obj = null;
       this._strategy = null;
@@ -4375,7 +4376,15 @@ let AsyncPipe = /*#__PURE__*/(() => {
     transform(obj) {
       if (!this._obj) {
         if (obj) {
-          this._subscribe(obj);
+          try {
+            // Only call `markForCheck` if the value is updated asynchronously.
+            // Synchronous updates _during_ subscription should not wastefully mark for check -
+            // this value is already going to be returned from the transform function.
+            this.markForCheckOnValueUpdate = false;
+            this._subscribe(obj);
+          } finally {
+            this.markForCheckOnValueUpdate = true;
+          }
         }
         return this._latestValue;
       }
@@ -4410,9 +4419,9 @@ let AsyncPipe = /*#__PURE__*/(() => {
     _updateLatestValue(async, value) {
       if (async === this._obj) {
         this._latestValue = value;
-        // Note: `this._ref` is only cleared in `ngOnDestroy` so is known to be available when a
-        // value is being updated.
-        this._ref.markForCheck();
+        if (this.markForCheckOnValueUpdate) {
+          this._ref?.markForCheck();
+        }
       }
     }
     static #_ = this.ɵfac = function AsyncPipe_Factory(t) {
@@ -5451,7 +5460,7 @@ function isPlatformWorkerUi(platformId) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.2.2');
+const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.2.3');
 
 /**
  * Defines a scroll position manager. Implemented by `BrowserViewportScroller`.
