@@ -16,8 +16,8 @@ __webpack_require__.d(__webpack_exports__, {
 var router_mjs_ = __webpack_require__(6740);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc.js
 var taiga_ui_addon_doc = __webpack_require__(176);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-utils.js + 75 modules
-var taiga_ui_addon_doc_utils = __webpack_require__(1040);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-utils.js + 76 modules
+var taiga_ui_addon_doc_utils = __webpack_require__(956);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-link.js
 var taiga_ui_core_components_link = __webpack_require__(1512);
 // EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.3 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
