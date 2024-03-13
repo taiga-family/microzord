@@ -7,7 +7,7 @@
 
 
 
-Promise.all(/* import() */[__webpack_require__.e(760), __webpack_require__.e(117), __webpack_require__.e(200), __webpack_require__.e(48)]).then(__webpack_require__.bind(__webpack_require__, 3048));
+Promise.all(/* import() */[__webpack_require__.e(332), __webpack_require__.e(544), __webpack_require__.e(200), __webpack_require__.e(48)]).then(__webpack_require__.bind(__webpack_require__, 3048));
 
 /***/ })
 
@@ -116,7 +116,7 @@ Promise.all(/* import() */[__webpack_require__.e(760), __webpack_require__.e(117
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + (chunkId === 312 ? "common" : chunkId) + "." + {"28":"458e5126c3a20a10","48":"1b782ecbcafea8ae","107":"86415ee5e99c7048","117":"ce12bc439c209f27","128":"7a8e34f227ffc98b","140":"65d4ea1811d05d20","152":"66e276e2814724c9","200":"c286a8ff10f53036","312":"96e117cc0334d26f","328":"a5ffce1a23c2ad0a","344":"78ed12cfdefc0d4a","354":"6404b1300e20d031","368":"aa0b10126e8c452a","408":"a746f9c09272b2ce","496":"68241da2e083e6f8","564":"d58420721440d7d8","668":"5582bdc6c6db013e","712":"ac5ff7672f602107","760":"546152e9d3631ebe","788":"c6499f50ef2aa8f0","876":"97ac92cba93a51c6","921":"a8eefa96abee4829"}[chunkId] + ".js";
+/******/ 			return "" + (chunkId === 312 ? "common" : chunkId) + "." + {"28":"9478eaeaa12e7440","48":"f610b1c9cabd23c2","107":"dbecfa80f642d9a0","128":"9a5623dc1ea48bb6","140":"1c9749b3047f9e2a","152":"d80c6aaa39c2fca8","200":"ae251f23910b5286","312":"271fcae6fbfd3fb9","328":"a5ffce1a23c2ad0a","332":"084fc264f90a2508","344":"78ed12cfdefc0d4a","354":"80b7537ac05ad4e7","368":"95d75f4585fe13d1","408":"a746f9c09272b2ce","496":"ed259136ab02d6d7","544":"6d5b40bcd41a1141","564":"f22c5bed6e8ec849","668":"efda157b834021fb","712":"ac5ff7672f602107","788":"044e50d2dce96c24","876":"97ac92cba93a51c6","921":"512d363de1bb97a0"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -237,11 +237,11 @@ Promise.all(/* import() */[__webpack_require__.e(760), __webpack_require__.e(117
 /******/ 			var promises = [];
 /******/ 			switch(name) {
 /******/ 				case "default": {
-/******/ 					register("@angular/common/http", "17.2.3", () => (Promise.all([__webpack_require__.e(760), __webpack_require__.e(117), __webpack_require__.e(668)]).then(() => (() => (__webpack_require__(7048))))));
-/******/ 					register("@angular/common", "17.2.3", () => (Promise.all([__webpack_require__.e(760), __webpack_require__.e(368)]).then(() => (() => (__webpack_require__(1368))))));
-/******/ 					register("@angular/core/primitives/signals", "17.2.3", () => (__webpack_require__.e(564).then(() => (() => (__webpack_require__(564))))));
-/******/ 					register("@angular/core", "17.2.3", () => (__webpack_require__.e(107).then(() => (() => (__webpack_require__(107))))));
-/******/ 					register("@angular/router", "17.2.3", () => (Promise.all([__webpack_require__.e(760), __webpack_require__.e(117), __webpack_require__.e(921), __webpack_require__.e(200)]).then(() => (() => (__webpack_require__(7921))))));
+/******/ 					register("@angular/common/http", "17.2.4", () => (Promise.all([__webpack_require__.e(332), __webpack_require__.e(544), __webpack_require__.e(668)]).then(() => (() => (__webpack_require__(7048))))));
+/******/ 					register("@angular/common", "17.2.4", () => (Promise.all([__webpack_require__.e(332), __webpack_require__.e(368)]).then(() => (() => (__webpack_require__(1368))))));
+/******/ 					register("@angular/core/primitives/signals", "17.2.4", () => (__webpack_require__.e(564).then(() => (() => (__webpack_require__(564))))));
+/******/ 					register("@angular/core", "17.2.4", () => (__webpack_require__.e(107).then(() => (() => (__webpack_require__(107))))));
+/******/ 					register("@angular/router", "17.2.4", () => (Promise.all([__webpack_require__.e(332), __webpack_require__.e(544), __webpack_require__.e(921), __webpack_require__.e(200)]).then(() => (() => (__webpack_require__(7921))))));
 /******/ 				}
 /******/ 				break;
 /******/ 			}
@@ -421,28 +421,28 @@ Promise.all(/* import() */[__webpack_require__.e(760), __webpack_require__.e(117
 /******/ 		});
 /******/ 		var installedModules = {};
 /******/ 		var moduleToHandlerMapping = {
-/******/ 			9760: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/core", [4,17,2,3], () => (__webpack_require__.e(107).then(() => (() => (__webpack_require__(107))))))),
-/******/ 			9996: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/common", [4,17,2,3], () => (__webpack_require__.e(368).then(() => (() => (__webpack_require__(1368))))))),
-/******/ 			4380: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/common/http", [4,17,2,3], () => (__webpack_require__.e(668).then(() => (() => (__webpack_require__(7048))))))),
-/******/ 			6740: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/router", [4,17,2,3], () => (__webpack_require__.e(921).then(() => (() => (__webpack_require__(7921))))))),
-/******/ 			6008: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/core/primitives/signals", [4,17,2,3], () => (__webpack_require__.e(564).then(() => (() => (__webpack_require__(564)))))))
+/******/ 			2712: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/core", [4,17,2,4], () => (__webpack_require__.e(107).then(() => (() => (__webpack_require__(107))))))),
+/******/ 			9188: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/common", [4,17,2,4], () => (__webpack_require__.e(368).then(() => (() => (__webpack_require__(1368))))))),
+/******/ 			1348: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/common/http", [4,17,2,4], () => (__webpack_require__.e(668).then(() => (() => (__webpack_require__(7048))))))),
+/******/ 			2988: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/router", [4,17,2,4], () => (__webpack_require__.e(921).then(() => (() => (__webpack_require__(7921))))))),
+/******/ 			536: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/core/primitives/signals", [4,17,2,4], () => (__webpack_require__.e(564).then(() => (() => (__webpack_require__(564)))))))
 /******/ 		};
 /******/ 		// no consumes in initial chunks
 /******/ 		var chunkMapping = {
 /******/ 			"48": [
-/******/ 				6740
+/******/ 				2988
 /******/ 			],
 /******/ 			"107": [
-/******/ 				6008
-/******/ 			],
-/******/ 			"117": [
-/******/ 				9996
+/******/ 				536
 /******/ 			],
 /******/ 			"200": [
-/******/ 				4380
+/******/ 				1348
 /******/ 			],
-/******/ 			"760": [
-/******/ 				9760
+/******/ 			"332": [
+/******/ 				2712
+/******/ 			],
+/******/ 			"544": [
+/******/ 				9188
 /******/ 			]
 /******/ 		};
 /******/ 		var startedInstallModules = {};
@@ -498,7 +498,7 @@ Promise.all(/* import() */[__webpack_require__.e(760), __webpack_require__.e(117
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if(760 != chunkId) {
+/******/ 						if(332 != chunkId) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
 /******/ 							promises.push(installedChunkData[2] = promise);
