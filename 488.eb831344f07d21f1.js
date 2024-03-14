@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[564],{
+(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[488],{
 
-/***/ 564:
+/***/ 3488:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -33,7 +33,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   signalUpdateFn: () => (/* binding */ signalUpdateFn)
 /* harmony export */ });
 /**
- * @license Angular v17.2.4
+ * @license Angular v17.3.0
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */

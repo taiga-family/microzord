@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[354],{
+(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[254],{
 
-/***/ 1354:
+/***/ 254:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -12,22 +12,22 @@ __webpack_require__.d(__webpack_exports__, {
   AngularInstallationModule: () => (/* binding */ AngularInstallationModule)
 });
 
-// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.2.4 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
-var router_mjs_ = __webpack_require__(2988);
+// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.3.0 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
+var router_mjs_ = __webpack_require__(7688);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc.js
-var taiga_ui_addon_doc = __webpack_require__(176);
+var taiga_ui_addon_doc = __webpack_require__(8508);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-utils.js + 76 modules
-var taiga_ui_addon_doc_utils = __webpack_require__(956);
+var taiga_ui_addon_doc_utils = __webpack_require__(1583);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-link.js
-var taiga_ui_core_components_link = __webpack_require__(1512);
+var taiga_ui_core_components_link = __webpack_require__(1974);
 // EXTERNAL MODULE: ./apps/demo/src/app/shared/host-child-warning/host-child-warning.module.ts
-var host_child_warning_module = __webpack_require__(9664);
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.2.4 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(2712);
+var host_child_warning_module = __webpack_require__(16);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.3.0 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(1750);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-components.js + 85 modules
-var taiga_ui_addon_doc_components = __webpack_require__(5748);
+var taiga_ui_addon_doc_components = __webpack_require__(8024);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-notification.js
-var taiga_ui_core_components_notification = __webpack_require__(8508);
+var taiga_ui_core_components_notification = __webpack_require__(8821);
 ;// CONCATENATED MODULE: ./apps/demo/src/app/shared/host-child-warning/host-child-warning.component.ts
 
 
@@ -48,7 +48,7 @@ let HostChildWarningComponent = /*#__PURE__*/(() => {
           core_mjs_["ɵɵelementEnd"]();
         }
       },
-      dependencies: [taiga_ui_core_components_notification/* TuiNotificationComponent */.e],
+      dependencies: [taiga_ui_core_components_notification/* TuiNotificationComponent */.v],
       styles: ["[_nghost-%COMP%] {\n  display: block;\n}"],
       changeDetection: 0
     });
@@ -116,7 +116,7 @@ let AngularInstallationComponent = /*#__PURE__*/(() => {
           core_mjs_["ɵɵelementEnd"]()()();
         }
       },
-      dependencies: [taiga_ui_core_components_link/* TuiLinkComponent */.C, taiga_ui_addon_doc_components/* TuiDocPageComponent */.EF, HostChildWarningComponent, router_mjs_.RouterLink],
+      dependencies: [taiga_ui_core_components_link/* TuiLinkComponent */.E, taiga_ui_addon_doc_components/* TuiDocPageComponent */.Pt, HostChildWarningComponent, router_mjs_.RouterLink],
       changeDetection: 0
     });
   }
@@ -139,7 +139,7 @@ let AngularInstallationModule = /*#__PURE__*/(() => {
       type: AngularInstallationModule
     });
     static #_3 = this.ɵinj = /*@__PURE__*/core_mjs_["ɵɵdefineInjector"]({
-      imports: [taiga_ui_core_components_link/* TuiLinkModule */.w, taiga_ui_addon_doc.TuiAddonDocModule, host_child_warning_module/* HostChildWarningModule */.o, router_mjs_.RouterModule.forChild((0,taiga_ui_addon_doc_utils/* tuiGenerateRoutes */._A)(AngularInstallationComponent))]
+      imports: [taiga_ui_core_components_link/* TuiLinkModule */.l, taiga_ui_addon_doc.TuiAddonDocModule, host_child_warning_module/* HostChildWarningModule */.T, router_mjs_.RouterModule.forChild((0,taiga_ui_addon_doc_utils/* tuiGenerateRoutes */.CC)(AngularInstallationComponent))]
     });
   }
   return AngularInstallationModule;

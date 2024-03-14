@@ -1,18 +1,18 @@
 "use strict";
-(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[312],{
+(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[76],{
 
-/***/ 176:
+/***/ 8508:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   TuiAddonDocModule: () => (/* binding */ TuiAddonDocModule)
 /* harmony export */ });
 /* unused harmony export tuiGetDocModules */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2712);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1750);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2988);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7688);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_router__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _taiga_ui_addon_doc_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5748);
+/* harmony import */ var _taiga_ui_addon_doc_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8024);
 
 
 
@@ -35,7 +35,7 @@ let TuiAddonDocModule = /*#__PURE__*/(() => {
     type: TuiAddonDocModule
   });
   TuiAddonDocModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-    imports: [_taiga_ui_addon_doc_components__WEBPACK_IMPORTED_MODULE_2__/* .TuiDocCodeModule */ .Q5, _taiga_ui_addon_doc_components__WEBPACK_IMPORTED_MODULE_2__/* .TuiDocDemoModule */ .lt, _taiga_ui_addon_doc_components__WEBPACK_IMPORTED_MODULE_2__/* .TuiDocDocumentationModule */ .uS, _taiga_ui_addon_doc_components__WEBPACK_IMPORTED_MODULE_2__/* .TuiDocPageModule */ ._2, _taiga_ui_addon_doc_components__WEBPACK_IMPORTED_MODULE_2__/* .TuiDocExampleModule */ .sv]
+    imports: [_taiga_ui_addon_doc_components__WEBPACK_IMPORTED_MODULE_2__/* .TuiDocCodeModule */ .ii, _taiga_ui_addon_doc_components__WEBPACK_IMPORTED_MODULE_2__/* .TuiDocDemoModule */ .mH, _taiga_ui_addon_doc_components__WEBPACK_IMPORTED_MODULE_2__/* .TuiDocDocumentationModule */ .nl, _taiga_ui_addon_doc_components__WEBPACK_IMPORTED_MODULE_2__/* .TuiDocPageModule */ .AC, _taiga_ui_addon_doc_components__WEBPACK_IMPORTED_MODULE_2__/* .TuiDocExampleModule */ .Zs]
   });
   return TuiAddonDocModule;
 })();

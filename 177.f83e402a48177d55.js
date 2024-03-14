@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[368],{
+(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[177],{
 
-/***/ 1368:
+/***/ 177:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -108,9 +108,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵparseCookieValue": () => (/* binding */ parseCookieValue),
 /* harmony export */   "ɵsetRootDomAdapter": () => (/* binding */ setRootDomAdapter)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2712);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1750);
 /**
- * @license Angular v17.2.4
+ * @license Angular v17.3.0
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -1128,6 +1128,8 @@ var FormatWidth = /*#__PURE__*/function (FormatWidth) {
   FormatWidth[FormatWidth["Full"] = 3] = "Full";
   return FormatWidth;
 }(FormatWidth || {});
+// This needs to be an object literal, rather than an enum, because TypeScript 5.4+
+// doesn't allow numeric keys and we have `Infinity` and `NaN`.
 /**
  * Symbols that can be used to replace placeholders in number patterns.
  * Examples are based on `en-US` values.
@@ -1136,82 +1138,82 @@ var FormatWidth = /*#__PURE__*/function (FormatWidth) {
  * @see [Internationalization (i18n) Guide](/guide/i18n-overview)
  *
  * @publicApi
+ * @object-literal-as-enum
  */
-var NumberSymbol = /*#__PURE__*/function (NumberSymbol) {
+const NumberSymbol = {
   /**
    * Decimal separator.
    * For `en-US`, the dot character.
    * Example: 2,345`.`67
    */
-  NumberSymbol[NumberSymbol["Decimal"] = 0] = "Decimal";
+  Decimal: 0,
   /**
    * Grouping separator, typically for thousands.
    * For `en-US`, the comma character.
    * Example: 2`,`345.67
    */
-  NumberSymbol[NumberSymbol["Group"] = 1] = "Group";
+  Group: 1,
   /**
    * List-item separator.
    * Example: "one, two, and three"
    */
-  NumberSymbol[NumberSymbol["List"] = 2] = "List";
+  List: 2,
   /**
    * Sign for percentage (out of 100).
    * Example: 23.4%
    */
-  NumberSymbol[NumberSymbol["PercentSign"] = 3] = "PercentSign";
+  PercentSign: 3,
   /**
    * Sign for positive numbers.
    * Example: +23
    */
-  NumberSymbol[NumberSymbol["PlusSign"] = 4] = "PlusSign";
+  PlusSign: 4,
   /**
    * Sign for negative numbers.
    * Example: -23
    */
-  NumberSymbol[NumberSymbol["MinusSign"] = 5] = "MinusSign";
+  MinusSign: 5,
   /**
    * Computer notation for exponential value (n times a power of 10).
    * Example: 1.2E3
    */
-  NumberSymbol[NumberSymbol["Exponential"] = 6] = "Exponential";
+  Exponential: 6,
   /**
    * Human-readable format of exponential.
    * Example: 1.2x103
    */
-  NumberSymbol[NumberSymbol["SuperscriptingExponent"] = 7] = "SuperscriptingExponent";
+  SuperscriptingExponent: 7,
   /**
    * Sign for permille (out of 1000).
    * Example: 23.4‰
    */
-  NumberSymbol[NumberSymbol["PerMille"] = 8] = "PerMille";
+  PerMille: 8,
   /**
    * Infinity, can be used with plus and minus.
    * Example: ∞, +∞, -∞
    */
-  NumberSymbol[NumberSymbol["Infinity"] = 9] = "Infinity";
+  Infinity: 9,
   /**
    * Not a number.
    * Example: NaN
    */
-  NumberSymbol[NumberSymbol["NaN"] = 10] = "NaN";
+  NaN: 10,
   /**
    * Symbol used between time units.
    * Example: 10:52
    */
-  NumberSymbol[NumberSymbol["TimeSeparator"] = 11] = "TimeSeparator";
+  TimeSeparator: 11,
   /**
    * Decimal separator for currency values (fallback to `Decimal`).
    * Example: $2,345.67
    */
-  NumberSymbol[NumberSymbol["CurrencyDecimal"] = 12] = "CurrencyDecimal";
+  CurrencyDecimal: 12,
   /**
    * Group separator for currency values (fallback to `Group`).
    * Example: $2,345.67
    */
-  NumberSymbol[NumberSymbol["CurrencyGroup"] = 13] = "CurrencyGroup";
-  return NumberSymbol;
-}(NumberSymbol || {});
+  CurrencyGroup: 13
+};
 /**
  * The value for each day of the week, based on the `en-US` locale
  *
@@ -1385,7 +1387,7 @@ function getLocaleDateTimeFormat(locale, width) {
 /**
  * Retrieves a localized number symbol that can be used to replace placeholders in number formats.
  * @param locale The locale code.
- * @param symbol The symbol to localize.
+ * @param symbol The symbol to localize. Must be one of `NumberSymbol`.
  * @returns The character for the localized symbol.
  * @see {@link NumberSymbol}
  * @see [Internationalization (i18n) Guide](/guide/i18n-overview)
@@ -5460,7 +5462,7 @@ function isPlatformWorkerUi(platformId) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.2.4');
+const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.3.0');
 
 /**
  * Defines a scroll position manager. Implemented by `BrowserViewportScroller`.
