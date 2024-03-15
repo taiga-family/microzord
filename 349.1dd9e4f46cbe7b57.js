@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[896],{
+(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[349],{
 
 /***/ 3864:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -159,7 +159,7 @@ let HostChildWarningModule = /*#__PURE__*/(() => {
 
 /***/ }),
 
-/***/ 1896:
+/***/ 4349:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -397,8 +397,8 @@ function provideNoopAnimations() {
 //# sourceMappingURL=animations.mjs.map
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-tokens.js
 var taiga_ui_addon_doc_tokens = __webpack_require__(8687);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-components.js + 85 modules
-var taiga_ui_addon_doc_components = __webpack_require__(8024);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-components.js + 92 modules
+var taiga_ui_addon_doc_components = __webpack_require__(348);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-link.js
 var taiga_ui_core_components_link = __webpack_require__(1974);
 ;// CONCATENATED MODULE: ./apps/demo/src/app/app.component.ts
@@ -771,8 +771,445 @@ const ROUTES = [{
   path: '**',
   redirectTo: 'getting-started'
 }];
-// EXTERNAL MODULE: ./node_modules/ngx-highlightjs/fesm2020/ngx-highlightjs.mjs + 5 modules
-var ngx_highlightjs = __webpack_require__(9280);
+;// CONCATENATED MODULE: ./node_modules/ngx-highlightjs/fesm2022/ngx-highlightjs.mjs
+
+
+
+
+
+const HIGHLIGHT_OPTIONS = new core_mjs_.InjectionToken('HIGHLIGHT_OPTIONS');
+
+/**
+ * Enable usage of the library together with "trusted-types" HTTP Content-Security-Policy (CSP)
+ *
+ * Can be added to angular.json -> serve -> options -> headers to try it out in DEV mode
+ * "Content-Security-Policy": "trusted-types ngx-highlightjs; require-trusted-types-for 'script'"
+ *
+ * Read more...
+ * Angular Security: https://angular.io/guide/security#enforcing-trusted-types
+ * Trusted Types: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types
+ */
+let policy;
+function getPolicy() {
+  if (!policy) {
+    try {
+      policy = window?.trustedTypes?.createPolicy('ngx-highlightjs', {
+        createHTML: s => s
+      });
+    } catch {
+      // trustedTypes.createPolicy throws if called with a name that is
+      // already registered, even in report-only mode. Until the API changes,
+      // catch the error not to break the applications functionally. In such
+      // cases, the code will fall back to using strings.
+    }
+  }
+  return policy;
+}
+function trustedHTMLFromStringBypass(html) {
+  return getPolicy()?.createHTML(html) || html;
+}
+
+// @dynamic
+let HighlightLoader = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  class HighlightLoader {
+    constructor(doc, platformId, _options) {
+      this.doc = doc;
+      this.platformId = platformId;
+      this._options = _options;
+      // Stream that emits when hljs library is loaded and ready to use
+      this._ready = new BehaviorSubject(null);
+      this.ready = this._ready.asObservable().pipe(filter(hljs => !!hljs), take(1));
+      if (isPlatformBrowser(platformId)) {
+        // Check if hljs is already available
+        if (doc.defaultView.hljs) {
+          this._ready.next(doc.defaultView.hljs);
+        } else {
+          // Load hljs library
+          this._loadLibrary().pipe(switchMap(hljs => {
+            if (this._options && this._options.lineNumbersLoader) {
+              // Make hljs available on window object (required for the line numbers library)
+              doc.defaultView.hljs = hljs;
+              // Load line numbers library
+              return this.loadLineNumbers().pipe(tap(plugin => {
+                plugin.activateLineNumbers();
+                this._ready.next(hljs);
+              }));
+            } else {
+              this._ready.next(hljs);
+              return EMPTY;
+            }
+          }), catchError(e => {
+            console.error('[HLJS] ', e);
+            return EMPTY;
+          })).subscribe();
+          // Load highlighting theme
+          if (this._options?.themePath) {
+            this.loadTheme(this._options.themePath);
+          }
+        }
+      }
+    }
+    /**
+     * Lazy-Load highlight.js library
+     */
+    _loadLibrary() {
+      if (this._options) {
+        if (this._options.fullLibraryLoader && this._options.coreLibraryLoader) {
+          return throwError(() => 'The full library and the core library were imported, only one of them should be imported!');
+        }
+        if (this._options.fullLibraryLoader && this._options.languages) {
+          return throwError(() => 'The highlighting languages were imported they are not needed!');
+        }
+        if (this._options.coreLibraryLoader && !this._options.languages) {
+          return throwError(() => 'The highlighting languages were not imported!');
+        }
+        if (!this._options.coreLibraryLoader && this._options.languages) {
+          return throwError(() => 'The core library was not imported!');
+        }
+        if (this._options.fullLibraryLoader) {
+          return this.loadFullLibrary();
+        }
+        if (this._options.coreLibraryLoader && this._options.languages && Object.keys(this._options.languages).length) {
+          return this.loadCoreLibrary().pipe(switchMap(hljs => this._loadLanguages(hljs)));
+        }
+      }
+      return throwError(() => 'Highlight.js library was not imported!');
+    }
+    /**
+     * Lazy-load highlight.js languages
+     */
+    _loadLanguages(hljs) {
+      const languages = Object.entries(this._options.languages).map(([langName, langLoader]) => importModule(langLoader()).pipe(tap(langFunc => hljs.registerLanguage(langName, langFunc))));
+      return zip(...languages).pipe(map(() => hljs));
+    }
+    /**
+     * Import highlight.js core library
+     */
+    loadCoreLibrary() {
+      return importModule(this._options.coreLibraryLoader());
+    }
+    /**
+     * Import highlight.js library with all languages
+     */
+    loadFullLibrary() {
+      return importModule(this._options.fullLibraryLoader());
+    }
+    /**
+     * Import line numbers library
+     */
+    loadLineNumbers() {
+      return from(this._options.lineNumbersLoader());
+    }
+    /**
+     * Reload theme styles
+     */
+    setTheme(path) {
+      if (isPlatformBrowser(this.platformId)) {
+        if (this._themeLinkElement) {
+          this._themeLinkElement.href = path;
+        } else {
+          this.loadTheme(path);
+        }
+      }
+    }
+    /**
+     * Load theme
+     */
+    loadTheme(path) {
+      this._themeLinkElement = this.doc.createElement('link');
+      this._themeLinkElement.href = path;
+      this._themeLinkElement.type = 'text/css';
+      this._themeLinkElement.rel = 'stylesheet';
+      this._themeLinkElement.media = 'screen,print';
+      this.doc.head.appendChild(this._themeLinkElement);
+    }
+    static #_ = this.ɵfac = function HighlightLoader_Factory(t) {
+      return new (t || HighlightLoader)(i0.ɵɵinject(DOCUMENT), i0.ɵɵinject(PLATFORM_ID), i0.ɵɵinject(HIGHLIGHT_OPTIONS, 8));
+    };
+    static #_2 = this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+      token: HighlightLoader,
+      factory: HighlightLoader.ɵfac,
+      providedIn: 'root'
+    });
+  }
+  return HighlightLoader;
+})()));
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+/**
+ * Map loader response to module object
+ */
+const importModule = moduleLoader => {
+  return from(moduleLoader).pipe(filter(module => !!module?.default), map(module => module.default));
+};
+let HighlightJS = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  class HighlightJS {
+    // A reference for hljs library
+    get hljs() {
+      return this._hljs;
+    }
+    constructor(_loader, options) {
+      this._loader = _loader;
+      this._hljs = null;
+      // Load highlight.js library on init
+      _loader.ready.subscribe(hljs => {
+        this._hljs = hljs;
+        if (options && options.config) {
+          // Set global config if present
+          hljs.configure(options.config);
+          if (hljs.listLanguages().length < 1) {
+            console.error('[HighlightJS]: No languages were registered!');
+          }
+        }
+      });
+    }
+    /**
+     * Core highlighting function. Accepts the code to highlight (string) and a list of options (object)
+     * @param code Accepts the code to highlight
+     * @param language must be present and specify the language name or alias of the grammar to be used for highlighting
+     * @param ignoreIllegals (optional) when set to true it forces highlighting to finish even in case of detecting illegal syntax for the language instead of throwing an exception.
+     */
+    highlight(code, {
+      language,
+      ignoreIllegals
+    }) {
+      return this._loader.ready.pipe(map(hljs => hljs.highlight(code, {
+        language,
+        ignoreIllegals
+      })));
+    }
+    /**
+     * Highlighting with language detection.
+     * @param value Accepts a string with the code to highlight
+     * @param languageSubset An optional array of language names and aliases restricting detection to only those languages.
+     * The subset can also be set with configure, but the local parameter overrides the option if set.
+     */
+    highlightAuto(value, languageSubset) {
+      return this._loader.ready.pipe(map(hljs => hljs.highlightAuto(value, languageSubset)));
+    }
+    /**
+     * Applies highlighting to a DOM node containing code.
+     * This function is the one to use to apply highlighting dynamically after page load or within initialization code of third-party JavaScript frameworks.
+     * The function uses language detection by default but you can specify the language in the class attribute of the DOM node. See the scopes reference for all available language names and scopes.
+     * @param element
+     */
+    highlightElement(element) {
+      return this._loader.ready.pipe(map(hljs => hljs.highlightElement(element)));
+    }
+    /**
+     * Applies highlighting to all elements on a page matching the configured cssSelector. The default cssSelector value is 'pre code',
+     * which highlights all code blocks. This can be called before or after the page’s onload event has fired.
+     */
+    highlightAll() {
+      return this._loader.ready.pipe(map(hljs => hljs.highlightAll()));
+    }
+    /**
+     * @deprecated in version 12
+     * Configures global options:
+     * @param config HighlightJs configuration argument
+     */
+    configure(config) {
+      return this._loader.ready.pipe(map(hljs => hljs.configure(config)));
+    }
+    /**
+     * Adds new language to the library under the specified name. Used mostly internally.
+     * @param languageName A string with the name of the language being registered
+     * @param languageDefinition A function that returns an object which represents the language definition.
+     * The function is passed the hljs object to be able to use common regular expressions defined within it.
+     */
+    registerLanguage(languageName, languageDefinition) {
+      return this._loader.ready.pipe(tap(hljs => hljs.registerLanguage(languageName, languageDefinition)));
+    }
+    /**
+     * Removes a language and its aliases from the library. Used mostly internall
+     * @param languageName: a string with the name of the language being removed.
+     */
+    unregisterLanguage(languageName) {
+      return this._loader.ready.pipe(tap(hljs => hljs.unregisterLanguage(languageName)));
+    }
+    /**
+     * Adds new language alias or aliases to the library for the specified language name defined under languageName key.
+     * @param alias: A string or array with the name of alias being registered
+     * @param languageName: the language name as specified by registerLanguage.
+     */
+    registerAliases(alias, {
+      languageName
+    }) {
+      return this._loader.ready.pipe(tap(hljs => hljs.registerAliases(alias, {
+        languageName
+      })));
+    }
+    /**
+     * @return The languages names list.
+     */
+    listLanguages() {
+      return this._loader.ready.pipe(map(hljs => hljs.listLanguages()));
+    }
+    /**
+     * Looks up a language by name or alias.
+     * @param name Language name
+     * @return The language object if found, undefined otherwise.
+     */
+    getLanguage(name) {
+      return this._loader.ready.pipe(map(hljs => hljs.getLanguage(name)));
+    }
+    /**
+     * Enables safe mode. This is the default mode, providing the most reliable experience for production usage.
+     */
+    safeMode() {
+      return this._loader.ready.pipe(map(hljs => hljs.safeMode()));
+    }
+    /**
+     * Enables debug/development mode.
+     */
+    debugMode() {
+      return this._loader.ready.pipe(map(hljs => hljs.debugMode()));
+    }
+    /**
+     * Display line numbers
+     * @param el Code element
+     */
+    lineNumbersBlock(el) {
+      return this._loader.ready.pipe(filter(hljs => !!hljs.lineNumbersBlock), tap(hljs => hljs.lineNumbersBlock(el)));
+    }
+    static #_ = this.ɵfac = function HighlightJS_Factory(t) {
+      return new (t || HighlightJS)(i0.ɵɵinject(HighlightLoader), i0.ɵɵinject(HIGHLIGHT_OPTIONS, 8));
+    };
+    static #_2 = this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+      token: HighlightJS,
+      factory: HighlightJS.ɵfac,
+      providedIn: 'root'
+    });
+  }
+  return HighlightJS;
+})()));
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let Highlight = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  class Highlight {
+    constructor(el, _hljs, _sanitizer, platformId, _options) {
+      this._hljs = _hljs;
+      this._sanitizer = _sanitizer;
+      this.platformId = platformId;
+      this._options = _options;
+      // Stream that emits when code string is highlighted
+      this.highlighted = new EventEmitter();
+      this._nativeElement = el.nativeElement;
+    }
+    ngOnChanges(changes) {
+      if (isPlatformBrowser(this.platformId) && changes?.code?.currentValue !== null && changes.code.currentValue !== changes.code.previousValue) {
+        if (this.code) {
+          this.highlightElement(this.code, this.languages);
+        } else {
+          // If string is empty, set the text content to empty
+          this.setTextContent('');
+        }
+      }
+    }
+    /**
+     * Highlighting with language detection and fix markup.
+     * @param code Accepts a string with the code to highlight
+     * @param languages An optional array of language names and aliases restricting detection to only those languages.
+     * The subset can also be set with configure, but the local parameter overrides the option if set.
+     */
+    highlightElement(code, languages) {
+      // Set code text before highlighting
+      this.setTextContent(code);
+      this._hljs.highlightAuto(code, languages).subscribe(res => {
+        // Set highlighted code
+        this.setInnerHTML(res?.value);
+        // Check if user want to show line numbers
+        if (this.lineNumbers && this._options && this._options.lineNumbersLoader) {
+          this.addLineNumbers();
+        }
+        // Forward highlight response to the highlighted output
+        this.highlighted.emit(res);
+      });
+    }
+    addLineNumbers() {
+      // Clean up line numbers observer
+      this.destroyLineNumbersObserver();
+      animationFrameScheduler.schedule(() => {
+        // Add line numbers
+        this._hljs.lineNumbersBlock(this._nativeElement).subscribe();
+        // If lines count is 1, the line numbers library will not add numbers
+        // Observe changes to add 'hljs-line-numbers' class only when line numbers is added to the code element
+        this._lineNumbersObs = new MutationObserver(() => {
+          if (this._nativeElement.firstElementChild && this._nativeElement.firstElementChild.tagName.toUpperCase() === 'TABLE') {
+            this._nativeElement.classList.add('hljs-line-numbers');
+          }
+          this.destroyLineNumbersObserver();
+        });
+        this._lineNumbersObs.observe(this._nativeElement, {
+          childList: true
+        });
+      });
+    }
+    destroyLineNumbersObserver() {
+      if (this._lineNumbersObs) {
+        this._lineNumbersObs.disconnect();
+        this._lineNumbersObs = null;
+      }
+    }
+    setTextContent(content) {
+      animationFrameScheduler.schedule(() => this._nativeElement.textContent = content);
+    }
+    setInnerHTML(content) {
+      animationFrameScheduler.schedule(() => this._nativeElement.innerHTML = trustedHTMLFromStringBypass(this._sanitizer.sanitize(SecurityContext.HTML, content) || ''));
+    }
+    static #_ = this.ɵfac = function Highlight_Factory(t) {
+      return new (t || Highlight)(i0.ɵɵdirectiveInject(i0.ElementRef), i0.ɵɵdirectiveInject(HighlightJS), i0.ɵɵdirectiveInject(i2.DomSanitizer), i0.ɵɵdirectiveInject(PLATFORM_ID), i0.ɵɵdirectiveInject(HIGHLIGHT_OPTIONS, 8));
+    };
+    static #_2 = this.ɵdir = /* @__PURE__ */i0.ɵɵdefineDirective({
+      type: Highlight,
+      selectors: [["", "highlight", ""]],
+      hostVars: 2,
+      hostBindings: function Highlight_HostBindings(rf, ctx) {
+        if (rf & 2) {
+          i0.ɵɵclassProp("hljs", true);
+        }
+      },
+      inputs: {
+        code: [i0.ɵɵInputFlags.None, "highlight", "code"],
+        languages: "languages",
+        lineNumbers: "lineNumbers"
+      },
+      outputs: {
+        highlighted: "highlighted"
+      },
+      standalone: true,
+      features: [i0.ɵɵNgOnChangesFeature]
+    });
+  }
+  return Highlight;
+})()));
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let HighlightModule = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  class HighlightModule {
+    static #_ = this.ɵfac = function HighlightModule_Factory(t) {
+      return new (t || HighlightModule)();
+    };
+    static #_2 = this.ɵmod = /* @__PURE__ */i0.ɵɵdefineNgModule({
+      type: HighlightModule
+    });
+    static #_3 = this.ɵinj = /* @__PURE__ */i0.ɵɵdefineInjector({});
+  }
+  return HighlightModule;
+})()));
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=ngx-highlightjs.mjs.map
 ;// CONCATENATED MODULE: ./apps/demo/src/app/app.module.ts
 
 
@@ -816,7 +1253,7 @@ let AppModule = /*#__PURE__*/(() => {
         provide: taiga_ui_addon_doc_tokens/* TUI_DOC_PAGES */.rm,
         useValue: pages
       }, {
-        provide: ngx_highlightjs/* HIGHLIGHT_OPTIONS */.sq,
+        provide: HIGHLIGHT_OPTIONS,
         useValue: HIGHLIGHT_OPTIONS_VALUE
       }],
       imports: [platform_browser/* BrowserModule */.Bb, BrowserAnimationsModule, taiga_ui_addon_doc_components/* TuiDocMainModule */.ED, taiga_ui_core_components_link/* TuiLinkModule */.l, GettingStartedModule, router_mjs_.RouterModule.forRoot(ROUTES, {
@@ -842,7 +1279,7 @@ platform_browser/* platformBrowser */.sG().bootstrapModule(AppModule).catch(err 
 
 /***/ }),
 
-/***/ 8024:
+/***/ 348:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -7727,15 +8164,21 @@ function tuiCoerceBooleanProperty(value) {
 
 
 //# sourceMappingURL=taiga-ui-cdk-coercion.js.map
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/argsOrArgArray.js
-var argsOrArgArray = __webpack_require__(2326);
+;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/util/argsOrArgArray.js
+const {
+  isArray
+} = Array;
+function argsOrArgArray(args) {
+  return args.length === 1 && isArray(args[0]) ? args[0] : args;
+}
+//# sourceMappingURL=argsOrArgArray.js.map
 ;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/observable/race.js
 
 
 
 
 function race(...sources) {
-  sources = (0,argsOrArgArray/* argsOrArgArray */.K)(sources);
+  sources = argsOrArgArray(sources);
   return sources.length === 1 ? (0,innerFrom/* innerFrom */.Tg)(sources[0]) : new Observable/* Observable */.c(raceInit(sources));
 }
 function raceInit(sources) {
@@ -8398,8 +8841,553 @@ let TuiDialogModule = /*#__PURE__*/(() => {
 
 
 //# sourceMappingURL=taiga-ui-core-components-dialog.js.map
-// EXTERNAL MODULE: ./node_modules/ngx-highlightjs/fesm2020/ngx-highlightjs.mjs + 5 modules
-var ngx_highlightjs = __webpack_require__(9280);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/throwError.js
+var throwError = __webpack_require__(8810);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/args.js
+var util_args = __webpack_require__(9326);
+;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/observable/zip.js
+
+
+
+
+
+
+function zip(...args) {
+  const resultSelector = (0,util_args/* popResultSelector */.ms)(args);
+  const sources = argsOrArgArray(args);
+  return sources.length ? new Observable/* Observable */.c(subscriber => {
+    let buffers = sources.map(() => []);
+    let completed = sources.map(() => false);
+    subscriber.add(() => {
+      buffers = completed = null;
+    });
+    for (let sourceIndex = 0; !subscriber.closed && sourceIndex < sources.length; sourceIndex++) {
+      (0,innerFrom/* innerFrom */.Tg)(sources[sourceIndex]).subscribe((0,OperatorSubscriber/* createOperatorSubscriber */._)(subscriber, value => {
+        buffers[sourceIndex].push(value);
+        if (buffers.every(buffer => buffer.length)) {
+          const result = buffers.map(buffer => buffer.shift());
+          subscriber.next(resultSelector ? resultSelector(...result) : result);
+          if (buffers.some((buffer, i) => !buffer.length && completed[i])) {
+            subscriber.complete();
+          }
+        }
+      }, () => {
+        completed[sourceIndex] = true;
+        !buffers[sourceIndex].length && subscriber.complete();
+      }));
+    }
+    return () => {
+      buffers = completed = null;
+    };
+  }) : empty/* EMPTY */.w;
+}
+//# sourceMappingURL=zip.js.map
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/from.js + 9 modules
+var from = __webpack_require__(6648);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/scheduler/AsyncAction.js + 2 modules
+var AsyncAction = __webpack_require__(6780);
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Subscription.js + 1 modules
+var Subscription = __webpack_require__(8359);
+;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/scheduler/animationFrameProvider.js
+
+const animationFrameProvider = {
+  schedule(callback) {
+    let request = requestAnimationFrame;
+    let cancel = cancelAnimationFrame;
+    const {
+      delegate
+    } = animationFrameProvider;
+    if (delegate) {
+      request = delegate.requestAnimationFrame;
+      cancel = delegate.cancelAnimationFrame;
+    }
+    const handle = request(timestamp => {
+      cancel = undefined;
+      callback(timestamp);
+    });
+    return new Subscription/* Subscription */.yU(() => cancel === null || cancel === void 0 ? void 0 : cancel(handle));
+  },
+  requestAnimationFrame(...args) {
+    const {
+      delegate
+    } = animationFrameProvider;
+    return ((delegate === null || delegate === void 0 ? void 0 : delegate.requestAnimationFrame) || requestAnimationFrame)(...args);
+  },
+  cancelAnimationFrame(...args) {
+    const {
+      delegate
+    } = animationFrameProvider;
+    return ((delegate === null || delegate === void 0 ? void 0 : delegate.cancelAnimationFrame) || cancelAnimationFrame)(...args);
+  },
+  delegate: undefined
+};
+//# sourceMappingURL=animationFrameProvider.js.map
+;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/scheduler/AnimationFrameAction.js
+
+
+class AnimationFrameAction extends AsyncAction/* AsyncAction */.R {
+  constructor(scheduler, work) {
+    super(scheduler, work);
+    this.scheduler = scheduler;
+    this.work = work;
+  }
+  requestAsyncId(scheduler, id, delay = 0) {
+    if (delay !== null && delay > 0) {
+      return super.requestAsyncId(scheduler, id, delay);
+    }
+    scheduler.actions.push(this);
+    return scheduler._scheduled || (scheduler._scheduled = animationFrameProvider.requestAnimationFrame(() => scheduler.flush(undefined)));
+  }
+  recycleAsyncId(scheduler, id, delay = 0) {
+    var _a;
+    if (delay != null ? delay > 0 : this.delay > 0) {
+      return super.recycleAsyncId(scheduler, id, delay);
+    }
+    const {
+      actions
+    } = scheduler;
+    if (id != null && ((_a = actions[actions.length - 1]) === null || _a === void 0 ? void 0 : _a.id) !== id) {
+      animationFrameProvider.cancelAnimationFrame(id);
+      scheduler._scheduled = undefined;
+    }
+    return undefined;
+  }
+}
+//# sourceMappingURL=AnimationFrameAction.js.map
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/scheduler/AsyncScheduler.js + 1 modules
+var AsyncScheduler = __webpack_require__(9687);
+;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/scheduler/AnimationFrameScheduler.js
+
+class AnimationFrameScheduler extends AsyncScheduler/* AsyncScheduler */.q {
+  flush(action) {
+    this._active = true;
+    const flushId = this._scheduled;
+    this._scheduled = undefined;
+    const {
+      actions
+    } = this;
+    let error;
+    action = action || actions.shift();
+    do {
+      if (error = action.execute(action.state, action.delay)) {
+        break;
+      }
+    } while ((action = actions[0]) && action.id === flushId && actions.shift());
+    this._active = false;
+    if (error) {
+      while ((action = actions[0]) && action.id === flushId && actions.shift()) {
+        action.unsubscribe();
+      }
+      throw error;
+    }
+  }
+}
+//# sourceMappingURL=AnimationFrameScheduler.js.map
+;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/scheduler/animationFrame.js
+
+
+const animationFrameScheduler = new AnimationFrameScheduler(AnimationFrameAction);
+const animationFrame = (/* unused pure expression or super */ null && (animationFrameScheduler));
+//# sourceMappingURL=animationFrame.js.map
+// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/catchError.js
+var catchError = __webpack_require__(9437);
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/addon-doc/node_modules/ngx-highlightjs/fesm2020/ngx-highlightjs.mjs
+
+
+
+
+
+
+const HIGHLIGHT_OPTIONS = new core_mjs_.InjectionToken('HIGHLIGHT_OPTIONS');
+
+// @dynamic
+let HighlightLoader = /*#__PURE__*/(() => {
+  class HighlightLoader {
+    constructor(doc, platformId, _options) {
+      this.doc = doc;
+      this._options = _options;
+      // Stream that emits when hljs library is loaded and ready to use
+      this._ready = new internal_BehaviorSubject/* BehaviorSubject */.t(null);
+      this.ready = this._ready.asObservable().pipe((0,filter/* filter */.p)(hljs => !!hljs), (0,operators_map/* map */.T)(hljs => hljs), (0,take/* take */.s)(1));
+      if ((0,common_mjs_.isPlatformBrowser)(platformId)) {
+        // Check if hljs is already available
+        if (doc.defaultView.hljs) {
+          this._ready.next(doc.defaultView.hljs);
+        } else {
+          // Load hljs library
+          this._loadLibrary().pipe((0,operators_switchMap/* switchMap */.n)(hljs => {
+            if (this._options && this._options.lineNumbersLoader) {
+              // Make hljs available on window object (required for the line numbers library)
+              doc.defaultView.hljs = hljs;
+              // Load line numbers library
+              return this.loadLineNumbers().pipe((0,tap/* tap */.M)(() => this._ready.next(hljs)));
+            } else {
+              this._ready.next(hljs);
+              return empty/* EMPTY */.w;
+            }
+          }), (0,catchError/* catchError */.W)(e => {
+            console.error('[HLJS] ', e);
+            return empty/* EMPTY */.w;
+          })).subscribe();
+        }
+        // Load highlighting theme
+        if (this._options?.themePath) {
+          this.loadTheme(this._options.themePath);
+        }
+      }
+    }
+    /**
+     * Lazy-Load highlight.js library
+     */
+    _loadLibrary() {
+      if (this._options) {
+        if (this._options.fullLibraryLoader && this._options.coreLibraryLoader) {
+          return (0,throwError/* throwError */.$)(() => 'The full library and the core library were imported, only one of them should be imported!');
+        }
+        if (this._options.fullLibraryLoader && this._options.languages) {
+          return (0,throwError/* throwError */.$)(() => 'The highlighting languages were imported they are not needed!');
+        }
+        if (this._options.coreLibraryLoader && !this._options.languages) {
+          return (0,throwError/* throwError */.$)(() => 'The highlighting languages were not imported!');
+        }
+        if (!this._options.coreLibraryLoader && this._options.languages) {
+          return (0,throwError/* throwError */.$)(() => 'The core library was not imported!');
+        }
+        if (this._options.fullLibraryLoader) {
+          return this.loadFullLibrary();
+        }
+        if (this._options.coreLibraryLoader && this._options.languages && Object.keys(this._options.languages).length) {
+          return this.loadCoreLibrary().pipe((0,operators_switchMap/* switchMap */.n)(hljs => this._loadLanguages(hljs)));
+        }
+      }
+      return (0,throwError/* throwError */.$)(() => 'Highlight.js library was not imported!');
+    }
+    /**
+     * Lazy-load highlight.js languages
+     */
+    _loadLanguages(hljs) {
+      const languages = Object.entries(this._options.languages).map(([langName, langLoader]) => importModule(langLoader()).pipe((0,tap/* tap */.M)(langFunc => hljs.registerLanguage(langName, langFunc))));
+      return zip(...languages).pipe((0,operators_map/* map */.T)(() => hljs));
+    }
+    /**
+     * Import highlight.js core library
+     */
+    loadCoreLibrary() {
+      return importModule(this._options.coreLibraryLoader());
+    }
+    /**
+     * Import highlight.js library with all languages
+     */
+    loadFullLibrary() {
+      return importModule(this._options.fullLibraryLoader());
+    }
+    /**
+     * Import line numbers library
+     */
+    loadLineNumbers() {
+      return importModule(this._options.lineNumbersLoader());
+    }
+    /**
+     * Reload theme styles
+     */
+    setTheme(path) {
+      this._themeLinkElement.href = path;
+    }
+    /**
+     * Load theme
+     */
+    loadTheme(path) {
+      this._themeLinkElement = this.doc.createElement('link');
+      this._themeLinkElement.href = path;
+      this._themeLinkElement.type = 'text/css';
+      this._themeLinkElement.rel = 'stylesheet';
+      this._themeLinkElement.media = 'screen,print';
+      this.doc.head.appendChild(this._themeLinkElement);
+    }
+  }
+  HighlightLoader.ɵfac = function HighlightLoader_Factory(t) {
+    return new (t || HighlightLoader)(core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵinject"](core_mjs_.PLATFORM_ID), core_mjs_["ɵɵinject"](HIGHLIGHT_OPTIONS, 8));
+  };
+  HighlightLoader.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: HighlightLoader,
+    factory: HighlightLoader.ɵfac,
+    providedIn: 'root'
+  });
+  return HighlightLoader;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+/**
+ * Map loader response to module object
+ */
+const importModule = moduleLoader => {
+  return (0,from/* from */.H)(moduleLoader).pipe((0,filter/* filter */.p)(module => !!module && !!module.default), (0,operators_map/* map */.T)(module => module.default));
+};
+let HighlightJS = /*#__PURE__*/(() => {
+  class HighlightJS {
+    constructor(_loader, options) {
+      this._loader = _loader;
+      this._hljs = null;
+      // Load highlight.js library on init
+      _loader.ready.subscribe(hljs => {
+        this._hljs = hljs;
+        if (options && options.config) {
+          // Set global config if present
+          hljs.configure(options.config);
+          if (hljs.listLanguages().length < 1) {
+            console.error('[HighlightJS]: No languages were registered!');
+          }
+        }
+      });
+    }
+    // A reference for hljs library
+    get hljs() {
+      return this._hljs;
+    }
+    /**
+     * Core highlighting function. Accepts the code to highlight (string) and a list of options (object)
+     * @param code Accepts the code to highlight
+     * @param language must be present and specify the language name or alias of the grammar to be used for highlighting
+     * @param ignoreIllegals (optional) when set to true it forces highlighting to finish even in case of detecting illegal syntax for the language instead of throwing an exception.
+     */
+    highlight(code, {
+      language,
+      ignoreIllegals
+    }) {
+      return this._loader.ready.pipe((0,operators_map/* map */.T)(hljs => hljs.highlight(code, {
+        language,
+        ignoreIllegals
+      })));
+    }
+    /**
+     * Highlighting with language detection.
+     * @param value Accepts a string with the code to highlight
+     * @param languageSubset An optional array of language names and aliases restricting detection to only those languages.
+     * The subset can also be set with configure, but the local parameter overrides the option if set.
+     */
+    highlightAuto(value, languageSubset) {
+      return this._loader.ready.pipe((0,operators_map/* map */.T)(hljs => hljs.highlightAuto(value, languageSubset)));
+    }
+    /**
+     * Applies highlighting to a DOM node containing code.
+     * This function is the one to use to apply highlighting dynamically after page load or within initialization code of third-party JavaScript frameworks.
+     * The function uses language detection by default but you can specify the language in the class attribute of the DOM node. See the scopes reference for all available language names and scopes.
+     * @param element
+     */
+    highlightElement(element) {
+      return this._loader.ready.pipe((0,operators_map/* map */.T)(hljs => hljs.highlightElement(element)));
+    }
+    /**
+     * Applies highlighting to all elements on a page matching the configured cssSelector. The default cssSelector value is 'pre code',
+     * which highlights all code blocks. This can be called before or after the page’s onload event has fired.
+     */
+    highlightAll() {
+      return this._loader.ready.pipe((0,operators_map/* map */.T)(hljs => hljs.highlightAll()));
+    }
+    /**
+     * @deprecated in version 12
+     * Configures global options:
+     * @param config HighlightJs configuration argument
+     */
+    configure(config) {
+      return this._loader.ready.pipe((0,operators_map/* map */.T)(hljs => hljs.configure(config)));
+    }
+    /**
+     * Adds new language to the library under the specified name. Used mostly internally.
+     * @param languageName A string with the name of the language being registered
+     * @param languageDefinition A function that returns an object which represents the language definition.
+     * The function is passed the hljs object to be able to use common regular expressions defined within it.
+     */
+    registerLanguage(languageName, languageDefinition) {
+      return this._loader.ready.pipe((0,tap/* tap */.M)(hljs => hljs.registerLanguage(languageName, languageDefinition)));
+    }
+    /**
+     * Removes a language and its aliases from the library. Used mostly internall
+     * @param languageName: a string with the name of the language being removed.
+     */
+    unregisterLanguage(languageName) {
+      return this._loader.ready.pipe((0,tap/* tap */.M)(hljs => hljs.unregisterLanguage(languageName)));
+    }
+    /**
+     * Adds new language alias or aliases to the library for the specified language name defined under languageName key.
+     * @param alias: A string or array with the name of alias being registered
+     * @param languageName: the language name as specified by registerLanguage.
+     */
+    registerAliases(alias, {
+      languageName
+    }) {
+      return this._loader.ready.pipe((0,tap/* tap */.M)(hljs => hljs.registerAliases(alias, {
+        languageName
+      })));
+    }
+    /**
+     * @return The languages names list.
+     */
+    listLanguages() {
+      return this._loader.ready.pipe((0,operators_map/* map */.T)(hljs => hljs.listLanguages()));
+    }
+    /**
+     * Looks up a language by name or alias.
+     * @param name Language name
+     * @return The language object if found, undefined otherwise.
+     */
+    getLanguage(name) {
+      return this._loader.ready.pipe((0,operators_map/* map */.T)(hljs => hljs.getLanguage(name)));
+    }
+    /**
+     * Enables safe mode. This is the default mode, providing the most reliable experience for production usage.
+     */
+    safeMode() {
+      return this._loader.ready.pipe((0,operators_map/* map */.T)(hljs => hljs.safeMode()));
+    }
+    /**
+     * Enables debug/development mode.
+     */
+    debugMode() {
+      return this._loader.ready.pipe((0,operators_map/* map */.T)(hljs => hljs.debugMode()));
+    }
+    /**
+     * Display line numbers
+     * @param el Code element
+     */
+    lineNumbersBlock(el) {
+      return this._loader.ready.pipe((0,filter/* filter */.p)(hljs => !!hljs.lineNumbersBlock), (0,tap/* tap */.M)(hljs => hljs.lineNumbersBlock(el)));
+    }
+  }
+  HighlightJS.ɵfac = function HighlightJS_Factory(t) {
+    return new (t || HighlightJS)(core_mjs_["ɵɵinject"](HighlightLoader), core_mjs_["ɵɵinject"](HIGHLIGHT_OPTIONS, 8));
+  };
+  HighlightJS.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: HighlightJS,
+    factory: HighlightJS.ɵfac,
+    providedIn: 'root'
+  });
+  return HighlightJS;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let Highlight = /*#__PURE__*/(() => {
+  class Highlight {
+    constructor(el, _hljs, _sanitizer, _options) {
+      this._hljs = _hljs;
+      this._sanitizer = _sanitizer;
+      this._options = _options;
+      // Stream that emits when code string is highlighted
+      this.highlighted = new core_mjs_.EventEmitter();
+      this._nativeElement = el.nativeElement;
+    }
+    ngOnChanges(changes) {
+      if (changes?.code?.currentValue !== null && changes.code.currentValue !== changes.code.previousValue) {
+        if (this.code) {
+          this.highlightElement(this.code, this.languages);
+        } else {
+          // If string is empty, set the text content to empty
+          this.setTextContent('');
+        }
+      }
+    }
+    /**
+     * Highlighting with language detection and fix markup.
+     * @param code Accepts a string with the code to highlight
+     * @param languages An optional array of language names and aliases restricting detection to only those languages.
+     * The subset can also be set with configure, but the local parameter overrides the option if set.
+     */
+    highlightElement(code, languages) {
+      // Set code text before highlighting
+      this.setTextContent(code);
+      this._hljs.highlightAuto(code, languages).subscribe(res => {
+        // Set highlighted code
+        this.setInnerHTML(res?.value);
+        // Check if user want to show line numbers
+        if (this.lineNumbers && this._options && this._options.lineNumbersLoader) {
+          this.addLineNumbers();
+        }
+        // Forward highlight response to the highlighted output
+        this.highlighted.emit(res);
+      });
+    }
+    addLineNumbers() {
+      // Clean up line numbers observer
+      this.destroyLineNumbersObserver();
+      animationFrameScheduler.schedule(() => {
+        // Add line numbers
+        this._hljs.lineNumbersBlock(this._nativeElement).subscribe();
+        // If lines count is 1, the line numbers library will not add numbers
+        // Observe changes to add 'hljs-line-numbers' class only when line numbers is added to the code element
+        this._lineNumbersObs = new MutationObserver(() => {
+          if (this._nativeElement.firstElementChild && this._nativeElement.firstElementChild.tagName.toUpperCase() === 'TABLE') {
+            this._nativeElement.classList.add('hljs-line-numbers');
+          }
+          this.destroyLineNumbersObserver();
+        });
+        this._lineNumbersObs.observe(this._nativeElement, {
+          childList: true
+        });
+      });
+    }
+    destroyLineNumbersObserver() {
+      if (this._lineNumbersObs) {
+        this._lineNumbersObs.disconnect();
+        this._lineNumbersObs = null;
+      }
+    }
+    setTextContent(content) {
+      animationFrameScheduler.schedule(() => this._nativeElement.textContent = content);
+    }
+    setInnerHTML(content) {
+      animationFrameScheduler.schedule(() => this._nativeElement.innerHTML = this._sanitizer.sanitize(core_mjs_.SecurityContext.HTML, content) || '');
+    }
+  }
+  Highlight.ɵfac = function Highlight_Factory(t) {
+    return new (t || Highlight)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](HighlightJS), core_mjs_["ɵɵdirectiveInject"](platform_browser/* DomSanitizer */.up), core_mjs_["ɵɵdirectiveInject"](HIGHLIGHT_OPTIONS, 8));
+  };
+  Highlight.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: Highlight,
+    selectors: [["", "highlight", ""]],
+    hostVars: 2,
+    hostBindings: function Highlight_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        core_mjs_["ɵɵclassProp"]("hljs", true);
+      }
+    },
+    inputs: {
+      code: [core_mjs_["ɵɵInputFlags"].None, "highlight", "code"],
+      languages: "languages",
+      lineNumbers: "lineNumbers"
+    },
+    outputs: {
+      highlighted: "highlighted"
+    },
+    features: [core_mjs_["ɵɵNgOnChangesFeature"]]
+  });
+  return Highlight;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let HighlightModule = /*#__PURE__*/(() => {
+  class HighlightModule {}
+  HighlightModule.ɵfac = function HighlightModule_Factory(t) {
+    return new (t || HighlightModule)();
+  };
+  HighlightModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: HighlightModule
+  });
+  HighlightModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+  return HighlightModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=ngx-highlightjs.mjs.map
 ;// CONCATENATED MODULE: ./node_modules/@angular/cdk/fesm2022/clipboard.mjs
 
 
@@ -19689,7 +20677,7 @@ let TuiDocCodeComponent = /*#__PURE__*/(() => {
         core_mjs_["ɵɵproperty"]("ngForOf", core_mjs_["ɵɵpipeBind1"](2, 2, ctx.processor$));
       }
     },
-    dependencies: [taiga_ui_core_components_button/* TuiButtonComponent */.SM, common_mjs_.NgIf, common_mjs_.NgForOf, ngx_highlightjs/* Highlight */.f4, CdkCopyToClipboard, common_mjs_.AsyncPipe],
+    dependencies: [taiga_ui_core_components_button/* TuiButtonComponent */.SM, common_mjs_.NgIf, common_mjs_.NgForOf, Highlight, CdkCopyToClipboard, common_mjs_.AsyncPipe],
     styles: ["[_nghost-%COMP%]{display:block}.t-header[_ngcontent-%COMP%]{font:var(--tui-font-text-s);font-weight:bold}.t-header[_ngcontent-%COMP%] + .t-code[_ngcontent-%COMP%]{border-radius:.25rem}.t-code[_ngcontent-%COMP%]{position:relative;margin:0;white-space:normal;outline:1px solid var(--tui-base-03)}.t-code[_ngcontent-%COMP%]     .hljs-ln{width:-webkit-max-content;width:max-content}.t-code[_ngcontent-%COMP%] + .t-code[_ngcontent-%COMP%]{margin-top:1rem}.t-code-actions[_ngcontent-%COMP%]{position:absolute;top:.75rem;right:.75rem;display:flex;justify-content:center;align-items:center;flex-direction:row-reverse}tui-root._mobile[_nghost-%COMP%]   .t-code-actions[_ngcontent-%COMP%], tui-root._mobile   [_nghost-%COMP%]   .t-code-actions[_ngcontent-%COMP%]{padding:.3125rem;border-radius:.25rem;border:1px solid var(--tui-base-04)}.t-copy-button[_ngcontent-%COMP%] +*:not(:empty){margin-right:.375rem}.hljs[_ngcontent-%COMP%]:not(:empty){font:var(--tui-font-text-m);font-size:.875rem;padding:1.5rem 2rem;font-family:monospace;word-wrap:break-word;white-space:pre-wrap}@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm){.hljs[_ngcontent-%COMP%]:not(:empty)::-webkit-scrollbar, .hljs[_ngcontent-%COMP%]:not(:empty)::-webkit-scrollbar-thumb{width:1rem;height:1rem;border-radius:6.25rem;background-clip:padding-box;border:.375rem solid transparent}.hljs[_ngcontent-%COMP%]:not(:empty)::-webkit-scrollbar{background-color:transparent}.hljs[_ngcontent-%COMP%]:not(:empty)::-webkit-scrollbar-thumb{background-color:var(--tui-clear-hover)}.hljs[_ngcontent-%COMP%]:not(:empty)::-webkit-scrollbar-thumb:hover{background-color:var(--tui-clear-active)}.hljs[_ngcontent-%COMP%]:not(:empty)::-webkit-scrollbar-thumb:active{background-color:var(--tui-text-03)}}tui-root._mobile[_nghost-%COMP%]   .hljs[_ngcontent-%COMP%]:not(:empty), tui-root._mobile   [_nghost-%COMP%]   .hljs[_ngcontent-%COMP%]:not(:empty){padding:1rem}.t-code-actions[_ngcontent-%COMP%], .hljs[_ngcontent-%COMP%]:not(:empty){background:var(--tui-base-01)}@supports (background: color-mix(in srgb,var(--tui-base-01),#222 2%)){.t-code-actions[_ngcontent-%COMP%], .hljs[_ngcontent-%COMP%]:not(:empty){background:color-mix(in srgb,var(--tui-base-01),#222 2%)}}"],
     changeDetection: 0
   });
@@ -19707,7 +20695,7 @@ let TuiDocCodeModule = /*#__PURE__*/(() => {
     type: TuiDocCodeModule
   });
   TuiDocCodeModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-    imports: [[common_mjs_.CommonModule, taiga_ui_core_components_svg/* TuiSvgModule */.vl, ngx_highlightjs/* HighlightModule */.fw, taiga_ui_core_components_button/* TuiButtonModule */.Pv, ClipboardModule]]
+    imports: [[common_mjs_.CommonModule, taiga_ui_core_components_svg/* TuiSvgModule */.vl, HighlightModule, taiga_ui_core_components_button/* TuiButtonModule */.Pv, ClipboardModule]]
   });
   return TuiDocCodeModule;
 })();
@@ -38318,22 +39306,6 @@ const dateTimestampProvider = {
 
 /***/ }),
 
-/***/ 2326:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   K: () => (/* binding */ argsOrArgArray)
-/* harmony export */ });
-const {
-  isArray
-} = Array;
-function argsOrArgArray(args) {
-  return args.length === 1 && isArray(args[0]) ? args[0] : args;
-}
-//# sourceMappingURL=argsOrArgArray.js.map
-
-/***/ }),
-
 /***/ 9969:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
@@ -51773,597 +52745,6 @@ let ReactiveFormsModule = /*#__PURE__*/(() => {
 
 
 //# sourceMappingURL=forms.mjs.map
-
-/***/ }),
-
-/***/ 9280:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  sq: () => (/* binding */ HIGHLIGHT_OPTIONS),
-  f4: () => (/* binding */ Highlight),
-  fw: () => (/* binding */ HighlightModule)
-});
-
-// UNUSED EXPORTS: HighlightJS, HighlightLoader
-
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.3.0 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(1750);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/BehaviorSubject.js
-var BehaviorSubject = __webpack_require__(4412);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/empty.js
-var empty = __webpack_require__(983);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/throwError.js
-var throwError = __webpack_require__(8810);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Observable.js
-var Observable = __webpack_require__(1985);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/innerFrom.js
-var innerFrom = __webpack_require__(8750);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/argsOrArgArray.js
-var argsOrArgArray = __webpack_require__(2326);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/OperatorSubscriber.js
-var OperatorSubscriber = __webpack_require__(4360);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/args.js
-var util_args = __webpack_require__(9326);
-;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/observable/zip.js
-
-
-
-
-
-
-function zip(...args) {
-  const resultSelector = (0,util_args/* popResultSelector */.ms)(args);
-  const sources = (0,argsOrArgArray/* argsOrArgArray */.K)(args);
-  return sources.length ? new Observable/* Observable */.c(subscriber => {
-    let buffers = sources.map(() => []);
-    let completed = sources.map(() => false);
-    subscriber.add(() => {
-      buffers = completed = null;
-    });
-    for (let sourceIndex = 0; !subscriber.closed && sourceIndex < sources.length; sourceIndex++) {
-      (0,innerFrom/* innerFrom */.Tg)(sources[sourceIndex]).subscribe((0,OperatorSubscriber/* createOperatorSubscriber */._)(subscriber, value => {
-        buffers[sourceIndex].push(value);
-        if (buffers.every(buffer => buffer.length)) {
-          const result = buffers.map(buffer => buffer.shift());
-          subscriber.next(resultSelector ? resultSelector(...result) : result);
-          if (buffers.some((buffer, i) => !buffer.length && completed[i])) {
-            subscriber.complete();
-          }
-        }
-      }, () => {
-        completed[sourceIndex] = true;
-        !buffers[sourceIndex].length && subscriber.complete();
-      }));
-    }
-    return () => {
-      buffers = completed = null;
-    };
-  }) : empty/* EMPTY */.w;
-}
-//# sourceMappingURL=zip.js.map
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/from.js + 9 modules
-var from = __webpack_require__(6648);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/scheduler/AsyncAction.js + 2 modules
-var AsyncAction = __webpack_require__(6780);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Subscription.js + 1 modules
-var Subscription = __webpack_require__(8359);
-;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/scheduler/animationFrameProvider.js
-
-const animationFrameProvider = {
-  schedule(callback) {
-    let request = requestAnimationFrame;
-    let cancel = cancelAnimationFrame;
-    const {
-      delegate
-    } = animationFrameProvider;
-    if (delegate) {
-      request = delegate.requestAnimationFrame;
-      cancel = delegate.cancelAnimationFrame;
-    }
-    const handle = request(timestamp => {
-      cancel = undefined;
-      callback(timestamp);
-    });
-    return new Subscription/* Subscription */.yU(() => cancel === null || cancel === void 0 ? void 0 : cancel(handle));
-  },
-  requestAnimationFrame(...args) {
-    const {
-      delegate
-    } = animationFrameProvider;
-    return ((delegate === null || delegate === void 0 ? void 0 : delegate.requestAnimationFrame) || requestAnimationFrame)(...args);
-  },
-  cancelAnimationFrame(...args) {
-    const {
-      delegate
-    } = animationFrameProvider;
-    return ((delegate === null || delegate === void 0 ? void 0 : delegate.cancelAnimationFrame) || cancelAnimationFrame)(...args);
-  },
-  delegate: undefined
-};
-//# sourceMappingURL=animationFrameProvider.js.map
-;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/scheduler/AnimationFrameAction.js
-
-
-class AnimationFrameAction extends AsyncAction/* AsyncAction */.R {
-  constructor(scheduler, work) {
-    super(scheduler, work);
-    this.scheduler = scheduler;
-    this.work = work;
-  }
-  requestAsyncId(scheduler, id, delay = 0) {
-    if (delay !== null && delay > 0) {
-      return super.requestAsyncId(scheduler, id, delay);
-    }
-    scheduler.actions.push(this);
-    return scheduler._scheduled || (scheduler._scheduled = animationFrameProvider.requestAnimationFrame(() => scheduler.flush(undefined)));
-  }
-  recycleAsyncId(scheduler, id, delay = 0) {
-    var _a;
-    if (delay != null ? delay > 0 : this.delay > 0) {
-      return super.recycleAsyncId(scheduler, id, delay);
-    }
-    const {
-      actions
-    } = scheduler;
-    if (id != null && ((_a = actions[actions.length - 1]) === null || _a === void 0 ? void 0 : _a.id) !== id) {
-      animationFrameProvider.cancelAnimationFrame(id);
-      scheduler._scheduled = undefined;
-    }
-    return undefined;
-  }
-}
-//# sourceMappingURL=AnimationFrameAction.js.map
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/scheduler/AsyncScheduler.js + 1 modules
-var AsyncScheduler = __webpack_require__(9687);
-;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/scheduler/AnimationFrameScheduler.js
-
-class AnimationFrameScheduler extends AsyncScheduler/* AsyncScheduler */.q {
-  flush(action) {
-    this._active = true;
-    const flushId = this._scheduled;
-    this._scheduled = undefined;
-    const {
-      actions
-    } = this;
-    let error;
-    action = action || actions.shift();
-    do {
-      if (error = action.execute(action.state, action.delay)) {
-        break;
-      }
-    } while ((action = actions[0]) && action.id === flushId && actions.shift());
-    this._active = false;
-    if (error) {
-      while ((action = actions[0]) && action.id === flushId && actions.shift()) {
-        action.unsubscribe();
-      }
-      throw error;
-    }
-  }
-}
-//# sourceMappingURL=AnimationFrameScheduler.js.map
-;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/scheduler/animationFrame.js
-
-
-const animationFrameScheduler = new AnimationFrameScheduler(AnimationFrameAction);
-const animationFrame = (/* unused pure expression or super */ null && (animationFrameScheduler));
-//# sourceMappingURL=animationFrame.js.map
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/filter.js
-var filter = __webpack_require__(5964);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/map.js
-var map = __webpack_require__(6354);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/take.js
-var take = __webpack_require__(6697);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/switchMap.js
-var switchMap = __webpack_require__(5558);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/tap.js
-var tap = __webpack_require__(8141);
-// EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/catchError.js
-var catchError = __webpack_require__(9437);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.3.0 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(6412);
-// EXTERNAL MODULE: ./node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
-var platform_browser = __webpack_require__(345);
-;// CONCATENATED MODULE: ./node_modules/ngx-highlightjs/fesm2020/ngx-highlightjs.mjs
-
-
-
-
-
-
-const HIGHLIGHT_OPTIONS = new core_mjs_.InjectionToken('HIGHLIGHT_OPTIONS');
-
-// @dynamic
-let HighlightLoader = /*#__PURE__*/(() => {
-  class HighlightLoader {
-    constructor(doc, platformId, _options) {
-      this.doc = doc;
-      this._options = _options;
-      // Stream that emits when hljs library is loaded and ready to use
-      this._ready = new BehaviorSubject/* BehaviorSubject */.t(null);
-      this.ready = this._ready.asObservable().pipe((0,filter/* filter */.p)(hljs => !!hljs), (0,map/* map */.T)(hljs => hljs), (0,take/* take */.s)(1));
-      if ((0,common_mjs_.isPlatformBrowser)(platformId)) {
-        // Check if hljs is already available
-        if (doc.defaultView.hljs) {
-          this._ready.next(doc.defaultView.hljs);
-        } else {
-          // Load hljs library
-          this._loadLibrary().pipe((0,switchMap/* switchMap */.n)(hljs => {
-            if (this._options && this._options.lineNumbersLoader) {
-              // Make hljs available on window object (required for the line numbers library)
-              doc.defaultView.hljs = hljs;
-              // Load line numbers library
-              return this.loadLineNumbers().pipe((0,tap/* tap */.M)(() => this._ready.next(hljs)));
-            } else {
-              this._ready.next(hljs);
-              return empty/* EMPTY */.w;
-            }
-          }), (0,catchError/* catchError */.W)(e => {
-            console.error('[HLJS] ', e);
-            return empty/* EMPTY */.w;
-          })).subscribe();
-        }
-        // Load highlighting theme
-        if (this._options?.themePath) {
-          this.loadTheme(this._options.themePath);
-        }
-      }
-    }
-    /**
-     * Lazy-Load highlight.js library
-     */
-    _loadLibrary() {
-      if (this._options) {
-        if (this._options.fullLibraryLoader && this._options.coreLibraryLoader) {
-          return (0,throwError/* throwError */.$)(() => 'The full library and the core library were imported, only one of them should be imported!');
-        }
-        if (this._options.fullLibraryLoader && this._options.languages) {
-          return (0,throwError/* throwError */.$)(() => 'The highlighting languages were imported they are not needed!');
-        }
-        if (this._options.coreLibraryLoader && !this._options.languages) {
-          return (0,throwError/* throwError */.$)(() => 'The highlighting languages were not imported!');
-        }
-        if (!this._options.coreLibraryLoader && this._options.languages) {
-          return (0,throwError/* throwError */.$)(() => 'The core library was not imported!');
-        }
-        if (this._options.fullLibraryLoader) {
-          return this.loadFullLibrary();
-        }
-        if (this._options.coreLibraryLoader && this._options.languages && Object.keys(this._options.languages).length) {
-          return this.loadCoreLibrary().pipe((0,switchMap/* switchMap */.n)(hljs => this._loadLanguages(hljs)));
-        }
-      }
-      return (0,throwError/* throwError */.$)(() => 'Highlight.js library was not imported!');
-    }
-    /**
-     * Lazy-load highlight.js languages
-     */
-    _loadLanguages(hljs) {
-      const languages = Object.entries(this._options.languages).map(([langName, langLoader]) => importModule(langLoader()).pipe((0,tap/* tap */.M)(langFunc => hljs.registerLanguage(langName, langFunc))));
-      return zip(...languages).pipe((0,map/* map */.T)(() => hljs));
-    }
-    /**
-     * Import highlight.js core library
-     */
-    loadCoreLibrary() {
-      return importModule(this._options.coreLibraryLoader());
-    }
-    /**
-     * Import highlight.js library with all languages
-     */
-    loadFullLibrary() {
-      return importModule(this._options.fullLibraryLoader());
-    }
-    /**
-     * Import line numbers library
-     */
-    loadLineNumbers() {
-      return importModule(this._options.lineNumbersLoader());
-    }
-    /**
-     * Reload theme styles
-     */
-    setTheme(path) {
-      this._themeLinkElement.href = path;
-    }
-    /**
-     * Load theme
-     */
-    loadTheme(path) {
-      this._themeLinkElement = this.doc.createElement('link');
-      this._themeLinkElement.href = path;
-      this._themeLinkElement.type = 'text/css';
-      this._themeLinkElement.rel = 'stylesheet';
-      this._themeLinkElement.media = 'screen,print';
-      this.doc.head.appendChild(this._themeLinkElement);
-    }
-  }
-  HighlightLoader.ɵfac = function HighlightLoader_Factory(t) {
-    return new (t || HighlightLoader)(core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵinject"](core_mjs_.PLATFORM_ID), core_mjs_["ɵɵinject"](HIGHLIGHT_OPTIONS, 8));
-  };
-  HighlightLoader.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-    token: HighlightLoader,
-    factory: HighlightLoader.ɵfac,
-    providedIn: 'root'
-  });
-  return HighlightLoader;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-/**
- * Map loader response to module object
- */
-const importModule = moduleLoader => {
-  return (0,from/* from */.H)(moduleLoader).pipe((0,filter/* filter */.p)(module => !!module && !!module.default), (0,map/* map */.T)(module => module.default));
-};
-let HighlightJS = /*#__PURE__*/(() => {
-  class HighlightJS {
-    constructor(_loader, options) {
-      this._loader = _loader;
-      this._hljs = null;
-      // Load highlight.js library on init
-      _loader.ready.subscribe(hljs => {
-        this._hljs = hljs;
-        if (options && options.config) {
-          // Set global config if present
-          hljs.configure(options.config);
-          if (hljs.listLanguages().length < 1) {
-            console.error('[HighlightJS]: No languages were registered!');
-          }
-        }
-      });
-    }
-    // A reference for hljs library
-    get hljs() {
-      return this._hljs;
-    }
-    /**
-     * Core highlighting function. Accepts the code to highlight (string) and a list of options (object)
-     * @param code Accepts the code to highlight
-     * @param language must be present and specify the language name or alias of the grammar to be used for highlighting
-     * @param ignoreIllegals (optional) when set to true it forces highlighting to finish even in case of detecting illegal syntax for the language instead of throwing an exception.
-     */
-    highlight(code, {
-      language,
-      ignoreIllegals
-    }) {
-      return this._loader.ready.pipe((0,map/* map */.T)(hljs => hljs.highlight(code, {
-        language,
-        ignoreIllegals
-      })));
-    }
-    /**
-     * Highlighting with language detection.
-     * @param value Accepts a string with the code to highlight
-     * @param languageSubset An optional array of language names and aliases restricting detection to only those languages.
-     * The subset can also be set with configure, but the local parameter overrides the option if set.
-     */
-    highlightAuto(value, languageSubset) {
-      return this._loader.ready.pipe((0,map/* map */.T)(hljs => hljs.highlightAuto(value, languageSubset)));
-    }
-    /**
-     * Applies highlighting to a DOM node containing code.
-     * This function is the one to use to apply highlighting dynamically after page load or within initialization code of third-party JavaScript frameworks.
-     * The function uses language detection by default but you can specify the language in the class attribute of the DOM node. See the scopes reference for all available language names and scopes.
-     * @param element
-     */
-    highlightElement(element) {
-      return this._loader.ready.pipe((0,map/* map */.T)(hljs => hljs.highlightElement(element)));
-    }
-    /**
-     * Applies highlighting to all elements on a page matching the configured cssSelector. The default cssSelector value is 'pre code',
-     * which highlights all code blocks. This can be called before or after the page’s onload event has fired.
-     */
-    highlightAll() {
-      return this._loader.ready.pipe((0,map/* map */.T)(hljs => hljs.highlightAll()));
-    }
-    /**
-     * @deprecated in version 12
-     * Configures global options:
-     * @param config HighlightJs configuration argument
-     */
-    configure(config) {
-      return this._loader.ready.pipe((0,map/* map */.T)(hljs => hljs.configure(config)));
-    }
-    /**
-     * Adds new language to the library under the specified name. Used mostly internally.
-     * @param languageName A string with the name of the language being registered
-     * @param languageDefinition A function that returns an object which represents the language definition.
-     * The function is passed the hljs object to be able to use common regular expressions defined within it.
-     */
-    registerLanguage(languageName, languageDefinition) {
-      return this._loader.ready.pipe((0,tap/* tap */.M)(hljs => hljs.registerLanguage(languageName, languageDefinition)));
-    }
-    /**
-     * Removes a language and its aliases from the library. Used mostly internall
-     * @param languageName: a string with the name of the language being removed.
-     */
-    unregisterLanguage(languageName) {
-      return this._loader.ready.pipe((0,tap/* tap */.M)(hljs => hljs.unregisterLanguage(languageName)));
-    }
-    /**
-     * Adds new language alias or aliases to the library for the specified language name defined under languageName key.
-     * @param alias: A string or array with the name of alias being registered
-     * @param languageName: the language name as specified by registerLanguage.
-     */
-    registerAliases(alias, {
-      languageName
-    }) {
-      return this._loader.ready.pipe((0,tap/* tap */.M)(hljs => hljs.registerAliases(alias, {
-        languageName
-      })));
-    }
-    /**
-     * @return The languages names list.
-     */
-    listLanguages() {
-      return this._loader.ready.pipe((0,map/* map */.T)(hljs => hljs.listLanguages()));
-    }
-    /**
-     * Looks up a language by name or alias.
-     * @param name Language name
-     * @return The language object if found, undefined otherwise.
-     */
-    getLanguage(name) {
-      return this._loader.ready.pipe((0,map/* map */.T)(hljs => hljs.getLanguage(name)));
-    }
-    /**
-     * Enables safe mode. This is the default mode, providing the most reliable experience for production usage.
-     */
-    safeMode() {
-      return this._loader.ready.pipe((0,map/* map */.T)(hljs => hljs.safeMode()));
-    }
-    /**
-     * Enables debug/development mode.
-     */
-    debugMode() {
-      return this._loader.ready.pipe((0,map/* map */.T)(hljs => hljs.debugMode()));
-    }
-    /**
-     * Display line numbers
-     * @param el Code element
-     */
-    lineNumbersBlock(el) {
-      return this._loader.ready.pipe((0,filter/* filter */.p)(hljs => !!hljs.lineNumbersBlock), (0,tap/* tap */.M)(hljs => hljs.lineNumbersBlock(el)));
-    }
-  }
-  HighlightJS.ɵfac = function HighlightJS_Factory(t) {
-    return new (t || HighlightJS)(core_mjs_["ɵɵinject"](HighlightLoader), core_mjs_["ɵɵinject"](HIGHLIGHT_OPTIONS, 8));
-  };
-  HighlightJS.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-    token: HighlightJS,
-    factory: HighlightJS.ɵfac,
-    providedIn: 'root'
-  });
-  return HighlightJS;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let Highlight = /*#__PURE__*/(() => {
-  class Highlight {
-    constructor(el, _hljs, _sanitizer, _options) {
-      this._hljs = _hljs;
-      this._sanitizer = _sanitizer;
-      this._options = _options;
-      // Stream that emits when code string is highlighted
-      this.highlighted = new core_mjs_.EventEmitter();
-      this._nativeElement = el.nativeElement;
-    }
-    ngOnChanges(changes) {
-      if (changes?.code?.currentValue !== null && changes.code.currentValue !== changes.code.previousValue) {
-        if (this.code) {
-          this.highlightElement(this.code, this.languages);
-        } else {
-          // If string is empty, set the text content to empty
-          this.setTextContent('');
-        }
-      }
-    }
-    /**
-     * Highlighting with language detection and fix markup.
-     * @param code Accepts a string with the code to highlight
-     * @param languages An optional array of language names and aliases restricting detection to only those languages.
-     * The subset can also be set with configure, but the local parameter overrides the option if set.
-     */
-    highlightElement(code, languages) {
-      // Set code text before highlighting
-      this.setTextContent(code);
-      this._hljs.highlightAuto(code, languages).subscribe(res => {
-        // Set highlighted code
-        this.setInnerHTML(res?.value);
-        // Check if user want to show line numbers
-        if (this.lineNumbers && this._options && this._options.lineNumbersLoader) {
-          this.addLineNumbers();
-        }
-        // Forward highlight response to the highlighted output
-        this.highlighted.emit(res);
-      });
-    }
-    addLineNumbers() {
-      // Clean up line numbers observer
-      this.destroyLineNumbersObserver();
-      animationFrameScheduler.schedule(() => {
-        // Add line numbers
-        this._hljs.lineNumbersBlock(this._nativeElement).subscribe();
-        // If lines count is 1, the line numbers library will not add numbers
-        // Observe changes to add 'hljs-line-numbers' class only when line numbers is added to the code element
-        this._lineNumbersObs = new MutationObserver(() => {
-          if (this._nativeElement.firstElementChild && this._nativeElement.firstElementChild.tagName.toUpperCase() === 'TABLE') {
-            this._nativeElement.classList.add('hljs-line-numbers');
-          }
-          this.destroyLineNumbersObserver();
-        });
-        this._lineNumbersObs.observe(this._nativeElement, {
-          childList: true
-        });
-      });
-    }
-    destroyLineNumbersObserver() {
-      if (this._lineNumbersObs) {
-        this._lineNumbersObs.disconnect();
-        this._lineNumbersObs = null;
-      }
-    }
-    setTextContent(content) {
-      animationFrameScheduler.schedule(() => this._nativeElement.textContent = content);
-    }
-    setInnerHTML(content) {
-      animationFrameScheduler.schedule(() => this._nativeElement.innerHTML = this._sanitizer.sanitize(core_mjs_.SecurityContext.HTML, content) || '');
-    }
-  }
-  Highlight.ɵfac = function Highlight_Factory(t) {
-    return new (t || Highlight)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](HighlightJS), core_mjs_["ɵɵdirectiveInject"](platform_browser/* DomSanitizer */.up), core_mjs_["ɵɵdirectiveInject"](HIGHLIGHT_OPTIONS, 8));
-  };
-  Highlight.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: Highlight,
-    selectors: [["", "highlight", ""]],
-    hostVars: 2,
-    hostBindings: function Highlight_HostBindings(rf, ctx) {
-      if (rf & 2) {
-        core_mjs_["ɵɵclassProp"]("hljs", true);
-      }
-    },
-    inputs: {
-      code: [core_mjs_["ɵɵInputFlags"].None, "highlight", "code"],
-      languages: "languages",
-      lineNumbers: "lineNumbers"
-    },
-    outputs: {
-      highlighted: "highlighted"
-    },
-    features: [core_mjs_["ɵɵNgOnChangesFeature"]]
-  });
-  return Highlight;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let HighlightModule = /*#__PURE__*/(() => {
-  class HighlightModule {}
-  HighlightModule.ɵfac = function HighlightModule_Factory(t) {
-    return new (t || HighlightModule)();
-  };
-  HighlightModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: HighlightModule
-  });
-  HighlightModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-  return HighlightModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=ngx-highlightjs.mjs.map
 
 /***/ })
 
