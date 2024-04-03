@@ -1665,7 +1665,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵɵviewQuerySignal": () => (/* binding */ ɵɵviewQuerySignal)
 /* harmony export */ });
 /* harmony import */ var _home_runner_work_microzord_microzord_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(467);
-/* harmony import */ var _angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9440);
+/* harmony import */ var _angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4659);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1413);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8359);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4412);
@@ -1673,7 +1673,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1594);
 
 /**
- * @license Angular v17.3.2
+ * @license Angular v17.3.3
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -17263,7 +17263,7 @@ function createRootComponent(componentView, rootComponentDef, rootDirectives, ho
 function setRootNodeAttributes(hostRenderer, componentDef, hostRNode, rootSelectorOrNode) {
   if (rootSelectorOrNode) {
     // The placeholder will be replaced with the actual version at build time.
-    setUpAttributes(hostRenderer, hostRNode, ['ng-version', '17.3.2']);
+    setUpAttributes(hostRenderer, hostRNode, ['ng-version', '17.3.3']);
   } else {
     // If host element is created as a part of this function call (i.e. `rootSelectorOrNode`
     // is not defined), also apply attributes and classes extracted from component selector.
@@ -30764,7 +30764,7 @@ class Version {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new Version('17.3.2');
+const VERSION = /*#__PURE__*/new Version('17.3.3');
 let Console = /*#__PURE__*/(() => {
   class Console {
     log(message) {
@@ -31586,8 +31586,10 @@ function getInjectorParent(injector) {
     lView = getNodeInjectorLView(injector);
   } else if (injector instanceof NullInjector) {
     return null;
+  } else if (injector instanceof ChainedInjector) {
+    return injector.parentInjector;
   } else {
-    throwError('getInjectorParent only support injectors of type R3Injector, NodeInjector, NullInjector');
+    throwError('getInjectorParent only support injectors of type R3Injector, NodeInjector, NullInjector, ChainedInjector');
   }
   const parentLocation = getParentInjectorLocation(tNode, lView);
   if (hasParentInjector(parentLocation)) {
@@ -31624,8 +31626,8 @@ function getModuleInjectorOfNodeInjector(injector) {
   } else {
     throwError('getModuleInjectorOfNodeInjector must be called with a NodeInjector');
   }
-  const chainedInjector = lView[INJECTOR];
-  const moduleInjector = chainedInjector.parentInjector;
+  const inj = lView[INJECTOR];
+  const moduleInjector = inj instanceof ChainedInjector ? inj.parentInjector : inj.parent;
   if (!moduleInjector) {
     throwError('NodeInjector must have some connection to the module injector tree');
   }
