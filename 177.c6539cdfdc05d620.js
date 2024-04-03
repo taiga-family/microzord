@@ -108,9 +108,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵparseCookieValue": () => (/* binding */ parseCookieValue),
 /* harmony export */   "ɵsetRootDomAdapter": () => (/* binding */ setRootDomAdapter)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1717);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5916);
 /**
- * @license Angular v17.3.1
+ * @license Angular v17.3.2
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -5462,7 +5462,7 @@ function isPlatformWorkerUi(platformId) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.3.1');
+const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.3.2');
 
 /**
  * Defines a scroll position manager. Implemented by `BrowserViewportScroller`.
@@ -5622,6 +5622,11 @@ class NullViewportScroller {
  */
 class XhrFactory {}
 
+/**
+ * Value (out of 100) of the requested quality for placeholder images.
+ */
+const PLACEHOLDER_QUALITY = '20';
+
 // Converts a string that represents a URL into a URL class instance.
 function getUrl(src, win) {
   // Don't use a base URL is the URL is absolute.
@@ -5737,6 +5742,10 @@ function createCloudflareUrl(path, config) {
   if (config.width) {
     params += `,width=${config.width}`;
   }
+  // When requesting a placeholder image we ask for a low quality image to reduce the load time.
+  if (config.isPlaceholder) {
+    params += `,quality=${PLACEHOLDER_QUALITY}`;
+  }
   // Cloudflare image URLs format:
   // https://developers.cloudflare.com/images/image-resizing/url-format/
   return `${path}/cdn-cgi/image/${params}/${config.src}`;
@@ -5774,7 +5783,10 @@ function createCloudinaryUrl(path, config) {
   // https://cloudinary.com/documentation/image_transformations#transformation_url_structure
   // Example of a Cloudinary image URL:
   // https://res.cloudinary.com/mysite/image/upload/c_scale,f_auto,q_auto,w_600/marketing/tile-topics-m.png
-  let params = `f_auto,q_auto`; // sets image format and quality to "auto"
+  // For a placeholder image, we use the lowest image setting available to reduce the load time
+  // else we use the auto size
+  const quality = config.isPlaceholder ? 'q_auto:low' : 'q_auto';
+  let params = `f_auto,${quality}`;
   if (config.width) {
     params += `,w_${config.width}`;
   }
@@ -5821,7 +5833,12 @@ function createImagekitUrl(path, config) {
   } else {
     urlSegments = [path, src];
   }
-  return urlSegments.join('/');
+  const url = new URL(urlSegments.join('/'));
+  // When requesting a placeholder image we ask for a low quality image to reduce the load time.
+  if (config.isPlaceholder) {
+    url.searchParams.set('q', PLACEHOLDER_QUALITY);
+  }
+  return url.href;
 }
 
 /**
@@ -5854,6 +5871,10 @@ function createImgixUrl(path, config) {
   url.searchParams.set('auto', 'format');
   if (config.width) {
     url.searchParams.set('w', config.width.toString());
+  }
+  // When requesting a placeholder image we ask a low quality image to reduce the load time.
+  if (config.isPlaceholder) {
+    url.searchParams.set('q', PLACEHOLDER_QUALITY);
   }
   return url.href;
 }
@@ -5910,6 +5931,12 @@ function createNetlifyUrl(config, path) {
   url.searchParams.set('url', config.src);
   if (config.width) {
     url.searchParams.set('w', config.width.toString());
+  }
+  // When requesting a placeholder image we ask for a low quality image to reduce the load time.
+  // If the quality is specified in the loader config - always use provided value.
+  const configQuality = config.loaderParams?.['quality'] ?? config.loaderParams?.['q'];
+  if (config.isPlaceholder && !configQuality) {
+    url.searchParams.set('q', PLACEHOLDER_QUALITY);
   }
   for (const [param, value] of Object.entries(config.loaderParams ?? {})) {
     if (validParams.has(param)) {

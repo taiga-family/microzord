@@ -1665,7 +1665,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵɵviewQuerySignal": () => (/* binding */ ɵɵviewQuerySignal)
 /* harmony export */ });
 /* harmony import */ var _home_runner_work_microzord_microzord_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(467);
-/* harmony import */ var _angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3721);
+/* harmony import */ var _angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9440);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1413);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8359);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4412);
@@ -1673,7 +1673,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1594);
 
 /**
- * @license Angular v17.3.1
+ * @license Angular v17.3.2
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -8171,25 +8171,47 @@ function getOutputDestroyRef(ref) {
 }
 
 /**
- * The `output` function allows declaration of outputs in directives and
- * components.
+ * The `output` function allows declaration of Angular outputs in
+ * directives and components.
  *
- * Initializes an output that can emit values to consumers of your
- * directive/component.
+ * You can use outputs to emit values to parent directives and component.
+ * Parents can subscribe to changes via:
+ *
+ * - template event bindings. For example, `(myOutput)="doSomething($event)"`
+ * - programmatic subscription by using `OutputRef#subscribe`.
  *
  * @usageNotes
- * Initialize an output in your directive by declaring a
- * class field and initializing it with the `output()` function.
+ *
+ * To use `output()`, import the function from `@angular/core`.
+ *
+ * ```
+ * import {output} from '@angular/core`;
+ * ```
+ *
+ * Inside your component, introduce a new class member and initialize
+ * it with a call to `output`.
  *
  * ```ts
- * @Directive({..})
+ * @Directive({
+ *   ...
+ * })
  * export class MyDir {
- *   nameChange = output<string>();     // OutputEmitterRef<string>
- *   onClick = output();                // OutputEmitterRef<void>
+ *   nameChange = output<string>();    // OutputEmitterRef<string>
+ *   onClick    = output();            // OutputEmitterRef<void>
+ * }
+ * ```
+ *
+ * You can emit values to consumers of your directive, by using
+ * the `emit` method from `OutputEmitterRef`.
+ *
+ * ```ts
+ * updateName(newName: string): void {
+ *   this.nameChange.emit(newName);
  * }
  * ```
  *
  * @developerPreview
+ * @initializerApiFunction {"showTypesInSignaturePreview": true}
  */
 function output(opts) {
   ngDevMode && assertInInjectionContext(output);
@@ -8204,29 +8226,52 @@ function inputRequiredFunction(opts) {
   return createInputSignal(REQUIRED_UNSET_VALUE, opts);
 }
 /**
- * The `input` function allows declaration of inputs in directives and
- * components.
+ * The `input` function allows declaration of Angular inputs in directives
+ * and components.
  *
- * Initializes an input with an initial value. If no explicit value
- * is specified, Angular will use `undefined`.
+ * There are two variants of inputs that can be declared:
  *
- * Consider using `input.required` for inputs that don't need an
- * initial value.
+ *   1. **Optional inputs** with an initial value.
+ *   2. **Required inputs** that consumers need to set.
+ *
+ * By default, the `input` function will declare optional inputs that
+ * always have an initial value. Required inputs can be declared
+ * using the `input.required()` function.
+ *
+ * Inputs are signals. The values of an input are exposed as a `Signal`.
+ * The signal always holds the latest value of the input that is bound
+ * from the parent.
  *
  * @usageNotes
- * Initialize an input in your directive or component by declaring a
- * class field and initializing it with the `input()` function.
+ * To use signal-based inputs, import `input` from `@angular/core`.
+ *
+ * ```
+ * import {input} from '@angular/core`;
+ * ```
+ *
+ * Inside your component, introduce a new class member and initialize
+ * it with a call to `input` or `input.required`.
  *
  * ```ts
- * @Directive({..})
- * export class MyDir {
- *   firstName = input<string>();            // string|undefined
- *   lastName = input.required<string>();    // string
- *   age = input(0);                         // number
+ * @Component({
+ *   ...
+ * })
+ * export class UserProfileComponent {
+ *   firstName = input<string>();             // Signal<string|undefined>
+ *   lastName  = input.required<string>();    // Signal<string>
+ *   age       = input(0)                     // Signal<number>
  * }
  * ```
  *
+ * Inside your component template, you can display values of the inputs
+ * by calling the signal.
+ *
+ * ```html
+ * <span>{{firstName()}}</span>
+ * ```
+ *
  * @developerPreview
+ * @initializerApiFunction
  */
 const input = /*#__PURE__*/(() => {
   // Note: This may be considered a side-effect, but nothing will depend on
@@ -17218,7 +17263,7 @@ function createRootComponent(componentView, rootComponentDef, rootDirectives, ho
 function setRootNodeAttributes(hostRenderer, componentDef, hostRNode, rootSelectorOrNode) {
   if (rootSelectorOrNode) {
     // The placeholder will be replaced with the actual version at build time.
-    setUpAttributes(hostRenderer, hostRNode, ['ng-version', '17.3.1']);
+    setUpAttributes(hostRenderer, hostRNode, ['ng-version', '17.3.2']);
   } else {
     // If host element is created as a part of this function call (i.e. `rootSelectorOrNode`
     // is not defined), also apply attributes and classes extracted from component selector.
@@ -18228,6 +18273,7 @@ function viewChildRequiredFn(locator, opts) {
  * ```
  *
  * @developerPreview
+ * @initializerApiFunction
  */
 const viewChild = /*#__PURE__*/(() => {
   // Note: This may be considered a side-effect, but nothing will depend on
@@ -18252,6 +18298,9 @@ const viewChild = /*#__PURE__*/(() => {
  *   divEls = viewChildren<ElementRef>('el');   // Signal<ReadonlyArray<ElementRef>>
  * }
  * ```
+ *
+ * @initializerApiFunction
+ * @developerPreview
  */
 function viewChildren(locator, opts) {
   ngDevMode && assertInInjectionContext(viewChildren);
@@ -18282,6 +18331,9 @@ function contentChildRequiredFn(locator, opts) {
  *   headerRequired = contentChild.required(MyHeader);            // Signal<MyHeader>
  * }
  * ```
+ *
+ * @initializerApiFunction
+ * @developerPreview
  */
 const contentChild = /*#__PURE__*/(() => {
   // Note: This may be considered a side-effect, but nothing will depend on
@@ -18306,6 +18358,9 @@ const contentChild = /*#__PURE__*/(() => {
  *   headerEl = contentChildren<ElementRef>('h');   // Signal<ReadonlyArray<ElementRef>>
  * }
  * ```
+ *
+ * @initializerApiFunction
+ * @developerPreview
  */
 function contentChildren(locator, opts) {
   return createMultiResultQuerySignalFn();
@@ -18362,31 +18417,51 @@ function modelRequiredFunction() {
   return createModelSignal(REQUIRED_UNSET_VALUE);
 }
 /**
- * `model` declares a writeable signal that is exposed as an input/output pair on the containing
- * directive. The input name is taken either from the class member or from the `alias` option.
+ * `model` declares a writeable signal that is exposed as an input/output
+ * pair on the containing directive.
+ *
+ * The input name is taken either from the class member or from the `alias` option.
  * The output name is generated by taking the input name and appending `Change`.
  *
- * Initializes a model with an initial value. If no explicit value
- * is specified, Angular will use `undefined`.
- *
- * Consider using `model.required` for models that don't need an
- * initial value.
- *
  * @usageNotes
- * Initialize a model in your directive or component by declaring a
- * class field and initializing it with the `model()` or `model.required()`
- * function.
+ *
+ * To use `model()`, import the function from `@angular/core`.
+ *
+ * ```
+ * import {model} from '@angular/core`;
+ * ```
+ *
+ * Inside your component, introduce a new class member and initialize
+ * it with a call to `model` or `model.required`.
  *
  * ```ts
- * @Directive({..})
+ * @Directive({
+ *   ...
+ * })
  * export class MyDir {
- *   firstName = model<string>();            // string|undefined
- *   lastName = model.required<string>();    // string
- *   age = model(0);                         // number
+ *   firstName = model<string>();            // ModelSignal<string|undefined>
+ *   lastName  = model.required<string>();   // ModelSignal<string>
+ *   age       = model(0);                   // ModelSignal<number>
+ * }
+ * ```
+ *
+ * Inside your component template, you can display the value of a `model`
+ * by calling the signal.
+ *
+ * ```html
+ * <span>{{firstName()}}</span>
+ * ```
+ *
+ * Updating the `model` is equivalent to updating a writable signal.
+ *
+ * ```ts
+ * updateName(newFirstName: string): void {
+ *   this.firstName.set(newFirstName);
  * }
  * ```
  *
  * @developerPreview
+ * @initializerApiFunction
  */
 const model = /*#__PURE__*/(() => {
   // Note: This may be considered a side-effect, but nothing will depend on
@@ -20797,6 +20872,13 @@ function renderDeferBlockState(newState, tNode, lContainer, skipTimerScheduling 
   }
 }
 /**
+ * Detects whether an injector is an instance of a `ChainedInjector`,
+ * created based on the `OutletInjector`.
+ */
+function isRouterOutletInjector(currentInjector) {
+  return currentInjector instanceof ChainedInjector && currentInjector.injector.__ngOutletInjector;
+}
+/**
  * Applies changes to the DOM to reflect a given state.
  */
 function applyDeferBlockState(newState, lDetails, lContainer, tNode, hostLView) {
@@ -20822,14 +20904,19 @@ function applyDeferBlockState(newState, lDetails, lContainer, tNode, hostLView) 
       const providers = tDetails.providers;
       if (providers && providers.length > 0) {
         const parentInjector = hostLView[INJECTOR];
-        const parentEnvInjector = parentInjector.get(EnvironmentInjector);
+        // Note: we have a special case for Router's `OutletInjector`,
+        // since it's not an instance of the `EnvironmentInjector`, so
+        // we can't inject it. Once the `OutletInjector` is replaced
+        // with the `EnvironmentInjector` in Router's code, this special
+        // handling can be removed.
+        const parentEnvInjector = isRouterOutletInjector(parentInjector) ? parentInjector : parentInjector.get(EnvironmentInjector);
         injector = parentEnvInjector.get(CachedInjectorService).getOrCreateInjector(tDetails, parentEnvInjector, providers, ngDevMode ? 'DeferBlock Injector' : '');
       }
     }
     const dehydratedView = findMatchingDehydratedView(lContainer, activeBlockTNode.tView.ssrId);
     const embeddedLView = createAndRenderEmbeddedLView(hostLView, activeBlockTNode, null, {
       dehydratedView,
-      embeddedViewInjector: injector
+      injector
     });
     addLViewToLContainer(lContainer, embeddedLView, viewIndex, shouldAddViewToDom(activeBlockTNode, dehydratedView));
     markViewDirty(embeddedLView);
@@ -30677,7 +30764,7 @@ class Version {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new Version('17.3.1');
+const VERSION = /*#__PURE__*/new Version('17.3.2');
 let Console = /*#__PURE__*/(() => {
   class Console {
     log(message) {

@@ -63,7 +63,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵwithHttpTransferCache": () => (/* binding */ withHttpTransferCache)
 /* harmony export */ });
 /* harmony import */ var _home_runner_work_microzord_microzord_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(467);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1717);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5916);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7673);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(1985);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(6648);
@@ -73,10 +73,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(980);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(5558);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(8141);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3707);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(582);
 
 /**
- * @license Angular v17.3.1
+ * @license Angular v17.3.2
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -902,7 +902,7 @@ class HttpRequest {
     }
     // Check whether the body is already in a serialized form. If so,
     // it can just be returned directly.
-    if (isArrayBuffer(this.body) || isBlob(this.body) || isFormData(this.body) || isUrlSearchParams(this.body) || typeof this.body === 'string') {
+    if (typeof this.body === 'string' || isArrayBuffer(this.body) || isBlob(this.body) || isFormData(this.body) || isUrlSearchParams(this.body)) {
       return this.body;
     }
     // Check whether the body is an instance of HttpUrlEncodedParams.
@@ -962,6 +962,9 @@ class HttpRequest {
     const method = update.method || this.method;
     const url = update.url || this.url;
     const responseType = update.responseType || this.responseType;
+    // Carefully handle the transferCache to differentiate between
+    // `false` and `undefined` in the update args.
+    const transferCache = update.transferCache ?? this.transferCache;
     // The body is somewhat special - a `null` value in update.body means
     // whatever current body is present is being overridden with an empty
     // body, whereas an `undefined` value in update.body implies no
@@ -969,8 +972,8 @@ class HttpRequest {
     const body = update.body !== undefined ? update.body : this.body;
     // Carefully handle the boolean options to differentiate between
     // `false` and `undefined` in the update args.
-    const withCredentials = update.withCredentials !== undefined ? update.withCredentials : this.withCredentials;
-    const reportProgress = update.reportProgress !== undefined ? update.reportProgress : this.reportProgress;
+    const withCredentials = update.withCredentials ?? this.withCredentials;
+    const reportProgress = update.reportProgress ?? this.reportProgress;
     // Headers and params may be appended to if `setHeaders` or
     // `setParams` are used.
     let headers = update.headers || this.headers;
@@ -994,7 +997,8 @@ class HttpRequest {
       context,
       reportProgress,
       responseType,
-      withCredentials
+      withCredentials,
+      transferCache
     });
   }
 }
@@ -2941,9 +2945,9 @@ function transferCacheInterceptorFn(req, next) {
   // In the following situations we do not want to cache the request
   if (!isCacheActive ||
   // POST requests are allowed either globally or at request level
-  requestMethod === 'POST' && !globalOptions.includePostRequests && !requestOptions || requestMethod !== 'POST' && !ALLOWED_METHODS.includes(requestMethod) ||
-  // Do not cache request that require authorization
-  req.headers.has('authorization') || req.headers.has('proxy-authorization') || requestOptions === false || globalOptions.filter?.(req) === false) {
+  requestMethod === 'POST' && !globalOptions.includePostRequests && !requestOptions || requestMethod !== 'POST' && !ALLOWED_METHODS.includes(requestMethod) || requestOptions === false ||
+  //
+  globalOptions.filter?.(req) === false) {
     return next(req);
   }
   const transferState = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.TransferState);
@@ -3018,18 +3022,25 @@ function getFilteredHeaders(headers, includeHeaders) {
   }
   return headersMap;
 }
+function sortAndConcatParams(params) {
+  return [...params.keys()].sort().map(k => `${k}=${params.getAll(k)}`).join('&');
+}
 function makeCacheKey(request) {
   // make the params encoded same as a url so it's easy to identify
   const {
     params,
     method,
     responseType,
-    url,
-    body
+    url
   } = request;
-  const encodedParams = params.keys().sort().map(k => `${k}=${params.getAll(k)}`).join('&');
-  const strBody = typeof body === 'string' ? body : '';
-  const key = [method, responseType, url, strBody, encodedParams].join('|');
+  const encodedParams = sortAndConcatParams(params);
+  let serializedBody = request.serializeBody();
+  if (serializedBody instanceof URLSearchParams) {
+    serializedBody = sortAndConcatParams(serializedBody);
+  } else if (typeof serializedBody !== 'string') {
+    serializedBody = '';
+  }
+  const key = [method, responseType, url, serializedBody, encodedParams].join('|');
   const hash = generateHash(key);
   return (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.makeStateKey)(hash);
 }

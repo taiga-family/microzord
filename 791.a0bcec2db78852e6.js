@@ -203,8 +203,8 @@ __webpack_require__.d(__webpack_exports__, {
   "ɵloadChildren": () => (/* binding */ loadChildren)
 });
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.3.1 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(1717);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.3.2 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(5916);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/isObservable.js
 var isObservable = __webpack_require__(4402);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/from.js + 9 modules
@@ -324,8 +324,8 @@ class ConnectableObservable extends Observable/* Observable */.c {
 //# sourceMappingURL=ConnectableObservable.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Subject.js + 1 modules
 var Subject = __webpack_require__(1413);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.3.1 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(3707);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.3.2 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(582);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/map.js
 var map = __webpack_require__(6354);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/switchMap.js
@@ -422,7 +422,7 @@ var mergeAll = __webpack_require__(6365);
 var platform_browser = __webpack_require__(345);
 ;// CONCATENATED MODULE: ./node_modules/@angular/router/fesm2022/router.mjs
 /**
- * @license Angular v17.3.1
+ * @license Angular v17.3.2
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -2915,6 +2915,13 @@ class OutletInjector {
     this.route = route;
     this.childContexts = childContexts;
     this.parent = parent;
+    /**
+     * A special flag that allows to identify the `OutletInjector` without
+     * referring to the class itself. This is required as a temporary solution,
+     * to have a special handling for this injector in core. Eventually, this
+     * injector should just become an `EnvironmentInjector` without special logic.
+     */
+    this.__ngOutletInjector = true;
   }
   get(token, notFoundValue) {
     if (token === ActivatedRoute) {
@@ -6527,21 +6534,22 @@ let RouterLinkActive = /*#__PURE__*/(() => {
       if (!this.links || !this.router.navigated) return;
       queueMicrotask(() => {
         const hasActiveLinks = this.hasActiveLinks();
+        this.classes.forEach(c => {
+          if (hasActiveLinks) {
+            this.renderer.addClass(this.element.nativeElement, c);
+          } else {
+            this.renderer.removeClass(this.element.nativeElement, c);
+          }
+        });
+        if (hasActiveLinks && this.ariaCurrentWhenActive !== undefined) {
+          this.renderer.setAttribute(this.element.nativeElement, 'aria-current', this.ariaCurrentWhenActive.toString());
+        } else {
+          this.renderer.removeAttribute(this.element.nativeElement, 'aria-current');
+        }
+        // Only emit change if the active state changed.
         if (this._isActive !== hasActiveLinks) {
           this._isActive = hasActiveLinks;
           this.cdr.markForCheck();
-          this.classes.forEach(c => {
-            if (hasActiveLinks) {
-              this.renderer.addClass(this.element.nativeElement, c);
-            } else {
-              this.renderer.removeClass(this.element.nativeElement, c);
-            }
-          });
-          if (hasActiveLinks && this.ariaCurrentWhenActive !== undefined) {
-            this.renderer.setAttribute(this.element.nativeElement, 'aria-current', this.ariaCurrentWhenActive.toString());
-          } else {
-            this.renderer.removeAttribute(this.element.nativeElement, 'aria-current');
-          }
           // Emit on isActiveChange after classes are updated
           this.isActiveChange.emit(hasActiveLinks);
         }
@@ -7668,7 +7676,7 @@ function mapToResolve(provider) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new core_mjs_.Version('17.3.1');
+const VERSION = /*#__PURE__*/new core_mjs_.Version('17.3.2');
 
 /**
  * @module
