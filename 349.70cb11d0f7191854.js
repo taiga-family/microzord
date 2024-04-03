@@ -2049,10 +2049,10 @@ function debounce(durationSelector) {
 var of = __webpack_require__(7673);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/ReplaySubject.js
 var ReplaySubject = __webpack_require__(2771);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.3.2 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(582);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-constants.js
 var taiga_ui_core_constants = __webpack_require__(8048);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.3.2 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(582);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-directives-hint.js
 
 
@@ -2284,6 +2284,90 @@ let TuiHintPointerDirective = /*#__PURE__*/(() => {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+const OFFSET = 8;
+const ARROW_OFFSET = 22;
+const TOP = 0;
+const LEFT = 1;
+let TuiHintPositionDirective = /*#__PURE__*/(() => {
+  class TuiHintPositionDirective extends taiga_ui_core_abstract/* TuiPositionAccessor */.dg {
+    constructor(options, viewport, directive, accessors) {
+      super();
+      this.options = options;
+      this.viewport = viewport;
+      this.directive = directive;
+      this.accessors = accessors;
+      this.points = taiga_ui_core_constants/* TUI_HINT_DIRECTIONS */.G$.reduce((acc, direction) => Object.assign(Object.assign({}, acc), {
+        [direction]: [0, 0]
+      }), {});
+      this.direction = this.options.direction;
+      this.type = 'hint';
+    }
+    getPosition({
+      width,
+      height
+    }) {
+      var _a, _b;
+      const hostRect = (_b = (_a = this.accessor) === null || _a === void 0 ? void 0 : _a.getClientRect()) !== null && _b !== void 0 ? _b : taiga_ui_cdk_constants/* EMPTY_CLIENT_RECT */.Lo;
+      const leftCenter = hostRect.left + hostRect.width / 2;
+      const topCenter = hostRect.top + hostRect.height / 2;
+      this.points['top-left'][TOP] = hostRect.top - height - OFFSET;
+      this.points['top-left'][LEFT] = leftCenter - width + ARROW_OFFSET;
+      this.points.top[TOP] = this.points['top-left'][TOP];
+      this.points.top[LEFT] = leftCenter - width / 2;
+      this.points['top-right'][TOP] = this.points['top-left'][TOP];
+      this.points['top-right'][LEFT] = leftCenter - ARROW_OFFSET;
+      this.points['bottom-left'][TOP] = hostRect.bottom + OFFSET;
+      this.points['bottom-left'][LEFT] = this.points['top-left'][LEFT];
+      this.points.bottom[TOP] = this.points['bottom-left'][TOP];
+      this.points.bottom[LEFT] = this.points.top[LEFT];
+      this.points['bottom-right'][TOP] = this.points['bottom-left'][TOP];
+      this.points['bottom-right'][LEFT] = this.points['top-right'][LEFT];
+      this.points['left-top'][TOP] = topCenter - height + ARROW_OFFSET;
+      this.points['left-top'][LEFT] = hostRect.left - width - OFFSET;
+      this.points.left[TOP] = topCenter - height / 2;
+      this.points.left[LEFT] = this.points['left-top'][LEFT];
+      this.points['left-bottom'][TOP] = topCenter - ARROW_OFFSET;
+      this.points['left-bottom'][LEFT] = this.points['left-top'][LEFT];
+      this.points['right-top'][TOP] = this.points['left-top'][TOP];
+      this.points['right-top'][LEFT] = hostRect.right + OFFSET;
+      this.points.right[TOP] = this.points.left[TOP];
+      this.points.right[LEFT] = this.points['right-top'][LEFT];
+      this.points['right-bottom'][TOP] = this.points['left-bottom'][TOP];
+      this.points['right-bottom'][LEFT] = this.points['right-top'][LEFT];
+      if (this.checkPosition(this.points[this.direction], width, height)) {
+        return this.points[this.direction];
+      }
+      const direction = taiga_ui_core_constants/* TUI_HINT_DIRECTIONS */.G$.find(direction => this.checkPosition(this.points[direction], width, height));
+      return this.points[direction || this.fallback];
+    }
+    get accessor() {
+      return (0,taiga_ui_core_abstract/* tuiFallbackRectAccessor */.GR)('hint')(this.accessors, this.directive);
+    }
+    get fallback() {
+      return this.points.top[TOP] > this.viewport.getClientRect().bottom - this.points.bottom[TOP] ? 'top' : 'bottom';
+    }
+    checkPosition([top, left], width, height) {
+      const viewport = this.viewport.getClientRect();
+      return top > OFFSET && left > OFFSET && top + height < viewport.bottom - OFFSET && left + width < viewport.right - OFFSET;
+    }
+  }
+  TuiHintPositionDirective.ɵfac = function TuiHintPositionDirective_Factory(t) {
+    return new (t || TuiHintPositionDirective)(core_mjs_["ɵɵdirectiveInject"](TUI_HINT_OPTIONS), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_VIEWPORT */.ob), core_mjs_["ɵɵdirectiveInject"](TuiHintDirective), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_abstract/* TuiRectAccessor */.cf));
+  };
+  TuiHintPositionDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiHintPositionDirective,
+    selectors: [["", "tuiHint", "", 5, "ng-container", 5, "ng-template"]],
+    inputs: {
+      direction: [core_mjs_["ɵɵInputFlags"].None, "tuiHintDirection", "direction"]
+    },
+    features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
+  (0,tslib_es6/* __decorate */.Cg)([taiga_ui_cdk_decorators/* tuiPure */.PE], TuiHintPositionDirective.prototype, "accessor", null);
+  return TuiHintPositionDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
 const GAP = 4;
 let TuiHintComponent = /*#__PURE__*/(() => {
   class TuiHintComponent {
@@ -2355,7 +2439,7 @@ let TuiHintComponent = /*#__PURE__*/(() => {
         core_mjs_["ɵɵclassProp"]("_untouchable", ctx.pointer);
       }
     },
-    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.ew, taiga_ui_core_services/* TuiPositionService */.ZE, TuiHoveredService, (0,taiga_ui_core_abstract/* tuiPositionAccessorFor */.mI)('hint'), (0,taiga_ui_core_abstract/* tuiRectAccessorFor */.Z3)('hint', TuiHintDirective)])],
+    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.ew, taiga_ui_core_services/* TuiPositionService */.ZE, TuiHoveredService, (0,taiga_ui_core_abstract/* tuiPositionAccessorFor */.mI)('hint', TuiHintPositionDirective), (0,taiga_ui_core_abstract/* tuiRectAccessorFor */.Z3)('hint', TuiHintDirective)])],
     ngContentSelectors: _c0,
     decls: 2,
     vars: 2,
@@ -2502,90 +2586,6 @@ let TuiHintManualDirective = /*#__PURE__*/(/* unused pure expression or super */
   });
   return TuiHintManualDirective;
 })()));
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const OFFSET = 8;
-const ARROW_OFFSET = 22;
-const TOP = 0;
-const LEFT = 1;
-let TuiHintPositionDirective = /*#__PURE__*/(() => {
-  class TuiHintPositionDirective extends taiga_ui_core_abstract/* TuiPositionAccessor */.dg {
-    constructor(options, viewport, directive, accessors) {
-      super();
-      this.options = options;
-      this.viewport = viewport;
-      this.directive = directive;
-      this.accessors = accessors;
-      this.points = taiga_ui_core_constants/* TUI_HINT_DIRECTIONS */.G$.reduce((acc, direction) => Object.assign(Object.assign({}, acc), {
-        [direction]: [0, 0]
-      }), {});
-      this.direction = this.options.direction;
-      this.type = 'hint';
-    }
-    getPosition({
-      width,
-      height
-    }) {
-      var _a, _b;
-      const hostRect = (_b = (_a = this.accessor) === null || _a === void 0 ? void 0 : _a.getClientRect()) !== null && _b !== void 0 ? _b : taiga_ui_cdk_constants/* EMPTY_CLIENT_RECT */.Lo;
-      const leftCenter = hostRect.left + hostRect.width / 2;
-      const topCenter = hostRect.top + hostRect.height / 2;
-      this.points['top-left'][TOP] = hostRect.top - height - OFFSET;
-      this.points['top-left'][LEFT] = leftCenter - width + ARROW_OFFSET;
-      this.points.top[TOP] = this.points['top-left'][TOP];
-      this.points.top[LEFT] = leftCenter - width / 2;
-      this.points['top-right'][TOP] = this.points['top-left'][TOP];
-      this.points['top-right'][LEFT] = leftCenter - ARROW_OFFSET;
-      this.points['bottom-left'][TOP] = hostRect.bottom + OFFSET;
-      this.points['bottom-left'][LEFT] = this.points['top-left'][LEFT];
-      this.points.bottom[TOP] = this.points['bottom-left'][TOP];
-      this.points.bottom[LEFT] = this.points.top[LEFT];
-      this.points['bottom-right'][TOP] = this.points['bottom-left'][TOP];
-      this.points['bottom-right'][LEFT] = this.points['top-right'][LEFT];
-      this.points['left-top'][TOP] = topCenter - height + ARROW_OFFSET;
-      this.points['left-top'][LEFT] = hostRect.left - width - OFFSET;
-      this.points.left[TOP] = topCenter - height / 2;
-      this.points.left[LEFT] = this.points['left-top'][LEFT];
-      this.points['left-bottom'][TOP] = topCenter - ARROW_OFFSET;
-      this.points['left-bottom'][LEFT] = this.points['left-top'][LEFT];
-      this.points['right-top'][TOP] = this.points['left-top'][TOP];
-      this.points['right-top'][LEFT] = hostRect.right + OFFSET;
-      this.points.right[TOP] = this.points.left[TOP];
-      this.points.right[LEFT] = this.points['right-top'][LEFT];
-      this.points['right-bottom'][TOP] = this.points['left-bottom'][TOP];
-      this.points['right-bottom'][LEFT] = this.points['right-top'][LEFT];
-      if (this.checkPosition(this.points[this.direction], width, height)) {
-        return this.points[this.direction];
-      }
-      const direction = taiga_ui_core_constants/* TUI_HINT_DIRECTIONS */.G$.find(direction => this.checkPosition(this.points[direction], width, height));
-      return this.points[direction || this.fallback];
-    }
-    get accessor() {
-      return (0,taiga_ui_core_abstract/* tuiFallbackRectAccessor */.GR)('hint')(this.accessors, this.directive);
-    }
-    get fallback() {
-      return this.points.top[TOP] > this.viewport.getClientRect().bottom - this.points.bottom[TOP] ? 'top' : 'bottom';
-    }
-    checkPosition([top, left], width, height) {
-      const viewport = this.viewport.getClientRect();
-      return top > OFFSET && left > OFFSET && top + height < viewport.bottom - OFFSET && left + width < viewport.right - OFFSET;
-    }
-  }
-  TuiHintPositionDirective.ɵfac = function TuiHintPositionDirective_Factory(t) {
-    return new (t || TuiHintPositionDirective)(core_mjs_["ɵɵdirectiveInject"](TUI_HINT_OPTIONS), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_VIEWPORT */.ob), core_mjs_["ɵɵdirectiveInject"](TuiHintDirective), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_abstract/* TuiRectAccessor */.cf));
-  };
-  TuiHintPositionDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiHintPositionDirective,
-    selectors: [["", "tuiHint", "", 3, "tuiHintCustomPosition", "", 5, "ng-container", 5, "ng-template"]],
-    inputs: {
-      direction: [core_mjs_["ɵɵInputFlags"].None, "tuiHintDirection", "direction"]
-    },
-    features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_abstract/* tuiAsPositionAccessor */.nR)(TuiHintPositionDirective)]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-  });
-  (0,tslib_es6/* __decorate */.Cg)([taiga_ui_cdk_decorators/* tuiPure */.PE], TuiHintPositionDirective.prototype, "accessor", null);
-  return TuiHintPositionDirective;
-})();
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
@@ -3901,7 +3901,8 @@ let TuiTextfieldComponent = /*#__PURE__*/(() => {
       return this.el.nativeElement.id || this.idService.generate();
     }
     get inputMode() {
-      return this.el.nativeElement.inputMode || this.host.inputMode;
+      const mode = this.el.nativeElement.inputMode || this.host.inputMode;
+      return mode === 'text' ? null : mode;
     }
   }
   TuiTextfieldComponent.ɵfac = function TuiTextfieldComponent_Factory(t) {
@@ -4929,6 +4930,79 @@ let TuiDropdownOptionsDirective = /*#__PURE__*/(() => {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+let TuiDropdownPositionDirective = /*#__PURE__*/(() => {
+  class TuiDropdownPositionDirective extends taiga_ui_core_abstract/* TuiPositionAccessor */.dg {
+    constructor(options, viewport, accessors, directive) {
+      super();
+      this.options = options;
+      this.viewport = viewport;
+      this.accessors = accessors;
+      this.directive = directive;
+      this.type = 'dropdown';
+    }
+    getPosition({
+      width,
+      height
+    }) {
+      var _a, _b;
+      if (!width && !height) {
+        this.previous = undefined;
+      }
+      const hostRect = (_b = (_a = this.accessor) === null || _a === void 0 ? void 0 : _a.getClientRect()) !== null && _b !== void 0 ? _b : taiga_ui_cdk_constants/* EMPTY_CLIENT_RECT */.Lo;
+      const viewportRect = this.viewport.getClientRect();
+      const {
+        minHeight,
+        align,
+        direction,
+        offset,
+        limitWidth
+      } = this.options;
+      const viewport = {
+        top: viewportRect.top - offset,
+        bottom: viewportRect.bottom + offset,
+        right: viewportRect.right - offset,
+        left: viewportRect.left + offset
+      };
+      const previous = this.previous || direction || 'bottom';
+      const available = {
+        top: hostRect.top - 2 * offset - viewport.top,
+        bottom: viewport.bottom - hostRect.bottom - 2 * offset
+      };
+      const rectWidth = limitWidth === 'fixed' ? hostRect.width : width;
+      const right = Math.max(hostRect.right - rectWidth, offset);
+      const left = hostRect.left + width < viewport.right ? hostRect.left : right;
+      const position = {
+        top: hostRect.top - offset - height,
+        bottom: hostRect.bottom + offset,
+        right: Math.max(viewport.left, right),
+        center: hostRect.left + hostRect.width / 2 + width / 2 < viewport.right ? hostRect.left + hostRect.width / 2 - width / 2 : right,
+        left: Math.max(viewport.left, left)
+      };
+      const better = available.top > available.bottom ? 'top' : 'bottom';
+      if (available[previous] > minHeight && direction || available[previous] > height) {
+        return [position[previous], position[align]];
+      }
+      this.previous = better;
+      return [position[better], position[align]];
+    }
+    get accessor() {
+      return (0,taiga_ui_core_abstract/* tuiFallbackRectAccessor */.GR)('dropdown')(this.accessors, this.directive);
+    }
+  }
+  TuiDropdownPositionDirective.ɵfac = function TuiDropdownPositionDirective_Factory(t) {
+    return new (t || TuiDropdownPositionDirective)(core_mjs_["ɵɵdirectiveInject"](TUI_DROPDOWN_OPTIONS), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_VIEWPORT */.ob), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_abstract/* TuiRectAccessor */.cf), core_mjs_["ɵɵdirectiveInject"](TuiDropdownDirective));
+  };
+  TuiDropdownPositionDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: TuiDropdownPositionDirective,
+    selectors: [["", "tuiDropdown", ""]],
+    features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
+  (0,tslib_es6/* __decorate */.Cg)([taiga_ui_cdk_decorators/* tuiPure */.PE], TuiDropdownPositionDirective.prototype, "accessor", null);
+  return TuiDropdownPositionDirective;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
 
 /**
  * @description:
@@ -5053,7 +5127,7 @@ let TuiDropdownComponent = /*#__PURE__*/(() => {
         core_mjs_["ɵɵattribute"]("data-appearance", ctx.options.appearance);
       }
     },
-    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.ew, taiga_ui_core_services/* TuiPositionService */.ZE, (0,taiga_ui_core_abstract/* tuiPositionAccessorFor */.mI)('dropdown'), (0,taiga_ui_core_abstract/* tuiRectAccessorFor */.Z3)('dropdown', TuiDropdownDirective), taiga_ui_core_providers/* MODE_PROVIDER */.si])],
+    features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.ew, taiga_ui_core_services/* TuiPositionService */.ZE, (0,taiga_ui_core_abstract/* tuiPositionAccessorFor */.mI)('dropdown', TuiDropdownPositionDirective), (0,taiga_ui_core_abstract/* tuiRectAccessorFor */.Z3)('dropdown', TuiDropdownDirective), taiga_ui_core_providers/* MODE_PROVIDER */.si])],
     decls: 5,
     vars: 4,
     consts: [["activeZone", "tuiActiveZone"], ["tuiActiveZone", "", "tuiOverscroll", "all", 1, "t-scroll", 3, "tuiHoveredChange"], ["tabindex", "0", 3, "focus"], ["class", "t-primitive", 4, "polymorpheusOutlet", "polymorpheusOutletContext"], [1, "t-primitive"]],
@@ -5265,79 +5339,6 @@ let TuiDropdownManualDirective = /*#__PURE__*/(() => {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-let TuiDropdownPositionDirective = /*#__PURE__*/(() => {
-  class TuiDropdownPositionDirective extends taiga_ui_core_abstract/* TuiPositionAccessor */.dg {
-    constructor(options, viewport, accessors, directive) {
-      super();
-      this.options = options;
-      this.viewport = viewport;
-      this.accessors = accessors;
-      this.directive = directive;
-      this.type = 'dropdown';
-    }
-    getPosition({
-      width,
-      height
-    }) {
-      var _a, _b;
-      if (!width && !height) {
-        this.previous = undefined;
-      }
-      const hostRect = (_b = (_a = this.accessor) === null || _a === void 0 ? void 0 : _a.getClientRect()) !== null && _b !== void 0 ? _b : taiga_ui_cdk_constants/* EMPTY_CLIENT_RECT */.Lo;
-      const viewportRect = this.viewport.getClientRect();
-      const {
-        minHeight,
-        align,
-        direction,
-        offset,
-        limitWidth
-      } = this.options;
-      const viewport = {
-        top: viewportRect.top - offset,
-        bottom: viewportRect.bottom + offset,
-        right: viewportRect.right - offset,
-        left: viewportRect.left + offset
-      };
-      const previous = this.previous || direction || 'bottom';
-      const available = {
-        top: hostRect.top - 2 * offset - viewport.top,
-        bottom: viewport.bottom - hostRect.bottom - 2 * offset
-      };
-      const rectWidth = limitWidth === 'fixed' ? hostRect.width : width;
-      const right = Math.max(hostRect.right - rectWidth, offset);
-      const left = hostRect.left + width < viewport.right ? hostRect.left : right;
-      const position = {
-        top: hostRect.top - offset - height,
-        bottom: hostRect.bottom + offset,
-        right: Math.max(viewport.left, right),
-        center: hostRect.left + hostRect.width / 2 + width / 2 < viewport.right ? hostRect.left + hostRect.width / 2 - width / 2 : right,
-        left: Math.max(viewport.left, left)
-      };
-      const better = available.top > available.bottom ? 'top' : 'bottom';
-      if (available[previous] > minHeight && direction || available[previous] > height) {
-        return [position[previous], position[align]];
-      }
-      this.previous = better;
-      return [position[better], position[align]];
-    }
-    get accessor() {
-      return (0,taiga_ui_core_abstract/* tuiFallbackRectAccessor */.GR)('dropdown')(this.accessors, this.directive);
-    }
-  }
-  TuiDropdownPositionDirective.ɵfac = function TuiDropdownPositionDirective_Factory(t) {
-    return new (t || TuiDropdownPositionDirective)(core_mjs_["ɵɵdirectiveInject"](TUI_DROPDOWN_OPTIONS), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_tokens/* TUI_VIEWPORT */.ob), core_mjs_["ɵɵdirectiveInject"](taiga_ui_core_abstract/* TuiRectAccessor */.cf), core_mjs_["ɵɵdirectiveInject"](TuiDropdownDirective));
-  };
-  TuiDropdownPositionDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-    type: TuiDropdownPositionDirective,
-    selectors: [["", "tuiDropdown", "", 3, "tuiDropdownCustomPosition", "", 3, "tuiDropdownSided", ""]],
-    features: [core_mjs_["ɵɵProvidersFeature"]([(0,taiga_ui_core_abstract/* tuiAsPositionAccessor */.nR)(TuiDropdownPositionDirective)]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-  });
-  (0,tslib_es6/* __decorate */.Cg)([taiga_ui_cdk_decorators/* tuiPure */.PE], TuiDropdownPositionDirective.prototype, "accessor", null);
-  return TuiDropdownPositionDirective;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
 let TuiDropdownPositionSidedDirective = /*#__PURE__*/(() => {
   class TuiDropdownPositionSidedDirective extends taiga_ui_core_abstract/* TuiPositionAccessor */.dg {
     constructor(options, viewport, vertical) {
@@ -5458,13 +5459,6 @@ let TuiDropdownSelectionDirective = /*#__PURE__*/(/* unused pure expression or s
       return range.cloneRange();
     }
     /**
-     * Check if Node is inside dropdown
-     */
-    boxContains(node) {
-      var _a;
-      return !!((_a = this.dropdown.dropdownBoxRef) === null || _a === void 0 ? void 0 : _a.location.nativeElement.contains(node));
-    }
-    /**
      * Check if given range is at least partially inside dropdown
      */
     inDropdown(range) {
@@ -5505,6 +5499,13 @@ let TuiDropdownSelectionDirective = /*#__PURE__*/(/* unused pure expression or s
       range.setStart(ghost.firstChild, selectionStart || 0);
       range.setEnd(ghost.firstChild, selectionEnd || 0);
       return range;
+    }
+    /**
+     * Check if Node is inside dropdown
+     */
+    boxContains(node) {
+      var _a;
+      return !!((_a = this.dropdown.dropdownBoxRef) === null || _a === void 0 ? void 0 : _a.location.nativeElement.contains(node));
     }
     /**
      * Create an invisible DIV styled exactly like input/textarea element inside directive
@@ -6495,9 +6496,10 @@ let TuiExpandComponent = /*#__PURE__*/(() => {
       return this.expanded || this.state !== State.Idle;
     }
     onTransitionEnd({
-      propertyName
+      propertyName,
+      pseudoElement
     }) {
-      if (propertyName === 'opacity' && this.state === State.Animated) {
+      if (propertyName === 'opacity' && !pseudoElement && this.state === State.Animated) {
         this.state = State.Idle;
       }
     }
@@ -7391,7 +7393,7 @@ let TuiRootComponent = /*#__PURE__*/(() => {
   TuiRootComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiRootComponent,
     selectors: [["tui-root"]],
-    hostAttrs: ["data-tui-version", "3.72.0"],
+    hostAttrs: ["data-tui-version", "3.73.0"],
     hostVars: 9,
     hostBindings: function TuiRootComponent_HostBindings(rf, ctx) {
       if (rf & 1) {
@@ -8118,7 +8120,7 @@ let TuiHostedDropdownComponent = /*#__PURE__*/(() => {
         core_mjs_["ɵɵproperty"]("tuiLet", (tmp_0_0 = core_mjs_["ɵɵpipeBind1"](1, 1, ctx.open$)) !== null && tmp_0_0 !== undefined ? tmp_0_0 : ctx.openChange.value);
       }
     },
-    dependencies: [taiga_ui_cdk_directives_let/* TuiLetDirective */.Nx, TuiAccessorProxyDirective, TuiDropdownOpenMonitorDirective, TuiDropdownDirective, TuiDropdownDriverDirective, TuiDropdownManualDirective, TuiDropdownPositionSidedDirective, taiga_ui_cdk_directives_active_zone_TuiActiveZoneDirective, TuiObscuredDirective, tinkoff_ng_polymorpheus/* PolymorpheusTemplate */.A7, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.OA, common_mjs_.AsyncPipe],
+    dependencies: [taiga_ui_cdk_directives_let/* TuiLetDirective */.Nx, TuiAccessorProxyDirective, TuiDropdownOpenMonitorDirective, TuiDropdownDirective, TuiDropdownDriverDirective, TuiDropdownPositionDirective, TuiDropdownManualDirective, TuiDropdownPositionSidedDirective, taiga_ui_cdk_directives_active_zone_TuiActiveZoneDirective, TuiObscuredDirective, tinkoff_ng_polymorpheus/* PolymorpheusTemplate */.A7, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.OA, common_mjs_.AsyncPipe],
     styles: ["[_nghost-%COMP%]{display:inline-flex}.t-wrapper[_ngcontent-%COMP%]{border-radius:inherit;height:inherit;flex:1 1 auto;width:100%}.t-dropdown[_ngcontent-%COMP%]{height:100%}.t-primitive[_ngcontent-%COMP%]{padding:1rem}"],
     changeDetection: 0
   });
@@ -10960,7 +10962,7 @@ function tuiDateStreamWithTransformer(transformer) {
     useFactory: tuiControlValueFactory
   };
 }
-const TUI_COUNTRIES_MASKS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.gc)({
+const TUI_COUNTRIES_DEFAULT_MASKS = {
   [taiga_ui_i18n_enums/* TuiCountryIsoCode */.p.AD]: '+376###-###',
   [taiga_ui_i18n_enums/* TuiCountryIsoCode */.p.AE]: '+971-##-###-####',
   [taiga_ui_i18n_enums/* TuiCountryIsoCode */.p.AF]: '+93##-###-####',
@@ -11176,7 +11178,11 @@ const TUI_COUNTRIES_MASKS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken
   [taiga_ui_i18n_enums/* TuiCountryIsoCode */.p.ZA]: '+27##-###-####',
   [taiga_ui_i18n_enums/* TuiCountryIsoCode */.p.ZM]: '+260##-###-####',
   [taiga_ui_i18n_enums/* TuiCountryIsoCode */.p.ZW]: '+263#-######'
-});
+};
+const TUI_COUNTRIES_MASKS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.gc)(TUI_COUNTRIES_DEFAULT_MASKS);
+function tuiCountriesMasksProvider(options) {
+  return tuiProvideOptions(TUI_COUNTRIES_MASKS, options, TUI_COUNTRIES_DEFAULT_MASKS);
+}
 
 // TODO: Refactor to use `AbstractTuiValueTransformer` and add ability to provide it for all controls
 /**
@@ -32132,7 +32138,7 @@ const CHAR_ZERO_WIDTH_SPACE = '\u200B';
  * Array of icons used in taiga-ui components
  */
 const TUI_USED_ICONS = (/* unused pure expression or super */ null && (['tuiIconMirMono', 'tuiIconVisaMono', 'tuiIconElectronMono', 'tuiIconMastercard', 'tuiIconMaestro', 'tuiIconAmex', 'tuiIconDinersClub', 'tuiIconDiscover', 'tuiIconHumo', 'tuiIconJCB', 'tuiIconRuPay', 'tuiIconUnionPay', 'tuiIconUzcard', 'tuiIconVerve', 'tuiIconCopyLarge', 'tuiIconCheckLarge', 'tuiIconLink', 'tuiIconSearch', 'tuiIconSun', 'tuiIconMoon', 'tuiIconCode', 'tuiIconMenuLarge', 'tuiIconRotate', 'tuiIconArrowLeft', 'tuiIconArrowRight', 'tuiIconPlus', 'tuiIconMinus', 'tuiIconMinimize', 'tuiIconEye', 'tuiIconEyeOff', 'tuiIconDrag', 'tuiIconSortAscending', 'tuiIconSortDescending', 'tuiIconSortOff', 'tuiIconCheck', 'tuiIconMinusLarge', 'tuiIconChevronUp', 'tuiIconHelpCircle', 'tuiIconClose', 'tuiIconAlertCircle', 'tuiIconChevronRight', 'tuiIconInfo', 'tuiIconCheckCircle', 'tuiIconXCircle', 'tuiIconChevronLeft', 'tuiIconStarLarge', 'tuiIconChevronDown', 'tuiIconChevronDownLarge', 'tuiIconFileLarge', 'tuiIconCheckCircleLarge', 'tuiIconAlertCircleLarge', 'tuiIconTrashLarge', 'tuiIconCopy', 'tuiIconEyeOffLarge', 'tuiIconEyeLarge', 'tuiIconClock', 'tuiIconClockLarge', 'tuiIconToggleOff', 'tuiIconToggleOffLarge', 'tuiIconToggleOn', 'tuiIconToggleOnLarge', 'tuiIconCalendar', 'tuiIconCalendarLarge']));
-const TUI_VERSION = '3.72.0';
+const TUI_VERSION = '3.73.0';
 
 /**
  * Generated bundle index. Do not edit.
@@ -34858,6 +34864,7 @@ fallback = 'rgba(0, 0, 0, 0.7)') {
 /* harmony export */   nR: () => (/* binding */ tuiAsPositionAccessor),
 /* harmony export */   yq: () => (/* binding */ tuiAsRectAccessor)
 /* harmony export */ });
+/* unused harmony export tuiFallbackAccessor */
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5916);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4340);
@@ -34959,13 +34966,19 @@ let AbstractTuiTextfieldHost = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+// TODO: Drop any
+function tuiFallbackAccessor(type) {
+  return (accessors, fallback) => (accessors === null || accessors === void 0 ? void 0 : accessors.find(accessor => accessor !== fallback && accessor.type === type)) || fallback;
+}
+
 // eslint-disable-next-line @typescript-eslint/naming-convention
 class TuiPositionAccessor {}
-function tuiPositionAccessorFor(type) {
+// TODO: Make fallback required
+function tuiPositionAccessorFor(type, fallback) {
   return {
     provide: TuiPositionAccessor,
-    deps: [[new _angular_core__WEBPACK_IMPORTED_MODULE_0__.SkipSelf(), TuiPositionAccessor]],
-    useFactory: accessors => accessors.find(accessor => accessor.type === type)
+    deps: fallback ? [[new _angular_core__WEBPACK_IMPORTED_MODULE_0__.SkipSelf(), new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Optional(), TuiPositionAccessor], fallback] : [[new _angular_core__WEBPACK_IMPORTED_MODULE_0__.SkipSelf(), new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Optional(), TuiPositionAccessor]],
+    useFactory: tuiFallbackAccessor(type)
   };
 }
 function tuiAsPositionAccessor(useExisting) {
@@ -34982,13 +34995,11 @@ class TuiRectAccessor {}
 function tuiRectAccessorFor(type, fallback) {
   return {
     provide: TuiRectAccessor,
-    deps: [[new _angular_core__WEBPACK_IMPORTED_MODULE_0__.SkipSelf(), TuiRectAccessor], fallback],
-    useFactory: tuiFallbackRectAccessor(type)
+    deps: [[new _angular_core__WEBPACK_IMPORTED_MODULE_0__.SkipSelf(), new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Optional(), TuiRectAccessor], fallback],
+    useFactory: tuiFallbackAccessor(type)
   };
 }
-function tuiFallbackRectAccessor(type) {
-  return (accessors, fallback) => accessors.find(accessor => accessor !== fallback && accessor.type === type) || fallback;
-}
+const tuiFallbackRectAccessor = tuiFallbackAccessor;
 function tuiAsRectAccessor(useExisting) {
   return {
     provide: TuiRectAccessor,
