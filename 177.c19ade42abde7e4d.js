@@ -108,10 +108,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵparseCookieValue": () => (/* binding */ parseCookieValue),
 /* harmony export */   "ɵsetRootDomAdapter": () => (/* binding */ setRootDomAdapter)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3171);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8846);
 /**
- * @license Angular v17.3.3
- * (c) 2010-2022 Google LLC. https://angular.io/
+ * @license Angular v17.3.8
+ * (c) 2010-2024 Google LLC. https://angular.io/
  * License: MIT
  */
 
@@ -5462,7 +5462,7 @@ function isPlatformWorkerUi(platformId) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.3.3');
+const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.3.8');
 
 /**
  * Defines a scroll position manager. Implemented by `BrowserViewportScroller`.
@@ -5826,18 +5826,16 @@ function createImagekitUrl(path, config) {
     src,
     width
   } = config;
-  let urlSegments;
+  const params = [];
   if (width) {
-    const params = `tr:w-${width}`;
-    urlSegments = [path, params, src];
-  } else {
-    urlSegments = [path, src];
+    params.push(`w-${width}`);
   }
-  const url = new URL(urlSegments.join('/'));
   // When requesting a placeholder image we ask for a low quality image to reduce the load time.
   if (config.isPlaceholder) {
-    url.searchParams.set('q', PLACEHOLDER_QUALITY);
+    params.push(`q-${PLACEHOLDER_QUALITY}`);
   }
+  const urlSegments = params.length ? [path, `tr:${params.join(',')}`, src] : [path, src];
+  const url = new URL(urlSegments.join('/'));
   return url.href;
 }
 

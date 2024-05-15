@@ -1665,7 +1665,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵɵviewQuerySignal": () => (/* binding */ ɵɵviewQuerySignal)
 /* harmony export */ });
 /* harmony import */ var _home_runner_work_microzord_microzord_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(467);
-/* harmony import */ var _angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4659);
+/* harmony import */ var _angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5942);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1413);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8359);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4412);
@@ -1673,8 +1673,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1594);
 
 /**
- * @license Angular v17.3.3
- * (c) 2010-2022 Google LLC. https://angular.io/
+ * @license Angular v17.3.8
+ * (c) 2010-2024 Google LLC. https://angular.io/
  * License: MIT
  */
 
@@ -3319,7 +3319,7 @@ class NullInjector {
  * The strategy that the default change detector uses to detect changes.
  * When set, takes effect the next time change detection is triggered.
  *
- * @see {@link ChangeDetectorRef#usage-notes Change detection usage}
+ * @see [Change detection usage](/api/core/ChangeDetectorRef?tab=usage-notes)
  *
  * @publicApi
  */
@@ -17263,7 +17263,7 @@ function createRootComponent(componentView, rootComponentDef, rootDirectives, ho
 function setRootNodeAttributes(hostRenderer, componentDef, hostRNode, rootSelectorOrNode) {
   if (rootSelectorOrNode) {
     // The placeholder will be replaced with the actual version at build time.
-    setUpAttributes(hostRenderer, hostRNode, ['ng-version', '17.3.3']);
+    setUpAttributes(hostRenderer, hostRNode, ['ng-version', '17.3.8']);
   } else {
     // If host element is created as a part of this function call (i.e. `rootSelectorOrNode`
     // is not defined), also apply attributes and classes extracted from component selector.
@@ -20813,9 +20813,13 @@ function scheduleDelayedTrigger(scheduleFn) {
   const lView = getLView();
   const tNode = getCurrentTNode();
   renderPlaceholder(lView, tNode);
-  const cleanupFn = scheduleFn(() => triggerDeferBlock(lView, tNode), lView);
-  const lDetails = getLDeferBlockDetails(lView, tNode);
-  storeTriggerCleanupFn(0 /* TriggerType.Regular */, lDetails, cleanupFn);
+  // Only trigger the scheduled trigger on the browser
+  // since we don't want to delay the server response.
+  if (isPlatformBrowser(lView[INJECTOR])) {
+    const cleanupFn = scheduleFn(() => triggerDeferBlock(lView, tNode), lView);
+    const lDetails = getLDeferBlockDetails(lView, tNode);
+    storeTriggerCleanupFn(0 /* TriggerType.Regular */, lDetails, cleanupFn);
+  }
 }
 /**
  * Schedules prefetching for `on idle` and `on timer` triggers.
@@ -20824,14 +20828,18 @@ function scheduleDelayedTrigger(scheduleFn) {
  */
 function scheduleDelayedPrefetching(scheduleFn) {
   const lView = getLView();
-  const tNode = getCurrentTNode();
-  const tView = lView[TVIEW];
-  const tDetails = getTDeferBlockDetails(tView, tNode);
-  if (tDetails.loadingState === DeferDependenciesLoadingState.NOT_STARTED) {
-    const lDetails = getLDeferBlockDetails(lView, tNode);
-    const prefetch = () => triggerPrefetching(tDetails, lView, tNode);
-    const cleanupFn = scheduleFn(prefetch, lView);
-    storeTriggerCleanupFn(1 /* TriggerType.Prefetch */, lDetails, cleanupFn);
+  // Only trigger the scheduled trigger on the browser
+  // since we don't want to delay the server response.
+  if (isPlatformBrowser(lView[INJECTOR])) {
+    const tNode = getCurrentTNode();
+    const tView = lView[TVIEW];
+    const tDetails = getTDeferBlockDetails(tView, tNode);
+    if (tDetails.loadingState === DeferDependenciesLoadingState.NOT_STARTED) {
+      const lDetails = getLDeferBlockDetails(lView, tNode);
+      const prefetch = () => triggerPrefetching(tDetails, lView, tNode);
+      const cleanupFn = scheduleFn(prefetch, lView);
+      storeTriggerCleanupFn(1 /* TriggerType.Prefetch */, lDetails, cleanupFn);
+    }
   }
 }
 /**
@@ -20858,8 +20866,10 @@ function renderDeferBlockState(newState, tNode, lContainer, skipTimerScheduling 
   ngDevMode && assertDefined(lDetails, 'Expected a defer block state defined');
   const currentState = lDetails[DEFER_BLOCK_STATE];
   if (isValidStateChange(currentState, newState) && isValidStateChange(lDetails[NEXT_DEFER_BLOCK_STATE] ?? -1, newState)) {
+    const injector = hostLView[INJECTOR];
     const tDetails = getTDeferBlockDetails(hostTView, tNode);
-    const needsScheduling = !skipTimerScheduling && (getLoadingBlockAfter(tDetails) !== null || getMinimumDurationForState(tDetails, DeferBlockState.Loading) !== null || getMinimumDurationForState(tDetails, DeferBlockState.Placeholder));
+    // Skips scheduling on the server since it can delay the server response.
+    const needsScheduling = !skipTimerScheduling && isPlatformBrowser(injector) && (getLoadingBlockAfter(tDetails) !== null || getMinimumDurationForState(tDetails, DeferBlockState.Loading) !== null || getMinimumDurationForState(tDetails, DeferBlockState.Placeholder));
     if (ngDevMode && needsScheduling) {
       assertDefined(applyDeferBlockStateWithSchedulingImpl, 'Expected scheduling function to be defined');
     }
@@ -20876,7 +20886,20 @@ function renderDeferBlockState(newState, tNode, lContainer, skipTimerScheduling 
  * created based on the `OutletInjector`.
  */
 function isRouterOutletInjector(currentInjector) {
-  return currentInjector instanceof ChainedInjector && currentInjector.injector.__ngOutletInjector;
+  return currentInjector instanceof ChainedInjector && typeof currentInjector.injector.__ngOutletInjector === 'function';
+}
+/**
+ * Creates an instance of the `OutletInjector` using a private factory
+ * function available on the `OutletInjector` class.
+ *
+ * @param parentOutletInjector Parent OutletInjector, which should be used
+ *                             to produce a new instance.
+ * @param parentInjector An Injector, which should be used as a parent one
+ *                       for a newly created `OutletInjector` instance.
+ */
+function createRouterOutletInjector(parentOutletInjector, parentInjector) {
+  const outletInjector = parentOutletInjector.injector;
+  return outletInjector.__ngOutletInjector(parentInjector);
 }
 /**
  * Applies changes to the DOM to reflect a given state.
@@ -20909,8 +20932,17 @@ function applyDeferBlockState(newState, lDetails, lContainer, tNode, hostLView) 
         // we can't inject it. Once the `OutletInjector` is replaced
         // with the `EnvironmentInjector` in Router's code, this special
         // handling can be removed.
-        const parentEnvInjector = isRouterOutletInjector(parentInjector) ? parentInjector : parentInjector.get(EnvironmentInjector);
+        const isParentOutletInjector = isRouterOutletInjector(parentInjector);
+        const parentEnvInjector = isParentOutletInjector ? parentInjector : parentInjector.get(EnvironmentInjector);
         injector = parentEnvInjector.get(CachedInjectorService).getOrCreateInjector(tDetails, parentEnvInjector, providers, ngDevMode ? 'DeferBlock Injector' : '');
+        // Note: this is a continuation of the special case for Router's `OutletInjector`.
+        // Since the `OutletInjector` handles `ActivatedRoute` and `ChildrenOutletContexts`
+        // dynamically (i.e. their values are not really stored statically in an injector),
+        // we need to "wrap" a defer injector into another `OutletInjector`, so we retain
+        // the dynamic resolution of the mentioned tokens.
+        if (isParentOutletInjector) {
+          injector = createRouterOutletInjector(parentInjector, injector);
+        }
       }
     }
     const dehydratedView = findMatchingDehydratedView(lContainer, activeBlockTNode.tView.ssrId);
@@ -21015,7 +21047,7 @@ function triggerResourceLoading(tDetails, lView, tNode) {
     // If the loading status is different from initial one, it means that
     // the loading of dependencies is in progress and there is nothing to do
     // in this function. All details can be obtained from the `tDetails` object.
-    return;
+    return tDetails.loadingPromise ?? Promise.resolve();
   }
   const lDetails = getLDeferBlockDetails(lView, tNode);
   const primaryBlockTNode = getPrimaryBlockTNode(tView, tDetails);
@@ -21045,7 +21077,7 @@ function triggerResourceLoading(tDetails, lView, tNode) {
       tDetails.loadingState = DeferDependenciesLoadingState.COMPLETE;
       pendingTasks.remove(taskId);
     });
-    return;
+    return tDetails.loadingPromise;
   }
   // Start downloading of defer block dependencies.
   tDetails.loadingPromise = Promise.allSettled(dependenciesFn()).then(results => {
@@ -21097,6 +21129,7 @@ function triggerResourceLoading(tDetails, lView, tNode) {
       }
     }
   });
+  return tDetails.loadingPromise;
 }
 /** Utility function to render placeholder content (if present) */
 function renderPlaceholder(lView, tNode) {
@@ -30764,7 +30797,7 @@ class Version {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new Version('17.3.3');
+const VERSION = /*#__PURE__*/new Version('17.3.8');
 let Console = /*#__PURE__*/(() => {
   class Console {
     log(message) {
@@ -31682,7 +31715,10 @@ let _published = false;
 function publishDefaultGlobalUtils$1() {
   if (!_published) {
     _published = true;
-    setupFrameworkInjectorProfiler();
+    if (typeof window !== 'undefined') {
+      // Only configure the injector profiler when running in the browser.
+      setupFrameworkInjectorProfiler();
+    }
     for (const [methodName, method] of Object.entries(globalUtilsFunctions)) {
       publishGlobalUtil(methodName, method);
     }
@@ -36379,10 +36415,9 @@ function withDomHydration() {
           // The timing is similar to when we start the serialization process
           // on the server.
           //
-          // Note: the cleanup task *MUST* be scheduled within the Angular zone
+          // Note: the cleanup task *MUST* be scheduled within the Angular zone in Zone apps
           // to ensure that change detection is properly run afterward.
           whenStableWithTimeout(appRef, injector).then(() => {
-            NgZone.assertInAngularZone();
             cleanupDehydratedViews(appRef);
             if (typeof ngDevMode !== 'undefined' && ngDevMode) {
               printHydrationStats(injector);

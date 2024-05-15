@@ -203,8 +203,10 @@ __webpack_require__.d(__webpack_exports__, {
   "ɵloadChildren": () => (/* binding */ loadChildren)
 });
 
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.3.3 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(3171);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
+var asyncToGenerator = __webpack_require__(467);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.3.8 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(8846);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/isObservable.js
 var isObservable = __webpack_require__(4402);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/from.js + 9 modules
@@ -324,8 +326,8 @@ class ConnectableObservable extends Observable/* Observable */.c {
 //# sourceMappingURL=ConnectableObservable.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Subject.js + 1 modules
 var Subject = __webpack_require__(1413);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.3.3 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(6077);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.3.8 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(8036);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/map.js
 var map = __webpack_require__(6354);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/switchMap.js
@@ -421,9 +423,10 @@ var mergeAll = __webpack_require__(6365);
 // EXTERNAL MODULE: ./node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
 var platform_browser = __webpack_require__(345);
 ;// CONCATENATED MODULE: ./node_modules/@angular/router/fesm2022/router.mjs
+
 /**
- * @license Angular v17.3.3
- * (c) 2010-2022 Google LLC. https://angular.io/
+ * @license Angular v17.3.8
+ * (c) 2010-2024 Google LLC. https://angular.io/
  * License: MIT
  */
 
@@ -2911,17 +2914,28 @@ let RouterOutlet = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 class OutletInjector {
+  /**
+   * This injector has a special handing for the `ActivatedRoute` and
+   * `ChildrenOutletContexts` tokens: it returns corresponding values for those
+   * tokens dynamically. This behavior is different from the regular injector logic,
+   * when we initialize and store a value, which is later returned for all inject
+   * requests.
+   *
+   * In some cases (e.g. when using `@defer`), this dynamic behavior requires special
+   * handling. This function allows to identify an instance of the `OutletInjector` and
+   * create an instance of it without referring to the class itself (so this logic can
+   * be invoked from the `core` package). This helps to retain dynamic behavior for the
+   * mentioned tokens.
+   *
+   * Note: it's a temporary solution and we should explore how to support this case better.
+   */
+  __ngOutletInjector(parentInjector) {
+    return new OutletInjector(this.route, this.childContexts, parentInjector);
+  }
   constructor(route, childContexts, parent) {
     this.route = route;
     this.childContexts = childContexts;
     this.parent = parent;
-    /**
-     * A special flag that allows to identify the `OutletInjector` without
-     * referring to the class itself. This is required as a temporary solution,
-     * to have a special handling for this injector in core. Eventually, this
-     * injector should just become an `EnvironmentInjector` without special logic.
-     */
-    this.__ngOutletInjector = true;
   }
   get(token, notFoundValue) {
     if (token === ActivatedRoute) {
@@ -4764,7 +4778,10 @@ function createViewTransition(injector, from, to) {
   return injector.get(core_mjs_.NgZone).runOutsideAngular(() => {
     if (!document.startViewTransition || transitionOptions.skipNextTransition) {
       transitionOptions.skipNextTransition = false;
-      return Promise.resolve();
+      // The timing of `startViewTransition` is closer to a macrotask. It won't be called
+      // until the current event loop exits so we use a promise resolved in a timeout instead
+      // of Promise.resolve().
+      return new Promise(resolve => setTimeout(resolve));
     }
     let resolveViewTransitionStarted;
     const viewTransitionStarted = new Promise(resolve => {
@@ -6785,6 +6802,7 @@ let RouterScroller = /*#__PURE__*/(() => {
       this.lastSource = 'imperative';
       this.restoredId = 0;
       this.store = {};
+      this.environmentInjector = (0,core_mjs_.inject)(core_mjs_.EnvironmentInjector);
       // Default both options to 'disabled'
       options.scrollPositionRestoration ||= 'disabled';
       options.anchorScrolling ||= 'disabled';
@@ -6837,16 +6855,26 @@ let RouterScroller = /*#__PURE__*/(() => {
       });
     }
     scheduleScrollEvent(routerEvent, anchor) {
-      this.zone.runOutsideAngular(() => {
-        // The scroll event needs to be delayed until after change detection. Otherwise, we may
+      var _this = this;
+      this.zone.runOutsideAngular( /*#__PURE__*/(0,asyncToGenerator/* default */.A)(function* () {
+        // The scroll event needs to be delayed until after change detection. Otherwise we may
         // attempt to restore the scroll position before the router outlet has fully rendered the
         // component by executing its update block of the template function.
-        setTimeout(() => {
-          this.zone.run(() => {
-            this.transitions.events.next(new Scroll(routerEvent, this.lastSource === 'popstate' ? this.store[this.restoredId] : null, anchor));
+        yield new Promise(resolve => {
+          // TODO(atscott): Attempt to remove the setTimeout in a future PR.
+          setTimeout(() => {
+            resolve();
           });
-        }, 0);
-      });
+          (0,core_mjs_.afterNextRender)(() => {
+            resolve();
+          }, {
+            injector: _this.environmentInjector
+          });
+        });
+        _this.zone.run(() => {
+          _this.transitions.events.next(new Scroll(routerEvent, _this.lastSource === 'popstate' ? _this.store[_this.restoredId] : null, anchor));
+        });
+      }));
     }
     /** @nodoc */
     ngOnDestroy() {
@@ -7676,7 +7704,7 @@ function mapToResolve(provider) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new core_mjs_.Version('17.3.3');
+const VERSION = /*#__PURE__*/new core_mjs_.Version('17.3.8');
 
 /**
  * @module
@@ -7693,6 +7721,45 @@ const VERSION = /*#__PURE__*/new core_mjs_.Version('17.3.3');
 
 
 //# sourceMappingURL=router.mjs.map
+
+/***/ }),
+
+/***/ 467:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ _asyncToGenerator)
+/* harmony export */ });
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+  if (info.done) {
+    resolve(value);
+  } else {
+    Promise.resolve(value).then(_next, _throw);
+  }
+}
+function _asyncToGenerator(fn) {
+  return function () {
+    var self = this,
+      args = arguments;
+    return new Promise(function (resolve, reject) {
+      var gen = fn.apply(self, args);
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+      }
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+      _next(undefined);
+    });
+  };
+}
 
 /***/ })
 
