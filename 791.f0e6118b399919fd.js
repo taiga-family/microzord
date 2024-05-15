@@ -205,8 +205,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
 var asyncToGenerator = __webpack_require__(467);
-// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.3.8 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
-var core_mjs_ = __webpack_require__(8846);
+// EXTERNAL MODULE: consume shared module (default) @angular/core@=17.3.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
+var core_mjs_ = __webpack_require__(6525);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/util/isObservable.js
 var isObservable = __webpack_require__(4402);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/from.js + 9 modules
@@ -326,8 +326,8 @@ class ConnectableObservable extends Observable/* Observable */.c {
 //# sourceMappingURL=ConnectableObservable.js.map
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/Subject.js + 1 modules
 var Subject = __webpack_require__(1413);
-// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.3.8 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
-var common_mjs_ = __webpack_require__(8036);
+// EXTERNAL MODULE: consume shared module (default) @angular/common@=17.3.9 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
+var common_mjs_ = __webpack_require__(2771);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/map.js
 var map = __webpack_require__(6354);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/switchMap.js
@@ -335,7 +335,7 @@ var switchMap = __webpack_require__(5558);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/take.js
 var take = __webpack_require__(6697);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/startWith.js
-var startWith = __webpack_require__(9172);
+var startWith = __webpack_require__(6791);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/filter.js
 var filter = __webpack_require__(5964);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/mergeMap.js + 1 modules
@@ -425,7 +425,7 @@ var platform_browser = __webpack_require__(345);
 ;// CONCATENATED MODULE: ./node_modules/@angular/router/fesm2022/router.mjs
 
 /**
- * @license Angular v17.3.8
+ * @license Angular v17.3.9
  * (c) 2010-2024 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -7704,7 +7704,7 @@ function mapToResolve(provider) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new core_mjs_.Version('17.3.8');
+const VERSION = /*#__PURE__*/new core_mjs_.Version('17.3.9');
 
 /**
  * @module
