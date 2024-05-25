@@ -67,7 +67,7 @@
     "@taiga-ui/icons": "3.80.0",
     "@taiga-ui/kit": "3.80.0",
     "core-js": "3.37.1",
-    "ngx-highlightjs": "10.0.0",
+    "ngx-highlightjs": "11.0.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-router-dom": "6.23.1",
