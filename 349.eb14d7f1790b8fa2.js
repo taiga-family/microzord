@@ -32176,7 +32176,7 @@ const CHAR_ZERO_WIDTH_SPACE = '\u200B';
  * Array of icons used in taiga-ui components
  */
 const TUI_USED_ICONS = (/* unused pure expression or super */ null && (['tuiIconMirMono', 'tuiIconVisaMono', 'tuiIconElectronMono', 'tuiIconMastercard', 'tuiIconMaestro', 'tuiIconAmex', 'tuiIconDinersClub', 'tuiIconDiscover', 'tuiIconHumo', 'tuiIconJCB', 'tuiIconRuPay', 'tuiIconUnionPay', 'tuiIconUzcard', 'tuiIconVerve', 'tuiIconCopyLarge', 'tuiIconCheckLarge', 'tuiIconLink', 'tuiIconSearch', 'tuiIconSun', 'tuiIconMoon', 'tuiIconCode', 'tuiIconMenuLarge', 'tuiIconRotate', 'tuiIconArrowLeft', 'tuiIconArrowRight', 'tuiIconPlus', 'tuiIconMinus', 'tuiIconMinimize', 'tuiIconEye', 'tuiIconEyeOff', 'tuiIconDrag', 'tuiIconSortAscending', 'tuiIconSortDescending', 'tuiIconSortOff', 'tuiIconCheck', 'tuiIconMinusLarge', 'tuiIconChevronUp', 'tuiIconHelpCircle', 'tuiIconClose', 'tuiIconAlertCircle', 'tuiIconChevronRight', 'tuiIconInfo', 'tuiIconCheckCircle', 'tuiIconXCircle', 'tuiIconChevronLeft', 'tuiIconStarLarge', 'tuiIconChevronDown', 'tuiIconChevronDownLarge', 'tuiIconFileLarge', 'tuiIconCheckCircleLarge', 'tuiIconAlertCircleLarge', 'tuiIconTrashLarge', 'tuiIconCopy', 'tuiIconEyeOffLarge', 'tuiIconEyeLarge', 'tuiIconClock', 'tuiIconClockLarge', 'tuiIconToggleOff', 'tuiIconToggleOffLarge', 'tuiIconToggleOn', 'tuiIconToggleOnLarge', 'tuiIconCalendar', 'tuiIconCalendarLarge']));
-const TUI_VERSION = '3.80.0';
+const TUI_VERSION = '3.81.0';
 
 /**
  * Generated bundle index. Do not edit.
@@ -34829,20 +34829,6 @@ function extractLinearGradientIdsFromSvg(svg) {
   return Array.from(new Set(ids));
 }
 /**
- * TODO: remove in v4.0
- * @deprecated
- */
-function setFallbackForGradientFill(svg, fallback) {
-  try {
-    const tree = new DOMParser().parseFromString(svg, 'text/html');
-    tree.body.querySelectorAll('[fill^=url]') // only gradient
-    .forEach(element => element.setAttribute('fill', `${element.getAttribute('fill')} ${fallback}`.trim()));
-    return tree.body.innerHTML.trim();
-  } catch (_a) {
-    return svg;
-  }
-}
-/**
  * @description:
  * Any ‘linearGradient’ attributes which are defined on the referenced
  * element which are not defined on this element are inherited by this element.
@@ -34856,20 +34842,14 @@ function setFallbackForGradientFill(svg, fallback) {
  * Documentation: https://www.w3.org/TR/SVG11/pservers.html
  *
  */
-function tuiSvgLinearGradientProcessor(svg, salt = makeRandomSalt(),
-/**
- * TODO: remove in v4.0
- * @deprecated
- */
-fallback = 'rgba(0, 0, 0, 0.7)') {
+function tuiSvgLinearGradientProcessor(svg, salt = makeRandomSalt()) {
   if ((0,_taiga_ui_cdk_utils_miscellaneous__WEBPACK_IMPORTED_MODULE_0__/* .tuiIsString */ .YB)(svg)) {
     const uniqueIds = extractLinearGradientIdsFromSvg(svg);
-    const rawSvg = uniqueIds.reduce((newSvg, previousId) => {
+    return uniqueIds.reduce((newSvg, previousId) => {
       const escapedId = escapeRegExp(previousId);
       const newId = `id_${salt}_${previousId}`;
       return newSvg.replace(new RegExp(`"${escapedId}"`, 'g'), `"${newId}"`).replace(new RegExp(`'${escapedId}'`, 'g'), `'${newId}'`).replace(new RegExp(`url\\('#${escapedId}'\\)`, 'g'), `url('#${newId}')`).replace(new RegExp(`url\\("#${escapedId}"\\)`, 'g'), `url("#${newId}")`).replace(new RegExp(`url\\(#${escapedId}\\)`, 'g'), `url(#${newId})`);
     }, svg);
-    return setFallbackForGradientFill(rawSvg, fallback);
   }
   return svg;
 }
