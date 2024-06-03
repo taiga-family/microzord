@@ -2167,14 +2167,15 @@ let TuiHintDirective = /*#__PURE__*/(() => {
       this.tuiHintAppearance = null;
       this.type = 'hint';
     }
+    set tuiHint(content) {
+      this.content = content;
+      if (!content) {
+        this.toggle(false);
+      }
+    }
     get appearance() {
       var _a;
       return (_a = this.tuiHintAppearance) !== null && _a !== void 0 ? _a : this.options.appearance;
-    }
-    ngOnChanges() {
-      if (!this.content) {
-        this.toggle(false);
-      }
     }
     ngOnDestroy() {
       this.toggle(false);
@@ -2197,7 +2198,7 @@ let TuiHintDirective = /*#__PURE__*/(() => {
     type: TuiHintDirective,
     selectors: [["", "tuiHint", "", 5, "ng-container", 5, "ng-template"]],
     inputs: {
-      content: [core_mjs_["ɵɵInputFlags"].None, "tuiHint", "content"],
+      tuiHint: "tuiHint",
       context: [core_mjs_["ɵɵInputFlags"].None, "tuiHintContext", "context"],
       tuiHintAppearance: "tuiHintAppearance"
     },
@@ -2205,7 +2206,7 @@ let TuiHintDirective = /*#__PURE__*/(() => {
       provide: tinkoff_ng_polymorpheus/* PolymorpheusComponent */.lS,
       deps: [TUI_HINT_COMPONENT, core_mjs_.INJECTOR],
       useClass: tinkoff_ng_polymorpheus/* PolymorpheusComponent */.lS
-    }]), core_mjs_["ɵɵNgOnChangesFeature"]]
+    }])]
   });
   return TuiHintDirective;
 })();
@@ -2359,7 +2360,7 @@ let TuiHintPositionDirective = /*#__PURE__*/(() => {
     }
     checkPosition([top, left], width, height) {
       const viewport = this.viewport.getClientRect();
-      return top > OFFSET && left > OFFSET && top + height < viewport.bottom - OFFSET && left + width < viewport.right - OFFSET;
+      return top > OFFSET / 4 && left > OFFSET / 4 && top + height < viewport.bottom - OFFSET / 4 && left + width < viewport.right - OFFSET / 4;
     }
   }
   TuiHintPositionDirective.ɵfac = function TuiHintPositionDirective_Factory(t) {
@@ -2411,6 +2412,10 @@ let TuiHintComponent = /*#__PURE__*/(() => {
       }
     }
     update(top, left) {
+      if (!this.hover.el.nativeElement.isConnected) {
+        this.hover.toggle(false);
+        return;
+      }
       const {
         height,
         width
@@ -4299,11 +4304,13 @@ let TuiScrollbarDirective = /*#__PURE__*/(() => {
         const horizontal = getOffsetHorizontal(event, rect);
         return mousemove$.pipe((0,operators_map/* map */.T)(event => this.getScrolled(event, vertical, horizontal)), (0,takeUntil/* takeUntil */.Q)(mouseup$));
       }))).pipe((0,taiga_ui_cdk_observables/* tuiZonefree */.rB)(zone), (0,takeUntil/* takeUntil */.Q)(destroy$)).subscribe(([scrollTop, scrollLeft]) => {
+        this.element.style.scrollBehavior = 'auto';
         if (this.tuiScrollbar === 'vertical') {
           this.element.scrollTop = scrollTop;
         } else {
           this.element.scrollLeft = scrollLeft;
         }
+        this.element.style.scrollBehavior = '';
       });
       (0,merge/* merge */.h)(animationFrame$.pipe((0,throttleTime/* throttleTime */.c)(taiga_ui_cdk_constants/* POLLING_TIME */.cZ)), (0,taiga_ui_cdk_observables/* tuiScrollFrom */.A5)(this.element)).pipe((0,taiga_ui_cdk_observables/* tuiZonefree */.rB)(zone), (0,takeUntil/* takeUntil */.Q)(destroy$)).subscribe(() => {
         if (this.tuiScrollbar === 'vertical') {
@@ -5032,7 +5039,11 @@ let TuiDropdownComponent = /*#__PURE__*/(() => {
       this.options = options;
       this.hoverDirective = hoverDirective;
       position$.pipe((0,operators_map/* map */.T)(point => this.directive.position === 'fixed' ? vvs.correct(point) : point), (0,takeUntil/* takeUntil */.Q)(destroy$)).subscribe(([top, left]) => {
-        this.update(top, left);
+        if (this.directive.el.nativeElement.isConnected) {
+          this.update(top, left);
+        } else {
+          this.directive.toggle(false);
+        }
       });
       this.updateWidth(this.accessor.getClientRect().width);
     }
@@ -7437,7 +7448,7 @@ let TuiRootComponent = /*#__PURE__*/(() => {
   TuiRootComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiRootComponent,
     selectors: [["tui-root"]],
-    hostAttrs: ["data-tui-version", "3.81.0"],
+    hostAttrs: ["data-tui-version", "3.82.0"],
     hostVars: 9,
     hostBindings: function TuiRootComponent_HostBindings(rf, ctx) {
       if (rf & 1) {
@@ -11331,11 +11342,15 @@ let taiga_ui_kit_abstract_AbstractTuiNativeSelect = /*#__PURE__*/(() => {
       this.el = el;
       this.idService = idService;
       this.itemsHandlers = itemsHandlers;
+      this.placeholder = '';
       this.disabledItemHandler = null;
       this.datalist = null;
     }
     get id() {
       return this.el.nativeElement.id || this.idService.generate();
+    }
+    get emptyOption() {
+      return !!this.placeholder && !this.control.value;
     }
   }
   AbstractTuiNativeSelect.ɵfac = function AbstractTuiNativeSelect_Factory(t) {
@@ -11359,6 +11374,7 @@ let taiga_ui_kit_abstract_AbstractTuiNativeSelect = /*#__PURE__*/(() => {
       }
     },
     inputs: {
+      placeholder: "placeholder",
       disabledItemHandler: "disabledItemHandler"
     }
   });
@@ -12192,7 +12208,7 @@ const TUI_VALUE_ACCESSOR_PROVIDER = {
 const taiga_ui_kit_components_select_c0 = (/* unused pure expression or super */ null && (["tuiSelect", ""]));
 function TuiNativeSelectComponent_tui_data_list_wrapper_0_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelement(0, "tui-data-list-wrapper", 2);
+    i0.ɵɵelement(0, "tui-data-list-wrapper", 4);
     i0.ɵɵpipe(1, "tuiStringifyContent");
   }
   if (rf & 2) {
@@ -12200,9 +12216,26 @@ function TuiNativeSelectComponent_tui_data_list_wrapper_0_Template(rf, ctx) {
     i0.ɵɵproperty("disabledItemHandler", ctx_r0.disabledItemHandler || ctx_r0.itemsHandlers.disabledItemHandler)("itemContent", i0.ɵɵpipeBind1(1, 3, ctx_r0.stringify))("items", ctx_r0.items);
   }
 }
-function TuiNativeSelectComponent_option_1_Template(rf, ctx) {
+function TuiNativeSelectComponent_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "option", 3);
+    i0.ɵɵelementContainer(0);
+  }
+}
+function TuiNativeSelectComponent_option_3_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "option", 5);
+    i0.ɵɵtext(1);
+    i0.ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = i0.ɵɵnextContext();
+    i0.ɵɵadvance();
+    i0.ɵɵtextInterpolate1(" ", ctx_r0.placeholder, "\n");
+  }
+}
+function TuiNativeSelectComponent_option_4_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "option", 6);
     i0.ɵɵtext(1);
     i0.ɵɵelementEnd();
   }
@@ -12217,7 +12250,7 @@ function TuiNativeSelectComponent_option_1_Template(rf, ctx) {
 const taiga_ui_kit_components_select_c1 = (/* unused pure expression or super */ null && (["tuiSelect", "", "labels", ""]));
 function TuiNativeSelectGroupComponent_tui_data_list_wrapper_0_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelement(0, "tui-data-list-wrapper", 2);
+    i0.ɵɵelement(0, "tui-data-list-wrapper", 4);
     i0.ɵɵpipe(1, "tuiStringifyContent");
   }
   if (rf & 2) {
@@ -12225,9 +12258,26 @@ function TuiNativeSelectGroupComponent_tui_data_list_wrapper_0_Template(rf, ctx)
     i0.ɵɵproperty("disabledItemHandler", ctx_r0.disabledItemHandler || ctx_r0.itemsHandlers.disabledItemHandler)("itemContent", i0.ɵɵpipeBind1(1, 4, ctx_r0.stringify))("items", ctx_r0.items)("labels", ctx_r0.labels);
   }
 }
-function TuiNativeSelectGroupComponent_optgroup_1_option_1_Template(rf, ctx) {
+function TuiNativeSelectGroupComponent_ng_container_1_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementContainer(0);
+  }
+}
+function TuiNativeSelectGroupComponent_option_3_Template(rf, ctx) {
   if (rf & 1) {
     i0.ɵɵelementStart(0, "option", 5);
+    i0.ɵɵtext(1);
+    i0.ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = i0.ɵɵnextContext();
+    i0.ɵɵadvance();
+    i0.ɵɵtextInterpolate1(" ", ctx_r0.placeholder, "\n");
+  }
+}
+function TuiNativeSelectGroupComponent_optgroup_4_option_1_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.ɵɵelementStart(0, "option", 8);
     i0.ɵɵtext(1);
     i0.ɵɵelementEnd();
   }
@@ -12239,10 +12289,10 @@ function TuiNativeSelectGroupComponent_optgroup_1_option_1_Template(rf, ctx) {
     i0.ɵɵtextInterpolate1(" ", ctx_r0.stringify(option_r2), " ");
   }
 }
-function TuiNativeSelectGroupComponent_optgroup_1_Template(rf, ctx) {
+function TuiNativeSelectGroupComponent_optgroup_4_Template(rf, ctx) {
   if (rf & 1) {
-    i0.ɵɵelementStart(0, "optgroup", 3);
-    i0.ɵɵtemplate(1, TuiNativeSelectGroupComponent_optgroup_1_option_1_Template, 2, 4, "option", 4);
+    i0.ɵɵelementStart(0, "optgroup", 6);
+    i0.ɵɵtemplate(1, TuiNativeSelectGroupComponent_optgroup_4_option_1_Template, 2, 4, "option", 7);
     i0.ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -12348,7 +12398,7 @@ let TuiNativeSelectComponent = /*#__PURE__*/(/* unused pure expression or super 
     hostBindings: function TuiNativeSelectComponent_HostBindings(rf, ctx) {
       if (rf & 1) {
         i0.ɵɵlistener("change", function TuiNativeSelectComponent_change_HostBindingHandler($event) {
-          return ctx.onValueChange($event.target.options.selectedIndex);
+          return ctx.onValueChange($event.target.options.selectedIndex - (ctx.emptyOption ? 1 : 0));
         });
       }
       if (rf & 2) {
@@ -12370,19 +12420,25 @@ let TuiNativeSelectComponent = /*#__PURE__*/(/* unused pure expression or super 
       useExisting: TuiNativeSelectComponent
     }]), i0.ɵɵInheritDefinitionFeature],
     attrs: taiga_ui_kit_components_select_c0,
-    decls: 2,
-    vars: 1,
-    consts: [[3, "disabledItemHandler", "itemContent", "items", 4, "tuiDataList"], [3, "disabled", "selected", "value", 4, "ngFor", "ngForOf"], [3, "disabledItemHandler", "itemContent", "items"], [3, "disabled", "selected", "value"]],
+    decls: 5,
+    vars: 5,
+    consts: [[3, "disabledItemHandler", "itemContent", "items", 4, "tuiDataList"], [4, "ngIf"], ["disabled", "", "selected", "", "value", "", 4, "ngIf"], [3, "disabled", "selected", "value", 4, "ngFor", "ngForOf"], [3, "disabledItemHandler", "itemContent", "items"], ["disabled", "", "selected", "", "value", ""], [3, "disabled", "selected", "value"]],
     template: function TuiNativeSelectComponent_Template(rf, ctx) {
       if (rf & 1) {
-        i0.ɵɵtemplate(0, TuiNativeSelectComponent_tui_data_list_wrapper_0_Template, 2, 5, "tui-data-list-wrapper", 0)(1, TuiNativeSelectComponent_option_1_Template, 2, 4, "option", 1);
+        i0.ɵɵtemplate(0, TuiNativeSelectComponent_tui_data_list_wrapper_0_Template, 2, 5, "tui-data-list-wrapper", 0)(1, TuiNativeSelectComponent_ng_container_1_Template, 1, 0, "ng-container", 1);
+        i0.ɵɵpipe(2, "async");
+        i0.ɵɵtemplate(3, TuiNativeSelectComponent_option_3_Template, 2, 1, "option", 2)(4, TuiNativeSelectComponent_option_4_Template, 2, 4, "option", 3);
       }
       if (rf & 2) {
+        i0.ɵɵadvance();
+        i0.ɵɵproperty("ngIf", i0.ɵɵpipeBind1(2, 3, ctx.control.control == null ? null : ctx.control.control.valueChanges));
+        i0.ɵɵadvance(2);
+        i0.ɵɵproperty("ngIf", ctx.emptyOption);
         i0.ɵɵadvance();
         i0.ɵɵproperty("ngForOf", ctx.items);
       }
     },
-    dependencies: [i1.TuiDataListWrapperComponent, i1$1.TuiDataListDirective, i3.NgForOf, i4.TuiStringifyContentPipe],
+    dependencies: [i1.TuiDataListWrapperComponent, i1$1.TuiDataListDirective, i3.NgIf, i3.NgForOf, i4.TuiStringifyContentPipe, i3.AsyncPipe],
     styles: ["[_nghost-%COMP%]{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0}"],
     changeDetection: 0
   });
@@ -12423,7 +12479,7 @@ let TuiNativeSelectGroupComponent = /*#__PURE__*/(/* unused pure expression or s
     hostBindings: function TuiNativeSelectGroupComponent_HostBindings(rf, ctx) {
       if (rf & 1) {
         i0.ɵɵlistener("change", function TuiNativeSelectGroupComponent_change_HostBindingHandler($event) {
-          return ctx.onValueChange($event.target.options.selectedIndex);
+          return ctx.onValueChange($event.target.options.selectedIndex - (ctx.emptyOption ? 1 : 0));
         });
       }
       if (rf & 2) {
@@ -12446,19 +12502,25 @@ let TuiNativeSelectGroupComponent = /*#__PURE__*/(/* unused pure expression or s
       useExisting: TuiNativeSelectGroupComponent
     }]), i0.ɵɵInheritDefinitionFeature],
     attrs: taiga_ui_kit_components_select_c1,
-    decls: 2,
-    vars: 1,
-    consts: [[3, "disabledItemHandler", "itemContent", "items", "labels", 4, "tuiDataList"], [3, "label", 4, "ngFor", "ngForOf"], [3, "disabledItemHandler", "itemContent", "items", "labels"], [3, "label"], [3, "disabled", "selected", "value", 4, "ngFor", "ngForOf"], [3, "disabled", "selected", "value"]],
+    decls: 5,
+    vars: 5,
+    consts: [[3, "disabledItemHandler", "itemContent", "items", "labels", 4, "tuiDataList"], [4, "ngIf"], ["disabled", "", "selected", "", "value", "", 4, "ngIf"], [3, "label", 4, "ngFor", "ngForOf"], [3, "disabledItemHandler", "itemContent", "items", "labels"], ["disabled", "", "selected", "", "value", ""], [3, "label"], [3, "disabled", "selected", "value", 4, "ngFor", "ngForOf"], [3, "disabled", "selected", "value"]],
     template: function TuiNativeSelectGroupComponent_Template(rf, ctx) {
       if (rf & 1) {
-        i0.ɵɵtemplate(0, TuiNativeSelectGroupComponent_tui_data_list_wrapper_0_Template, 2, 6, "tui-data-list-wrapper", 0)(1, TuiNativeSelectGroupComponent_optgroup_1_Template, 2, 2, "optgroup", 1);
+        i0.ɵɵtemplate(0, TuiNativeSelectGroupComponent_tui_data_list_wrapper_0_Template, 2, 6, "tui-data-list-wrapper", 0)(1, TuiNativeSelectGroupComponent_ng_container_1_Template, 1, 0, "ng-container", 1);
+        i0.ɵɵpipe(2, "async");
+        i0.ɵɵtemplate(3, TuiNativeSelectGroupComponent_option_3_Template, 2, 1, "option", 2)(4, TuiNativeSelectGroupComponent_optgroup_4_Template, 2, 2, "optgroup", 3);
       }
       if (rf & 2) {
+        i0.ɵɵadvance();
+        i0.ɵɵproperty("ngIf", i0.ɵɵpipeBind1(2, 3, ctx.control.control == null ? null : ctx.control.control.valueChanges));
+        i0.ɵɵadvance(2);
+        i0.ɵɵproperty("ngIf", ctx.emptyOption);
         i0.ɵɵadvance();
         i0.ɵɵproperty("ngForOf", ctx.items);
       }
     },
-    dependencies: [i1.TuiDataListGroupWrapperComponent, i1$1.TuiDataListDirective, i3.NgForOf, i4.TuiStringifyContentPipe],
+    dependencies: [i1.TuiDataListGroupWrapperComponent, i1$1.TuiDataListDirective, i3.NgIf, i3.NgForOf, i4.TuiStringifyContentPipe, i3.AsyncPipe],
     styles: [taiga_ui_kit_components_select_c2],
     changeDetection: 0
   });
@@ -32176,7 +32238,7 @@ const CHAR_ZERO_WIDTH_SPACE = '\u200B';
  * Array of icons used in taiga-ui components
  */
 const TUI_USED_ICONS = (/* unused pure expression or super */ null && (['tuiIconMirMono', 'tuiIconVisaMono', 'tuiIconElectronMono', 'tuiIconMastercard', 'tuiIconMaestro', 'tuiIconAmex', 'tuiIconDinersClub', 'tuiIconDiscover', 'tuiIconHumo', 'tuiIconJCB', 'tuiIconRuPay', 'tuiIconUnionPay', 'tuiIconUzcard', 'tuiIconVerve', 'tuiIconCopyLarge', 'tuiIconCheckLarge', 'tuiIconLink', 'tuiIconSearch', 'tuiIconSun', 'tuiIconMoon', 'tuiIconCode', 'tuiIconMenuLarge', 'tuiIconRotate', 'tuiIconArrowLeft', 'tuiIconArrowRight', 'tuiIconPlus', 'tuiIconMinus', 'tuiIconMinimize', 'tuiIconEye', 'tuiIconEyeOff', 'tuiIconDrag', 'tuiIconSortAscending', 'tuiIconSortDescending', 'tuiIconSortOff', 'tuiIconCheck', 'tuiIconMinusLarge', 'tuiIconChevronUp', 'tuiIconHelpCircle', 'tuiIconClose', 'tuiIconAlertCircle', 'tuiIconChevronRight', 'tuiIconInfo', 'tuiIconCheckCircle', 'tuiIconXCircle', 'tuiIconChevronLeft', 'tuiIconStarLarge', 'tuiIconChevronDown', 'tuiIconChevronDownLarge', 'tuiIconFileLarge', 'tuiIconCheckCircleLarge', 'tuiIconAlertCircleLarge', 'tuiIconTrashLarge', 'tuiIconCopy', 'tuiIconEyeOffLarge', 'tuiIconEyeLarge', 'tuiIconClock', 'tuiIconClockLarge', 'tuiIconToggleOff', 'tuiIconToggleOffLarge', 'tuiIconToggleOn', 'tuiIconToggleOnLarge', 'tuiIconCalendar', 'tuiIconCalendarLarge']));
-const TUI_VERSION = '3.81.0';
+const TUI_VERSION = '3.82.0';
 
 /**
  * Generated bundle index. Do not edit.
