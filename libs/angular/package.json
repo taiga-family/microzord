@@ -7,7 +7,7 @@
     "@angular/router": "17.3.9"
   },
   "dependencies": {
-    "tslib": "2.6.2",
+    "tslib": "2.6.3",
     "@microzord/core": "2.0.1"
   },
   "publishConfig": {
