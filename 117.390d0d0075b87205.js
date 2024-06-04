@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[691],{
+(self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[117],{
 
-/***/ 4691:
+/***/ 3117:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -9,7 +9,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  NativeInstallationModule: () => (/* binding */ NativeInstallationModule)
+  ReactInstallationModule: () => (/* binding */ ReactInstallationModule)
 });
 
 // EXTERNAL MODULE: consume shared module (default) @angular/router@=17.3.9 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
@@ -22,32 +22,38 @@ var taiga_ui_addon_doc_utils = __webpack_require__(1583);
 var taiga_ui_core_components_link = __webpack_require__(1974);
 // EXTERNAL MODULE: consume shared module (default) @angular/core@=17.3.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
 var core_mjs_ = __webpack_require__(6525);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-components.js + 92 modules
-var taiga_ui_addon_doc_components = __webpack_require__(348);
-;// CONCATENATED MODULE: ./apps/demo/src/app/modules/native-installation/native-installation.component.ts
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-components.js + 93 modules
+var taiga_ui_addon_doc_components = __webpack_require__(3170);
+;// CONCATENATED MODULE: ./apps/demo/src/app/modules/react-installation/react-installation.component.ts
 
 
-let NativeInstallationComponent = /*#__PURE__*/(() => {
-  class NativeInstallationComponent {
-    static #_ = this.ɵfac = function NativeInstallationComponent_Factory(t) {
-      return new (t || NativeInstallationComponent)();
+let ReactInstallationComponent = /*#__PURE__*/(() => {
+  class ReactInstallationComponent {
+    static #_ = this.ɵfac = function ReactInstallationComponent_Factory(t) {
+      return new (t || ReactInstallationComponent)();
     };
     static #_2 = this.ɵcmp = /*@__PURE__*/core_mjs_["ɵɵdefineComponent"]({
-      type: NativeInstallationComponent,
-      selectors: [["native-installation"]],
-      decls: 8,
+      type: ReactInstallationComponent,
+      selectors: [["react-installation"]],
+      decls: 12,
       vars: 0,
-      consts: [["header", "Native JS Installation"]],
-      template: function NativeInstallationComponent_Template(rf, ctx) {
+      consts: [["header", "React Installation"]],
+      template: function ReactInstallationComponent_Template(rf, ctx) {
         if (rf & 1) {
           core_mjs_["ɵɵelementStart"](0, "tui-doc-page", 0)(1, "section")(2, "h2");
           core_mjs_["ɵɵtext"](3, "Package installation");
           core_mjs_["ɵɵelementEnd"]();
           core_mjs_["ɵɵelementStart"](4, "p");
-          core_mjs_["ɵɵtext"](5, "Install the core package:");
+          core_mjs_["ɵɵtext"](5, "Install the core package if you do not have it yet:");
           core_mjs_["ɵɵelementEnd"]();
           core_mjs_["ɵɵelementStart"](6, "code");
           core_mjs_["ɵɵtext"](7, "npm i @microzord/core");
+          core_mjs_["ɵɵelementEnd"]();
+          core_mjs_["ɵɵelementStart"](8, "p");
+          core_mjs_["ɵɵtext"](9, "Install React package for simplifying working with React:");
+          core_mjs_["ɵɵelementEnd"]();
+          core_mjs_["ɵɵelementStart"](10, "code");
+          core_mjs_["ɵɵtext"](11, "npm i @microzord/react");
           core_mjs_["ɵɵelementEnd"]()()();
         }
       },
@@ -55,28 +61,28 @@ let NativeInstallationComponent = /*#__PURE__*/(() => {
       changeDetection: 0
     });
   }
-  return NativeInstallationComponent;
+  return ReactInstallationComponent;
 })();
-;// CONCATENATED MODULE: ./apps/demo/src/app/modules/native-installation/native-installation.module.ts
+;// CONCATENATED MODULE: ./apps/demo/src/app/modules/react-installation/react-installation.module.ts
 
 
 
 
 
 
-let NativeInstallationModule = /*#__PURE__*/(() => {
-  class NativeInstallationModule {
-    static #_ = this.ɵfac = function NativeInstallationModule_Factory(t) {
-      return new (t || NativeInstallationModule)();
+let ReactInstallationModule = /*#__PURE__*/(() => {
+  class ReactInstallationModule {
+    static #_ = this.ɵfac = function ReactInstallationModule_Factory(t) {
+      return new (t || ReactInstallationModule)();
     };
     static #_2 = this.ɵmod = /*@__PURE__*/core_mjs_["ɵɵdefineNgModule"]({
-      type: NativeInstallationModule
+      type: ReactInstallationModule
     });
     static #_3 = this.ɵinj = /*@__PURE__*/core_mjs_["ɵɵdefineInjector"]({
-      imports: [taiga_ui_core_components_link/* TuiLinkModule */.l, taiga_ui_addon_doc.TuiAddonDocModule, router_mjs_.RouterModule.forChild((0,taiga_ui_addon_doc_utils/* tuiGenerateRoutes */.CC)(NativeInstallationComponent))]
+      imports: [taiga_ui_core_components_link/* TuiLinkModule */.l, taiga_ui_addon_doc.TuiAddonDocModule, router_mjs_.RouterModule.forChild((0,taiga_ui_addon_doc_utils/* tuiGenerateRoutes */.CC)(ReactInstallationComponent))]
     });
   }
-  return NativeInstallationModule;
+  return ReactInstallationModule;
 })();
 
 /***/ })
