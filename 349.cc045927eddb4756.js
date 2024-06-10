@@ -2409,7 +2409,7 @@ let TuiHintComponent = /*#__PURE__*/(() => {
       return this.polymorpheus.$implicit.context;
     }
     onClick(target) {
-      if (!this.el.nativeElement.contains(target) && !this.hover.el.nativeElement.contains(target) || (0,taiga_ui_core_utils_miscellaneous/* tuiIsObscured */.GS)(this.hover.el.nativeElement)) {
+      if (!target.closest('tui-hint') && !this.hover.el.nativeElement.contains(target) || (0,taiga_ui_core_utils_miscellaneous/* tuiIsObscured */.GS)(this.hover.el.nativeElement)) {
         this.hover.toggle(false);
       }
     }
@@ -2474,7 +2474,7 @@ let TuiHintComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.OA],
-    styles: ["[_nghost-%COMP%]{position:absolute;max-width:18rem;min-height:var(--tui-height-m);padding:.75rem 1rem;background:var(--tui-primary);border-radius:var(--tui-radius-l);color:var(--tui-primary-text);box-sizing:border-box;font:var(--tui-font-text-s);white-space:pre-line;word-wrap:break-word}[_nghost-%COMP%]:before{content:\"\";position:absolute;top:var(--top);left:var(--left);width:.5rem;height:.5rem;border-radius:.125rem;box-sizing:border-box;background:inherit;transform:translate(-50%,-50%) rotate(45deg)}[data-appearance=error][_nghost-%COMP%]{background:var(--tui-error-fill)}[data-appearance=onDark][_nghost-%COMP%]{background:var(--tui-elevation-02);color:var(--tui-text-01);filter:drop-shadow(0 0 .125rem rgba(0,0,0,.16)) drop-shadow(0 1.5rem 1rem rgba(0,0,0,.03)) drop-shadow(0 .75rem .75rem rgba(0,0,0,.04)) drop-shadow(0 .25rem .375rem rgba(0,0,0,.05))}[_nghost-%COMP%]:not([style*=\"top\"]){visibility:hidden}._untouchable[_nghost-%COMP%]{pointer-events:none}"],
+    styles: ["[_nghost-%COMP%]{position:absolute;max-width:18rem;min-height:var(--tui-height-m);padding:.75rem 1rem;background:var(--tui-primary);border-radius:var(--tui-radius-l);color:var(--tui-primary-text);box-sizing:border-box;font:var(--tui-font-text-s);white-space:pre-line;word-wrap:break-word;line-height:1.25rem}[_nghost-%COMP%]:before{content:\"\";position:absolute;top:var(--top);left:var(--left);width:.5rem;height:.5rem;border-radius:.125rem;box-sizing:border-box;background:inherit;transform:translate(-50%,-50%) rotate(45deg)}[data-appearance=error][_nghost-%COMP%]{background:var(--tui-error-fill)}[data-appearance=onDark][_nghost-%COMP%]{background:var(--tui-elevation-02);color:var(--tui-text-01);filter:drop-shadow(0 0 .125rem rgba(0,0,0,.16)) drop-shadow(0 1.5rem 1rem rgba(0,0,0,.03)) drop-shadow(0 .75rem .75rem rgba(0,0,0,.04)) drop-shadow(0 .25rem .375rem rgba(0,0,0,.05))}[_nghost-%COMP%]:not([style*=\"top\"]){visibility:hidden}._untouchable[_nghost-%COMP%]{pointer-events:none}"],
     data: {
       animation: [tuiFadeIn]
     },
@@ -5442,7 +5442,7 @@ let TuiDropdownSelectionDirective = /*#__PURE__*/(/* unused pure expression or s
       this.vcr = vcr;
       this.dropdown = dropdown;
       this.handler$ = new BehaviorSubject(ALWAYS_TRUE_HANDLER);
-      this.stream$ = combineLatest([this.handler$, this.selection$.pipe(map(() => this.getRange()), distinctUntilChanged((x, y) => x.startOffset === y.startOffset && x.endOffset === y.endOffset))]).pipe(map(([handler, range]) => {
+      this.stream$ = combineLatest([this.handler$, this.selection$.pipe(map(() => this.getRange()), distinctUntilChanged((x, y) => x.startOffset === y.startOffset && x.endOffset === y.endOffset && x.commonAncestorContainer === y.commonAncestorContainer))]).pipe(map(([handler, range]) => {
         const contained = this.el.nativeElement.contains(range.commonAncestorContainer);
         this.range = contained && tuiIsTextNode(range.commonAncestorContainer) ? range : this.range;
         return contained && handler(this.range) || this.inDropdown(range);
@@ -7450,7 +7450,7 @@ let TuiRootComponent = /*#__PURE__*/(() => {
   TuiRootComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiRootComponent,
     selectors: [["tui-root"]],
-    hostAttrs: ["data-tui-version", "3.82.0"],
+    hostAttrs: ["data-tui-version", "3.83.0"],
     hostVars: 9,
     hostBindings: function TuiRootComponent_HostBindings(rf, ctx) {
       if (rf & 1) {
@@ -16645,7 +16645,7 @@ let TuiInputNumberComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [TuiPrimitiveTextfieldComponent, taiga_ui_core_components_button/* TuiButtonComponent */.SM, TuiPrimitiveTextfieldDirective, TuiTextfieldPostfixDirective, TuiTextfieldPrefixDirective, TuiValueAccessorDirective, MaskitoDirective, common_mjs_.NgIf, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.OA, common_mjs_.AsyncPipe],
-    styles: ["[_nghost-%COMP%]{display:flex;border-radius:var(--tui-radius-m);text-align:left}.t-textfield[_ngcontent-%COMP%]{flex:1;max-width:100%;border-radius:inherit;text-align:inherit}.t-textfield[_ngcontent-%COMP%]:not(:last-child){border-top-right-radius:0;border-bottom-right-radius:0}.t-value-content[_ngcontent-%COMP%]{width:100%}.t-buttons[_ngcontent-%COMP%]{display:flex;flex-direction:column;align-items:stretch;margin-left:.125rem;border-radius:inherit}[data-size=s][_ngcontent-%COMP%] + .t-buttons[_ngcontent-%COMP%]{flex-direction:row-reverse}[data-size=s][_ngcontent-%COMP%] + .t-buttons[_ngcontent-%COMP%]   .t-button[_ngcontent-%COMP%]:first-child{margin:0 0 0 .125rem;border-top-right-radius:inherit;border-bottom-right-radius:inherit}[data-size=s][_ngcontent-%COMP%] + .t-buttons[_ngcontent-%COMP%]   .t-button[_ngcontent-%COMP%]:last-child{border-radius:0}[data-size=m][_ngcontent-%COMP%] + .t-buttons[_ngcontent-%COMP%]   .t-button[_ngcontent-%COMP%]{width:calc(var(--tui-height-m) * .75)}[data-size=l][_ngcontent-%COMP%] + .t-buttons[_ngcontent-%COMP%]   .t-button[_ngcontent-%COMP%]{width:calc(var(--tui-height-l) * .75)}.t-button[_ngcontent-%COMP%]{display:flex;flex:1;height:auto;border-radius:0}.t-button[_ngcontent-%COMP%]:first-child{margin-bottom:.125rem;border-top-right-radius:inherit}.t-button[_ngcontent-%COMP%]:last-child{border-bottom-right-radius:inherit}"],
+    styles: ["[_nghost-%COMP%]{display:flex;border-radius:var(--tui-radius-m);text-align:left}.t-textfield[_ngcontent-%COMP%]{flex:1;max-width:100%;border-radius:inherit;text-align:inherit}.t-textfield[_ngcontent-%COMP%]:not(:last-child){border-top-right-radius:0;border-bottom-right-radius:0}.t-value-content[_ngcontent-%COMP%]{width:100%}.t-buttons[_ngcontent-%COMP%]{display:flex;flex-direction:column;align-items:stretch;margin-left:.125rem;border-radius:inherit}[data-size=s][_ngcontent-%COMP%] + .t-buttons[_ngcontent-%COMP%]{flex-direction:row-reverse}[data-size=s][_ngcontent-%COMP%] + .t-buttons[_ngcontent-%COMP%]   .t-button[_ngcontent-%COMP%]:first-child{margin:0 0 0 .125rem;border-top-right-radius:inherit;border-bottom-right-radius:inherit}[data-size=s][_ngcontent-%COMP%] + .t-buttons[_ngcontent-%COMP%]   .t-button[_ngcontent-%COMP%]:last-child{border-radius:0}[data-size=m][_ngcontent-%COMP%] + .t-buttons[_ngcontent-%COMP%]   .t-button[_ngcontent-%COMP%]{width:calc(var(--tui-height-m) * .75)}[data-size=l][_ngcontent-%COMP%] + .t-buttons[_ngcontent-%COMP%]   .t-button[_ngcontent-%COMP%]{width:calc(var(--tui-height-l) * .75)}.t-buttons[_ngcontent-%COMP%]   .t-button[_ngcontent-%COMP%]{display:flex;flex:1;height:auto;border-radius:0}.t-buttons[_ngcontent-%COMP%]   .t-button[_ngcontent-%COMP%]:first-child{margin-bottom:.125rem;border-top-right-radius:inherit}.t-buttons[_ngcontent-%COMP%]   .t-button[_ngcontent-%COMP%]:last-child{border-bottom-right-radius:inherit}"],
     changeDetection: 0
   });
   (0,tslib_es6/* __decorate */.Cg)([taiga_ui_cdk_decorators/* tuiPure */.PE], TuiInputNumberComponent.prototype, "computeMin", null);
@@ -32612,7 +32612,7 @@ const CHAR_ZERO_WIDTH_SPACE = '\u200B';
  * Array of icons used in taiga-ui components
  */
 const TUI_USED_ICONS = (/* unused pure expression or super */ null && (['tuiIconMirMono', 'tuiIconVisaMono', 'tuiIconElectronMono', 'tuiIconMastercard', 'tuiIconMaestro', 'tuiIconAmex', 'tuiIconDinersClub', 'tuiIconDiscover', 'tuiIconHumo', 'tuiIconJCB', 'tuiIconRuPay', 'tuiIconUnionPay', 'tuiIconUzcard', 'tuiIconVerve', 'tuiIconCopyLarge', 'tuiIconCheckLarge', 'tuiIconLink', 'tuiIconSearch', 'tuiIconSun', 'tuiIconMoon', 'tuiIconCode', 'tuiIconMenuLarge', 'tuiIconRotate', 'tuiIconArrowLeft', 'tuiIconArrowRight', 'tuiIconPlus', 'tuiIconMinus', 'tuiIconMinimize', 'tuiIconEye', 'tuiIconEyeOff', 'tuiIconDrag', 'tuiIconSortAscending', 'tuiIconSortDescending', 'tuiIconSortOff', 'tuiIconCheck', 'tuiIconMinusLarge', 'tuiIconChevronUp', 'tuiIconHelpCircle', 'tuiIconClose', 'tuiIconAlertCircle', 'tuiIconChevronRight', 'tuiIconInfo', 'tuiIconCheckCircle', 'tuiIconXCircle', 'tuiIconChevronLeft', 'tuiIconStarLarge', 'tuiIconChevronDown', 'tuiIconChevronDownLarge', 'tuiIconFileLarge', 'tuiIconCheckCircleLarge', 'tuiIconAlertCircleLarge', 'tuiIconTrashLarge', 'tuiIconCopy', 'tuiIconEyeOffLarge', 'tuiIconEyeLarge', 'tuiIconClock', 'tuiIconClockLarge', 'tuiIconToggleOff', 'tuiIconToggleOffLarge', 'tuiIconToggleOn', 'tuiIconToggleOnLarge', 'tuiIconCalendar', 'tuiIconCalendarLarge']));
-const TUI_VERSION = '3.82.0';
+const TUI_VERSION = '3.83.0';
 
 /**
  * Generated bundle index. Do not edit.
