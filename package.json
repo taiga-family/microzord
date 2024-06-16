@@ -107,7 +107,7 @@
     "@svgr/webpack": "8.1.0",
     "@swc-node/register": "1.9.2",
     "@swc/cli": "0.3.12",
-    "@swc/core": "1.6.0",
+    "@swc/core": "1.6.1",
     "@testing-library/react": "16.0.0",
     "@tinkoff/linters": "1.52.1",
     "@types/jest": "29.5.12",
