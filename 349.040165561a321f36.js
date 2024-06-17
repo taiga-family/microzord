@@ -4233,7 +4233,7 @@ var taiga_ui_core_utils_dom = __webpack_require__(365);
 
 
 
-function TuiScrollControlsComponent_ng_container_0_div_1_Template(rf, ctx) {
+function TuiScrollControlsComponent_ng_container_0_ng_container_1_div_1_Template(rf, ctx) {
   if (rf & 1) {
     core_mjs_["ɵɵelementStart"](0, "div", 3);
     core_mjs_["ɵɵelement"](1, "div", 4);
@@ -4244,7 +4244,7 @@ function TuiScrollControlsComponent_ng_container_0_div_1_Template(rf, ctx) {
     core_mjs_["ɵɵclassProp"]("t-bar_has-horizontal", bars_r1[1]);
   }
 }
-function TuiScrollControlsComponent_ng_container_0_div_2_Template(rf, ctx) {
+function TuiScrollControlsComponent_ng_container_0_ng_container_1_div_2_Template(rf, ctx) {
   if (rf & 1) {
     core_mjs_["ɵɵelementStart"](0, "div", 5);
     core_mjs_["ɵɵelement"](1, "div", 6);
@@ -4255,10 +4255,10 @@ function TuiScrollControlsComponent_ng_container_0_div_2_Template(rf, ctx) {
     core_mjs_["ɵɵclassProp"]("t-bar_has-vertical", bars_r1[0]);
   }
 }
-function TuiScrollControlsComponent_ng_container_0_Template(rf, ctx) {
+function TuiScrollControlsComponent_ng_container_0_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     core_mjs_["ɵɵelementContainerStart"](0);
-    core_mjs_["ɵɵtemplate"](1, TuiScrollControlsComponent_ng_container_0_div_1_Template, 2, 2, "div", 1)(2, TuiScrollControlsComponent_ng_container_0_div_2_Template, 2, 2, "div", 2);
+    core_mjs_["ɵɵtemplate"](1, TuiScrollControlsComponent_ng_container_0_ng_container_1_div_1_Template, 2, 2, "div", 1)(2, TuiScrollControlsComponent_ng_container_0_ng_container_1_div_2_Template, 2, 2, "div", 2);
     core_mjs_["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
@@ -4267,6 +4267,19 @@ function TuiScrollControlsComponent_ng_container_0_Template(rf, ctx) {
     core_mjs_["ɵɵproperty"]("ngIf", bars_r1[0]);
     core_mjs_["ɵɵadvance"]();
     core_mjs_["ɵɵproperty"]("ngIf", bars_r1[1]);
+  }
+}
+function TuiScrollControlsComponent_ng_container_0_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementContainerStart"](0);
+    core_mjs_["ɵɵtemplate"](1, TuiScrollControlsComponent_ng_container_0_ng_container_1_Template, 3, 2, "ng-container", 0);
+    core_mjs_["ɵɵpipe"](2, "async");
+    core_mjs_["ɵɵelementContainerEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r1 = core_mjs_["ɵɵnextContext"]();
+    core_mjs_["ɵɵadvance"]();
+    core_mjs_["ɵɵproperty"]("ngIf", core_mjs_["ɵɵpipeBind1"](2, 1, ctx_r1.refresh$));
   }
 }
 const MIN_WIDTH = 24;
@@ -4405,38 +4418,37 @@ let TuiScrollbarDirective = /*#__PURE__*/(() => {
 })();
 let TuiScrollControlsComponent = /*#__PURE__*/(() => {
   class TuiScrollControlsComponent {
-    constructor(zone, scrollRef, animationFrame$) {
+    constructor(isIOS, zone, scrollRef, animationFrame$) {
+      this.isIOS = isIOS;
       this.zone = zone;
       this.scrollRef = scrollRef;
       this.animationFrame$ = animationFrame$;
-      this.refresh$ = this.animationFrame$.pipe((0,throttleTime/* throttleTime */.c)(300), (0,operators_map/* map */.T)(() => this.scrollbars), (0,operators_startWith/* startWith */.Z)([false, false]), (0,operators_distinctUntilChanged/* distinctUntilChanged */.F)((a, b) => a[0] === b[0] && a[1] === b[1]), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.sX)(this.zone));
-    }
-    get scrollbars() {
-      const {
-        clientHeight,
-        scrollHeight,
-        clientWidth,
-        scrollWidth
-      } = this.scrollRef.nativeElement;
-      return [Math.ceil(clientHeight / scrollHeight * 100) < 100, Math.ceil(clientWidth / scrollWidth * 100) < 100];
+      this.refresh$ = this.animationFrame$.pipe((0,throttleTime/* throttleTime */.c)(300), (0,operators_map/* map */.T)(() => {
+        const {
+          clientHeight,
+          scrollHeight,
+          clientWidth,
+          scrollWidth
+        } = this.scrollRef.nativeElement;
+        return [Math.ceil(clientHeight / scrollHeight * 100) < 100, Math.ceil(clientWidth / scrollWidth * 100) < 100];
+      }), (0,operators_startWith/* startWith */.Z)([false, false]), (0,operators_distinctUntilChanged/* distinctUntilChanged */.F)((a, b) => a[0] === b[0] && a[1] === b[1]), (0,taiga_ui_cdk_observables/* tuiZoneOptimized */.sX)(this.zone));
     }
   }
   TuiScrollControlsComponent.ɵfac = function TuiScrollControlsComponent_Factory(t) {
-    return new (t || TuiScrollControlsComponent)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.NgZone), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_SCROLL_REF */.HF), core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* ANIMATION_FRAME */.dJ));
+    return new (t || TuiScrollControlsComponent)(core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_IOS */.mg), core_mjs_["ɵɵdirectiveInject"](core_mjs_.NgZone), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_SCROLL_REF */.HF), core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* ANIMATION_FRAME */.dJ));
   };
   TuiScrollControlsComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiScrollControlsComponent,
     selectors: [["tui-scroll-controls"]],
-    decls: 2,
-    vars: 3,
+    decls: 1,
+    vars: 1,
     consts: [[4, "ngIf"], ["class", "t-bar t-bar_vertical", 3, "t-bar_has-horizontal", 4, "ngIf"], ["class", "t-bar t-bar_horizontal", 3, "t-bar_has-vertical", 4, "ngIf"], [1, "t-bar", "t-bar_vertical"], ["tuiScrollbar", "vertical", 1, "t-thumb"], [1, "t-bar", "t-bar_horizontal"], ["tuiScrollbar", "horizontal", 1, "t-thumb"]],
     template: function TuiScrollControlsComponent_Template(rf, ctx) {
       if (rf & 1) {
-        core_mjs_["ɵɵtemplate"](0, TuiScrollControlsComponent_ng_container_0_Template, 3, 2, "ng-container", 0);
-        core_mjs_["ɵɵpipe"](1, "async");
+        core_mjs_["ɵɵtemplate"](0, TuiScrollControlsComponent_ng_container_0_Template, 3, 3, "ng-container", 0);
       }
       if (rf & 2) {
-        core_mjs_["ɵɵproperty"]("ngIf", core_mjs_["ɵɵpipeBind1"](1, 1, ctx.refresh$));
+        core_mjs_["ɵɵproperty"]("ngIf", !ctx.isIOS);
       }
     },
     dependencies: [common_mjs_.NgIf, TuiScrollbarDirective, common_mjs_.AsyncPipe],
@@ -7450,7 +7462,7 @@ let TuiRootComponent = /*#__PURE__*/(() => {
   TuiRootComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiRootComponent,
     selectors: [["tui-root"]],
-    hostAttrs: ["data-tui-version", "3.83.0"],
+    hostAttrs: ["data-tui-version", "3.84.0"],
     hostVars: 9,
     hostBindings: function TuiRootComponent_HostBindings(rf, ctx) {
       if (rf & 1) {
@@ -16480,6 +16492,7 @@ let TuiInputNumberComponent = /*#__PURE__*/(() => {
       }
       if (this.isNativeValueNotFinished) {
         this.unfinishedValue = nativeValue;
+        this.value = parsedValue;
         return;
       }
       if (parsedValue < this.computedMin || parsedValue > this.computedMax) {
@@ -32612,7 +32625,7 @@ const CHAR_ZERO_WIDTH_SPACE = '\u200B';
  * Array of icons used in taiga-ui components
  */
 const TUI_USED_ICONS = (/* unused pure expression or super */ null && (['tuiIconMirMono', 'tuiIconVisaMono', 'tuiIconElectronMono', 'tuiIconMastercard', 'tuiIconMaestro', 'tuiIconAmex', 'tuiIconDinersClub', 'tuiIconDiscover', 'tuiIconHumo', 'tuiIconJCB', 'tuiIconRuPay', 'tuiIconUnionPay', 'tuiIconUzcard', 'tuiIconVerve', 'tuiIconCopyLarge', 'tuiIconCheckLarge', 'tuiIconLink', 'tuiIconSearch', 'tuiIconSun', 'tuiIconMoon', 'tuiIconCode', 'tuiIconMenuLarge', 'tuiIconRotate', 'tuiIconArrowLeft', 'tuiIconArrowRight', 'tuiIconPlus', 'tuiIconMinus', 'tuiIconMinimize', 'tuiIconEye', 'tuiIconEyeOff', 'tuiIconDrag', 'tuiIconSortAscending', 'tuiIconSortDescending', 'tuiIconSortOff', 'tuiIconCheck', 'tuiIconMinusLarge', 'tuiIconChevronUp', 'tuiIconHelpCircle', 'tuiIconClose', 'tuiIconAlertCircle', 'tuiIconChevronRight', 'tuiIconInfo', 'tuiIconCheckCircle', 'tuiIconXCircle', 'tuiIconChevronLeft', 'tuiIconStarLarge', 'tuiIconChevronDown', 'tuiIconChevronDownLarge', 'tuiIconFileLarge', 'tuiIconCheckCircleLarge', 'tuiIconAlertCircleLarge', 'tuiIconTrashLarge', 'tuiIconCopy', 'tuiIconEyeOffLarge', 'tuiIconEyeLarge', 'tuiIconClock', 'tuiIconClockLarge', 'tuiIconToggleOff', 'tuiIconToggleOffLarge', 'tuiIconToggleOn', 'tuiIconToggleOnLarge', 'tuiIconCalendar', 'tuiIconCalendarLarge']));
-const TUI_VERSION = '3.83.0';
+const TUI_VERSION = '3.84.0';
 
 /**
  * Generated bundle index. Do not edit.
