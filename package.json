@@ -91,7 +91,7 @@
     "@babel/preset-typescript": "7.24.7",
     "@commitlint/config-conventional": "19.2.2",
     "@ng-builders/semrel": "1.5.0",
-    "@ngneat/spectator": "18.0.2",
+    "@ngneat/spectator": "19.0.0",
     "@nx/cypress": "19.3.0",
     "@nx/eslint-plugin": "19.3.0",
     "@nx/jest": "19.3.0",
