@@ -1384,13 +1384,13 @@ function compileLanguage(language) {
         cmode.terminatorEnd += (mode.end ? '|' : '') + parent.terminatorEnd;
       }
     }
-    if (mode.illegal) cmode.illegalRe = langRe( /** @type {RegExp | string} */mode.illegal);
+    if (mode.illegal) cmode.illegalRe = langRe(/** @type {RegExp | string} */mode.illegal);
     if (!mode.contains) mode.contains = [];
     mode.contains = [].concat(...mode.contains.map(function (c) {
       return expandOrCloneMode(c === 'self' ? mode : c);
     }));
     mode.contains.forEach(function (c) {
-      compileMode( /** @type Mode */c, cmode);
+      compileMode(/** @type Mode */c, cmode);
     });
     if (mode.starts) {
       compileMode(mode.starts, parent);
@@ -1407,7 +1407,7 @@ function compileLanguage(language) {
 
   // we need a null object, which inherit will guarantee
   language.classNameAliases = inherit$1(language.classNameAliases || {});
-  return compileMode( /** @type Mode */language);
+  return compileMode(/** @type Mode */language);
 }
 
 /**
@@ -1468,7 +1468,7 @@ function expandOrCloneMode(mode) {
   // no special dependency issues, just return ourselves
   return mode;
 }
-var version = "11.9.0";
+var version = "11.10.0";
 class HTMLInjectionError extends Error {
   constructor(reason, html) {
     super(reason);

@@ -2974,7 +2974,7 @@ const Optional =
 /*#__PURE__*/
 // Disable tslint because `InternalInjectFlags` is a const enum which gets inlined.
 // tslint:disable-next-line: no-toplevel-property-access
-attachInjectFlag( /*#__PURE__*/makeParamDecorator('Optional'), 8 /* InternalInjectFlags.Optional */);
+attachInjectFlag(/*#__PURE__*/makeParamDecorator('Optional'), 8 /* InternalInjectFlags.Optional */);
 /**
  * Self decorator and metadata.
  *
@@ -2985,7 +2985,7 @@ const Self =
 /*#__PURE__*/
 // Disable tslint because `InternalInjectFlags` is a const enum which gets inlined.
 // tslint:disable-next-line: no-toplevel-property-access
-attachInjectFlag( /*#__PURE__*/makeParamDecorator('Self'), 2 /* InternalInjectFlags.Self */);
+attachInjectFlag(/*#__PURE__*/makeParamDecorator('Self'), 2 /* InternalInjectFlags.Self */);
 /**
  * `SkipSelf` decorator and metadata.
  *
@@ -2996,7 +2996,7 @@ const SkipSelf =
 /*#__PURE__*/
 // Disable tslint because `InternalInjectFlags` is a const enum which gets inlined.
 // tslint:disable-next-line: no-toplevel-property-access
-attachInjectFlag( /*#__PURE__*/makeParamDecorator('SkipSelf'), 4 /* InternalInjectFlags.SkipSelf */);
+attachInjectFlag(/*#__PURE__*/makeParamDecorator('SkipSelf'), 4 /* InternalInjectFlags.SkipSelf */);
 /**
  * Host decorator and metadata.
  *
@@ -3007,7 +3007,7 @@ const Host =
 /*#__PURE__*/
 // Disable tslint because `InternalInjectFlags` is a const enum which gets inlined.
 // tslint:disable-next-line: no-toplevel-property-access
-attachInjectFlag( /*#__PURE__*/makeParamDecorator('Host'), 1 /* InternalInjectFlags.Host */);
+attachInjectFlag(/*#__PURE__*/makeParamDecorator('Host'), 1 /* InternalInjectFlags.Host */);
 function getFactoryDef(type, throwNotFound) {
   const hasFactoryDef = type.hasOwnProperty(NG_FACTORY_DEF);
   if (!hasFactoryDef && throwNotFound === true && ngDevMode) {
@@ -18198,13 +18198,13 @@ function createQuerySignalFn(firstOnly, required) {
   return signalFn;
 }
 function createSingleResultOptionalQuerySignalFn() {
-  return createQuerySignalFn( /* firstOnly */true, /* required */false);
+  return createQuerySignalFn(/* firstOnly */true, /* required */false);
 }
 function createSingleResultRequiredQuerySignalFn() {
-  return createQuerySignalFn( /* firstOnly */true, /* required */true);
+  return createQuerySignalFn(/* firstOnly */true, /* required */true);
 }
 function createMultiResultQuerySignalFn() {
-  return createQuerySignalFn( /* firstOnly */false, /* required */false);
+  return createQuerySignalFn(/* firstOnly */false, /* required */false);
 }
 function bindQueryToSignal(target, queryIndex) {
   const node = target[_angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_0__.SIGNAL];

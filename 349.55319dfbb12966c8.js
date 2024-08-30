@@ -160,10 +160,8 @@ let HostChildWarningModule = /*#__PURE__*/(() => {
 /***/ }),
 
 /***/ 4349:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
 var platform_browser = __webpack_require__(345);
@@ -1340,7 +1338,7 @@ var taiga_ui_core_components_button = __webpack_require__(2782);
 // EXTERNAL MODULE: ./node_modules/tslib/tslib.es6.mjs
 var tslib_es6 = __webpack_require__(1635);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-services.js + 2 modules
-var taiga_ui_cdk_services = __webpack_require__(4340);
+var taiga_ui_cdk_services = __webpack_require__(5116);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-autofilled.js
 
 
@@ -17612,6 +17610,13 @@ var router_mjs_ = __webpack_require__(2999);
 
 
 
+const SafeObserver = typeof MutationObserver !== `undefined` ? MutationObserver : class {
+  observe() {}
+  disconnect() {}
+  takeRecords() {
+    return [];
+  }
+};
 const MUTATION_OBSERVER_INIT = new core_mjs_.InjectionToken('MutationObserver config');
 function booleanAttribute(element, attribute) {
   return element.getAttribute(attribute) !== null || undefined;
@@ -17630,13 +17635,6 @@ function mutationObserverInitFactory({
     subtree: booleanAttribute(nativeElement, 'subtree')
   };
 }
-const SafeObserver = typeof MutationObserver !== `undefined` ? MutationObserver : class {
-  observe() {}
-  disconnect() {}
-  takeRecords() {
-    return [];
-  }
-};
 let MutationObserverDirective = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
   class MutationObserverDirective extends SafeObserver {
     constructor({
@@ -17679,7 +17677,7 @@ let MutationObserverService = /*#__PURE__*/(() => {
       nativeElement
     }, config) {
       super(subscriber => {
-        const observer = new MutationObserver(records => {
+        const observer = new SafeObserver(records => {
           subscriber.next(records);
         });
         observer.observe(nativeElement, config);
@@ -23931,7 +23929,7 @@ var decode_DecodingMode = /*#__PURE__*/function (DecodingMode) {
  * Token decoder with support of writing partial entities.
  */
 class EntityDecoder {
-  constructor( /** The tree used to decode entities. */
+  constructor(/** The tree used to decode entities. */
   decodeTree,
   /**
    * The function that is called when a codepoint is decoded.
@@ -24363,7 +24361,7 @@ function restoreDiff(arr) {
   return arr;
 }
 // prettier-ignore
-/* harmony default export */ const encode_html = (new Map( /* #__PURE__ */restoreDiff([[9, "&Tab;"], [0, "&NewLine;"], [22, "&excl;"], [0, "&quot;"], [0, "&num;"], [0, "&dollar;"], [0, "&percnt;"], [0, "&amp;"], [0, "&apos;"], [0, "&lpar;"], [0, "&rpar;"], [0, "&ast;"], [0, "&plus;"], [0, "&comma;"], [1, "&period;"], [0, "&sol;"], [10, "&colon;"], [0, "&semi;"], [0, {
+/* harmony default export */ const encode_html = (new Map(/* #__PURE__ */restoreDiff([[9, "&Tab;"], [0, "&NewLine;"], [22, "&excl;"], [0, "&quot;"], [0, "&num;"], [0, "&dollar;"], [0, "&percnt;"], [0, "&amp;"], [0, "&apos;"], [0, "&lpar;"], [0, "&rpar;"], [0, "&ast;"], [0, "&plus;"], [0, "&comma;"], [1, "&period;"], [0, "&sol;"], [10, "&colon;"], [0, "&semi;"], [0, {
   v: "&lt;",
   n: 8402,
   o: "&nvlt;"
@@ -24468,10 +24466,10 @@ function restoreDiff(arr) {
   o: "&gvertneqq;"
 }], [0, {
   v: "&ll;",
-  n: new Map( /* #__PURE__ */restoreDiff([[824, "&nLtv;"], [7577, "&nLt;"]]))
+  n: new Map(/* #__PURE__ */restoreDiff([[824, "&nLtv;"], [7577, "&nLt;"]]))
 }], [0, {
   v: "&gg;",
-  n: new Map( /* #__PURE__ */restoreDiff([[824, "&nGtv;"], [7577, "&nGt;"]]))
+  n: new Map(/* #__PURE__ */restoreDiff([[824, "&nGtv;"], [7577, "&nGt;"]]))
 }], [0, "&between;"], [0, "&NotCupCap;"], [0, "&nless;"], [0, "&ngt;"], [0, "&nle;"], [0, "&nge;"], [0, "&lesssim;"], [0, "&GreaterTilde;"], [0, "&nlsim;"], [0, "&ngsim;"], [0, "&LessGreater;"], [0, "&gl;"], [0, "&NotLessGreater;"], [0, "&NotGreaterLess;"], [0, "&pr;"], [0, "&sc;"], [0, "&prcue;"], [0, "&sccue;"], [0, "&PrecedesTilde;"], [0, {
   v: "&scsim;",
   n: 824,
@@ -24613,7 +24611,7 @@ function restoreDiff(arr) {
   n: 8421,
   o: "&nparsl;"
 }], [44343, {
-  n: new Map( /* #__PURE__ */restoreDiff([[56476, "&Ascr;"], [1, "&Cscr;"], [0, "&Dscr;"], [2, "&Gscr;"], [2, "&Jscr;"], [0, "&Kscr;"], [2, "&Nscr;"], [0, "&Oscr;"], [0, "&Pscr;"], [0, "&Qscr;"], [1, "&Sscr;"], [0, "&Tscr;"], [0, "&Uscr;"], [0, "&Vscr;"], [0, "&Wscr;"], [0, "&Xscr;"], [0, "&Yscr;"], [0, "&Zscr;"], [0, "&ascr;"], [0, "&bscr;"], [0, "&cscr;"], [0, "&dscr;"], [1, "&fscr;"], [1, "&hscr;"], [0, "&iscr;"], [0, "&jscr;"], [0, "&kscr;"], [0, "&lscr;"], [0, "&mscr;"], [0, "&nscr;"], [1, "&pscr;"], [0, "&qscr;"], [0, "&rscr;"], [0, "&sscr;"], [0, "&tscr;"], [0, "&uscr;"], [0, "&vscr;"], [0, "&wscr;"], [0, "&xscr;"], [0, "&yscr;"], [0, "&zscr;"], [52, "&Afr;"], [0, "&Bfr;"], [1, "&Dfr;"], [0, "&Efr;"], [0, "&Ffr;"], [0, "&Gfr;"], [2, "&Jfr;"], [0, "&Kfr;"], [0, "&Lfr;"], [0, "&Mfr;"], [0, "&Nfr;"], [0, "&Ofr;"], [0, "&Pfr;"], [0, "&Qfr;"], [1, "&Sfr;"], [0, "&Tfr;"], [0, "&Ufr;"], [0, "&Vfr;"], [0, "&Wfr;"], [0, "&Xfr;"], [0, "&Yfr;"], [1, "&afr;"], [0, "&bfr;"], [0, "&cfr;"], [0, "&dfr;"], [0, "&efr;"], [0, "&ffr;"], [0, "&gfr;"], [0, "&hfr;"], [0, "&ifr;"], [0, "&jfr;"], [0, "&kfr;"], [0, "&lfr;"], [0, "&mfr;"], [0, "&nfr;"], [0, "&ofr;"], [0, "&pfr;"], [0, "&qfr;"], [0, "&rfr;"], [0, "&sfr;"], [0, "&tfr;"], [0, "&ufr;"], [0, "&vfr;"], [0, "&wfr;"], [0, "&xfr;"], [0, "&yfr;"], [0, "&zfr;"], [0, "&Aopf;"], [0, "&Bopf;"], [1, "&Dopf;"], [0, "&Eopf;"], [0, "&Fopf;"], [0, "&Gopf;"], [1, "&Iopf;"], [0, "&Jopf;"], [0, "&Kopf;"], [0, "&Lopf;"], [0, "&Mopf;"], [1, "&Oopf;"], [3, "&Sopf;"], [0, "&Topf;"], [0, "&Uopf;"], [0, "&Vopf;"], [0, "&Wopf;"], [0, "&Xopf;"], [0, "&Yopf;"], [1, "&aopf;"], [0, "&bopf;"], [0, "&copf;"], [0, "&dopf;"], [0, "&eopf;"], [0, "&fopf;"], [0, "&gopf;"], [0, "&hopf;"], [0, "&iopf;"], [0, "&jopf;"], [0, "&kopf;"], [0, "&lopf;"], [0, "&mopf;"], [0, "&nopf;"], [0, "&oopf;"], [0, "&popf;"], [0, "&qopf;"], [0, "&ropf;"], [0, "&sopf;"], [0, "&topf;"], [0, "&uopf;"], [0, "&vopf;"], [0, "&wopf;"], [0, "&xopf;"], [0, "&yopf;"], [0, "&zopf;"]]))
+  n: new Map(/* #__PURE__ */restoreDiff([[56476, "&Ascr;"], [1, "&Cscr;"], [0, "&Dscr;"], [2, "&Gscr;"], [2, "&Jscr;"], [0, "&Kscr;"], [2, "&Nscr;"], [0, "&Oscr;"], [0, "&Pscr;"], [0, "&Qscr;"], [1, "&Sscr;"], [0, "&Tscr;"], [0, "&Uscr;"], [0, "&Vscr;"], [0, "&Wscr;"], [0, "&Xscr;"], [0, "&Yscr;"], [0, "&Zscr;"], [0, "&ascr;"], [0, "&bscr;"], [0, "&cscr;"], [0, "&dscr;"], [1, "&fscr;"], [1, "&hscr;"], [0, "&iscr;"], [0, "&jscr;"], [0, "&kscr;"], [0, "&lscr;"], [0, "&mscr;"], [0, "&nscr;"], [1, "&pscr;"], [0, "&qscr;"], [0, "&rscr;"], [0, "&sscr;"], [0, "&tscr;"], [0, "&uscr;"], [0, "&vscr;"], [0, "&wscr;"], [0, "&xscr;"], [0, "&yscr;"], [0, "&zscr;"], [52, "&Afr;"], [0, "&Bfr;"], [1, "&Dfr;"], [0, "&Efr;"], [0, "&Ffr;"], [0, "&Gfr;"], [2, "&Jfr;"], [0, "&Kfr;"], [0, "&Lfr;"], [0, "&Mfr;"], [0, "&Nfr;"], [0, "&Ofr;"], [0, "&Pfr;"], [0, "&Qfr;"], [1, "&Sfr;"], [0, "&Tfr;"], [0, "&Ufr;"], [0, "&Vfr;"], [0, "&Wfr;"], [0, "&Xfr;"], [0, "&Yfr;"], [1, "&afr;"], [0, "&bfr;"], [0, "&cfr;"], [0, "&dfr;"], [0, "&efr;"], [0, "&ffr;"], [0, "&gfr;"], [0, "&hfr;"], [0, "&ifr;"], [0, "&jfr;"], [0, "&kfr;"], [0, "&lfr;"], [0, "&mfr;"], [0, "&nfr;"], [0, "&ofr;"], [0, "&pfr;"], [0, "&qfr;"], [0, "&rfr;"], [0, "&sfr;"], [0, "&tfr;"], [0, "&ufr;"], [0, "&vfr;"], [0, "&wfr;"], [0, "&xfr;"], [0, "&yfr;"], [0, "&zfr;"], [0, "&Aopf;"], [0, "&Bopf;"], [1, "&Dopf;"], [0, "&Eopf;"], [0, "&Fopf;"], [0, "&Gopf;"], [1, "&Iopf;"], [0, "&Jopf;"], [0, "&Kopf;"], [0, "&Lopf;"], [0, "&Mopf;"], [1, "&Oopf;"], [3, "&Sopf;"], [0, "&Topf;"], [0, "&Uopf;"], [0, "&Vopf;"], [0, "&Wopf;"], [0, "&Xopf;"], [0, "&Yopf;"], [1, "&aopf;"], [0, "&bopf;"], [0, "&copf;"], [0, "&dopf;"], [0, "&eopf;"], [0, "&fopf;"], [0, "&gopf;"], [0, "&hopf;"], [0, "&iopf;"], [0, "&jopf;"], [0, "&kopf;"], [0, "&lopf;"], [0, "&mopf;"], [0, "&nopf;"], [0, "&oopf;"], [0, "&popf;"], [0, "&qopf;"], [0, "&ropf;"], [0, "&sopf;"], [0, "&topf;"], [0, "&uopf;"], [0, "&vopf;"], [0, "&wopf;"], [0, "&xopf;"], [0, "&yopf;"], [0, "&zopf;"]]))
 }], [8906, "&fflig;"], [0, "&filig;"], [0, "&fllig;"], [0, "&ffilig;"], [0, "&ffllig;"]])));
 //# sourceMappingURL=encode-html.js.map
 ;// CONCATENATED MODULE: ./node_modules/entities/lib/esm/escape.js
@@ -31824,7 +31822,7 @@ function tuiTypeReferenceParser(types) {
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(3294);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(5558);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(6977);
-/* harmony import */ var _taiga_ui_cdk_services__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(4340);
+/* harmony import */ var _taiga_ui_cdk_services__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(5116);
 /* harmony import */ var _taiga_ui_cdk_exceptions__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(6651);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2771);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
@@ -33285,7 +33283,7 @@ function tuiZoneOptimized(zone) {
 
 /***/ }),
 
-/***/ 4340:
+/***/ 5116:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -33354,7 +33352,7 @@ var taiga_ui_cdk_constants = __webpack_require__(2287);
 var taiga_ui_cdk_utils_dom = __webpack_require__(5001);
 // EXTERNAL MODULE: consume shared module (default) @angular/common@=17.3.9 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
 var common_mjs_ = __webpack_require__(2771);
-;// CONCATENATED MODULE: ./node_modules/@ng-web-apis/resize-observer/fesm2015/ng-web-apis-resize-observer.js
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/node_modules/@ng-web-apis/resize-observer/fesm2015/ng-web-apis-resize-observer.js
 
 
 
@@ -35335,7 +35333,7 @@ function tuiSvgLinearGradientProcessor(svg, salt = makeRandomSalt()) {
 /* unused harmony export tuiFallbackAccessor */
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6525);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4340);
+/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5116);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(683);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1985);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7786);
@@ -35499,7 +35497,7 @@ function tuiAsRectAccessor(useExisting) {
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(683);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(8529);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(1410);
-/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(4340);
+/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(5116);
 /* harmony import */ var _taiga_ui_core_directives__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(8323);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(983);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6791);
@@ -35747,7 +35745,7 @@ let TuiButtonModule = /*#__PURE__*/(() => {
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9835);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(2287);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8529);
-/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(4340);
+/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(5116);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(1410);
 /* harmony import */ var _taiga_ui_core_providers__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(7291);
 /* harmony import */ var _taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8502);
@@ -36286,7 +36284,7 @@ let TuiNotificationModule = /*#__PURE__*/(() => {
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9925);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(4489);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(5001);
-/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(4340);
+/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(5116);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(1410);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(4343);
 /* harmony import */ var _taiga_ui_core_constants__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(8048);
@@ -37034,7 +37032,7 @@ function tuiWatchedControllerFactory(controller, cdr, destroy$) {
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9835);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(1410);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(2287);
-/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(4340);
+/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(5116);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(4489);
 /* harmony import */ var _taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8502);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1985);
@@ -38612,7 +38610,7 @@ const TUI_ENGLISH_LANGUAGE_KIT = {
     defaultLabelMultiple: 'or drop\u00A0them\u00A0here',
     defaultLinkSingle: 'Choose a file',
     defaultLinkMultiple: 'Choose files',
-    maxSizeRejectionReason: 'File is larger than ',
+    maxSizeRejectionReason: 'File is larger than',
     formatRejectionReason: 'Wrong file type',
     drop: 'Drop file here',
     dropMultiple: 'Drop files here'
@@ -48786,7 +48784,7 @@ class FormGroup extends AbstractControl {
       // `as any` is required.
       const control = this.controls[name];
       if (control) {
-        control.patchValue( /* Guaranteed to be present, due to the outer forEach. */value[name], {
+        control.patchValue(/* Guaranteed to be present, due to the outer forEach. */value[name], {
           onlySelf: true,
           emitEvent: options.emitEvent
         });

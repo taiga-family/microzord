@@ -1638,7 +1638,7 @@ let FetchBackend = /*#__PURE__*/(() => {
           // Perform response processing outside of Angular zone to
           // ensure no excessive change detection runs are executed
           // Here calling the async ReadableStreamDefaultReader.read() is responsible for triggering CD
-          yield _this.ngZone.runOutsideAngular( /*#__PURE__*/(0,_home_runner_work_microzord_microzord_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A)(function* () {
+          yield _this.ngZone.runOutsideAngular(/*#__PURE__*/(0,_home_runner_work_microzord_microzord_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A)(function* () {
             while (true) {
               const {
                 done,

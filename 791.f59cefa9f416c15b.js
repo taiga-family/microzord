@@ -685,7 +685,7 @@ function matrixParamsMatch(containerPaths, containeePaths, options) {
  * @publicApi
  */
 class UrlTree {
-  constructor( /** The root segment group of the URL tree */
+  constructor(/** The root segment group of the URL tree */
   root = new UrlSegmentGroup([], {}), /** The query params of the URL */
   queryParams = {}, /** The fragment of the URL */
   fragment = null) {
@@ -717,7 +717,7 @@ class UrlTree {
  * @publicApi
  */
 class UrlSegmentGroup {
-  constructor( /** The URL segments of this group. See `UrlSegment` for more information */
+  constructor(/** The URL segments of this group. See `UrlSegment` for more information */
   segments, /** The list of children of this group */
   children) {
     this.segments = segments;
@@ -766,7 +766,7 @@ class UrlSegmentGroup {
  * @publicApi
  */
 class UrlSegment {
-  constructor( /** The path part of a URL segment */
+  constructor(/** The path part of a URL segment */
   path, /** The matrix parameters associated with a segment */
   parameters) {
     this.path = path;
@@ -1629,7 +1629,7 @@ var EventType = /*#__PURE__*/function (EventType) {
  * @publicApi
  */
 class RouterEvent {
-  constructor( /** A unique ID that the router assigns to every router navigation. */
+  constructor(/** A unique ID that the router assigns to every router navigation. */
   id, /** The URL that is the destination for this navigation. */
   url) {
     this.id = id;
@@ -1642,7 +1642,7 @@ class RouterEvent {
  * @publicApi
  */
 class NavigationStart extends RouterEvent {
-  constructor( /** @docsNotRequired */
+  constructor(/** @docsNotRequired */
   id, /** @docsNotRequired */
   url, /** @docsNotRequired */
   navigationTrigger = 'imperative', /** @docsNotRequired */
@@ -1667,7 +1667,7 @@ class NavigationStart extends RouterEvent {
  * @publicApi
  */
 class NavigationEnd extends RouterEvent {
-  constructor( /** @docsNotRequired */
+  constructor(/** @docsNotRequired */
   id, /** @docsNotRequired */
   url, /** @docsNotRequired */
   urlAfterRedirects) {
@@ -1737,7 +1737,7 @@ var NavigationSkippedCode = /*#__PURE__*/function (NavigationSkippedCode) {
  * @publicApi
  */
 class NavigationCancel extends RouterEvent {
-  constructor( /** @docsNotRequired */
+  constructor(/** @docsNotRequired */
   id, /** @docsNotRequired */
   url,
   /**
@@ -1770,7 +1770,7 @@ class NavigationCancel extends RouterEvent {
  * @publicApi
  */
 class NavigationSkipped extends RouterEvent {
-  constructor( /** @docsNotRequired */
+  constructor(/** @docsNotRequired */
   id, /** @docsNotRequired */
   url,
   /**
@@ -1800,7 +1800,7 @@ class NavigationSkipped extends RouterEvent {
  * @publicApi
  */
 class NavigationError extends RouterEvent {
-  constructor( /** @docsNotRequired */
+  constructor(/** @docsNotRequired */
   id, /** @docsNotRequired */
   url, /** @docsNotRequired */
   error,
@@ -1827,7 +1827,7 @@ class NavigationError extends RouterEvent {
  * @publicApi
  */
 class RoutesRecognized extends RouterEvent {
-  constructor( /** @docsNotRequired */
+  constructor(/** @docsNotRequired */
   id, /** @docsNotRequired */
   url, /** @docsNotRequired */
   urlAfterRedirects, /** @docsNotRequired */
@@ -1850,7 +1850,7 @@ class RoutesRecognized extends RouterEvent {
  * @publicApi
  */
 class GuardsCheckStart extends RouterEvent {
-  constructor( /** @docsNotRequired */
+  constructor(/** @docsNotRequired */
   id, /** @docsNotRequired */
   url, /** @docsNotRequired */
   urlAfterRedirects, /** @docsNotRequired */
@@ -1872,7 +1872,7 @@ class GuardsCheckStart extends RouterEvent {
  * @publicApi
  */
 class GuardsCheckEnd extends RouterEvent {
-  constructor( /** @docsNotRequired */
+  constructor(/** @docsNotRequired */
   id, /** @docsNotRequired */
   url, /** @docsNotRequired */
   urlAfterRedirects, /** @docsNotRequired */
@@ -1899,7 +1899,7 @@ class GuardsCheckEnd extends RouterEvent {
  * @publicApi
  */
 class ResolveStart extends RouterEvent {
-  constructor( /** @docsNotRequired */
+  constructor(/** @docsNotRequired */
   id, /** @docsNotRequired */
   url, /** @docsNotRequired */
   urlAfterRedirects, /** @docsNotRequired */
@@ -1920,7 +1920,7 @@ class ResolveStart extends RouterEvent {
  * @publicApi
  */
 class ResolveEnd extends RouterEvent {
-  constructor( /** @docsNotRequired */
+  constructor(/** @docsNotRequired */
   id, /** @docsNotRequired */
   url, /** @docsNotRequired */
   urlAfterRedirects, /** @docsNotRequired */
@@ -1942,7 +1942,7 @@ class ResolveEnd extends RouterEvent {
  * @publicApi
  */
 class RouteConfigLoadStart {
-  constructor( /** @docsNotRequired */
+  constructor(/** @docsNotRequired */
   route) {
     this.route = route;
     this.type = EventType.RouteConfigLoadStart;
@@ -1959,7 +1959,7 @@ class RouteConfigLoadStart {
  * @publicApi
  */
 class RouteConfigLoadEnd {
-  constructor( /** @docsNotRequired */
+  constructor(/** @docsNotRequired */
   route) {
     this.route = route;
     this.type = EventType.RouteConfigLoadEnd;
@@ -1977,7 +1977,7 @@ class RouteConfigLoadEnd {
  * @publicApi
  */
 class ChildActivationStart {
-  constructor( /** @docsNotRequired */
+  constructor(/** @docsNotRequired */
   snapshot) {
     this.snapshot = snapshot;
     this.type = EventType.ChildActivationStart;
@@ -1995,7 +1995,7 @@ class ChildActivationStart {
  * @publicApi
  */
 class ChildActivationEnd {
-  constructor( /** @docsNotRequired */
+  constructor(/** @docsNotRequired */
   snapshot) {
     this.snapshot = snapshot;
     this.type = EventType.ChildActivationEnd;
@@ -2014,7 +2014,7 @@ class ChildActivationEnd {
  * @publicApi
  */
 class ActivationStart {
-  constructor( /** @docsNotRequired */
+  constructor(/** @docsNotRequired */
   snapshot) {
     this.snapshot = snapshot;
     this.type = EventType.ActivationStart;
@@ -2033,7 +2033,7 @@ class ActivationStart {
  * @publicApi
  */
 class ActivationEnd {
-  constructor( /** @docsNotRequired */
+  constructor(/** @docsNotRequired */
   snapshot) {
     this.snapshot = snapshot;
     this.type = EventType.ActivationEnd;
@@ -2049,7 +2049,7 @@ class ActivationEnd {
  * @publicApi
  */
 class Scroll {
-  constructor( /** @docsNotRequired */
+  constructor(/** @docsNotRequired */
   routerEvent, /** @docsNotRequired */
   position, /** @docsNotRequired */
   anchor) {
@@ -2355,7 +2355,7 @@ function createEmptyStateSnapshot(rootComponent) {
  */
 class ActivatedRoute {
   /** @internal */
-  constructor( /** @internal */
+  constructor(/** @internal */
   urlSubject, /** @internal */
   paramsSubject, /** @internal */
   queryParamsSubject, /** @internal */
@@ -2515,7 +2515,7 @@ class ActivatedRouteSnapshot {
     return this.data?.[RouteTitleKey];
   }
   /** @internal */
-  constructor( /** The URL segments matched by this route */
+  constructor(/** The URL segments matched by this route */
   url,
   /**
    *  The matrix parameters scoped to this route.
@@ -2615,7 +2615,7 @@ class ActivatedRouteSnapshot {
  */
 class RouterStateSnapshot extends Tree {
   /** @internal */
-  constructor( /** The url from which this snapshot was created */
+  constructor(/** The url from which this snapshot was created */
   url, root) {
     super(root);
     this.url = url;
@@ -6856,7 +6856,7 @@ let RouterScroller = /*#__PURE__*/(() => {
     }
     scheduleScrollEvent(routerEvent, anchor) {
       var _this = this;
-      this.zone.runOutsideAngular( /*#__PURE__*/(0,asyncToGenerator/* default */.A)(function* () {
+      this.zone.runOutsideAngular(/*#__PURE__*/(0,asyncToGenerator/* default */.A)(function* () {
         // The scroll event needs to be delayed until after change detection. Otherwise we may
         // attempt to restore the scroll position before the router outlet has fully rendered the
         // component by executing its update block of the template function.
