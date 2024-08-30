@@ -4,6 +4,7 @@
   "projectType": "application",
   "sourceRoot": "apps/host/src",
   "prefix": "microzord",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/angular:webpack-browser",
@@ -111,6 +112,5 @@
         "commands": ["nx serve remote", "nx serve host"]
       }
     }
-  },
-  "tags": []
+  }
 }
