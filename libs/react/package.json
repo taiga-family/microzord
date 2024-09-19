@@ -3,5 +3,27 @@
   "version": "0.0.0-development",
   "dependencies": {
     "@microzord/core": "2.0.1"
-  }
+
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "microfrontends",
+    "single-page-application",
+    "framework",
+    "angular",
+    "react",
+    "routing",
+    "microservices"
+  ],
+  "authors": ["Igor Katsuba <katsuba.igor@gmail.ru>", "Roman Sedov <79601794011@ya.ru>"],
+  "contributors": [
+    "Igor Katsuba <katsuba.igor@gmail.ru>",
+    "Roman Sedov <79601794011@ya.ru>",
+    "Vsevolod Arutyunov <sevaru@inbox.ru>"
+  ],
+  "repository": "https://github.com/taiga-family/microzord",
+  "homepage": "https://taiga-family.github.io/microzord"
 }
