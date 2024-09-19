@@ -2,10 +2,10 @@
   "name": "@microzord/core",
   "version": "0.0.0-development",
   "dependencies": {
-    "tslib": "2.6.3"
+    "tslib": "^2.6.2"
   },
   "peerDependencies": {
-    "rxjs": "7.8.1"
+    "rxjs": ">=6.5.0"
   },
   "publishConfig": {
     "access": "public"
