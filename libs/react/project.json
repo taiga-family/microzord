@@ -38,6 +38,35 @@
         "jestConfig": "libs/react/jest.config.ts",
         "coverageDirectory": "coverage/react"
       }
+    },
+    "semrel": {
+      "executor": "@ng-builders/semrel:release",
+      "options": {
+        "npm": {
+          "pkgRoot": "dist/libs/react"
+        },
+        "branches": [
+          "+([0-9])?(.{+([0-9]),x}).x",
+          "main",
+          "next",
+          "next-major",
+          {
+            "name": "beta",
+            "prerelease": true
+          },
+          {
+            "name": "alpha",
+            "prerelease": true
+          }
+        ]
+      }
+    },
+    "release": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["npm run release:package --package=react"],
+        "parallel": false
+      }
     }
   },
   "tags": []
