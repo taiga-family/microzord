@@ -49,14 +49,14 @@
   "private": true,
   "dependencies": {
     "@angular-architects/module-federation": "17.0.8",
-    "@angular/animations": "17.3.9",
-    "@angular/common": "17.3.9",
-    "@angular/compiler": "17.3.9",
-    "@angular/core": "17.3.9",
-    "@angular/forms": "17.3.9",
-    "@angular/platform-browser": "17.3.9",
-    "@angular/platform-browser-dynamic": "17.3.9",
-    "@angular/router": "17.3.9",
+    "@angular/animations": "17.3.12",
+    "@angular/common": "17.3.12",
+    "@angular/compiler": "17.3.12",
+    "@angular/core": "17.3.12",
+    "@angular/forms": "17.3.12",
+    "@angular/platform-browser": "17.3.12",
+    "@angular/platform-browser-dynamic": "17.3.12",
+    "@angular/router": "17.3.12",
     "@ng-web-apis/common": "3.0.6",
     "@nx/angular": "19.3.0",
     "@swc/helpers": "0.5.11",
@@ -73,7 +73,7 @@
     "react-router-dom": "6.23.1",
     "rxjs": "7.8.1",
     "tslib": "2.6.3",
-    "zone.js": "0.14.7"
+    "zone.js": "0.15.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "17.3.9",
@@ -83,8 +83,8 @@
     "@angular-eslint/eslint-plugin-template": "17.5.2",
     "@angular-eslint/template-parser": "17.5.2",
     "@angular/cdk": "17.3.10",
-    "@angular/cli": "~17.0.0",
-    "@angular/compiler-cli": "17.3.9",
+    "@angular/cli": "17.0.10",
+    "@angular/compiler-cli": "17.3.12",
     "@babel/core": "7.24.7",
     "@babel/preset-env": "7.24.7",
     "@babel/preset-react": "7.24.7",
@@ -154,16 +154,11 @@
     "@nx/eslint": "19.3.0"
   },
   "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
-    }
+    "hooks": {"commit-msg": "commitlint -E HUSKY_GIT_PARAMS", "pre-commit": "lint-staged"}
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,html,md,less,scss,json}": ["npm run format:write"],
     "*.{js,jsx,ts,tsx}": ["eslint --fix"]
   },
-  "engines": {
-    "node": "18.x.x"
-  }
+  "engines": {"node": "18.x.x"}
 }
