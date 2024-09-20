@@ -1,6 +1,6 @@
 {
     "name": "@microzord/angular",
-    "version": "2.0.2",
+    "version": "2.1.0",
     "keywords": [
         "microfrontends",
         "single-page-application",
@@ -20,13 +20,13 @@
         "Vsevolod Arutyunov <sevaru@inbox.ru>"
     ],
     "dependencies": {
-        "@microzord/core": "^2.0.2"
+        "@microzord/core": "^2.1.0"
     },
     "peerDependencies": {
         "@angular/common": ">=16.0.0",
         "@angular/core": ">=16.0.0",
         "@angular/router": ">=16.0.0",
-        "@microzord/core": ">=2.0.2",
+        "@microzord/core": ">=2.1.0",
         "tslib": ">=2.7.0"
     },
     "publishConfig": {
