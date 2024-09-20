@@ -36,13 +36,12 @@ const ADDING_INTO_TEMPLATE = `<header microzord="my-header"></header>
 <footer microzord="new-footer" (hook)="onFooterLifecycleEvent($event)"></footer>`;
 
 @Component({
-  selector: 'angular-host',
-  templateUrl: 'angular-host.template.html',
-  styleUrls: ['./angular-host.style.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'angular-host',
+    templateUrl: './angular-host.template.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AngularHostComponent {
-  readonly hostConnection = HOST_CONNECTION;
-  readonly addingModule = ADDING_MODULE;
-  readonly addingIntoTemplate = ADDING_INTO_TEMPLATE;
+    public readonly hostConnection = HOST_CONNECTION;
+    public readonly addingModule = ADDING_MODULE;
+    public readonly addingIntoTemplate = ADDING_INTO_TEMPLATE;
 }

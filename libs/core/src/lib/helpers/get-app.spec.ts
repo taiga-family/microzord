@@ -1,25 +1,26 @@
 import {ApplicationMock} from '@microzord/core/testing';
-import {registerApp} from './register-app';
-import {loadApp} from './load-app';
+
 import {getApp} from './get-app';
+import {loadApp} from './load-app';
+import {registerApp} from './register-app';
 
 describe('getApp', () => {
-  beforeEach(async () => {
-    registerApp({
-      name: 'appMock',
-      load() {
-        return ApplicationMock;
-      },
+    beforeEach(async () => {
+        registerApp({
+            name: 'appMock',
+            load() {
+                return ApplicationMock;
+            },
+        });
+
+        await loadApp('appMock').toPromise();
     });
 
-    await loadApp('appMock').toPromise();
-  });
+    it('should return an app constructor', async () => {
+        expect.assertions(1);
 
-  it('should return an app constructor', async () => {
-    expect.assertions(1);
+        const appConstructor = await getApp('appMock').toPromise();
 
-    const appConstructor = await getApp('appMock').toPromise();
-
-    expect(appConstructor).toStrictEqual(ApplicationMock);
-  });
+        expect(appConstructor).toStrictEqual(ApplicationMock);
+    });
 });

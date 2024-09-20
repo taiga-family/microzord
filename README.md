@@ -6,13 +6,17 @@
 
 ## What is it?
 
-It is a small tool that allows you to add and render multiple apps on one page. It has simple ideomatic APIs for all modern frameworks and builds bridges between them.
+It is a small tool that allows you to add and render multiple apps on one page. It has simple ideomatic APIs for all
+modern frameworks and builds bridges between them.
 
-🧙 **Framework agnostic**. You can have an Angular application with a React app header and a Vue app footer. Each app can have endless amount of nested apps inside. There are also wrappers for every modern framework with simple API.
+🧙 **Framework agnostic**. You can have an Angular application with a React app header and a Vue app footer. Each app
+can have endless amount of nested apps inside. There are also wrappers for every modern framework with simple API.
 
-🧩 **Modular**. You can insert another app in your app in any place as an ordinary component. Use the same methods to bind data and to handle its events.
+🧩 **Modular**. You can insert another app in your app in any place as an ordinary component. Use the same methods to
+bind data and to handle its events.
 
-🐝 **Tiny as a bee and works as well**. No new code in the bundle of child application and a bit more than 1 KB library for host application to get all the benefits!
+🐝 **Tiny as a bee and works as well**. No new code in the bundle of child application and a bit more than 1 KB library
+for host application to get all the benefits!
 
 ## Angular version support
 
@@ -54,7 +58,10 @@ Usage in application:
 
 <div>Any content</div>
 
-<footer microzordApp="vue-footer-app" (hook)="onFooterLifecycleEvent($event)"></footer>
+<footer
+  microzordApp="vue-footer-app"
+  (hook)="onFooterLifecycleEvent($event)"
+></footer>
 ```
 
 ## Core team

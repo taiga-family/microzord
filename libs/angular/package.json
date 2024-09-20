@@ -1,35 +1,39 @@
 {
-  "name": "@microzord/angular",
-  "version": "0.0.0-development",
-  "peerDependencies": {
-    "@angular/common": "17.3.9",
-    "@angular/core": "17.3.9",
-    "@angular/router": "17.3.9"
-  },
-  "dependencies": {
-    "tslib": "2.6.3",
-    "@microzord/core": "2.0.1"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "license": "Apache-2.0",
-  "keywords": [
-    "microfrontends",
-    "single-page-application",
-    "framework",
-    "angular",
-    "react",
-    "vue",
-    "routing",
-    "microservices"
-  ],
-  "authors": ["Igor Katsuba <katsuba.igor@gmail.ru>", "Roman Sedov <79601794011@ya.ru>"],
-  "contributors": [
-    "Igor Katsuba <katsuba.igor@gmail.ru>",
-    "Roman Sedov <79601794011@ya.ru>",
-    "Vsevolod Arutyunov <sevaru@inbox.ru>"
-  ],
-  "repository": "https://github.com/taiga-family/microzord",
-  "homepage": "https://taiga-family.github.io/microzord"
+    "name": "@microzord/angular",
+    "version": "2.0.2",
+    "keywords": [
+        "microfrontends",
+        "single-page-application",
+        "framework",
+        "angular",
+        "react",
+        "vue",
+        "routing",
+        "microservices"
+    ],
+    "homepage": "https://taiga-family.github.io/microzord",
+    "repository": "https://github.com/taiga-family/microzord",
+    "license": "Apache-2.0",
+    "contributors": [
+        "Igor Katsuba <katsuba.igor@gmail.ru>",
+        "Roman Sedov <79601794011@ya.ru>",
+        "Vsevolod Arutyunov <sevaru@inbox.ru>"
+    ],
+    "dependencies": {
+        "@microzord/core": "^2.0.2"
+    },
+    "peerDependencies": {
+        "@angular/common": ">=16.0.0",
+        "@angular/core": ">=16.0.0",
+        "@angular/router": ">=16.0.0",
+        "@microzord/core": ">=2.0.2",
+        "tslib": ">=2.7.0"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "authors": [
+        "Igor Katsuba <katsuba.igor@gmail.ru>",
+        "Roman Sedov <79601794011@ya.ru>"
+    ]
 }

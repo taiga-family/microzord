@@ -1,70 +1,49 @@
 {
-  "name": "angular",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "library",
-  "sourceRoot": "libs/angular/src",
-  "prefix": "",
-  "targets": {
-    "build": {
-      "executor": "@nx/angular:package",
-      "options": {
-        "tsConfig": "libs/angular/tsconfig.lib.json",
-        "project": "libs/angular/ng-package.json"
-      },
-      "configurations": {
-        "production": {
-          "tsConfig": "libs/angular/tsconfig.lib.prod.json"
-        }
-      }
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": [
-          "libs/angular/src/**/*.ts",
-          "libs/angular/src/**/*.html",
-          "lib/angular/package.json"
-        ]
-      },
-      "outputs": ["{options.outputFile}"]
-    },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/angular"],
-      "options": {
-        "jestConfig": "libs/angular/jest.config.ts",
-        "coverageDirectory": "coverage/angular"
-      }
-    },
-    "semrel": {
-      "executor": "@ng-builders/semrel:release",
-      "options": {
-        "npm": {
-          "pkgRoot": "dist/libs/angular"
+    "name": "angular",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/angular/src",
+    "prefix": "",
+    "tags": [],
+    "targets": {
+        "build": {
+            "executor": "@nx/angular:package",
+            "options": {
+                "tsConfig": "libs/{projectName}/tsconfig.lib.json",
+                "project": "libs/{projectName}/ng-package.json"
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "libs/{projectName}/tsconfig.lib.prod.json"
+                }
+            }
         },
-        "branches": [
-          "+([0-9])?(.{+([0-9]),x}).x",
-          "main",
-          "next",
-          "next-major",
-          {
-            "name": "beta",
-            "prerelease": true
-          },
-          {
-            "name": "alpha",
-            "prerelease": true
-          }
-        ]
-      }
-    },
-    "release": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": ["npm run release:package --package=angular"],
-        "parallel": false
-      }
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/coverage/{projectName}"],
+            "options": {
+                "jestConfig": "libs/{projectName}/jest.config.ts",
+                "coverageDirectory": "coverage/{projectName}"
+            }
+        },
+        "prepublish": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "cp ./LICENSE ./README.md ./dist/libs/{projectName}"
+            }
+        },
+        "publish": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "npm publish ./dist/libs/{projectName} --ignore-scripts"
+            },
+            "dependsOn": [
+                {
+                    "target": "prepublish",
+                    "params": "ignore",
+                    "dependencies": false
+                }
+            ]
+        }
     }
-  },
-  "tags": []
 }

@@ -1,25 +1,26 @@
 import {ApplicationMock} from '@microzord/core/testing';
+
+import {getEntity} from './get-entity';
 import {loadEntity} from './load-entity';
 import {registerEntity} from './register-entity';
-import {getEntity} from './get-entity';
 
 describe('getEntity', () => {
-  beforeEach(async () => {
-    registerEntity({
-      name: 'appMock',
-      load() {
-        return ApplicationMock;
-      },
+    beforeEach(async () => {
+        registerEntity({
+            name: 'appMock',
+            load() {
+                return ApplicationMock;
+            },
+        });
+
+        await loadEntity('appMock').toPromise();
     });
 
-    await loadEntity('appMock').toPromise();
-  });
+    it('should return an app constructor', async () => {
+        expect.assertions(1);
 
-  it('should return an app constructor', async () => {
-    expect.assertions(1);
+        const appConstructor = await getEntity('appMock').toPromise();
 
-    const appConstructor = await getEntity('appMock').toPromise();
-
-    expect(appConstructor).toStrictEqual(ApplicationMock);
-  });
+        expect(appConstructor).toStrictEqual(ApplicationMock);
+    });
 });

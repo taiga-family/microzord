@@ -1,73 +1,56 @@
 {
-  "name": "react",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/react/src",
-  "projectType": "library",
-  "targets": {
-    "build": {
-      "executor": "@nx/rollup:rollup",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/react",
-        "tsConfig": "libs/react/tsconfig.lib.json",
-        "project": "libs/react/package.json",
-        "entryFile": "libs/react/src/index.ts",
-        "external": ["react", "react-dom"],
-        "babelConfig": "@nx/react/plugins/bundle-babel",
-        "rollupConfig": "@nx/react/plugins/bundle-rollup",
-        "assets": [
-          {
-            "glob": "README.md",
-            "input": ".",
-            "output": "."
-          }
-        ]
-      }
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": ["libs/react/**/*.{ts,tsx,js,jsx}"]
-      },
-      "outputs": ["{options.outputFile}"]
-    },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/react"],
-      "options": {
-        "jestConfig": "libs/react/jest.config.ts",
-        "coverageDirectory": "coverage/react"
-      }
-    },
-    "semrel": {
-      "executor": "@ng-builders/semrel:release",
-      "options": {
-        "npm": {
-          "pkgRoot": "dist/libs/react"
+    "name": "react",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/react/src",
+    "projectType": "library",
+    "tags": [],
+    "targets": {
+        "build": {
+            "executor": "@nx/rollup:rollup",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/libs/{projectName}",
+                "tsConfig": "libs/{projectName}/tsconfig.lib.json",
+                "project": "libs/{projectName}/package.json",
+                "entryFile": "libs/{projectName}/src/index.ts",
+                "external": ["react", "react-dom"],
+                "babelConfig": "@nx/react/plugins/bundle-babel",
+                "rollupConfig": "@nx/react/plugins/bundle-rollup",
+                "assets": [
+                    {
+                        "glob": "README.md",
+                        "input": ".",
+                        "output": "."
+                    }
+                ]
+            }
         },
-        "branches": [
-          "+([0-9])?(.{+([0-9]),x}).x",
-          "main",
-          "next",
-          "next-major",
-          {
-            "name": "beta",
-            "prerelease": true
-          },
-          {
-            "name": "alpha",
-            "prerelease": true
-          }
-        ]
-      }
-    },
-    "release": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": ["npm run release:package --package=react"],
-        "parallel": false
-      }
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/coverage/{projectName}"],
+            "options": {
+                "jestConfig": "libs/{projectName}/jest.config.ts",
+                "coverageDirectory": "coverage/{projectName}"
+            }
+        },
+        "prepublish": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "cp ./LICENSE ./README.md ./dist/libs/{projectName}"
+            }
+        },
+        "publish": {
+            "executor": "nx:run-commands",
+            "options": {
+                "command": "npm publish ./dist/libs/{projectName} --ignore-scripts"
+            },
+            "dependsOn": [
+                {
+                    "target": "prepublish",
+                    "params": "ignore",
+                    "dependencies": false
+                }
+            ]
+        }
     }
-  },
-  "tags": []
 }

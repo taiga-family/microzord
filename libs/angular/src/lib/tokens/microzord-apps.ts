@@ -1,17 +1,18 @@
-import {AppRegistrationOptions} from '@microzord/core';
 import {InjectionToken} from '@angular/core';
-import {NgModuleRegistrationOptions} from '../types/ng-module';
+import type {AppRegistrationOptions} from '@microzord/core';
+
+import type {NgModuleRegistrationOptions} from '../types/ng-module';
 
 export const MICROZORD_APPS = new InjectionToken<AppRegistrationOptions[][]>(
-  'Microzord apps',
-  {
-    factory: () => [],
-  },
+    '[MICROZORD_APPS]: Microzord apps',
+    {
+        factory: () => [],
+    },
 );
 
 export const MICROZORD_NG_MODULES = new InjectionToken<NgModuleRegistrationOptions[][]>(
-  'Microzord Angular modules',
-  {
-    factory: () => [],
-  },
+    '[MICROZORD_NG_MODULES]: Microzord Angular modules',
+    {
+        factory: () => [],
+    },
 );

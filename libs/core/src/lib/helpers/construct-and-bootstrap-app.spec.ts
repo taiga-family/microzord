@@ -1,74 +1,81 @@
-import {registerApp} from './register-app';
-import {Application} from '../models/application';
-import {AppRegistrationOptions} from '../models/registration-options';
-import {loadApp} from './load-app';
-import {constructAndBootstrapApp} from './construct-and-bootstrap-app';
-import {entityOptionsRegistry, loadedEntityRegistry} from '../registry';
 import {ApplicationMock} from '@microzord/core/testing';
 
+import {Application} from '../models/application';
+import type {AppRegistrationOptions} from '../models/registration-options';
+import {entityOptionsRegistry, loadedEntityRegistry} from '../registry';
+import {constructAndBootstrapApp} from './construct-and-bootstrap-app';
+import {loadApp} from './load-app';
+import {registerApp} from './register-app';
+
 function clearRegistry() {
-  loadedEntityRegistry.clear();
-  entityOptionsRegistry.clear();
+    loadedEntityRegistry.clear();
+    entityOptionsRegistry.clear();
 }
 
 describe('constructAndBootstrapApp', () => {
-  let options: AppRegistrationOptions;
-  let loadFn: jest.SpiedFunction<AppRegistrationOptions['load']>;
+    let options: AppRegistrationOptions;
+    let loadFn: jest.SpiedFunction<AppRegistrationOptions['load']>;
 
-  beforeEach(async () => {
-    options = {
-      name: 'appMock',
-      load() {
-        return ApplicationMock;
-      },
-    };
-
-    loadFn = jest.spyOn(options, 'load');
-
-    registerApp(options);
-  });
-
-  describe('An app is already loaded', () => {
     beforeEach(async () => {
-      await loadApp('appMock').toPromise();
+        options = {
+            name: 'appMock',
+            load() {
+                return ApplicationMock;
+            },
+        };
+
+        loadFn = jest.spyOn(options, 'load');
+
+        registerApp(options);
     });
 
-    it("shouldn't load an app again", async () => {
-      expect.assertions(1);
+    describe('An app is already loaded', () => {
+        beforeEach(async () => {
+            await loadApp('appMock').toPromise();
+        });
 
-      await constructAndBootstrapApp('appMock', '#container').toPromise();
+        it("shouldn't load an app again", async () => {
+            expect.assertions(1);
 
-      expect(loadFn).toHaveBeenCalledTimes(1);
+            await constructAndBootstrapApp('appMock', '#container').toPromise();
+
+            expect(loadFn).toHaveBeenCalledTimes(1);
+        });
+
+        it('should bootstrap an app', async () => {
+            expect.assertions(1);
+
+            const app = await constructAndBootstrapApp(
+                'appMock',
+                '#container',
+            ).toPromise();
+
+            expect(app).toBeInstanceOf(ApplicationMock);
+        });
     });
 
-    it('should bootstrap an app', async () => {
-      expect.assertions(1);
+    describe('An app is NOT loaded', () => {
+        it('should load an app', async () => {
+            expect.assertions(1);
 
-      const app = await constructAndBootstrapApp('appMock', '#container').toPromise();
+            await constructAndBootstrapApp('appMock', '#container').toPromise();
 
-      expect(app).toBeInstanceOf(ApplicationMock);
+            expect(loadFn).toHaveBeenCalledTimes(1);
+        });
+
+        it('should bootstrap an app', async () => {
+            expect.assertions(1);
+
+            const app = await constructAndBootstrapApp(
+                'appMock',
+                '#container',
+            ).toPromise();
+
+            expect(app).toBeInstanceOf(Application);
+        });
     });
-  });
 
-  describe('An app is NOT loaded', () => {
-    it('should load an app', async () => {
-      expect.assertions(1);
-
-      await constructAndBootstrapApp('appMock', '#container').toPromise();
-
-      expect(loadFn).toHaveBeenCalledTimes(1);
+    afterEach(() => {
+        clearRegistry();
     });
-
-    it('should bootstrap an app', async () => {
-      expect.assertions(1);
-
-      const app = await constructAndBootstrapApp('appMock', '#container').toPromise();
-
-      expect(app).toBeInstanceOf(Application);
-    });
-  });
-
-  afterEach(() => {
-    clearRegistry();
-  });
 });

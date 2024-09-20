@@ -11,11 +11,10 @@ export const myRemoteApp = createApp(
 `;
 
 @Component({
-  selector: 'angular-child',
-  templateUrl: 'angular-child.template.html',
-  styleUrls: ['./angular-child.style.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'angular-child',
+    templateUrl: './angular-child.template.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AngularChildComponent {
-  readonly code = CODE;
+    public readonly code = CODE;
 }
