@@ -144,15 +144,21 @@ const USER_AGENT = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken
 
 let HostChildWarningModule = /*#__PURE__*/(() => {
   class HostChildWarningModule {
-    static #_ = this.ɵfac = function HostChildWarningModule_Factory(t) {
-      return new (t || HostChildWarningModule)();
-    };
-    static #_2 = this.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
-      type: HostChildWarningModule
-    });
-    static #_3 = this.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-      imports: [_taiga_ui_core__WEBPACK_IMPORTED_MODULE_1__/* .TuiNotificationModule */ .O]
-    });
+    static {
+      this.ɵfac = function HostChildWarningModule_Factory(t) {
+        return new (t || HostChildWarningModule)();
+      };
+    }
+    static {
+      this.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+        type: HostChildWarningModule
+      });
+    }
+    static {
+      this.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+        imports: [_taiga_ui_core__WEBPACK_IMPORTED_MODULE_1__/* .TuiNotificationModule */ .O]
+      });
+    }
   }
   return HostChildWarningModule;
 })();
@@ -198,13 +204,17 @@ let InjectableAnimationEngine = /*#__PURE__*/(() => {
     ngOnDestroy() {
       this.flush();
     }
-    static #_ = this.ɵfac = function InjectableAnimationEngine_Factory(t) {
-      return new (t || InjectableAnimationEngine)(core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵinject"](browser/* AnimationDriver */.Xw), core_mjs_["ɵɵinject"](browser/* ɵAnimationStyleNormalizer */.Yp));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: InjectableAnimationEngine,
-      factory: InjectableAnimationEngine.ɵfac
-    });
+    static {
+      this.ɵfac = function InjectableAnimationEngine_Factory(t) {
+        return new (t || InjectableAnimationEngine)(core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵinject"](browser/* AnimationDriver */.Xw), core_mjs_["ɵɵinject"](browser/* ɵAnimationStyleNormalizer */.Yp));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: InjectableAnimationEngine,
+        factory: InjectableAnimationEngine.ɵfac
+      });
+    }
   }
   return InjectableAnimationEngine;
 })();
@@ -280,16 +290,22 @@ let BrowserAnimationsModule = /*#__PURE__*/(() => {
         providers: config.disableAnimations ? BROWSER_NOOP_ANIMATIONS_PROVIDERS : BROWSER_ANIMATIONS_PROVIDERS
       };
     }
-    static #_ = this.ɵfac = function BrowserAnimationsModule_Factory(t) {
-      return new (t || BrowserAnimationsModule)();
-    };
-    static #_2 = this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-      type: BrowserAnimationsModule
-    });
-    static #_3 = this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-      providers: BROWSER_ANIMATIONS_PROVIDERS,
-      imports: [platform_browser/* BrowserModule */.Bb]
-    });
+    static {
+      this.ɵfac = function BrowserAnimationsModule_Factory(t) {
+        return new (t || BrowserAnimationsModule)();
+      };
+    }
+    static {
+      this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+        type: BrowserAnimationsModule
+      });
+    }
+    static {
+      this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+        providers: BROWSER_ANIMATIONS_PROVIDERS,
+        imports: [platform_browser/* BrowserModule */.Bb]
+      });
+    }
   }
   return BrowserAnimationsModule;
 })();
@@ -330,16 +346,22 @@ function provideAnimations() {
  */
 let NoopAnimationsModule = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
   class NoopAnimationsModule {
-    static #_ = this.ɵfac = function NoopAnimationsModule_Factory(t) {
-      return new (t || NoopAnimationsModule)();
-    };
-    static #_2 = this.ɵmod = /* @__PURE__ */i0.ɵɵdefineNgModule({
-      type: NoopAnimationsModule
-    });
-    static #_3 = this.ɵinj = /* @__PURE__ */i0.ɵɵdefineInjector({
-      providers: BROWSER_NOOP_ANIMATIONS_PROVIDERS,
-      imports: [BrowserModule]
-    });
+    static {
+      this.ɵfac = function NoopAnimationsModule_Factory(t) {
+        return new (t || NoopAnimationsModule)();
+      };
+    }
+    static {
+      this.ɵmod = /* @__PURE__ */i0.ɵɵdefineNgModule({
+        type: NoopAnimationsModule
+      });
+    }
+    static {
+      this.ɵinj = /* @__PURE__ */i0.ɵɵdefineInjector({
+        providers: BROWSER_NOOP_ANIMATIONS_PROVIDERS,
+        imports: [BrowserModule]
+      });
+    }
   }
   return NoopAnimationsModule;
 })()));
@@ -405,31 +427,35 @@ var taiga_ui_core_components_link = __webpack_require__(1974);
 
 let AppComponent = /*#__PURE__*/(() => {
   class AppComponent {
-    static #_ = this.ɵfac = function AppComponent_Factory(t) {
-      return new (t || AppComponent)();
-    };
-    static #_2 = this.ɵcmp = /*@__PURE__*/core_mjs_["ɵɵdefineComponent"]({
-      type: AppComponent,
-      selectors: [["microzord-root"]],
-      decls: 5,
-      vars: 0,
-      consts: [["ngProjectAs", "tuiDocHeader", 5, ["tuiDocHeader"]], ["tuiLink", "", "tuiMode", "onLight", "href", "https://github.com/taiga-family/microzord", "target", "_blank", 1, "link"], ["src", "assets/images/github.svg", "alt", "", 1, "github"]],
-      template: function AppComponent_Template(rf, ctx) {
-        if (rf & 1) {
-          core_mjs_["ɵɵelementStart"](0, "tui-doc-main");
-          core_mjs_["ɵɵelementContainerStart"](1, 0);
-          core_mjs_["ɵɵelementStart"](2, "a", 1);
-          core_mjs_["ɵɵelement"](3, "img", 2);
-          core_mjs_["ɵɵtext"](4, " GitHub ");
-          core_mjs_["ɵɵelementEnd"]();
-          core_mjs_["ɵɵelementContainerEnd"]();
-          core_mjs_["ɵɵelementEnd"]();
-        }
-      },
-      dependencies: [taiga_ui_addon_doc_components/* TuiDocMainComponent */.$c, taiga_ui_core_components_link/* TuiLinkComponent */.E],
-      styles: ["[_nghost-%COMP%] {\n  font: var(--tui-font-text-m);\n}\n.link[_ngcontent-%COMP%] {\n  font-weight: bold;\n  height: 24px;\n}\n.github[_ngcontent-%COMP%] {\n  width: 24px;\n  height: 24px;\n  margin: 0 4px 0 16px;\n  vertical-align: -6px;\n}"],
-      changeDetection: 0
-    });
+    static {
+      this.ɵfac = function AppComponent_Factory(t) {
+        return new (t || AppComponent)();
+      };
+    }
+    static {
+      this.ɵcmp = /*@__PURE__*/core_mjs_["ɵɵdefineComponent"]({
+        type: AppComponent,
+        selectors: [["microzord-root"]],
+        decls: 5,
+        vars: 0,
+        consts: [["ngProjectAs", "tuiDocHeader", 5, ["tuiDocHeader"]], ["tuiLink", "", "tuiMode", "onLight", "href", "https://github.com/taiga-family/microzord", "target", "_blank", 1, "link"], ["src", "assets/images/github.svg", "alt", "", 1, "github"]],
+        template: function AppComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            core_mjs_["ɵɵelementStart"](0, "tui-doc-main");
+            core_mjs_["ɵɵelementContainerStart"](1, 0);
+            core_mjs_["ɵɵelementStart"](2, "a", 1);
+            core_mjs_["ɵɵelement"](3, "img", 2);
+            core_mjs_["ɵɵtext"](4, " GitHub ");
+            core_mjs_["ɵɵelementEnd"]();
+            core_mjs_["ɵɵelementContainerEnd"]();
+            core_mjs_["ɵɵelementEnd"]();
+          }
+        },
+        dependencies: [taiga_ui_addon_doc_components/* TuiDocMainComponent */.$c, taiga_ui_core_components_link/* TuiLinkComponent */.E],
+        styles: ["[_nghost-%COMP%] {\n  font: var(--tui-font-text-m);\n}\n.link[_ngcontent-%COMP%] {\n  font-weight: bold;\n  height: 24px;\n}\n.github[_ngcontent-%COMP%] {\n  width: 24px;\n  height: 24px;\n  margin: 0 4px 0 16px;\n  vertical-align: -6px;\n}"],
+        changeDetection: 0
+      });
+    }
   }
   return AppComponent;
 })();
@@ -442,25 +468,29 @@ var tinkoff_ng_polymorpheus = __webpack_require__(800);
 
 let LogoComponent = /*#__PURE__*/(() => {
   class LogoComponent {
-    static #_ = this.ɵfac = function LogoComponent_Factory(t) {
-      return new (t || LogoComponent)();
-    };
-    static #_2 = this.ɵcmp = /*@__PURE__*/core_mjs_["ɵɵdefineComponent"]({
-      type: LogoComponent,
-      selectors: [["logo"]],
-      decls: 3,
-      vars: 0,
-      consts: [["src", "assets/images/microzord.png", "alt", "logo", 1, "logo"], ["src", "assets/images/by.svg", "alt", "by Tinkoff", 1, "by"]],
-      template: function LogoComponent_Template(rf, ctx) {
-        if (rf & 1) {
-          core_mjs_["ɵɵelement"](0, "img", 0);
-          core_mjs_["ɵɵtext"](1, "\nmicrozord\n");
-          core_mjs_["ɵɵelement"](2, "img", 1);
-        }
-      },
-      styles: ["\n\n\n\n\n\n\n\n\n[_nghost-%COMP%] {\n  display: flex;\n  align-items: center;\n}\n@media screen and (max-width: 47.9625em) {\n  [_nghost-%COMP%] {\n    font-size: 0;\n  }\n}\n.logo[_ngcontent-%COMP%] {\n  width: 30px;\n  margin-right: 10px;\n}\n.by[_ngcontent-%COMP%] {\n  margin-left: 14px;\n}\n@media screen and (max-width: 47.9625em) {\n  .by[_ngcontent-%COMP%] {\n    display: none;\n  }\n}"],
-      changeDetection: 0
-    });
+    static {
+      this.ɵfac = function LogoComponent_Factory(t) {
+        return new (t || LogoComponent)();
+      };
+    }
+    static {
+      this.ɵcmp = /*@__PURE__*/core_mjs_["ɵɵdefineComponent"]({
+        type: LogoComponent,
+        selectors: [["logo"]],
+        decls: 3,
+        vars: 0,
+        consts: [["src", "assets/images/microzord.png", "alt", "logo", 1, "logo"], ["src", "assets/images/by.svg", "alt", "by Tinkoff", 1, "by"]],
+        template: function LogoComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            core_mjs_["ɵɵelement"](0, "img", 0);
+            core_mjs_["ɵɵtext"](1, "\nmicrozord\n");
+            core_mjs_["ɵɵelement"](2, "img", 1);
+          }
+        },
+        styles: ["\n\n\n\n\n\n\n\n\n[_nghost-%COMP%] {\n  display: flex;\n  align-items: center;\n}\n@media screen and (max-width: 47.9625em) {\n  [_nghost-%COMP%] {\n    font-size: 0;\n  }\n}\n.logo[_ngcontent-%COMP%] {\n  width: 30px;\n  margin-right: 10px;\n}\n.by[_ngcontent-%COMP%] {\n  margin-left: 14px;\n}\n@media screen and (max-width: 47.9625em) {\n  .by[_ngcontent-%COMP%] {\n    display: none;\n  }\n}"],
+        changeDetection: 0
+      });
+    }
   }
   return LogoComponent;
 })();
@@ -612,15 +642,21 @@ var host_child_warning_module = __webpack_require__(16);
 
 let GettingStartedModule = /*#__PURE__*/(() => {
   class GettingStartedModule {
-    static #_ = this.ɵfac = function GettingStartedModule_Factory(t) {
-      return new (t || GettingStartedModule)();
-    };
-    static #_2 = this.ɵmod = /*@__PURE__*/core_mjs_["ɵɵdefineNgModule"]({
-      type: GettingStartedModule
-    });
-    static #_3 = this.ɵinj = /*@__PURE__*/core_mjs_["ɵɵdefineInjector"]({
-      imports: [common_mjs_.CommonModule, taiga_ui_addon_doc_components/* TuiDocPageModule */.AC, taiga_ui_core_components_link/* TuiLinkModule */.l, taiga_ui_addon_doc_components/* TuiDocCodeModule */.ii, router_mjs_.RouterModule, taiga_ui_core_components_notification/* TuiNotificationModule */.O, TuiIslandModule, host_child_warning_module/* HostChildWarningModule */.T]
-    });
+    static {
+      this.ɵfac = function GettingStartedModule_Factory(t) {
+        return new (t || GettingStartedModule)();
+      };
+    }
+    static {
+      this.ɵmod = /*@__PURE__*/core_mjs_["ɵɵdefineNgModule"]({
+        type: GettingStartedModule
+      });
+    }
+    static {
+      this.ɵinj = /*@__PURE__*/core_mjs_["ɵɵdefineInjector"]({
+        imports: [common_mjs_.CommonModule, taiga_ui_addon_doc_components/* TuiDocPageModule */.AC, taiga_ui_core_components_link/* TuiLinkModule */.l, taiga_ui_addon_doc_components/* TuiDocCodeModule */.ii, router_mjs_.RouterModule, taiga_ui_core_components_notification/* TuiNotificationModule */.O, TuiIslandModule, host_child_warning_module/* HostChildWarningModule */.T]
+      });
+    }
   }
   return GettingStartedModule;
 })();
@@ -632,86 +668,90 @@ let GettingStartedModule = /*#__PURE__*/(() => {
 
 let GettingStartedComponent = /*#__PURE__*/(() => {
   class GettingStartedComponent {
-    static #_ = this.ɵfac = function GettingStartedComponent_Factory(t) {
-      return new (t || GettingStartedComponent)();
-    };
-    static #_2 = this.ɵcmp = /*@__PURE__*/core_mjs_["ɵɵdefineComponent"]({
-      type: GettingStartedComponent,
-      selectors: [["getting-started"]],
-      decls: 57,
-      vars: 0,
-      consts: [["header", "Getting started"], [1, "about"], [1, "about__benefit"], [1, "tui-island__title"], [1, "tui-island__paragraph"], [1, "tui-space_top-4"], ["tuiLink", "", "routerLink", "/application"], ["tuiLink", "", "routerLink", "/todo"], ["tuiLink", "", "routerLink", "/angular-installation"]],
-      template: function GettingStartedComponent_Template(rf, ctx) {
-        if (rf & 1) {
-          core_mjs_["ɵɵelementStart"](0, "tui-doc-page", 0)(1, "p")(2, "strong");
-          core_mjs_["ɵɵtext"](3, "microzord");
-          core_mjs_["ɵɵelementEnd"]();
-          core_mjs_["ɵɵtext"](4, " is a small tool that allows you to add and render multiple apps on one page. It has simple ideomatic APIs for some modern frameworks (Vue and Svelte come soon) and builds bridges between them. ");
-          core_mjs_["ɵɵelementEnd"]();
-          core_mjs_["ɵɵelementStart"](5, "section", 1)(6, "tui-island", 2)(7, "h3", 3);
-          core_mjs_["ɵɵtext"](8, "\uD83E\uDDD9 Framework agnostic");
-          core_mjs_["ɵɵelementEnd"]();
-          core_mjs_["ɵɵelementStart"](9, "p", 4);
-          core_mjs_["ɵɵtext"](10, " You can have an Angular application with a React app header and a Vue app footer. Each app can have endless amount of nested apps inside. There are also wrappers for every modern framework with simple API. ");
-          core_mjs_["ɵɵelementEnd"]()();
-          core_mjs_["ɵɵelementStart"](11, "tui-island", 2)(12, "h3", 3);
-          core_mjs_["ɵɵtext"](13, "\uD83E\uDDE9 Modular");
-          core_mjs_["ɵɵelementEnd"]();
-          core_mjs_["ɵɵelementStart"](14, "p", 4);
-          core_mjs_["ɵɵtext"](15, " You can insert another app in your app in any place as an ordinary component. Use the same methods to bind data and to handle its events. ");
-          core_mjs_["ɵɵelementEnd"]()()();
-          core_mjs_["ɵɵelementStart"](16, "section")(17, "h2");
-          core_mjs_["ɵɵtext"](18, "What it is about");
-          core_mjs_["ɵɵelementEnd"]();
-          core_mjs_["ɵɵelementStart"](19, "p");
-          core_mjs_["ɵɵtext"](20, "There are two terms that we want to declare first:");
-          core_mjs_["ɵɵelementEnd"]();
-          core_mjs_["ɵɵelementStart"](21, "ul")(22, "li")(23, "strong");
-          core_mjs_["ɵɵtext"](24, "Child app");
-          core_mjs_["ɵɵelementEnd"]();
-          core_mjs_["ɵɵtext"](25, " is any application that is built with microzord and can be inserted into the host app. ");
-          core_mjs_["ɵɵelementEnd"]();
-          core_mjs_["ɵɵelementStart"](26, "li")(27, "strong");
-          core_mjs_["ɵɵtext"](28, "Host app");
-          core_mjs_["ɵɵelementEnd"]();
-          core_mjs_["ɵɵtext"](29, " is any application that uses microzord to render child apps inside. ");
-          core_mjs_["ɵɵelementEnd"]()();
-          core_mjs_["ɵɵelementStart"](30, "tui-notification", 5);
-          core_mjs_["ɵɵtext"](31, " Some application can host any amount of child apps and be a child for other app at the same time ");
-          core_mjs_["ɵɵelementEnd"]();
-          core_mjs_["ɵɵelementStart"](32, "p");
-          core_mjs_["ɵɵtext"](33, " Microzord does not impose any restrictions but just gives more opportunities for your app. All your apps can be still used as separated apps and can be integrated with others with no additional code in application bundle. ");
-          core_mjs_["ɵɵelementEnd"]();
-          core_mjs_["ɵɵelementStart"](34, "p");
-          core_mjs_["ɵɵtext"](35, " It renders your apps right in DOM without any additional elements or iframes and provides some ideomatic ways to control apps and get data from them. ");
-          core_mjs_["ɵɵelementEnd"]()();
-          core_mjs_["ɵɵelementStart"](36, "section")(37, "h2");
-          core_mjs_["ɵɵtext"](38, "How to start");
-          core_mjs_["ɵɵelementEnd"]();
-          core_mjs_["ɵɵelementStart"](39, "p");
-          core_mjs_["ɵɵtext"](40, "You can read about main concepts of microzord:");
-          core_mjs_["ɵɵelementEnd"]();
-          core_mjs_["ɵɵelementStart"](41, "ul")(42, "li")(43, "a", 6);
-          core_mjs_["ɵɵtext"](44, "Application entity");
-          core_mjs_["ɵɵelementEnd"]()()();
-          core_mjs_["ɵɵelementStart"](45, "p");
-          core_mjs_["ɵɵtext"](46, "Or you can just choose your framework and figure it out in the process:");
-          core_mjs_["ɵɵelementEnd"]();
-          core_mjs_["ɵɵelementStart"](47, "ul")(48, "li")(49, "a", 7);
-          core_mjs_["ɵɵtext"](50, "Native JS installation");
-          core_mjs_["ɵɵelementEnd"]()();
-          core_mjs_["ɵɵelementStart"](51, "li")(52, "a", 7);
-          core_mjs_["ɵɵtext"](53, "React installation");
-          core_mjs_["ɵɵelementEnd"]()();
-          core_mjs_["ɵɵelementStart"](54, "li")(55, "a", 8);
-          core_mjs_["ɵɵtext"](56, "Angular installation");
-          core_mjs_["ɵɵelementEnd"]()()()()();
-        }
-      },
-      dependencies: [taiga_ui_addon_doc_components/* TuiDocPageComponent */.Pt, taiga_ui_core_components_link/* TuiLinkComponent */.E, router_mjs_.RouterLink, taiga_ui_core_components_notification/* TuiNotificationComponent */.v, TuiIslandComponent],
-      styles: [".about[_ngcontent-%COMP%] {\n  display: flex;\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\n.about__benefit[_ngcontent-%COMP%] {\n  flex: 1;\n  margin-right: 32px;\n}"],
-      changeDetection: 0
-    });
+    static {
+      this.ɵfac = function GettingStartedComponent_Factory(t) {
+        return new (t || GettingStartedComponent)();
+      };
+    }
+    static {
+      this.ɵcmp = /*@__PURE__*/core_mjs_["ɵɵdefineComponent"]({
+        type: GettingStartedComponent,
+        selectors: [["getting-started"]],
+        decls: 57,
+        vars: 0,
+        consts: [["header", "Getting started"], [1, "about"], [1, "about__benefit"], [1, "tui-island__title"], [1, "tui-island__paragraph"], [1, "tui-space_top-4"], ["tuiLink", "", "routerLink", "/application"], ["tuiLink", "", "routerLink", "/todo"], ["tuiLink", "", "routerLink", "/angular-installation"]],
+        template: function GettingStartedComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            core_mjs_["ɵɵelementStart"](0, "tui-doc-page", 0)(1, "p")(2, "strong");
+            core_mjs_["ɵɵtext"](3, "microzord");
+            core_mjs_["ɵɵelementEnd"]();
+            core_mjs_["ɵɵtext"](4, " is a small tool that allows you to add and render multiple apps on one page. It has simple ideomatic APIs for some modern frameworks (Vue and Svelte come soon) and builds bridges between them. ");
+            core_mjs_["ɵɵelementEnd"]();
+            core_mjs_["ɵɵelementStart"](5, "section", 1)(6, "tui-island", 2)(7, "h3", 3);
+            core_mjs_["ɵɵtext"](8, "\uD83E\uDDD9 Framework agnostic");
+            core_mjs_["ɵɵelementEnd"]();
+            core_mjs_["ɵɵelementStart"](9, "p", 4);
+            core_mjs_["ɵɵtext"](10, " You can have an Angular application with a React app header and a Vue app footer. Each app can have endless amount of nested apps inside. There are also wrappers for every modern framework with simple API. ");
+            core_mjs_["ɵɵelementEnd"]()();
+            core_mjs_["ɵɵelementStart"](11, "tui-island", 2)(12, "h3", 3);
+            core_mjs_["ɵɵtext"](13, "\uD83E\uDDE9 Modular");
+            core_mjs_["ɵɵelementEnd"]();
+            core_mjs_["ɵɵelementStart"](14, "p", 4);
+            core_mjs_["ɵɵtext"](15, " You can insert another app in your app in any place as an ordinary component. Use the same methods to bind data and to handle its events. ");
+            core_mjs_["ɵɵelementEnd"]()()();
+            core_mjs_["ɵɵelementStart"](16, "section")(17, "h2");
+            core_mjs_["ɵɵtext"](18, "What it is about");
+            core_mjs_["ɵɵelementEnd"]();
+            core_mjs_["ɵɵelementStart"](19, "p");
+            core_mjs_["ɵɵtext"](20, "There are two terms that we want to declare first:");
+            core_mjs_["ɵɵelementEnd"]();
+            core_mjs_["ɵɵelementStart"](21, "ul")(22, "li")(23, "strong");
+            core_mjs_["ɵɵtext"](24, "Child app");
+            core_mjs_["ɵɵelementEnd"]();
+            core_mjs_["ɵɵtext"](25, " is any application that is built with microzord and can be inserted into the host app. ");
+            core_mjs_["ɵɵelementEnd"]();
+            core_mjs_["ɵɵelementStart"](26, "li")(27, "strong");
+            core_mjs_["ɵɵtext"](28, "Host app");
+            core_mjs_["ɵɵelementEnd"]();
+            core_mjs_["ɵɵtext"](29, " is any application that uses microzord to render child apps inside. ");
+            core_mjs_["ɵɵelementEnd"]()();
+            core_mjs_["ɵɵelementStart"](30, "tui-notification", 5);
+            core_mjs_["ɵɵtext"](31, " Some application can host any amount of child apps and be a child for other app at the same time ");
+            core_mjs_["ɵɵelementEnd"]();
+            core_mjs_["ɵɵelementStart"](32, "p");
+            core_mjs_["ɵɵtext"](33, " Microzord does not impose any restrictions but just gives more opportunities for your app. All your apps can be still used as separated apps and can be integrated with others with no additional code in application bundle. ");
+            core_mjs_["ɵɵelementEnd"]();
+            core_mjs_["ɵɵelementStart"](34, "p");
+            core_mjs_["ɵɵtext"](35, " It renders your apps right in DOM without any additional elements or iframes and provides some ideomatic ways to control apps and get data from them. ");
+            core_mjs_["ɵɵelementEnd"]()();
+            core_mjs_["ɵɵelementStart"](36, "section")(37, "h2");
+            core_mjs_["ɵɵtext"](38, "How to start");
+            core_mjs_["ɵɵelementEnd"]();
+            core_mjs_["ɵɵelementStart"](39, "p");
+            core_mjs_["ɵɵtext"](40, "You can read about main concepts of microzord:");
+            core_mjs_["ɵɵelementEnd"]();
+            core_mjs_["ɵɵelementStart"](41, "ul")(42, "li")(43, "a", 6);
+            core_mjs_["ɵɵtext"](44, "Application entity");
+            core_mjs_["ɵɵelementEnd"]()()();
+            core_mjs_["ɵɵelementStart"](45, "p");
+            core_mjs_["ɵɵtext"](46, "Or you can just choose your framework and figure it out in the process:");
+            core_mjs_["ɵɵelementEnd"]();
+            core_mjs_["ɵɵelementStart"](47, "ul")(48, "li")(49, "a", 7);
+            core_mjs_["ɵɵtext"](50, "Native JS installation");
+            core_mjs_["ɵɵelementEnd"]()();
+            core_mjs_["ɵɵelementStart"](51, "li")(52, "a", 7);
+            core_mjs_["ɵɵtext"](53, "React installation");
+            core_mjs_["ɵɵelementEnd"]()();
+            core_mjs_["ɵɵelementStart"](54, "li")(55, "a", 8);
+            core_mjs_["ɵɵtext"](56, "Angular installation");
+            core_mjs_["ɵɵelementEnd"]()()()()();
+          }
+        },
+        dependencies: [taiga_ui_addon_doc_components/* TuiDocPageComponent */.Pt, taiga_ui_core_components_link/* TuiLinkComponent */.E, router_mjs_.RouterLink, taiga_ui_core_components_notification/* TuiNotificationComponent */.v, TuiIslandComponent],
+        styles: [".about[_ngcontent-%COMP%] {\n  display: flex;\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\n.about__benefit[_ngcontent-%COMP%] {\n  flex: 1;\n  margin-right: 32px;\n}"],
+        changeDetection: 0
+      });
+    }
   }
   return GettingStartedComponent;
 })();
@@ -921,14 +961,18 @@ let HighlightLoader = /*#__PURE__*/(/* unused pure expression or super */ null &
       this._themeLinkElement.media = 'screen,print';
       this.doc.head.appendChild(this._themeLinkElement);
     }
-    static #_ = this.ɵfac = function HighlightLoader_Factory(t) {
-      return new (t || HighlightLoader)(i0.ɵɵinject(DOCUMENT), i0.ɵɵinject(PLATFORM_ID), i0.ɵɵinject(HIGHLIGHT_OPTIONS, 8));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
-      token: HighlightLoader,
-      factory: HighlightLoader.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function HighlightLoader_Factory(t) {
+        return new (t || HighlightLoader)(i0.ɵɵinject(DOCUMENT), i0.ɵɵinject(PLATFORM_ID), i0.ɵɵinject(HIGHLIGHT_OPTIONS, 8));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+        token: HighlightLoader,
+        factory: HighlightLoader.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return HighlightLoader;
 })()));
@@ -1071,14 +1115,18 @@ let HighlightJS = /*#__PURE__*/(/* unused pure expression or super */ null && ((
     lineNumbersBlock(el) {
       return this._loader.ready.pipe(filter(hljs => !!hljs.lineNumbersBlock), tap(hljs => hljs.lineNumbersBlock(el)));
     }
-    static #_ = this.ɵfac = function HighlightJS_Factory(t) {
-      return new (t || HighlightJS)(i0.ɵɵinject(HighlightLoader), i0.ɵɵinject(HIGHLIGHT_OPTIONS, 8));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
-      token: HighlightJS,
-      factory: HighlightJS.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function HighlightJS_Factory(t) {
+        return new (t || HighlightJS)(i0.ɵɵinject(HighlightLoader), i0.ɵɵinject(HIGHLIGHT_OPTIONS, 8));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+        token: HighlightJS,
+        factory: HighlightJS.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return HighlightJS;
 })()));
@@ -1157,29 +1205,33 @@ let Highlight = /*#__PURE__*/(/* unused pure expression or super */ null && ((()
     setInnerHTML(content) {
       animationFrameScheduler.schedule(() => this._nativeElement.innerHTML = trustedHTMLFromStringBypass(this._sanitizer.sanitize(SecurityContext.HTML, content) || ''));
     }
-    static #_ = this.ɵfac = function Highlight_Factory(t) {
-      return new (t || Highlight)(i0.ɵɵdirectiveInject(i0.ElementRef), i0.ɵɵdirectiveInject(HighlightJS), i0.ɵɵdirectiveInject(i2.DomSanitizer), i0.ɵɵdirectiveInject(PLATFORM_ID), i0.ɵɵdirectiveInject(HIGHLIGHT_OPTIONS, 8));
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */i0.ɵɵdefineDirective({
-      type: Highlight,
-      selectors: [["", "highlight", ""]],
-      hostVars: 2,
-      hostBindings: function Highlight_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          i0.ɵɵclassProp("hljs", true);
-        }
-      },
-      inputs: {
-        code: [i0.ɵɵInputFlags.None, "highlight", "code"],
-        languages: "languages",
-        lineNumbers: "lineNumbers"
-      },
-      outputs: {
-        highlighted: "highlighted"
-      },
-      standalone: true,
-      features: [i0.ɵɵNgOnChangesFeature]
-    });
+    static {
+      this.ɵfac = function Highlight_Factory(t) {
+        return new (t || Highlight)(i0.ɵɵdirectiveInject(i0.ElementRef), i0.ɵɵdirectiveInject(HighlightJS), i0.ɵɵdirectiveInject(i2.DomSanitizer), i0.ɵɵdirectiveInject(PLATFORM_ID), i0.ɵɵdirectiveInject(HIGHLIGHT_OPTIONS, 8));
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */i0.ɵɵdefineDirective({
+        type: Highlight,
+        selectors: [["", "highlight", ""]],
+        hostVars: 2,
+        hostBindings: function Highlight_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            i0.ɵɵclassProp("hljs", true);
+          }
+        },
+        inputs: {
+          code: [i0.ɵɵInputFlags.None, "highlight", "code"],
+          languages: "languages",
+          lineNumbers: "lineNumbers"
+        },
+        outputs: {
+          highlighted: "highlighted"
+        },
+        standalone: true,
+        features: [i0.ɵɵNgOnChangesFeature]
+      });
+    }
   }
   return Highlight;
 })()));
@@ -1188,13 +1240,19 @@ let Highlight = /*#__PURE__*/(/* unused pure expression or super */ null && ((()
 })();
 let HighlightModule = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
   class HighlightModule {
-    static #_ = this.ɵfac = function HighlightModule_Factory(t) {
-      return new (t || HighlightModule)();
-    };
-    static #_2 = this.ɵmod = /* @__PURE__ */i0.ɵɵdefineNgModule({
-      type: HighlightModule
-    });
-    static #_3 = this.ɵinj = /* @__PURE__ */i0.ɵɵdefineInjector({});
+    static {
+      this.ɵfac = function HighlightModule_Factory(t) {
+        return new (t || HighlightModule)();
+      };
+    }
+    static {
+      this.ɵmod = /* @__PURE__ */i0.ɵɵdefineNgModule({
+        type: HighlightModule
+      });
+    }
+    static {
+      this.ɵinj = /* @__PURE__ */i0.ɵɵdefineInjector({});
+    }
   }
   return HighlightModule;
 })()));
@@ -1236,28 +1294,34 @@ let AppModule = /*#__PURE__*/(() => {
     getEntryPoint() {
       return AppComponent;
     }
-    static #_ = this.ɵfac = function AppModule_Factory(t) {
-      return new (t || AppModule)();
-    };
-    static #_2 = this.ɵmod = /*@__PURE__*/core_mjs_["ɵɵdefineNgModule"]({
-      type: AppModule,
-      bootstrap: [AppComponent]
-    });
-    static #_3 = this.ɵinj = /*@__PURE__*/core_mjs_["ɵɵdefineInjector"]({
-      providers: [{
-        provide: taiga_ui_addon_doc_tokens/* TUI_DOC_LOGO */.sy,
-        useValue: LOGO_CONTENT
-      }, {
-        provide: taiga_ui_addon_doc_tokens/* TUI_DOC_PAGES */.rm,
-        useValue: pages
-      }, {
-        provide: HIGHLIGHT_OPTIONS,
-        useValue: HIGHLIGHT_OPTIONS_VALUE
-      }],
-      imports: [platform_browser/* BrowserModule */.Bb, BrowserAnimationsModule, taiga_ui_addon_doc_components/* TuiDocMainModule */.ED, taiga_ui_core_components_link/* TuiLinkModule */.l, GettingStartedModule, router_mjs_.RouterModule.forRoot(ROUTES, {
-        initialNavigation: 'enabledBlocking'
-      })]
-    });
+    static {
+      this.ɵfac = function AppModule_Factory(t) {
+        return new (t || AppModule)();
+      };
+    }
+    static {
+      this.ɵmod = /*@__PURE__*/core_mjs_["ɵɵdefineNgModule"]({
+        type: AppModule,
+        bootstrap: [AppComponent]
+      });
+    }
+    static {
+      this.ɵinj = /*@__PURE__*/core_mjs_["ɵɵdefineInjector"]({
+        providers: [{
+          provide: taiga_ui_addon_doc_tokens/* TUI_DOC_LOGO */.sy,
+          useValue: LOGO_CONTENT
+        }, {
+          provide: taiga_ui_addon_doc_tokens/* TUI_DOC_PAGES */.rm,
+          useValue: pages
+        }, {
+          provide: HIGHLIGHT_OPTIONS,
+          useValue: HIGHLIGHT_OPTIONS_VALUE
+        }],
+        imports: [platform_browser/* BrowserModule */.Bb, BrowserAnimationsModule, taiga_ui_addon_doc_components/* TuiDocMainModule */.ED, taiga_ui_core_components_link/* TuiLinkModule */.l, GettingStartedModule, router_mjs_.RouterModule.forRoot(ROUTES, {
+          initialNavigation: 'enabledBlocking'
+        })]
+      });
+    }
   }
   return AppModule;
 })();
@@ -9559,14 +9623,18 @@ let clipboard_Clipboard = /*#__PURE__*/(() => {
     beginCopy(text) {
       return new PendingCopy(text, this._document);
     }
-    static #_ = this.ɵfac = function Clipboard_Factory(t) {
-      return new (t || Clipboard)(core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: Clipboard,
-      factory: Clipboard.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function Clipboard_Factory(t) {
+        return new (t || Clipboard)(core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: Clipboard,
+        factory: Clipboard.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return Clipboard;
 })();
@@ -9634,28 +9702,32 @@ let CdkCopyToClipboard = /*#__PURE__*/(() => {
       this._pending.clear();
       this._destroyed = true;
     }
-    static #_ = this.ɵfac = function CdkCopyToClipboard_Factory(t) {
-      return new (t || CdkCopyToClipboard)(core_mjs_["ɵɵdirectiveInject"](clipboard_Clipboard), core_mjs_["ɵɵdirectiveInject"](core_mjs_.NgZone), core_mjs_["ɵɵdirectiveInject"](CDK_COPY_TO_CLIPBOARD_CONFIG, 8));
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: CdkCopyToClipboard,
-      selectors: [["", "cdkCopyToClipboard", ""]],
-      hostBindings: function CdkCopyToClipboard_HostBindings(rf, ctx) {
-        if (rf & 1) {
-          core_mjs_["ɵɵlistener"]("click", function CdkCopyToClipboard_click_HostBindingHandler() {
-            return ctx.copy();
-          });
-        }
-      },
-      inputs: {
-        text: [core_mjs_["ɵɵInputFlags"].None, "cdkCopyToClipboard", "text"],
-        attempts: [core_mjs_["ɵɵInputFlags"].None, "cdkCopyToClipboardAttempts", "attempts"]
-      },
-      outputs: {
-        copied: "cdkCopyToClipboardCopied"
-      },
-      standalone: true
-    });
+    static {
+      this.ɵfac = function CdkCopyToClipboard_Factory(t) {
+        return new (t || CdkCopyToClipboard)(core_mjs_["ɵɵdirectiveInject"](clipboard_Clipboard), core_mjs_["ɵɵdirectiveInject"](core_mjs_.NgZone), core_mjs_["ɵɵdirectiveInject"](CDK_COPY_TO_CLIPBOARD_CONFIG, 8));
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: CdkCopyToClipboard,
+        selectors: [["", "cdkCopyToClipboard", ""]],
+        hostBindings: function CdkCopyToClipboard_HostBindings(rf, ctx) {
+          if (rf & 1) {
+            core_mjs_["ɵɵlistener"]("click", function CdkCopyToClipboard_click_HostBindingHandler() {
+              return ctx.copy();
+            });
+          }
+        },
+        inputs: {
+          text: [core_mjs_["ɵɵInputFlags"].None, "cdkCopyToClipboard", "text"],
+          attempts: [core_mjs_["ɵɵInputFlags"].None, "cdkCopyToClipboardAttempts", "attempts"]
+        },
+        outputs: {
+          copied: "cdkCopyToClipboardCopied"
+        },
+        standalone: true
+      });
+    }
   }
   return CdkCopyToClipboard;
 })();
@@ -9664,13 +9736,19 @@ let CdkCopyToClipboard = /*#__PURE__*/(() => {
 })();
 let ClipboardModule = /*#__PURE__*/(() => {
   class ClipboardModule {
-    static #_ = this.ɵfac = function ClipboardModule_Factory(t) {
-      return new (t || ClipboardModule)();
-    };
-    static #_2 = this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-      type: ClipboardModule
-    });
-    static #_3 = this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+    static {
+      this.ɵfac = function ClipboardModule_Factory(t) {
+        return new (t || ClipboardModule)();
+      };
+    }
+    static {
+      this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+        type: ClipboardModule
+      });
+    }
+    static {
+      this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+    }
   }
   return ClipboardModule;
 })();
@@ -40976,14 +41054,18 @@ function stagger(timings, animation) {
  */
 let AnimationBuilder = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
   class AnimationBuilder {
-    static #_ = this.ɵfac = function AnimationBuilder_Factory(t) {
-      return new (t || AnimationBuilder)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
-      token: AnimationBuilder,
-      factory: () => (() => inject(BrowserAnimationBuilder))(),
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function AnimationBuilder_Factory(t) {
+        return new (t || AnimationBuilder)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+        token: AnimationBuilder,
+        factory: () => (() => inject(BrowserAnimationBuilder))(),
+        providedIn: 'root'
+      });
+    }
   }
   return AnimationBuilder;
 })()));
@@ -41027,14 +41109,18 @@ let BrowserAnimationBuilder = /*#__PURE__*/(/* unused pure expression or super *
       issueAnimationCommand(this._renderer, null, id, 'register', [entry]);
       return new BrowserAnimationFactory(id, this._renderer);
     }
-    static #_ = this.ɵfac = function BrowserAnimationBuilder_Factory(t) {
-      return new (t || BrowserAnimationBuilder)(i0.ɵɵinject(i0.RendererFactory2), i0.ɵɵinject(DOCUMENT));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
-      token: BrowserAnimationBuilder,
-      factory: BrowserAnimationBuilder.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function BrowserAnimationBuilder_Factory(t) {
+        return new (t || BrowserAnimationBuilder)(i0.ɵɵinject(i0.RendererFactory2), i0.ɵɵinject(DOCUMENT));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+        token: BrowserAnimationBuilder,
+        factory: BrowserAnimationBuilder.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return BrowserAnimationBuilder;
 })()));
@@ -41743,13 +41829,17 @@ let NoopAnimationDriver = /*#__PURE__*/(() => {
     animate(element, keyframes, duration, delay, easing, previousPlayers = [], scrubberAccessRequested) {
       return new _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .NoopAnimationPlayer */ .sf(duration, delay);
     }
-    static #_ = this.ɵfac = function NoopAnimationDriver_Factory(t) {
-      return new (t || NoopAnimationDriver)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: NoopAnimationDriver,
-      factory: NoopAnimationDriver.ɵfac
-    });
+    static {
+      this.ɵfac = function NoopAnimationDriver_Factory(t) {
+        return new (t || NoopAnimationDriver)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: NoopAnimationDriver,
+        factory: NoopAnimationDriver.ɵfac
+      });
+    }
   }
   return NoopAnimationDriver;
 })();
@@ -41763,7 +41853,9 @@ class AnimationDriver {
   /**
    * @deprecated Use the NoopAnimationDriver class.
    */
-  static #_ = this.NOOP = /*#__PURE__*/new NoopAnimationDriver();
+  static {
+    this.NOOP = /*#__PURE__*/new NoopAnimationDriver();
+  }
 }
 class AnimationStyleNormalizer {}
 class NoopAnimationStyleNormalizer {
@@ -45294,7 +45386,9 @@ function packageNonAnimatableStyles(element, styles) {
  * `destroy()` is called then all styles will be removed.
  */
 class SpecialCasedStyles {
-  static #_ = this.initialStylesByElement = /*#__PURE__*/new WeakMap();
+  static {
+    this.initialStylesByElement = /*#__PURE__*/new WeakMap();
+  }
   constructor(_element, _startStyles, _endStyles) {
     this._element = _element;
     this._startStyles = _startStyles;
@@ -46046,12 +46140,16 @@ let BaseControlValueAccessor = /*#__PURE__*/(() => {
     setDisabledState(isDisabled) {
       this.setProperty('disabled', isDisabled);
     }
-    static #_ = this.ɵfac = function BaseControlValueAccessor_Factory(t) {
-      return new (t || BaseControlValueAccessor)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef));
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: BaseControlValueAccessor
-    });
+    static {
+      this.ɵfac = function BaseControlValueAccessor_Factory(t) {
+        return new (t || BaseControlValueAccessor)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef));
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: BaseControlValueAccessor
+      });
+    }
   }
   return BaseControlValueAccessor;
 })();
@@ -46069,16 +46167,20 @@ let BaseControlValueAccessor = /*#__PURE__*/(() => {
  */
 let BuiltInControlValueAccessor = /*#__PURE__*/(() => {
   class BuiltInControlValueAccessor extends BaseControlValueAccessor {
-    static #_ = this.ɵfac = /* @__PURE__ */(() => {
-      let ɵBuiltInControlValueAccessor_BaseFactory;
-      return function BuiltInControlValueAccessor_Factory(t) {
-        return (ɵBuiltInControlValueAccessor_BaseFactory || (ɵBuiltInControlValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](BuiltInControlValueAccessor)))(t || BuiltInControlValueAccessor);
-      };
-    })();
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: BuiltInControlValueAccessor,
-      features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = /* @__PURE__ */(() => {
+        let ɵBuiltInControlValueAccessor_BaseFactory;
+        return function BuiltInControlValueAccessor_Factory(t) {
+          return (ɵBuiltInControlValueAccessor_BaseFactory || (ɵBuiltInControlValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](BuiltInControlValueAccessor)))(t || BuiltInControlValueAccessor);
+        };
+      })();
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: BuiltInControlValueAccessor,
+        features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return BuiltInControlValueAccessor;
 })();
@@ -46130,26 +46232,30 @@ let CheckboxControlValueAccessor = /*#__PURE__*/(() => {
     writeValue(value) {
       this.setProperty('checked', value);
     }
-    static #_ = this.ɵfac = /* @__PURE__ */(() => {
-      let ɵCheckboxControlValueAccessor_BaseFactory;
-      return function CheckboxControlValueAccessor_Factory(t) {
-        return (ɵCheckboxControlValueAccessor_BaseFactory || (ɵCheckboxControlValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](CheckboxControlValueAccessor)))(t || CheckboxControlValueAccessor);
-      };
-    })();
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: CheckboxControlValueAccessor,
-      selectors: [["input", "type", "checkbox", "formControlName", ""], ["input", "type", "checkbox", "formControl", ""], ["input", "type", "checkbox", "ngModel", ""]],
-      hostBindings: function CheckboxControlValueAccessor_HostBindings(rf, ctx) {
-        if (rf & 1) {
-          core_mjs_["ɵɵlistener"]("change", function CheckboxControlValueAccessor_change_HostBindingHandler($event) {
-            return ctx.onChange($event.target.checked);
-          })("blur", function CheckboxControlValueAccessor_blur_HostBindingHandler() {
-            return ctx.onTouched();
-          });
-        }
-      },
-      features: [core_mjs_["ɵɵProvidersFeature"]([CHECKBOX_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = /* @__PURE__ */(() => {
+        let ɵCheckboxControlValueAccessor_BaseFactory;
+        return function CheckboxControlValueAccessor_Factory(t) {
+          return (ɵCheckboxControlValueAccessor_BaseFactory || (ɵCheckboxControlValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](CheckboxControlValueAccessor)))(t || CheckboxControlValueAccessor);
+        };
+      })();
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: CheckboxControlValueAccessor,
+        selectors: [["input", "type", "checkbox", "formControlName", ""], ["input", "type", "checkbox", "formControl", ""], ["input", "type", "checkbox", "ngModel", ""]],
+        hostBindings: function CheckboxControlValueAccessor_HostBindings(rf, ctx) {
+          if (rf & 1) {
+            core_mjs_["ɵɵlistener"]("change", function CheckboxControlValueAccessor_change_HostBindingHandler($event) {
+              return ctx.onChange($event.target.checked);
+            })("blur", function CheckboxControlValueAccessor_blur_HostBindingHandler() {
+              return ctx.onTouched();
+            });
+          }
+        },
+        features: [core_mjs_["ɵɵProvidersFeature"]([CHECKBOX_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return CheckboxControlValueAccessor;
 })();
@@ -46245,27 +46351,31 @@ let DefaultValueAccessor = /*#__PURE__*/(() => {
       this._composing = false;
       this._compositionMode && this.onChange(value);
     }
-    static #_ = this.ɵfac = function DefaultValueAccessor_Factory(t) {
-      return new (t || DefaultValueAccessor)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](COMPOSITION_BUFFER_MODE, 8));
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: DefaultValueAccessor,
-      selectors: [["input", "formControlName", "", 3, "type", "checkbox"], ["textarea", "formControlName", ""], ["input", "formControl", "", 3, "type", "checkbox"], ["textarea", "formControl", ""], ["input", "ngModel", "", 3, "type", "checkbox"], ["textarea", "ngModel", ""], ["", "ngDefaultControl", ""]],
-      hostBindings: function DefaultValueAccessor_HostBindings(rf, ctx) {
-        if (rf & 1) {
-          core_mjs_["ɵɵlistener"]("input", function DefaultValueAccessor_input_HostBindingHandler($event) {
-            return ctx._handleInput($event.target.value);
-          })("blur", function DefaultValueAccessor_blur_HostBindingHandler() {
-            return ctx.onTouched();
-          })("compositionstart", function DefaultValueAccessor_compositionstart_HostBindingHandler() {
-            return ctx._compositionStart();
-          })("compositionend", function DefaultValueAccessor_compositionend_HostBindingHandler($event) {
-            return ctx._compositionEnd($event.target.value);
-          });
-        }
-      },
-      features: [core_mjs_["ɵɵProvidersFeature"]([DEFAULT_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = function DefaultValueAccessor_Factory(t) {
+        return new (t || DefaultValueAccessor)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](COMPOSITION_BUFFER_MODE, 8));
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: DefaultValueAccessor,
+        selectors: [["input", "formControlName", "", 3, "type", "checkbox"], ["textarea", "formControlName", ""], ["input", "formControl", "", 3, "type", "checkbox"], ["textarea", "formControl", ""], ["input", "ngModel", "", 3, "type", "checkbox"], ["textarea", "ngModel", ""], ["", "ngDefaultControl", ""]],
+        hostBindings: function DefaultValueAccessor_HostBindings(rf, ctx) {
+          if (rf & 1) {
+            core_mjs_["ɵɵlistener"]("input", function DefaultValueAccessor_input_HostBindingHandler($event) {
+              return ctx._handleInput($event.target.value);
+            })("blur", function DefaultValueAccessor_blur_HostBindingHandler() {
+              return ctx.onTouched();
+            })("compositionstart", function DefaultValueAccessor_compositionstart_HostBindingHandler() {
+              return ctx._compositionStart();
+            })("compositionend", function DefaultValueAccessor_compositionend_HostBindingHandler($event) {
+              return ctx._compositionEnd($event.target.value);
+            });
+          }
+        },
+        features: [core_mjs_["ɵɵProvidersFeature"]([DEFAULT_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return DefaultValueAccessor;
 })();
@@ -47353,20 +47463,24 @@ let NgControlStatus = /*#__PURE__*/(() => {
     constructor(cd) {
       super(cd);
     }
-    static #_ = this.ɵfac = function NgControlStatus_Factory(t) {
-      return new (t || NgControlStatus)(core_mjs_["ɵɵdirectiveInject"](NgControl, 2));
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: NgControlStatus,
-      selectors: [["", "formControlName", ""], ["", "ngModel", ""], ["", "formControl", ""]],
-      hostVars: 14,
-      hostBindings: function NgControlStatus_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          core_mjs_["ɵɵclassProp"]("ng-untouched", ctx.isUntouched)("ng-touched", ctx.isTouched)("ng-pristine", ctx.isPristine)("ng-dirty", ctx.isDirty)("ng-valid", ctx.isValid)("ng-invalid", ctx.isInvalid)("ng-pending", ctx.isPending);
-        }
-      },
-      features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = function NgControlStatus_Factory(t) {
+        return new (t || NgControlStatus)(core_mjs_["ɵɵdirectiveInject"](NgControl, 2));
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: NgControlStatus,
+        selectors: [["", "formControlName", ""], ["", "ngModel", ""], ["", "formControl", ""]],
+        hostVars: 14,
+        hostBindings: function NgControlStatus_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            core_mjs_["ɵɵclassProp"]("ng-untouched", ctx.isUntouched)("ng-touched", ctx.isTouched)("ng-pristine", ctx.isPristine)("ng-dirty", ctx.isDirty)("ng-valid", ctx.isValid)("ng-invalid", ctx.isInvalid)("ng-pending", ctx.isPending);
+          }
+        },
+        features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return NgControlStatus;
 })();
@@ -47390,20 +47504,24 @@ let NgControlStatusGroup = /*#__PURE__*/(() => {
     constructor(cd) {
       super(cd);
     }
-    static #_ = this.ɵfac = function NgControlStatusGroup_Factory(t) {
-      return new (t || NgControlStatusGroup)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 10));
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: NgControlStatusGroup,
-      selectors: [["", "formGroupName", ""], ["", "formArrayName", ""], ["", "ngModelGroup", ""], ["", "formGroup", ""], ["form", 3, "ngNoForm", ""], ["", "ngForm", ""]],
-      hostVars: 16,
-      hostBindings: function NgControlStatusGroup_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          core_mjs_["ɵɵclassProp"]("ng-untouched", ctx.isUntouched)("ng-touched", ctx.isTouched)("ng-pristine", ctx.isPristine)("ng-dirty", ctx.isDirty)("ng-valid", ctx.isValid)("ng-invalid", ctx.isInvalid)("ng-pending", ctx.isPending)("ng-submitted", ctx.isSubmitted);
-        }
-      },
-      features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = function NgControlStatusGroup_Factory(t) {
+        return new (t || NgControlStatusGroup)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 10));
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: NgControlStatusGroup,
+        selectors: [["", "formGroupName", ""], ["", "formArrayName", ""], ["", "ngModelGroup", ""], ["", "formGroup", ""], ["form", 3, "ngNoForm", ""], ["", "ngForm", ""]],
+        hostVars: 16,
+        hostBindings: function NgControlStatusGroup_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            core_mjs_["ɵɵclassProp"]("ng-untouched", ctx.isUntouched)("ng-touched", ctx.isTouched)("ng-pristine", ctx.isPristine)("ng-dirty", ctx.isDirty)("ng-valid", ctx.isValid)("ng-invalid", ctx.isInvalid)("ng-pending", ctx.isPending)("ng-submitted", ctx.isSubmitted);
+          }
+        },
+        features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return NgControlStatusGroup;
 })();
@@ -49565,30 +49683,34 @@ let NgForm = /*#__PURE__*/(() => {
       path.pop();
       return path.length ? this.form.get(path) : this.form;
     }
-    static #_ = this.ɵfac = function NgForm_Factory(t) {
-      return new (t || NgForm)(core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](CALL_SET_DISABLED_STATE, 8));
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: NgForm,
-      selectors: [["form", 3, "ngNoForm", "", 3, "formGroup", ""], ["ng-form"], ["", "ngForm", ""]],
-      hostBindings: function NgForm_HostBindings(rf, ctx) {
-        if (rf & 1) {
-          core_mjs_["ɵɵlistener"]("submit", function NgForm_submit_HostBindingHandler($event) {
-            return ctx.onSubmit($event);
-          })("reset", function NgForm_reset_HostBindingHandler() {
-            return ctx.onReset();
-          });
-        }
-      },
-      inputs: {
-        options: [core_mjs_["ɵɵInputFlags"].None, "ngFormOptions", "options"]
-      },
-      outputs: {
-        ngSubmit: "ngSubmit"
-      },
-      exportAs: ["ngForm"],
-      features: [core_mjs_["ɵɵProvidersFeature"]([formDirectiveProvider$1]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = function NgForm_Factory(t) {
+        return new (t || NgForm)(core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](CALL_SET_DISABLED_STATE, 8));
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: NgForm,
+        selectors: [["form", 3, "ngNoForm", "", 3, "formGroup", ""], ["ng-form"], ["", "ngForm", ""]],
+        hostBindings: function NgForm_HostBindings(rf, ctx) {
+          if (rf & 1) {
+            core_mjs_["ɵɵlistener"]("submit", function NgForm_submit_HostBindingHandler($event) {
+              return ctx.onSubmit($event);
+            })("reset", function NgForm_reset_HostBindingHandler() {
+              return ctx.onReset();
+            });
+          }
+        },
+        inputs: {
+          options: [core_mjs_["ɵɵInputFlags"].None, "ngFormOptions", "options"]
+        },
+        outputs: {
+          ngSubmit: "ngSubmit"
+        },
+        exportAs: ["ngForm"],
+        features: [core_mjs_["ɵɵProvidersFeature"]([formDirectiveProvider$1]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return NgForm;
 })();
@@ -49758,16 +49880,20 @@ let AbstractFormGroupDirective = /*#__PURE__*/(() => {
     }
     /** @internal */
     _checkParentType() {}
-    static #_ = this.ɵfac = /* @__PURE__ */(() => {
-      let ɵAbstractFormGroupDirective_BaseFactory;
-      return function AbstractFormGroupDirective_Factory(t) {
-        return (ɵAbstractFormGroupDirective_BaseFactory || (ɵAbstractFormGroupDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](AbstractFormGroupDirective)))(t || AbstractFormGroupDirective);
-      };
-    })();
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: AbstractFormGroupDirective,
-      features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = /* @__PURE__ */(() => {
+        let ɵAbstractFormGroupDirective_BaseFactory;
+        return function AbstractFormGroupDirective_Factory(t) {
+          return (ɵAbstractFormGroupDirective_BaseFactory || (ɵAbstractFormGroupDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](AbstractFormGroupDirective)))(t || AbstractFormGroupDirective);
+        };
+      })();
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: AbstractFormGroupDirective,
+        features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return AbstractFormGroupDirective;
 })();
@@ -49868,18 +49994,22 @@ let NgModelGroup = /*#__PURE__*/(() => {
         throw modelGroupParentException();
       }
     }
-    static #_ = this.ɵfac = function NgModelGroup_Factory(t) {
-      return new (t || NgModelGroup)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 5), core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10));
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: NgModelGroup,
-      selectors: [["", "ngModelGroup", ""]],
-      inputs: {
-        name: [core_mjs_["ɵɵInputFlags"].None, "ngModelGroup", "name"]
-      },
-      exportAs: ["ngModelGroup"],
-      features: [core_mjs_["ɵɵProvidersFeature"]([modelGroupProvider]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = function NgModelGroup_Factory(t) {
+        return new (t || NgModelGroup)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 5), core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10));
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: NgModelGroup,
+        selectors: [["", "ngModelGroup", ""]],
+        inputs: {
+          name: [core_mjs_["ɵɵInputFlags"].None, "ngModelGroup", "name"]
+        },
+        exportAs: ["ngModelGroup"],
+        features: [core_mjs_["ɵɵProvidersFeature"]([modelGroupProvider]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return NgModelGroup;
 })();
@@ -50140,24 +50270,28 @@ let NgModel = /*#__PURE__*/(() => {
     _getPath(controlName) {
       return this._parent ? controlPath(controlName, this._parent) : [controlName];
     }
-    static #_ = this.ɵfac = function NgModel_Factory(t) {
-      return new (t || NgModel)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 9), core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_VALUE_ACCESSOR, 10), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ChangeDetectorRef, 8), core_mjs_["ɵɵdirectiveInject"](CALL_SET_DISABLED_STATE, 8));
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: NgModel,
-      selectors: [["", "ngModel", "", 3, "formControlName", "", 3, "formControl", ""]],
-      inputs: {
-        name: "name",
-        isDisabled: [core_mjs_["ɵɵInputFlags"].None, "disabled", "isDisabled"],
-        model: [core_mjs_["ɵɵInputFlags"].None, "ngModel", "model"],
-        options: [core_mjs_["ɵɵInputFlags"].None, "ngModelOptions", "options"]
-      },
-      outputs: {
-        update: "ngModelChange"
-      },
-      exportAs: ["ngModel"],
-      features: [core_mjs_["ɵɵProvidersFeature"]([formControlBinding$1]), core_mjs_["ɵɵInheritDefinitionFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
-    });
+    static {
+      this.ɵfac = function NgModel_Factory(t) {
+        return new (t || NgModel)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 9), core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_VALUE_ACCESSOR, 10), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ChangeDetectorRef, 8), core_mjs_["ɵɵdirectiveInject"](CALL_SET_DISABLED_STATE, 8));
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: NgModel,
+        selectors: [["", "ngModel", "", 3, "formControlName", "", 3, "formControl", ""]],
+        inputs: {
+          name: "name",
+          isDisabled: [core_mjs_["ɵɵInputFlags"].None, "disabled", "isDisabled"],
+          model: [core_mjs_["ɵɵInputFlags"].None, "ngModel", "model"],
+          options: [core_mjs_["ɵɵInputFlags"].None, "ngModelOptions", "options"]
+        },
+        outputs: {
+          update: "ngModelChange"
+        },
+        exportAs: ["ngModel"],
+        features: [core_mjs_["ɵɵProvidersFeature"]([formControlBinding$1]), core_mjs_["ɵɵInheritDefinitionFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
+      });
+    }
   }
   return NgModel;
 })();
@@ -50184,14 +50318,18 @@ let NgModel = /*#__PURE__*/(() => {
  */
 let ɵNgNoValidate = /*#__PURE__*/(() => {
   class ɵNgNoValidate {
-    static #_ = this.ɵfac = function ɵNgNoValidate_Factory(t) {
-      return new (t || ɵNgNoValidate)();
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: ɵNgNoValidate,
-      selectors: [["form", 3, "ngNoForm", "", 3, "ngNativeValidate", ""]],
-      hostAttrs: ["novalidate", ""]
-    });
+    static {
+      this.ɵfac = function ɵNgNoValidate_Factory(t) {
+        return new (t || ɵNgNoValidate)();
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: ɵNgNoValidate,
+        selectors: [["form", 3, "ngNoForm", "", 3, "ngNativeValidate", ""]],
+        hostAttrs: ["novalidate", ""]
+      });
+    }
   }
   return ɵNgNoValidate;
 })();
@@ -50247,26 +50385,30 @@ let NumberValueAccessor = /*#__PURE__*/(() => {
         fn(value == '' ? null : parseFloat(value));
       };
     }
-    static #_ = this.ɵfac = /* @__PURE__ */(() => {
-      let ɵNumberValueAccessor_BaseFactory;
-      return function NumberValueAccessor_Factory(t) {
-        return (ɵNumberValueAccessor_BaseFactory || (ɵNumberValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](NumberValueAccessor)))(t || NumberValueAccessor);
-      };
-    })();
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: NumberValueAccessor,
-      selectors: [["input", "type", "number", "formControlName", ""], ["input", "type", "number", "formControl", ""], ["input", "type", "number", "ngModel", ""]],
-      hostBindings: function NumberValueAccessor_HostBindings(rf, ctx) {
-        if (rf & 1) {
-          core_mjs_["ɵɵlistener"]("input", function NumberValueAccessor_input_HostBindingHandler($event) {
-            return ctx.onChange($event.target.value);
-          })("blur", function NumberValueAccessor_blur_HostBindingHandler() {
-            return ctx.onTouched();
-          });
-        }
-      },
-      features: [core_mjs_["ɵɵProvidersFeature"]([NUMBER_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = /* @__PURE__ */(() => {
+        let ɵNumberValueAccessor_BaseFactory;
+        return function NumberValueAccessor_Factory(t) {
+          return (ɵNumberValueAccessor_BaseFactory || (ɵNumberValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](NumberValueAccessor)))(t || NumberValueAccessor);
+        };
+      })();
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: NumberValueAccessor,
+        selectors: [["input", "type", "number", "formControlName", ""], ["input", "type", "number", "formControl", ""], ["input", "type", "number", "ngModel", ""]],
+        hostBindings: function NumberValueAccessor_HostBindings(rf, ctx) {
+          if (rf & 1) {
+            core_mjs_["ɵɵlistener"]("input", function NumberValueAccessor_input_HostBindingHandler($event) {
+              return ctx.onChange($event.target.value);
+            })("blur", function NumberValueAccessor_blur_HostBindingHandler() {
+              return ctx.onTouched();
+            });
+          }
+        },
+        features: [core_mjs_["ɵɵProvidersFeature"]([NUMBER_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return NumberValueAccessor;
 })();
@@ -50327,14 +50469,18 @@ let RadioControlRegistry = /*#__PURE__*/(() => {
       if (!controlPair[0].control) return false;
       return controlPair[0]._parent === accessor._control._parent && controlPair[1].name === accessor.name;
     }
-    static #_ = this.ɵfac = function RadioControlRegistry_Factory(t) {
-      return new (t || RadioControlRegistry)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: RadioControlRegistry,
-      factory: RadioControlRegistry.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function RadioControlRegistry_Factory(t) {
+        return new (t || RadioControlRegistry)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: RadioControlRegistry,
+        factory: RadioControlRegistry.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return RadioControlRegistry;
 })();
@@ -50448,28 +50594,32 @@ let RadioControlValueAccessor = /*#__PURE__*/(() => {
       }
       if (!this.name && this.formControlName) this.name = this.formControlName;
     }
-    static #_ = this.ɵfac = function RadioControlValueAccessor_Factory(t) {
-      return new (t || RadioControlValueAccessor)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](RadioControlRegistry), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Injector));
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: RadioControlValueAccessor,
-      selectors: [["input", "type", "radio", "formControlName", ""], ["input", "type", "radio", "formControl", ""], ["input", "type", "radio", "ngModel", ""]],
-      hostBindings: function RadioControlValueAccessor_HostBindings(rf, ctx) {
-        if (rf & 1) {
-          core_mjs_["ɵɵlistener"]("change", function RadioControlValueAccessor_change_HostBindingHandler() {
-            return ctx.onChange();
-          })("blur", function RadioControlValueAccessor_blur_HostBindingHandler() {
-            return ctx.onTouched();
-          });
-        }
-      },
-      inputs: {
-        name: "name",
-        formControlName: "formControlName",
-        value: "value"
-      },
-      features: [core_mjs_["ɵɵProvidersFeature"]([RADIO_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = function RadioControlValueAccessor_Factory(t) {
+        return new (t || RadioControlValueAccessor)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](RadioControlRegistry), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Injector));
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: RadioControlValueAccessor,
+        selectors: [["input", "type", "radio", "formControlName", ""], ["input", "type", "radio", "formControl", ""], ["input", "type", "radio", "ngModel", ""]],
+        hostBindings: function RadioControlValueAccessor_HostBindings(rf, ctx) {
+          if (rf & 1) {
+            core_mjs_["ɵɵlistener"]("change", function RadioControlValueAccessor_change_HostBindingHandler() {
+              return ctx.onChange();
+            })("blur", function RadioControlValueAccessor_blur_HostBindingHandler() {
+              return ctx.onTouched();
+            });
+          }
+        },
+        inputs: {
+          name: "name",
+          formControlName: "formControlName",
+          value: "value"
+        },
+        features: [core_mjs_["ɵɵProvidersFeature"]([RADIO_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return RadioControlValueAccessor;
 })();
@@ -50523,28 +50673,32 @@ let RangeValueAccessor = /*#__PURE__*/(() => {
         fn(value == '' ? null : parseFloat(value));
       };
     }
-    static #_ = this.ɵfac = /* @__PURE__ */(() => {
-      let ɵRangeValueAccessor_BaseFactory;
-      return function RangeValueAccessor_Factory(t) {
-        return (ɵRangeValueAccessor_BaseFactory || (ɵRangeValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](RangeValueAccessor)))(t || RangeValueAccessor);
-      };
-    })();
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: RangeValueAccessor,
-      selectors: [["input", "type", "range", "formControlName", ""], ["input", "type", "range", "formControl", ""], ["input", "type", "range", "ngModel", ""]],
-      hostBindings: function RangeValueAccessor_HostBindings(rf, ctx) {
-        if (rf & 1) {
-          core_mjs_["ɵɵlistener"]("change", function RangeValueAccessor_change_HostBindingHandler($event) {
-            return ctx.onChange($event.target.value);
-          })("input", function RangeValueAccessor_input_HostBindingHandler($event) {
-            return ctx.onChange($event.target.value);
-          })("blur", function RangeValueAccessor_blur_HostBindingHandler() {
-            return ctx.onTouched();
-          });
-        }
-      },
-      features: [core_mjs_["ɵɵProvidersFeature"]([RANGE_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = /* @__PURE__ */(() => {
+        let ɵRangeValueAccessor_BaseFactory;
+        return function RangeValueAccessor_Factory(t) {
+          return (ɵRangeValueAccessor_BaseFactory || (ɵRangeValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](RangeValueAccessor)))(t || RangeValueAccessor);
+        };
+      })();
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: RangeValueAccessor,
+        selectors: [["input", "type", "range", "formControlName", ""], ["input", "type", "range", "formControl", ""], ["input", "type", "range", "ngModel", ""]],
+        hostBindings: function RangeValueAccessor_HostBindings(rf, ctx) {
+          if (rf & 1) {
+            core_mjs_["ɵɵlistener"]("change", function RangeValueAccessor_change_HostBindingHandler($event) {
+              return ctx.onChange($event.target.value);
+            })("input", function RangeValueAccessor_input_HostBindingHandler($event) {
+              return ctx.onChange($event.target.value);
+            })("blur", function RangeValueAccessor_blur_HostBindingHandler() {
+              return ctx.onTouched();
+            });
+          }
+        },
+        features: [core_mjs_["ɵɵProvidersFeature"]([RANGE_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return RangeValueAccessor;
 })();
@@ -50600,7 +50754,9 @@ let FormControlDirective = /*#__PURE__*/(() => {
      *
      * @internal
      */
-    static #_ = this._ngModelWarningSentOnce = false;
+    static {
+      this._ngModelWarningSentOnce = false;
+    }
     constructor(validators, asyncValidators, valueAccessors, _ngModelWarningConfig, callSetDisabledState) {
       super();
       this._ngModelWarningConfig = _ngModelWarningConfig;
@@ -50673,23 +50829,27 @@ let FormControlDirective = /*#__PURE__*/(() => {
     _isControlChanged(changes) {
       return changes.hasOwnProperty('form');
     }
-    static #_2 = this.ɵfac = function FormControlDirective_Factory(t) {
-      return new (t || FormControlDirective)(core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_VALUE_ACCESSOR, 10), core_mjs_["ɵɵdirectiveInject"](NG_MODEL_WITH_FORM_CONTROL_WARNING, 8), core_mjs_["ɵɵdirectiveInject"](CALL_SET_DISABLED_STATE, 8));
-    };
-    static #_3 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: FormControlDirective,
-      selectors: [["", "formControl", ""]],
-      inputs: {
-        form: [core_mjs_["ɵɵInputFlags"].None, "formControl", "form"],
-        isDisabled: [core_mjs_["ɵɵInputFlags"].None, "disabled", "isDisabled"],
-        model: [core_mjs_["ɵɵInputFlags"].None, "ngModel", "model"]
-      },
-      outputs: {
-        update: "ngModelChange"
-      },
-      exportAs: ["ngForm"],
-      features: [core_mjs_["ɵɵProvidersFeature"]([formControlBinding]), core_mjs_["ɵɵInheritDefinitionFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
-    });
+    static {
+      this.ɵfac = function FormControlDirective_Factory(t) {
+        return new (t || FormControlDirective)(core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_VALUE_ACCESSOR, 10), core_mjs_["ɵɵdirectiveInject"](NG_MODEL_WITH_FORM_CONTROL_WARNING, 8), core_mjs_["ɵɵdirectiveInject"](CALL_SET_DISABLED_STATE, 8));
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: FormControlDirective,
+        selectors: [["", "formControl", ""]],
+        inputs: {
+          form: [core_mjs_["ɵɵInputFlags"].None, "formControl", "form"],
+          isDisabled: [core_mjs_["ɵɵInputFlags"].None, "disabled", "isDisabled"],
+          model: [core_mjs_["ɵɵInputFlags"].None, "ngModel", "model"]
+        },
+        outputs: {
+          update: "ngModelChange"
+        },
+        exportAs: ["ngForm"],
+        features: [core_mjs_["ɵɵProvidersFeature"]([formControlBinding]), core_mjs_["ɵɵInheritDefinitionFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
+      });
+    }
   }
   return FormControlDirective;
 })();
@@ -51000,30 +51160,34 @@ let FormGroupDirective = /*#__PURE__*/(() => {
         throw missingFormException();
       }
     }
-    static #_ = this.ɵfac = function FormGroupDirective_Factory(t) {
-      return new (t || FormGroupDirective)(core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](CALL_SET_DISABLED_STATE, 8));
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: FormGroupDirective,
-      selectors: [["", "formGroup", ""]],
-      hostBindings: function FormGroupDirective_HostBindings(rf, ctx) {
-        if (rf & 1) {
-          core_mjs_["ɵɵlistener"]("submit", function FormGroupDirective_submit_HostBindingHandler($event) {
-            return ctx.onSubmit($event);
-          })("reset", function FormGroupDirective_reset_HostBindingHandler() {
-            return ctx.onReset();
-          });
-        }
-      },
-      inputs: {
-        form: [core_mjs_["ɵɵInputFlags"].None, "formGroup", "form"]
-      },
-      outputs: {
-        ngSubmit: "ngSubmit"
-      },
-      exportAs: ["ngForm"],
-      features: [core_mjs_["ɵɵProvidersFeature"]([formDirectiveProvider]), core_mjs_["ɵɵInheritDefinitionFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
-    });
+    static {
+      this.ɵfac = function FormGroupDirective_Factory(t) {
+        return new (t || FormGroupDirective)(core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](CALL_SET_DISABLED_STATE, 8));
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: FormGroupDirective,
+        selectors: [["", "formGroup", ""]],
+        hostBindings: function FormGroupDirective_HostBindings(rf, ctx) {
+          if (rf & 1) {
+            core_mjs_["ɵɵlistener"]("submit", function FormGroupDirective_submit_HostBindingHandler($event) {
+              return ctx.onSubmit($event);
+            })("reset", function FormGroupDirective_reset_HostBindingHandler() {
+              return ctx.onReset();
+            });
+          }
+        },
+        inputs: {
+          form: [core_mjs_["ɵɵInputFlags"].None, "formGroup", "form"]
+        },
+        outputs: {
+          ngSubmit: "ngSubmit"
+        },
+        exportAs: ["ngForm"],
+        features: [core_mjs_["ɵɵProvidersFeature"]([formDirectiveProvider]), core_mjs_["ɵɵInheritDefinitionFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
+      });
+    }
   }
   return FormGroupDirective;
 })();
@@ -51105,17 +51269,21 @@ let FormGroupName = /*#__PURE__*/(() => {
         throw groupParentException();
       }
     }
-    static #_ = this.ɵfac = function FormGroupName_Factory(t) {
-      return new (t || FormGroupName)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 13), core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10));
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: FormGroupName,
-      selectors: [["", "formGroupName", ""]],
-      inputs: {
-        name: [core_mjs_["ɵɵInputFlags"].None, "formGroupName", "name"]
-      },
-      features: [core_mjs_["ɵɵProvidersFeature"]([formGroupNameProvider]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = function FormGroupName_Factory(t) {
+        return new (t || FormGroupName)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 13), core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10));
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: FormGroupName,
+        selectors: [["", "formGroupName", ""]],
+        inputs: {
+          name: [core_mjs_["ɵɵInputFlags"].None, "formGroupName", "name"]
+        },
+        features: [core_mjs_["ɵɵProvidersFeature"]([formGroupNameProvider]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return FormGroupName;
 })();
@@ -51213,17 +51381,21 @@ let FormArrayName = /*#__PURE__*/(() => {
         throw arrayParentException();
       }
     }
-    static #_ = this.ɵfac = function FormArrayName_Factory(t) {
-      return new (t || FormArrayName)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 13), core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10));
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: FormArrayName,
-      selectors: [["", "formArrayName", ""]],
-      inputs: {
-        name: [core_mjs_["ɵɵInputFlags"].None, "formArrayName", "name"]
-      },
-      features: [core_mjs_["ɵɵProvidersFeature"]([formArrayNameProvider]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = function FormArrayName_Factory(t) {
+        return new (t || FormArrayName)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 13), core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10));
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: FormArrayName,
+        selectors: [["", "formArrayName", ""]],
+        inputs: {
+          name: [core_mjs_["ɵɵInputFlags"].None, "formArrayName", "name"]
+        },
+        features: [core_mjs_["ɵɵProvidersFeature"]([formArrayNameProvider]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return FormArrayName;
 })();
@@ -51289,7 +51461,9 @@ let FormControlName = /*#__PURE__*/(() => {
      *
      * @internal
      */
-    static #_ = this._ngModelWarningSentOnce = false;
+    static {
+      this._ngModelWarningSentOnce = false;
+    }
     constructor(parent, validators, asyncValidators, valueAccessors, _ngModelWarningConfig) {
       super();
       this._ngModelWarningConfig = _ngModelWarningConfig;
@@ -51375,22 +51549,26 @@ let FormControlName = /*#__PURE__*/(() => {
       this.control = this.formDirective.addControl(this);
       this._added = true;
     }
-    static #_2 = this.ɵfac = function FormControlName_Factory(t) {
-      return new (t || FormControlName)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 13), core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_VALUE_ACCESSOR, 10), core_mjs_["ɵɵdirectiveInject"](NG_MODEL_WITH_FORM_CONTROL_WARNING, 8));
-    };
-    static #_3 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: FormControlName,
-      selectors: [["", "formControlName", ""]],
-      inputs: {
-        name: [core_mjs_["ɵɵInputFlags"].None, "formControlName", "name"],
-        isDisabled: [core_mjs_["ɵɵInputFlags"].None, "disabled", "isDisabled"],
-        model: [core_mjs_["ɵɵInputFlags"].None, "ngModel", "model"]
-      },
-      outputs: {
-        update: "ngModelChange"
-      },
-      features: [core_mjs_["ɵɵProvidersFeature"]([controlNameBinding]), core_mjs_["ɵɵInheritDefinitionFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
-    });
+    static {
+      this.ɵfac = function FormControlName_Factory(t) {
+        return new (t || FormControlName)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 13), core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_VALUE_ACCESSOR, 10), core_mjs_["ɵɵdirectiveInject"](NG_MODEL_WITH_FORM_CONTROL_WARNING, 8));
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: FormControlName,
+        selectors: [["", "formControlName", ""]],
+        inputs: {
+          name: [core_mjs_["ɵɵInputFlags"].None, "formControlName", "name"],
+          isDisabled: [core_mjs_["ɵɵInputFlags"].None, "disabled", "isDisabled"],
+          model: [core_mjs_["ɵɵInputFlags"].None, "ngModel", "model"]
+        },
+        outputs: {
+          update: "ngModelChange"
+        },
+        features: [core_mjs_["ɵɵProvidersFeature"]([controlNameBinding]), core_mjs_["ɵɵInheritDefinitionFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
+      });
+    }
   }
   return FormControlName;
 })();
@@ -51523,29 +51701,33 @@ let SelectControlValueAccessor = /*#__PURE__*/(() => {
       const id = _extractId$1(valueString);
       return this._optionMap.has(id) ? this._optionMap.get(id) : valueString;
     }
-    static #_ = this.ɵfac = /* @__PURE__ */(() => {
-      let ɵSelectControlValueAccessor_BaseFactory;
-      return function SelectControlValueAccessor_Factory(t) {
-        return (ɵSelectControlValueAccessor_BaseFactory || (ɵSelectControlValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](SelectControlValueAccessor)))(t || SelectControlValueAccessor);
-      };
-    })();
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: SelectControlValueAccessor,
-      selectors: [["select", "formControlName", "", 3, "multiple", ""], ["select", "formControl", "", 3, "multiple", ""], ["select", "ngModel", "", 3, "multiple", ""]],
-      hostBindings: function SelectControlValueAccessor_HostBindings(rf, ctx) {
-        if (rf & 1) {
-          core_mjs_["ɵɵlistener"]("change", function SelectControlValueAccessor_change_HostBindingHandler($event) {
-            return ctx.onChange($event.target.value);
-          })("blur", function SelectControlValueAccessor_blur_HostBindingHandler() {
-            return ctx.onTouched();
-          });
-        }
-      },
-      inputs: {
-        compareWith: "compareWith"
-      },
-      features: [core_mjs_["ɵɵProvidersFeature"]([SELECT_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = /* @__PURE__ */(() => {
+        let ɵSelectControlValueAccessor_BaseFactory;
+        return function SelectControlValueAccessor_Factory(t) {
+          return (ɵSelectControlValueAccessor_BaseFactory || (ɵSelectControlValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](SelectControlValueAccessor)))(t || SelectControlValueAccessor);
+        };
+      })();
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: SelectControlValueAccessor,
+        selectors: [["select", "formControlName", "", 3, "multiple", ""], ["select", "formControl", "", 3, "multiple", ""], ["select", "ngModel", "", 3, "multiple", ""]],
+        hostBindings: function SelectControlValueAccessor_HostBindings(rf, ctx) {
+          if (rf & 1) {
+            core_mjs_["ɵɵlistener"]("change", function SelectControlValueAccessor_change_HostBindingHandler($event) {
+              return ctx.onChange($event.target.value);
+            })("blur", function SelectControlValueAccessor_blur_HostBindingHandler() {
+              return ctx.onTouched();
+            });
+          }
+        },
+        inputs: {
+          compareWith: "compareWith"
+        },
+        features: [core_mjs_["ɵɵProvidersFeature"]([SELECT_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return SelectControlValueAccessor;
 })();
@@ -51601,17 +51783,21 @@ let NgSelectOption = /*#__PURE__*/(() => {
         this._select.writeValue(this._select.value);
       }
     }
-    static #_ = this.ɵfac = function NgSelectOption_Factory(t) {
-      return new (t || NgSelectOption)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](SelectControlValueAccessor, 9));
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: NgSelectOption,
-      selectors: [["option"]],
-      inputs: {
-        ngValue: "ngValue",
-        value: "value"
-      }
-    });
+    static {
+      this.ɵfac = function NgSelectOption_Factory(t) {
+        return new (t || NgSelectOption)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](SelectControlValueAccessor, 9));
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: NgSelectOption,
+        selectors: [["option"]],
+        inputs: {
+          ngValue: "ngValue",
+          value: "value"
+        }
+      });
+    }
   }
   return NgSelectOption;
 })();
@@ -51762,29 +51948,33 @@ let SelectMultipleControlValueAccessor = /*#__PURE__*/(() => {
       const id = _extractId(valueString);
       return this._optionMap.has(id) ? this._optionMap.get(id)._value : valueString;
     }
-    static #_ = this.ɵfac = /* @__PURE__ */(() => {
-      let ɵSelectMultipleControlValueAccessor_BaseFactory;
-      return function SelectMultipleControlValueAccessor_Factory(t) {
-        return (ɵSelectMultipleControlValueAccessor_BaseFactory || (ɵSelectMultipleControlValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](SelectMultipleControlValueAccessor)))(t || SelectMultipleControlValueAccessor);
-      };
-    })();
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: SelectMultipleControlValueAccessor,
-      selectors: [["select", "multiple", "", "formControlName", ""], ["select", "multiple", "", "formControl", ""], ["select", "multiple", "", "ngModel", ""]],
-      hostBindings: function SelectMultipleControlValueAccessor_HostBindings(rf, ctx) {
-        if (rf & 1) {
-          core_mjs_["ɵɵlistener"]("change", function SelectMultipleControlValueAccessor_change_HostBindingHandler($event) {
-            return ctx.onChange($event.target);
-          })("blur", function SelectMultipleControlValueAccessor_blur_HostBindingHandler() {
-            return ctx.onTouched();
-          });
-        }
-      },
-      inputs: {
-        compareWith: "compareWith"
-      },
-      features: [core_mjs_["ɵɵProvidersFeature"]([SELECT_MULTIPLE_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = /* @__PURE__ */(() => {
+        let ɵSelectMultipleControlValueAccessor_BaseFactory;
+        return function SelectMultipleControlValueAccessor_Factory(t) {
+          return (ɵSelectMultipleControlValueAccessor_BaseFactory || (ɵSelectMultipleControlValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](SelectMultipleControlValueAccessor)))(t || SelectMultipleControlValueAccessor);
+        };
+      })();
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: SelectMultipleControlValueAccessor,
+        selectors: [["select", "multiple", "", "formControlName", ""], ["select", "multiple", "", "formControl", ""], ["select", "multiple", "", "ngModel", ""]],
+        hostBindings: function SelectMultipleControlValueAccessor_HostBindings(rf, ctx) {
+          if (rf & 1) {
+            core_mjs_["ɵɵlistener"]("change", function SelectMultipleControlValueAccessor_change_HostBindingHandler($event) {
+              return ctx.onChange($event.target);
+            })("blur", function SelectMultipleControlValueAccessor_blur_HostBindingHandler() {
+              return ctx.onTouched();
+            });
+          }
+        },
+        inputs: {
+          compareWith: "compareWith"
+        },
+        features: [core_mjs_["ɵɵProvidersFeature"]([SELECT_MULTIPLE_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return SelectMultipleControlValueAccessor;
 })();
@@ -51851,17 +52041,21 @@ let ɵNgSelectMultipleOption = /*#__PURE__*/(() => {
         this._select.writeValue(this._select.value);
       }
     }
-    static #_ = this.ɵfac = function ɵNgSelectMultipleOption_Factory(t) {
-      return new (t || ɵNgSelectMultipleOption)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](SelectMultipleControlValueAccessor, 9));
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: ɵNgSelectMultipleOption,
-      selectors: [["option"]],
-      inputs: {
-        ngValue: "ngValue",
-        value: "value"
-      }
-    });
+    static {
+      this.ɵfac = function ɵNgSelectMultipleOption_Factory(t) {
+        return new (t || ɵNgSelectMultipleOption)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](SelectMultipleControlValueAccessor, 9));
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: ɵNgSelectMultipleOption,
+        selectors: [["option"]],
+        inputs: {
+          ngValue: "ngValue",
+          value: "value"
+        }
+      });
+    }
   }
   return ɵNgSelectMultipleOption;
 })();
@@ -51927,13 +52121,17 @@ let AbstractValidatorDirective = /*#__PURE__*/(() => {
     enabled(input) {
       return input != null /* both `null` and `undefined` */;
     }
-    static #_ = this.ɵfac = function AbstractValidatorDirective_Factory(t) {
-      return new (t || AbstractValidatorDirective)();
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: AbstractValidatorDirective,
-      features: [core_mjs_["ɵɵNgOnChangesFeature"]]
-    });
+    static {
+      this.ɵfac = function AbstractValidatorDirective_Factory(t) {
+        return new (t || AbstractValidatorDirective)();
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: AbstractValidatorDirective,
+        features: [core_mjs_["ɵɵNgOnChangesFeature"]]
+      });
+    }
   }
   return AbstractValidatorDirective;
 })();
@@ -51981,26 +52179,30 @@ let MaxValidator = /*#__PURE__*/(() => {
       /** @internal */
       this.createValidator = max => maxValidator(max);
     }
-    static #_ = this.ɵfac = /* @__PURE__ */(() => {
-      let ɵMaxValidator_BaseFactory;
-      return function MaxValidator_Factory(t) {
-        return (ɵMaxValidator_BaseFactory || (ɵMaxValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](MaxValidator)))(t || MaxValidator);
-      };
-    })();
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: MaxValidator,
-      selectors: [["input", "type", "number", "max", "", "formControlName", ""], ["input", "type", "number", "max", "", "formControl", ""], ["input", "type", "number", "max", "", "ngModel", ""]],
-      hostVars: 1,
-      hostBindings: function MaxValidator_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          core_mjs_["ɵɵattribute"]("max", ctx._enabled ? ctx.max : null);
-        }
-      },
-      inputs: {
-        max: "max"
-      },
-      features: [core_mjs_["ɵɵProvidersFeature"]([MAX_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = /* @__PURE__ */(() => {
+        let ɵMaxValidator_BaseFactory;
+        return function MaxValidator_Factory(t) {
+          return (ɵMaxValidator_BaseFactory || (ɵMaxValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](MaxValidator)))(t || MaxValidator);
+        };
+      })();
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: MaxValidator,
+        selectors: [["input", "type", "number", "max", "", "formControlName", ""], ["input", "type", "number", "max", "", "formControl", ""], ["input", "type", "number", "max", "", "ngModel", ""]],
+        hostVars: 1,
+        hostBindings: function MaxValidator_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            core_mjs_["ɵɵattribute"]("max", ctx._enabled ? ctx.max : null);
+          }
+        },
+        inputs: {
+          max: "max"
+        },
+        features: [core_mjs_["ɵɵProvidersFeature"]([MAX_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return MaxValidator;
 })();
@@ -52048,26 +52250,30 @@ let MinValidator = /*#__PURE__*/(() => {
       /** @internal */
       this.createValidator = min => minValidator(min);
     }
-    static #_ = this.ɵfac = /* @__PURE__ */(() => {
-      let ɵMinValidator_BaseFactory;
-      return function MinValidator_Factory(t) {
-        return (ɵMinValidator_BaseFactory || (ɵMinValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](MinValidator)))(t || MinValidator);
-      };
-    })();
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: MinValidator,
-      selectors: [["input", "type", "number", "min", "", "formControlName", ""], ["input", "type", "number", "min", "", "formControl", ""], ["input", "type", "number", "min", "", "ngModel", ""]],
-      hostVars: 1,
-      hostBindings: function MinValidator_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          core_mjs_["ɵɵattribute"]("min", ctx._enabled ? ctx.min : null);
-        }
-      },
-      inputs: {
-        min: "min"
-      },
-      features: [core_mjs_["ɵɵProvidersFeature"]([MIN_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = /* @__PURE__ */(() => {
+        let ɵMinValidator_BaseFactory;
+        return function MinValidator_Factory(t) {
+          return (ɵMinValidator_BaseFactory || (ɵMinValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](MinValidator)))(t || MinValidator);
+        };
+      })();
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: MinValidator,
+        selectors: [["input", "type", "number", "min", "", "formControlName", ""], ["input", "type", "number", "min", "", "formControl", ""], ["input", "type", "number", "min", "", "ngModel", ""]],
+        hostVars: 1,
+        hostBindings: function MinValidator_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            core_mjs_["ɵɵattribute"]("min", ctx._enabled ? ctx.min : null);
+          }
+        },
+        inputs: {
+          min: "min"
+        },
+        features: [core_mjs_["ɵɵProvidersFeature"]([MIN_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return MinValidator;
 })();
@@ -52126,26 +52332,30 @@ let RequiredValidator = /*#__PURE__*/(() => {
     enabled(input) {
       return input;
     }
-    static #_ = this.ɵfac = /* @__PURE__ */(() => {
-      let ɵRequiredValidator_BaseFactory;
-      return function RequiredValidator_Factory(t) {
-        return (ɵRequiredValidator_BaseFactory || (ɵRequiredValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](RequiredValidator)))(t || RequiredValidator);
-      };
-    })();
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: RequiredValidator,
-      selectors: [["", "required", "", "formControlName", "", 3, "type", "checkbox"], ["", "required", "", "formControl", "", 3, "type", "checkbox"], ["", "required", "", "ngModel", "", 3, "type", "checkbox"]],
-      hostVars: 1,
-      hostBindings: function RequiredValidator_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          core_mjs_["ɵɵattribute"]("required", ctx._enabled ? "" : null);
-        }
-      },
-      inputs: {
-        required: "required"
-      },
-      features: [core_mjs_["ɵɵProvidersFeature"]([REQUIRED_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = /* @__PURE__ */(() => {
+        let ɵRequiredValidator_BaseFactory;
+        return function RequiredValidator_Factory(t) {
+          return (ɵRequiredValidator_BaseFactory || (ɵRequiredValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](RequiredValidator)))(t || RequiredValidator);
+        };
+      })();
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: RequiredValidator,
+        selectors: [["", "required", "", "formControlName", "", 3, "type", "checkbox"], ["", "required", "", "formControl", "", 3, "type", "checkbox"], ["", "required", "", "ngModel", "", 3, "type", "checkbox"]],
+        hostVars: 1,
+        hostBindings: function RequiredValidator_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            core_mjs_["ɵɵattribute"]("required", ctx._enabled ? "" : null);
+          }
+        },
+        inputs: {
+          required: "required"
+        },
+        features: [core_mjs_["ɵɵProvidersFeature"]([REQUIRED_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return RequiredValidator;
 })();
@@ -52180,23 +52390,27 @@ let CheckboxRequiredValidator = /*#__PURE__*/(() => {
       /** @internal */
       this.createValidator = input => requiredTrueValidator;
     }
-    static #_ = this.ɵfac = /* @__PURE__ */(() => {
-      let ɵCheckboxRequiredValidator_BaseFactory;
-      return function CheckboxRequiredValidator_Factory(t) {
-        return (ɵCheckboxRequiredValidator_BaseFactory || (ɵCheckboxRequiredValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](CheckboxRequiredValidator)))(t || CheckboxRequiredValidator);
-      };
-    })();
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: CheckboxRequiredValidator,
-      selectors: [["input", "type", "checkbox", "required", "", "formControlName", ""], ["input", "type", "checkbox", "required", "", "formControl", ""], ["input", "type", "checkbox", "required", "", "ngModel", ""]],
-      hostVars: 1,
-      hostBindings: function CheckboxRequiredValidator_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          core_mjs_["ɵɵattribute"]("required", ctx._enabled ? "" : null);
-        }
-      },
-      features: [core_mjs_["ɵɵProvidersFeature"]([CHECKBOX_REQUIRED_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = /* @__PURE__ */(() => {
+        let ɵCheckboxRequiredValidator_BaseFactory;
+        return function CheckboxRequiredValidator_Factory(t) {
+          return (ɵCheckboxRequiredValidator_BaseFactory || (ɵCheckboxRequiredValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](CheckboxRequiredValidator)))(t || CheckboxRequiredValidator);
+        };
+      })();
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: CheckboxRequiredValidator,
+        selectors: [["input", "type", "checkbox", "required", "", "formControlName", ""], ["input", "type", "checkbox", "required", "", "formControl", ""], ["input", "type", "checkbox", "required", "", "ngModel", ""]],
+        hostVars: 1,
+        hostBindings: function CheckboxRequiredValidator_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            core_mjs_["ɵɵattribute"]("required", ctx._enabled ? "" : null);
+          }
+        },
+        features: [core_mjs_["ɵɵProvidersFeature"]([CHECKBOX_REQUIRED_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return CheckboxRequiredValidator;
 })();
@@ -52254,20 +52468,24 @@ let EmailValidator = /*#__PURE__*/(() => {
     enabled(input) {
       return input;
     }
-    static #_ = this.ɵfac = /* @__PURE__ */(() => {
-      let ɵEmailValidator_BaseFactory;
-      return function EmailValidator_Factory(t) {
-        return (ɵEmailValidator_BaseFactory || (ɵEmailValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](EmailValidator)))(t || EmailValidator);
-      };
-    })();
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: EmailValidator,
-      selectors: [["", "email", "", "formControlName", ""], ["", "email", "", "formControl", ""], ["", "email", "", "ngModel", ""]],
-      inputs: {
-        email: "email"
-      },
-      features: [core_mjs_["ɵɵProvidersFeature"]([EMAIL_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = /* @__PURE__ */(() => {
+        let ɵEmailValidator_BaseFactory;
+        return function EmailValidator_Factory(t) {
+          return (ɵEmailValidator_BaseFactory || (ɵEmailValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](EmailValidator)))(t || EmailValidator);
+        };
+      })();
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: EmailValidator,
+        selectors: [["", "email", "", "formControlName", ""], ["", "email", "", "formControl", ""], ["", "email", "", "ngModel", ""]],
+        inputs: {
+          email: "email"
+        },
+        features: [core_mjs_["ɵɵProvidersFeature"]([EMAIL_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return EmailValidator;
 })();
@@ -52315,26 +52533,30 @@ let MinLengthValidator = /*#__PURE__*/(() => {
       /** @internal */
       this.createValidator = minlength => minLengthValidator(minlength);
     }
-    static #_ = this.ɵfac = /* @__PURE__ */(() => {
-      let ɵMinLengthValidator_BaseFactory;
-      return function MinLengthValidator_Factory(t) {
-        return (ɵMinLengthValidator_BaseFactory || (ɵMinLengthValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](MinLengthValidator)))(t || MinLengthValidator);
-      };
-    })();
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: MinLengthValidator,
-      selectors: [["", "minlength", "", "formControlName", ""], ["", "minlength", "", "formControl", ""], ["", "minlength", "", "ngModel", ""]],
-      hostVars: 1,
-      hostBindings: function MinLengthValidator_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          core_mjs_["ɵɵattribute"]("minlength", ctx._enabled ? ctx.minlength : null);
-        }
-      },
-      inputs: {
-        minlength: "minlength"
-      },
-      features: [core_mjs_["ɵɵProvidersFeature"]([MIN_LENGTH_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = /* @__PURE__ */(() => {
+        let ɵMinLengthValidator_BaseFactory;
+        return function MinLengthValidator_Factory(t) {
+          return (ɵMinLengthValidator_BaseFactory || (ɵMinLengthValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](MinLengthValidator)))(t || MinLengthValidator);
+        };
+      })();
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: MinLengthValidator,
+        selectors: [["", "minlength", "", "formControlName", ""], ["", "minlength", "", "formControl", ""], ["", "minlength", "", "ngModel", ""]],
+        hostVars: 1,
+        hostBindings: function MinLengthValidator_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            core_mjs_["ɵɵattribute"]("minlength", ctx._enabled ? ctx.minlength : null);
+          }
+        },
+        inputs: {
+          minlength: "minlength"
+        },
+        features: [core_mjs_["ɵɵProvidersFeature"]([MIN_LENGTH_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return MinLengthValidator;
 })();
@@ -52382,26 +52604,30 @@ let MaxLengthValidator = /*#__PURE__*/(() => {
       /** @internal */
       this.createValidator = maxlength => maxLengthValidator(maxlength);
     }
-    static #_ = this.ɵfac = /* @__PURE__ */(() => {
-      let ɵMaxLengthValidator_BaseFactory;
-      return function MaxLengthValidator_Factory(t) {
-        return (ɵMaxLengthValidator_BaseFactory || (ɵMaxLengthValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](MaxLengthValidator)))(t || MaxLengthValidator);
-      };
-    })();
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: MaxLengthValidator,
-      selectors: [["", "maxlength", "", "formControlName", ""], ["", "maxlength", "", "formControl", ""], ["", "maxlength", "", "ngModel", ""]],
-      hostVars: 1,
-      hostBindings: function MaxLengthValidator_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          core_mjs_["ɵɵattribute"]("maxlength", ctx._enabled ? ctx.maxlength : null);
-        }
-      },
-      inputs: {
-        maxlength: "maxlength"
-      },
-      features: [core_mjs_["ɵɵProvidersFeature"]([MAX_LENGTH_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = /* @__PURE__ */(() => {
+        let ɵMaxLengthValidator_BaseFactory;
+        return function MaxLengthValidator_Factory(t) {
+          return (ɵMaxLengthValidator_BaseFactory || (ɵMaxLengthValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](MaxLengthValidator)))(t || MaxLengthValidator);
+        };
+      })();
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: MaxLengthValidator,
+        selectors: [["", "maxlength", "", "formControlName", ""], ["", "maxlength", "", "formControl", ""], ["", "maxlength", "", "ngModel", ""]],
+        hostVars: 1,
+        hostBindings: function MaxLengthValidator_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            core_mjs_["ɵɵattribute"]("maxlength", ctx._enabled ? ctx.maxlength : null);
+          }
+        },
+        inputs: {
+          maxlength: "maxlength"
+        },
+        features: [core_mjs_["ɵɵProvidersFeature"]([MAX_LENGTH_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return MaxLengthValidator;
 })();
@@ -52451,26 +52677,30 @@ let PatternValidator = /*#__PURE__*/(() => {
       /** @internal */
       this.createValidator = input => patternValidator(input);
     }
-    static #_ = this.ɵfac = /* @__PURE__ */(() => {
-      let ɵPatternValidator_BaseFactory;
-      return function PatternValidator_Factory(t) {
-        return (ɵPatternValidator_BaseFactory || (ɵPatternValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](PatternValidator)))(t || PatternValidator);
-      };
-    })();
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: PatternValidator,
-      selectors: [["", "pattern", "", "formControlName", ""], ["", "pattern", "", "formControl", ""], ["", "pattern", "", "ngModel", ""]],
-      hostVars: 1,
-      hostBindings: function PatternValidator_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          core_mjs_["ɵɵattribute"]("pattern", ctx._enabled ? ctx.pattern : null);
-        }
-      },
-      inputs: {
-        pattern: "pattern"
-      },
-      features: [core_mjs_["ɵɵProvidersFeature"]([PATTERN_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-    });
+    static {
+      this.ɵfac = /* @__PURE__ */(() => {
+        let ɵPatternValidator_BaseFactory;
+        return function PatternValidator_Factory(t) {
+          return (ɵPatternValidator_BaseFactory || (ɵPatternValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](PatternValidator)))(t || PatternValidator);
+        };
+      })();
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: PatternValidator,
+        selectors: [["", "pattern", "", "formControlName", ""], ["", "pattern", "", "formControl", ""], ["", "pattern", "", "ngModel", ""]],
+        hostVars: 1,
+        hostBindings: function PatternValidator_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            core_mjs_["ɵɵattribute"]("pattern", ctx._enabled ? ctx.pattern : null);
+          }
+        },
+        inputs: {
+          pattern: "pattern"
+        },
+        features: [core_mjs_["ɵɵProvidersFeature"]([PATTERN_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+      });
+    }
   }
   return PatternValidator;
 })();
@@ -52485,13 +52715,19 @@ const REACTIVE_DRIVEN_DIRECTIVES = [FormControlDirective, FormGroupDirective, Fo
  */
 let ɵInternalFormsSharedModule = /*#__PURE__*/(() => {
   class ɵInternalFormsSharedModule {
-    static #_ = this.ɵfac = function ɵInternalFormsSharedModule_Factory(t) {
-      return new (t || ɵInternalFormsSharedModule)();
-    };
-    static #_2 = this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-      type: ɵInternalFormsSharedModule
-    });
-    static #_3 = this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+    static {
+      this.ɵfac = function ɵInternalFormsSharedModule_Factory(t) {
+        return new (t || ɵInternalFormsSharedModule)();
+      };
+    }
+    static {
+      this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+        type: ɵInternalFormsSharedModule
+      });
+    }
+    static {
+      this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+    }
   }
   return ɵInternalFormsSharedModule;
 })();
@@ -53152,14 +53388,18 @@ let FormBuilder = /*#__PURE__*/(/* unused pure expression or super */ null && ((
         return this.control(controls);
       }
     }
-    static #_ = this.ɵfac = function FormBuilder_Factory(t) {
-      return new (t || FormBuilder)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
-      token: FormBuilder,
-      factory: FormBuilder.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function FormBuilder_Factory(t) {
+        return new (t || FormBuilder)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+        token: FormBuilder,
+        factory: FormBuilder.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return FormBuilder;
 })()));
@@ -53175,14 +53415,18 @@ let FormBuilder = /*#__PURE__*/(/* unused pure expression or super */ null && ((
  */
 let NonNullableFormBuilder = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
   class NonNullableFormBuilder {
-    static #_ = this.ɵfac = function NonNullableFormBuilder_Factory(t) {
-      return new (t || NonNullableFormBuilder)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
-      token: NonNullableFormBuilder,
-      factory: () => (() => inject(FormBuilder).nonNullable)(),
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function NonNullableFormBuilder_Factory(t) {
+        return new (t || NonNullableFormBuilder)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+        token: NonNullableFormBuilder,
+        factory: () => (() => inject(FormBuilder).nonNullable)(),
+        providedIn: 'root'
+      });
+    }
   }
   return NonNullableFormBuilder;
 })()));
@@ -53209,17 +53453,21 @@ let UntypedFormBuilder = /*#__PURE__*/(/* unused pure expression or super */ nul
     array(controlsConfig, validatorOrOpts, asyncValidator) {
       return super.array(controlsConfig, validatorOrOpts, asyncValidator);
     }
-    static #_ = this.ɵfac = /* @__PURE__ */(() => {
-      let ɵUntypedFormBuilder_BaseFactory;
-      return function UntypedFormBuilder_Factory(t) {
-        return (ɵUntypedFormBuilder_BaseFactory || (ɵUntypedFormBuilder_BaseFactory = i0.ɵɵgetInheritedFactory(UntypedFormBuilder)))(t || UntypedFormBuilder);
-      };
-    })();
-    static #_2 = this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
-      token: UntypedFormBuilder,
-      factory: UntypedFormBuilder.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = /* @__PURE__ */(() => {
+        let ɵUntypedFormBuilder_BaseFactory;
+        return function UntypedFormBuilder_Factory(t) {
+          return (ɵUntypedFormBuilder_BaseFactory || (ɵUntypedFormBuilder_BaseFactory = i0.ɵɵgetInheritedFactory(UntypedFormBuilder)))(t || UntypedFormBuilder);
+        };
+      })();
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+        token: UntypedFormBuilder,
+        factory: UntypedFormBuilder.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return UntypedFormBuilder;
 })()));
@@ -53265,15 +53513,21 @@ let FormsModule = /*#__PURE__*/(() => {
         }]
       };
     }
-    static #_ = this.ɵfac = function FormsModule_Factory(t) {
-      return new (t || FormsModule)();
-    };
-    static #_2 = this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-      type: FormsModule
-    });
-    static #_3 = this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-      imports: [ɵInternalFormsSharedModule]
-    });
+    static {
+      this.ɵfac = function FormsModule_Factory(t) {
+        return new (t || FormsModule)();
+      };
+    }
+    static {
+      this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+        type: FormsModule
+      });
+    }
+    static {
+      this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+        imports: [ɵInternalFormsSharedModule]
+      });
+    }
   }
   return FormsModule;
 })();
@@ -53313,15 +53567,21 @@ let ReactiveFormsModule = /*#__PURE__*/(() => {
         }]
       };
     }
-    static #_ = this.ɵfac = function ReactiveFormsModule_Factory(t) {
-      return new (t || ReactiveFormsModule)();
-    };
-    static #_2 = this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-      type: ReactiveFormsModule
-    });
-    static #_3 = this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-      imports: [ɵInternalFormsSharedModule]
-    });
+    static {
+      this.ɵfac = function ReactiveFormsModule_Factory(t) {
+        return new (t || ReactiveFormsModule)();
+      };
+    }
+    static {
+      this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+        type: ReactiveFormsModule
+      });
+    }
+    static {
+      this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+        imports: [ɵInternalFormsSharedModule]
+      });
+    }
   }
   return ReactiveFormsModule;
 })();

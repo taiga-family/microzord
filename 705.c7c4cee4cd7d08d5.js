@@ -7901,8 +7901,12 @@ function createInjectorWithoutInjectorInstances(defType, parent = null, addition
  */
 let Injector = /*#__PURE__*/(() => {
   class Injector {
-    static #_ = this.THROW_IF_NOT_FOUND = THROW_IF_NOT_FOUND;
-    static #_2 = this.NULL = /* @__PURE__ */new NullInjector();
+    static {
+      this.THROW_IF_NOT_FOUND = THROW_IF_NOT_FOUND;
+    }
+    static {
+      this.NULL = /* @__PURE__ */new NullInjector();
+    }
     static create(options, parent) {
       if (Array.isArray(options)) {
         return createInjector({
@@ -7916,16 +7920,20 @@ let Injector = /*#__PURE__*/(() => {
       }
     }
     /** @nocollapse */
-    static #_3 = this.ɵprov = ɵɵdefineInjectable({
-      token: Injector,
-      providedIn: 'any',
-      factory: () => ɵɵinject(INJECTOR$1)
-    });
+    static {
+      this.ɵprov = ɵɵdefineInjectable({
+        token: Injector,
+        providedIn: 'any',
+        factory: () => ɵɵinject(INJECTOR$1)
+      });
+    }
     /**
      * @internal
      * @nocollapse
      */
-    static #_4 = this.__NG_ELEMENT_ID__ = -1 /* InjectorMarkers.Injector */;
+    static {
+      this.__NG_ELEMENT_ID__ = -1 /* InjectorMarkers.Injector */;
+    }
   }
   return Injector;
 })();
@@ -8078,12 +8086,16 @@ let DestroyRef = /*#__PURE__*/(() => {
      * @internal
      * @nocollapse
      */
-    static #_ = this.__NG_ELEMENT_ID__ = injectDestroyRef;
+    static {
+      this.__NG_ELEMENT_ID__ = injectDestroyRef;
+    }
     /**
      * @internal
      * @nocollapse
      */
-    static #_2 = this.__NG_ENV_ID__ = injector => injector;
+    static {
+      this.__NG_ENV_ID__ = injector => injector;
+    }
   }
   return DestroyRef;
 })();
@@ -8323,7 +8335,9 @@ let ElementRef = /*#__PURE__*/(() => {
      * @internal
      * @nocollapse
      */
-    static #_ = this.__NG_ELEMENT_ID__ = injectElementRef;
+    static {
+      this.__NG_ELEMENT_ID__ = injectElementRef;
+    }
   }
   return ElementRef;
 })();
@@ -8427,7 +8441,9 @@ function symbolIterator() {
  * @publicApi
  */
 class QueryList {
-  static #_ = Symbol.iterator;
+  static {
+    Symbol.iterator;
+  }
   /**
    * Returns `Observable` of `QueryList` notifying the subscriber of changes.
    */
@@ -9630,11 +9646,13 @@ let TransferState = /*#__PURE__*/(() => {
       this.onSerializeCallbacks = {};
     }
     /** @nocollapse */
-    static #_ = this.ɵprov = /** @pureOrBreakMyCode */ɵɵdefineInjectable({
-      token: TransferState,
-      providedIn: 'root',
-      factory: initTransferState
-    });
+    static {
+      this.ɵprov = /** @pureOrBreakMyCode */ɵɵdefineInjectable({
+        token: TransferState,
+        providedIn: 'root',
+        factory: initTransferState
+      });
+    }
     /**
      * Get the value corresponding to a key. Return `defaultValue` if key is not found.
      */
@@ -14671,7 +14689,9 @@ let TemplateRef = /*#__PURE__*/(() => {
      * @internal
      * @nocollapse
      */
-    static #_ = this.__NG_ELEMENT_ID__ = injectTemplateRef;
+    static {
+      this.__NG_ELEMENT_ID__ = injectTemplateRef;
+    }
   }
   return TemplateRef;
 })();
@@ -15659,7 +15679,9 @@ class _NullComponentFactoryResolver {
  */
 let ComponentFactoryResolver$1 = /*#__PURE__*/(() => {
   class ComponentFactoryResolver$1 {
-    static #_ = this.NULL = /* @__PURE__ */new _NullComponentFactoryResolver();
+    static {
+      this.NULL = /* @__PURE__ */new _NullComponentFactoryResolver();
+    }
   }
   return ComponentFactoryResolver$1;
 })();
@@ -15697,7 +15719,9 @@ let Renderer2 = /*#__PURE__*/(() => {
      * @internal
      * @nocollapse
      */
-    static #_ = this.__NG_ELEMENT_ID__ = () => injectRenderer2();
+    static {
+      this.__NG_ELEMENT_ID__ = () => injectRenderer2();
+    }
   }
   return Renderer2;
 })();
@@ -15719,11 +15743,13 @@ function injectRenderer2() {
 let Sanitizer = /*#__PURE__*/(() => {
   class Sanitizer {
     /** @nocollapse */
-    static #_ = this.ɵprov = ɵɵdefineInjectable({
-      token: Sanitizer,
-      providedIn: 'root',
-      factory: () => null
-    });
+    static {
+      this.ɵprov = ɵɵdefineInjectable({
+        token: Sanitizer,
+        providedIn: 'root',
+        factory: () => null
+      });
+    }
   }
   return Sanitizer;
 })(); // This default value is when checking the hierarchy for a token.
@@ -16590,11 +16616,13 @@ let AfterRenderEventManager = /*#__PURE__*/(() => {
       this.internalCallbacks.length = 0;
     }
     /** @nocollapse */
-    static #_ = this.ɵprov = ɵɵdefineInjectable({
-      token: AfterRenderEventManager,
-      providedIn: 'root',
-      factory: () => new AfterRenderEventManager()
-    });
+    static {
+      this.ɵprov = ɵɵdefineInjectable({
+        token: AfterRenderEventManager,
+        providedIn: 'root',
+        factory: () => new AfterRenderEventManager()
+      });
+    }
   }
   return AfterRenderEventManager;
 })();
@@ -17367,7 +17395,9 @@ let ViewContainerRef = /*#__PURE__*/(() => {
      * @internal
      * @nocollapse
      */
-    static #_ = this.__NG_ELEMENT_ID__ = injectViewContainerRef;
+    static {
+      this.__NG_ELEMENT_ID__ = injectViewContainerRef;
+    }
   }
   return ViewContainerRef;
 })();
@@ -19319,11 +19349,13 @@ let CachedInjectorService = /*#__PURE__*/(() => {
       }
     }
     /** @nocollapse */
-    static #_ = this.ɵprov = ɵɵdefineInjectable({
-      token: CachedInjectorService,
-      providedIn: 'environment',
-      factory: () => new CachedInjectorService()
-    });
+    static {
+      this.ɵprov = ɵɵdefineInjectable({
+        token: CachedInjectorService,
+        providedIn: 'environment',
+        factory: () => new CachedInjectorService()
+      });
+    }
   }
   return CachedInjectorService;
 })();
@@ -19463,14 +19495,18 @@ let PendingTasks = /*#__PURE__*/(() => {
         this.hasPendingTasks.next(false);
       }
     }
-    static #_ = this.ɵfac = function PendingTasks_Factory(t) {
-      return new (t || PendingTasks)();
-    };
-    static #_2 = this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
-      token: PendingTasks,
-      factory: PendingTasks.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function PendingTasks_Factory(t) {
+        return new (t || PendingTasks)();
+      };
+    }
+    static {
+      this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
+        token: PendingTasks,
+        factory: PendingTasks.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return PendingTasks;
 })();
@@ -20292,11 +20328,13 @@ let IdleScheduler = /*#__PURE__*/(() => {
       this.deferred.clear();
     }
     /** @nocollapse */
-    static #_ = this.ɵprov = ɵɵdefineInjectable({
-      token: IdleScheduler,
-      providedIn: 'root',
-      factory: () => new IdleScheduler()
-    });
+    static {
+      this.ɵprov = ɵɵdefineInjectable({
+        token: IdleScheduler,
+        providedIn: 'root',
+        factory: () => new IdleScheduler()
+      });
+    }
   }
   return IdleScheduler;
 })();
@@ -20486,11 +20524,13 @@ let TimerScheduler = /*#__PURE__*/(() => {
       this.deferred.length = 0;
     }
     /** @nocollapse */
-    static #_ = this.ɵprov = ɵɵdefineInjectable({
-      token: TimerScheduler,
-      providedIn: 'root',
-      factory: () => new TimerScheduler()
-    });
+    static {
+      this.ɵprov = ɵɵdefineInjectable({
+        token: TimerScheduler,
+        providedIn: 'root',
+        factory: () => new TimerScheduler()
+      });
+    }
   }
   return TimerScheduler;
 })();
@@ -28784,11 +28824,13 @@ let StandaloneService = /*#__PURE__*/(() => {
       }
     }
     /** @nocollapse */
-    static #_ = this.ɵprov = ɵɵdefineInjectable({
-      token: StandaloneService,
-      providedIn: 'environment',
-      factory: () => new StandaloneService(ɵɵinject(EnvironmentInjector))
-    });
+    static {
+      this.ɵprov = ɵɵdefineInjectable({
+        token: StandaloneService,
+        providedIn: 'environment',
+        factory: () => new StandaloneService(ɵɵinject(EnvironmentInjector))
+      });
+    }
   }
   return StandaloneService;
 })();
@@ -30809,14 +30851,18 @@ let Console = /*#__PURE__*/(() => {
       // tslint:disable-next-line:no-console
       console.warn(message);
     }
-    static #_ = this.ɵfac = function Console_Factory(t) {
-      return new (t || Console)();
-    };
-    static #_2 = this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
-      token: Console,
-      factory: Console.ɵfac,
-      providedIn: 'platform'
-    });
+    static {
+      this.ɵfac = function Console_Factory(t) {
+        return new (t || Console)();
+      };
+    }
+    static {
+      this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
+        token: Console,
+        factory: Console.ɵfac,
+        providedIn: 'platform'
+      });
+    }
   }
   return Console;
 })();
@@ -31944,13 +31990,17 @@ let Testability = /*#__PURE__*/(() => {
       // TODO(juliemr): implement.
       return [];
     }
-    static #_ = this.ɵfac = function Testability_Factory(t) {
-      return new (t || Testability)(ɵɵinject(NgZone), ɵɵinject(TestabilityRegistry), ɵɵinject(TESTABILITY_GETTER));
-    };
-    static #_2 = this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
-      token: Testability,
-      factory: Testability.ɵfac
-    });
+    static {
+      this.ɵfac = function Testability_Factory(t) {
+        return new (t || Testability)(ɵɵinject(NgZone), ɵɵinject(TestabilityRegistry), ɵɵinject(TESTABILITY_GETTER));
+      };
+    }
+    static {
+      this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
+        token: Testability,
+        factory: Testability.ɵfac
+      });
+    }
   }
   return Testability;
 })();
@@ -32028,14 +32078,18 @@ let TestabilityRegistry = /*#__PURE__*/(() => {
     findTestabilityInTree(elem, findInAncestors = true) {
       return _testabilityGetter?.findTestabilityInTree(this, elem, findInAncestors) ?? null;
     }
-    static #_ = this.ɵfac = function TestabilityRegistry_Factory(t) {
-      return new (t || TestabilityRegistry)();
-    };
-    static #_2 = this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
-      token: TestabilityRegistry,
-      factory: TestabilityRegistry.ɵfac,
-      providedIn: 'platform'
-    });
+    static {
+      this.ɵfac = function TestabilityRegistry_Factory(t) {
+        return new (t || TestabilityRegistry)();
+      };
+    }
+    static {
+      this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
+        token: TestabilityRegistry,
+        factory: TestabilityRegistry.ɵfac,
+        providedIn: 'platform'
+      });
+    }
   }
   return TestabilityRegistry;
 })();
@@ -32247,14 +32301,18 @@ let ApplicationInitStatus = /*#__PURE__*/(() => {
       }
       this.initialized = true;
     }
-    static #_ = this.ɵfac = function ApplicationInitStatus_Factory(t) {
-      return new (t || ApplicationInitStatus)();
-    };
-    static #_2 = this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
-      token: ApplicationInitStatus,
-      factory: ApplicationInitStatus.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function ApplicationInitStatus_Factory(t) {
+        return new (t || ApplicationInitStatus)();
+      };
+    }
+    static {
+      this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
+        token: ApplicationInitStatus,
+        factory: ApplicationInitStatus.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return ApplicationInitStatus;
 })();
@@ -32699,14 +32757,18 @@ let ApplicationRef = /*#__PURE__*/(() => {
         console.warn(formatRuntimeError(406 /* RuntimeErrorCode.APPLICATION_REF_ALREADY_DESTROYED */, 'This instance of the `ApplicationRef` has already been destroyed.'));
       }
     }
-    static #_ = this.ɵfac = function ApplicationRef_Factory(t) {
-      return new (t || ApplicationRef)();
-    };
-    static #_2 = this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
-      token: ApplicationRef,
-      factory: ApplicationRef.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function ApplicationRef_Factory(t) {
+        return new (t || ApplicationRef)();
+      };
+    }
+    static {
+      this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
+        token: ApplicationRef,
+        factory: ApplicationRef.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return ApplicationRef;
 })();
@@ -32854,14 +32916,18 @@ let Compiler = /*#__PURE__*/(() => {
     getModuleId(moduleType) {
       return undefined;
     }
-    static #_ = this.ɵfac = function Compiler_Factory(t) {
-      return new (t || Compiler)();
-    };
-    static #_2 = this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
-      token: Compiler,
-      factory: Compiler.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function Compiler_Factory(t) {
+        return new (t || Compiler)();
+      };
+    }
+    static {
+      this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
+        token: Compiler,
+        factory: Compiler.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return Compiler;
 })();
@@ -32958,14 +33024,18 @@ let NgZoneChangeDetectionScheduler = /*#__PURE__*/(() => {
     ngOnDestroy() {
       this._onMicrotaskEmptySubscription?.unsubscribe();
     }
-    static #_ = this.ɵfac = function NgZoneChangeDetectionScheduler_Factory(t) {
-      return new (t || NgZoneChangeDetectionScheduler)();
-    };
-    static #_2 = this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
-      token: NgZoneChangeDetectionScheduler,
-      factory: NgZoneChangeDetectionScheduler.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function NgZoneChangeDetectionScheduler_Factory(t) {
+        return new (t || NgZoneChangeDetectionScheduler)();
+      };
+    }
+    static {
+      this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
+        token: NgZoneChangeDetectionScheduler,
+        factory: NgZoneChangeDetectionScheduler.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return NgZoneChangeDetectionScheduler;
 })();
@@ -33092,14 +33162,18 @@ let ZoneStablePendingTask = /*#__PURE__*/(() => {
     ngOnDestroy() {
       this.subscription.unsubscribe();
     }
-    static #_ = this.ɵfac = function ZoneStablePendingTask_Factory(t) {
-      return new (t || ZoneStablePendingTask)();
-    };
-    static #_2 = this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
-      token: ZoneStablePendingTask,
-      factory: ZoneStablePendingTask.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function ZoneStablePendingTask_Factory(t) {
+        return new (t || ZoneStablePendingTask)();
+      };
+    }
+    static {
+      this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
+        token: ZoneStablePendingTask,
+        factory: ZoneStablePendingTask.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return ZoneStablePendingTask;
 })();
@@ -33425,14 +33499,18 @@ let PlatformRef = /*#__PURE__*/(() => {
     get destroyed() {
       return this._destroyed;
     }
-    static #_ = this.ɵfac = function PlatformRef_Factory(t) {
-      return new (t || PlatformRef)(ɵɵinject(Injector));
-    };
-    static #_2 = this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
-      token: PlatformRef,
-      factory: PlatformRef.ɵfac,
-      providedIn: 'platform'
-    });
+    static {
+      this.ɵfac = function PlatformRef_Factory(t) {
+        return new (t || PlatformRef)(ɵɵinject(Injector));
+      };
+    }
+    static {
+      this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
+        token: PlatformRef,
+        factory: PlatformRef.ɵfac,
+        providedIn: 'platform'
+      });
+    }
   }
   return PlatformRef;
 })();
@@ -33683,7 +33761,9 @@ let ChangeDetectorRef = /*#__PURE__*/(() => {
      * @internal
      * @nocollapse
      */
-    static #_ = this.__NG_ELEMENT_ID__ = injectChangeDetectorRef;
+    static {
+      this.__NG_ELEMENT_ID__ = injectChangeDetectorRef;
+    }
   }
   return ChangeDetectorRef;
 })();
@@ -35181,11 +35261,13 @@ function defaultIterableDiffersFactory() {
 let IterableDiffers = /*#__PURE__*/(() => {
   class IterableDiffers {
     /** @nocollapse */
-    static #_ = this.ɵprov = ɵɵdefineInjectable({
-      token: IterableDiffers,
-      providedIn: 'root',
-      factory: defaultIterableDiffersFactory
-    });
+    static {
+      this.ɵprov = ɵɵdefineInjectable({
+        token: IterableDiffers,
+        providedIn: 'root',
+        factory: defaultIterableDiffersFactory
+      });
+    }
     constructor(factories) {
       this.factories = factories;
     }
@@ -35254,11 +35336,13 @@ function defaultKeyValueDiffersFactory() {
 let KeyValueDiffers = /*#__PURE__*/(() => {
   class KeyValueDiffers {
     /** @nocollapse */
-    static #_ = this.ɵprov = ɵɵdefineInjectable({
-      token: KeyValueDiffers,
-      providedIn: 'root',
-      factory: defaultKeyValueDiffersFactory
-    });
+    static {
+      this.ɵprov = ɵɵdefineInjectable({
+        token: KeyValueDiffers,
+        providedIn: 'root',
+        factory: defaultKeyValueDiffersFactory
+      });
+    }
     constructor(factories) {
       this.factories = factories;
     }
@@ -35347,13 +35431,19 @@ let ApplicationModule = /*#__PURE__*/(() => {
   class ApplicationModule {
     // Inject ApplicationRef to make it eager...
     constructor(appRef) {}
-    static #_ = this.ɵfac = function ApplicationModule_Factory(t) {
-      return new (t || ApplicationModule)(ɵɵinject(ApplicationRef));
-    };
-    static #_2 = this.ɵmod = /*@__PURE__*/ɵɵdefineNgModule({
-      type: ApplicationModule
-    });
-    static #_3 = this.ɵinj = /*@__PURE__*/ɵɵdefineInjector({});
+    static {
+      this.ɵfac = function ApplicationModule_Factory(t) {
+        return new (t || ApplicationModule)(ɵɵinject(ApplicationRef));
+      };
+    }
+    static {
+      this.ɵmod = /*@__PURE__*/ɵɵdefineNgModule({
+        type: ApplicationModule
+      });
+    }
+    static {
+      this.ɵinj = /*@__PURE__*/ɵɵdefineInjector({});
+    }
   }
   return ApplicationModule;
 })();
@@ -36033,14 +36123,18 @@ let ImagePerformanceWarning = /*#__PURE__*/(() => {
       const oversizedHeight = intrinsicHeight - recommendedHeight >= OVERSIZED_IMAGE_TOLERANCE;
       return oversizedWidth || oversizedHeight;
     }
-    static #_ = this.ɵfac = function ImagePerformanceWarning_Factory(t) {
-      return new (t || ImagePerformanceWarning)();
-    };
-    static #_2 = this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
-      token: ImagePerformanceWarning,
-      factory: ImagePerformanceWarning.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function ImagePerformanceWarning_Factory(t) {
+        return new (t || ImagePerformanceWarning)();
+      };
+    }
+    static {
+      this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
+        token: ImagePerformanceWarning,
+        factory: ImagePerformanceWarning.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return ImagePerformanceWarning;
 })();
@@ -36207,14 +36301,18 @@ let ChangeDetectionSchedulerImpl = /*#__PURE__*/(() => {
         this.taskService.remove(taskId);
       }
     }
-    static #_ = this.ɵfac = function ChangeDetectionSchedulerImpl_Factory(t) {
-      return new (t || ChangeDetectionSchedulerImpl)();
-    };
-    static #_2 = this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
-      token: ChangeDetectionSchedulerImpl,
-      factory: ChangeDetectionSchedulerImpl.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function ChangeDetectionSchedulerImpl_Factory(t) {
+        return new (t || ChangeDetectionSchedulerImpl)();
+      };
+    }
+    static {
+      this.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
+        token: ChangeDetectionSchedulerImpl,
+        factory: ChangeDetectionSchedulerImpl.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return ChangeDetectionSchedulerImpl;
 })();
@@ -37192,11 +37290,13 @@ const APP_EFFECT_SCHEDULER = /*#__PURE__*/new InjectionToken('', {
 let EffectScheduler = /*#__PURE__*/(() => {
   class EffectScheduler {
     /** @nocollapse */
-    static #_ = this.ɵprov = ɵɵdefineInjectable({
-      token: EffectScheduler,
-      providedIn: 'root',
-      factory: () => new ZoneAwareEffectScheduler()
-    });
+    static {
+      this.ɵprov = ɵɵdefineInjectable({
+        token: EffectScheduler,
+        providedIn: 'root',
+        factory: () => new ZoneAwareEffectScheduler()
+      });
+    }
   }
   return EffectScheduler;
 })();

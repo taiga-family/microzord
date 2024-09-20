@@ -97,7 +97,9 @@ function initZone() {
   let ZoneImpl = /*#__PURE__*/(() => {
     class ZoneImpl {
       // tslint:disable-next-line:require-internal-with-underscore
-      static #_ = this.__symbol__ = __symbol__;
+      static {
+        this.__symbol__ = __symbol__;
+      }
       static assertZonePatched() {
         if (global['Promise'] !== patches['ZoneAwarePromise']) {
           throw new Error('Zone.js has detected that ZoneAwarePromise `(window|global).Promise` ' + 'has been overwritten.\n' + 'Most likely cause is that a Promise polyfill has been loaded ' + 'after Zone.js (Polyfilling Promise api is not necessary when zone.js is loaded. ' + 'If you must load one, do so before loading zone.js.)');
@@ -2925,7 +2927,7 @@ patchBrowser(Zone$1);
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + "." + {"49":"fc03afe74c3e5045","177":"2c6305d75a13b552","488":"a6ee06d2bd64d883","525":"34de3a1206e12dc1","626":"45402bd54617fc99","705":"8e3c3d29b91bd38a","720":"41e2b85852d72d6e","791":"f59cefa9f416c15b"}[chunkId] + ".js";
+/******/ 			return "" + chunkId + "." + {"49":"f4da48079035ed2e","177":"f36b5845bf5786c2","488":"a6ee06d2bd64d883","525":"34de3a1206e12dc1","626":"1fde27c0f98b74e9","705":"c7c4cee4cd7d08d5","720":"41e2b85852d72d6e","791":"ec557bf73414587a"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	

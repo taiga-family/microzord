@@ -805,13 +805,17 @@ let BrowserXhr = /*#__PURE__*/(() => {
     build() {
       return new XMLHttpRequest();
     }
-    static #_ = this.ɵfac = function BrowserXhr_Factory(t) {
-      return new (t || BrowserXhr)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: BrowserXhr,
-      factory: BrowserXhr.ɵfac
-    });
+    static {
+      this.ɵfac = function BrowserXhr_Factory(t) {
+        return new (t || BrowserXhr)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: BrowserXhr,
+        factory: BrowserXhr.ɵfac
+      });
+    }
   }
   return BrowserXhr;
 })();
@@ -877,13 +881,17 @@ let EventManager = /*#__PURE__*/(() => {
       this._eventNameToPlugin.set(eventName, plugin);
       return plugin;
     }
-    static #_ = this.ɵfac = function EventManager_Factory(t) {
-      return new (t || EventManager)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](EVENT_MANAGER_PLUGINS), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: EventManager,
-      factory: EventManager.ɵfac
-    });
+    static {
+      this.ɵfac = function EventManager_Factory(t) {
+        return new (t || EventManager)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](EVENT_MANAGER_PLUGINS), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: EventManager,
+        factory: EventManager.ɵfac
+      });
+    }
   }
   return EventManager;
 })();
@@ -1040,13 +1048,17 @@ let SharedStylesHost = /*#__PURE__*/(() => {
       // Re-add the head element back since this is the default host.
       hostNodes.add(this.doc.head);
     }
-    static #_ = this.ɵfac = function SharedStylesHost_Factory(t) {
-      return new (t || SharedStylesHost)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.APP_ID), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.CSP_NONCE, 8), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.PLATFORM_ID));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: SharedStylesHost,
-      factory: SharedStylesHost.ɵfac
-    });
+    static {
+      this.ɵfac = function SharedStylesHost_Factory(t) {
+        return new (t || SharedStylesHost)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.APP_ID), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.CSP_NONCE, 8), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.PLATFORM_ID));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: SharedStylesHost,
+        factory: SharedStylesHost.ɵfac
+      });
+    }
   }
   return SharedStylesHost;
 })();
@@ -1152,13 +1164,17 @@ let DomRendererFactory2 = /*#__PURE__*/(() => {
     ngOnDestroy() {
       this.rendererByCompId.clear();
     }
-    static #_ = this.ɵfac = function DomRendererFactory2_Factory(t) {
-      return new (t || DomRendererFactory2)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](EventManager), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](SharedStylesHost), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.APP_ID), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](REMOVE_STYLES_ON_COMPONENT_DESTROY), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.PLATFORM_ID), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.CSP_NONCE));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: DomRendererFactory2,
-      factory: DomRendererFactory2.ɵfac
-    });
+    static {
+      this.ɵfac = function DomRendererFactory2_Factory(t) {
+        return new (t || DomRendererFactory2)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](EventManager), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](SharedStylesHost), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.APP_ID), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](REMOVE_STYLES_ON_COMPONENT_DESTROY), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.PLATFORM_ID), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.CSP_NONCE));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: DomRendererFactory2,
+        factory: DomRendererFactory2.ɵfac
+      });
+    }
   }
   return DomRendererFactory2;
 })();
@@ -1422,13 +1438,17 @@ let DomEventsPlugin = /*#__PURE__*/(() => {
     removeEventListener(target, eventName, callback) {
       return target.removeEventListener(eventName, callback);
     }
-    static #_ = this.ɵfac = function DomEventsPlugin_Factory(t) {
-      return new (t || DomEventsPlugin)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: DomEventsPlugin,
-      factory: DomEventsPlugin.ɵfac
-    });
+    static {
+      this.ɵfac = function DomEventsPlugin_Factory(t) {
+        return new (t || DomEventsPlugin)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: DomEventsPlugin,
+        factory: DomEventsPlugin.ɵfac
+      });
+    }
   }
   return DomEventsPlugin;
 })();
@@ -1597,13 +1617,17 @@ let KeyEventsPlugin = /*#__PURE__*/(() => {
     static _normalizeKey(keyName) {
       return keyName === 'esc' ? 'escape' : keyName;
     }
-    static #_ = this.ɵfac = function KeyEventsPlugin_Factory(t) {
-      return new (t || KeyEventsPlugin)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: KeyEventsPlugin,
-      factory: KeyEventsPlugin.ɵfac
-    });
+    static {
+      this.ɵfac = function KeyEventsPlugin_Factory(t) {
+        return new (t || KeyEventsPlugin)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: KeyEventsPlugin,
+        factory: KeyEventsPlugin.ɵfac
+      });
+    }
   }
   return KeyEventsPlugin;
 })();
@@ -1828,16 +1852,22 @@ let BrowserModule = /*#__PURE__*/(/* runtime-dependent pure expression or super 
         }]
       };
     }
-    static #_ = this.ɵfac = function BrowserModule_Factory(t) {
-      return new (t || BrowserModule)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](BROWSER_MODULE_PROVIDERS_MARKER, 12));
-    };
-    static #_2 = this.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
-      type: BrowserModule
-    });
-    static #_3 = this.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-      providers: [...BROWSER_MODULE_PROVIDERS, ...TESTABILITY_PROVIDERS],
-      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.CommonModule, _angular_core__WEBPACK_IMPORTED_MODULE_0__.ApplicationModule]
-    });
+    static {
+      this.ɵfac = function BrowserModule_Factory(t) {
+        return new (t || BrowserModule)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](BROWSER_MODULE_PROVIDERS_MARKER, 12));
+      };
+    }
+    static {
+      this.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+        type: BrowserModule
+      });
+    }
+    static {
+      this.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+        providers: [...BROWSER_MODULE_PROVIDERS, ...TESTABILITY_PROVIDERS],
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.CommonModule, _angular_core__WEBPACK_IMPORTED_MODULE_0__.ApplicationModule]
+      });
+    }
   }
   return BrowserModule;
 })()) : null);
@@ -1989,14 +2019,18 @@ let Meta = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
     _getMetaKeyMap(prop) {
       return META_KEYS_MAP[prop] || prop;
     }
-    static #_ = this.ɵfac = function Meta_Factory(t) {
-      return new (t || Meta)(i0.ɵɵinject(DOCUMENT));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
-      token: Meta,
-      factory: Meta.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function Meta_Factory(t) {
+        return new (t || Meta)(i0.ɵɵinject(DOCUMENT));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+        token: Meta,
+        factory: Meta.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return Meta;
 })()));
@@ -2038,14 +2072,18 @@ let Title = /*#__PURE__*/(() => {
     setTitle(newTitle) {
       this._doc.title = newTitle || '';
     }
-    static #_ = this.ɵfac = function Title_Factory(t) {
-      return new (t || Title)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: Title,
-      factory: Title.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function Title_Factory(t) {
+        return new (t || Title)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: Title,
+        factory: Title.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return Title;
 })();
@@ -2306,13 +2344,17 @@ let HammerGestureConfig = /*#__PURE__*/(/* unused pure expression or super */ nu
       }
       return mc;
     }
-    static #_ = this.ɵfac = function HammerGestureConfig_Factory(t) {
-      return new (t || HammerGestureConfig)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
-      token: HammerGestureConfig,
-      factory: HammerGestureConfig.ɵfac
-    });
+    static {
+      this.ɵfac = function HammerGestureConfig_Factory(t) {
+        return new (t || HammerGestureConfig)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+        token: HammerGestureConfig,
+        factory: HammerGestureConfig.ɵfac
+      });
+    }
   }
   return HammerGestureConfig;
 })()));
@@ -2408,13 +2450,17 @@ let HammerGesturesPlugin = /*#__PURE__*/(/* unused pure expression or super */ n
     isCustomEvent(eventName) {
       return this._config.events.indexOf(eventName) > -1;
     }
-    static #_ = this.ɵfac = function HammerGesturesPlugin_Factory(t) {
-      return new (t || HammerGesturesPlugin)(i0.ɵɵinject(DOCUMENT), i0.ɵɵinject(HAMMER_GESTURE_CONFIG), i0.ɵɵinject(i0.ɵConsole), i0.ɵɵinject(HAMMER_LOADER, 8));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
-      token: HammerGesturesPlugin,
-      factory: HammerGesturesPlugin.ɵfac
-    });
+    static {
+      this.ɵfac = function HammerGesturesPlugin_Factory(t) {
+        return new (t || HammerGesturesPlugin)(i0.ɵɵinject(DOCUMENT), i0.ɵɵinject(HAMMER_GESTURE_CONFIG), i0.ɵɵinject(i0.ɵConsole), i0.ɵɵinject(HAMMER_LOADER, 8));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+        token: HammerGesturesPlugin,
+        factory: HammerGesturesPlugin.ɵfac
+      });
+    }
   }
   return HammerGesturesPlugin;
 })()));
@@ -2434,24 +2480,30 @@ let HammerGesturesPlugin = /*#__PURE__*/(/* unused pure expression or super */ n
  */
 let HammerModule = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
   class HammerModule {
-    static #_ = this.ɵfac = function HammerModule_Factory(t) {
-      return new (t || HammerModule)();
-    };
-    static #_2 = this.ɵmod = /* @__PURE__ */i0.ɵɵdefineNgModule({
-      type: HammerModule
-    });
-    static #_3 = this.ɵinj = /* @__PURE__ */i0.ɵɵdefineInjector({
-      providers: [{
-        provide: EVENT_MANAGER_PLUGINS,
-        useClass: HammerGesturesPlugin,
-        multi: true,
-        deps: [DOCUMENT, HAMMER_GESTURE_CONFIG, ɵConsole, [new Optional(), HAMMER_LOADER]]
-      }, {
-        provide: HAMMER_GESTURE_CONFIG,
-        useClass: HammerGestureConfig,
-        deps: []
-      }]
-    });
+    static {
+      this.ɵfac = function HammerModule_Factory(t) {
+        return new (t || HammerModule)();
+      };
+    }
+    static {
+      this.ɵmod = /* @__PURE__ */i0.ɵɵdefineNgModule({
+        type: HammerModule
+      });
+    }
+    static {
+      this.ɵinj = /* @__PURE__ */i0.ɵɵdefineInjector({
+        providers: [{
+          provide: EVENT_MANAGER_PLUGINS,
+          useClass: HammerGesturesPlugin,
+          multi: true,
+          deps: [DOCUMENT, HAMMER_GESTURE_CONFIG, ɵConsole, [new Optional(), HAMMER_LOADER]]
+        }, {
+          provide: HAMMER_GESTURE_CONFIG,
+          useClass: HammerGestureConfig,
+          deps: []
+        }]
+      });
+    }
   }
   return HammerModule;
 })()));
@@ -2492,22 +2544,26 @@ let HammerModule = /*#__PURE__*/(/* unused pure expression or super */ null && (
  */
 let DomSanitizer = /*#__PURE__*/(/* runtime-dependent pure expression or super */ 792 == __webpack_require__.j ? ((() => {
   class DomSanitizer {
-    static #_ = this.ɵfac = function DomSanitizer_Factory(t) {
-      return new (t || DomSanitizer)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: DomSanitizer,
-      factory: function DomSanitizer_Factory(t) {
-        let r = null;
-        if (t) {
-          r = new (t || DomSanitizer)();
-        } else {
-          r = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](DomSanitizerImpl);
-        }
-        return r;
-      },
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function DomSanitizer_Factory(t) {
+        return new (t || DomSanitizer)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: DomSanitizer,
+        factory: function DomSanitizer_Factory(t) {
+          let r = null;
+          if (t) {
+            r = new (t || DomSanitizer)();
+          } else {
+            r = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](DomSanitizerImpl);
+          }
+          return r;
+        },
+        providedIn: 'root'
+      });
+    }
   }
   return DomSanitizer;
 })()) : null);
@@ -2569,14 +2625,18 @@ let DomSanitizerImpl = /*#__PURE__*/(/* runtime-dependent pure expression or sup
     bypassSecurityTrustResourceUrl(value) {
       return (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵbypassSanitizationTrustResourceUrl"])(value);
     }
-    static #_ = this.ɵfac = function DomSanitizerImpl_Factory(t) {
-      return new (t || DomSanitizerImpl)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: DomSanitizerImpl,
-      factory: DomSanitizerImpl.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function DomSanitizerImpl_Factory(t) {
+        return new (t || DomSanitizerImpl)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: DomSanitizerImpl,
+        factory: DomSanitizerImpl.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return DomSanitizerImpl;
 })()) : null);

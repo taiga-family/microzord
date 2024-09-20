@@ -1526,13 +1526,17 @@ let HttpClient = /*#__PURE__*/(() => {
     put(url, body, options = {}) {
       return this.request('PUT', url, addBody(options, body));
     }
-    static #_ = this.ɵfac = function HttpClient_Factory(t) {
-      return new (t || HttpClient)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](HttpHandler));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: HttpClient,
-      factory: HttpClient.ɵfac
-    });
+    static {
+      this.ɵfac = function HttpClient_Factory(t) {
+        return new (t || HttpClient)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](HttpHandler));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: HttpClient,
+        factory: HttpClient.ɵfac
+      });
+    }
   }
   return HttpClient;
 })();
@@ -1759,13 +1763,17 @@ let FetchBackend = /*#__PURE__*/(() => {
       }
       return chunksAll;
     }
-    static #_ = this.ɵfac = function FetchBackend_Factory(t) {
-      return new (t || FetchBackend)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: FetchBackend,
-      factory: FetchBackend.ɵfac
-    });
+    static {
+      this.ɵfac = function FetchBackend_Factory(t) {
+        return new (t || FetchBackend)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: FetchBackend,
+        factory: FetchBackend.ɵfac
+      });
+    }
   }
   return FetchBackend;
 })();
@@ -1891,13 +1899,17 @@ let HttpInterceptorHandler = /*#__PURE__*/(() => {
       const taskId = this.pendingTasks.add();
       return this.chain(initialRequest, downstreamRequest => this.backend.handle(downstreamRequest)).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__/* .finalize */ .j)(() => this.pendingTasks.remove(taskId)));
     }
-    static #_ = this.ɵfac = function HttpInterceptorHandler_Factory(t) {
-      return new (t || HttpInterceptorHandler)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](HttpBackend), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.EnvironmentInjector));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: HttpInterceptorHandler,
-      factory: HttpInterceptorHandler.ɵfac
-    });
+    static {
+      this.ɵfac = function HttpInterceptorHandler_Factory(t) {
+        return new (t || HttpInterceptorHandler)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](HttpBackend), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.EnvironmentInjector));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: HttpInterceptorHandler,
+        factory: HttpInterceptorHandler.ɵfac
+      });
+    }
   }
   return HttpInterceptorHandler;
 })();
@@ -2102,13 +2114,17 @@ let JsonpClientBackend = /*#__PURE__*/(() => {
       foreignDocument ??= this.document.implementation.createHTMLDocument();
       foreignDocument.adoptNode(script);
     }
-    static #_ = this.ɵfac = function JsonpClientBackend_Factory(t) {
-      return new (t || JsonpClientBackend)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](JsonpCallbackContext), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: JsonpClientBackend,
-      factory: JsonpClientBackend.ɵfac
-    });
+    static {
+      this.ɵfac = function JsonpClientBackend_Factory(t) {
+        return new (t || JsonpClientBackend)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](JsonpCallbackContext), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: JsonpClientBackend,
+        factory: JsonpClientBackend.ɵfac
+      });
+    }
   }
   return JsonpClientBackend;
 })();
@@ -2148,13 +2164,17 @@ let JsonpInterceptor = /*#__PURE__*/(() => {
     intercept(initialRequest, next) {
       return (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.runInInjectionContext)(this.injector, () => jsonpInterceptorFn(initialRequest, downstreamRequest => next.handle(downstreamRequest)));
     }
-    static #_ = this.ɵfac = function JsonpInterceptor_Factory(t) {
-      return new (t || JsonpInterceptor)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.EnvironmentInjector));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: JsonpInterceptor,
-      factory: JsonpInterceptor.ɵfac
-    });
+    static {
+      this.ɵfac = function JsonpInterceptor_Factory(t) {
+        return new (t || JsonpInterceptor)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.EnvironmentInjector));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: JsonpInterceptor,
+        factory: JsonpInterceptor.ɵfac
+      });
+    }
   }
   return JsonpInterceptor;
 })();
@@ -2450,13 +2470,17 @@ let HttpXhrBackend = /*#__PURE__*/(() => {
         });
       }));
     }
-    static #_ = this.ɵfac = function HttpXhrBackend_Factory(t) {
-      return new (t || HttpXhrBackend)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.XhrFactory));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: HttpXhrBackend,
-      factory: HttpXhrBackend.ɵfac
-    });
+    static {
+      this.ɵfac = function HttpXhrBackend_Factory(t) {
+        return new (t || HttpXhrBackend)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.XhrFactory));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: HttpXhrBackend,
+        factory: HttpXhrBackend.ɵfac
+      });
+    }
   }
   return HttpXhrBackend;
 })();
@@ -2508,13 +2532,17 @@ let HttpXsrfCookieExtractor = /*#__PURE__*/(() => {
       }
       return this.lastToken;
     }
-    static #_ = this.ɵfac = function HttpXsrfCookieExtractor_Factory(t) {
-      return new (t || HttpXsrfCookieExtractor)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.PLATFORM_ID), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](XSRF_COOKIE_NAME));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: HttpXsrfCookieExtractor,
-      factory: HttpXsrfCookieExtractor.ɵfac
-    });
+    static {
+      this.ɵfac = function HttpXsrfCookieExtractor_Factory(t) {
+        return new (t || HttpXsrfCookieExtractor)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.PLATFORM_ID), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](XSRF_COOKIE_NAME));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: HttpXsrfCookieExtractor,
+        factory: HttpXsrfCookieExtractor.ɵfac
+      });
+    }
   }
   return HttpXsrfCookieExtractor;
 })();
@@ -2551,13 +2579,17 @@ let HttpXsrfInterceptor = /*#__PURE__*/(() => {
     intercept(initialRequest, next) {
       return (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.runInInjectionContext)(this.injector, () => xsrfInterceptorFn(initialRequest, downstreamRequest => next.handle(downstreamRequest)));
     }
-    static #_ = this.ɵfac = function HttpXsrfInterceptor_Factory(t) {
-      return new (t || HttpXsrfInterceptor)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.EnvironmentInjector));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: HttpXsrfInterceptor,
-      factory: HttpXsrfInterceptor.ɵfac
-    });
+    static {
+      this.ɵfac = function HttpXsrfInterceptor_Factory(t) {
+        return new (t || HttpXsrfInterceptor)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.EnvironmentInjector));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: HttpXsrfInterceptor,
+        factory: HttpXsrfInterceptor.ɵfac
+      });
+    }
   }
   return HttpXsrfInterceptor;
 })();
@@ -2839,28 +2871,34 @@ let HttpClientXsrfModule = /*#__PURE__*/(() => {
         providers: withXsrfConfiguration(options).ɵproviders
       };
     }
-    static #_ = this.ɵfac = function HttpClientXsrfModule_Factory(t) {
-      return new (t || HttpClientXsrfModule)();
-    };
-    static #_2 = this.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
-      type: HttpClientXsrfModule
-    });
-    static #_3 = this.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-      providers: [HttpXsrfInterceptor, {
-        provide: HTTP_INTERCEPTORS,
-        useExisting: HttpXsrfInterceptor,
-        multi: true
-      }, {
-        provide: HttpXsrfTokenExtractor,
-        useClass: HttpXsrfCookieExtractor
-      }, withXsrfConfiguration({
-        cookieName: XSRF_DEFAULT_COOKIE_NAME,
-        headerName: XSRF_DEFAULT_HEADER_NAME
-      }).ɵproviders, {
-        provide: XSRF_ENABLED,
-        useValue: true
-      }]
-    });
+    static {
+      this.ɵfac = function HttpClientXsrfModule_Factory(t) {
+        return new (t || HttpClientXsrfModule)();
+      };
+    }
+    static {
+      this.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+        type: HttpClientXsrfModule
+      });
+    }
+    static {
+      this.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+        providers: [HttpXsrfInterceptor, {
+          provide: HTTP_INTERCEPTORS,
+          useExisting: HttpXsrfInterceptor,
+          multi: true
+        }, {
+          provide: HttpXsrfTokenExtractor,
+          useClass: HttpXsrfCookieExtractor
+        }, withXsrfConfiguration({
+          cookieName: XSRF_DEFAULT_COOKIE_NAME,
+          headerName: XSRF_DEFAULT_HEADER_NAME
+        }).ɵproviders, {
+          provide: XSRF_ENABLED,
+          useValue: true
+        }]
+      });
+    }
   }
   return HttpClientXsrfModule;
 })();
@@ -2878,15 +2916,21 @@ let HttpClientXsrfModule = /*#__PURE__*/(() => {
  */
 let HttpClientModule = /*#__PURE__*/(() => {
   class HttpClientModule {
-    static #_ = this.ɵfac = function HttpClientModule_Factory(t) {
-      return new (t || HttpClientModule)();
-    };
-    static #_2 = this.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
-      type: HttpClientModule
-    });
-    static #_3 = this.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-      providers: [provideHttpClient(withInterceptorsFromDi())]
-    });
+    static {
+      this.ɵfac = function HttpClientModule_Factory(t) {
+        return new (t || HttpClientModule)();
+      };
+    }
+    static {
+      this.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+        type: HttpClientModule
+      });
+    }
+    static {
+      this.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+        providers: [provideHttpClient(withInterceptorsFromDi())]
+      });
+    }
   }
   return HttpClientModule;
 })();
@@ -2903,15 +2947,21 @@ let HttpClientModule = /*#__PURE__*/(() => {
  */
 let HttpClientJsonpModule = /*#__PURE__*/(() => {
   class HttpClientJsonpModule {
-    static #_ = this.ɵfac = function HttpClientJsonpModule_Factory(t) {
-      return new (t || HttpClientJsonpModule)();
-    };
-    static #_2 = this.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
-      type: HttpClientJsonpModule
-    });
-    static #_3 = this.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-      providers: [withJsonpSupport().ɵproviders]
-    });
+    static {
+      this.ɵfac = function HttpClientJsonpModule_Factory(t) {
+        return new (t || HttpClientJsonpModule)();
+      };
+    }
+    static {
+      this.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+        type: HttpClientJsonpModule
+      });
+    }
+    static {
+      this.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+        providers: [withJsonpSupport().ɵproviders]
+      });
+    }
   }
   return HttpClientJsonpModule;
 })();

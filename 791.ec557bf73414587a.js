@@ -816,14 +816,18 @@ function mapChildrenIntoArray(segment, fn) {
  */
 let UrlSerializer = /*#__PURE__*/(() => {
   class UrlSerializer {
-    static #_ = this.ɵfac = function UrlSerializer_Factory(t) {
-      return new (t || UrlSerializer)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: UrlSerializer,
-      factory: () => (() => new DefaultUrlSerializer())(),
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function UrlSerializer_Factory(t) {
+        return new (t || UrlSerializer)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: UrlSerializer,
+        factory: () => (() => new DefaultUrlSerializer())(),
+        providedIn: 'root'
+      });
+    }
   }
   return UrlSerializer;
 })();
@@ -2175,14 +2179,18 @@ let ChildrenOutletContexts = /*#__PURE__*/(() => {
     getContext(childName) {
       return this.contexts.get(childName) || null;
     }
-    static #_ = this.ɵfac = function ChildrenOutletContexts_Factory(t) {
-      return new (t || ChildrenOutletContexts)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: ChildrenOutletContexts,
-      factory: ChildrenOutletContexts.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function ChildrenOutletContexts_Factory(t) {
+        return new (t || ChildrenOutletContexts)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: ChildrenOutletContexts,
+        factory: ChildrenOutletContexts.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return ChildrenOutletContexts;
 })();
@@ -2888,25 +2896,29 @@ let RouterOutlet = /*#__PURE__*/(() => {
       this.inputBinder?.bindActivatedRouteToOutletComponent(this);
       this.activateEvents.emit(this.activated.instance);
     }
-    static #_ = this.ɵfac = function RouterOutlet_Factory(t) {
-      return new (t || RouterOutlet)();
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: RouterOutlet,
-      selectors: [["router-outlet"]],
-      inputs: {
-        name: "name"
-      },
-      outputs: {
-        activateEvents: "activate",
-        deactivateEvents: "deactivate",
-        attachEvents: "attach",
-        detachEvents: "detach"
-      },
-      exportAs: ["outlet"],
-      standalone: true,
-      features: [core_mjs_["ɵɵNgOnChangesFeature"]]
-    });
+    static {
+      this.ɵfac = function RouterOutlet_Factory(t) {
+        return new (t || RouterOutlet)();
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: RouterOutlet,
+        selectors: [["router-outlet"]],
+        inputs: {
+          name: "name"
+        },
+        outputs: {
+          activateEvents: "activate",
+          deactivateEvents: "deactivate",
+          attachEvents: "attach",
+          detachEvents: "detach"
+        },
+        exportAs: ["outlet"],
+        standalone: true,
+        features: [core_mjs_["ɵɵNgOnChangesFeature"]]
+      });
+    }
   }
   return RouterOutlet;
 })();
@@ -3014,13 +3026,17 @@ let RoutedComponentInputBinder = /*#__PURE__*/(() => {
       });
       this.outletDataSubscriptions.set(outlet, dataSubscription);
     }
-    static #_ = this.ɵfac = function RoutedComponentInputBinder_Factory(t) {
-      return new (t || RoutedComponentInputBinder)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: RoutedComponentInputBinder,
-      factory: RoutedComponentInputBinder.ɵfac
-    });
+    static {
+      this.ɵfac = function RoutedComponentInputBinder_Factory(t) {
+        return new (t || RoutedComponentInputBinder)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: RoutedComponentInputBinder,
+        factory: RoutedComponentInputBinder.ɵfac
+      });
+    }
   }
   return RoutedComponentInputBinder;
 })();
@@ -3105,24 +3121,28 @@ function isNavigationCancelingError(error) {
  */
 let ɵEmptyOutletComponent = /*#__PURE__*/(() => {
   class ɵEmptyOutletComponent {
-    static #_ = this.ɵfac = function ɵEmptyOutletComponent_Factory(t) {
-      return new (t || ɵEmptyOutletComponent)();
-    };
-    static #_2 = this.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-      type: ɵEmptyOutletComponent,
-      selectors: [["ng-component"]],
-      standalone: true,
-      features: [core_mjs_["ɵɵStandaloneFeature"]],
-      decls: 1,
-      vars: 0,
-      template: function _EmptyOutletComponent_Template(rf, ctx) {
-        if (rf & 1) {
-          core_mjs_["ɵɵelement"](0, "router-outlet");
-        }
-      },
-      dependencies: [RouterOutlet],
-      encapsulation: 2
-    });
+    static {
+      this.ɵfac = function ɵEmptyOutletComponent_Factory(t) {
+        return new (t || ɵEmptyOutletComponent)();
+      };
+    }
+    static {
+      this.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+        type: ɵEmptyOutletComponent,
+        selectors: [["ng-component"]],
+        standalone: true,
+        features: [core_mjs_["ɵɵStandaloneFeature"]],
+        decls: 1,
+        vars: 0,
+        template: function _EmptyOutletComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            core_mjs_["ɵɵelement"](0, "router-outlet");
+          }
+        },
+        dependencies: [RouterOutlet],
+        encapsulation: 2
+      });
+    }
   }
   return ɵEmptyOutletComponent;
 })();
@@ -4517,14 +4537,18 @@ let TitleStrategy = /*#__PURE__*/(() => {
     getResolvedTitleForRoute(snapshot) {
       return snapshot.data[RouteTitleKey];
     }
-    static #_ = this.ɵfac = function TitleStrategy_Factory(t) {
-      return new (t || TitleStrategy)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: TitleStrategy,
-      factory: () => (() => (0,core_mjs_.inject)(DefaultTitleStrategy))(),
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function TitleStrategy_Factory(t) {
+        return new (t || TitleStrategy)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: TitleStrategy,
+        factory: () => (() => (0,core_mjs_.inject)(DefaultTitleStrategy))(),
+        providedIn: 'root'
+      });
+    }
   }
   return TitleStrategy;
 })();
@@ -4551,14 +4575,18 @@ let DefaultTitleStrategy = /*#__PURE__*/(() => {
         this.title.setTitle(title);
       }
     }
-    static #_ = this.ɵfac = function DefaultTitleStrategy_Factory(t) {
-      return new (t || DefaultTitleStrategy)(core_mjs_["ɵɵinject"](platform_browser/* Title */.hE));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: DefaultTitleStrategy,
-      factory: DefaultTitleStrategy.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function DefaultTitleStrategy_Factory(t) {
+        return new (t || DefaultTitleStrategy)(core_mjs_["ɵɵinject"](platform_browser/* Title */.hE));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: DefaultTitleStrategy,
+        factory: DefaultTitleStrategy.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return DefaultTitleStrategy;
 })();
@@ -4638,14 +4666,18 @@ let RouterConfigLoader = /*#__PURE__*/(() => {
       this.childrenLoaders.set(route, loader);
       return loader;
     }
-    static #_ = this.ɵfac = function RouterConfigLoader_Factory(t) {
-      return new (t || RouterConfigLoader)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: RouterConfigLoader,
-      factory: RouterConfigLoader.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function RouterConfigLoader_Factory(t) {
+        return new (t || RouterConfigLoader)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: RouterConfigLoader,
+        factory: RouterConfigLoader.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return RouterConfigLoader;
 })();
@@ -4719,14 +4751,18 @@ function maybeUnwrapDefaultExport(input) {
  */
 let UrlHandlingStrategy = /*#__PURE__*/(() => {
   class UrlHandlingStrategy {
-    static #_ = this.ɵfac = function UrlHandlingStrategy_Factory(t) {
-      return new (t || UrlHandlingStrategy)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: UrlHandlingStrategy,
-      factory: () => (() => (0,core_mjs_.inject)(DefaultUrlHandlingStrategy))(),
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function UrlHandlingStrategy_Factory(t) {
+        return new (t || UrlHandlingStrategy)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: UrlHandlingStrategy,
+        factory: () => (() => (0,core_mjs_.inject)(DefaultUrlHandlingStrategy))(),
+        providedIn: 'root'
+      });
+    }
   }
   return UrlHandlingStrategy;
 })();
@@ -4747,14 +4783,18 @@ let DefaultUrlHandlingStrategy = /*#__PURE__*/(() => {
     merge(newUrlPart, wholeUrl) {
       return newUrlPart;
     }
-    static #_ = this.ɵfac = function DefaultUrlHandlingStrategy_Factory(t) {
-      return new (t || DefaultUrlHandlingStrategy)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: DefaultUrlHandlingStrategy,
-      factory: DefaultUrlHandlingStrategy.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function DefaultUrlHandlingStrategy_Factory(t) {
+        return new (t || DefaultUrlHandlingStrategy)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: DefaultUrlHandlingStrategy,
+        factory: DefaultUrlHandlingStrategy.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return DefaultUrlHandlingStrategy;
 })();
@@ -5204,14 +5244,18 @@ let NavigationTransitions = /*#__PURE__*/(() => {
       const extractedBrowserUrl = this.urlHandlingStrategy.extract(this.urlSerializer.parse(this.location.path(true)));
       return extractedBrowserUrl.toString() !== this.currentTransition?.extractedUrl.toString() && !this.currentTransition?.extras.skipLocationChange;
     }
-    static #_ = this.ɵfac = function NavigationTransitions_Factory(t) {
-      return new (t || NavigationTransitions)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: NavigationTransitions,
-      factory: NavigationTransitions.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function NavigationTransitions_Factory(t) {
+        return new (t || NavigationTransitions)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: NavigationTransitions,
+        factory: NavigationTransitions.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return NavigationTransitions;
 })();
@@ -5231,14 +5275,18 @@ function isBrowserTriggeredNavigation(source) {
  */
 let RouteReuseStrategy = /*#__PURE__*/(() => {
   class RouteReuseStrategy {
-    static #_ = this.ɵfac = function RouteReuseStrategy_Factory(t) {
-      return new (t || RouteReuseStrategy)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: RouteReuseStrategy,
-      factory: () => (() => (0,core_mjs_.inject)(DefaultRouteReuseStrategy))(),
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function RouteReuseStrategy_Factory(t) {
+        return new (t || RouteReuseStrategy)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: RouteReuseStrategy,
+        factory: () => (() => (0,core_mjs_.inject)(DefaultRouteReuseStrategy))(),
+        providedIn: 'root'
+      });
+    }
   }
   return RouteReuseStrategy;
 })();
@@ -5293,17 +5341,21 @@ class BaseRouteReuseStrategy {
 }
 let DefaultRouteReuseStrategy = /*#__PURE__*/(() => {
   class DefaultRouteReuseStrategy extends BaseRouteReuseStrategy {
-    static #_ = this.ɵfac = /* @__PURE__ */(() => {
-      let ɵDefaultRouteReuseStrategy_BaseFactory;
-      return function DefaultRouteReuseStrategy_Factory(t) {
-        return (ɵDefaultRouteReuseStrategy_BaseFactory || (ɵDefaultRouteReuseStrategy_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](DefaultRouteReuseStrategy)))(t || DefaultRouteReuseStrategy);
-      };
-    })();
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: DefaultRouteReuseStrategy,
-      factory: DefaultRouteReuseStrategy.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = /* @__PURE__ */(() => {
+        let ɵDefaultRouteReuseStrategy_BaseFactory;
+        return function DefaultRouteReuseStrategy_Factory(t) {
+          return (ɵDefaultRouteReuseStrategy_BaseFactory || (ɵDefaultRouteReuseStrategy_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](DefaultRouteReuseStrategy)))(t || DefaultRouteReuseStrategy);
+        };
+      })();
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: DefaultRouteReuseStrategy,
+        factory: DefaultRouteReuseStrategy.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return DefaultRouteReuseStrategy;
 })();
@@ -5312,14 +5364,18 @@ let DefaultRouteReuseStrategy = /*#__PURE__*/(() => {
 })();
 let StateManager = /*#__PURE__*/(() => {
   class StateManager {
-    static #_ = this.ɵfac = function StateManager_Factory(t) {
-      return new (t || StateManager)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: StateManager,
-      factory: () => (() => (0,core_mjs_.inject)(HistoryStateManager))(),
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function StateManager_Factory(t) {
+        return new (t || StateManager)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: StateManager,
+        factory: () => (() => (0,core_mjs_.inject)(HistoryStateManager))(),
+        providedIn: 'root'
+      });
+    }
   }
   return StateManager;
 })();
@@ -5493,17 +5549,21 @@ let HistoryStateManager = /*#__PURE__*/(() => {
         navigationId
       };
     }
-    static #_ = this.ɵfac = /* @__PURE__ */(() => {
-      let ɵHistoryStateManager_BaseFactory;
-      return function HistoryStateManager_Factory(t) {
-        return (ɵHistoryStateManager_BaseFactory || (ɵHistoryStateManager_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](HistoryStateManager)))(t || HistoryStateManager);
-      };
-    })();
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: HistoryStateManager,
-      factory: HistoryStateManager.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = /* @__PURE__ */(() => {
+        let ɵHistoryStateManager_BaseFactory;
+        return function HistoryStateManager_Factory(t) {
+          return (ɵHistoryStateManager_BaseFactory || (ɵHistoryStateManager_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](HistoryStateManager)))(t || HistoryStateManager);
+        };
+      })();
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: HistoryStateManager,
+        factory: HistoryStateManager.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return HistoryStateManager;
 })();
@@ -6084,14 +6144,18 @@ let Router = /*#__PURE__*/(() => {
         return Promise.reject(e);
       });
     }
-    static #_ = this.ɵfac = function Router_Factory(t) {
-      return new (t || Router)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: Router,
-      factory: Router.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function Router_Factory(t) {
+        return new (t || Router)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: Router,
+        factory: Router.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return Router;
 })();
@@ -6362,39 +6426,43 @@ let RouterLink = /*#__PURE__*/(() => {
         preserveFragment: this.preserveFragment
       });
     }
-    static #_ = this.ɵfac = function RouterLink_Factory(t) {
-      return new (t || RouterLink)(core_mjs_["ɵɵdirectiveInject"](Router), core_mjs_["ɵɵdirectiveInject"](ActivatedRoute), core_mjs_["ɵɵinjectAttribute"]('tabindex'), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](common_mjs_.LocationStrategy));
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: RouterLink,
-      selectors: [["", "routerLink", ""]],
-      hostVars: 1,
-      hostBindings: function RouterLink_HostBindings(rf, ctx) {
-        if (rf & 1) {
-          core_mjs_["ɵɵlistener"]("click", function RouterLink_click_HostBindingHandler($event) {
-            return ctx.onClick($event.button, $event.ctrlKey, $event.shiftKey, $event.altKey, $event.metaKey);
-          });
-        }
-        if (rf & 2) {
-          core_mjs_["ɵɵattribute"]("target", ctx.target);
-        }
-      },
-      inputs: {
-        target: "target",
-        queryParams: "queryParams",
-        fragment: "fragment",
-        queryParamsHandling: "queryParamsHandling",
-        state: "state",
-        info: "info",
-        relativeTo: "relativeTo",
-        preserveFragment: [core_mjs_["ɵɵInputFlags"].HasDecoratorInputTransform, "preserveFragment", "preserveFragment", core_mjs_.booleanAttribute],
-        skipLocationChange: [core_mjs_["ɵɵInputFlags"].HasDecoratorInputTransform, "skipLocationChange", "skipLocationChange", core_mjs_.booleanAttribute],
-        replaceUrl: [core_mjs_["ɵɵInputFlags"].HasDecoratorInputTransform, "replaceUrl", "replaceUrl", core_mjs_.booleanAttribute],
-        routerLink: "routerLink"
-      },
-      standalone: true,
-      features: [core_mjs_["ɵɵInputTransformsFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
-    });
+    static {
+      this.ɵfac = function RouterLink_Factory(t) {
+        return new (t || RouterLink)(core_mjs_["ɵɵdirectiveInject"](Router), core_mjs_["ɵɵdirectiveInject"](ActivatedRoute), core_mjs_["ɵɵinjectAttribute"]('tabindex'), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](common_mjs_.LocationStrategy));
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: RouterLink,
+        selectors: [["", "routerLink", ""]],
+        hostVars: 1,
+        hostBindings: function RouterLink_HostBindings(rf, ctx) {
+          if (rf & 1) {
+            core_mjs_["ɵɵlistener"]("click", function RouterLink_click_HostBindingHandler($event) {
+              return ctx.onClick($event.button, $event.ctrlKey, $event.shiftKey, $event.altKey, $event.metaKey);
+            });
+          }
+          if (rf & 2) {
+            core_mjs_["ɵɵattribute"]("target", ctx.target);
+          }
+        },
+        inputs: {
+          target: "target",
+          queryParams: "queryParams",
+          fragment: "fragment",
+          queryParamsHandling: "queryParamsHandling",
+          state: "state",
+          info: "info",
+          relativeTo: "relativeTo",
+          preserveFragment: [core_mjs_["ɵɵInputFlags"].HasDecoratorInputTransform, "preserveFragment", "preserveFragment", core_mjs_.booleanAttribute],
+          skipLocationChange: [core_mjs_["ɵɵInputFlags"].HasDecoratorInputTransform, "skipLocationChange", "skipLocationChange", core_mjs_.booleanAttribute],
+          replaceUrl: [core_mjs_["ɵɵInputFlags"].HasDecoratorInputTransform, "replaceUrl", "replaceUrl", core_mjs_.booleanAttribute],
+          routerLink: "routerLink"
+        },
+        standalone: true,
+        features: [core_mjs_["ɵɵInputTransformsFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
+      });
+    }
   }
   return RouterLink;
 })();
@@ -6585,33 +6653,37 @@ let RouterLinkActive = /*#__PURE__*/(() => {
       const isActiveCheckFn = this.isLinkActive(this.router);
       return this.link && isActiveCheckFn(this.link) || this.links.some(isActiveCheckFn);
     }
-    static #_ = this.ɵfac = function RouterLinkActive_Factory(t) {
-      return new (t || RouterLinkActive)(core_mjs_["ɵɵdirectiveInject"](Router), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ChangeDetectorRef), core_mjs_["ɵɵdirectiveInject"](RouterLink, 8));
-    };
-    static #_2 = this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-      type: RouterLinkActive,
-      selectors: [["", "routerLinkActive", ""]],
-      contentQueries: function RouterLinkActive_ContentQueries(rf, ctx, dirIndex) {
-        if (rf & 1) {
-          core_mjs_["ɵɵcontentQuery"](dirIndex, RouterLink, 5);
-        }
-        if (rf & 2) {
-          let _t;
-          core_mjs_["ɵɵqueryRefresh"](_t = core_mjs_["ɵɵloadQuery"]()) && (ctx.links = _t);
-        }
-      },
-      inputs: {
-        routerLinkActiveOptions: "routerLinkActiveOptions",
-        ariaCurrentWhenActive: "ariaCurrentWhenActive",
-        routerLinkActive: "routerLinkActive"
-      },
-      outputs: {
-        isActiveChange: "isActiveChange"
-      },
-      exportAs: ["routerLinkActive"],
-      standalone: true,
-      features: [core_mjs_["ɵɵNgOnChangesFeature"]]
-    });
+    static {
+      this.ɵfac = function RouterLinkActive_Factory(t) {
+        return new (t || RouterLinkActive)(core_mjs_["ɵɵdirectiveInject"](Router), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ChangeDetectorRef), core_mjs_["ɵɵdirectiveInject"](RouterLink, 8));
+      };
+    }
+    static {
+      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+        type: RouterLinkActive,
+        selectors: [["", "routerLinkActive", ""]],
+        contentQueries: function RouterLinkActive_ContentQueries(rf, ctx, dirIndex) {
+          if (rf & 1) {
+            core_mjs_["ɵɵcontentQuery"](dirIndex, RouterLink, 5);
+          }
+          if (rf & 2) {
+            let _t;
+            core_mjs_["ɵɵqueryRefresh"](_t = core_mjs_["ɵɵloadQuery"]()) && (ctx.links = _t);
+          }
+        },
+        inputs: {
+          routerLinkActiveOptions: "routerLinkActiveOptions",
+          ariaCurrentWhenActive: "ariaCurrentWhenActive",
+          routerLinkActive: "routerLinkActive"
+        },
+        outputs: {
+          isActiveChange: "isActiveChange"
+        },
+        exportAs: ["routerLinkActive"],
+        standalone: true,
+        features: [core_mjs_["ɵɵNgOnChangesFeature"]]
+      });
+    }
   }
   return RouterLinkActive;
 })();
@@ -6649,14 +6721,18 @@ let PreloadAllModules = /*#__PURE__*/(() => {
     preload(route, fn) {
       return fn().pipe((0,catchError/* catchError */.W)(() => (0,of.of)(null)));
     }
-    static #_ = this.ɵfac = function PreloadAllModules_Factory(t) {
-      return new (t || PreloadAllModules)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: PreloadAllModules,
-      factory: PreloadAllModules.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function PreloadAllModules_Factory(t) {
+        return new (t || PreloadAllModules)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: PreloadAllModules,
+        factory: PreloadAllModules.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return PreloadAllModules;
 })();
@@ -6677,14 +6753,18 @@ let NoPreloading = /*#__PURE__*/(() => {
     preload(route, fn) {
       return (0,of.of)(null);
     }
-    static #_ = this.ɵfac = function NoPreloading_Factory(t) {
-      return new (t || NoPreloading)();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: NoPreloading,
-      factory: NoPreloading.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function NoPreloading_Factory(t) {
+        return new (t || NoPreloading)();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: NoPreloading,
+        factory: NoPreloading.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return NoPreloading;
 })();
@@ -6774,14 +6854,18 @@ let RouterPreloader = /*#__PURE__*/(() => {
         }
       });
     }
-    static #_ = this.ɵfac = function RouterPreloader_Factory(t) {
-      return new (t || RouterPreloader)(core_mjs_["ɵɵinject"](Router), core_mjs_["ɵɵinject"](core_mjs_.Compiler), core_mjs_["ɵɵinject"](core_mjs_.EnvironmentInjector), core_mjs_["ɵɵinject"](PreloadingStrategy), core_mjs_["ɵɵinject"](RouterConfigLoader));
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: RouterPreloader,
-      factory: RouterPreloader.ɵfac,
-      providedIn: 'root'
-    });
+    static {
+      this.ɵfac = function RouterPreloader_Factory(t) {
+        return new (t || RouterPreloader)(core_mjs_["ɵɵinject"](Router), core_mjs_["ɵɵinject"](core_mjs_.Compiler), core_mjs_["ɵɵinject"](core_mjs_.EnvironmentInjector), core_mjs_["ɵɵinject"](PreloadingStrategy), core_mjs_["ɵɵinject"](RouterConfigLoader));
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: RouterPreloader,
+        factory: RouterPreloader.ɵfac,
+        providedIn: 'root'
+      });
+    }
   }
   return RouterPreloader;
 })();
@@ -6881,13 +6965,17 @@ let RouterScroller = /*#__PURE__*/(() => {
       this.routerEventsSubscription?.unsubscribe();
       this.scrollEventsSubscription?.unsubscribe();
     }
-    static #_ = this.ɵfac = function RouterScroller_Factory(t) {
-      core_mjs_["ɵɵinvalidFactory"]();
-    };
-    static #_2 = this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-      token: RouterScroller,
-      factory: RouterScroller.ɵfac
-    });
+    static {
+      this.ɵfac = function RouterScroller_Factory(t) {
+        core_mjs_["ɵɵinvalidFactory"]();
+      };
+    }
+    static {
+      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+        token: RouterScroller,
+        factory: RouterScroller.ɵfac
+      });
+    }
   }
   return RouterScroller;
 })();
@@ -7553,13 +7641,19 @@ let RouterModule = /*#__PURE__*/(() => {
         }]
       };
     }
-    static #_ = this.ɵfac = function RouterModule_Factory(t) {
-      return new (t || RouterModule)(core_mjs_["ɵɵinject"](ROUTER_FORROOT_GUARD, 8));
-    };
-    static #_2 = this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-      type: RouterModule
-    });
-    static #_3 = this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+    static {
+      this.ɵfac = function RouterModule_Factory(t) {
+        return new (t || RouterModule)(core_mjs_["ɵɵinject"](ROUTER_FORROOT_GUARD, 8));
+      };
+    }
+    static {
+      this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+        type: RouterModule
+      });
+    }
+    static {
+      this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
+    }
   }
   return RouterModule;
 })();
