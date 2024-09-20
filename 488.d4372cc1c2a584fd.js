@@ -335,13 +335,13 @@ function consumerIsLive(node) {
   return node.consumerIsAlwaysLive || (node?.liveConsumerNode?.length ?? 0) > 0;
 }
 function assertConsumerNode(node) {
-  node.producerNode ??= [];
-  node.producerIndexOfThis ??= [];
-  node.producerLastReadVersion ??= [];
+  node.producerNode ?? (node.producerNode = []);
+  node.producerIndexOfThis ?? (node.producerIndexOfThis = []);
+  node.producerLastReadVersion ?? (node.producerLastReadVersion = []);
 }
 function assertProducerNode(node) {
-  node.liveConsumerNode ??= [];
-  node.liveConsumerIndexOfThis ??= [];
+  node.liveConsumerNode ?? (node.liveConsumerNode = []);
+  node.liveConsumerIndexOfThis ?? (node.liveConsumerIndexOfThis = []);
 }
 
 /**

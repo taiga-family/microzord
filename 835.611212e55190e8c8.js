@@ -78,7 +78,7 @@ function ApplicationComponent_ng_template_2_ng_template_1_Template(rf, ctx) {
     core_mjs_["ɵɵelementStart"](1, "p")(2, "code");
     core_mjs_["ɵɵtext"](3, "false");
     core_mjs_["ɵɵelementEnd"]();
-    core_mjs_["ɵɵtext"](4, " by default.");
+    core_mjs_["ɵɵtext"](4, " by default. ");
     core_mjs_["ɵɵelementEnd"]();
   }
 }
@@ -88,7 +88,7 @@ function ApplicationComponent_ng_template_2_ng_template_2_Template(rf, ctx) {
     core_mjs_["ɵɵelementStart"](1, "p")(2, "code");
     core_mjs_["ɵɵtext"](3, "true");
     core_mjs_["ɵɵelementEnd"]();
-    core_mjs_["ɵɵtext"](4, " by default.");
+    core_mjs_["ɵɵtext"](4, " by default. ");
     core_mjs_["ɵɵelementEnd"]();
   }
 }
@@ -138,31 +138,29 @@ function ApplicationComponent_ng_template_2_Template(rf, ctx) {
   }
 }
 let ApplicationComponent = /*#__PURE__*/(() => {
-  class ApplicationComponent {
-    static {
-      this.ɵfac = function ApplicationComponent_Factory(t) {
-        return new (t || ApplicationComponent)();
-      };
-    }
-    static {
-      this.ɵcmp = /*@__PURE__*/core_mjs_["ɵɵdefineComponent"]({
-        type: ApplicationComponent,
-        selectors: [["application"]],
-        decls: 3,
-        vars: 0,
-        consts: [["header", "Application entity", "package", "CORE"], ["pageTab", "Description"], ["pageTab", "Props & methods"], ["status", "warning", 1, "tui-space_top-8"], ["tuiLink", "", "routerLink", "/angular-host"], ["tuiLink", "", "routerLink", "/react-host"], ["tuiLink", "", "target", "_blank", "href", "https://github.com/taiga-family/microzord/blob/main/libs/core/src/lib/models/application.ts"], [3, "showValues"], ["documentationPropertyName", "isBootstrapped", "documentationPropertyMode", "property", "documentationPropertyType", "boolean"], ["documentationPropertyName", "isDestroyed", "documentationPropertyMode", "property", "documentationPropertyType", "boolean"], ["documentationPropertyName", "container", "documentationPropertyMode", "property", "documentationPropertyType", "Element | string"], ["documentationPropertyName", "name", "documentationPropertyMode", "property", "documentationPropertyType", "string"], ["documentationPropertyName", "onMessage(fn: Listener<MicrozordMessageEvent>)", "documentationPropertyMode", "method", "documentationPropertyType", "() => void"], ["documentationPropertyName", "emitMessage(event: MicrozordMessageEvent)", "documentationPropertyMode", "method", "documentationPropertyType", "void"], ["documentationPropertyName", "onHook(fn: Listener<MicrozordMessageEvent>)", "documentationPropertyMode", "method", "documentationPropertyType", "() => void"], ["documentationPropertyName", "emitHook(event: MicrozordMessageEvent)", "documentationPropertyMode", "method", "documentationPropertyType", "void"], ["documentationPropertyName", "destroy()", "documentationPropertyMode", "method", "documentationPropertyType", "void"]],
-        template: function ApplicationComponent_Template(rf, ctx) {
-          if (rf & 1) {
-            core_mjs_["ɵɵelementStart"](0, "tui-doc-page", 0);
-            core_mjs_["ɵɵtemplate"](1, ApplicationComponent_ng_template_1_Template, 30, 0, "ng-template", 1)(2, ApplicationComponent_ng_template_2_Template, 10, 1, "ng-template", 2);
-            core_mjs_["ɵɵelementEnd"]();
-          }
-        },
-        dependencies: [taiga_ui_core_components_link/* TuiLinkComponent */.E, taiga_ui_addon_doc_components/* TuiDocDocumentationComponent */.c5, taiga_ui_addon_doc_components/* TuiDocDocumentationPropertyConnectorDirective */.WS, taiga_ui_addon_doc_components/* TuiDocPageComponent */.Pt, taiga_ui_addon_doc_components/* TuiDocPageTabConnectorDirective */.TD, taiga_ui_core_components_notification/* TuiNotificationComponent */.v, router_mjs_.RouterLink],
-        changeDetection: 0
-      });
-    }
-  }
+  var _ApplicationComponent;
+  class ApplicationComponent {}
+  _ApplicationComponent = ApplicationComponent;
+  _ApplicationComponent.ɵfac = function ApplicationComponent_Factory(t) {
+    return new (t || _ApplicationComponent)();
+  };
+  _ApplicationComponent.ɵcmp = /*@__PURE__*/core_mjs_["ɵɵdefineComponent"]({
+    type: _ApplicationComponent,
+    selectors: [["application"]],
+    decls: 3,
+    vars: 0,
+    consts: [["header", "Application entity", "package", "CORE"], ["pageTab", "Description"], ["pageTab", "Props & methods"], ["status", "warning", 1, "tui-space_top-8"], ["routerLink", "/angular-host", "tuiLink", ""], ["routerLink", "/react-host", "tuiLink", ""], ["href", "https://github.com/taiga-family/microzord/blob/main/libs/core/src/lib/models/application.ts", "target", "_blank", "tuiLink", ""], [3, "showValues"], ["documentationPropertyMode", "property", "documentationPropertyName", "isBootstrapped", "documentationPropertyType", "boolean"], ["documentationPropertyMode", "property", "documentationPropertyName", "isDestroyed", "documentationPropertyType", "boolean"], ["documentationPropertyMode", "property", "documentationPropertyName", "container", "documentationPropertyType", "Element | string"], ["documentationPropertyMode", "property", "documentationPropertyName", "name", "documentationPropertyType", "string"], ["documentationPropertyMode", "method", "documentationPropertyName", "onMessage(fn: Listener<MicrozordMessageEvent>)", "documentationPropertyType", "() => void"], ["documentationPropertyMode", "method", "documentationPropertyName", "emitMessage(event: MicrozordMessageEvent)", "documentationPropertyType", "void"], ["documentationPropertyMode", "method", "documentationPropertyName", "onHook(fn: Listener<MicrozordMessageEvent>)", "documentationPropertyType", "() => void"], ["documentationPropertyMode", "method", "documentationPropertyName", "emitHook(event: MicrozordMessageEvent)", "documentationPropertyType", "void"], ["documentationPropertyMode", "method", "documentationPropertyName", "destroy()", "documentationPropertyType", "void"]],
+    template: function ApplicationComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵelementStart"](0, "tui-doc-page", 0);
+        core_mjs_["ɵɵtemplate"](1, ApplicationComponent_ng_template_1_Template, 30, 0, "ng-template", 1)(2, ApplicationComponent_ng_template_2_Template, 10, 1, "ng-template", 2);
+        core_mjs_["ɵɵelementEnd"]();
+      }
+    },
+    dependencies: [taiga_ui_core_components_link/* TuiLinkComponent */.E, taiga_ui_addon_doc_components/* TuiDocDocumentationComponent */.c5, taiga_ui_addon_doc_components/* TuiDocDocumentationPropertyConnectorDirective */.WS, taiga_ui_addon_doc_components/* TuiDocPageComponent */.Pt, taiga_ui_addon_doc_components/* TuiDocPageTabConnectorDirective */.TD, taiga_ui_core_components_notification/* TuiNotificationComponent */.v, router_mjs_.RouterLink],
+    encapsulation: 2,
+    changeDetection: 0
+  });
   return ApplicationComponent;
 })();
 ;// CONCATENATED MODULE: ./apps/demo/src/app/modules/application/application.module.ts
@@ -173,23 +171,18 @@ let ApplicationComponent = /*#__PURE__*/(() => {
 
 
 let ApplicationModule = /*#__PURE__*/(() => {
-  class ApplicationModule {
-    static {
-      this.ɵfac = function ApplicationModule_Factory(t) {
-        return new (t || ApplicationModule)();
-      };
-    }
-    static {
-      this.ɵmod = /*@__PURE__*/core_mjs_["ɵɵdefineNgModule"]({
-        type: ApplicationModule
-      });
-    }
-    static {
-      this.ɵinj = /*@__PURE__*/core_mjs_["ɵɵdefineInjector"]({
-        imports: [taiga_ui_core_components_link/* TuiLinkModule */.l, taiga_ui_addon_doc.TuiAddonDocModule, taiga_ui_core_components_notification/* TuiNotificationModule */.O, router_mjs_.RouterModule.forChild((0,taiga_ui_addon_doc_utils/* tuiGenerateRoutes */.CC)(ApplicationComponent))]
-      });
-    }
-  }
+  var _ApplicationModule;
+  class ApplicationModule {}
+  _ApplicationModule = ApplicationModule;
+  _ApplicationModule.ɵfac = function ApplicationModule_Factory(t) {
+    return new (t || _ApplicationModule)();
+  };
+  _ApplicationModule.ɵmod = /*@__PURE__*/core_mjs_["ɵɵdefineNgModule"]({
+    type: _ApplicationModule
+  });
+  _ApplicationModule.ɵinj = /*@__PURE__*/core_mjs_["ɵɵdefineInjector"]({
+    imports: [taiga_ui_core_components_link/* TuiLinkModule */.l, taiga_ui_addon_doc.TuiAddonDocModule, taiga_ui_core_components_notification/* TuiNotificationModule */.O, router_mjs_.RouterModule.forChild((0,taiga_ui_addon_doc_utils/* tuiGenerateRoutes */.CC)(ApplicationComponent))]
+  });
   return ApplicationModule;
 })();
 

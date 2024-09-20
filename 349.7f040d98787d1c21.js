@@ -143,23 +143,18 @@ const USER_AGENT = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken
 
 
 let HostChildWarningModule = /*#__PURE__*/(() => {
-  class HostChildWarningModule {
-    static {
-      this.ɵfac = function HostChildWarningModule_Factory(t) {
-        return new (t || HostChildWarningModule)();
-      };
-    }
-    static {
-      this.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
-        type: HostChildWarningModule
-      });
-    }
-    static {
-      this.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-        imports: [_taiga_ui_core__WEBPACK_IMPORTED_MODULE_1__/* .TuiNotificationModule */ .O]
-      });
-    }
-  }
+  var _HostChildWarningModule;
+  class HostChildWarningModule {}
+  _HostChildWarningModule = HostChildWarningModule;
+  _HostChildWarningModule.ɵfac = function HostChildWarningModule_Factory(t) {
+    return new (t || _HostChildWarningModule)();
+  };
+  _HostChildWarningModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+    type: _HostChildWarningModule
+  });
+  _HostChildWarningModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+    imports: [_taiga_ui_core__WEBPACK_IMPORTED_MODULE_1__/* .TuiNotificationModule */ .O]
+  });
   return HostChildWarningModule;
 })();
 
@@ -173,6 +168,8 @@ let HostChildWarningModule = /*#__PURE__*/(() => {
 var platform_browser = __webpack_require__(345);
 // EXTERNAL MODULE: consume shared module (default) @angular/core@=17.3.9 (strict) (singleton) (fallback: ./node_modules/@angular/core/fesm2022/core.mjs)
 var core_mjs_ = __webpack_require__(6525);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
+var asyncToGenerator = __webpack_require__(467);
 // EXTERNAL MODULE: ./node_modules/@angular/animations/fesm2022/browser.mjs
 var browser = __webpack_require__(8008);
 // EXTERNAL MODULE: consume shared module (default) @angular/common@=17.3.9 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
@@ -192,6 +189,7 @@ var common_mjs_ = __webpack_require__(2771);
 
 
 let InjectableAnimationEngine = /*#__PURE__*/(() => {
+  var _InjectableAnimationEngine;
   class InjectableAnimationEngine extends browser/* ɵAnimationEngine */.O6 {
     // The `ApplicationRef` is injected here explicitly to force the dependency ordering.
     // Since the `ApplicationRef` should be created earlier before the `AnimationEngine`, they
@@ -204,18 +202,15 @@ let InjectableAnimationEngine = /*#__PURE__*/(() => {
     ngOnDestroy() {
       this.flush();
     }
-    static {
-      this.ɵfac = function InjectableAnimationEngine_Factory(t) {
-        return new (t || InjectableAnimationEngine)(core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵinject"](browser/* AnimationDriver */.Xw), core_mjs_["ɵɵinject"](browser/* ɵAnimationStyleNormalizer */.Yp));
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: InjectableAnimationEngine,
-        factory: InjectableAnimationEngine.ɵfac
-      });
-    }
   }
+  _InjectableAnimationEngine = InjectableAnimationEngine;
+  _InjectableAnimationEngine.ɵfac = function _InjectableAnimationEngine_Factory(t) {
+    return new (t || _InjectableAnimationEngine)(core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT), core_mjs_["ɵɵinject"](browser/* AnimationDriver */.Xw), core_mjs_["ɵɵinject"](browser/* ɵAnimationStyleNormalizer */.Yp));
+  };
+  _InjectableAnimationEngine.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _InjectableAnimationEngine,
+    factory: _InjectableAnimationEngine.ɵfac
+  });
   return InjectableAnimationEngine;
 })();
 /*#__PURE__*/(() => {
@@ -267,6 +262,7 @@ const BROWSER_NOOP_ANIMATIONS_PROVIDERS = [{
  * @publicApi
  */
 let BrowserAnimationsModule = /*#__PURE__*/(() => {
+  var _BrowserAnimationsModule;
   class BrowserAnimationsModule {
     /**
      * Configures the module based on the specified object.
@@ -290,23 +286,18 @@ let BrowserAnimationsModule = /*#__PURE__*/(() => {
         providers: config.disableAnimations ? BROWSER_NOOP_ANIMATIONS_PROVIDERS : BROWSER_ANIMATIONS_PROVIDERS
       };
     }
-    static {
-      this.ɵfac = function BrowserAnimationsModule_Factory(t) {
-        return new (t || BrowserAnimationsModule)();
-      };
-    }
-    static {
-      this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-        type: BrowserAnimationsModule
-      });
-    }
-    static {
-      this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-        providers: BROWSER_ANIMATIONS_PROVIDERS,
-        imports: [platform_browser/* BrowserModule */.Bb]
-      });
-    }
   }
+  _BrowserAnimationsModule = BrowserAnimationsModule;
+  _BrowserAnimationsModule.ɵfac = function _BrowserAnimationsModule_Factory(t) {
+    return new (t || _BrowserAnimationsModule)();
+  };
+  _BrowserAnimationsModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: _BrowserAnimationsModule
+  });
+  _BrowserAnimationsModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    providers: BROWSER_ANIMATIONS_PROVIDERS,
+    imports: [platform_browser/* BrowserModule */.Bb]
+  });
   return BrowserAnimationsModule;
 })();
 /*#__PURE__*/(() => {
@@ -345,24 +336,19 @@ function provideAnimations() {
  * @publicApi
  */
 let NoopAnimationsModule = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
-  class NoopAnimationsModule {
-    static {
-      this.ɵfac = function NoopAnimationsModule_Factory(t) {
-        return new (t || NoopAnimationsModule)();
-      };
-    }
-    static {
-      this.ɵmod = /* @__PURE__ */i0.ɵɵdefineNgModule({
-        type: NoopAnimationsModule
-      });
-    }
-    static {
-      this.ɵinj = /* @__PURE__ */i0.ɵɵdefineInjector({
-        providers: BROWSER_NOOP_ANIMATIONS_PROVIDERS,
-        imports: [BrowserModule]
-      });
-    }
-  }
+  var _NoopAnimationsModule;
+  class NoopAnimationsModule {}
+  _NoopAnimationsModule = NoopAnimationsModule;
+  _NoopAnimationsModule.ɵfac = function _NoopAnimationsModule_Factory(t) {
+    return new (t || _NoopAnimationsModule)();
+  };
+  _NoopAnimationsModule.ɵmod = /* @__PURE__ */i0.ɵɵdefineNgModule({
+    type: _NoopAnimationsModule
+  });
+  _NoopAnimationsModule.ɵinj = /* @__PURE__ */i0.ɵɵdefineInjector({
+    providers: BROWSER_NOOP_ANIMATIONS_PROVIDERS,
+    imports: [BrowserModule]
+  });
   return NoopAnimationsModule;
 })()));
 /*#__PURE__*/(() => {
@@ -415,400 +401,14 @@ function provideNoopAnimations() {
 
 
 //# sourceMappingURL=animations.mjs.map
+// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.3.9 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
+var router_mjs_ = __webpack_require__(2999);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-tokens.js
 var taiga_ui_addon_doc_tokens = __webpack_require__(8687);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/addon-doc/fesm2015/taiga-ui-addon-doc-components.js + 93 modules
 var taiga_ui_addon_doc_components = __webpack_require__(3170);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-link.js
 var taiga_ui_core_components_link = __webpack_require__(1974);
-;// CONCATENATED MODULE: ./apps/demo/src/app/app.component.ts
-
-
-
-let AppComponent = /*#__PURE__*/(() => {
-  class AppComponent {
-    static {
-      this.ɵfac = function AppComponent_Factory(t) {
-        return new (t || AppComponent)();
-      };
-    }
-    static {
-      this.ɵcmp = /*@__PURE__*/core_mjs_["ɵɵdefineComponent"]({
-        type: AppComponent,
-        selectors: [["microzord-root"]],
-        decls: 5,
-        vars: 0,
-        consts: [["ngProjectAs", "tuiDocHeader", 5, ["tuiDocHeader"]], ["tuiLink", "", "tuiMode", "onLight", "href", "https://github.com/taiga-family/microzord", "target", "_blank", 1, "link"], ["src", "assets/images/github.svg", "alt", "", 1, "github"]],
-        template: function AppComponent_Template(rf, ctx) {
-          if (rf & 1) {
-            core_mjs_["ɵɵelementStart"](0, "tui-doc-main");
-            core_mjs_["ɵɵelementContainerStart"](1, 0);
-            core_mjs_["ɵɵelementStart"](2, "a", 1);
-            core_mjs_["ɵɵelement"](3, "img", 2);
-            core_mjs_["ɵɵtext"](4, " GitHub ");
-            core_mjs_["ɵɵelementEnd"]();
-            core_mjs_["ɵɵelementContainerEnd"]();
-            core_mjs_["ɵɵelementEnd"]();
-          }
-        },
-        dependencies: [taiga_ui_addon_doc_components/* TuiDocMainComponent */.$c, taiga_ui_core_components_link/* TuiLinkComponent */.E],
-        styles: ["[_nghost-%COMP%] {\n  font: var(--tui-font-text-m);\n}\n.link[_ngcontent-%COMP%] {\n  font-weight: bold;\n  height: 24px;\n}\n.github[_ngcontent-%COMP%] {\n  width: 24px;\n  height: 24px;\n  margin: 0 4px 0 16px;\n  vertical-align: -6px;\n}"],
-        changeDetection: 0
-      });
-    }
-  }
-  return AppComponent;
-})();
-// EXTERNAL MODULE: consume shared module (default) @angular/router@=17.3.9 (strict) (singleton) (fallback: ./node_modules/@angular/router/fesm2022/router.mjs)
-var router_mjs_ = __webpack_require__(2999);
-// EXTERNAL MODULE: ./node_modules/@tinkoff/ng-polymorpheus/fesm2015/tinkoff-ng-polymorpheus.js
-var tinkoff_ng_polymorpheus = __webpack_require__(800);
-;// CONCATENATED MODULE: ./apps/demo/src/app/logo/logo.component.ts
-
-
-let LogoComponent = /*#__PURE__*/(() => {
-  class LogoComponent {
-    static {
-      this.ɵfac = function LogoComponent_Factory(t) {
-        return new (t || LogoComponent)();
-      };
-    }
-    static {
-      this.ɵcmp = /*@__PURE__*/core_mjs_["ɵɵdefineComponent"]({
-        type: LogoComponent,
-        selectors: [["logo"]],
-        decls: 3,
-        vars: 0,
-        consts: [["src", "assets/images/microzord.png", "alt", "logo", 1, "logo"], ["src", "assets/images/by.svg", "alt", "by Tinkoff", 1, "by"]],
-        template: function LogoComponent_Template(rf, ctx) {
-          if (rf & 1) {
-            core_mjs_["ɵɵelement"](0, "img", 0);
-            core_mjs_["ɵɵtext"](1, "\nmicrozord\n");
-            core_mjs_["ɵɵelement"](2, "img", 1);
-          }
-        },
-        styles: ["\n\n\n\n\n\n\n\n\n[_nghost-%COMP%] {\n  display: flex;\n  align-items: center;\n}\n@media screen and (max-width: 47.9625em) {\n  [_nghost-%COMP%] {\n    font-size: 0;\n  }\n}\n.logo[_ngcontent-%COMP%] {\n  width: 30px;\n  margin-right: 10px;\n}\n.by[_ngcontent-%COMP%] {\n  margin-left: 14px;\n}\n@media screen and (max-width: 47.9625em) {\n  .by[_ngcontent-%COMP%] {\n    display: none;\n  }\n}"],
-        changeDetection: 0
-      });
-    }
-  }
-  return LogoComponent;
-})();
-const LOGO_CONTENT = new tinkoff_ng_polymorpheus/* PolymorpheusComponent */.lS(LogoComponent);
-;// CONCATENATED MODULE: ./apps/demo/src/app/pages.ts
-const pages = [{
-  section: `Starting`,
-  title: `Getting started`,
-  keywords: 'intro, how to, guide, main, главная, начало, инструкция',
-  route: 'getting-started'
-}, {
-  section: `Starting`,
-  title: `Application entity`,
-  keywords: 'intro, how to, guide, main, source, child, host, zord, приложение',
-  route: 'application'
-}, {
-  section: `Native JS`,
-  title: `Native JS — Installation`,
-  keywords: 'javascript, vanilla, spa',
-  route: 'native-installation'
-}, {
-  section: `Angular`,
-  title: `Angular — Installation`,
-  keywords: 'angular, spa',
-  route: 'angular-installation'
-}, {
-  section: `Angular`,
-  title: `Angular — Host`,
-  keywords: 'angular, spa, host',
-  route: 'angular-host'
-}, {
-  section: `Angular`,
-  title: `Angular — Child`,
-  keywords: 'angular, spa, child',
-  route: 'angular-child'
-}, {
-  section: `React`,
-  title: `React — Installation`,
-  keywords: 'react, spa',
-  route: 'react-installation'
-}, {
-  section: `React`,
-  title: `React — Child`,
-  keywords: 'react, spa, child',
-  route: 'react-child'
-}];
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-notification.js
-var taiga_ui_core_components_notification = __webpack_require__(8821);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-components-island.js
-
-
-
-const _c0 = ["*"];
-let TuiIslandComponent = /*#__PURE__*/(() => {
-  class TuiIslandComponent {
-    constructor() {
-      this.size = 'm';
-      this.textAlign = 'left';
-      this.hoverable = false;
-      this.transparent = false;
-    }
-    get sizeS() {
-      return this.size === 's';
-    }
-    get sizeM() {
-      return this.size === 'm';
-    }
-    get sizeL() {
-      return this.size === 'l';
-    }
-    get textAlignLeft() {
-      return this.textAlign === 'left';
-    }
-    get textAlignCenter() {
-      return this.textAlign === 'center';
-    }
-    get textAlignRight() {
-      return this.textAlign === 'right';
-    }
-  }
-  TuiIslandComponent.ɵfac = function TuiIslandComponent_Factory(t) {
-    return new (t || TuiIslandComponent)();
-  };
-  TuiIslandComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-    type: TuiIslandComponent,
-    selectors: [["tui-island"], ["a", "tuiIsland", ""]],
-    hostAttrs: [1, "tui-island"],
-    hostVars: 16,
-    hostBindings: function TuiIslandComponent_HostBindings(rf, ctx) {
-      if (rf & 2) {
-        core_mjs_["ɵɵclassProp"]("tui-island_hoverable", ctx.hoverable)("tui-island_transparent", ctx.transparent)("tui-island_size_s", ctx.sizeS)("tui-island_size_m", ctx.sizeM)("tui-island_size_l", ctx.sizeL)("tui-island_text-align_left", ctx.textAlignLeft)("tui-island_text-align_center", ctx.textAlignCenter)("tui-island_text-align_right", ctx.textAlignRight);
-      }
-    },
-    inputs: {
-      size: "size",
-      textAlign: "textAlign",
-      hoverable: "hoverable",
-      transparent: "transparent"
-    },
-    ngContentSelectors: _c0,
-    decls: 1,
-    vars: 0,
-    template: function TuiIslandComponent_Template(rf, ctx) {
-      if (rf & 1) {
-        core_mjs_["ɵɵprojectionDef"]();
-        core_mjs_["ɵɵprojection"](0);
-      }
-    },
-    styles: ["[_nghost-%COMP%]{display:block}"],
-    changeDetection: 0
-  });
-  return TuiIslandComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let TuiIslandModule = /*#__PURE__*/(() => {
-  class TuiIslandModule {}
-  TuiIslandModule.ɵfac = function TuiIslandModule_Factory(t) {
-    return new (t || TuiIslandModule)();
-  };
-  TuiIslandModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-    type: TuiIslandModule
-  });
-  TuiIslandModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-    imports: [[common_mjs_.CommonModule]]
-  });
-  return TuiIslandModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=taiga-ui-kit-components-island.js.map
-// EXTERNAL MODULE: ./apps/demo/src/app/shared/host-child-warning/host-child-warning.module.ts
-var host_child_warning_module = __webpack_require__(16);
-;// CONCATENATED MODULE: ./apps/demo/src/app/getting-started/getting-started.module.ts
-
-
-
-
-
-
-
-let GettingStartedModule = /*#__PURE__*/(() => {
-  class GettingStartedModule {
-    static {
-      this.ɵfac = function GettingStartedModule_Factory(t) {
-        return new (t || GettingStartedModule)();
-      };
-    }
-    static {
-      this.ɵmod = /*@__PURE__*/core_mjs_["ɵɵdefineNgModule"]({
-        type: GettingStartedModule
-      });
-    }
-    static {
-      this.ɵinj = /*@__PURE__*/core_mjs_["ɵɵdefineInjector"]({
-        imports: [common_mjs_.CommonModule, taiga_ui_addon_doc_components/* TuiDocPageModule */.AC, taiga_ui_core_components_link/* TuiLinkModule */.l, taiga_ui_addon_doc_components/* TuiDocCodeModule */.ii, router_mjs_.RouterModule, taiga_ui_core_components_notification/* TuiNotificationModule */.O, TuiIslandModule, host_child_warning_module/* HostChildWarningModule */.T]
-      });
-    }
-  }
-  return GettingStartedModule;
-})();
-;// CONCATENATED MODULE: ./apps/demo/src/app/getting-started/getting-started.component.ts
-
-
-
-
-
-let GettingStartedComponent = /*#__PURE__*/(() => {
-  class GettingStartedComponent {
-    static {
-      this.ɵfac = function GettingStartedComponent_Factory(t) {
-        return new (t || GettingStartedComponent)();
-      };
-    }
-    static {
-      this.ɵcmp = /*@__PURE__*/core_mjs_["ɵɵdefineComponent"]({
-        type: GettingStartedComponent,
-        selectors: [["getting-started"]],
-        decls: 57,
-        vars: 0,
-        consts: [["header", "Getting started"], [1, "about"], [1, "about__benefit"], [1, "tui-island__title"], [1, "tui-island__paragraph"], [1, "tui-space_top-4"], ["tuiLink", "", "routerLink", "/application"], ["tuiLink", "", "routerLink", "/todo"], ["tuiLink", "", "routerLink", "/angular-installation"]],
-        template: function GettingStartedComponent_Template(rf, ctx) {
-          if (rf & 1) {
-            core_mjs_["ɵɵelementStart"](0, "tui-doc-page", 0)(1, "p")(2, "strong");
-            core_mjs_["ɵɵtext"](3, "microzord");
-            core_mjs_["ɵɵelementEnd"]();
-            core_mjs_["ɵɵtext"](4, " is a small tool that allows you to add and render multiple apps on one page. It has simple ideomatic APIs for some modern frameworks (Vue and Svelte come soon) and builds bridges between them. ");
-            core_mjs_["ɵɵelementEnd"]();
-            core_mjs_["ɵɵelementStart"](5, "section", 1)(6, "tui-island", 2)(7, "h3", 3);
-            core_mjs_["ɵɵtext"](8, "\uD83E\uDDD9 Framework agnostic");
-            core_mjs_["ɵɵelementEnd"]();
-            core_mjs_["ɵɵelementStart"](9, "p", 4);
-            core_mjs_["ɵɵtext"](10, " You can have an Angular application with a React app header and a Vue app footer. Each app can have endless amount of nested apps inside. There are also wrappers for every modern framework with simple API. ");
-            core_mjs_["ɵɵelementEnd"]()();
-            core_mjs_["ɵɵelementStart"](11, "tui-island", 2)(12, "h3", 3);
-            core_mjs_["ɵɵtext"](13, "\uD83E\uDDE9 Modular");
-            core_mjs_["ɵɵelementEnd"]();
-            core_mjs_["ɵɵelementStart"](14, "p", 4);
-            core_mjs_["ɵɵtext"](15, " You can insert another app in your app in any place as an ordinary component. Use the same methods to bind data and to handle its events. ");
-            core_mjs_["ɵɵelementEnd"]()()();
-            core_mjs_["ɵɵelementStart"](16, "section")(17, "h2");
-            core_mjs_["ɵɵtext"](18, "What it is about");
-            core_mjs_["ɵɵelementEnd"]();
-            core_mjs_["ɵɵelementStart"](19, "p");
-            core_mjs_["ɵɵtext"](20, "There are two terms that we want to declare first:");
-            core_mjs_["ɵɵelementEnd"]();
-            core_mjs_["ɵɵelementStart"](21, "ul")(22, "li")(23, "strong");
-            core_mjs_["ɵɵtext"](24, "Child app");
-            core_mjs_["ɵɵelementEnd"]();
-            core_mjs_["ɵɵtext"](25, " is any application that is built with microzord and can be inserted into the host app. ");
-            core_mjs_["ɵɵelementEnd"]();
-            core_mjs_["ɵɵelementStart"](26, "li")(27, "strong");
-            core_mjs_["ɵɵtext"](28, "Host app");
-            core_mjs_["ɵɵelementEnd"]();
-            core_mjs_["ɵɵtext"](29, " is any application that uses microzord to render child apps inside. ");
-            core_mjs_["ɵɵelementEnd"]()();
-            core_mjs_["ɵɵelementStart"](30, "tui-notification", 5);
-            core_mjs_["ɵɵtext"](31, " Some application can host any amount of child apps and be a child for other app at the same time ");
-            core_mjs_["ɵɵelementEnd"]();
-            core_mjs_["ɵɵelementStart"](32, "p");
-            core_mjs_["ɵɵtext"](33, " Microzord does not impose any restrictions but just gives more opportunities for your app. All your apps can be still used as separated apps and can be integrated with others with no additional code in application bundle. ");
-            core_mjs_["ɵɵelementEnd"]();
-            core_mjs_["ɵɵelementStart"](34, "p");
-            core_mjs_["ɵɵtext"](35, " It renders your apps right in DOM without any additional elements or iframes and provides some ideomatic ways to control apps and get data from them. ");
-            core_mjs_["ɵɵelementEnd"]()();
-            core_mjs_["ɵɵelementStart"](36, "section")(37, "h2");
-            core_mjs_["ɵɵtext"](38, "How to start");
-            core_mjs_["ɵɵelementEnd"]();
-            core_mjs_["ɵɵelementStart"](39, "p");
-            core_mjs_["ɵɵtext"](40, "You can read about main concepts of microzord:");
-            core_mjs_["ɵɵelementEnd"]();
-            core_mjs_["ɵɵelementStart"](41, "ul")(42, "li")(43, "a", 6);
-            core_mjs_["ɵɵtext"](44, "Application entity");
-            core_mjs_["ɵɵelementEnd"]()()();
-            core_mjs_["ɵɵelementStart"](45, "p");
-            core_mjs_["ɵɵtext"](46, "Or you can just choose your framework and figure it out in the process:");
-            core_mjs_["ɵɵelementEnd"]();
-            core_mjs_["ɵɵelementStart"](47, "ul")(48, "li")(49, "a", 7);
-            core_mjs_["ɵɵtext"](50, "Native JS installation");
-            core_mjs_["ɵɵelementEnd"]()();
-            core_mjs_["ɵɵelementStart"](51, "li")(52, "a", 7);
-            core_mjs_["ɵɵtext"](53, "React installation");
-            core_mjs_["ɵɵelementEnd"]()();
-            core_mjs_["ɵɵelementStart"](54, "li")(55, "a", 8);
-            core_mjs_["ɵɵtext"](56, "Angular installation");
-            core_mjs_["ɵɵelementEnd"]()()()()();
-          }
-        },
-        dependencies: [taiga_ui_addon_doc_components/* TuiDocPageComponent */.Pt, taiga_ui_core_components_link/* TuiLinkComponent */.E, router_mjs_.RouterLink, taiga_ui_core_components_notification/* TuiNotificationComponent */.v, TuiIslandComponent],
-        styles: [".about[_ngcontent-%COMP%] {\n  display: flex;\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\n.about__benefit[_ngcontent-%COMP%] {\n  flex: 1;\n  margin-right: 32px;\n}"],
-        changeDetection: 0
-      });
-    }
-  }
-  return GettingStartedComponent;
-})();
-;// CONCATENATED MODULE: ./apps/demo/src/app/routes.ts
-
-const ROUTES = [{
-  path: 'getting-started',
-  component: GettingStartedComponent,
-  data: {
-    title: `Getting started`
-  }
-}, {
-  path: 'application',
-  loadChildren: () => Promise.all(/* import() */[__webpack_require__.e(76), __webpack_require__.e(835)]).then(__webpack_require__.bind(__webpack_require__, 5835)).then(m => m.ApplicationModule),
-  data: {
-    title: `Application entity`
-  }
-}, {
-  path: 'native-installation',
-  loadChildren: () => Promise.all(/* import() */[__webpack_require__.e(76), __webpack_require__.e(691)]).then(__webpack_require__.bind(__webpack_require__, 4691)).then(m => m.NativeInstallationModule),
-  data: {
-    title: `Native Installation`
-  }
-}, {
-  path: 'react-installation',
-  loadChildren: () => Promise.all(/* import() */[__webpack_require__.e(76), __webpack_require__.e(117)]).then(__webpack_require__.bind(__webpack_require__, 3117)).then(m => m.ReactInstallationModule),
-  data: {
-    title: `React Installation`
-  }
-}, {
-  path: 'react-child',
-  loadChildren: () => Promise.all(/* import() */[__webpack_require__.e(76), __webpack_require__.e(551)]).then(__webpack_require__.bind(__webpack_require__, 4551)).then(m => m.ReactChildModule),
-  data: {
-    title: `React Child`
-  }
-}, {
-  path: 'angular-installation',
-  loadChildren: () => Promise.all(/* import() */[__webpack_require__.e(76), __webpack_require__.e(254)]).then(__webpack_require__.bind(__webpack_require__, 254)).then(m => m.AngularInstallationModule),
-  data: {
-    title: `Angular Installation`
-  }
-}, {
-  path: 'angular-host',
-  loadChildren: () => Promise.all(/* import() */[__webpack_require__.e(76), __webpack_require__.e(96)]).then(__webpack_require__.bind(__webpack_require__, 4096)).then(m => m.AngularHostModule),
-  data: {
-    title: `Angular Host`
-  }
-}, {
-  path: 'angular-child',
-  loadChildren: () => Promise.all(/* import() */[__webpack_require__.e(76), __webpack_require__.e(685)]).then(__webpack_require__.bind(__webpack_require__, 685)).then(m => m.AngularChildModule),
-  data: {
-    title: `Angular Child`
-  }
-}, {
-  path: '**',
-  redirectTo: 'getting-started'
-}];
 ;// CONCATENATED MODULE: ./node_modules/ngx-highlightjs/fesm2022/ngx-highlightjs.mjs
 
 
@@ -849,6 +449,7 @@ function trustedHTMLFromStringBypass(html) {
 
 // @dynamic
 let HighlightLoader = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  var _HighlightLoader;
   class HighlightLoader {
     constructor(doc, platformId, _options) {
       this.doc = doc;
@@ -961,19 +562,16 @@ let HighlightLoader = /*#__PURE__*/(/* unused pure expression or super */ null &
       this._themeLinkElement.media = 'screen,print';
       this.doc.head.appendChild(this._themeLinkElement);
     }
-    static {
-      this.ɵfac = function HighlightLoader_Factory(t) {
-        return new (t || HighlightLoader)(i0.ɵɵinject(DOCUMENT), i0.ɵɵinject(PLATFORM_ID), i0.ɵɵinject(HIGHLIGHT_OPTIONS, 8));
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
-        token: HighlightLoader,
-        factory: HighlightLoader.ɵfac,
-        providedIn: 'root'
-      });
-    }
   }
+  _HighlightLoader = HighlightLoader;
+  _HighlightLoader.ɵfac = function _HighlightLoader_Factory(t) {
+    return new (t || _HighlightLoader)(i0.ɵɵinject(DOCUMENT), i0.ɵɵinject(PLATFORM_ID), i0.ɵɵinject(HIGHLIGHT_OPTIONS, 8));
+  };
+  _HighlightLoader.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+    token: _HighlightLoader,
+    factory: _HighlightLoader.ɵfac,
+    providedIn: 'root'
+  });
   return HighlightLoader;
 })()));
 (() => {
@@ -986,6 +584,7 @@ const importModule = moduleLoader => {
   return from(moduleLoader).pipe(filter(module => !!module?.default), map(module => module.default));
 };
 let HighlightJS = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  var _HighlightJS;
   class HighlightJS {
     // A reference for hljs library
     get hljs() {
@@ -1115,25 +714,23 @@ let HighlightJS = /*#__PURE__*/(/* unused pure expression or super */ null && ((
     lineNumbersBlock(el) {
       return this._loader.ready.pipe(filter(hljs => !!hljs.lineNumbersBlock), tap(hljs => hljs.lineNumbersBlock(el)));
     }
-    static {
-      this.ɵfac = function HighlightJS_Factory(t) {
-        return new (t || HighlightJS)(i0.ɵɵinject(HighlightLoader), i0.ɵɵinject(HIGHLIGHT_OPTIONS, 8));
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
-        token: HighlightJS,
-        factory: HighlightJS.ɵfac,
-        providedIn: 'root'
-      });
-    }
   }
+  _HighlightJS = HighlightJS;
+  _HighlightJS.ɵfac = function _HighlightJS_Factory(t) {
+    return new (t || _HighlightJS)(i0.ɵɵinject(HighlightLoader), i0.ɵɵinject(HIGHLIGHT_OPTIONS, 8));
+  };
+  _HighlightJS.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+    token: _HighlightJS,
+    factory: _HighlightJS.ɵfac,
+    providedIn: 'root'
+  });
   return HighlightJS;
 })()));
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 let Highlight = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  var _Highlight;
   class Highlight {
     constructor(el, _hljs, _sanitizer, platformId, _options) {
       this._hljs = _hljs;
@@ -1205,55 +802,47 @@ let Highlight = /*#__PURE__*/(/* unused pure expression or super */ null && ((()
     setInnerHTML(content) {
       animationFrameScheduler.schedule(() => this._nativeElement.innerHTML = trustedHTMLFromStringBypass(this._sanitizer.sanitize(SecurityContext.HTML, content) || ''));
     }
-    static {
-      this.ɵfac = function Highlight_Factory(t) {
-        return new (t || Highlight)(i0.ɵɵdirectiveInject(i0.ElementRef), i0.ɵɵdirectiveInject(HighlightJS), i0.ɵɵdirectiveInject(i2.DomSanitizer), i0.ɵɵdirectiveInject(PLATFORM_ID), i0.ɵɵdirectiveInject(HIGHLIGHT_OPTIONS, 8));
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */i0.ɵɵdefineDirective({
-        type: Highlight,
-        selectors: [["", "highlight", ""]],
-        hostVars: 2,
-        hostBindings: function Highlight_HostBindings(rf, ctx) {
-          if (rf & 2) {
-            i0.ɵɵclassProp("hljs", true);
-          }
-        },
-        inputs: {
-          code: [i0.ɵɵInputFlags.None, "highlight", "code"],
-          languages: "languages",
-          lineNumbers: "lineNumbers"
-        },
-        outputs: {
-          highlighted: "highlighted"
-        },
-        standalone: true,
-        features: [i0.ɵɵNgOnChangesFeature]
-      });
-    }
   }
+  _Highlight = Highlight;
+  _Highlight.ɵfac = function _Highlight_Factory(t) {
+    return new (t || _Highlight)(i0.ɵɵdirectiveInject(i0.ElementRef), i0.ɵɵdirectiveInject(HighlightJS), i0.ɵɵdirectiveInject(i2.DomSanitizer), i0.ɵɵdirectiveInject(PLATFORM_ID), i0.ɵɵdirectiveInject(HIGHLIGHT_OPTIONS, 8));
+  };
+  _Highlight.ɵdir = /* @__PURE__ */i0.ɵɵdefineDirective({
+    type: _Highlight,
+    selectors: [["", "highlight", ""]],
+    hostVars: 2,
+    hostBindings: function _Highlight_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        i0.ɵɵclassProp("hljs", true);
+      }
+    },
+    inputs: {
+      code: [i0.ɵɵInputFlags.None, "highlight", "code"],
+      languages: "languages",
+      lineNumbers: "lineNumbers"
+    },
+    outputs: {
+      highlighted: "highlighted"
+    },
+    standalone: true,
+    features: [i0.ɵɵNgOnChangesFeature]
+  });
   return Highlight;
 })()));
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 let HighlightModule = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
-  class HighlightModule {
-    static {
-      this.ɵfac = function HighlightModule_Factory(t) {
-        return new (t || HighlightModule)();
-      };
-    }
-    static {
-      this.ɵmod = /* @__PURE__ */i0.ɵɵdefineNgModule({
-        type: HighlightModule
-      });
-    }
-    static {
-      this.ɵinj = /* @__PURE__ */i0.ɵɵdefineInjector({});
-    }
-  }
+  var _HighlightModule;
+  class HighlightModule {}
+  _HighlightModule = HighlightModule;
+  _HighlightModule.ɵfac = function _HighlightModule_Factory(t) {
+    return new (t || _HighlightModule)();
+  };
+  _HighlightModule.ɵmod = /* @__PURE__ */i0.ɵɵdefineNgModule({
+    type: _HighlightModule
+  });
+  _HighlightModule.ɵinj = /* @__PURE__ */i0.ɵɵdefineInjector({});
   return HighlightModule;
 })()));
 (() => {
@@ -1266,6 +855,378 @@ let HighlightModule = /*#__PURE__*/(/* unused pure expression or super */ null &
 
 
 //# sourceMappingURL=ngx-highlightjs.mjs.map
+;// CONCATENATED MODULE: ./apps/demo/src/app/app.component.ts
+
+
+
+let AppComponent = /*#__PURE__*/(() => {
+  var _AppComponent;
+  class AppComponent {}
+  _AppComponent = AppComponent;
+  _AppComponent.ɵfac = function AppComponent_Factory(t) {
+    return new (t || _AppComponent)();
+  };
+  _AppComponent.ɵcmp = /*@__PURE__*/core_mjs_["ɵɵdefineComponent"]({
+    type: _AppComponent,
+    selectors: [["microzord-root"]],
+    decls: 5,
+    vars: 0,
+    consts: [["ngProjectAs", "tuiDocHeader", 5, ["tuiDocHeader"]], ["href", "https://github.com/taiga-family/microzord", "target", "_blank", "tuiLink", "", "tuiMode", "onLight", 1, "link"], ["alt", "", "src", "assets/images/github.svg", 1, "github"]],
+    template: function AppComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵelementStart"](0, "tui-doc-main");
+        core_mjs_["ɵɵelementContainerStart"](1, 0);
+        core_mjs_["ɵɵelementStart"](2, "a", 1);
+        core_mjs_["ɵɵelement"](3, "img", 2);
+        core_mjs_["ɵɵtext"](4, " GitHub ");
+        core_mjs_["ɵɵelementEnd"]();
+        core_mjs_["ɵɵelementContainerEnd"]();
+        core_mjs_["ɵɵelementEnd"]();
+      }
+    },
+    dependencies: [taiga_ui_addon_doc_components/* TuiDocMainComponent */.$c, taiga_ui_core_components_link/* TuiLinkComponent */.E],
+    styles: ["[_nghost-%COMP%] {\n  font: var(--tui-font-text-m);\n}\n.link[_ngcontent-%COMP%] {\n  font-weight: bold;\n  block-size: 1.5rem;\n}\n.github[_ngcontent-%COMP%] {\n  inline-size: 1.5rem;\n  block-size: 1.5rem;\n  margin: 0 4px 0 16px;\n  vertical-align: -0.375rem;\n}"],
+    changeDetection: 0
+  });
+  return AppComponent;
+})();
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/core/fesm2015/taiga-ui-core-components-notification.js
+var taiga_ui_core_components_notification = __webpack_require__(8821);
+;// CONCATENATED MODULE: ./node_modules/@taiga-ui/kit/fesm2015/taiga-ui-kit-components-island.js
+
+
+
+const _c0 = ["*"];
+let TuiIslandComponent = /*#__PURE__*/(() => {
+  class TuiIslandComponent {
+    constructor() {
+      this.size = 'm';
+      this.textAlign = 'left';
+      this.hoverable = false;
+      this.transparent = false;
+    }
+    get sizeS() {
+      return this.size === 's';
+    }
+    get sizeM() {
+      return this.size === 'm';
+    }
+    get sizeL() {
+      return this.size === 'l';
+    }
+    get textAlignLeft() {
+      return this.textAlign === 'left';
+    }
+    get textAlignCenter() {
+      return this.textAlign === 'center';
+    }
+    get textAlignRight() {
+      return this.textAlign === 'right';
+    }
+  }
+  TuiIslandComponent.ɵfac = function TuiIslandComponent_Factory(t) {
+    return new (t || TuiIslandComponent)();
+  };
+  TuiIslandComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: TuiIslandComponent,
+    selectors: [["tui-island"], ["a", "tuiIsland", ""]],
+    hostAttrs: [1, "tui-island"],
+    hostVars: 16,
+    hostBindings: function TuiIslandComponent_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        core_mjs_["ɵɵclassProp"]("tui-island_hoverable", ctx.hoverable)("tui-island_transparent", ctx.transparent)("tui-island_size_s", ctx.sizeS)("tui-island_size_m", ctx.sizeM)("tui-island_size_l", ctx.sizeL)("tui-island_text-align_left", ctx.textAlignLeft)("tui-island_text-align_center", ctx.textAlignCenter)("tui-island_text-align_right", ctx.textAlignRight);
+      }
+    },
+    inputs: {
+      size: "size",
+      textAlign: "textAlign",
+      hoverable: "hoverable",
+      transparent: "transparent"
+    },
+    ngContentSelectors: _c0,
+    decls: 1,
+    vars: 0,
+    template: function TuiIslandComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵprojectionDef"]();
+        core_mjs_["ɵɵprojection"](0);
+      }
+    },
+    styles: ["[_nghost-%COMP%]{display:block}"],
+    changeDetection: 0
+  });
+  return TuiIslandComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let TuiIslandModule = /*#__PURE__*/(() => {
+  class TuiIslandModule {}
+  TuiIslandModule.ɵfac = function TuiIslandModule_Factory(t) {
+    return new (t || TuiIslandModule)();
+  };
+  TuiIslandModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: TuiIslandModule
+  });
+  TuiIslandModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    imports: [[common_mjs_.CommonModule]]
+  });
+  return TuiIslandModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=taiga-ui-kit-components-island.js.map
+// EXTERNAL MODULE: ./apps/demo/src/app/shared/host-child-warning/host-child-warning.module.ts
+var host_child_warning_module = __webpack_require__(16);
+;// CONCATENATED MODULE: ./apps/demo/src/app/getting-started/getting-started.module.ts
+
+
+
+
+
+
+
+let GettingStartedModule = /*#__PURE__*/(() => {
+  var _GettingStartedModule;
+  class GettingStartedModule {}
+  _GettingStartedModule = GettingStartedModule;
+  _GettingStartedModule.ɵfac = function GettingStartedModule_Factory(t) {
+    return new (t || _GettingStartedModule)();
+  };
+  _GettingStartedModule.ɵmod = /*@__PURE__*/core_mjs_["ɵɵdefineNgModule"]({
+    type: _GettingStartedModule
+  });
+  _GettingStartedModule.ɵinj = /*@__PURE__*/core_mjs_["ɵɵdefineInjector"]({
+    imports: [common_mjs_.CommonModule, taiga_ui_addon_doc_components/* TuiDocPageModule */.AC, taiga_ui_core_components_link/* TuiLinkModule */.l, taiga_ui_addon_doc_components/* TuiDocCodeModule */.ii, router_mjs_.RouterModule, taiga_ui_core_components_notification/* TuiNotificationModule */.O, TuiIslandModule, host_child_warning_module/* HostChildWarningModule */.T]
+  });
+  return GettingStartedModule;
+})();
+// EXTERNAL MODULE: ./node_modules/@tinkoff/ng-polymorpheus/fesm2015/tinkoff-ng-polymorpheus.js
+var tinkoff_ng_polymorpheus = __webpack_require__(800);
+;// CONCATENATED MODULE: ./apps/demo/src/app/logo/logo.component.ts
+
+
+let LogoComponent = /*#__PURE__*/(() => {
+  var _LogoComponent;
+  class LogoComponent {}
+  _LogoComponent = LogoComponent;
+  _LogoComponent.ɵfac = function LogoComponent_Factory(t) {
+    return new (t || _LogoComponent)();
+  };
+  _LogoComponent.ɵcmp = /*@__PURE__*/core_mjs_["ɵɵdefineComponent"]({
+    type: _LogoComponent,
+    selectors: [["logo"]],
+    decls: 3,
+    vars: 0,
+    consts: [["alt", "logo", "src", "assets/images/microzord.png", 1, "logo"], ["alt", "by Tinkoff", "src", "assets/images/by.svg", 1, "by"]],
+    template: function LogoComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵelement"](0, "img", 0);
+        core_mjs_["ɵɵtext"](1, "\nmicrozord\n");
+        core_mjs_["ɵɵelement"](2, "img", 1);
+      }
+    },
+    styles: ["\n\n\n\n\n\n\n\n\n[_nghost-%COMP%] {\n  display: flex;\n  align-items: center;\n}\n@media screen and (max-width: 47.9625em) {\n  [_nghost-%COMP%] {\n    font-size: 0;\n  }\n}\n.logo[_ngcontent-%COMP%] {\n  inline-size: 1.875rem;\n  margin-right: 0.625rem;\n}\n.by[_ngcontent-%COMP%] {\n  margin-left: 0.875rem;\n}\n@media screen and (max-width: 47.9625em) {\n  .by[_ngcontent-%COMP%] {\n    display: none;\n  }\n}"],
+    changeDetection: 0
+  });
+  return LogoComponent;
+})();
+const LOGO_CONTENT = new tinkoff_ng_polymorpheus/* PolymorpheusComponent */.lS(LogoComponent);
+;// CONCATENATED MODULE: ./apps/demo/src/app/pages.ts
+const pages = [{
+  section: 'Starting',
+  title: 'Getting started',
+  keywords: 'intro, how to, guide, main, главная, начало, инструкция',
+  route: 'getting-started'
+}, {
+  section: 'Starting',
+  title: 'Application entity',
+  keywords: 'intro, how to, guide, main, source, child, host, zord, приложение',
+  route: 'application'
+}, {
+  section: 'Native JS',
+  title: 'Native JS — Installation',
+  keywords: 'javascript, vanilla, spa',
+  route: 'native-installation'
+}, {
+  section: 'Angular',
+  title: 'Angular — Installation',
+  keywords: 'angular, spa',
+  route: 'angular-installation'
+}, {
+  section: 'Angular',
+  title: 'Angular — Host',
+  keywords: 'angular, spa, host',
+  route: 'angular-host'
+}, {
+  section: 'Angular',
+  title: 'Angular — Child',
+  keywords: 'angular, spa, child',
+  route: 'angular-child'
+}, {
+  section: 'React',
+  title: 'React — Installation',
+  keywords: 'react, spa',
+  route: 'react-installation'
+}, {
+  section: 'React',
+  title: 'React — Child',
+  keywords: 'react, spa, child',
+  route: 'react-child'
+}];
+;// CONCATENATED MODULE: ./apps/demo/src/app/getting-started/getting-started.component.ts
+
+
+
+
+
+let GettingStartedComponent = /*#__PURE__*/(() => {
+  var _GettingStartedComponent;
+  class GettingStartedComponent {}
+  _GettingStartedComponent = GettingStartedComponent;
+  _GettingStartedComponent.ɵfac = function GettingStartedComponent_Factory(t) {
+    return new (t || _GettingStartedComponent)();
+  };
+  _GettingStartedComponent.ɵcmp = /*@__PURE__*/core_mjs_["ɵɵdefineComponent"]({
+    type: _GettingStartedComponent,
+    selectors: [["getting-started"]],
+    decls: 57,
+    vars: 0,
+    consts: [["header", "Getting started"], [1, "about"], [1, "about__benefit"], [1, "tui-island__title"], [1, "tui-island__paragraph"], [1, "tui-space_top-4"], ["routerLink", "/application", "tuiLink", ""], ["routerLink", "/todo", "tuiLink", ""], ["routerLink", "/angular-installation", "tuiLink", ""]],
+    template: function GettingStartedComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵelementStart"](0, "tui-doc-page", 0)(1, "p")(2, "strong");
+        core_mjs_["ɵɵtext"](3, "microzord");
+        core_mjs_["ɵɵelementEnd"]();
+        core_mjs_["ɵɵtext"](4, " is a small tool that allows you to add and render multiple apps on one page. It has simple ideomatic APIs for some modern frameworks (Vue and Svelte come soon) and builds bridges between them. ");
+        core_mjs_["ɵɵelementEnd"]();
+        core_mjs_["ɵɵelementStart"](5, "section", 1)(6, "tui-island", 2)(7, "h3", 3);
+        core_mjs_["ɵɵtext"](8, "\uD83E\uDDD9 Framework agnostic");
+        core_mjs_["ɵɵelementEnd"]();
+        core_mjs_["ɵɵelementStart"](9, "p", 4);
+        core_mjs_["ɵɵtext"](10, " You can have an Angular application with a React app header and a Vue app footer. Each app can have endless amount of nested apps inside. There are also wrappers for every modern framework with simple API. ");
+        core_mjs_["ɵɵelementEnd"]()();
+        core_mjs_["ɵɵelementStart"](11, "tui-island", 2)(12, "h3", 3);
+        core_mjs_["ɵɵtext"](13, "\uD83E\uDDE9 Modular");
+        core_mjs_["ɵɵelementEnd"]();
+        core_mjs_["ɵɵelementStart"](14, "p", 4);
+        core_mjs_["ɵɵtext"](15, " You can insert another app in your app in any place as an ordinary component. Use the same methods to bind data and to handle its events. ");
+        core_mjs_["ɵɵelementEnd"]()()();
+        core_mjs_["ɵɵelementStart"](16, "section")(17, "h2");
+        core_mjs_["ɵɵtext"](18, "What it is about");
+        core_mjs_["ɵɵelementEnd"]();
+        core_mjs_["ɵɵelementStart"](19, "p");
+        core_mjs_["ɵɵtext"](20, "There are two terms that we want to declare first:");
+        core_mjs_["ɵɵelementEnd"]();
+        core_mjs_["ɵɵelementStart"](21, "ul")(22, "li")(23, "strong");
+        core_mjs_["ɵɵtext"](24, "Child app");
+        core_mjs_["ɵɵelementEnd"]();
+        core_mjs_["ɵɵtext"](25, " is any application that is built with microzord and can be inserted into the host app. ");
+        core_mjs_["ɵɵelementEnd"]();
+        core_mjs_["ɵɵelementStart"](26, "li")(27, "strong");
+        core_mjs_["ɵɵtext"](28, "Host app");
+        core_mjs_["ɵɵelementEnd"]();
+        core_mjs_["ɵɵtext"](29, " is any application that uses microzord to render child apps inside. ");
+        core_mjs_["ɵɵelementEnd"]()();
+        core_mjs_["ɵɵelementStart"](30, "tui-notification", 5);
+        core_mjs_["ɵɵtext"](31, " Some application can host any amount of child apps and be a child for other app at the same time ");
+        core_mjs_["ɵɵelementEnd"]();
+        core_mjs_["ɵɵelementStart"](32, "p");
+        core_mjs_["ɵɵtext"](33, " Microzord does not impose any restrictions but just gives more opportunities for your app. All your apps can be still used as separated apps and can be integrated with others with no additional code in application bundle. ");
+        core_mjs_["ɵɵelementEnd"]();
+        core_mjs_["ɵɵelementStart"](34, "p");
+        core_mjs_["ɵɵtext"](35, " It renders your apps right in DOM without any additional elements or iframes and provides some ideomatic ways to control apps and get data from them. ");
+        core_mjs_["ɵɵelementEnd"]()();
+        core_mjs_["ɵɵelementStart"](36, "section")(37, "h2");
+        core_mjs_["ɵɵtext"](38, "How to start");
+        core_mjs_["ɵɵelementEnd"]();
+        core_mjs_["ɵɵelementStart"](39, "p");
+        core_mjs_["ɵɵtext"](40, "You can read about main concepts of microzord:");
+        core_mjs_["ɵɵelementEnd"]();
+        core_mjs_["ɵɵelementStart"](41, "ul")(42, "li")(43, "a", 6);
+        core_mjs_["ɵɵtext"](44, " Application entity ");
+        core_mjs_["ɵɵelementEnd"]()()();
+        core_mjs_["ɵɵelementStart"](45, "p");
+        core_mjs_["ɵɵtext"](46, "Or you can just choose your framework and figure it out in the process:");
+        core_mjs_["ɵɵelementEnd"]();
+        core_mjs_["ɵɵelementStart"](47, "ul")(48, "li")(49, "a", 7);
+        core_mjs_["ɵɵtext"](50, " Native JS installation ");
+        core_mjs_["ɵɵelementEnd"]()();
+        core_mjs_["ɵɵelementStart"](51, "li")(52, "a", 7);
+        core_mjs_["ɵɵtext"](53, " React installation ");
+        core_mjs_["ɵɵelementEnd"]()();
+        core_mjs_["ɵɵelementStart"](54, "li")(55, "a", 8);
+        core_mjs_["ɵɵtext"](56, " Angular installation ");
+        core_mjs_["ɵɵelementEnd"]()()()()();
+      }
+    },
+    dependencies: [taiga_ui_addon_doc_components/* TuiDocPageComponent */.Pt, taiga_ui_core_components_link/* TuiLinkComponent */.E, router_mjs_.RouterLink, taiga_ui_core_components_notification/* TuiNotificationComponent */.v, TuiIslandComponent],
+    styles: [".about[_ngcontent-%COMP%] {\n  display: flex;\n  margin-top: 1.25rem;\n  margin-bottom: 1.25rem;\n}\n.about__benefit[_ngcontent-%COMP%] {\n  flex: 1;\n  margin-right: 2rem;\n}"],
+    changeDetection: 0
+  });
+  return GettingStartedComponent;
+})();
+;// CONCATENATED MODULE: ./apps/demo/src/app/routes.ts
+
+const ROUTES = [{
+  path: 'getting-started',
+  component: GettingStartedComponent,
+  data: {
+    title: 'Getting started'
+  }
+}, {
+  path: 'application',
+  loadChildren: () => Promise.all(/* import() */[__webpack_require__.e(76), __webpack_require__.e(835)]).then(__webpack_require__.bind(__webpack_require__, 5835)).then(m => m.ApplicationModule),
+  data: {
+    title: 'Application entity'
+  }
+}, {
+  path: 'native-installation',
+  loadChildren: () => Promise.all(/* import() */[__webpack_require__.e(76), __webpack_require__.e(691)]).then(__webpack_require__.bind(__webpack_require__, 4691)).then(m => m.NativeInstallationModule),
+  data: {
+    title: 'Native Installation'
+  }
+}, {
+  path: 'react-installation',
+  loadChildren: () => Promise.all(/* import() */[__webpack_require__.e(76), __webpack_require__.e(117)]).then(__webpack_require__.bind(__webpack_require__, 3117)).then(m => m.ReactInstallationModule),
+  data: {
+    title: 'React Installation'
+  }
+}, {
+  path: 'react-child',
+  loadChildren: () => Promise.all(/* import() */[__webpack_require__.e(76), __webpack_require__.e(551)]).then(__webpack_require__.bind(__webpack_require__, 4551)).then(m => m.ReactChildModule),
+  data: {
+    title: 'React Child'
+  }
+}, {
+  path: 'angular-installation',
+  loadChildren: () => Promise.all(/* import() */[__webpack_require__.e(76), __webpack_require__.e(254)]).then(__webpack_require__.bind(__webpack_require__, 254)).then(m => m.AngularInstallationModule),
+  data: {
+    title: 'Angular Installation'
+  }
+}, {
+  path: 'angular-host',
+  loadChildren: () => Promise.all(/* import() */[__webpack_require__.e(76), __webpack_require__.e(96)]).then(__webpack_require__.bind(__webpack_require__, 4096)).then(m => m.AngularHostModule),
+  data: {
+    title: 'Angular Host'
+  }
+}, {
+  path: 'angular-child',
+  loadChildren: () => Promise.all(/* import() */[__webpack_require__.e(76), __webpack_require__.e(685)]).then(__webpack_require__.bind(__webpack_require__, 685)).then(m => m.AngularChildModule),
+  data: {
+    title: 'Angular Child'
+  }
+}, {
+  path: '**',
+  redirectTo: 'getting-started'
+}];
 ;// CONCATENATED MODULE: ./apps/demo/src/app/app.module.ts
 
 
@@ -1280,49 +1241,81 @@ let HighlightModule = /*#__PURE__*/(/* unused pure expression or super */ null &
 
 
 
+
 const HIGHLIGHT_OPTIONS_VALUE = {
-  coreLibraryLoader: () => __webpack_require__.e(/* import() */ 300).then(__webpack_require__.bind(__webpack_require__, 5300)),
-  lineNumbersLoader: () => __webpack_require__.e(/* import() */ 806).then(__webpack_require__.t.bind(__webpack_require__, 2806, 23)),
+  coreLibraryLoader: function () {
+    var _ref = (0,asyncToGenerator/* default */.A)(function* () {
+      return __webpack_require__.e(/* import() */ 300).then(__webpack_require__.bind(__webpack_require__, 5300));
+    });
+    return function coreLibraryLoader() {
+      return _ref.apply(this, arguments);
+    };
+  }(),
+  lineNumbersLoader: function () {
+    var _ref2 = (0,asyncToGenerator/* default */.A)(function* () {
+      return __webpack_require__.e(/* import() */ 806).then(__webpack_require__.t.bind(__webpack_require__, 2806, 23));
+    });
+    return function lineNumbersLoader() {
+      return _ref2.apply(this, arguments);
+    };
+  }(),
   languages: {
-    typescript: () => __webpack_require__.e(/* import() */ 108).then(__webpack_require__.bind(__webpack_require__, 7108)),
-    less: () => __webpack_require__.e(/* import() */ 166).then(__webpack_require__.bind(__webpack_require__, 166)),
-    xml: () => __webpack_require__.e(/* import() */ 566).then(__webpack_require__.bind(__webpack_require__, 4566))
+    typescript: function () {
+      var _ref3 = (0,asyncToGenerator/* default */.A)(function* () {
+        return __webpack_require__.e(/* import() */ 108).then(__webpack_require__.bind(__webpack_require__, 7108));
+      });
+      return function typescript() {
+        return _ref3.apply(this, arguments);
+      };
+    }(),
+    less: function () {
+      var _ref4 = (0,asyncToGenerator/* default */.A)(function* () {
+        return __webpack_require__.e(/* import() */ 166).then(__webpack_require__.bind(__webpack_require__, 166));
+      });
+      return function less() {
+        return _ref4.apply(this, arguments);
+      };
+    }(),
+    xml: function () {
+      var _ref5 = (0,asyncToGenerator/* default */.A)(function* () {
+        return __webpack_require__.e(/* import() */ 566).then(__webpack_require__.bind(__webpack_require__, 4566));
+      });
+      return function xml() {
+        return _ref5.apply(this, arguments);
+      };
+    }()
   }
 };
 let AppModule = /*#__PURE__*/(() => {
+  var _AppModule;
   class AppModule {
     getEntryPoint() {
       return AppComponent;
     }
-    static {
-      this.ɵfac = function AppModule_Factory(t) {
-        return new (t || AppModule)();
-      };
-    }
-    static {
-      this.ɵmod = /*@__PURE__*/core_mjs_["ɵɵdefineNgModule"]({
-        type: AppModule,
-        bootstrap: [AppComponent]
-      });
-    }
-    static {
-      this.ɵinj = /*@__PURE__*/core_mjs_["ɵɵdefineInjector"]({
-        providers: [{
-          provide: taiga_ui_addon_doc_tokens/* TUI_DOC_LOGO */.sy,
-          useValue: LOGO_CONTENT
-        }, {
-          provide: taiga_ui_addon_doc_tokens/* TUI_DOC_PAGES */.rm,
-          useValue: pages
-        }, {
-          provide: HIGHLIGHT_OPTIONS,
-          useValue: HIGHLIGHT_OPTIONS_VALUE
-        }],
-        imports: [platform_browser/* BrowserModule */.Bb, BrowserAnimationsModule, taiga_ui_addon_doc_components/* TuiDocMainModule */.ED, taiga_ui_core_components_link/* TuiLinkModule */.l, GettingStartedModule, router_mjs_.RouterModule.forRoot(ROUTES, {
-          initialNavigation: 'enabledBlocking'
-        })]
-      });
-    }
   }
+  _AppModule = AppModule;
+  _AppModule.ɵfac = function AppModule_Factory(t) {
+    return new (t || _AppModule)();
+  };
+  _AppModule.ɵmod = /*@__PURE__*/core_mjs_["ɵɵdefineNgModule"]({
+    type: _AppModule,
+    bootstrap: [AppComponent]
+  });
+  _AppModule.ɵinj = /*@__PURE__*/core_mjs_["ɵɵdefineInjector"]({
+    providers: [{
+      provide: taiga_ui_addon_doc_tokens/* TUI_DOC_LOGO */.sy,
+      useValue: LOGO_CONTENT
+    }, {
+      provide: taiga_ui_addon_doc_tokens/* TUI_DOC_PAGES */.rm,
+      useValue: pages
+    }, {
+      provide: HIGHLIGHT_OPTIONS,
+      useValue: HIGHLIGHT_OPTIONS_VALUE
+    }],
+    imports: [platform_browser/* BrowserModule */.Bb, BrowserAnimationsModule, taiga_ui_addon_doc_components/* TuiDocMainModule */.ED, taiga_ui_core_components_link/* TuiLinkModule */.l, GettingStartedModule, router_mjs_.RouterModule.forRoot(ROUTES, {
+      initialNavigation: 'enabledBlocking'
+    })]
+  });
   return AppModule;
 })();
 ;// CONCATENATED MODULE: ./apps/demo/src/environments/environment.ts
@@ -1569,8 +1562,8 @@ var taiga_ui_cdk_utils_dom = __webpack_require__(5001);
 var taiga_ui_cdk_decorators = __webpack_require__(4343);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-miscellaneous.js
 var taiga_ui_cdk_utils_miscellaneous = __webpack_require__(9925);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/node_modules/tslib/tslib.es6.mjs
-var tslib_tslib_es6 = __webpack_require__(9783);
+// EXTERNAL MODULE: tslib
+var tslib = __webpack_require__(9783);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-observables.js
 var taiga_ui_cdk_observables = __webpack_require__(9835);
 ;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/operators/skip.js
@@ -1647,7 +1640,7 @@ let taiga_ui_cdk_directives_active_zone_TuiActiveZoneDirective = /*#__PURE__*/((
     },
     exportAs: ["tuiActiveZone"]
   });
-  (0,tslib_tslib_es6/* __decorate */.Cg)([taiga_ui_cdk_decorators/* tuiPure */.PE], TuiActiveZoneDirective.prototype, "setZone", null);
+  (0,tslib/* __decorate */.Cg)([taiga_ui_cdk_decorators/* tuiPure */.PE], TuiActiveZoneDirective.prototype, "setZone", null);
   return TuiActiveZoneDirective;
 })();
 (() => {
@@ -3927,7 +3920,7 @@ let TuiPrimitiveTextfieldComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [taiga_ui_core_components_svg/* TuiSvgComponent */._Y, TuiValueDecorationComponent, TuiTooltipComponent, common_mjs_.NgIf, taiga_ui_core_directives_wrapper/* TuiWrapperDirective */.l, TuiAutofilledDirective, TuiMaskAccessorDirective, fesm2022_forms/* DefaultValueAccessor */.me, fesm2022_forms/* NgControlStatus */.BC, fesm2022_forms/* NgModel */.vS, TuiFocusableDirective, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.OA, common_mjs_.AsyncPipe],
-    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);position:relative;display:block;text-align:left;border-radius:var(--tui-radius-m);height:var(--tui-height);min-height:var(--tui-height);max-height:var(--tui-height)}[data-size=s][_nghost-%COMP%]{--tui-height: var(--tui-height-s)}[data-size=m][_nghost-%COMP%]{--tui-height: var(--tui-height-m)}[data-size=l][_nghost-%COMP%]{--tui-height: var(--tui-height-l);font:var(--tui-font-text-m);line-height:1.25rem}.t-input[_ngcontent-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);padding:0;margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;width:100%;height:100%;border-style:solid;border-color:transparent;border-inline-start-width:var(--border-start, 0);border-inline-end-width:var(--border-end, 0);text-indent:var(--text-indent);text-align:inherit;box-sizing:border-box;white-space:nowrap;overflow:hidden;text-transform:inherit;resize:none}.t-input[_ngcontent-%COMP%]:-webkit-autofill, .t-input[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-input[_ngcontent-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}@supports (-webkit-touch-callout: none){.t-input[_ngcontent-%COMP%]:active{font-size:1rem}}.t-input[inputMode=none][_ngcontent-%COMP%]{caret-color:transparent}.t-input[_ngcontent-%COMP%]:-webkit-autofill, .t-input[_ngcontent-%COMP%]:-webkit-autofill:first-line{font-size:inherit;line-height:inherit}.t-input[_ngcontent-%COMP%]::-webkit-caps-lock-indicator, .t-input[_ngcontent-%COMP%]::-webkit-contacts-auto-fill-button, .t-input[_ngcontent-%COMP%]::-webkit-credit-card-auto-fill-button, .t-input[_ngcontent-%COMP%]::-webkit-credentials-auto-fill-button, .t-input[_ngcontent-%COMP%]::-webkit-strong-password-auto-fill-button{content:none!important;position:absolute;left:-62.4375rem;top:-62.4375rem;z-index:-999;display:none!important;background:transparent!important;pointer-events:none!important}.t-input[_ngcontent-%COMP%]::placeholder{color:var(--tui-text-03);opacity:0}._focused[_nghost-%COMP%]:not(._readonly)   .t-input[_ngcontent-%COMP%]::placeholder, tui-primitive-textfield._focused:not(._readonly)[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-primitive-textfield._focused:not(._readonly)   [_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-textarea._focused:not(._readonly)[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-textarea._focused:not(._readonly)   [_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-text-area._focused:not(._readonly)[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-text-area._focused:not(._readonly)   [_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder{opacity:1}[tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]:-webkit-autofill, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]:-webkit-autofill:focus, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:focus, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01-night)!important;border-color:var(--tui-autofill-night);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill-night) inset!important}[tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]::placeholder, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]::placeholder{color:var(--tui-text-03-night)}[data-size=s][_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"s\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), .t-input   tui-textarea[data-size=\"s\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-textarea), .t-input   tui-text-area[data-size=\"s\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-s)}[data-size=m][_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"m\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), .t-input   tui-textarea[data-size=\"m\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-textarea), .t-input   tui-text-area[data-size=\"m\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-m)}[data-size=l][_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"l\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), .t-input   tui-textarea[data-size=\"l\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-textarea), .t-input   tui-text-area[data-size=\"l\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-l)}._disabled[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield._disabled[_nghost-%COMP%], tui-primitive-textfield._disabled   [_nghost-%COMP%], .t-input   tui-textarea._disabled[_nghost-%COMP%], tui-textarea._disabled   [_nghost-%COMP%], .t-input   tui-text-area._disabled[_nghost-%COMP%], tui-text-area._disabled   [_nghost-%COMP%]{pointer-events:none}[data-size=l][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1.25rem}[data-size=m][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1rem}[data-size=l][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%]{padding-top:1.25rem}[data-size=l][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.8156rem;transform:translateY(-.625rem)}[data-size=m][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.69rem;transform:translateY(-.5rem)}._hidden[_nghost-%COMP%]   input.t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield._hidden[_nghost-%COMP%], tui-primitive-textfield._hidden   [_nghost-%COMP%]{opacity:0;text-indent:-10em;-webkit-user-select:none}.t-content[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;box-sizing:border-box;align-items:center;overflow:hidden}[data-size=s][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:0 var(--tui-padding-s)}[data-size=m][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:0 var(--tui-padding-m)}[data-size=l][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:0 var(--tui-padding-l)}.t-wrapper[_ngcontent-%COMP%]{flex:1;min-width:0;-webkit-padding-end:.25rem;padding-inline-end:.25rem}.t-placeholder[_ngcontent-%COMP%]{transition-property:transform,font-size,color,letter-spacing;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;width:100%;-webkit-user-select:none;-moz-user-select:none;user-select:none;font:var(--tui-font-text-s);color:var(--tui-text-02);pointer-events:none;will-change:transform;transform:translateY(0)}@supports (-webkit-hyphens: none){.t-placeholder[_ngcontent-%COMP%]{will-change:unset;transition-property:transform,color,letter-spacing}}.t-placeholder_raised[_ngcontent-%COMP%]{transform:translateY(-.625rem)}[data-size=m][_nghost-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%]{font:var(--tui-font-text-xs);line-height:1.25rem;transform:translateY(-.5rem);letter-spacing:.025rem}._invalid[_nghost-%COMP%]:not(._focused)   .t-placeholder_raised[_ngcontent-%COMP%], ._invalid[_nghost-%COMP%]:not(._focused):hover   .t-placeholder_raised[_ngcontent-%COMP%]{color:var(--tui-error-fill)}._invalid[_nghost-%COMP%]:not(._focused)   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%], ._invalid[_nghost-%COMP%]:not(._focused):hover   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%]{color:var(--tui-error-fill-night)}._focused[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=m]._focused._label-outside[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused._label-outside[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-03)}[data-size=l][_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font:var(--tui-font-text-m);line-height:1.25rem}[data-size=l][_nghost-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%]{font-size:.8156rem}[data-size=m]._focused[_nghost-%COMP%]:not(._label-outside)   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused[_nghost-%COMP%]:not(._label-outside)   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-01)}[tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-02-night)}[data-size=m]._focused[_nghost-%COMP%]:not(._label-outside)   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused[_nghost-%COMP%]:not(._label-outside)   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-01-night)}._focused[_nghost-%COMP%]   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=m]._focused._label-outside[_nghost-%COMP%]   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused._label-outside[_nghost-%COMP%]   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-02-night)}.t-cleaner[_ngcontent-%COMP%]{position:relative;display:flex;width:1.5rem;height:1.5rem;align-items:center;justify-content:center;box-sizing:border-box;cursor:pointer;pointer-events:none;pointer-events:auto}._readonly[_nghost-%COMP%]   .t-cleaner[_ngcontent-%COMP%], ._disabled[_nghost-%COMP%]   .t-cleaner[_ngcontent-%COMP%]{pointer-events:none}.t-icon[_ngcontent-%COMP%]{position:relative;display:flex;width:1.5rem;height:1.5rem;align-items:center;justify-content:center;box-sizing:border-box;cursor:pointer;pointer-events:none}[data-size=s][_nghost-%COMP%]   .t-icon_left[_ngcontent-%COMP%]{-webkit-margin-start:-.375rem;margin-inline-start:-.375rem}[data-size=m][_nghost-%COMP%]   .t-icon_left[_ngcontent-%COMP%]{-webkit-margin-start:-.125rem;margin-inline-start:-.125rem;-webkit-margin-end:.375rem;margin-inline-end:.375rem}[data-size=l][_nghost-%COMP%]   .t-icon_left[_ngcontent-%COMP%]{-webkit-margin-end:.75rem;margin-inline-end:.75rem}.t-icons[_ngcontent-%COMP%]{display:flex;align-items:center}[data-size=m][_nghost-%COMP%]   .t-icons[_ngcontent-%COMP%]{-webkit-margin-end:-.125rem;margin-inline-end:-.125rem}[data-size=s][_nghost-%COMP%]   .t-icons[_ngcontent-%COMP%]{-webkit-margin-end:-.375rem;margin-inline-end:-.375rem}[_nghost-%COMP%]:not([data-size=\"s\"])   .t-icons[_ngcontent-%COMP%] > [_ngcontent-%COMP%]:not(:first-child){-webkit-margin-start:.25rem;margin-inline-start:.25rem}._autofilled[data-size=s][_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], ._autofilled._label-outside[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], ._autofilled[_nghost-%COMP%]   .t-value-decoration[_ngcontent-%COMP%]:not(.t-has-value){visibility:hidden}.t-custom-content[_ngcontent-%COMP%]{position:relative;display:flex;align-items:center;justify-content:center;min-width:2rem;height:2rem;pointer-events:none}.t-custom-icon[_ngcontent-%COMP%]{width:2rem;height:100%}.t-input[_ngcontent-%COMP%]:not(:first-child){display:none}[data-size][_nghost-%COMP%]   .t-input_template[_ngcontent-%COMP%]{display:flex;width:calc(100% - 1rem);max-width:calc(100% - 1rem);align-items:center;pointer-events:none;-webkit-padding-end:0;padding-inline-end:0}.t-text-template[_ngcontent-%COMP%]{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.t-wrapper-value-decoration[_ngcontent-%COMP%]{position:relative;pointer-events:none}"],
+    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);position:relative;display:block;text-align:left;border-radius:var(--tui-radius-m);height:var(--tui-height);min-height:var(--tui-height);max-height:var(--tui-height)}[data-size=s][_nghost-%COMP%]{--tui-height: var(--tui-height-s)}[data-size=m][_nghost-%COMP%]{--tui-height: var(--tui-height-m)}[data-size=l][_nghost-%COMP%]{--tui-height: var(--tui-height-l);font:var(--tui-font-text-m);line-height:1.25rem}.t-input[_ngcontent-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);padding:0;margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;width:100%;height:100%;border-style:solid;border-color:transparent;border-inline-start-width:var(--border-start, 0);border-inline-end-width:var(--border-end, 0);text-indent:var(--text-indent);text-align:inherit;box-sizing:border-box;white-space:nowrap;overflow:hidden;text-transform:inherit;resize:none}.t-input[_ngcontent-%COMP%]:-webkit-autofill, .t-input[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-input[_ngcontent-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}.t-input[inputMode=none][_ngcontent-%COMP%]{caret-color:transparent}.t-input[_ngcontent-%COMP%]:-webkit-autofill, .t-input[_ngcontent-%COMP%]:-webkit-autofill:first-line{font-size:inherit;line-height:inherit}.t-input[_ngcontent-%COMP%]::-webkit-caps-lock-indicator, .t-input[_ngcontent-%COMP%]::-webkit-contacts-auto-fill-button, .t-input[_ngcontent-%COMP%]::-webkit-credit-card-auto-fill-button, .t-input[_ngcontent-%COMP%]::-webkit-credentials-auto-fill-button, .t-input[_ngcontent-%COMP%]::-webkit-strong-password-auto-fill-button{content:none!important;position:absolute;left:-62.4375rem;top:-62.4375rem;z-index:-999;display:none!important;background:transparent!important;pointer-events:none!important}.t-input[_ngcontent-%COMP%]::placeholder{color:var(--tui-text-03);opacity:0}._focused[_nghost-%COMP%]:not(._readonly)   .t-input[_ngcontent-%COMP%]::placeholder, tui-primitive-textfield._focused:not(._readonly)[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-primitive-textfield._focused:not(._readonly)   [_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-textarea._focused:not(._readonly)[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-textarea._focused:not(._readonly)   [_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-text-area._focused:not(._readonly)[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-text-area._focused:not(._readonly)   [_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder{opacity:1}[tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]:-webkit-autofill, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]:-webkit-autofill:focus, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:focus, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01-night)!important;border-color:var(--tui-autofill-night);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill-night) inset!important}[tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]::placeholder, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]::placeholder{color:var(--tui-text-03-night)}[data-size=s][_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"s\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), .t-input   tui-textarea[data-size=\"s\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-textarea), .t-input   tui-text-area[data-size=\"s\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-s)}[data-size=m][_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"m\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), .t-input   tui-textarea[data-size=\"m\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-textarea), .t-input   tui-text-area[data-size=\"m\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-m)}[data-size=l][_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"l\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), .t-input   tui-textarea[data-size=\"l\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-textarea), .t-input   tui-text-area[data-size=\"l\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-l)}._disabled[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield._disabled[_nghost-%COMP%], tui-primitive-textfield._disabled   [_nghost-%COMP%], .t-input   tui-textarea._disabled[_nghost-%COMP%], tui-textarea._disabled   [_nghost-%COMP%], .t-input   tui-text-area._disabled[_nghost-%COMP%], tui-text-area._disabled   [_nghost-%COMP%]{pointer-events:none}[data-size=l][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1.25rem}[data-size=m][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1rem}[data-size=l][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%]{padding-top:1.25rem}[data-size=l][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.8156rem;transform:translateY(-.625rem)}[data-size=m][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.69rem;transform:translateY(-.5rem)}._hidden[_nghost-%COMP%]   input.t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield._hidden[_nghost-%COMP%], tui-primitive-textfield._hidden   [_nghost-%COMP%]{opacity:0;text-indent:-10em;-webkit-user-select:none}.t-content[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;box-sizing:border-box;align-items:center;overflow:hidden}[data-size=s][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:0 var(--tui-padding-s)}[data-size=m][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:0 var(--tui-padding-m)}[data-size=l][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:0 var(--tui-padding-l)}.t-wrapper[_ngcontent-%COMP%]{flex:1;min-width:0;-webkit-padding-end:.25rem;padding-inline-end:.25rem}.t-placeholder[_ngcontent-%COMP%]{transition-property:transform,font-size,color,letter-spacing;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;width:100%;-webkit-user-select:none;-moz-user-select:none;user-select:none;font:var(--tui-font-text-s);color:var(--tui-text-02);pointer-events:none;will-change:transform;transform:translateY(0)}@supports (-webkit-hyphens: none){.t-placeholder[_ngcontent-%COMP%]{will-change:unset;transition-property:transform,color,letter-spacing}}.t-placeholder_raised[_ngcontent-%COMP%]{transform:translateY(-.625rem)}[data-size=m][_nghost-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%]{font:var(--tui-font-text-xs);line-height:1.25rem;transform:translateY(-.5rem);letter-spacing:.025rem}._invalid[_nghost-%COMP%]:not(._focused)   .t-placeholder_raised[_ngcontent-%COMP%], ._invalid[_nghost-%COMP%]:not(._focused):hover   .t-placeholder_raised[_ngcontent-%COMP%]{color:var(--tui-error-fill)}._invalid[_nghost-%COMP%]:not(._focused)   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%], ._invalid[_nghost-%COMP%]:not(._focused):hover   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%]{color:var(--tui-error-fill-night)}._focused[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=m]._focused._label-outside[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused._label-outside[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-03)}[data-size=l][_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font:var(--tui-font-text-m);line-height:1.25rem}[data-size=l][_nghost-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%]{font-size:.8156rem}[data-size=m]._focused[_nghost-%COMP%]:not(._label-outside)   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused[_nghost-%COMP%]:not(._label-outside)   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-01)}[tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-02-night)}[data-size=m]._focused[_nghost-%COMP%]:not(._label-outside)   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused[_nghost-%COMP%]:not(._label-outside)   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-01-night)}._focused[_nghost-%COMP%]   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=m]._focused._label-outside[_nghost-%COMP%]   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused._label-outside[_nghost-%COMP%]   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-02-night)}.t-cleaner[_ngcontent-%COMP%]{position:relative;display:flex;width:1.5rem;height:1.5rem;align-items:center;justify-content:center;box-sizing:border-box;cursor:pointer;pointer-events:none;pointer-events:auto}._readonly[_nghost-%COMP%]   .t-cleaner[_ngcontent-%COMP%], ._disabled[_nghost-%COMP%]   .t-cleaner[_ngcontent-%COMP%]{pointer-events:none}.t-icon[_ngcontent-%COMP%]{position:relative;display:flex;width:1.5rem;height:1.5rem;align-items:center;justify-content:center;box-sizing:border-box;cursor:pointer;pointer-events:none}[data-size=s][_nghost-%COMP%]   .t-icon_left[_ngcontent-%COMP%]{-webkit-margin-start:-.375rem;margin-inline-start:-.375rem}[data-size=m][_nghost-%COMP%]   .t-icon_left[_ngcontent-%COMP%]{-webkit-margin-start:-.125rem;margin-inline-start:-.125rem;-webkit-margin-end:.375rem;margin-inline-end:.375rem}[data-size=l][_nghost-%COMP%]   .t-icon_left[_ngcontent-%COMP%]{-webkit-margin-end:.75rem;margin-inline-end:.75rem}.t-icons[_ngcontent-%COMP%]{display:flex;align-items:center}[data-size=m][_nghost-%COMP%]   .t-icons[_ngcontent-%COMP%]{-webkit-margin-end:-.125rem;margin-inline-end:-.125rem}[data-size=s][_nghost-%COMP%]   .t-icons[_ngcontent-%COMP%]{-webkit-margin-end:-.375rem;margin-inline-end:-.375rem}[_nghost-%COMP%]:not([data-size=\"s\"])   .t-icons[_ngcontent-%COMP%] > [_ngcontent-%COMP%]:not(:first-child){-webkit-margin-start:.25rem;margin-inline-start:.25rem}._autofilled[data-size=s][_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], ._autofilled._label-outside[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], ._autofilled[_nghost-%COMP%]   .t-value-decoration[_ngcontent-%COMP%]:not(.t-has-value){visibility:hidden}.t-custom-content[_ngcontent-%COMP%]{position:relative;display:flex;align-items:center;justify-content:center;min-width:2rem;height:2rem;pointer-events:none}.t-custom-icon[_ngcontent-%COMP%]{width:2rem;height:100%}.t-input[_ngcontent-%COMP%]:not(:first-child){display:none}[data-size][_nghost-%COMP%]   .t-input_template[_ngcontent-%COMP%]{display:flex;width:calc(100% - 1rem);max-width:calc(100% - 1rem);align-items:center;pointer-events:none;-webkit-padding-end:0;padding-inline-end:0}.t-text-template[_ngcontent-%COMP%]{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.t-wrapper-value-decoration[_ngcontent-%COMP%]{position:relative;pointer-events:none}"],
     changeDetection: 0
   });
   (0,tslib_es6/* __decorate */.Cg)([taiga_ui_cdk_decorators/* tuiPure */.PE], TuiPrimitiveTextfieldComponent.prototype, "getIndent$", null);
@@ -4009,7 +4002,7 @@ let TuiTextfieldComponent = /*#__PURE__*/(() => {
     decls: 0,
     vars: 0,
     template: function TuiTextfieldComponent_Template(rf, ctx) {},
-    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);padding:0;margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;width:100%;height:100%;border-style:solid;border-color:transparent;border-inline-start-width:var(--border-start, 0);border-inline-end-width:var(--border-end, 0);text-indent:var(--text-indent);text-align:inherit;box-sizing:border-box;white-space:nowrap;overflow:hidden;text-transform:inherit;resize:none}[_nghost-%COMP%]:-webkit-autofill, [_nghost-%COMP%]:-webkit-autofill:hover, [_nghost-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}@supports (-webkit-touch-callout: none){[_nghost-%COMP%]:active{font-size:1rem}}[inputMode=none][_nghost-%COMP%]{caret-color:transparent}[_nghost-%COMP%]:-webkit-autofill, [_nghost-%COMP%]:-webkit-autofill:first-line{font-size:inherit;line-height:inherit}[_nghost-%COMP%]::-webkit-caps-lock-indicator, [_nghost-%COMP%]::-webkit-contacts-auto-fill-button, [_nghost-%COMP%]::-webkit-credit-card-auto-fill-button, [_nghost-%COMP%]::-webkit-credentials-auto-fill-button, [_nghost-%COMP%]::-webkit-strong-password-auto-fill-button{content:none!important;position:absolute;left:-62.4375rem;top:-62.4375rem;z-index:-999;display:none!important;background:transparent!important;pointer-events:none!important}[_nghost-%COMP%]::placeholder{color:var(--tui-text-03);opacity:0}._focused[_nghost-%COMP%]:not(._readonly)   [_ngcontent-%COMP%]::placeholder, tui-primitive-textfield._focused:not(._readonly)   [_nghost-%COMP%]::placeholder, tui-textarea._focused:not(._readonly)   [_nghost-%COMP%]::placeholder, tui-text-area._focused:not(._readonly)   [_nghost-%COMP%]::placeholder{opacity:1}[tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]:-webkit-autofill, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]:-webkit-autofill:hover, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]:-webkit-autofill:focus, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:focus, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01-night)!important;border-color:var(--tui-autofill-night);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill-night) inset!important}[tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]::placeholder, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]::placeholder, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]::placeholder{color:var(--tui-text-03-night)}[data-size=s][_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"s\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), [_nghost-%COMP%]   tui-textarea[data-size=\"s\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-textarea), [_nghost-%COMP%]   tui-text-area[data-size=\"s\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-s)}[data-size=m][_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"m\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), [_nghost-%COMP%]   tui-textarea[data-size=\"m\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-textarea), [_nghost-%COMP%]   tui-text-area[data-size=\"m\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-m)}[data-size=l][_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"l\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), [_nghost-%COMP%]   tui-textarea[data-size=\"l\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-textarea), [_nghost-%COMP%]   tui-text-area[data-size=\"l\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-l)}._disabled[_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield._disabled[_nghost-%COMP%], tui-primitive-textfield._disabled   [_nghost-%COMP%], [_nghost-%COMP%]   tui-textarea._disabled[_nghost-%COMP%], tui-textarea._disabled   [_nghost-%COMP%], [_nghost-%COMP%]   tui-text-area._disabled[_nghost-%COMP%], tui-text-area._disabled   [_nghost-%COMP%]{pointer-events:none}[data-size=l][_nghost-%COMP%]:not(._label-outside)   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1.25rem}[data-size=m][_nghost-%COMP%]:not(._label-outside)   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1rem}[data-size=l][_nghost-%COMP%]:not(._label-outside)   -shadowcsshost{padding-top:1.25rem}[data-size=l][_nghost-%COMP%]:not(._label-outside)   [_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.8156rem;transform:translateY(-.625rem)}[data-size=m][_nghost-%COMP%]:not(._label-outside)   [_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.69rem;transform:translateY(-.5rem)}._hidden[_nghost-%COMP%]   input[_ngcontent-%COMP%], [_nghost-%COMP%]   tui-primitive-textfield._hidden[_nghost-%COMP%], tui-primitive-textfield._hidden   [_nghost-%COMP%]{opacity:0;text-indent:-10em;-webkit-user-select:none}textarea[_nghost-%COMP%]{white-space:pre-wrap}textarea[_nghost-%COMP%]   tui-textarea._ios[_nghost-%COMP%], tui-textarea._ios   [_nghost-%COMP%], textarea[_nghost-%COMP%]   tui-text-area._ios[_nghost-%COMP%], tui-text-area._ios   [_nghost-%COMP%]{padding-left:.8125rem}"],
+    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);padding:0;margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;width:100%;height:100%;border-style:solid;border-color:transparent;border-inline-start-width:var(--border-start, 0);border-inline-end-width:var(--border-end, 0);text-indent:var(--text-indent);text-align:inherit;box-sizing:border-box;white-space:nowrap;overflow:hidden;text-transform:inherit;resize:none}[_nghost-%COMP%]:-webkit-autofill, [_nghost-%COMP%]:-webkit-autofill:hover, [_nghost-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}[inputMode=none][_nghost-%COMP%]{caret-color:transparent}[_nghost-%COMP%]:-webkit-autofill, [_nghost-%COMP%]:-webkit-autofill:first-line{font-size:inherit;line-height:inherit}[_nghost-%COMP%]::-webkit-caps-lock-indicator, [_nghost-%COMP%]::-webkit-contacts-auto-fill-button, [_nghost-%COMP%]::-webkit-credit-card-auto-fill-button, [_nghost-%COMP%]::-webkit-credentials-auto-fill-button, [_nghost-%COMP%]::-webkit-strong-password-auto-fill-button{content:none!important;position:absolute;left:-62.4375rem;top:-62.4375rem;z-index:-999;display:none!important;background:transparent!important;pointer-events:none!important}[_nghost-%COMP%]::placeholder{color:var(--tui-text-03);opacity:0}._focused[_nghost-%COMP%]:not(._readonly)   [_ngcontent-%COMP%]::placeholder, tui-primitive-textfield._focused:not(._readonly)   [_nghost-%COMP%]::placeholder, tui-textarea._focused:not(._readonly)   [_nghost-%COMP%]::placeholder, tui-text-area._focused:not(._readonly)   [_nghost-%COMP%]::placeholder{opacity:1}[tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]:-webkit-autofill, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]:-webkit-autofill:hover, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]:-webkit-autofill:focus, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:focus, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01-night)!important;border-color:var(--tui-autofill-night);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill-night) inset!important}[tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]::placeholder, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]::placeholder, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]::placeholder{color:var(--tui-text-03-night)}[data-size=s][_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"s\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), [_nghost-%COMP%]   tui-textarea[data-size=\"s\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-textarea), [_nghost-%COMP%]   tui-text-area[data-size=\"s\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-s)}[data-size=m][_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"m\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), [_nghost-%COMP%]   tui-textarea[data-size=\"m\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-textarea), [_nghost-%COMP%]   tui-text-area[data-size=\"m\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-m)}[data-size=l][_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"l\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), [_nghost-%COMP%]   tui-textarea[data-size=\"l\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-textarea), [_nghost-%COMP%]   tui-text-area[data-size=\"l\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-l)}._disabled[_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield._disabled[_nghost-%COMP%], tui-primitive-textfield._disabled   [_nghost-%COMP%], [_nghost-%COMP%]   tui-textarea._disabled[_nghost-%COMP%], tui-textarea._disabled   [_nghost-%COMP%], [_nghost-%COMP%]   tui-text-area._disabled[_nghost-%COMP%], tui-text-area._disabled   [_nghost-%COMP%]{pointer-events:none}[data-size=l][_nghost-%COMP%]:not(._label-outside)   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1.25rem}[data-size=m][_nghost-%COMP%]:not(._label-outside)   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1rem}[data-size=l][_nghost-%COMP%]:not(._label-outside)   -shadowcsshost{padding-top:1.25rem}[data-size=l][_nghost-%COMP%]:not(._label-outside)   [_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.8156rem;transform:translateY(-.625rem)}[data-size=m][_nghost-%COMP%]:not(._label-outside)   [_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.69rem;transform:translateY(-.5rem)}._hidden[_nghost-%COMP%]   input[_ngcontent-%COMP%], [_nghost-%COMP%]   tui-primitive-textfield._hidden[_nghost-%COMP%], tui-primitive-textfield._hidden   [_nghost-%COMP%]{opacity:0;text-indent:-10em;-webkit-user-select:none}textarea[_nghost-%COMP%]{white-space:pre-wrap}textarea[_nghost-%COMP%]   tui-textarea._ios[_nghost-%COMP%], tui-textarea._ios   [_nghost-%COMP%], textarea[_nghost-%COMP%]   tui-text-area._ios[_nghost-%COMP%], tui-text-area._ios   [_nghost-%COMP%]{padding-left:.8125rem}"],
     changeDetection: 0
   });
   return TuiTextfieldComponent;
@@ -4297,24 +4290,34 @@ var taiga_ui_core_utils_dom = __webpack_require__(365);
 
 function TuiScrollControlsComponent_ng_container_0_ng_container_1_div_1_Template(rf, ctx) {
   if (rf & 1) {
+    const _r1 = core_mjs_["ɵɵgetCurrentView"]();
     core_mjs_["ɵɵelementStart"](0, "div", 3);
+    core_mjs_["ɵɵlistener"]("mousedown.capture.prevent", function TuiScrollControlsComponent_ng_container_0_ng_container_1_div_1_Template_div_mousedown_capture_prevent_0_listener() {
+      core_mjs_["ɵɵrestoreView"](_r1);
+      return core_mjs_["ɵɵresetView"](0);
+    });
     core_mjs_["ɵɵelement"](1, "div", 4);
     core_mjs_["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const bars_r1 = core_mjs_["ɵɵnextContext"]().ngIf;
-    core_mjs_["ɵɵclassProp"]("t-bar_has-horizontal", bars_r1[1]);
+    const bars_r2 = core_mjs_["ɵɵnextContext"]().ngIf;
+    core_mjs_["ɵɵclassProp"]("t-bar_has-horizontal", bars_r2[1]);
   }
 }
 function TuiScrollControlsComponent_ng_container_0_ng_container_1_div_2_Template(rf, ctx) {
   if (rf & 1) {
+    const _r3 = core_mjs_["ɵɵgetCurrentView"]();
     core_mjs_["ɵɵelementStart"](0, "div", 5);
+    core_mjs_["ɵɵlistener"]("mousedown.capture.prevent", function TuiScrollControlsComponent_ng_container_0_ng_container_1_div_2_Template_div_mousedown_capture_prevent_0_listener() {
+      core_mjs_["ɵɵrestoreView"](_r3);
+      return core_mjs_["ɵɵresetView"](0);
+    });
     core_mjs_["ɵɵelement"](1, "div", 6);
     core_mjs_["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const bars_r1 = core_mjs_["ɵɵnextContext"]().ngIf;
-    core_mjs_["ɵɵclassProp"]("t-bar_has-vertical", bars_r1[0]);
+    const bars_r2 = core_mjs_["ɵɵnextContext"]().ngIf;
+    core_mjs_["ɵɵclassProp"]("t-bar_has-vertical", bars_r2[0]);
   }
 }
 function TuiScrollControlsComponent_ng_container_0_ng_container_1_Template(rf, ctx) {
@@ -4324,11 +4327,11 @@ function TuiScrollControlsComponent_ng_container_0_ng_container_1_Template(rf, c
     core_mjs_["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
-    const bars_r1 = ctx.ngIf;
+    const bars_r2 = ctx.ngIf;
     core_mjs_["ɵɵadvance"]();
-    core_mjs_["ɵɵproperty"]("ngIf", bars_r1[0]);
+    core_mjs_["ɵɵproperty"]("ngIf", bars_r2[0]);
     core_mjs_["ɵɵadvance"]();
-    core_mjs_["ɵɵproperty"]("ngIf", bars_r1[1]);
+    core_mjs_["ɵɵproperty"]("ngIf", bars_r2[1]);
   }
 }
 function TuiScrollControlsComponent_ng_container_0_Template(rf, ctx) {
@@ -4339,9 +4342,9 @@ function TuiScrollControlsComponent_ng_container_0_Template(rf, ctx) {
     core_mjs_["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
-    const ctx_r1 = core_mjs_["ɵɵnextContext"]();
+    const ctx_r3 = core_mjs_["ɵɵnextContext"]();
     core_mjs_["ɵɵadvance"]();
-    core_mjs_["ɵɵproperty"]("ngIf", core_mjs_["ɵɵpipeBind1"](2, 1, ctx_r1.refresh$));
+    core_mjs_["ɵɵproperty"]("ngIf", core_mjs_["ɵɵpipeBind1"](2, 1, ctx_r3.refresh$));
   }
 }
 const MIN_WIDTH = 24;
@@ -4504,7 +4507,7 @@ let TuiScrollControlsComponent = /*#__PURE__*/(() => {
     selectors: [["tui-scroll-controls"]],
     decls: 1,
     vars: 1,
-    consts: [[4, "ngIf"], ["class", "t-bar t-bar_vertical", 3, "t-bar_has-horizontal", 4, "ngIf"], ["class", "t-bar t-bar_horizontal", 3, "t-bar_has-vertical", 4, "ngIf"], [1, "t-bar", "t-bar_vertical"], ["tuiScrollbar", "vertical", 1, "t-thumb"], [1, "t-bar", "t-bar_horizontal"], ["tuiScrollbar", "horizontal", 1, "t-thumb"]],
+    consts: [[4, "ngIf"], ["class", "t-bar t-bar_vertical", 3, "t-bar_has-horizontal", "mousedown.capture.prevent", 4, "ngIf"], ["class", "t-bar t-bar_horizontal", 3, "t-bar_has-vertical", "mousedown.capture.prevent", 4, "ngIf"], [1, "t-bar", "t-bar_vertical", 3, "mousedown.capture.prevent"], ["tuiScrollbar", "vertical", 1, "t-thumb"], [1, "t-bar", "t-bar_horizontal", 3, "mousedown.capture.prevent"], ["tuiScrollbar", "horizontal", 1, "t-thumb"]],
     template: function TuiScrollControlsComponent_Template(rf, ctx) {
       if (rf & 1) {
         core_mjs_["ɵɵtemplate"](0, TuiScrollControlsComponent_ng_container_0_Template, 3, 3, "ng-container", 0);
@@ -4582,6 +4585,10 @@ function TuiScrollbarComponent_tui_scroll_controls_0_Template(rf, ctx) {
   if (rf & 1) {
     core_mjs_["ɵɵelement"](0, "tui-scroll-controls", 2);
   }
+  if (rf & 2) {
+    const ctx_r0 = core_mjs_["ɵɵnextContext"]();
+    core_mjs_["ɵɵclassProp"]("t-hover-mode", ctx_r0.options.mode === "hover");
+  }
 }
 const taiga_ui_core_components_scrollbar_SCROLL_REF_SELECTOR = '[tuiScrollRef]';
 /** @deprecated import from `@taiga-ui/cdk` instead */
@@ -4627,15 +4634,23 @@ let TuiScrollableDirective = /*#__PURE__*/(/* unused pure expression or super */
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+const TUI_DEFAULT_SCROLLBAR_OPTIONS = {
+  mode: 'always'
+};
+const TUI_SCROLLBAR_OPTIONS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateToken */.gc)(TUI_DEFAULT_SCROLLBAR_OPTIONS);
+function tuiScrollbarOptionsProvider(options) {
+  return tuiProvideOptions(TUI_SCROLLBAR_OPTIONS, options, TUI_DEFAULT_SCROLLBAR_OPTIONS);
+}
 
 // TODO: Remove all legacy code in 4.0
 let TuiScrollbarComponent = /*#__PURE__*/(() => {
   class TuiScrollbarComponent {
-    constructor(cssRef, el, userAgent, isIos) {
+    constructor(cssRef, el, userAgent, isIos, options) {
       this.cssRef = cssRef;
       this.el = el;
       this.userAgent = userAgent;
       this.isIos = isIos;
+      this.options = options;
       this.isLegacy = !this.cssRef.supports('position', 'sticky') || (0,taiga_ui_cdk_utils_browser/* tuiIsFirefox */.ce)(this.userAgent) && !this.cssRef.supports('scrollbar-width', 'none');
       this.hidden = false;
       this.browserScrollRef = new core_mjs_.ElementRef(this.el.nativeElement);
@@ -4679,7 +4694,7 @@ let TuiScrollbarComponent = /*#__PURE__*/(() => {
     }
   }
   TuiScrollbarComponent.ɵfac = function TuiScrollbarComponent_Factory(t) {
-    return new (t || TuiScrollbarComponent)(core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* CSS */.Ks), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* USER_AGENT */._O), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_IOS */.mg));
+    return new (t || TuiScrollbarComponent)(core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* CSS */.Ks), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](ng_web_apis_common/* USER_AGENT */._O), core_mjs_["ɵɵdirectiveInject"](taiga_ui_cdk_tokens/* TUI_IS_IOS */.mg), core_mjs_["ɵɵdirectiveInject"](TUI_SCROLLBAR_OPTIONS));
   };
   TuiScrollbarComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiScrollbarComponent,
@@ -4710,11 +4725,11 @@ let TuiScrollbarComponent = /*#__PURE__*/(() => {
     ngContentSelectors: taiga_ui_core_components_scrollbar_c0,
     decls: 3,
     vars: 3,
-    consts: [["class", "t-bars", 4, "ngIf"], [1, "t-content"], [1, "t-bars"]],
+    consts: [["class", "t-bars", 3, "t-hover-mode", 4, "ngIf"], [1, "t-content"], [1, "t-bars"]],
     template: function TuiScrollbarComponent_Template(rf, ctx) {
       if (rf & 1) {
         core_mjs_["ɵɵprojectionDef"]();
-        core_mjs_["ɵɵtemplate"](0, TuiScrollbarComponent_tui_scroll_controls_0_Template, 1, 0, "tui-scroll-controls", 0);
+        core_mjs_["ɵɵtemplate"](0, TuiScrollbarComponent_tui_scroll_controls_0_Template, 1, 2, "tui-scroll-controls", 0);
         core_mjs_["ɵɵelementStart"](1, "div", 1);
         core_mjs_["ɵɵprojection"](2);
         core_mjs_["ɵɵelementEnd"]();
@@ -4726,7 +4741,7 @@ let TuiScrollbarComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [TuiScrollControlsComponent, common_mjs_.NgIf],
-    styles: ["[_nghost-%COMP%]{position:relative;display:flex;isolation:isolate;overflow:auto}[_nghost-%COMP%]:not(._legacy){scrollbar-width:none;-ms-overflow-style:none}[_nghost-%COMP%]:not(._legacy)::-webkit-scrollbar, [_nghost-%COMP%]:not(._legacy)::-webkit-scrollbar-thumb{background:transparent;width:0;height:0}._legacy[_nghost-%COMP%]{overflow:overlay}@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm){._legacy[_nghost-%COMP%]::-webkit-scrollbar, ._legacy[_nghost-%COMP%]::-webkit-scrollbar-thumb{width:1rem;height:1rem;border-radius:6.25rem;background-clip:padding-box;border:.375rem solid transparent}._legacy[_nghost-%COMP%]::-webkit-scrollbar{background-color:transparent}._legacy[_nghost-%COMP%]::-webkit-scrollbar-thumb{background-color:var(--tui-clear-hover)}._legacy[_nghost-%COMP%]::-webkit-scrollbar-thumb:hover{background-color:var(--tui-clear-active)}._legacy[_nghost-%COMP%]::-webkit-scrollbar-thumb:active{background-color:var(--tui-text-03)}}.t-content[_ngcontent-%COMP%]{isolation:isolate;flex:1;flex-basis:auto;width:100%;height:-webkit-max-content;height:max-content}.t-content_delegated[_ngcontent-%COMP%]{height:100%}.t-bars[_ngcontent-%COMP%]{color:var(--tui-text-01)}"],
+    styles: ["[_nghost-%COMP%]{position:relative;display:flex;isolation:isolate;overflow:auto}[_nghost-%COMP%]:not(._legacy){scrollbar-width:none;-ms-overflow-style:none}[_nghost-%COMP%]:not(._legacy)::-webkit-scrollbar, [_nghost-%COMP%]:not(._legacy)::-webkit-scrollbar-thumb{background:transparent;width:0;height:0}._legacy[_nghost-%COMP%]{overflow:overlay}@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm){._legacy[_nghost-%COMP%]::-webkit-scrollbar, ._legacy[_nghost-%COMP%]::-webkit-scrollbar-thumb{width:1rem;height:1rem;border-radius:6.25rem;background-clip:padding-box;border:.375rem solid transparent}._legacy[_nghost-%COMP%]::-webkit-scrollbar{background-color:transparent}._legacy[_nghost-%COMP%]::-webkit-scrollbar-thumb{background-color:var(--tui-clear-hover)}._legacy[_nghost-%COMP%]::-webkit-scrollbar-thumb:hover{background-color:var(--tui-clear-active)}._legacy[_nghost-%COMP%]::-webkit-scrollbar-thumb:active{background-color:var(--tui-text-03)}}[_nghost-%COMP%]   .t-hover-mode[_ngcontent-%COMP%]:not(:active){transition-property:opacity;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;opacity:0}[_nghost-%COMP%]:hover   .t-hover-mode[_ngcontent-%COMP%]{transition-property:opacity;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;opacity:1}.t-content[_ngcontent-%COMP%]{isolation:isolate;flex:1;flex-basis:auto;width:100%;height:-webkit-max-content;height:max-content}.t-content_delegated[_ngcontent-%COMP%]{height:100%}.t-bars[_ngcontent-%COMP%]{color:var(--tui-text-01)}"],
     changeDetection: 0
   });
   return TuiScrollbarComponent;
@@ -5320,7 +5335,7 @@ let TuiDropdownContextDirective = /*#__PURE__*/(/* unused pure expression or sup
     }
   }
   TuiDropdownContextDirective.ɵfac = function TuiDropdownContextDirective_Factory(t) {
-    return new (t || TuiDropdownContextDirective)(i0.ɵɵdirectiveInject(TuiActiveZoneDirective), i0.ɵɵdirectiveInject(TUI_IS_IOS), i0.ɵɵdirectiveInject(TUI_TOUCH_SUPPORTED));
+    return new (t || TuiDropdownContextDirective)(i0.ɵɵdirectiveInject(TuiActiveZoneDirective), i0.ɵɵdirectiveInject(TUI_IS_IOS), i0.ɵɵdirectiveInject(TUI_IS_TOUCH));
   };
   TuiDropdownContextDirective.ɵdir = /* @__PURE__ */i0.ɵɵdefineDirective({
     type: TuiDropdownContextDirective,
@@ -7524,7 +7539,7 @@ let TuiRootComponent = /*#__PURE__*/(() => {
   TuiRootComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiRootComponent,
     selectors: [["tui-root"]],
-    hostAttrs: ["data-tui-version", "3.84.0"],
+    hostAttrs: ["data-tui-version", "3.94.0"],
     hostVars: 9,
     hostBindings: function TuiRootComponent_HostBindings(rf, ctx) {
       if (rf & 1) {
@@ -7568,7 +7583,7 @@ let TuiRootComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [TuiScrollControlsComponent, TuiSvgDefsHostComponent, TuiDropdownHostComponent, TuiDialogHostComponent, TuiAlertHostComponent, TuiHintsHostComponent, common_mjs_.NgIf, common_mjs_.AsyncPipe],
-    styles: ["@keyframes tuiPresent{to{content:\"1\"}}@keyframes tuiSkeletonVibe{to{opacity:.5}}html,.tui-zero-scrollbar{scrollbar-width:none;-ms-overflow-style:none}html::-webkit-scrollbar,.tui-zero-scrollbar::-webkit-scrollbar,html::-webkit-scrollbar-thumb,.tui-zero-scrollbar::-webkit-scrollbar-thumb{display:none}body[data-tui-theme]{font:var(--tui-font-text-s);color:var(--tui-text-01);background:var(--tui-base-01);margin:0}tui-root{position:relative;display:block;flex:1;-webkit-tap-highlight-color:transparent}tui-root>.t-root-scrollbar{position:fixed;top:0;left:0;bottom:0;right:0;display:none;margin:0}[data-tui-theme] tui-root>.t-root-scrollbar{display:block}.t-root-content{height:100%;isolation:isolate;transform:translateY(var(--t-root-top))}[tuiDropdownButton][tuiDropdownButton]{display:none}.t-overscroll-none{overscroll-behavior:none}\n"],
+    styles: ["@keyframes tuiPresent{to{content:\"1\"}}@keyframes tuiSkeletonVibe{to{opacity:.5}}html,.tui-zero-scrollbar{scrollbar-width:none;-ms-overflow-style:none}html::-webkit-scrollbar,.tui-zero-scrollbar::-webkit-scrollbar,html::-webkit-scrollbar-thumb,.tui-zero-scrollbar::-webkit-scrollbar-thumb{display:none}body[data-tui-theme]{font:var(--tui-font-text-s);color:var(--tui-text-01);background:var(--tui-base-01);margin:0}tui-root{position:relative;display:block;flex:1;-webkit-tap-highlight-color:transparent}tui-root>.t-root-scrollbar{position:fixed;top:0;left:0;bottom:0;right:0;display:none;margin:0}[data-tui-theme] tui-root>.t-root-scrollbar{display:block}.t-root-content{position:relative;top:var(--t-root-top);height:100%;isolation:isolate}.t-root-content>*{--t-root-top: 0}[tuiDropdownButton][tuiDropdownButton]{display:none}.t-overscroll-none{overscroll-behavior:none}\n"],
     encapsulation: 2
   });
   return TuiRootComponent;
@@ -7957,7 +7972,7 @@ function TuiHostedDropdownComponent_div_0_Template(rf, ctx) {
     const isOpen_r6 = ctx.tuiLet;
     const dropdown_r7 = core_mjs_["ɵɵreference"](4);
     const ctx_r1 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵproperty"]("tuiDropdown", dropdown_r7)("tuiDropdownManual", isOpen_r6 && ctx_r1.canOpen)("tuiDropdownSided", ctx_r1.sided)("tuiObscuredEnabled", isOpen_r6);
+    core_mjs_["ɵɵproperty"]("tuiDropdown", dropdown_r7)("tuiDropdownManual", isOpen_r6 && ctx_r1.canOpen)("tuiDropdownOpenMonitor", isOpen_r6 && ctx_r1.canOpen)("tuiDropdownSided", ctx_r1.sided)("tuiObscuredEnabled", isOpen_r6);
     core_mjs_["ɵɵadvance"](3);
     core_mjs_["ɵɵproperty"]("polymorpheus", ctx_r1.context);
   }
@@ -7997,11 +8012,22 @@ const TUI_HOSTED_DROPDOWN_COMPONENT = new core_mjs_.InjectionToken('[TUI_HOSTED_
 let TuiDropdownOpenMonitorDirective = /*#__PURE__*/(() => {
   class TuiDropdownOpenMonitorDirective {
     constructor(destroy$, hosted, dropdown, open) {
-      open === null || open === void 0 ? void 0 : open.tuiDropdownOpenChange.pipe((0,filter/* filter */.p)(value => value && open.dropdown === dropdown && !hosted.focused), (0,takeUntil/* takeUntil */.Q)(destroy$)).subscribe(() => {
-        var _a;
-        (_a = hosted.nativeFocusableElement) === null || _a === void 0 ? void 0 : _a.focus();
-        hosted.updateOpen(true);
-      });
+      this.hosted = hosted;
+      this.open = open;
+      if ((open === null || open === void 0 ? void 0 : open.dropdown) === dropdown) {
+        open.tuiDropdownOpenChange.pipe((0,takeUntil/* takeUntil */.Q)(destroy$)).subscribe(value => {
+          var _a;
+          if (value) {
+            (_a = hosted.nativeFocusableElement) === null || _a === void 0 ? void 0 : _a.focus();
+          }
+          hosted.updateOpen(value);
+        });
+      }
+    }
+    set tuiDropdownOpenMonitor(open) {
+      var _a;
+      (_a = this.open) === null || _a === void 0 ? void 0 : _a.update(open);
+      this.hosted.updateOpen(open);
     }
   }
   TuiDropdownOpenMonitorDirective.ɵfac = function TuiDropdownOpenMonitorDirective_Factory(t) {
@@ -8010,6 +8036,9 @@ let TuiDropdownOpenMonitorDirective = /*#__PURE__*/(() => {
   TuiDropdownOpenMonitorDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
     type: TuiDropdownOpenMonitorDirective,
     selectors: [["", "tuiDropdownOpenMonitor", ""]],
+    inputs: {
+      tuiDropdownOpenMonitor: "tuiDropdownOpenMonitor"
+    },
     features: [core_mjs_["ɵɵProvidersFeature"]([taiga_ui_cdk_services/* TuiDestroyService */.ew])]
   });
   return TuiDropdownOpenMonitorDirective;
@@ -8239,11 +8268,11 @@ let TuiHostedDropdownComponent = /*#__PURE__*/(() => {
     ngContentSelectors: taiga_ui_core_components_hosted_dropdown_c1,
     decls: 2,
     vars: 3,
-    consts: [["activeZone", "tuiActiveZone"], ["dropdown", "polymorpheus"], ["wrapper", ""], ["tuiAccessorProxy", "", "tuiDropdownOpenMonitor", "", "class", "t-wrapper", 3, "tuiDropdown", "tuiDropdownManual", "tuiDropdownSided", "tuiObscuredEnabled", "tuiActiveZoneChange", "tuiObscured", 4, "tuiLet"], ["tuiAccessorProxy", "", "tuiDropdownOpenMonitor", "", 1, "t-wrapper", 3, "tuiActiveZoneChange", "tuiObscured", "tuiDropdown", "tuiDropdownManual", "tuiDropdownSided", "tuiObscuredEnabled"], [3, "polymorpheus"], [1, "t-dropdown", 3, "keydown"], ["class", "t-primitive", 4, "polymorpheusOutlet", "polymorpheusOutletContext"], [1, "t-primitive"]],
+    consts: [["activeZone", "tuiActiveZone"], ["dropdown", "polymorpheus"], ["wrapper", ""], ["tuiAccessorProxy", "", "class", "t-wrapper", 3, "tuiDropdown", "tuiDropdownManual", "tuiDropdownOpenMonitor", "tuiDropdownSided", "tuiObscuredEnabled", "tuiActiveZoneChange", "tuiObscured", 4, "tuiLet"], ["tuiAccessorProxy", "", 1, "t-wrapper", 3, "tuiActiveZoneChange", "tuiObscured", "tuiDropdown", "tuiDropdownManual", "tuiDropdownOpenMonitor", "tuiDropdownSided", "tuiObscuredEnabled"], [3, "polymorpheus"], [1, "t-dropdown", 3, "keydown"], ["class", "t-primitive", 4, "polymorpheusOutlet", "polymorpheusOutletContext"], [1, "t-primitive"]],
     template: function TuiHostedDropdownComponent_Template(rf, ctx) {
       if (rf & 1) {
         core_mjs_["ɵɵprojectionDef"]();
-        core_mjs_["ɵɵtemplate"](0, TuiHostedDropdownComponent_div_0_Template, 5, 5, "div", 3);
+        core_mjs_["ɵɵtemplate"](0, TuiHostedDropdownComponent_div_0_Template, 5, 6, "div", 3);
         core_mjs_["ɵɵpipe"](1, "async");
       }
       if (rf & 2) {
@@ -8251,7 +8280,7 @@ let TuiHostedDropdownComponent = /*#__PURE__*/(() => {
         core_mjs_["ɵɵproperty"]("tuiLet", (tmp_0_0 = core_mjs_["ɵɵpipeBind1"](1, 1, ctx.open$)) !== null && tmp_0_0 !== undefined ? tmp_0_0 : ctx.openChange.value);
       }
     },
-    dependencies: [taiga_ui_cdk_directives_let/* TuiLetDirective */.Nx, TuiAccessorProxyDirective, TuiDropdownOpenMonitorDirective, TuiDropdownDirective, TuiDropdownDriverDirective, TuiDropdownPositionDirective, TuiDropdownManualDirective, TuiDropdownPositionSidedDirective, taiga_ui_cdk_directives_active_zone_TuiActiveZoneDirective, TuiObscuredDirective, tinkoff_ng_polymorpheus/* PolymorpheusTemplate */.A7, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.OA, common_mjs_.AsyncPipe],
+    dependencies: [taiga_ui_cdk_directives_let/* TuiLetDirective */.Nx, TuiAccessorProxyDirective, TuiDropdownDirective, TuiDropdownDriverDirective, TuiDropdownPositionDirective, TuiDropdownManualDirective, TuiDropdownOpenMonitorDirective, TuiDropdownPositionSidedDirective, taiga_ui_cdk_directives_active_zone_TuiActiveZoneDirective, TuiObscuredDirective, tinkoff_ng_polymorpheus/* PolymorpheusTemplate */.A7, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.OA, common_mjs_.AsyncPipe],
     styles: ["[_nghost-%COMP%]{display:inline-flex}.t-wrapper[_ngcontent-%COMP%]{border-radius:inherit;height:inherit;flex:1 1 auto;width:100%}.t-dropdown[_ngcontent-%COMP%]{height:100%}.t-primitive[_ngcontent-%COMP%]{padding:1rem}"],
     changeDetection: 0
   });
@@ -9595,6 +9624,7 @@ class PendingCopy {
  * A service for copying text to the clipboard.
  */
 let clipboard_Clipboard = /*#__PURE__*/(() => {
+  var _Clipboard;
   class Clipboard {
     constructor(document) {
       this._document = document;
@@ -9623,19 +9653,16 @@ let clipboard_Clipboard = /*#__PURE__*/(() => {
     beginCopy(text) {
       return new PendingCopy(text, this._document);
     }
-    static {
-      this.ɵfac = function Clipboard_Factory(t) {
-        return new (t || Clipboard)(core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT));
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: Clipboard,
-        factory: Clipboard.ɵfac,
-        providedIn: 'root'
-      });
-    }
   }
+  _Clipboard = Clipboard;
+  _Clipboard.ɵfac = function _Clipboard_Factory(t) {
+    return new (t || _Clipboard)(core_mjs_["ɵɵinject"](common_mjs_.DOCUMENT));
+  };
+  _Clipboard.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _Clipboard,
+    factory: _Clipboard.ɵfac,
+    providedIn: 'root'
+  });
   return Clipboard;
 })();
 /*#__PURE__*/(() => {
@@ -9649,6 +9676,7 @@ const CDK_COPY_TO_CLIPBOARD_CONFIG = /*#__PURE__*/new core_mjs_.InjectionToken('
  * clipboard.
  */
 let CdkCopyToClipboard = /*#__PURE__*/(() => {
+  var _CdkCopyToClipboard;
   class CdkCopyToClipboard {
     constructor(_clipboard, _ngZone, config) {
       this._clipboard = _clipboard;
@@ -9702,54 +9730,46 @@ let CdkCopyToClipboard = /*#__PURE__*/(() => {
       this._pending.clear();
       this._destroyed = true;
     }
-    static {
-      this.ɵfac = function CdkCopyToClipboard_Factory(t) {
-        return new (t || CdkCopyToClipboard)(core_mjs_["ɵɵdirectiveInject"](clipboard_Clipboard), core_mjs_["ɵɵdirectiveInject"](core_mjs_.NgZone), core_mjs_["ɵɵdirectiveInject"](CDK_COPY_TO_CLIPBOARD_CONFIG, 8));
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: CdkCopyToClipboard,
-        selectors: [["", "cdkCopyToClipboard", ""]],
-        hostBindings: function CdkCopyToClipboard_HostBindings(rf, ctx) {
-          if (rf & 1) {
-            core_mjs_["ɵɵlistener"]("click", function CdkCopyToClipboard_click_HostBindingHandler() {
-              return ctx.copy();
-            });
-          }
-        },
-        inputs: {
-          text: [core_mjs_["ɵɵInputFlags"].None, "cdkCopyToClipboard", "text"],
-          attempts: [core_mjs_["ɵɵInputFlags"].None, "cdkCopyToClipboardAttempts", "attempts"]
-        },
-        outputs: {
-          copied: "cdkCopyToClipboardCopied"
-        },
-        standalone: true
-      });
-    }
   }
+  _CdkCopyToClipboard = CdkCopyToClipboard;
+  _CdkCopyToClipboard.ɵfac = function _CdkCopyToClipboard_Factory(t) {
+    return new (t || _CdkCopyToClipboard)(core_mjs_["ɵɵdirectiveInject"](clipboard_Clipboard), core_mjs_["ɵɵdirectiveInject"](core_mjs_.NgZone), core_mjs_["ɵɵdirectiveInject"](CDK_COPY_TO_CLIPBOARD_CONFIG, 8));
+  };
+  _CdkCopyToClipboard.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _CdkCopyToClipboard,
+    selectors: [["", "cdkCopyToClipboard", ""]],
+    hostBindings: function _CdkCopyToClipboard_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("click", function _CdkCopyToClipboard_click_HostBindingHandler() {
+          return ctx.copy();
+        });
+      }
+    },
+    inputs: {
+      text: [core_mjs_["ɵɵInputFlags"].None, "cdkCopyToClipboard", "text"],
+      attempts: [core_mjs_["ɵɵInputFlags"].None, "cdkCopyToClipboardAttempts", "attempts"]
+    },
+    outputs: {
+      copied: "cdkCopyToClipboardCopied"
+    },
+    standalone: true
+  });
   return CdkCopyToClipboard;
 })();
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 let ClipboardModule = /*#__PURE__*/(() => {
-  class ClipboardModule {
-    static {
-      this.ɵfac = function ClipboardModule_Factory(t) {
-        return new (t || ClipboardModule)();
-      };
-    }
-    static {
-      this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-        type: ClipboardModule
-      });
-    }
-    static {
-      this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-    }
-  }
+  var _ClipboardModule;
+  class ClipboardModule {}
+  _ClipboardModule = ClipboardModule;
+  _ClipboardModule.ɵfac = function _ClipboardModule_Factory(t) {
+    return new (t || _ClipboardModule)();
+  };
+  _ClipboardModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: _ClipboardModule
+  });
+  _ClipboardModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
   return ClipboardModule;
 })();
 /*#__PURE__*/(() => {
@@ -10978,7 +10998,10 @@ class TuiTime {
     this.minutes = minutes;
     this.seconds = seconds;
     this.ms = ms;
-    ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.B.assert(TuiTime.isValidTime(hours, minutes, seconds, ms), 'Time must be real, but got:', hours, minutes, seconds, ms);
+    ngDevMode && taiga_ui_cdk_classes/* tuiAssert */.B.assert(
+    // Currently `TuiTime` could have hours more than 23
+    // in order to not break current behaviour of `isValidTime` the logic is duplicated
+    Number.isInteger(hours) && (0,taiga_ui_cdk_utils_math/* tuiInRange */.bQ)(hours, 0, Infinity) && Number.isInteger(minutes) && (0,taiga_ui_cdk_utils_math/* tuiInRange */.bQ)(minutes, 0, MINUTES_IN_HOUR) && Number.isInteger(seconds) && (0,taiga_ui_cdk_utils_math/* tuiInRange */.bQ)(seconds, 0, SECONDS_IN_MINUTE) && Number.isInteger(ms) && (0,taiga_ui_cdk_utils_math/* tuiInRange */.bQ)(ms, 0, 1000), 'Time must be real, but got:', hours, minutes, seconds, ms);
   }
   /**
    * Checks if time is valid
@@ -11342,6 +11365,10 @@ const TUI_DATE_RANGE_VALUE_TRANSFORMER = new core_mjs_.InjectionToken('[TUI_DATE
  * Control value transformer for InputDateTime component
  */
 const TUI_DATE_TIME_VALUE_TRANSFORMER = new core_mjs_.InjectionToken('[TUI_DATE_TIME_VALUE_TRANSFORMER]');
+/**
+ * Control value transformer for InputTime component
+ */
+const TUI_TIME_VALUE_TRANSFORMER = new core_mjs_.InjectionToken('[TUI_TIME_VALUE_TRANSFORMER]');
 const TUI_PROMPT_WORDS = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.ET)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.Y)('prompt'));
 const TUI_CANCEL_WORD = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.ET)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.Y)('cancel'));
 const TUI_DONE_WORD = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.ET)((0,taiga_ui_i18n_tools/* tuiExtractI18n */.Y)('done'));
@@ -13306,7 +13333,7 @@ let TuiToggleComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [taiga_ui_core_components_loader/* TuiLoaderComponent */.jT, taiga_ui_core_components_svg/* TuiSvgComponent */._Y, taiga_ui_core_directives_wrapper/* TuiWrapperDirective */.l, common_mjs_.NgIf, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.OA, TuiCheckedDirective, TuiFocusableDirective, TuiFocusedDirective, TuiFocusVisibleDirective],
-    styles: ["[_nghost-%COMP%]{position:relative;display:inline-block;vertical-align:middle;overflow:hidden;border-radius:6.25rem}[data-size=m][_nghost-%COMP%]{width:2rem;height:1rem}[data-size=l][_nghost-%COMP%]{width:3rem;height:1.5rem}.t-checkbox[_ngcontent-%COMP%]{padding:0;margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;height:100%;width:100%;opacity:0;cursor:pointer}.t-checkbox[_ngcontent-%COMP%]:-webkit-autofill, .t-checkbox[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-checkbox[_ngcontent-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}@supports (-webkit-touch-callout: none){.t-checkbox[_ngcontent-%COMP%]:active{font-size:1rem}}._disabled[_nghost-%COMP%]   .t-checkbox[_ngcontent-%COMP%]{pointer-events:none;cursor:default}.t-toggle[_ngcontent-%COMP%]{transition-property:transform;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;display:flex;align-items:center;justify-content:center}[data-size=m][_nghost-%COMP%]   .t-toggle[_ngcontent-%COMP%]{width:3rem;height:1rem;transform:translate(-1rem)}[data-size=l][_nghost-%COMP%]   .t-toggle[_ngcontent-%COMP%]{width:4.5rem;height:1.5rem;transform:translate(-1.5rem)}._checked[_nghost-%COMP%]   .t-toggle[_ngcontent-%COMP%]{transform:translate(0)}.t-circle[_ngcontent-%COMP%]{margin:.125rem 0;flex-shrink:0;border-radius:100%;background-color:var(--tui-base-01)}._disabled[_nghost-%COMP%]   .t-circle_light[_ngcontent-%COMP%]{opacity:.24}[data-size=m][_nghost-%COMP%]   .t-circle[_ngcontent-%COMP%]{width:.75rem;height:.75rem}[data-size=l][_nghost-%COMP%]   .t-circle[_ngcontent-%COMP%]{width:1rem;height:1rem}._disabled[_nghost-%COMP%]   .t-circle[_ngcontent-%COMP%]{background-color:var(--tui-base-01)}.t-loader[_ngcontent-%COMP%]{min-width:auto}[_nghost-%COMP%]:not(._checked)   .t-loader[_ngcontent-%COMP%]{color:var(--tui-base-06)}[_nghost-%COMP%]:not(._checked)._disabled   .t-loader[_ngcontent-%COMP%]{color:var(--tui-base-05)}[_nghost-%COMP%]:not(._checked)[data-mode=onDark]   .t-loader[_ngcontent-%COMP%]{color:var(--tui-text-03-night)}[_nghost-%COMP%]:not(._checked)[data-mode=onDark]._disabled   .t-loader[_ngcontent-%COMP%]{color:var(--tui-clear-inverse-active)}[_nghost-%COMP%]:not(._checked)[data-mode=onLight]   .t-loader[_ngcontent-%COMP%]{color:var(--tui-text-03)}[_nghost-%COMP%]:not(._checked)[data-mode=onLight]._disabled   .t-loader[_ngcontent-%COMP%]{color:var(--tui-clear-active)}[data-size=m][_nghost-%COMP%]   .t-loader[_ngcontent-%COMP%]{width:.75rem;margin:0 .2rem;transform:scale(.75)}[data-size=l][_nghost-%COMP%]   .t-loader[_ngcontent-%COMP%]{width:1rem;margin:0 .25rem}.t-icon-wrapper[_ngcontent-%COMP%]{display:flex}.t-icon[_ngcontent-%COMP%]{opacity:.8}.t-icon_off[_ngcontent-%COMP%]{color:var(--tui-base-06)}._disabled[_nghost-%COMP%]   .t-icon_off[_ngcontent-%COMP%]{color:var(--tui-base-05)}[data-mode=onDark][_nghost-%COMP%]   .t-icon_off[_ngcontent-%COMP%]{color:var(--tui-text-03-night)}[data-mode=onDark]._disabled[_nghost-%COMP%]   .t-icon_off[_ngcontent-%COMP%]{color:var(--tui-clear-inverse-active)}[data-mode=onLight][_nghost-%COMP%]   .t-icon_off[_ngcontent-%COMP%]{color:var(--tui-text-03)}[data-mode=onLight]._disabled[_nghost-%COMP%]   .t-icon_off[_ngcontent-%COMP%]{color:var(--tui-clear-active)}[data-size=m][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{width:1rem;height:1rem;transform:scale(.75)}[data-size=l][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{margin:0 .125rem;width:1.5rem;height:1.5rem}[_nghost-%COMP%]:hover   .t-icon[_ngcontent-%COMP%]{opacity:1}"],
+    styles: ["[_nghost-%COMP%]{position:relative;display:inline-block;vertical-align:middle;overflow:hidden;border-radius:6.25rem}[data-size=m][_nghost-%COMP%]{width:2rem;height:1rem}[data-size=l][_nghost-%COMP%]{width:3rem;height:1.5rem}.t-checkbox[_ngcontent-%COMP%]{padding:0;margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;height:100%;width:100%;opacity:0;cursor:pointer}.t-checkbox[_ngcontent-%COMP%]:-webkit-autofill, .t-checkbox[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-checkbox[_ngcontent-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}._disabled[_nghost-%COMP%]   .t-checkbox[_ngcontent-%COMP%]{pointer-events:none;cursor:default}.t-toggle[_ngcontent-%COMP%]{transition-property:transform;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;display:flex;align-items:center;justify-content:center}[data-size=m][_nghost-%COMP%]   .t-toggle[_ngcontent-%COMP%]{width:3rem;height:1rem;transform:translate(-1rem)}[data-size=l][_nghost-%COMP%]   .t-toggle[_ngcontent-%COMP%]{width:4.5rem;height:1.5rem;transform:translate(-1.5rem)}._checked[_nghost-%COMP%]   .t-toggle[_ngcontent-%COMP%]{transform:translate(0)}.t-circle[_ngcontent-%COMP%]{margin:.125rem 0;flex-shrink:0;border-radius:100%;background-color:var(--tui-base-01)}._disabled[_nghost-%COMP%]   .t-circle_light[_ngcontent-%COMP%]{opacity:.24}[data-size=m][_nghost-%COMP%]   .t-circle[_ngcontent-%COMP%]{width:.75rem;height:.75rem}[data-size=l][_nghost-%COMP%]   .t-circle[_ngcontent-%COMP%]{width:1rem;height:1rem}._disabled[_nghost-%COMP%]   .t-circle[_ngcontent-%COMP%]{background-color:var(--tui-base-01)}.t-loader[_ngcontent-%COMP%]{min-width:auto}[_nghost-%COMP%]:not(._checked)   .t-loader[_ngcontent-%COMP%]{color:var(--tui-base-06)}[_nghost-%COMP%]:not(._checked)._disabled   .t-loader[_ngcontent-%COMP%]{color:var(--tui-base-05)}[_nghost-%COMP%]:not(._checked)[data-mode=onDark]   .t-loader[_ngcontent-%COMP%]{color:var(--tui-text-03-night)}[_nghost-%COMP%]:not(._checked)[data-mode=onDark]._disabled   .t-loader[_ngcontent-%COMP%]{color:var(--tui-clear-inverse-active)}[_nghost-%COMP%]:not(._checked)[data-mode=onLight]   .t-loader[_ngcontent-%COMP%]{color:var(--tui-text-03)}[_nghost-%COMP%]:not(._checked)[data-mode=onLight]._disabled   .t-loader[_ngcontent-%COMP%]{color:var(--tui-clear-active)}[data-size=m][_nghost-%COMP%]   .t-loader[_ngcontent-%COMP%]{width:.75rem;margin:0 .2rem;transform:scale(.75)}[data-size=l][_nghost-%COMP%]   .t-loader[_ngcontent-%COMP%]{width:1rem;margin:0 .25rem}.t-icon-wrapper[_ngcontent-%COMP%]{display:flex}.t-icon[_ngcontent-%COMP%]{opacity:.8}.t-icon_off[_ngcontent-%COMP%]{color:var(--tui-base-06)}._disabled[_nghost-%COMP%]   .t-icon_off[_ngcontent-%COMP%]{color:var(--tui-base-05)}[data-mode=onDark][_nghost-%COMP%]   .t-icon_off[_ngcontent-%COMP%]{color:var(--tui-text-03-night)}[data-mode=onDark]._disabled[_nghost-%COMP%]   .t-icon_off[_ngcontent-%COMP%]{color:var(--tui-clear-inverse-active)}[data-mode=onLight][_nghost-%COMP%]   .t-icon_off[_ngcontent-%COMP%]{color:var(--tui-text-03)}[data-mode=onLight]._disabled[_nghost-%COMP%]   .t-icon_off[_ngcontent-%COMP%]{color:var(--tui-clear-active)}[data-size=m][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{width:1rem;height:1rem;transform:scale(.75)}[data-size=l][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{margin:0 .125rem;width:1.5rem;height:1.5rem}[_nghost-%COMP%]:hover   .t-icon[_ngcontent-%COMP%]{opacity:1}"],
     changeDetection: 0
   });
   return TuiToggleComponent;
@@ -15850,7 +15877,7 @@ let TuiValueAccessorModule = /*#__PURE__*/(() => {
 
 
 //# sourceMappingURL=taiga-ui-kit-directives-value-accessor.js.map
-;// CONCATENATED MODULE: tslib
+;// CONCATENATED MODULE: ./node_modules/@maskito/angular/node_modules/tslib/tslib.es6.mjs
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
 
@@ -15905,7 +15932,7 @@ function __rest(s, e) {
   return t;
 }
 
-function tslib_decorate(decorators, target, key, desc) {
+function tslib_es6_decorate(decorators, target, key, desc) {
   var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
   if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
   else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -16192,11 +16219,11 @@ function __disposeResources(env) {
   return next();
 }
 
-/* harmony default export */ const tslib = ({
+/* harmony default export */ const tslib_tslib_es6 = ({
   __extends,
   __assign,
   __rest,
-  __decorate: tslib_decorate,
+  __decorate: tslib_es6_decorate,
   __param,
   __metadata,
   __awaiter,
@@ -16568,7 +16595,7 @@ let TuiInputNumberComponent = /*#__PURE__*/(() => {
       }
       if (this.isNativeValueNotFinished) {
         this.unfinishedValue = nativeValue;
-        this.value = parsedValue;
+        this.cdr.markForCheck();
         return;
       }
       if (parsedValue < this.computedMin || parsedValue > this.computedMax) {
@@ -16581,7 +16608,7 @@ let TuiInputNumberComponent = /*#__PURE__*/(() => {
       const nativeNumberValue = this.unfinishedValue ? maskitoParseNumber(this.unfinishedValue, this.numberFormat.decimalSeparator) : this.nativeNumberValue;
       this.unfinishedValue = null;
       if (Number.isNaN(nativeNumberValue)) {
-        this.nativeValue = focused ? this.computedPrefix + this.computedPostfix : '';
+        this.nativeValue = focused && !this.readOnly ? this.computedPrefix + this.computedPostfix : '';
         this.value = null;
         return;
       }
@@ -17651,7 +17678,7 @@ let TuiTagComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [taiga_ui_core_components_loader/* TuiLoaderComponent */.jT, taiga_ui_core_components_svg/* TuiSvgComponent */._Y, common_mjs_.NgIf, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.OA, fesm2022_forms/* DefaultValueAccessor */.me, fesm2022_forms/* NgControlStatus */.BC, fesm2022_forms/* NgModel */.vS],
-    styles: ["[_nghost-%COMP%]{transition-property:background;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;position:relative;display:inline-block;font:var(--tui-font-text-s);line-height:1.25rem;max-width:100%;cursor:default;outline:none;text-decoration:none;padding:0;border:0}[_nghost-%COMP%]:after{transition-property:background;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;position:absolute;top:0;left:0;width:100%;height:100%;content:\"\";box-sizing:border-box;border-radius:inherit;pointer-events:none}._hoverable[_nghost-%COMP%]:hover[data-status=custom]:after, ._hoverable[_nghost-%COMP%]:active[data-status=custom]:after{background-color:var(--tui-clear)}[_nghost-%COMP%]:focus:after{border:2px solid var(--tui-focus)}[data-size=s][_nghost-%COMP%]{font:var(--tui-font-text-xs);line-height:1.25rem;border-radius:var(--tui-radius-xs)}[data-size=m][_nghost-%COMP%]{border-radius:var(--tui-radius-xs)}[data-size=l][_nghost-%COMP%]{border-radius:var(--tui-radius-s)}[data-status=primary][_nghost-%COMP%]{background-color:var(--tui-primary);color:var(--tui-primary-text)}[data-status=primary]._hoverable[_nghost-%COMP%]:hover{background-color:var(--tui-primary-hover)}[data-status=primary]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-primary-active)}[data-status=error][_nghost-%COMP%]{background-color:var(--tui-error-bg);color:var(--tui-text-01)}[data-status=error]._hoverable[_nghost-%COMP%]:hover, [data-status=error]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-error-bg-hover)}[data-status=error][data-mode=onDark][_nghost-%COMP%]{background-color:var(--tui-error-bg-night);color:var(--tui-text-01-night)}[data-status=error][data-mode=onDark]._hoverable[_nghost-%COMP%]:hover, [data-status=error][data-mode=onDark]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-error-bg-night-hover)}[data-status=success][_nghost-%COMP%]{background-color:var(--tui-success-bg);color:var(--tui-text-01)}[data-status=success]._hoverable[_nghost-%COMP%]:hover, [data-status=success]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-success-bg-hover)}[data-status=success][data-mode=onDark][_nghost-%COMP%]{background-color:var(--tui-success-bg-night);color:var(--tui-text-01-night)}[data-status=success][data-mode=onDark]._hoverable[_nghost-%COMP%]:hover, [data-status=success][data-mode=onDark]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-success-bg-night-hover)}[data-status=warning][_nghost-%COMP%]{background-color:var(--tui-warning-bg);color:var(--tui-text-01)}[data-status=warning]._hoverable[_nghost-%COMP%]:hover, [data-status=warning]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-warning-bg-hover)}[data-status=warning][data-mode=onDark][_nghost-%COMP%]{background-color:var(--tui-warning-bg-night);color:var(--tui-text-01-night)}[data-status=warning][data-mode=onDark]._hoverable[_nghost-%COMP%]:hover, [data-status=warning][data-mode=onDark]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-warning-bg-night-hover)}[data-status=default][_nghost-%COMP%]{color:var(--tui-text-01-night);background-color:var(--tui-base-06)}[data-status=default][_nghost-%COMP%]:not([data-mode])._hoverable:hover{background-color:var(--tui-base-07)}[data-status=default][_nghost-%COMP%]:not([data-mode])._hoverable:active{background-color:var(--tui-base-08)}[data-status=default][data-mode=onDark][_nghost-%COMP%]{color:var(--tui-text-01-night);background-color:var(--tui-clear-inverse)}[data-status=default][data-mode=onDark]._hoverable[_nghost-%COMP%]:hover{background-color:var(--tui-clear-inverse-hover)}[data-status=default][data-mode=onDark]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-clear-inverse-active)}[data-status=default][data-mode=onDark][_nghost-%COMP%]:focus:after{border:2px solid var(--tui-base-01)}[data-status=default][data-mode=onLight][_nghost-%COMP%]{background-color:var(--tui-clear);color:var(--tui-text-01)}[data-status=default][data-mode=onLight]._hoverable[_nghost-%COMP%]:hover{background-color:var(--tui-clear-hover)}[data-status=default][data-mode=onLight]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-clear-active)}._editing[_nghost-%COMP%]{background:transparent!important}._disabled[_nghost-%COMP%]{pointer-events:none;opacity:var(--tui-disabled-opacity)}._hoverable[_nghost-%COMP%]{cursor:pointer}._autocolor[_nghost-%COMP%]{color:#000c}.t-text[_ngcontent-%COMP%]{white-space:pre;overflow:hidden;text-overflow:ellipsis;padding-right:.02em}.t-tag[_ngcontent-%COMP%]{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:relative;display:flex;width:auto;align-items:center;font:inherit;border-radius:inherit}[data-size=s][_nghost-%COMP%]   .t-tag[_ngcontent-%COMP%]{height:1.25rem;padding:0 .375rem}[data-size=m][_nghost-%COMP%]   .t-tag[_ngcontent-%COMP%]{height:var(--tui-height-xs);padding:0 .5rem}[data-size=l][_nghost-%COMP%]   .t-tag[_ngcontent-%COMP%]{height:var(--tui-height-s);padding:0 .75rem}._editing[_nghost-%COMP%]   .t-tag[_ngcontent-%COMP%]{visibility:hidden}.t-edit[_ngcontent-%COMP%]{margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;font:inherit;color:var(--tui-text-01);width:100%;height:100%;box-sizing:border-box;padding:0 .5rem}.t-edit[_ngcontent-%COMP%]:-webkit-autofill, .t-edit[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-edit[_ngcontent-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}@supports (-webkit-touch-callout: none){.t-edit[_ngcontent-%COMP%]:active{font-size:1rem}}[data-size=s][_nghost-%COMP%]   .t-edit[_ngcontent-%COMP%]{padding:0 .375rem}[data-size=m][_nghost-%COMP%]   .t-edit[_ngcontent-%COMP%]{padding:0 .5rem}[data-size=l][_nghost-%COMP%]   .t-edit[_ngcontent-%COMP%]{padding:0 .75rem}.t-icon[_ngcontent-%COMP%]{width:1rem;height:100%;cursor:pointer;pointer-events:all;opacity:var(--tui-disabled-opacity);-webkit-margin-start:.25rem;margin-inline-start:.25rem;-webkit-margin-end:-.25rem;margin-inline-end:-.25rem}.t-icon[_ngcontent-%COMP%]:hover{opacity:1}[data-size=s][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{-webkit-margin-start:0;margin-inline-start:0}[data-size=s][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]     svg{transform:scale(.75)}.t-content[_ngcontent-%COMP%]{width:1rem;height:1rem;-webkit-margin-end:.25rem;margin-inline-end:.25rem}"],
+    styles: ["[_nghost-%COMP%]{transition-property:background;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;position:relative;display:inline-block;font:var(--tui-font-text-s);line-height:1.25rem;max-width:100%;cursor:default;outline:none;text-decoration:none;padding:0;border:0}[_nghost-%COMP%]:after{transition-property:background;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;position:absolute;top:0;left:0;width:100%;height:100%;content:\"\";box-sizing:border-box;border-radius:inherit;pointer-events:none}._hoverable[_nghost-%COMP%]:hover[data-status=custom]:after, ._hoverable[_nghost-%COMP%]:active[data-status=custom]:after{background-color:var(--tui-clear)}[_nghost-%COMP%]:focus:after{border:2px solid var(--tui-focus)}[data-size=s][_nghost-%COMP%]{font:var(--tui-font-text-xs);line-height:1.25rem;border-radius:var(--tui-radius-xs)}[data-size=m][_nghost-%COMP%]{border-radius:var(--tui-radius-xs)}[data-size=l][_nghost-%COMP%]{border-radius:var(--tui-radius-s)}[data-status=primary][_nghost-%COMP%]{background-color:var(--tui-primary);color:var(--tui-primary-text)}[data-status=primary]._hoverable[_nghost-%COMP%]:hover{background-color:var(--tui-primary-hover)}[data-status=primary]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-primary-active)}[data-status=error][_nghost-%COMP%]{background-color:var(--tui-error-bg);color:var(--tui-text-01)}[data-status=error]._hoverable[_nghost-%COMP%]:hover, [data-status=error]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-error-bg-hover)}[data-status=error][data-mode=onDark][_nghost-%COMP%]{background-color:var(--tui-error-bg-night);color:var(--tui-text-01-night)}[data-status=error][data-mode=onDark]._hoverable[_nghost-%COMP%]:hover, [data-status=error][data-mode=onDark]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-error-bg-night-hover)}[data-status=success][_nghost-%COMP%]{background-color:var(--tui-success-bg);color:var(--tui-text-01)}[data-status=success]._hoverable[_nghost-%COMP%]:hover, [data-status=success]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-success-bg-hover)}[data-status=success][data-mode=onDark][_nghost-%COMP%]{background-color:var(--tui-success-bg-night);color:var(--tui-text-01-night)}[data-status=success][data-mode=onDark]._hoverable[_nghost-%COMP%]:hover, [data-status=success][data-mode=onDark]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-success-bg-night-hover)}[data-status=warning][_nghost-%COMP%]{background-color:var(--tui-warning-bg);color:var(--tui-text-01)}[data-status=warning]._hoverable[_nghost-%COMP%]:hover, [data-status=warning]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-warning-bg-hover)}[data-status=warning][data-mode=onDark][_nghost-%COMP%]{background-color:var(--tui-warning-bg-night);color:var(--tui-text-01-night)}[data-status=warning][data-mode=onDark]._hoverable[_nghost-%COMP%]:hover, [data-status=warning][data-mode=onDark]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-warning-bg-night-hover)}[data-status=default][_nghost-%COMP%]{color:var(--tui-text-01-night);background-color:var(--tui-base-06)}[data-status=default][_nghost-%COMP%]:not([data-mode])._hoverable:hover{background-color:var(--tui-base-07)}[data-status=default][_nghost-%COMP%]:not([data-mode])._hoverable:active{background-color:var(--tui-base-08)}[data-status=default][data-mode=onDark][_nghost-%COMP%]{color:var(--tui-text-01-night);background-color:var(--tui-clear-inverse)}[data-status=default][data-mode=onDark]._hoverable[_nghost-%COMP%]:hover{background-color:var(--tui-clear-inverse-hover)}[data-status=default][data-mode=onDark]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-clear-inverse-active)}[data-status=default][data-mode=onDark][_nghost-%COMP%]:focus:after{border:2px solid var(--tui-base-01)}[data-status=default][data-mode=onLight][_nghost-%COMP%]{background-color:var(--tui-clear);color:var(--tui-text-01)}[data-status=default][data-mode=onLight]._hoverable[_nghost-%COMP%]:hover{background-color:var(--tui-clear-hover)}[data-status=default][data-mode=onLight]._hoverable[_nghost-%COMP%]:active{background-color:var(--tui-clear-active)}._editing[_nghost-%COMP%]{background:transparent!important}._disabled[_nghost-%COMP%]{pointer-events:none;opacity:var(--tui-disabled-opacity)}._hoverable[_nghost-%COMP%]{cursor:pointer}._autocolor[_nghost-%COMP%]{color:#000c}.t-text[_ngcontent-%COMP%]{white-space:pre;overflow:hidden;text-overflow:ellipsis;padding-right:.02em}.t-tag[_ngcontent-%COMP%]{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:relative;display:flex;width:auto;align-items:center;font:inherit;border-radius:inherit}[data-size=s][_nghost-%COMP%]   .t-tag[_ngcontent-%COMP%]{height:1.25rem;padding:0 .375rem}[data-size=m][_nghost-%COMP%]   .t-tag[_ngcontent-%COMP%]{height:var(--tui-height-xs);padding:0 .5rem}[data-size=l][_nghost-%COMP%]   .t-tag[_ngcontent-%COMP%]{height:var(--tui-height-s);padding:0 .75rem}._editing[_nghost-%COMP%]   .t-tag[_ngcontent-%COMP%]{visibility:hidden}.t-edit[_ngcontent-%COMP%]{margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;font:inherit;color:var(--tui-text-01);width:100%;height:100%;box-sizing:border-box;padding:0 .5rem}.t-edit[_ngcontent-%COMP%]:-webkit-autofill, .t-edit[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-edit[_ngcontent-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}[data-size=s][_nghost-%COMP%]   .t-edit[_ngcontent-%COMP%]{padding:0 .375rem}[data-size=m][_nghost-%COMP%]   .t-edit[_ngcontent-%COMP%]{padding:0 .5rem}[data-size=l][_nghost-%COMP%]   .t-edit[_ngcontent-%COMP%]{padding:0 .75rem}.t-icon[_ngcontent-%COMP%]{width:1rem;height:100%;cursor:pointer;pointer-events:all;opacity:var(--tui-disabled-opacity);-webkit-margin-start:.25rem;margin-inline-start:.25rem;-webkit-margin-end:-.25rem;margin-inline-end:-.25rem}.t-icon[_ngcontent-%COMP%]:hover{opacity:1}[data-size=s][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]{-webkit-margin-start:0;margin-inline-start:0}[data-size=s][_nghost-%COMP%]   .t-icon[_ngcontent-%COMP%]     svg{transform:scale(.75)}.t-content[_ngcontent-%COMP%]{width:1rem;height:1rem;-webkit-margin-end:.25rem;margin-inline-end:.25rem}"],
     changeDetection: 0
   });
   return TuiTagComponent;
@@ -18796,7 +18823,7 @@ let taiga_ui_kit_components_radio_TuiRadioComponent = /*#__PURE__*/(/* unused pu
       }
     },
     dependencies: [i1.TuiWrapperDirective, i2.TuiCheckedDirective, i2.TuiFocusableDirective, i2.TuiFocusedDirective, i2.TuiFocusVisibleDirective],
-    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);position:relative;display:block;flex-shrink:0;border-radius:100%}[data-size=m][_nghost-%COMP%]{width:1rem;height:1rem}[data-size=l][_nghost-%COMP%]{width:1.5rem;height:1.5rem}._readonly[_nghost-%COMP%]{pointer-events:none}.t-mark[_ngcontent-%COMP%]{transition-property:transform;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;position:absolute;background-color:currentColor;border-radius:100%;transform:scale(0)}.t-mark_visible[_ngcontent-%COMP%]{transform:scale(1)}[data-size=m][_nghost-%COMP%]   .t-mark[_ngcontent-%COMP%]{margin:.25rem;width:.5rem;height:.5rem}[data-size=l][_nghost-%COMP%]   .t-mark[_ngcontent-%COMP%]{margin:.4375rem;width:.625rem;height:.625rem}.t-native[_ngcontent-%COMP%]{padding:0;margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;cursor:pointer}.t-native[_ngcontent-%COMP%]:-webkit-autofill, .t-native[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-native[_ngcontent-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}@supports (-webkit-touch-callout: none){.t-native[_ngcontent-%COMP%]:active{font-size:1rem}}._disabled[_nghost-%COMP%]   .t-native[_ngcontent-%COMP%]{cursor:default}"],
+    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);position:relative;display:block;flex-shrink:0;border-radius:100%}[data-size=m][_nghost-%COMP%]{width:1rem;height:1rem}[data-size=l][_nghost-%COMP%]{width:1.5rem;height:1.5rem}._readonly[_nghost-%COMP%]{pointer-events:none}.t-mark[_ngcontent-%COMP%]{transition-property:transform;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;position:absolute;background-color:currentColor;border-radius:100%;transform:scale(0)}.t-mark_visible[_ngcontent-%COMP%]{transform:scale(1)}[data-size=m][_nghost-%COMP%]   .t-mark[_ngcontent-%COMP%]{margin:.25rem;width:.5rem;height:.5rem}[data-size=l][_nghost-%COMP%]   .t-mark[_ngcontent-%COMP%]{margin:.4375rem;width:.625rem;height:.625rem}.t-native[_ngcontent-%COMP%]{padding:0;margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;cursor:pointer}.t-native[_ngcontent-%COMP%]:-webkit-autofill, .t-native[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-native[_ngcontent-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}._disabled[_nghost-%COMP%]   .t-native[_ngcontent-%COMP%]{cursor:default}"],
     changeDetection: 0
   });
   return TuiRadioComponent;
@@ -18956,7 +18983,7 @@ let TuiRadioBlockComponent = /*#__PURE__*/(/* unused pure expression or super */
       }
     },
     dependencies: [i1.TuiRadioComponent, i2.NgIf, i3.TuiWrapperDirective, i4.NgControlStatus, i4.NgModel, i2.AsyncPipe],
-    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);display:inline-block;vertical-align:top;align-items:flex-start;border-radius:var(--tui-radius-m)}[data-size=xs][_nghost-%COMP%]{font:var(--tui-font-text-xs)}[data-size=m][_nghost-%COMP%], [data-size=l][_nghost-%COMP%]{font:var(--tui-font-text-m)}._disabled[_nghost-%COMP%], ._readonly[_nghost-%COMP%]{pointer-events:none}.t-wrapper[_ngcontent-%COMP%]{position:relative;display:flex;align-items:inherit;box-sizing:border-box;border-radius:inherit;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;user-select:none;padding:0 1rem 0 0}[data-size=xs][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding-right:.5rem}[data-align=right][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{flex-direction:row-reverse;padding:0 0 0 1rem}[data-align=right][data-size=xs][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding-left:.5rem}[data-size=xs]._hidden_input[_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 .5rem}[data-size=xs]._hidden_input[_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:not(._focused):after{border-width:1px}[data-size=s]._hidden_input[_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 1rem}[data-size=m]._hidden_input[_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 1.5rem}[data-size=l]._hidden_input[_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 2.25rem}[data-size=xs][_nghost-%COMP%]   .t-view[_ngcontent-%COMP%]{margin:calc(var(--tui-height-xs) / 2 - .5rem) .25rem;transform:scale(.75)}[data-size=s][_nghost-%COMP%]   .t-view[_ngcontent-%COMP%]{margin:calc(var(--tui-height-s) / 2 - .5rem) .5rem}[data-size=m][_nghost-%COMP%]   .t-view[_ngcontent-%COMP%]{margin:calc(var(--tui-height-m) / 2 - .5rem) .75rem}[data-size=l][_nghost-%COMP%]   .t-view[_ngcontent-%COMP%]{margin:calc(var(--tui-height-l) / 2 - .75rem) 1rem}._hidden_input[_nghost-%COMP%]   .t-view[_ngcontent-%COMP%]{position:absolute;height:1px;width:1px;margin:-1px;border:0;padding:0;overflow:hidden;clip:rect(0,0,0,0);-webkit-clip-path:inset(0);clip-path:inset(0)}.t-label[_ngcontent-%COMP%]{display:flex;flex-grow:1;align-self:flex-start;align-items:center;overflow:hidden}[data-size=xs][_nghost-%COMP%]   .t-label[_ngcontent-%COMP%]{min-height:var(--tui-height-xs)}[data-size=s][_nghost-%COMP%]   .t-label[_ngcontent-%COMP%]{min-height:var(--tui-height-s)}[data-size=m][_nghost-%COMP%]   .t-label[_ngcontent-%COMP%]{min-height:var(--tui-height-m)}[data-size=l][_nghost-%COMP%]   .t-label[_ngcontent-%COMP%]{min-height:var(--tui-height-l)}._hidden_input[_nghost-%COMP%]   .t-label[_ngcontent-%COMP%]{text-align:center;justify-content:center}.t-content[_ngcontent-%COMP%]{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}"],
+    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);display:inline-block;vertical-align:top;align-items:flex-start;border-radius:var(--tui-radius-m)}[data-size=xs][_nghost-%COMP%]{font:var(--tui-font-text-xs)}[data-size=m][_nghost-%COMP%], [data-size=l][_nghost-%COMP%]{font:var(--tui-font-text-m)}._disabled[_nghost-%COMP%], ._readonly[_nghost-%COMP%]{pointer-events:none}.t-wrapper[_ngcontent-%COMP%]{position:relative;display:flex;align-items:inherit;box-sizing:border-box;border-radius:inherit;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;user-select:none;padding:0 1rem 0 0}[data-size=xs][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding-right:.5rem}[data-align=right][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{flex-direction:row-reverse;padding:0 0 0 1rem}[data-align=right][data-size=xs][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding-left:.5rem}[data-size=xs]._hidden_input[_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 .5rem}[data-size=xs]._hidden_input[_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:not(._focused):after{border-width:1px}[data-size=s]._hidden_input[_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding-s)}[data-size=m]._hidden_input[_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding-m)}[data-size=l]._hidden_input[_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding-l)}[data-size=xs][_nghost-%COMP%]   .t-view[_ngcontent-%COMP%]{margin:calc(var(--tui-height-xs) / 2 - .5rem) .25rem;transform:scale(.75)}[data-size=s][_nghost-%COMP%]   .t-view[_ngcontent-%COMP%]{margin:calc(var(--tui-height-s) / 2 - .5rem) .5rem}[data-size=m][_nghost-%COMP%]   .t-view[_ngcontent-%COMP%]{margin:calc(var(--tui-height-m) / 2 - .5rem) .75rem}[data-size=l][_nghost-%COMP%]   .t-view[_ngcontent-%COMP%]{margin:calc(var(--tui-height-l) / 2 - .75rem) 1rem}._hidden_input[_nghost-%COMP%]   .t-view[_ngcontent-%COMP%]{position:absolute;height:1px;width:1px;margin:-1px;border:0;padding:0;overflow:hidden;clip:rect(0,0,0,0);-webkit-clip-path:inset(0);clip-path:inset(0)}.t-label[_ngcontent-%COMP%]{display:flex;flex-grow:1;align-self:flex-start;align-items:center;overflow:hidden}[data-size=xs][_nghost-%COMP%]   .t-label[_ngcontent-%COMP%]{min-height:var(--tui-height-xs)}[data-size=s][_nghost-%COMP%]   .t-label[_ngcontent-%COMP%]{min-height:var(--tui-height-s)}[data-size=m][_nghost-%COMP%]   .t-label[_ngcontent-%COMP%]{min-height:var(--tui-height-m)}[data-size=l][_nghost-%COMP%]   .t-label[_ngcontent-%COMP%]{min-height:var(--tui-height-l)}._hidden_input[_nghost-%COMP%]   .t-label[_ngcontent-%COMP%]{text-align:center;justify-content:center}.t-content[_ngcontent-%COMP%]{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}"],
     changeDetection: 0
   });
   return TuiRadioBlockComponent;
@@ -19237,7 +19264,7 @@ let taiga_ui_kit_components_checkbox_TuiCheckboxComponent = /*#__PURE__*/(/* unu
       }
     },
     dependencies: [i1.TuiPrimitiveCheckboxComponent, i2.TuiCheckedDirective, i2.TuiFocusableDirective, i2.TuiFocusedDirective, i2.TuiFocusVisibleDirective],
-    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);position:relative;display:block;flex-shrink:0}[data-size=m][_nghost-%COMP%]{width:1rem;height:1rem}[data-size=l][_nghost-%COMP%]{width:1.5rem;height:1.5rem}._readonly[_nghost-%COMP%]   tui-primitive-checkbox[_ngcontent-%COMP%]{pointer-events:none}.t-native[_ngcontent-%COMP%]{padding:0;margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;cursor:pointer}.t-native[_ngcontent-%COMP%]:-webkit-autofill, .t-native[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-native[_ngcontent-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}@supports (-webkit-touch-callout: none){.t-native[_ngcontent-%COMP%]:active{font-size:1rem}}"],
+    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);position:relative;display:block;flex-shrink:0}[data-size=m][_nghost-%COMP%]{width:1rem;height:1rem}[data-size=l][_nghost-%COMP%]{width:1.5rem;height:1.5rem}._readonly[_nghost-%COMP%]   tui-primitive-checkbox[_ngcontent-%COMP%]{pointer-events:none}.t-native[_ngcontent-%COMP%]{padding:0;margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;cursor:pointer}.t-native[_ngcontent-%COMP%]:-webkit-autofill, .t-native[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-native[_ngcontent-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}"],
     changeDetection: 0
   });
   return TuiCheckboxComponent;
@@ -20865,11 +20892,10 @@ function TuiDocNavigationComponent_tui_accordion_item_8_Template(rf, ctx) {
   if (rf & 1) {
     const _r10 = core_mjs_["ɵɵgetCurrentView"]();
     core_mjs_["ɵɵelementStart"](0, "tui-accordion-item", 21);
-    core_mjs_["ɵɵtwoWayListener"]("openChange", function TuiDocNavigationComponent_tui_accordion_item_8_Template_tui_accordion_item_openChange_0_listener($event) {
+    core_mjs_["ɵɵlistener"]("openChange", function TuiDocNavigationComponent_tui_accordion_item_8_Template_tui_accordion_item_openChange_0_listener($event) {
       const index_r11 = core_mjs_["ɵɵrestoreView"](_r10).index;
       const ctx_r3 = core_mjs_["ɵɵnextContext"]();
-      core_mjs_["ɵɵtwoWayBindingSet"](ctx_r3.openPagesArr[index_r11], $event) || (ctx_r3.openPagesArr[index_r11] = $event);
-      return core_mjs_["ɵɵresetView"]($event);
+      return core_mjs_["ɵɵresetView"]((ctx_r3.openPagesArr[index_r11] = $event));
     });
     core_mjs_["ɵɵelementStart"](1, "span", 22)(2, "strong");
     core_mjs_["ɵɵtext"](3);
@@ -20881,8 +20907,7 @@ function TuiDocNavigationComponent_tui_accordion_item_8_Template(rf, ctx) {
     const label_r15 = ctx.$implicit;
     const index_r11 = ctx.index;
     const ctx_r3 = core_mjs_["ɵɵnextContext"]();
-    core_mjs_["ɵɵproperty"]("borders", null);
-    core_mjs_["ɵɵtwoWayProperty"]("open", !!ctx_r3.openPagesArr[index_r11]);
+    core_mjs_["ɵɵproperty"]("borders", null)("open", !!ctx_r3.openPagesArr[index_r11]);
     core_mjs_["ɵɵadvance"](3);
     core_mjs_["ɵɵtextInterpolate"](label_r15);
   }
@@ -21216,66 +21241,75 @@ const _c11 = a0 => ({
 });
 function TuiDocPageComponent_tui_tag_3_Template(rf, ctx) {
   if (rf & 1) {
-    core_mjs_["ɵɵelement"](0, "tui-tag", 9);
+    core_mjs_["ɵɵelement"](0, "tui-tag", 10);
   }
 }
 function TuiDocPageComponent_tui_tag_4_Template(rf, ctx) {
   if (rf & 1) {
-    core_mjs_["ɵɵelement"](0, "tui-tag", 10);
+    core_mjs_["ɵɵelement"](0, "tui-tag", 11);
   }
   if (rf & 2) {
     const ctx_r0 = core_mjs_["ɵɵnextContext"]();
     core_mjs_["ɵɵproperty"]("autoColor", true)("value", ctx_r0.package);
   }
 }
-function TuiDocPageComponent_tui_tabs_with_more_5_ng_container_1_ng_container_1_a_1_Template(rf, ctx) {
+function TuiDocPageComponent_tui_tag_5_Template(rf, ctx) {
   if (rf & 1) {
-    core_mjs_["ɵɵelementStart"](0, "a", 14);
+    core_mjs_["ɵɵelement"](0, "tui-tag", 11);
+  }
+  if (rf & 2) {
+    const tag_r2 = ctx.$implicit;
+    core_mjs_["ɵɵproperty"]("autoColor", true)("value", tag_r2);
+  }
+}
+function TuiDocPageComponent_tui_tabs_with_more_6_ng_container_1_ng_container_1_a_1_Template(rf, ctx) {
+  if (rf & 1) {
+    core_mjs_["ɵɵelementStart"](0, "a", 15);
     core_mjs_["ɵɵpipe"](1, "tuiReplace");
     core_mjs_["ɵɵtext"](2);
     core_mjs_["ɵɵelementEnd"]();
   }
   if (rf & 2) {
-    const tabName_r3 = core_mjs_["ɵɵnextContext"]().ngIf;
-    const first_r4 = core_mjs_["ɵɵnextContext"]().first;
+    const tabName_r4 = core_mjs_["ɵɵnextContext"]().ngIf;
+    const first_r5 = core_mjs_["ɵɵnextContext"]().first;
     const ctx_r0 = core_mjs_["ɵɵnextContext"](2);
-    core_mjs_["ɵɵproperty"]("routerLink", first_r4 ? "./" : core_mjs_["ɵɵpipeBind3"](1, 3, tabName_r3, ctx_r0.from, ctx_r0.to))("routerLinkActiveOptions", core_mjs_["ɵɵpureFunction1"](7, _c11, first_r4));
+    core_mjs_["ɵɵproperty"]("routerLink", first_r5 ? "./" : core_mjs_["ɵɵpipeBind3"](1, 3, tabName_r4, ctx_r0.from, ctx_r0.to))("routerLinkActiveOptions", core_mjs_["ɵɵpureFunction1"](7, _c11, first_r5));
     core_mjs_["ɵɵadvance"](2);
-    core_mjs_["ɵɵtextInterpolate1"](" ", tabName_r3, " ");
+    core_mjs_["ɵɵtextInterpolate1"](" ", tabName_r4, " ");
   }
 }
-function TuiDocPageComponent_tui_tabs_with_more_5_ng_container_1_ng_container_1_Template(rf, ctx) {
+function TuiDocPageComponent_tui_tabs_with_more_6_ng_container_1_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     core_mjs_["ɵɵelementContainerStart"](0);
-    core_mjs_["ɵɵtemplate"](1, TuiDocPageComponent_tui_tabs_with_more_5_ng_container_1_ng_container_1_a_1_Template, 3, 9, "a", 13);
+    core_mjs_["ɵɵtemplate"](1, TuiDocPageComponent_tui_tabs_with_more_6_ng_container_1_ng_container_1_a_1_Template, 3, 9, "a", 14);
     core_mjs_["ɵɵelementContainerEnd"]();
   }
 }
-function TuiDocPageComponent_tui_tabs_with_more_5_ng_container_1_Template(rf, ctx) {
+function TuiDocPageComponent_tui_tabs_with_more_6_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     core_mjs_["ɵɵelementContainerStart"](0);
-    core_mjs_["ɵɵtemplate"](1, TuiDocPageComponent_tui_tabs_with_more_5_ng_container_1_ng_container_1_Template, 2, 0, "ng-container", 12);
+    core_mjs_["ɵɵtemplate"](1, TuiDocPageComponent_tui_tabs_with_more_6_ng_container_1_ng_container_1_Template, 2, 0, "ng-container", 13);
     core_mjs_["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
-    const tab_r5 = ctx.$implicit;
-    const index_r6 = ctx.index;
+    const tab_r6 = ctx.$implicit;
+    const index_r7 = ctx.index;
     const ctx_r0 = core_mjs_["ɵɵnextContext"](2);
     core_mjs_["ɵɵadvance"]();
-    core_mjs_["ɵɵproperty"]("ngIf", tab_r5.pageTab || ctx_r0.defaultTabs[index_r6]);
+    core_mjs_["ɵɵproperty"]("ngIf", tab_r6.pageTab || ctx_r0.defaultTabs[index_r7]);
   }
 }
-function TuiDocPageComponent_tui_tabs_with_more_5_Template(rf, ctx) {
+function TuiDocPageComponent_tui_tabs_with_more_6_Template(rf, ctx) {
   if (rf & 1) {
-    const _r2 = core_mjs_["ɵɵgetCurrentView"]();
-    core_mjs_["ɵɵelementStart"](0, "tui-tabs-with-more", 11);
-    core_mjs_["ɵɵtwoWayListener"]("activeItemIndexChange", function TuiDocPageComponent_tui_tabs_with_more_5_Template_tui_tabs_with_more_activeItemIndexChange_0_listener($event) {
-      core_mjs_["ɵɵrestoreView"](_r2);
+    const _r3 = core_mjs_["ɵɵgetCurrentView"]();
+    core_mjs_["ɵɵelementStart"](0, "tui-tabs-with-more", 12);
+    core_mjs_["ɵɵtwoWayListener"]("activeItemIndexChange", function TuiDocPageComponent_tui_tabs_with_more_6_Template_tui_tabs_with_more_activeItemIndexChange_0_listener($event) {
+      core_mjs_["ɵɵrestoreView"](_r3);
       const ctx_r0 = core_mjs_["ɵɵnextContext"]();
       core_mjs_["ɵɵtwoWayBindingSet"](ctx_r0.activeItemIndex, $event) || (ctx_r0.activeItemIndex = $event);
       return core_mjs_["ɵɵresetView"]($event);
     });
-    core_mjs_["ɵɵtemplate"](1, TuiDocPageComponent_tui_tabs_with_more_5_ng_container_1_Template, 2, 1, "ng-container", 8);
+    core_mjs_["ɵɵtemplate"](1, TuiDocPageComponent_tui_tabs_with_more_6_ng_container_1_Template, 2, 1, "ng-container", 9);
     core_mjs_["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -21285,35 +21319,35 @@ function TuiDocPageComponent_tui_tabs_with_more_5_Template(rf, ctx) {
     core_mjs_["ɵɵproperty"]("ngForOf", ctx_r0.tabConnectors);
   }
 }
-function TuiDocPageComponent_tui_doc_see_also_9_Template(rf, ctx) {
+function TuiDocPageComponent_tui_doc_see_also_10_Template(rf, ctx) {
   if (rf & 1) {
-    core_mjs_["ɵɵelement"](0, "tui-doc-see-also", 15);
+    core_mjs_["ɵɵelement"](0, "tui-doc-see-also", 16);
   }
   if (rf & 2) {
     const ctx_r0 = core_mjs_["ɵɵnextContext"]();
     core_mjs_["ɵɵproperty"]("seeAlso", ctx_r0.seeAlso);
   }
 }
-function TuiDocPageComponent_ng_container_10_ng_container_1_Template(rf, ctx) {
+function TuiDocPageComponent_ng_container_11_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
-    core_mjs_["ɵɵelementContainer"](0, 17);
+    core_mjs_["ɵɵelementContainer"](0, 18);
   }
   if (rf & 2) {
-    const tab_r7 = core_mjs_["ɵɵnextContext"]().$implicit;
-    core_mjs_["ɵɵproperty"]("ngTemplateOutlet", tab_r7.template);
+    const tab_r8 = core_mjs_["ɵɵnextContext"]().$implicit;
+    core_mjs_["ɵɵproperty"]("ngTemplateOutlet", tab_r8.template);
   }
 }
-function TuiDocPageComponent_ng_container_10_Template(rf, ctx) {
+function TuiDocPageComponent_ng_container_11_Template(rf, ctx) {
   if (rf & 1) {
     core_mjs_["ɵɵelementContainerStart"](0);
-    core_mjs_["ɵɵtemplate"](1, TuiDocPageComponent_ng_container_10_ng_container_1_Template, 1, 1, "ng-container", 16);
+    core_mjs_["ɵɵtemplate"](1, TuiDocPageComponent_ng_container_11_ng_container_1_Template, 1, 1, "ng-container", 17);
     core_mjs_["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
-    const index_r8 = ctx.index;
+    const index_r9 = ctx.index;
     const ctx_r0 = core_mjs_["ɵɵnextContext"]();
     core_mjs_["ɵɵadvance"]();
-    core_mjs_["ɵɵproperty"]("ngIf", index_r8 === ctx_r0.activeItemIndex);
+    core_mjs_["ɵɵproperty"]("ngIf", index_r9 === ctx_r0.activeItemIndex);
   }
 }
 let TuiDocCodeComponent = /*#__PURE__*/(() => {
@@ -22802,7 +22836,7 @@ let TuiLanguageSwitcherComponent = /*#__PURE__*/(/* unused pure expression or su
       this.switcher = switcher;
       this.flagPipe = flagPipe;
       this.language = new FormControl(tuiCapitalizeFirstLetter(this.switcher.language));
-      this.flags = new Map([['chinese', TuiCountryIsoCode.CN], ['dutch', TuiCountryIsoCode.NL], ['english', TuiCountryIsoCode.GB], ['french', TuiCountryIsoCode.FR], ['german', TuiCountryIsoCode.DE], ['italian', TuiCountryIsoCode.IT], ['polish', TuiCountryIsoCode.PL], ['portuguese', TuiCountryIsoCode.PT], ['russian', TuiCountryIsoCode.RU], ['spanish', TuiCountryIsoCode.ES], ['turkish', TuiCountryIsoCode.TR], ['ukrainian', TuiCountryIsoCode.UA], ['kazakh', TuiCountryIsoCode.KZ], ['malay', TuiCountryIsoCode.MY], ['vietnamese', TuiCountryIsoCode.VN]]);
+      this.flags = new Map([['chinese', TuiCountryIsoCode.CN], ['dutch', TuiCountryIsoCode.NL], ['english', TuiCountryIsoCode.GB], ['french', TuiCountryIsoCode.FR], ['hebrew', TuiCountryIsoCode.IL], ['german', TuiCountryIsoCode.DE], ['japan', TuiCountryIsoCode.JP], ['italian', TuiCountryIsoCode.IT], ['korean', TuiCountryIsoCode.KR], ['polish', TuiCountryIsoCode.PL], ['portuguese', TuiCountryIsoCode.PT], ['russian', TuiCountryIsoCode.RU], ['spanish', TuiCountryIsoCode.ES], ['turkish', TuiCountryIsoCode.TR], ['ukrainian', TuiCountryIsoCode.UA], ['kazakh', TuiCountryIsoCode.KZ], ['malay', TuiCountryIsoCode.MY], ['vietnamese', TuiCountryIsoCode.VN]]);
       this.names = Array.from(this.flags.keys());
     }
     /**
@@ -23017,6 +23051,7 @@ let TuiDocPageComponent = /*#__PURE__*/(() => {
       this.seeAlso = seeAlso;
       this.header = '';
       this.package = '';
+      this.tags = [];
       this.type = '';
       this.path = '';
       this.deprecated = false;
@@ -23047,28 +23082,29 @@ let TuiDocPageComponent = /*#__PURE__*/(() => {
     inputs: {
       header: "header",
       package: "package",
+      tags: "tags",
       type: "type",
       path: "path",
       deprecated: "deprecated"
     },
     features: [core_mjs_["ɵɵProvidersFeature"](PAGE_PROVIDERS)],
     ngContentSelectors: taiga_ui_addon_doc_components_c0,
-    decls: 11,
-    vars: 10,
-    consts: [[1, "t-header"], [1, "t-title"], ["status", "custom", "value", "deprecated", "class", "t-tag t-tag_deprecated", 4, "ngIf"], ["status", "custom", "class", "t-tag t-tag_package", 3, "autoColor", "value", 4, "ngIf"], ["class", "t-tabs", 3, "activeItemIndex", "activeItemIndexChange", 4, "ngIf"], [1, "t-source-code", 3, "header", "package", "path", "type"], [1, "t-content"], ["class", "t-see-also", 3, "seeAlso", 4, "ngIf"], [4, "ngFor", "ngForOf"], ["status", "custom", "value", "deprecated", 1, "t-tag", "t-tag_deprecated"], ["status", "custom", 1, "t-tag", "t-tag_package", 3, "autoColor", "value"], [1, "t-tabs", 3, "activeItemIndexChange", "activeItemIndex"], [4, "ngIf"], ["routerLinkActive", "", "tuiTab", "", 3, "routerLink", "routerLinkActiveOptions", 4, "tuiItem"], ["routerLinkActive", "", "tuiTab", "", 3, "routerLink", "routerLinkActiveOptions"], [1, "t-see-also", 3, "seeAlso"], [3, "ngTemplateOutlet", 4, "ngIf"], [3, "ngTemplateOutlet"]],
+    decls: 12,
+    vars: 11,
+    consts: [[1, "t-header"], [1, "t-title"], ["status", "custom", "value", "deprecated", "class", "t-tag t-tag_deprecated", 4, "ngIf"], ["status", "custom", "class", "t-tag t-tag_package", 3, "autoColor", "value", 4, "ngIf"], ["status", "custom", "class", "t-tag t-tag_package", 3, "autoColor", "value", 4, "ngFor", "ngForOf"], ["class", "t-tabs", 3, "activeItemIndex", "activeItemIndexChange", 4, "ngIf"], [1, "t-source-code", 3, "header", "package", "path", "type"], [1, "t-content"], ["class", "t-see-also", 3, "seeAlso", 4, "ngIf"], [4, "ngFor", "ngForOf"], ["status", "custom", "value", "deprecated", 1, "t-tag", "t-tag_deprecated"], ["status", "custom", 1, "t-tag", "t-tag_package", 3, "autoColor", "value"], [1, "t-tabs", 3, "activeItemIndexChange", "activeItemIndex"], [4, "ngIf"], ["routerLinkActive", "", "tuiTab", "", 3, "routerLink", "routerLinkActiveOptions", 4, "tuiItem"], ["routerLinkActive", "", "tuiTab", "", 3, "routerLink", "routerLinkActiveOptions"], [1, "t-see-also", 3, "seeAlso"], [3, "ngTemplateOutlet", 4, "ngIf"], [3, "ngTemplateOutlet"]],
     template: function TuiDocPageComponent_Template(rf, ctx) {
       if (rf & 1) {
         core_mjs_["ɵɵprojectionDef"]();
         core_mjs_["ɵɵelementStart"](0, "header", 0)(1, "h1", 1);
         core_mjs_["ɵɵtext"](2);
-        core_mjs_["ɵɵtemplate"](3, TuiDocPageComponent_tui_tag_3_Template, 1, 0, "tui-tag", 2)(4, TuiDocPageComponent_tui_tag_4_Template, 1, 2, "tui-tag", 3);
+        core_mjs_["ɵɵtemplate"](3, TuiDocPageComponent_tui_tag_3_Template, 1, 0, "tui-tag", 2)(4, TuiDocPageComponent_tui_tag_4_Template, 1, 2, "tui-tag", 3)(5, TuiDocPageComponent_tui_tag_5_Template, 1, 2, "tui-tag", 4);
         core_mjs_["ɵɵelementEnd"]();
-        core_mjs_["ɵɵtemplate"](5, TuiDocPageComponent_tui_tabs_with_more_5_Template, 2, 2, "tui-tabs-with-more", 4);
-        core_mjs_["ɵɵelement"](6, "tui-doc-source-code", 5);
+        core_mjs_["ɵɵtemplate"](6, TuiDocPageComponent_tui_tabs_with_more_6_Template, 2, 2, "tui-tabs-with-more", 5);
+        core_mjs_["ɵɵelement"](7, "tui-doc-source-code", 6);
         core_mjs_["ɵɵelementEnd"]();
-        core_mjs_["ɵɵelementStart"](7, "div", 6);
-        core_mjs_["ɵɵprojection"](8);
-        core_mjs_["ɵɵtemplate"](9, TuiDocPageComponent_tui_doc_see_also_9_Template, 1, 1, "tui-doc-see-also", 7)(10, TuiDocPageComponent_ng_container_10_Template, 2, 1, "ng-container", 8);
+        core_mjs_["ɵɵelementStart"](8, "div", 7);
+        core_mjs_["ɵɵprojection"](9);
+        core_mjs_["ɵɵtemplate"](10, TuiDocPageComponent_tui_doc_see_also_10_Template, 1, 1, "tui-doc-see-also", 8)(11, TuiDocPageComponent_ng_container_11_Template, 2, 1, "ng-container", 9);
         core_mjs_["ɵɵelementEnd"]();
       }
       if (rf & 2) {
@@ -23078,6 +23114,8 @@ let TuiDocPageComponent = /*#__PURE__*/(() => {
         core_mjs_["ɵɵproperty"]("ngIf", !!ctx.deprecated || ctx.deprecated === "");
         core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", ctx.package);
+        core_mjs_["ɵɵadvance"]();
+        core_mjs_["ɵɵproperty"]("ngForOf", ctx.tags);
         core_mjs_["ɵɵadvance"]();
         core_mjs_["ɵɵproperty"]("ngIf", ctx.tabConnectors.length);
         core_mjs_["ɵɵadvance"]();
@@ -32701,7 +32739,7 @@ const CHAR_ZERO_WIDTH_SPACE = '\u200B';
  * Array of icons used in taiga-ui components
  */
 const TUI_USED_ICONS = (/* unused pure expression or super */ null && (['tuiIconMirMono', 'tuiIconVisaMono', 'tuiIconElectronMono', 'tuiIconMastercard', 'tuiIconMaestro', 'tuiIconAmex', 'tuiIconDinersClub', 'tuiIconDiscover', 'tuiIconHumo', 'tuiIconJCB', 'tuiIconRuPay', 'tuiIconUnionPay', 'tuiIconUzcard', 'tuiIconVerve', 'tuiIconCopyLarge', 'tuiIconCheckLarge', 'tuiIconLink', 'tuiIconSearch', 'tuiIconSun', 'tuiIconMoon', 'tuiIconCode', 'tuiIconMenuLarge', 'tuiIconRotate', 'tuiIconArrowLeft', 'tuiIconArrowRight', 'tuiIconPlus', 'tuiIconMinus', 'tuiIconMinimize', 'tuiIconEye', 'tuiIconEyeOff', 'tuiIconDrag', 'tuiIconSortAscending', 'tuiIconSortDescending', 'tuiIconSortOff', 'tuiIconCheck', 'tuiIconMinusLarge', 'tuiIconChevronUp', 'tuiIconHelpCircle', 'tuiIconClose', 'tuiIconAlertCircle', 'tuiIconChevronRight', 'tuiIconInfo', 'tuiIconCheckCircle', 'tuiIconXCircle', 'tuiIconChevronLeft', 'tuiIconStarLarge', 'tuiIconChevronDown', 'tuiIconChevronDownLarge', 'tuiIconFileLarge', 'tuiIconCheckCircleLarge', 'tuiIconAlertCircleLarge', 'tuiIconTrashLarge', 'tuiIconCopy', 'tuiIconEyeOffLarge', 'tuiIconEyeLarge', 'tuiIconClock', 'tuiIconClockLarge', 'tuiIconToggleOff', 'tuiIconToggleOffLarge', 'tuiIconToggleOn', 'tuiIconToggleOnLarge', 'tuiIconCalendar', 'tuiIconCalendarLarge']));
-const TUI_VERSION = '3.84.0';
+const TUI_VERSION = '3.94.0';
 
 /**
  * Generated bundle index. Do not edit.
@@ -33556,10 +33594,10 @@ let ResizeObserverModule = /*#__PURE__*/(/* unused pure expression or super */ n
 //# sourceMappingURL=ng-web-apis-resize-observer.js.map
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-miscellaneous.js
 var taiga_ui_cdk_utils_miscellaneous = __webpack_require__(9925);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/node_modules/tslib/tslib.es6.mjs
-var tslib_es6 = __webpack_require__(9783);
+// EXTERNAL MODULE: tslib
+var tslib = __webpack_require__(9783);
 // EXTERNAL MODULE: ./node_modules/tslib/tslib.es6.mjs
-var tslib_tslib_es6 = __webpack_require__(1635);
+var tslib_es6 = __webpack_require__(1635);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/OperatorSubscriber.js
 var OperatorSubscriber = __webpack_require__(4360);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/innerFrom.js
@@ -33573,7 +33611,7 @@ function fromFetch(input, initWithSelector = {}) {
   const {
       selector
     } = initWithSelector,
-    init = (0,tslib_tslib_es6/* __rest */.Tt)(initWithSelector, ["selector"]);
+    init = (0,tslib_es6/* __rest */.Tt)(initWithSelector, ["selector"]);
   return new internal_Observable/* Observable */.c(subscriber => {
     const controller = new AbortController();
     const {
@@ -33944,7 +33982,7 @@ let TuiStaticRequestService = /*#__PURE__*/(() => {
        * TODO: drop after browser support bump
        */
       (0,observable_defer/* defer */.v)(() => (0,from/* from */.H)(fetch(url)));
-      const piped = response$.pipe((0,operators_switchMap/* switchMap */.n)(response => (0,tslib_es6/* __awaiter */.sH)(this, void 0, void 0, function* () {
+      const piped = response$.pipe((0,operators_switchMap/* switchMap */.n)(response => (0,tslib/* __awaiter */.sH)(this, void 0, void 0, function* () {
         if (response.ok) {
           return response.text();
         }
@@ -34108,7 +34146,7 @@ __webpack_require__.d(__webpack_exports__, {
   Jr: () => (/* binding */ tuiAsFocusableItemAccessor)
 });
 
-// UNUSED EXPORTS: TUI_DEFAULT_RENDERER, TUI_ENSURE_BASE_HREF, TUI_IS_APPLE, TUI_IS_CHROMIUM, TUI_IS_CYPRESS, TUI_IS_FIREFOX, TUI_IS_PLAYWRIGHT, TUI_IS_STACKBLITZ, TUI_PLATFORM, TUI_RANGE, TUI_REMOVED_ELEMENT, TUI_TAKE_ONLY_TRUSTED_EVENTS, TUI_TOUCH_SUPPORTED, TUI_WINDOW_HEIGHT, TUI_ZOOM_OPTIONS, tuiPlatformFactory
+// UNUSED EXPORTS: TUI_DEFAULT_RENDERER, TUI_ENSURE_BASE_HREF, TUI_IS_APPLE, TUI_IS_CHROMIUM, TUI_IS_CYPRESS, TUI_IS_FIREFOX, TUI_IS_PLAYWRIGHT, TUI_IS_STACKBLITZ, TUI_IS_TOUCH, TUI_PLATFORM, TUI_RANGE, TUI_REMOVED_ELEMENT, TUI_TAKE_ONLY_TRUSTED_EVENTS, TUI_TOUCH_SUPPORTED, TUI_WINDOW_HEIGHT, TUI_ZOOM_OPTIONS, tuiPlatformFactory
 
 // EXTERNAL MODULE: consume shared module (default) @angular/common@=17.3.9 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
 var common_mjs_ = __webpack_require__(2771);
@@ -34122,6 +34160,8 @@ var taiga_ui_cdk_observables = __webpack_require__(9835);
 var taiga_ui_cdk_utils_miscellaneous = __webpack_require__(9925);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-dom.js
 var taiga_ui_cdk_utils_dom = __webpack_require__(5001);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-focus.js
+var taiga_ui_cdk_utils_focus = __webpack_require__(8529);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-os.js
 /**
  * @description:
@@ -34200,6 +34240,7 @@ var taiga_ui_cdk_constants = __webpack_require__(2287);
 
 
 
+
 /**
  * Element currently being removed by AnimationEngine
  */
@@ -34227,7 +34268,9 @@ function isValidFocusout(target, removedElement = null) {
     // Not due to button/input becoming disabled or under disabled fieldset
     !target.matches(':disabled') &&
     // Not due to element being removed from DOM
-    !(removedElement === null || removedElement === void 0 ? void 0 : removedElement.contains(target))
+    !(removedElement === null || removedElement === void 0 ? void 0 : removedElement.contains(target)) &&
+    // Not due to scrollable element became non-scrollable
+    (0,taiga_ui_cdk_utils_focus/* tuiIsNativeMouseFocusable */.PQ)(target)
   );
 }
 function shadowRootActiveElement(root) {
@@ -34403,6 +34446,7 @@ const TUI_IS_FIREFOX = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromF
   return typeof ((_a = (0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.jf)) === null || _a === void 0 ? void 0 : _a.mozCancelFullScreen) !== 'undefined';
 });
 const TUI_IS_STACKBLITZ = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.ET)(() => (0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.jf).location.host.endsWith('stackblitz.io'));
+const TUI_IS_TOUCH = (0,taiga_ui_cdk_utils_miscellaneous/* tuiCreateTokenFromFactory */.ET)(() => (0,core_mjs_.inject)(ng_web_apis_common/* WINDOW */.jf).matchMedia('(pointer: coarse)').matches);
 
 /**
  * Webkit browser engine detection
@@ -34806,6 +34850,7 @@ function tuiRetargetedBoundaryCrossing(event) {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Hn: () => (/* binding */ tuiIsNativeKeyboardFocusable),
 /* harmony export */   Ij: () => (/* binding */ tuiIsNativeFocusedIn),
+/* harmony export */   PQ: () => (/* binding */ tuiIsNativeMouseFocusable),
 /* harmony export */   SI: () => (/* binding */ tuiBlurNativeFocused),
 /* harmony export */   X: () => (/* binding */ tuiIsNativeFocused),
 /* harmony export */   ai: () => (/* binding */ tuiSetNativeMouseFocused),
@@ -34813,7 +34858,6 @@ function tuiRetargetedBoundaryCrossing(event) {
 /* harmony export */   x_: () => (/* binding */ tuiGetNativeFocused),
 /* harmony export */   yO: () => (/* binding */ tuiMoveFocus)
 /* harmony export */ });
-/* unused harmony export tuiIsNativeMouseFocusable */
 /* harmony import */ var _taiga_ui_cdk_utils_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5001);
 /* harmony import */ var _taiga_ui_cdk_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2287);
 
@@ -34965,7 +35009,7 @@ function tuiSetNativeMouseFocused(element, focused = true, preventScroll = false
     return;
   }
   if (typeof Event === 'function') {
-    element.dispatchEvent(new Event('mousedown', {
+    element.dispatchEvent(new MouseEvent('mousedown', {
       bubbles: true,
       cancelable: true
     }));
@@ -35777,7 +35821,7 @@ let TuiButtonComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [_taiga_ui_core_components_svg__WEBPACK_IMPORTED_MODULE_13__/* .TuiSvgComponent */ ._Y, _taiga_ui_core_components_loader__WEBPACK_IMPORTED_MODULE_14__/* .TuiLoaderComponent */ .jT, _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgIf, _taiga_ui_core_directives_wrapper__WEBPACK_IMPORTED_MODULE_15__/* .TuiWrapperDirective */ .l, _tinkoff_ng_polymorpheus__WEBPACK_IMPORTED_MODULE_16__/* .PolymorpheusOutletDirective */ .OA, _angular_common__WEBPACK_IMPORTED_MODULE_1__.AsyncPipe],
-    styles: ["[_nghost-%COMP%]{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:0;border:0;background:none;font-size:inherit;line-height:inherit;text-decoration:none;font:var(--tui-font-text-s);color:var(--tui-text-01);position:relative;display:inline-block;flex-shrink:0;vertical-align:top;border-radius:var(--tui-radius-m);-webkit-user-select:none;-moz-user-select:none;user-select:none;outline:none;color:inherit}[data-shape=rounded][_nghost-%COMP%]{border-radius:6.25rem}[data-size=xs][_nghost-%COMP%]{height:var(--tui-height-xs);font-weight:normal}[data-size=xs][data-shape=square][_nghost-%COMP%], [data-size=xs][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-xs)}[data-size=s][_nghost-%COMP%]{height:var(--tui-height-s);font-weight:normal}[data-size=s][data-shape=square][_nghost-%COMP%], [data-size=s][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-s)}[data-size=m][_nghost-%COMP%]{height:var(--tui-height-m);font:var(--tui-font-text-m);font-weight:bold}[data-size=m][data-shape=square][_nghost-%COMP%], [data-size=m][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-m)}[data-size=l][_nghost-%COMP%]{height:var(--tui-height-l);font:var(--tui-font-text-m);font-weight:bold}[data-size=l][data-shape=square][_nghost-%COMP%], [data-size=l][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-l)}[data-size=xl][_nghost-%COMP%]{height:3.75rem;font:var(--tui-font-text-m);font-weight:bold}[data-size=xl][data-shape=square][_nghost-%COMP%], [data-size=xl][tuiIconButton][_nghost-%COMP%]{width:3.75rem}[tuiIconButton][_nghost-%COMP%]{font-size:0!important}[tuiIconButton][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [tuiIconButton][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{margin:0!important}.t-loader[_ngcontent-%COMP%]{position:absolute;top:0;left:0;width:100%;height:100%;cursor:default}.t-left[_ngcontent-%COMP%]{margin-right:.5rem}[data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%]{margin-right:.375rem}[data-size=xs][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%]{margin-right:.25rem}.t-right[_ngcontent-%COMP%]{margin:0 -.25rem 0 .25rem}[data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{margin:0 -.25rem 0 .375rem}[data-size=xs][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{margin:0 -.125rem 0 .25rem}.t-icon[_ngcontent-%COMP%]{display:flex;max-width:100%;max-height:100%;align-items:center;justify-content:center}.t-left[_ngcontent-%COMP%], .t-right[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:center;width:1.5rem;height:1.5rem}[data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%], [data-size=xs][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [data-size=xs][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{width:1rem;height:1rem}[tuiIconButton][data-appearance=icon][data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [tuiIconButton][data-appearance=icon][data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%], [tuiIconButton][data-appearance=link][data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [tuiIconButton][data-appearance=link][data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{width:1.5rem;height:1.5rem}.t-wrapper[_ngcontent-%COMP%]{box-sizing:border-box;cursor:pointer;isolation:isolate}[data-size=xs][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, .375rem)}[data-size=xs][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:after{border-width:1px}[data-size=s][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, .75rem)}[data-size=m][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, 1.5rem)}[data-size=l][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, 2.25rem)}[data-size=xl][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, 2.5rem)}[data-shape=square][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%], [tuiIconButton][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0}.t-content[_ngcontent-%COMP%]{display:flex;height:100%;align-items:center;justify-content:center;text-align:center}._loading[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{opacity:0}"],
+    styles: ["[_nghost-%COMP%]{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:0;border:0;background:none;font-size:inherit;line-height:inherit;text-decoration:none;font:var(--tui-font-text-s);color:var(--tui-text-01);position:relative;display:inline-block;flex-shrink:0;vertical-align:top;border-radius:var(--tui-radius-m);-webkit-user-select:none;-moz-user-select:none;user-select:none;outline:none;color:inherit}[_nghost-%COMP%]:disabled{pointer-events:none}[data-shape=rounded][_nghost-%COMP%]{border-radius:6.25rem}[data-size=xs][_nghost-%COMP%]{height:var(--tui-height-xs);font-weight:normal}[data-size=xs][data-shape=square][_nghost-%COMP%], [data-size=xs][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-xs)}[data-size=s][_nghost-%COMP%]{height:var(--tui-height-s);font-weight:normal}[data-size=s][data-shape=square][_nghost-%COMP%], [data-size=s][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-s)}[data-size=m][_nghost-%COMP%]{height:var(--tui-height-m);font:var(--tui-font-text-m);font-weight:bold}[data-size=m][data-shape=square][_nghost-%COMP%], [data-size=m][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-m)}[data-size=l][_nghost-%COMP%]{height:var(--tui-height-l);font:var(--tui-font-text-m);font-weight:bold}[data-size=l][data-shape=square][_nghost-%COMP%], [data-size=l][tuiIconButton][_nghost-%COMP%]{width:var(--tui-height-l)}[data-size=xl][_nghost-%COMP%]{height:3.75rem;font:var(--tui-font-text-m);font-weight:bold}[data-size=xl][data-shape=square][_nghost-%COMP%], [data-size=xl][tuiIconButton][_nghost-%COMP%]{width:3.75rem}[tuiIconButton][_nghost-%COMP%]{font-size:0!important}[tuiIconButton][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [tuiIconButton][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{margin:0!important}.t-loader[_ngcontent-%COMP%]{position:absolute;top:0;left:0;width:100%;height:100%;cursor:default}.t-left[_ngcontent-%COMP%]{margin-right:.5rem}[data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%]{margin-right:.375rem}[data-size=xs][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%]{margin-right:.25rem}.t-right[_ngcontent-%COMP%]{margin:0 -.25rem 0 .25rem}[data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{margin:0 -.25rem 0 .375rem}[data-size=xs][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{margin:0 -.125rem 0 .25rem}.t-icon[_ngcontent-%COMP%]{display:flex;max-width:100%;max-height:100%;align-items:center;justify-content:center}.t-left[_ngcontent-%COMP%], .t-right[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:center;width:1.5rem;height:1.5rem}[data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%], [data-size=xs][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [data-size=xs][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{width:1rem;height:1rem}[tuiIconButton][data-appearance=icon][data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [tuiIconButton][data-appearance=icon][data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%], [tuiIconButton][data-appearance=link][data-size=s][_nghost-%COMP%]   .t-left[_ngcontent-%COMP%], [tuiIconButton][data-appearance=link][data-size=s][_nghost-%COMP%]   .t-right[_ngcontent-%COMP%]{width:1.5rem;height:1.5rem}.t-wrapper[_ngcontent-%COMP%]{box-sizing:border-box;cursor:pointer;isolation:isolate}[data-size=xs][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, .375rem)}[data-size=xs][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]:after{border-width:1px}[data-size=s][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, .75rem)}[data-size=m][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, 1.5rem)}[data-size=l][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, 2.25rem)}[data-size=xl][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0 var(--tui-padding, 2.5rem)}[data-shape=square][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%], [tuiIconButton][_nghost-%COMP%]   .t-wrapper[_ngcontent-%COMP%]{padding:0}.t-content[_ngcontent-%COMP%]{display:flex;height:100%;align-items:center;justify-content:center;text-align:center}._loading[_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{opacity:0}"],
     changeDetection: 0
   });
   return TuiButtonComponent;
@@ -41053,20 +41097,17 @@ function stagger(timings, animation) {
  * @publicApi
  */
 let AnimationBuilder = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
-  class AnimationBuilder {
-    static {
-      this.ɵfac = function AnimationBuilder_Factory(t) {
-        return new (t || AnimationBuilder)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
-        token: AnimationBuilder,
-        factory: () => (() => inject(BrowserAnimationBuilder))(),
-        providedIn: 'root'
-      });
-    }
-  }
+  var _AnimationBuilder;
+  class AnimationBuilder {}
+  _AnimationBuilder = AnimationBuilder;
+  _AnimationBuilder.ɵfac = function _AnimationBuilder_Factory(t) {
+    return new (t || _AnimationBuilder)();
+  };
+  _AnimationBuilder.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+    token: _AnimationBuilder,
+    factory: () => (() => inject(BrowserAnimationBuilder))(),
+    providedIn: 'root'
+  });
   return AnimationBuilder;
 })()));
 /*#__PURE__*/(() => {
@@ -41081,6 +41122,7 @@ let AnimationBuilder = /*#__PURE__*/(/* unused pure expression or super */ null 
  */
 class AnimationFactory {}
 let BrowserAnimationBuilder = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  var _BrowserAnimationBuilder;
   class BrowserAnimationBuilder extends AnimationBuilder {
     constructor(rootRenderer, doc) {
       super();
@@ -41109,19 +41151,16 @@ let BrowserAnimationBuilder = /*#__PURE__*/(/* unused pure expression or super *
       issueAnimationCommand(this._renderer, null, id, 'register', [entry]);
       return new BrowserAnimationFactory(id, this._renderer);
     }
-    static {
-      this.ɵfac = function BrowserAnimationBuilder_Factory(t) {
-        return new (t || BrowserAnimationBuilder)(i0.ɵɵinject(i0.RendererFactory2), i0.ɵɵinject(DOCUMENT));
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
-        token: BrowserAnimationBuilder,
-        factory: BrowserAnimationBuilder.ɵfac,
-        providedIn: 'root'
-      });
-    }
   }
+  _BrowserAnimationBuilder = BrowserAnimationBuilder;
+  _BrowserAnimationBuilder.ɵfac = function _BrowserAnimationBuilder_Factory(t) {
+    return new (t || _BrowserAnimationBuilder)(i0.ɵɵinject(i0.RendererFactory2), i0.ɵɵinject(DOCUMENT));
+  };
+  _BrowserAnimationBuilder.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+    token: _BrowserAnimationBuilder,
+    factory: _BrowserAnimationBuilder.ɵfac,
+    providedIn: 'root'
+  });
   return BrowserAnimationBuilder;
 })()));
 /*#__PURE__*/(() => {
@@ -41492,6 +41531,7 @@ const ɵPRE_STYLE = '!';
 /* unused harmony exports ɵAnimation, ɵAnimationRenderer, ɵBaseAnimationRenderer, ɵNoopAnimationStyleNormalizer, ɵWebAnimationsPlayer, ɵallowPreviousPlayerStylesMerge, ɵcamelCaseToDashCase, ɵcontainsElement, ɵcreateEngine, ɵgetParentElement, ɵinvokeQuery, ɵnormalizeKeyframes, ɵvalidateStyleProperty, ɵvalidateWebAnimatableStyleProperty */
 /* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9969);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6525);
+var _AnimationDriver, _SpecialCasedStyles;
 /**
  * @license Angular v17.3.9
  * (c) 2010-2024 Google LLC. https://angular.io/
@@ -41783,6 +41823,7 @@ function hypenatePropsKeys(original) {
  * `AnimationDriver` implentation for Noop animations
  */
 let NoopAnimationDriver = /*#__PURE__*/(() => {
+  var _NoopAnimationDriver;
   class NoopAnimationDriver {
     /**
      * @returns Whether `prop` is a valid CSS property
@@ -41829,18 +41870,15 @@ let NoopAnimationDriver = /*#__PURE__*/(() => {
     animate(element, keyframes, duration, delay, easing, previousPlayers = [], scrubberAccessRequested) {
       return new _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .NoopAnimationPlayer */ .sf(duration, delay);
     }
-    static {
-      this.ɵfac = function NoopAnimationDriver_Factory(t) {
-        return new (t || NoopAnimationDriver)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-        token: NoopAnimationDriver,
-        factory: NoopAnimationDriver.ɵfac
-      });
-    }
   }
+  _NoopAnimationDriver = NoopAnimationDriver;
+  _NoopAnimationDriver.ɵfac = function _NoopAnimationDriver_Factory(t) {
+    return new (t || _NoopAnimationDriver)();
+  };
+  _NoopAnimationDriver.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+    token: _NoopAnimationDriver,
+    factory: _NoopAnimationDriver.ɵfac
+  });
   return NoopAnimationDriver;
 })();
 /*#__PURE__*/(() => {
@@ -41849,14 +41887,12 @@ let NoopAnimationDriver = /*#__PURE__*/(() => {
 /**
  * @publicApi
  */
-class AnimationDriver {
-  /**
-   * @deprecated Use the NoopAnimationDriver class.
-   */
-  static {
-    this.NOOP = /*#__PURE__*/new NoopAnimationDriver();
-  }
-}
+class AnimationDriver {}
+_AnimationDriver = AnimationDriver;
+/**
+ * @deprecated Use the NoopAnimationDriver class.
+ */
+_AnimationDriver.NOOP = /*#__PURE__*/new NoopAnimationDriver();
 class AnimationStyleNormalizer {}
 class NoopAnimationStyleNormalizer {
   normalizePropertyName(propertyName, errors) {
@@ -43463,7 +43499,7 @@ function flattenStyles(input, allStyles) {
   let allProperties;
   input.forEach(token => {
     if (token === '*') {
-      allProperties ??= allStyles.keys();
+      allProperties ?? (allProperties = allStyles.keys());
       for (let prop of allProperties) {
         styles.set(prop, _angular_animations__WEBPACK_IMPORTED_MODULE_1__/* .AUTO_STYLE */ .kp);
       }
@@ -45386,9 +45422,6 @@ function packageNonAnimatableStyles(element, styles) {
  * `destroy()` is called then all styles will be removed.
  */
 class SpecialCasedStyles {
-  static {
-    this.initialStylesByElement = /*#__PURE__*/new WeakMap();
-  }
   constructor(_element, _startStyles, _endStyles) {
     this._element = _element;
     this._startStyles = _startStyles;
@@ -45436,6 +45469,8 @@ class SpecialCasedStyles {
     }
   }
 }
+_SpecialCasedStyles = SpecialCasedStyles;
+_SpecialCasedStyles.initialStylesByElement = /*#__PURE__*/new WeakMap();
 function filterNonAnimatableStyles(styles) {
   let result = null;
   styles.forEach((val, prop) => {
@@ -46095,6 +46130,7 @@ var map = __webpack_require__(6354);
  * applications code.
  */
 let BaseControlValueAccessor = /*#__PURE__*/(() => {
+  var _BaseControlValueAccessor;
   class BaseControlValueAccessor {
     constructor(_renderer, _elementRef) {
       this._renderer = _renderer;
@@ -46140,17 +46176,14 @@ let BaseControlValueAccessor = /*#__PURE__*/(() => {
     setDisabledState(isDisabled) {
       this.setProperty('disabled', isDisabled);
     }
-    static {
-      this.ɵfac = function BaseControlValueAccessor_Factory(t) {
-        return new (t || BaseControlValueAccessor)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef));
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: BaseControlValueAccessor
-      });
-    }
   }
+  _BaseControlValueAccessor = BaseControlValueAccessor;
+  _BaseControlValueAccessor.ɵfac = function _BaseControlValueAccessor_Factory(t) {
+    return new (t || _BaseControlValueAccessor)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef));
+  };
+  _BaseControlValueAccessor.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _BaseControlValueAccessor
+  });
   return BaseControlValueAccessor;
 })();
 /*#__PURE__*/(() => {
@@ -46166,22 +46199,19 @@ let BaseControlValueAccessor = /*#__PURE__*/(() => {
  * applications code.
  */
 let BuiltInControlValueAccessor = /*#__PURE__*/(() => {
-  class BuiltInControlValueAccessor extends BaseControlValueAccessor {
-    static {
-      this.ɵfac = /* @__PURE__ */(() => {
-        let ɵBuiltInControlValueAccessor_BaseFactory;
-        return function BuiltInControlValueAccessor_Factory(t) {
-          return (ɵBuiltInControlValueAccessor_BaseFactory || (ɵBuiltInControlValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](BuiltInControlValueAccessor)))(t || BuiltInControlValueAccessor);
-        };
-      })();
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: BuiltInControlValueAccessor,
-        features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
-  }
+  var _BuiltInControlValueAccessor;
+  class BuiltInControlValueAccessor extends BaseControlValueAccessor {}
+  _BuiltInControlValueAccessor = BuiltInControlValueAccessor;
+  _BuiltInControlValueAccessor.ɵfac = /* @__PURE__ */(() => {
+    let ɵ_BuiltInControlValueAccessor_BaseFactory;
+    return function _BuiltInControlValueAccessor_Factory(t) {
+      return (ɵ_BuiltInControlValueAccessor_BaseFactory || (ɵ_BuiltInControlValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](_BuiltInControlValueAccessor)))(t || _BuiltInControlValueAccessor);
+    };
+  })();
+  _BuiltInControlValueAccessor.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _BuiltInControlValueAccessor,
+    features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return BuiltInControlValueAccessor;
 })();
 /*#__PURE__*/(() => {
@@ -46224,6 +46254,7 @@ const CHECKBOX_VALUE_ACCESSOR = {
  * @publicApi
  */
 let CheckboxControlValueAccessor = /*#__PURE__*/(() => {
+  var _CheckboxControlValueAccessor;
   class CheckboxControlValueAccessor extends BuiltInControlValueAccessor {
     /**
      * Sets the "checked" property on the input element.
@@ -46232,31 +46263,28 @@ let CheckboxControlValueAccessor = /*#__PURE__*/(() => {
     writeValue(value) {
       this.setProperty('checked', value);
     }
-    static {
-      this.ɵfac = /* @__PURE__ */(() => {
-        let ɵCheckboxControlValueAccessor_BaseFactory;
-        return function CheckboxControlValueAccessor_Factory(t) {
-          return (ɵCheckboxControlValueAccessor_BaseFactory || (ɵCheckboxControlValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](CheckboxControlValueAccessor)))(t || CheckboxControlValueAccessor);
-        };
-      })();
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: CheckboxControlValueAccessor,
-        selectors: [["input", "type", "checkbox", "formControlName", ""], ["input", "type", "checkbox", "formControl", ""], ["input", "type", "checkbox", "ngModel", ""]],
-        hostBindings: function CheckboxControlValueAccessor_HostBindings(rf, ctx) {
-          if (rf & 1) {
-            core_mjs_["ɵɵlistener"]("change", function CheckboxControlValueAccessor_change_HostBindingHandler($event) {
-              return ctx.onChange($event.target.checked);
-            })("blur", function CheckboxControlValueAccessor_blur_HostBindingHandler() {
-              return ctx.onTouched();
-            });
-          }
-        },
-        features: [core_mjs_["ɵɵProvidersFeature"]([CHECKBOX_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _CheckboxControlValueAccessor = CheckboxControlValueAccessor;
+  _CheckboxControlValueAccessor.ɵfac = /* @__PURE__ */(() => {
+    let ɵ_CheckboxControlValueAccessor_BaseFactory;
+    return function _CheckboxControlValueAccessor_Factory(t) {
+      return (ɵ_CheckboxControlValueAccessor_BaseFactory || (ɵ_CheckboxControlValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](_CheckboxControlValueAccessor)))(t || _CheckboxControlValueAccessor);
+    };
+  })();
+  _CheckboxControlValueAccessor.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _CheckboxControlValueAccessor,
+    selectors: [["input", "type", "checkbox", "formControlName", ""], ["input", "type", "checkbox", "formControl", ""], ["input", "type", "checkbox", "ngModel", ""]],
+    hostBindings: function _CheckboxControlValueAccessor_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("change", function _CheckboxControlValueAccessor_change_HostBindingHandler($event) {
+          return ctx.onChange($event.target.checked);
+        })("blur", function _CheckboxControlValueAccessor_blur_HostBindingHandler() {
+          return ctx.onTouched();
+        });
+      }
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([CHECKBOX_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return CheckboxControlValueAccessor;
 })();
 /*#__PURE__*/(() => {
@@ -46318,6 +46346,7 @@ const COMPOSITION_BUFFER_MODE = /*#__PURE__*/new core_mjs_.InjectionToken(ngDevM
  * @publicApi
  */
 let DefaultValueAccessor = /*#__PURE__*/(() => {
+  var _DefaultValueAccessor;
   class DefaultValueAccessor extends BaseControlValueAccessor {
     constructor(renderer, elementRef, _compositionMode) {
       super(renderer, elementRef);
@@ -46351,32 +46380,29 @@ let DefaultValueAccessor = /*#__PURE__*/(() => {
       this._composing = false;
       this._compositionMode && this.onChange(value);
     }
-    static {
-      this.ɵfac = function DefaultValueAccessor_Factory(t) {
-        return new (t || DefaultValueAccessor)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](COMPOSITION_BUFFER_MODE, 8));
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: DefaultValueAccessor,
-        selectors: [["input", "formControlName", "", 3, "type", "checkbox"], ["textarea", "formControlName", ""], ["input", "formControl", "", 3, "type", "checkbox"], ["textarea", "formControl", ""], ["input", "ngModel", "", 3, "type", "checkbox"], ["textarea", "ngModel", ""], ["", "ngDefaultControl", ""]],
-        hostBindings: function DefaultValueAccessor_HostBindings(rf, ctx) {
-          if (rf & 1) {
-            core_mjs_["ɵɵlistener"]("input", function DefaultValueAccessor_input_HostBindingHandler($event) {
-              return ctx._handleInput($event.target.value);
-            })("blur", function DefaultValueAccessor_blur_HostBindingHandler() {
-              return ctx.onTouched();
-            })("compositionstart", function DefaultValueAccessor_compositionstart_HostBindingHandler() {
-              return ctx._compositionStart();
-            })("compositionend", function DefaultValueAccessor_compositionend_HostBindingHandler($event) {
-              return ctx._compositionEnd($event.target.value);
-            });
-          }
-        },
-        features: [core_mjs_["ɵɵProvidersFeature"]([DEFAULT_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _DefaultValueAccessor = DefaultValueAccessor;
+  _DefaultValueAccessor.ɵfac = function _DefaultValueAccessor_Factory(t) {
+    return new (t || _DefaultValueAccessor)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](COMPOSITION_BUFFER_MODE, 8));
+  };
+  _DefaultValueAccessor.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _DefaultValueAccessor,
+    selectors: [["input", "formControlName", "", 3, "type", "checkbox"], ["textarea", "formControlName", ""], ["input", "formControl", "", 3, "type", "checkbox"], ["textarea", "formControl", ""], ["input", "ngModel", "", 3, "type", "checkbox"], ["textarea", "ngModel", ""], ["", "ngDefaultControl", ""]],
+    hostBindings: function _DefaultValueAccessor_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("input", function _DefaultValueAccessor_input_HostBindingHandler($event) {
+          return ctx._handleInput($event.target.value);
+        })("blur", function _DefaultValueAccessor_blur_HostBindingHandler() {
+          return ctx.onTouched();
+        })("compositionstart", function _DefaultValueAccessor_compositionstart_HostBindingHandler() {
+          return ctx._compositionStart();
+        })("compositionend", function _DefaultValueAccessor_compositionend_HostBindingHandler($event) {
+          return ctx._compositionEnd($event.target.value);
+        });
+      }
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([DEFAULT_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return DefaultValueAccessor;
 })();
 /*#__PURE__*/(() => {
@@ -47459,29 +47485,27 @@ const ngGroupStatusHost = {
  * @publicApi
  */
 let NgControlStatus = /*#__PURE__*/(() => {
+  var _NgControlStatus;
   class NgControlStatus extends AbstractControlStatus {
     constructor(cd) {
       super(cd);
     }
-    static {
-      this.ɵfac = function NgControlStatus_Factory(t) {
-        return new (t || NgControlStatus)(core_mjs_["ɵɵdirectiveInject"](NgControl, 2));
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: NgControlStatus,
-        selectors: [["", "formControlName", ""], ["", "ngModel", ""], ["", "formControl", ""]],
-        hostVars: 14,
-        hostBindings: function NgControlStatus_HostBindings(rf, ctx) {
-          if (rf & 2) {
-            core_mjs_["ɵɵclassProp"]("ng-untouched", ctx.isUntouched)("ng-touched", ctx.isTouched)("ng-pristine", ctx.isPristine)("ng-dirty", ctx.isDirty)("ng-valid", ctx.isValid)("ng-invalid", ctx.isInvalid)("ng-pending", ctx.isPending);
-          }
-        },
-        features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _NgControlStatus = NgControlStatus;
+  _NgControlStatus.ɵfac = function _NgControlStatus_Factory(t) {
+    return new (t || _NgControlStatus)(core_mjs_["ɵɵdirectiveInject"](NgControl, 2));
+  };
+  _NgControlStatus.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _NgControlStatus,
+    selectors: [["", "formControlName", ""], ["", "ngModel", ""], ["", "formControl", ""]],
+    hostVars: 14,
+    hostBindings: function _NgControlStatus_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        core_mjs_["ɵɵclassProp"]("ng-untouched", ctx.isUntouched)("ng-touched", ctx.isTouched)("ng-pristine", ctx.isPristine)("ng-dirty", ctx.isDirty)("ng-valid", ctx.isValid)("ng-invalid", ctx.isInvalid)("ng-pending", ctx.isPending);
+      }
+    },
+    features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return NgControlStatus;
 })();
 /*#__PURE__*/(() => {
@@ -47500,29 +47524,27 @@ let NgControlStatus = /*#__PURE__*/(() => {
  * @publicApi
  */
 let NgControlStatusGroup = /*#__PURE__*/(() => {
+  var _NgControlStatusGroup;
   class NgControlStatusGroup extends AbstractControlStatus {
     constructor(cd) {
       super(cd);
     }
-    static {
-      this.ɵfac = function NgControlStatusGroup_Factory(t) {
-        return new (t || NgControlStatusGroup)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 10));
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: NgControlStatusGroup,
-        selectors: [["", "formGroupName", ""], ["", "formArrayName", ""], ["", "ngModelGroup", ""], ["", "formGroup", ""], ["form", 3, "ngNoForm", ""], ["", "ngForm", ""]],
-        hostVars: 16,
-        hostBindings: function NgControlStatusGroup_HostBindings(rf, ctx) {
-          if (rf & 2) {
-            core_mjs_["ɵɵclassProp"]("ng-untouched", ctx.isUntouched)("ng-touched", ctx.isTouched)("ng-pristine", ctx.isPristine)("ng-dirty", ctx.isDirty)("ng-valid", ctx.isValid)("ng-invalid", ctx.isInvalid)("ng-pending", ctx.isPending)("ng-submitted", ctx.isSubmitted);
-          }
-        },
-        features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _NgControlStatusGroup = NgControlStatusGroup;
+  _NgControlStatusGroup.ɵfac = function _NgControlStatusGroup_Factory(t) {
+    return new (t || _NgControlStatusGroup)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 10));
+  };
+  _NgControlStatusGroup.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _NgControlStatusGroup,
+    selectors: [["", "formGroupName", ""], ["", "formArrayName", ""], ["", "ngModelGroup", ""], ["", "formGroup", ""], ["form", 3, "ngNoForm", ""], ["", "ngForm", ""]],
+    hostVars: 16,
+    hostBindings: function _NgControlStatusGroup_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        core_mjs_["ɵɵclassProp"]("ng-untouched", ctx.isUntouched)("ng-touched", ctx.isTouched)("ng-pristine", ctx.isPristine)("ng-dirty", ctx.isDirty)("ng-valid", ctx.isValid)("ng-invalid", ctx.isInvalid)("ng-pending", ctx.isPending)("ng-submitted", ctx.isSubmitted);
+      }
+    },
+    features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return NgControlStatusGroup;
 })();
 /*#__PURE__*/(() => {
@@ -49489,6 +49511,7 @@ const resolvedPromise$1 = /*#__PURE__*/(() => Promise.resolve())();
  * @publicApi
  */
 let NgForm = /*#__PURE__*/(() => {
+  var _NgForm;
   class NgForm extends ControlContainer {
     constructor(validators, asyncValidators, callSetDisabledState) {
       super();
@@ -49683,35 +49706,32 @@ let NgForm = /*#__PURE__*/(() => {
       path.pop();
       return path.length ? this.form.get(path) : this.form;
     }
-    static {
-      this.ɵfac = function NgForm_Factory(t) {
-        return new (t || NgForm)(core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](CALL_SET_DISABLED_STATE, 8));
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: NgForm,
-        selectors: [["form", 3, "ngNoForm", "", 3, "formGroup", ""], ["ng-form"], ["", "ngForm", ""]],
-        hostBindings: function NgForm_HostBindings(rf, ctx) {
-          if (rf & 1) {
-            core_mjs_["ɵɵlistener"]("submit", function NgForm_submit_HostBindingHandler($event) {
-              return ctx.onSubmit($event);
-            })("reset", function NgForm_reset_HostBindingHandler() {
-              return ctx.onReset();
-            });
-          }
-        },
-        inputs: {
-          options: [core_mjs_["ɵɵInputFlags"].None, "ngFormOptions", "options"]
-        },
-        outputs: {
-          ngSubmit: "ngSubmit"
-        },
-        exportAs: ["ngForm"],
-        features: [core_mjs_["ɵɵProvidersFeature"]([formDirectiveProvider$1]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _NgForm = NgForm;
+  _NgForm.ɵfac = function _NgForm_Factory(t) {
+    return new (t || _NgForm)(core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](CALL_SET_DISABLED_STATE, 8));
+  };
+  _NgForm.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _NgForm,
+    selectors: [["form", 3, "ngNoForm", "", 3, "formGroup", ""], ["ng-form"], ["", "ngForm", ""]],
+    hostBindings: function _NgForm_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("submit", function _NgForm_submit_HostBindingHandler($event) {
+          return ctx.onSubmit($event);
+        })("reset", function _NgForm_reset_HostBindingHandler() {
+          return ctx.onReset();
+        });
+      }
+    },
+    inputs: {
+      options: [core_mjs_["ɵɵInputFlags"].None, "ngFormOptions", "options"]
+    },
+    outputs: {
+      ngSubmit: "ngSubmit"
+    },
+    exportAs: ["ngForm"],
+    features: [core_mjs_["ɵɵProvidersFeature"]([formDirectiveProvider$1]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return NgForm;
 })();
 /*#__PURE__*/(() => {
@@ -49843,6 +49863,7 @@ const isFormControl = control => control instanceof FormControl;
  * @publicApi
  */
 let AbstractFormGroupDirective = /*#__PURE__*/(() => {
+  var _AbstractFormGroupDirective;
   class AbstractFormGroupDirective extends ControlContainer {
     /** @nodoc */
     ngOnInit() {
@@ -49880,21 +49901,18 @@ let AbstractFormGroupDirective = /*#__PURE__*/(() => {
     }
     /** @internal */
     _checkParentType() {}
-    static {
-      this.ɵfac = /* @__PURE__ */(() => {
-        let ɵAbstractFormGroupDirective_BaseFactory;
-        return function AbstractFormGroupDirective_Factory(t) {
-          return (ɵAbstractFormGroupDirective_BaseFactory || (ɵAbstractFormGroupDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](AbstractFormGroupDirective)))(t || AbstractFormGroupDirective);
-        };
-      })();
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: AbstractFormGroupDirective,
-        features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _AbstractFormGroupDirective = AbstractFormGroupDirective;
+  _AbstractFormGroupDirective.ɵfac = /* @__PURE__ */(() => {
+    let ɵ_AbstractFormGroupDirective_BaseFactory;
+    return function _AbstractFormGroupDirective_Factory(t) {
+      return (ɵ_AbstractFormGroupDirective_BaseFactory || (ɵ_AbstractFormGroupDirective_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](_AbstractFormGroupDirective)))(t || _AbstractFormGroupDirective);
+    };
+  })();
+  _AbstractFormGroupDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _AbstractFormGroupDirective,
+    features: [core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return AbstractFormGroupDirective;
 })();
 /*#__PURE__*/(() => {
@@ -49975,6 +49993,7 @@ const modelGroupProvider = {
  * @publicApi
  */
 let NgModelGroup = /*#__PURE__*/(() => {
+  var _NgModelGroup;
   class NgModelGroup extends AbstractFormGroupDirective {
     constructor(parent, validators, asyncValidators) {
       super();
@@ -49994,23 +50013,20 @@ let NgModelGroup = /*#__PURE__*/(() => {
         throw modelGroupParentException();
       }
     }
-    static {
-      this.ɵfac = function NgModelGroup_Factory(t) {
-        return new (t || NgModelGroup)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 5), core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10));
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: NgModelGroup,
-        selectors: [["", "ngModelGroup", ""]],
-        inputs: {
-          name: [core_mjs_["ɵɵInputFlags"].None, "ngModelGroup", "name"]
-        },
-        exportAs: ["ngModelGroup"],
-        features: [core_mjs_["ɵɵProvidersFeature"]([modelGroupProvider]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _NgModelGroup = NgModelGroup;
+  _NgModelGroup.ɵfac = function _NgModelGroup_Factory(t) {
+    return new (t || _NgModelGroup)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 5), core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10));
+  };
+  _NgModelGroup.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _NgModelGroup,
+    selectors: [["", "ngModelGroup", ""]],
+    inputs: {
+      name: [core_mjs_["ɵɵInputFlags"].None, "ngModelGroup", "name"]
+    },
+    exportAs: ["ngModelGroup"],
+    features: [core_mjs_["ɵɵProvidersFeature"]([modelGroupProvider]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return NgModelGroup;
 })();
 /*#__PURE__*/(() => {
@@ -50124,6 +50140,7 @@ const resolvedPromise = /*#__PURE__*/(() => Promise.resolve())();
  * @publicApi
  */
 let NgModel = /*#__PURE__*/(() => {
+  var _NgModel;
   class NgModel extends NgControl {
     constructor(parent, validators, asyncValidators, valueAccessors, _changeDetectorRef, callSetDisabledState) {
       super();
@@ -50270,29 +50287,26 @@ let NgModel = /*#__PURE__*/(() => {
     _getPath(controlName) {
       return this._parent ? controlPath(controlName, this._parent) : [controlName];
     }
-    static {
-      this.ɵfac = function NgModel_Factory(t) {
-        return new (t || NgModel)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 9), core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_VALUE_ACCESSOR, 10), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ChangeDetectorRef, 8), core_mjs_["ɵɵdirectiveInject"](CALL_SET_DISABLED_STATE, 8));
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: NgModel,
-        selectors: [["", "ngModel", "", 3, "formControlName", "", 3, "formControl", ""]],
-        inputs: {
-          name: "name",
-          isDisabled: [core_mjs_["ɵɵInputFlags"].None, "disabled", "isDisabled"],
-          model: [core_mjs_["ɵɵInputFlags"].None, "ngModel", "model"],
-          options: [core_mjs_["ɵɵInputFlags"].None, "ngModelOptions", "options"]
-        },
-        outputs: {
-          update: "ngModelChange"
-        },
-        exportAs: ["ngModel"],
-        features: [core_mjs_["ɵɵProvidersFeature"]([formControlBinding$1]), core_mjs_["ɵɵInheritDefinitionFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
-      });
-    }
   }
+  _NgModel = NgModel;
+  _NgModel.ɵfac = function _NgModel_Factory(t) {
+    return new (t || _NgModel)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 9), core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_VALUE_ACCESSOR, 10), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ChangeDetectorRef, 8), core_mjs_["ɵɵdirectiveInject"](CALL_SET_DISABLED_STATE, 8));
+  };
+  _NgModel.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _NgModel,
+    selectors: [["", "ngModel", "", 3, "formControlName", "", 3, "formControl", ""]],
+    inputs: {
+      name: "name",
+      isDisabled: [core_mjs_["ɵɵInputFlags"].None, "disabled", "isDisabled"],
+      model: [core_mjs_["ɵɵInputFlags"].None, "ngModel", "model"],
+      options: [core_mjs_["ɵɵInputFlags"].None, "ngModelOptions", "options"]
+    },
+    outputs: {
+      update: "ngModelChange"
+    },
+    exportAs: ["ngModel"],
+    features: [core_mjs_["ɵɵProvidersFeature"]([formControlBinding$1]), core_mjs_["ɵɵInheritDefinitionFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
+  });
   return NgModel;
 })();
 /*#__PURE__*/(() => {
@@ -50317,20 +50331,17 @@ let NgModel = /*#__PURE__*/(() => {
  * @ngModule FormsModule
  */
 let ɵNgNoValidate = /*#__PURE__*/(() => {
-  class ɵNgNoValidate {
-    static {
-      this.ɵfac = function ɵNgNoValidate_Factory(t) {
-        return new (t || ɵNgNoValidate)();
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: ɵNgNoValidate,
-        selectors: [["form", 3, "ngNoForm", "", 3, "ngNativeValidate", ""]],
-        hostAttrs: ["novalidate", ""]
-      });
-    }
-  }
+  var _ɵNgNoValidate;
+  class ɵNgNoValidate {}
+  _ɵNgNoValidate = ɵNgNoValidate;
+  _ɵNgNoValidate.ɵfac = function _ɵNgNoValidate_Factory(t) {
+    return new (t || _ɵNgNoValidate)();
+  };
+  _ɵNgNoValidate.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _ɵNgNoValidate,
+    selectors: [["form", 3, "ngNoForm", "", 3, "ngNativeValidate", ""]],
+    hostAttrs: ["novalidate", ""]
+  });
   return ɵNgNoValidate;
 })();
 /*#__PURE__*/(() => {
@@ -50366,6 +50377,7 @@ const NUMBER_VALUE_ACCESSOR = {
  * @publicApi
  */
 let NumberValueAccessor = /*#__PURE__*/(() => {
+  var _NumberValueAccessor;
   class NumberValueAccessor extends BuiltInControlValueAccessor {
     /**
      * Sets the "value" property on the input element.
@@ -50385,31 +50397,28 @@ let NumberValueAccessor = /*#__PURE__*/(() => {
         fn(value == '' ? null : parseFloat(value));
       };
     }
-    static {
-      this.ɵfac = /* @__PURE__ */(() => {
-        let ɵNumberValueAccessor_BaseFactory;
-        return function NumberValueAccessor_Factory(t) {
-          return (ɵNumberValueAccessor_BaseFactory || (ɵNumberValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](NumberValueAccessor)))(t || NumberValueAccessor);
-        };
-      })();
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: NumberValueAccessor,
-        selectors: [["input", "type", "number", "formControlName", ""], ["input", "type", "number", "formControl", ""], ["input", "type", "number", "ngModel", ""]],
-        hostBindings: function NumberValueAccessor_HostBindings(rf, ctx) {
-          if (rf & 1) {
-            core_mjs_["ɵɵlistener"]("input", function NumberValueAccessor_input_HostBindingHandler($event) {
-              return ctx.onChange($event.target.value);
-            })("blur", function NumberValueAccessor_blur_HostBindingHandler() {
-              return ctx.onTouched();
-            });
-          }
-        },
-        features: [core_mjs_["ɵɵProvidersFeature"]([NUMBER_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _NumberValueAccessor = NumberValueAccessor;
+  _NumberValueAccessor.ɵfac = /* @__PURE__ */(() => {
+    let ɵ_NumberValueAccessor_BaseFactory;
+    return function _NumberValueAccessor_Factory(t) {
+      return (ɵ_NumberValueAccessor_BaseFactory || (ɵ_NumberValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](_NumberValueAccessor)))(t || _NumberValueAccessor);
+    };
+  })();
+  _NumberValueAccessor.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _NumberValueAccessor,
+    selectors: [["input", "type", "number", "formControlName", ""], ["input", "type", "number", "formControl", ""], ["input", "type", "number", "ngModel", ""]],
+    hostBindings: function _NumberValueAccessor_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("input", function _NumberValueAccessor_input_HostBindingHandler($event) {
+          return ctx.onChange($event.target.value);
+        })("blur", function _NumberValueAccessor_blur_HostBindingHandler() {
+          return ctx.onTouched();
+        });
+      }
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([NUMBER_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return NumberValueAccessor;
 })();
 /*#__PURE__*/(() => {
@@ -50431,6 +50440,7 @@ function throwNameError() {
  * Class used by Angular to track radio buttons. For internal use only.
  */
 let RadioControlRegistry = /*#__PURE__*/(() => {
+  var _RadioControlRegistry;
   class RadioControlRegistry {
     constructor() {
       this._accessors = [];
@@ -50469,19 +50479,16 @@ let RadioControlRegistry = /*#__PURE__*/(() => {
       if (!controlPair[0].control) return false;
       return controlPair[0]._parent === accessor._control._parent && controlPair[1].name === accessor.name;
     }
-    static {
-      this.ɵfac = function RadioControlRegistry_Factory(t) {
-        return new (t || RadioControlRegistry)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: RadioControlRegistry,
-        factory: RadioControlRegistry.ɵfac,
-        providedIn: 'root'
-      });
-    }
   }
+  _RadioControlRegistry = RadioControlRegistry;
+  _RadioControlRegistry.ɵfac = function _RadioControlRegistry_Factory(t) {
+    return new (t || _RadioControlRegistry)();
+  };
+  _RadioControlRegistry.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _RadioControlRegistry,
+    factory: _RadioControlRegistry.ɵfac,
+    providedIn: 'root'
+  });
   return RadioControlRegistry;
 })();
 /*#__PURE__*/(() => {
@@ -50508,6 +50515,7 @@ let RadioControlRegistry = /*#__PURE__*/(() => {
  * @publicApi
  */
 let RadioControlValueAccessor = /*#__PURE__*/(() => {
+  var _RadioControlValueAccessor;
   class RadioControlValueAccessor extends BuiltInControlValueAccessor {
     constructor(renderer, elementRef, _registry, _injector) {
       super(renderer, elementRef);
@@ -50594,33 +50602,30 @@ let RadioControlValueAccessor = /*#__PURE__*/(() => {
       }
       if (!this.name && this.formControlName) this.name = this.formControlName;
     }
-    static {
-      this.ɵfac = function RadioControlValueAccessor_Factory(t) {
-        return new (t || RadioControlValueAccessor)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](RadioControlRegistry), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Injector));
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: RadioControlValueAccessor,
-        selectors: [["input", "type", "radio", "formControlName", ""], ["input", "type", "radio", "formControl", ""], ["input", "type", "radio", "ngModel", ""]],
-        hostBindings: function RadioControlValueAccessor_HostBindings(rf, ctx) {
-          if (rf & 1) {
-            core_mjs_["ɵɵlistener"]("change", function RadioControlValueAccessor_change_HostBindingHandler() {
-              return ctx.onChange();
-            })("blur", function RadioControlValueAccessor_blur_HostBindingHandler() {
-              return ctx.onTouched();
-            });
-          }
-        },
-        inputs: {
-          name: "name",
-          formControlName: "formControlName",
-          value: "value"
-        },
-        features: [core_mjs_["ɵɵProvidersFeature"]([RADIO_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _RadioControlValueAccessor = RadioControlValueAccessor;
+  _RadioControlValueAccessor.ɵfac = function _RadioControlValueAccessor_Factory(t) {
+    return new (t || _RadioControlValueAccessor)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](RadioControlRegistry), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Injector));
+  };
+  _RadioControlValueAccessor.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _RadioControlValueAccessor,
+    selectors: [["input", "type", "radio", "formControlName", ""], ["input", "type", "radio", "formControl", ""], ["input", "type", "radio", "ngModel", ""]],
+    hostBindings: function _RadioControlValueAccessor_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("change", function _RadioControlValueAccessor_change_HostBindingHandler() {
+          return ctx.onChange();
+        })("blur", function _RadioControlValueAccessor_blur_HostBindingHandler() {
+          return ctx.onTouched();
+        });
+      }
+    },
+    inputs: {
+      name: "name",
+      formControlName: "formControlName",
+      value: "value"
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([RADIO_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return RadioControlValueAccessor;
 })();
 /*#__PURE__*/(() => {
@@ -50656,6 +50661,7 @@ const RANGE_VALUE_ACCESSOR = {
  * @publicApi
  */
 let RangeValueAccessor = /*#__PURE__*/(() => {
+  var _RangeValueAccessor;
   class RangeValueAccessor extends BuiltInControlValueAccessor {
     /**
      * Sets the "value" property on the input element.
@@ -50673,33 +50679,30 @@ let RangeValueAccessor = /*#__PURE__*/(() => {
         fn(value == '' ? null : parseFloat(value));
       };
     }
-    static {
-      this.ɵfac = /* @__PURE__ */(() => {
-        let ɵRangeValueAccessor_BaseFactory;
-        return function RangeValueAccessor_Factory(t) {
-          return (ɵRangeValueAccessor_BaseFactory || (ɵRangeValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](RangeValueAccessor)))(t || RangeValueAccessor);
-        };
-      })();
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: RangeValueAccessor,
-        selectors: [["input", "type", "range", "formControlName", ""], ["input", "type", "range", "formControl", ""], ["input", "type", "range", "ngModel", ""]],
-        hostBindings: function RangeValueAccessor_HostBindings(rf, ctx) {
-          if (rf & 1) {
-            core_mjs_["ɵɵlistener"]("change", function RangeValueAccessor_change_HostBindingHandler($event) {
-              return ctx.onChange($event.target.value);
-            })("input", function RangeValueAccessor_input_HostBindingHandler($event) {
-              return ctx.onChange($event.target.value);
-            })("blur", function RangeValueAccessor_blur_HostBindingHandler() {
-              return ctx.onTouched();
-            });
-          }
-        },
-        features: [core_mjs_["ɵɵProvidersFeature"]([RANGE_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _RangeValueAccessor = RangeValueAccessor;
+  _RangeValueAccessor.ɵfac = /* @__PURE__ */(() => {
+    let ɵ_RangeValueAccessor_BaseFactory;
+    return function _RangeValueAccessor_Factory(t) {
+      return (ɵ_RangeValueAccessor_BaseFactory || (ɵ_RangeValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](_RangeValueAccessor)))(t || _RangeValueAccessor);
+    };
+  })();
+  _RangeValueAccessor.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _RangeValueAccessor,
+    selectors: [["input", "type", "range", "formControlName", ""], ["input", "type", "range", "formControl", ""], ["input", "type", "range", "ngModel", ""]],
+    hostBindings: function _RangeValueAccessor_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("change", function _RangeValueAccessor_change_HostBindingHandler($event) {
+          return ctx.onChange($event.target.value);
+        })("input", function _RangeValueAccessor_input_HostBindingHandler($event) {
+          return ctx.onChange($event.target.value);
+        })("blur", function _RangeValueAccessor_blur_HostBindingHandler() {
+          return ctx.onTouched();
+        });
+      }
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([RANGE_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return RangeValueAccessor;
 })();
 /*#__PURE__*/(() => {
@@ -50737,6 +50740,7 @@ const formControlBinding = {
  * @publicApi
  */
 let FormControlDirective = /*#__PURE__*/(() => {
+  var _FormControlDirective;
   class FormControlDirective extends NgControl {
     /**
      * @description
@@ -50754,9 +50758,7 @@ let FormControlDirective = /*#__PURE__*/(() => {
      *
      * @internal
      */
-    static {
-      this._ngModelWarningSentOnce = false;
-    }
+
     constructor(validators, asyncValidators, valueAccessors, _ngModelWarningConfig, callSetDisabledState) {
       super();
       this._ngModelWarningConfig = _ngModelWarningConfig;
@@ -50829,28 +50831,26 @@ let FormControlDirective = /*#__PURE__*/(() => {
     _isControlChanged(changes) {
       return changes.hasOwnProperty('form');
     }
-    static {
-      this.ɵfac = function FormControlDirective_Factory(t) {
-        return new (t || FormControlDirective)(core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_VALUE_ACCESSOR, 10), core_mjs_["ɵɵdirectiveInject"](NG_MODEL_WITH_FORM_CONTROL_WARNING, 8), core_mjs_["ɵɵdirectiveInject"](CALL_SET_DISABLED_STATE, 8));
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: FormControlDirective,
-        selectors: [["", "formControl", ""]],
-        inputs: {
-          form: [core_mjs_["ɵɵInputFlags"].None, "formControl", "form"],
-          isDisabled: [core_mjs_["ɵɵInputFlags"].None, "disabled", "isDisabled"],
-          model: [core_mjs_["ɵɵInputFlags"].None, "ngModel", "model"]
-        },
-        outputs: {
-          update: "ngModelChange"
-        },
-        exportAs: ["ngForm"],
-        features: [core_mjs_["ɵɵProvidersFeature"]([formControlBinding]), core_mjs_["ɵɵInheritDefinitionFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
-      });
-    }
   }
+  _FormControlDirective = FormControlDirective;
+  _FormControlDirective._ngModelWarningSentOnce = false;
+  _FormControlDirective.ɵfac = function _FormControlDirective_Factory(t) {
+    return new (t || _FormControlDirective)(core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_VALUE_ACCESSOR, 10), core_mjs_["ɵɵdirectiveInject"](NG_MODEL_WITH_FORM_CONTROL_WARNING, 8), core_mjs_["ɵɵdirectiveInject"](CALL_SET_DISABLED_STATE, 8));
+  };
+  _FormControlDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _FormControlDirective,
+    selectors: [["", "formControl", ""]],
+    inputs: {
+      form: [core_mjs_["ɵɵInputFlags"].None, "formControl", "form"],
+      isDisabled: [core_mjs_["ɵɵInputFlags"].None, "disabled", "isDisabled"],
+      model: [core_mjs_["ɵɵInputFlags"].None, "ngModel", "model"]
+    },
+    outputs: {
+      update: "ngModelChange"
+    },
+    exportAs: ["ngForm"],
+    features: [core_mjs_["ɵɵProvidersFeature"]([formControlBinding]), core_mjs_["ɵɵInheritDefinitionFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
+  });
   return FormControlDirective;
 })();
 /*#__PURE__*/(() => {
@@ -50885,6 +50885,7 @@ const formDirectiveProvider = {
  * @publicApi
  */
 let FormGroupDirective = /*#__PURE__*/(() => {
+  var _FormGroupDirective;
   class FormGroupDirective extends ControlContainer {
     constructor(validators, asyncValidators, callSetDisabledState) {
       super();
@@ -51160,35 +51161,32 @@ let FormGroupDirective = /*#__PURE__*/(() => {
         throw missingFormException();
       }
     }
-    static {
-      this.ɵfac = function FormGroupDirective_Factory(t) {
-        return new (t || FormGroupDirective)(core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](CALL_SET_DISABLED_STATE, 8));
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: FormGroupDirective,
-        selectors: [["", "formGroup", ""]],
-        hostBindings: function FormGroupDirective_HostBindings(rf, ctx) {
-          if (rf & 1) {
-            core_mjs_["ɵɵlistener"]("submit", function FormGroupDirective_submit_HostBindingHandler($event) {
-              return ctx.onSubmit($event);
-            })("reset", function FormGroupDirective_reset_HostBindingHandler() {
-              return ctx.onReset();
-            });
-          }
-        },
-        inputs: {
-          form: [core_mjs_["ɵɵInputFlags"].None, "formGroup", "form"]
-        },
-        outputs: {
-          ngSubmit: "ngSubmit"
-        },
-        exportAs: ["ngForm"],
-        features: [core_mjs_["ɵɵProvidersFeature"]([formDirectiveProvider]), core_mjs_["ɵɵInheritDefinitionFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
-      });
-    }
   }
+  _FormGroupDirective = FormGroupDirective;
+  _FormGroupDirective.ɵfac = function _FormGroupDirective_Factory(t) {
+    return new (t || _FormGroupDirective)(core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](CALL_SET_DISABLED_STATE, 8));
+  };
+  _FormGroupDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _FormGroupDirective,
+    selectors: [["", "formGroup", ""]],
+    hostBindings: function _FormGroupDirective_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("submit", function _FormGroupDirective_submit_HostBindingHandler($event) {
+          return ctx.onSubmit($event);
+        })("reset", function _FormGroupDirective_reset_HostBindingHandler() {
+          return ctx.onReset();
+        });
+      }
+    },
+    inputs: {
+      form: [core_mjs_["ɵɵInputFlags"].None, "formGroup", "form"]
+    },
+    outputs: {
+      ngSubmit: "ngSubmit"
+    },
+    exportAs: ["ngForm"],
+    features: [core_mjs_["ɵɵProvidersFeature"]([formDirectiveProvider]), core_mjs_["ɵɵInheritDefinitionFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
+  });
   return FormGroupDirective;
 })();
 /*#__PURE__*/(() => {
@@ -51246,6 +51244,7 @@ const formGroupNameProvider = {
  * @publicApi
  */
 let FormGroupName = /*#__PURE__*/(() => {
+  var _FormGroupName;
   class FormGroupName extends AbstractFormGroupDirective {
     constructor(parent, validators, asyncValidators) {
       super();
@@ -51269,22 +51268,19 @@ let FormGroupName = /*#__PURE__*/(() => {
         throw groupParentException();
       }
     }
-    static {
-      this.ɵfac = function FormGroupName_Factory(t) {
-        return new (t || FormGroupName)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 13), core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10));
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: FormGroupName,
-        selectors: [["", "formGroupName", ""]],
-        inputs: {
-          name: [core_mjs_["ɵɵInputFlags"].None, "formGroupName", "name"]
-        },
-        features: [core_mjs_["ɵɵProvidersFeature"]([formGroupNameProvider]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _FormGroupName = FormGroupName;
+  _FormGroupName.ɵfac = function _FormGroupName_Factory(t) {
+    return new (t || _FormGroupName)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 13), core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10));
+  };
+  _FormGroupName.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _FormGroupName,
+    selectors: [["", "formGroupName", ""]],
+    inputs: {
+      name: [core_mjs_["ɵɵInputFlags"].None, "formGroupName", "name"]
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([formGroupNameProvider]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return FormGroupName;
 })();
 /*#__PURE__*/(() => {
@@ -51319,6 +51315,7 @@ const formArrayNameProvider = {
  * @publicApi
  */
 let FormArrayName = /*#__PURE__*/(() => {
+  var _FormArrayName;
   class FormArrayName extends ControlContainer {
     constructor(parent, validators, asyncValidators) {
       super();
@@ -51381,22 +51378,19 @@ let FormArrayName = /*#__PURE__*/(() => {
         throw arrayParentException();
       }
     }
-    static {
-      this.ɵfac = function FormArrayName_Factory(t) {
-        return new (t || FormArrayName)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 13), core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10));
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: FormArrayName,
-        selectors: [["", "formArrayName", ""]],
-        inputs: {
-          name: [core_mjs_["ɵɵInputFlags"].None, "formArrayName", "name"]
-        },
-        features: [core_mjs_["ɵɵProvidersFeature"]([formArrayNameProvider]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _FormArrayName = FormArrayName;
+  _FormArrayName.ɵfac = function _FormArrayName_Factory(t) {
+    return new (t || _FormArrayName)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 13), core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10));
+  };
+  _FormArrayName.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _FormArrayName,
+    selectors: [["", "formArrayName", ""]],
+    inputs: {
+      name: [core_mjs_["ɵɵInputFlags"].None, "formArrayName", "name"]
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([formArrayNameProvider]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return FormArrayName;
 })();
 /*#__PURE__*/(() => {
@@ -51444,6 +51438,7 @@ const controlNameBinding = {
  * @publicApi
  */
 let FormControlName = /*#__PURE__*/(() => {
+  var _FormControlName;
   class FormControlName extends NgControl {
     /**
      * @description
@@ -51461,9 +51456,7 @@ let FormControlName = /*#__PURE__*/(() => {
      *
      * @internal
      */
-    static {
-      this._ngModelWarningSentOnce = false;
-    }
+
     constructor(parent, validators, asyncValidators, valueAccessors, _ngModelWarningConfig) {
       super();
       this._ngModelWarningConfig = _ngModelWarningConfig;
@@ -51549,27 +51542,25 @@ let FormControlName = /*#__PURE__*/(() => {
       this.control = this.formDirective.addControl(this);
       this._added = true;
     }
-    static {
-      this.ɵfac = function FormControlName_Factory(t) {
-        return new (t || FormControlName)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 13), core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_VALUE_ACCESSOR, 10), core_mjs_["ɵɵdirectiveInject"](NG_MODEL_WITH_FORM_CONTROL_WARNING, 8));
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: FormControlName,
-        selectors: [["", "formControlName", ""]],
-        inputs: {
-          name: [core_mjs_["ɵɵInputFlags"].None, "formControlName", "name"],
-          isDisabled: [core_mjs_["ɵɵInputFlags"].None, "disabled", "isDisabled"],
-          model: [core_mjs_["ɵɵInputFlags"].None, "ngModel", "model"]
-        },
-        outputs: {
-          update: "ngModelChange"
-        },
-        features: [core_mjs_["ɵɵProvidersFeature"]([controlNameBinding]), core_mjs_["ɵɵInheritDefinitionFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
-      });
-    }
   }
+  _FormControlName = FormControlName;
+  _FormControlName._ngModelWarningSentOnce = false;
+  _FormControlName.ɵfac = function _FormControlName_Factory(t) {
+    return new (t || _FormControlName)(core_mjs_["ɵɵdirectiveInject"](ControlContainer, 13), core_mjs_["ɵɵdirectiveInject"](NG_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_ASYNC_VALIDATORS, 10), core_mjs_["ɵɵdirectiveInject"](NG_VALUE_ACCESSOR, 10), core_mjs_["ɵɵdirectiveInject"](NG_MODEL_WITH_FORM_CONTROL_WARNING, 8));
+  };
+  _FormControlName.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _FormControlName,
+    selectors: [["", "formControlName", ""]],
+    inputs: {
+      name: [core_mjs_["ɵɵInputFlags"].None, "formControlName", "name"],
+      isDisabled: [core_mjs_["ɵɵInputFlags"].None, "disabled", "isDisabled"],
+      model: [core_mjs_["ɵɵInputFlags"].None, "ngModel", "model"]
+    },
+    outputs: {
+      update: "ngModelChange"
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([controlNameBinding]), core_mjs_["ɵɵInheritDefinitionFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
+  });
   return FormControlName;
 })();
 /*#__PURE__*/(() => {
@@ -51645,6 +51636,7 @@ function _extractId$1(valueString) {
  * @publicApi
  */
 let SelectControlValueAccessor = /*#__PURE__*/(() => {
+  var _SelectControlValueAccessor;
   class SelectControlValueAccessor extends BuiltInControlValueAccessor {
     constructor() {
       super(...arguments);
@@ -51701,34 +51693,31 @@ let SelectControlValueAccessor = /*#__PURE__*/(() => {
       const id = _extractId$1(valueString);
       return this._optionMap.has(id) ? this._optionMap.get(id) : valueString;
     }
-    static {
-      this.ɵfac = /* @__PURE__ */(() => {
-        let ɵSelectControlValueAccessor_BaseFactory;
-        return function SelectControlValueAccessor_Factory(t) {
-          return (ɵSelectControlValueAccessor_BaseFactory || (ɵSelectControlValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](SelectControlValueAccessor)))(t || SelectControlValueAccessor);
-        };
-      })();
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: SelectControlValueAccessor,
-        selectors: [["select", "formControlName", "", 3, "multiple", ""], ["select", "formControl", "", 3, "multiple", ""], ["select", "ngModel", "", 3, "multiple", ""]],
-        hostBindings: function SelectControlValueAccessor_HostBindings(rf, ctx) {
-          if (rf & 1) {
-            core_mjs_["ɵɵlistener"]("change", function SelectControlValueAccessor_change_HostBindingHandler($event) {
-              return ctx.onChange($event.target.value);
-            })("blur", function SelectControlValueAccessor_blur_HostBindingHandler() {
-              return ctx.onTouched();
-            });
-          }
-        },
-        inputs: {
-          compareWith: "compareWith"
-        },
-        features: [core_mjs_["ɵɵProvidersFeature"]([SELECT_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _SelectControlValueAccessor = SelectControlValueAccessor;
+  _SelectControlValueAccessor.ɵfac = /* @__PURE__ */(() => {
+    let ɵ_SelectControlValueAccessor_BaseFactory;
+    return function _SelectControlValueAccessor_Factory(t) {
+      return (ɵ_SelectControlValueAccessor_BaseFactory || (ɵ_SelectControlValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](_SelectControlValueAccessor)))(t || _SelectControlValueAccessor);
+    };
+  })();
+  _SelectControlValueAccessor.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _SelectControlValueAccessor,
+    selectors: [["select", "formControlName", "", 3, "multiple", ""], ["select", "formControl", "", 3, "multiple", ""], ["select", "ngModel", "", 3, "multiple", ""]],
+    hostBindings: function _SelectControlValueAccessor_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("change", function _SelectControlValueAccessor_change_HostBindingHandler($event) {
+          return ctx.onChange($event.target.value);
+        })("blur", function _SelectControlValueAccessor_blur_HostBindingHandler() {
+          return ctx.onTouched();
+        });
+      }
+    },
+    inputs: {
+      compareWith: "compareWith"
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([SELECT_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return SelectControlValueAccessor;
 })();
 /*#__PURE__*/(() => {
@@ -51745,6 +51734,7 @@ let SelectControlValueAccessor = /*#__PURE__*/(() => {
  * @publicApi
  */
 let NgSelectOption = /*#__PURE__*/(() => {
+  var _NgSelectOption;
   class NgSelectOption {
     constructor(_element, _renderer, _select) {
       this._element = _element;
@@ -51783,22 +51773,19 @@ let NgSelectOption = /*#__PURE__*/(() => {
         this._select.writeValue(this._select.value);
       }
     }
-    static {
-      this.ɵfac = function NgSelectOption_Factory(t) {
-        return new (t || NgSelectOption)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](SelectControlValueAccessor, 9));
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: NgSelectOption,
-        selectors: [["option"]],
-        inputs: {
-          ngValue: "ngValue",
-          value: "value"
-        }
-      });
-    }
   }
+  _NgSelectOption = NgSelectOption;
+  _NgSelectOption.ɵfac = function _NgSelectOption_Factory(t) {
+    return new (t || _NgSelectOption)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](SelectControlValueAccessor, 9));
+  };
+  _NgSelectOption.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _NgSelectOption,
+    selectors: [["option"]],
+    inputs: {
+      ngValue: "ngValue",
+      value: "value"
+    }
+  });
   return NgSelectOption;
 })();
 /*#__PURE__*/(() => {
@@ -51856,6 +51843,7 @@ class HTMLCollection {}
  * @publicApi
  */
 let SelectMultipleControlValueAccessor = /*#__PURE__*/(() => {
+  var _SelectMultipleControlValueAccessor;
   class SelectMultipleControlValueAccessor extends BuiltInControlValueAccessor {
     constructor() {
       super(...arguments);
@@ -51948,34 +51936,31 @@ let SelectMultipleControlValueAccessor = /*#__PURE__*/(() => {
       const id = _extractId(valueString);
       return this._optionMap.has(id) ? this._optionMap.get(id)._value : valueString;
     }
-    static {
-      this.ɵfac = /* @__PURE__ */(() => {
-        let ɵSelectMultipleControlValueAccessor_BaseFactory;
-        return function SelectMultipleControlValueAccessor_Factory(t) {
-          return (ɵSelectMultipleControlValueAccessor_BaseFactory || (ɵSelectMultipleControlValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](SelectMultipleControlValueAccessor)))(t || SelectMultipleControlValueAccessor);
-        };
-      })();
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: SelectMultipleControlValueAccessor,
-        selectors: [["select", "multiple", "", "formControlName", ""], ["select", "multiple", "", "formControl", ""], ["select", "multiple", "", "ngModel", ""]],
-        hostBindings: function SelectMultipleControlValueAccessor_HostBindings(rf, ctx) {
-          if (rf & 1) {
-            core_mjs_["ɵɵlistener"]("change", function SelectMultipleControlValueAccessor_change_HostBindingHandler($event) {
-              return ctx.onChange($event.target);
-            })("blur", function SelectMultipleControlValueAccessor_blur_HostBindingHandler() {
-              return ctx.onTouched();
-            });
-          }
-        },
-        inputs: {
-          compareWith: "compareWith"
-        },
-        features: [core_mjs_["ɵɵProvidersFeature"]([SELECT_MULTIPLE_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _SelectMultipleControlValueAccessor = SelectMultipleControlValueAccessor;
+  _SelectMultipleControlValueAccessor.ɵfac = /* @__PURE__ */(() => {
+    let ɵ_SelectMultipleControlValueAccessor_BaseFactory;
+    return function _SelectMultipleControlValueAccessor_Factory(t) {
+      return (ɵ_SelectMultipleControlValueAccessor_BaseFactory || (ɵ_SelectMultipleControlValueAccessor_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](_SelectMultipleControlValueAccessor)))(t || _SelectMultipleControlValueAccessor);
+    };
+  })();
+  _SelectMultipleControlValueAccessor.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _SelectMultipleControlValueAccessor,
+    selectors: [["select", "multiple", "", "formControlName", ""], ["select", "multiple", "", "formControl", ""], ["select", "multiple", "", "ngModel", ""]],
+    hostBindings: function _SelectMultipleControlValueAccessor_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("change", function _SelectMultipleControlValueAccessor_change_HostBindingHandler($event) {
+          return ctx.onChange($event.target);
+        })("blur", function _SelectMultipleControlValueAccessor_blur_HostBindingHandler() {
+          return ctx.onTouched();
+        });
+      }
+    },
+    inputs: {
+      compareWith: "compareWith"
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([SELECT_MULTIPLE_VALUE_ACCESSOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return SelectMultipleControlValueAccessor;
 })();
 /*#__PURE__*/(() => {
@@ -51992,6 +51977,7 @@ let SelectMultipleControlValueAccessor = /*#__PURE__*/(() => {
  * @publicApi
  */
 let ɵNgSelectMultipleOption = /*#__PURE__*/(() => {
+  var _ɵNgSelectMultipleOption;
   class ɵNgSelectMultipleOption {
     constructor(_element, _renderer, _select) {
       this._element = _element;
@@ -52041,22 +52027,19 @@ let ɵNgSelectMultipleOption = /*#__PURE__*/(() => {
         this._select.writeValue(this._select.value);
       }
     }
-    static {
-      this.ɵfac = function ɵNgSelectMultipleOption_Factory(t) {
-        return new (t || ɵNgSelectMultipleOption)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](SelectMultipleControlValueAccessor, 9));
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: ɵNgSelectMultipleOption,
-        selectors: [["option"]],
-        inputs: {
-          ngValue: "ngValue",
-          value: "value"
-        }
-      });
-    }
   }
+  _ɵNgSelectMultipleOption = ɵNgSelectMultipleOption;
+  _ɵNgSelectMultipleOption.ɵfac = function _ɵNgSelectMultipleOption_Factory(t) {
+    return new (t || _ɵNgSelectMultipleOption)(core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](SelectMultipleControlValueAccessor, 9));
+  };
+  _ɵNgSelectMultipleOption.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _ɵNgSelectMultipleOption,
+    selectors: [["option"]],
+    inputs: {
+      ngValue: "ngValue",
+      value: "value"
+    }
+  });
   return ɵNgSelectMultipleOption;
 })();
 /*#__PURE__*/(() => {
@@ -52088,6 +52071,7 @@ function toFloat(value) {
  * For internal use only, this class is not intended for use outside of the Forms package.
  */
 let AbstractValidatorDirective = /*#__PURE__*/(() => {
+  var _AbstractValidatorDirective;
   class AbstractValidatorDirective {
     constructor() {
       this._validator = nullValidator;
@@ -52121,18 +52105,15 @@ let AbstractValidatorDirective = /*#__PURE__*/(() => {
     enabled(input) {
       return input != null /* both `null` and `undefined` */;
     }
-    static {
-      this.ɵfac = function AbstractValidatorDirective_Factory(t) {
-        return new (t || AbstractValidatorDirective)();
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: AbstractValidatorDirective,
-        features: [core_mjs_["ɵɵNgOnChangesFeature"]]
-      });
-    }
   }
+  _AbstractValidatorDirective = AbstractValidatorDirective;
+  _AbstractValidatorDirective.ɵfac = function _AbstractValidatorDirective_Factory(t) {
+    return new (t || _AbstractValidatorDirective)();
+  };
+  _AbstractValidatorDirective.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _AbstractValidatorDirective,
+    features: [core_mjs_["ɵɵNgOnChangesFeature"]]
+  });
   return AbstractValidatorDirective;
 })();
 /*#__PURE__*/(() => {
@@ -52169,6 +52150,7 @@ const MAX_VALIDATOR = {
  * @publicApi
  */
 let MaxValidator = /*#__PURE__*/(() => {
+  var _MaxValidator;
   class MaxValidator extends AbstractValidatorDirective {
     constructor() {
       super(...arguments);
@@ -52179,31 +52161,28 @@ let MaxValidator = /*#__PURE__*/(() => {
       /** @internal */
       this.createValidator = max => maxValidator(max);
     }
-    static {
-      this.ɵfac = /* @__PURE__ */(() => {
-        let ɵMaxValidator_BaseFactory;
-        return function MaxValidator_Factory(t) {
-          return (ɵMaxValidator_BaseFactory || (ɵMaxValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](MaxValidator)))(t || MaxValidator);
-        };
-      })();
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: MaxValidator,
-        selectors: [["input", "type", "number", "max", "", "formControlName", ""], ["input", "type", "number", "max", "", "formControl", ""], ["input", "type", "number", "max", "", "ngModel", ""]],
-        hostVars: 1,
-        hostBindings: function MaxValidator_HostBindings(rf, ctx) {
-          if (rf & 2) {
-            core_mjs_["ɵɵattribute"]("max", ctx._enabled ? ctx.max : null);
-          }
-        },
-        inputs: {
-          max: "max"
-        },
-        features: [core_mjs_["ɵɵProvidersFeature"]([MAX_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _MaxValidator = MaxValidator;
+  _MaxValidator.ɵfac = /* @__PURE__ */(() => {
+    let ɵ_MaxValidator_BaseFactory;
+    return function _MaxValidator_Factory(t) {
+      return (ɵ_MaxValidator_BaseFactory || (ɵ_MaxValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](_MaxValidator)))(t || _MaxValidator);
+    };
+  })();
+  _MaxValidator.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _MaxValidator,
+    selectors: [["input", "type", "number", "max", "", "formControlName", ""], ["input", "type", "number", "max", "", "formControl", ""], ["input", "type", "number", "max", "", "ngModel", ""]],
+    hostVars: 1,
+    hostBindings: function _MaxValidator_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        core_mjs_["ɵɵattribute"]("max", ctx._enabled ? ctx.max : null);
+      }
+    },
+    inputs: {
+      max: "max"
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([MAX_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return MaxValidator;
 })();
 /*#__PURE__*/(() => {
@@ -52240,6 +52219,7 @@ const MIN_VALIDATOR = {
  * @publicApi
  */
 let MinValidator = /*#__PURE__*/(() => {
+  var _MinValidator;
   class MinValidator extends AbstractValidatorDirective {
     constructor() {
       super(...arguments);
@@ -52250,31 +52230,28 @@ let MinValidator = /*#__PURE__*/(() => {
       /** @internal */
       this.createValidator = min => minValidator(min);
     }
-    static {
-      this.ɵfac = /* @__PURE__ */(() => {
-        let ɵMinValidator_BaseFactory;
-        return function MinValidator_Factory(t) {
-          return (ɵMinValidator_BaseFactory || (ɵMinValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](MinValidator)))(t || MinValidator);
-        };
-      })();
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: MinValidator,
-        selectors: [["input", "type", "number", "min", "", "formControlName", ""], ["input", "type", "number", "min", "", "formControl", ""], ["input", "type", "number", "min", "", "ngModel", ""]],
-        hostVars: 1,
-        hostBindings: function MinValidator_HostBindings(rf, ctx) {
-          if (rf & 2) {
-            core_mjs_["ɵɵattribute"]("min", ctx._enabled ? ctx.min : null);
-          }
-        },
-        inputs: {
-          min: "min"
-        },
-        features: [core_mjs_["ɵɵProvidersFeature"]([MIN_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _MinValidator = MinValidator;
+  _MinValidator.ɵfac = /* @__PURE__ */(() => {
+    let ɵ_MinValidator_BaseFactory;
+    return function _MinValidator_Factory(t) {
+      return (ɵ_MinValidator_BaseFactory || (ɵ_MinValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](_MinValidator)))(t || _MinValidator);
+    };
+  })();
+  _MinValidator.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _MinValidator,
+    selectors: [["input", "type", "number", "min", "", "formControlName", ""], ["input", "type", "number", "min", "", "formControl", ""], ["input", "type", "number", "min", "", "ngModel", ""]],
+    hostVars: 1,
+    hostBindings: function _MinValidator_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        core_mjs_["ɵɵattribute"]("min", ctx._enabled ? ctx.min : null);
+      }
+    },
+    inputs: {
+      min: "min"
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([MIN_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return MinValidator;
 })();
 /*#__PURE__*/(() => {
@@ -52318,6 +52295,7 @@ const CHECKBOX_REQUIRED_VALIDATOR = {
  * @publicApi
  */
 let RequiredValidator = /*#__PURE__*/(() => {
+  var _RequiredValidator;
   class RequiredValidator extends AbstractValidatorDirective {
     constructor() {
       super(...arguments);
@@ -52332,31 +52310,28 @@ let RequiredValidator = /*#__PURE__*/(() => {
     enabled(input) {
       return input;
     }
-    static {
-      this.ɵfac = /* @__PURE__ */(() => {
-        let ɵRequiredValidator_BaseFactory;
-        return function RequiredValidator_Factory(t) {
-          return (ɵRequiredValidator_BaseFactory || (ɵRequiredValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](RequiredValidator)))(t || RequiredValidator);
-        };
-      })();
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: RequiredValidator,
-        selectors: [["", "required", "", "formControlName", "", 3, "type", "checkbox"], ["", "required", "", "formControl", "", 3, "type", "checkbox"], ["", "required", "", "ngModel", "", 3, "type", "checkbox"]],
-        hostVars: 1,
-        hostBindings: function RequiredValidator_HostBindings(rf, ctx) {
-          if (rf & 2) {
-            core_mjs_["ɵɵattribute"]("required", ctx._enabled ? "" : null);
-          }
-        },
-        inputs: {
-          required: "required"
-        },
-        features: [core_mjs_["ɵɵProvidersFeature"]([REQUIRED_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _RequiredValidator = RequiredValidator;
+  _RequiredValidator.ɵfac = /* @__PURE__ */(() => {
+    let ɵ_RequiredValidator_BaseFactory;
+    return function _RequiredValidator_Factory(t) {
+      return (ɵ_RequiredValidator_BaseFactory || (ɵ_RequiredValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](_RequiredValidator)))(t || _RequiredValidator);
+    };
+  })();
+  _RequiredValidator.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _RequiredValidator,
+    selectors: [["", "required", "", "formControlName", "", 3, "type", "checkbox"], ["", "required", "", "formControl", "", 3, "type", "checkbox"], ["", "required", "", "ngModel", "", 3, "type", "checkbox"]],
+    hostVars: 1,
+    hostBindings: function _RequiredValidator_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        core_mjs_["ɵɵattribute"]("required", ctx._enabled ? "" : null);
+      }
+    },
+    inputs: {
+      required: "required"
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([REQUIRED_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return RequiredValidator;
 })();
 /*#__PURE__*/(() => {
@@ -52384,34 +52359,32 @@ let RequiredValidator = /*#__PURE__*/(() => {
  * @ngModule ReactiveFormsModule
  */
 let CheckboxRequiredValidator = /*#__PURE__*/(() => {
+  var _CheckboxRequiredValidator;
   class CheckboxRequiredValidator extends RequiredValidator {
     constructor() {
       super(...arguments);
       /** @internal */
       this.createValidator = input => requiredTrueValidator;
     }
-    static {
-      this.ɵfac = /* @__PURE__ */(() => {
-        let ɵCheckboxRequiredValidator_BaseFactory;
-        return function CheckboxRequiredValidator_Factory(t) {
-          return (ɵCheckboxRequiredValidator_BaseFactory || (ɵCheckboxRequiredValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](CheckboxRequiredValidator)))(t || CheckboxRequiredValidator);
-        };
-      })();
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: CheckboxRequiredValidator,
-        selectors: [["input", "type", "checkbox", "required", "", "formControlName", ""], ["input", "type", "checkbox", "required", "", "formControl", ""], ["input", "type", "checkbox", "required", "", "ngModel", ""]],
-        hostVars: 1,
-        hostBindings: function CheckboxRequiredValidator_HostBindings(rf, ctx) {
-          if (rf & 2) {
-            core_mjs_["ɵɵattribute"]("required", ctx._enabled ? "" : null);
-          }
-        },
-        features: [core_mjs_["ɵɵProvidersFeature"]([CHECKBOX_REQUIRED_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _CheckboxRequiredValidator = CheckboxRequiredValidator;
+  _CheckboxRequiredValidator.ɵfac = /* @__PURE__ */(() => {
+    let ɵ_CheckboxRequiredValidator_BaseFactory;
+    return function _CheckboxRequiredValidator_Factory(t) {
+      return (ɵ_CheckboxRequiredValidator_BaseFactory || (ɵ_CheckboxRequiredValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](_CheckboxRequiredValidator)))(t || _CheckboxRequiredValidator);
+    };
+  })();
+  _CheckboxRequiredValidator.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _CheckboxRequiredValidator,
+    selectors: [["input", "type", "checkbox", "required", "", "formControlName", ""], ["input", "type", "checkbox", "required", "", "formControl", ""], ["input", "type", "checkbox", "required", "", "ngModel", ""]],
+    hostVars: 1,
+    hostBindings: function _CheckboxRequiredValidator_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        core_mjs_["ɵɵattribute"]("required", ctx._enabled ? "" : null);
+      }
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([CHECKBOX_REQUIRED_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return CheckboxRequiredValidator;
 })();
 /*#__PURE__*/(() => {
@@ -52454,6 +52427,7 @@ const EMAIL_VALIDATOR = {
  * @ngModule ReactiveFormsModule
  */
 let EmailValidator = /*#__PURE__*/(() => {
+  var _EmailValidator;
   class EmailValidator extends AbstractValidatorDirective {
     constructor() {
       super(...arguments);
@@ -52468,25 +52442,22 @@ let EmailValidator = /*#__PURE__*/(() => {
     enabled(input) {
       return input;
     }
-    static {
-      this.ɵfac = /* @__PURE__ */(() => {
-        let ɵEmailValidator_BaseFactory;
-        return function EmailValidator_Factory(t) {
-          return (ɵEmailValidator_BaseFactory || (ɵEmailValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](EmailValidator)))(t || EmailValidator);
-        };
-      })();
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: EmailValidator,
-        selectors: [["", "email", "", "formControlName", ""], ["", "email", "", "formControl", ""], ["", "email", "", "ngModel", ""]],
-        inputs: {
-          email: "email"
-        },
-        features: [core_mjs_["ɵɵProvidersFeature"]([EMAIL_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _EmailValidator = EmailValidator;
+  _EmailValidator.ɵfac = /* @__PURE__ */(() => {
+    let ɵ_EmailValidator_BaseFactory;
+    return function _EmailValidator_Factory(t) {
+      return (ɵ_EmailValidator_BaseFactory || (ɵ_EmailValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](_EmailValidator)))(t || _EmailValidator);
+    };
+  })();
+  _EmailValidator.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _EmailValidator,
+    selectors: [["", "email", "", "formControlName", ""], ["", "email", "", "formControl", ""], ["", "email", "", "ngModel", ""]],
+    inputs: {
+      email: "email"
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([EMAIL_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return EmailValidator;
 })();
 /*#__PURE__*/(() => {
@@ -52523,6 +52494,7 @@ const MIN_LENGTH_VALIDATOR = {
  * @publicApi
  */
 let MinLengthValidator = /*#__PURE__*/(() => {
+  var _MinLengthValidator;
   class MinLengthValidator extends AbstractValidatorDirective {
     constructor() {
       super(...arguments);
@@ -52533,31 +52505,28 @@ let MinLengthValidator = /*#__PURE__*/(() => {
       /** @internal */
       this.createValidator = minlength => minLengthValidator(minlength);
     }
-    static {
-      this.ɵfac = /* @__PURE__ */(() => {
-        let ɵMinLengthValidator_BaseFactory;
-        return function MinLengthValidator_Factory(t) {
-          return (ɵMinLengthValidator_BaseFactory || (ɵMinLengthValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](MinLengthValidator)))(t || MinLengthValidator);
-        };
-      })();
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: MinLengthValidator,
-        selectors: [["", "minlength", "", "formControlName", ""], ["", "minlength", "", "formControl", ""], ["", "minlength", "", "ngModel", ""]],
-        hostVars: 1,
-        hostBindings: function MinLengthValidator_HostBindings(rf, ctx) {
-          if (rf & 2) {
-            core_mjs_["ɵɵattribute"]("minlength", ctx._enabled ? ctx.minlength : null);
-          }
-        },
-        inputs: {
-          minlength: "minlength"
-        },
-        features: [core_mjs_["ɵɵProvidersFeature"]([MIN_LENGTH_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _MinLengthValidator = MinLengthValidator;
+  _MinLengthValidator.ɵfac = /* @__PURE__ */(() => {
+    let ɵ_MinLengthValidator_BaseFactory;
+    return function _MinLengthValidator_Factory(t) {
+      return (ɵ_MinLengthValidator_BaseFactory || (ɵ_MinLengthValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](_MinLengthValidator)))(t || _MinLengthValidator);
+    };
+  })();
+  _MinLengthValidator.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _MinLengthValidator,
+    selectors: [["", "minlength", "", "formControlName", ""], ["", "minlength", "", "formControl", ""], ["", "minlength", "", "ngModel", ""]],
+    hostVars: 1,
+    hostBindings: function _MinLengthValidator_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        core_mjs_["ɵɵattribute"]("minlength", ctx._enabled ? ctx.minlength : null);
+      }
+    },
+    inputs: {
+      minlength: "minlength"
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([MIN_LENGTH_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return MinLengthValidator;
 })();
 /*#__PURE__*/(() => {
@@ -52594,6 +52563,7 @@ const MAX_LENGTH_VALIDATOR = {
  * @publicApi
  */
 let MaxLengthValidator = /*#__PURE__*/(() => {
+  var _MaxLengthValidator;
   class MaxLengthValidator extends AbstractValidatorDirective {
     constructor() {
       super(...arguments);
@@ -52604,31 +52574,28 @@ let MaxLengthValidator = /*#__PURE__*/(() => {
       /** @internal */
       this.createValidator = maxlength => maxLengthValidator(maxlength);
     }
-    static {
-      this.ɵfac = /* @__PURE__ */(() => {
-        let ɵMaxLengthValidator_BaseFactory;
-        return function MaxLengthValidator_Factory(t) {
-          return (ɵMaxLengthValidator_BaseFactory || (ɵMaxLengthValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](MaxLengthValidator)))(t || MaxLengthValidator);
-        };
-      })();
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: MaxLengthValidator,
-        selectors: [["", "maxlength", "", "formControlName", ""], ["", "maxlength", "", "formControl", ""], ["", "maxlength", "", "ngModel", ""]],
-        hostVars: 1,
-        hostBindings: function MaxLengthValidator_HostBindings(rf, ctx) {
-          if (rf & 2) {
-            core_mjs_["ɵɵattribute"]("maxlength", ctx._enabled ? ctx.maxlength : null);
-          }
-        },
-        inputs: {
-          maxlength: "maxlength"
-        },
-        features: [core_mjs_["ɵɵProvidersFeature"]([MAX_LENGTH_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _MaxLengthValidator = MaxLengthValidator;
+  _MaxLengthValidator.ɵfac = /* @__PURE__ */(() => {
+    let ɵ_MaxLengthValidator_BaseFactory;
+    return function _MaxLengthValidator_Factory(t) {
+      return (ɵ_MaxLengthValidator_BaseFactory || (ɵ_MaxLengthValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](_MaxLengthValidator)))(t || _MaxLengthValidator);
+    };
+  })();
+  _MaxLengthValidator.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _MaxLengthValidator,
+    selectors: [["", "maxlength", "", "formControlName", ""], ["", "maxlength", "", "formControl", ""], ["", "maxlength", "", "ngModel", ""]],
+    hostVars: 1,
+    hostBindings: function _MaxLengthValidator_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        core_mjs_["ɵɵattribute"]("maxlength", ctx._enabled ? ctx.maxlength : null);
+      }
+    },
+    inputs: {
+      maxlength: "maxlength"
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([MAX_LENGTH_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return MaxLengthValidator;
 })();
 /*#__PURE__*/(() => {
@@ -52667,6 +52634,7 @@ const PATTERN_VALIDATOR = {
  * @publicApi
  */
 let PatternValidator = /*#__PURE__*/(() => {
+  var _PatternValidator;
   class PatternValidator extends AbstractValidatorDirective {
     constructor() {
       super(...arguments);
@@ -52677,31 +52645,28 @@ let PatternValidator = /*#__PURE__*/(() => {
       /** @internal */
       this.createValidator = input => patternValidator(input);
     }
-    static {
-      this.ɵfac = /* @__PURE__ */(() => {
-        let ɵPatternValidator_BaseFactory;
-        return function PatternValidator_Factory(t) {
-          return (ɵPatternValidator_BaseFactory || (ɵPatternValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](PatternValidator)))(t || PatternValidator);
-        };
-      })();
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: PatternValidator,
-        selectors: [["", "pattern", "", "formControlName", ""], ["", "pattern", "", "formControl", ""], ["", "pattern", "", "ngModel", ""]],
-        hostVars: 1,
-        hostBindings: function PatternValidator_HostBindings(rf, ctx) {
-          if (rf & 2) {
-            core_mjs_["ɵɵattribute"]("pattern", ctx._enabled ? ctx.pattern : null);
-          }
-        },
-        inputs: {
-          pattern: "pattern"
-        },
-        features: [core_mjs_["ɵɵProvidersFeature"]([PATTERN_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
-      });
-    }
   }
+  _PatternValidator = PatternValidator;
+  _PatternValidator.ɵfac = /* @__PURE__ */(() => {
+    let ɵ_PatternValidator_BaseFactory;
+    return function _PatternValidator_Factory(t) {
+      return (ɵ_PatternValidator_BaseFactory || (ɵ_PatternValidator_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](_PatternValidator)))(t || _PatternValidator);
+    };
+  })();
+  _PatternValidator.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _PatternValidator,
+    selectors: [["", "pattern", "", "formControlName", ""], ["", "pattern", "", "formControl", ""], ["", "pattern", "", "ngModel", ""]],
+    hostVars: 1,
+    hostBindings: function _PatternValidator_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        core_mjs_["ɵɵattribute"]("pattern", ctx._enabled ? ctx.pattern : null);
+      }
+    },
+    inputs: {
+      pattern: "pattern"
+    },
+    features: [core_mjs_["ɵɵProvidersFeature"]([PATTERN_VALIDATOR]), core_mjs_["ɵɵInheritDefinitionFeature"]]
+  });
   return PatternValidator;
 })();
 /*#__PURE__*/(() => {
@@ -52714,21 +52679,16 @@ const REACTIVE_DRIVEN_DIRECTIVES = [FormControlDirective, FormGroupDirective, Fo
  * Internal module used for sharing directives between FormsModule and ReactiveFormsModule
  */
 let ɵInternalFormsSharedModule = /*#__PURE__*/(() => {
-  class ɵInternalFormsSharedModule {
-    static {
-      this.ɵfac = function ɵInternalFormsSharedModule_Factory(t) {
-        return new (t || ɵInternalFormsSharedModule)();
-      };
-    }
-    static {
-      this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-        type: ɵInternalFormsSharedModule
-      });
-    }
-    static {
-      this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-    }
-  }
+  var _ɵInternalFormsSharedModule;
+  class ɵInternalFormsSharedModule {}
+  _ɵInternalFormsSharedModule = ɵInternalFormsSharedModule;
+  _ɵInternalFormsSharedModule.ɵfac = function _ɵInternalFormsSharedModule_Factory(t) {
+    return new (t || _ɵInternalFormsSharedModule)();
+  };
+  _ɵInternalFormsSharedModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: _ɵInternalFormsSharedModule
+  });
+  _ɵInternalFormsSharedModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
   return ɵInternalFormsSharedModule;
 })();
 /*#__PURE__*/(() => {
@@ -53215,6 +53175,7 @@ function isAbstractControlOptions(options) {
  * @publicApi
  */
 let FormBuilder = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  var _FormBuilder;
   class FormBuilder {
     constructor() {
       this.useNonNullable = false;
@@ -53388,19 +53349,16 @@ let FormBuilder = /*#__PURE__*/(/* unused pure expression or super */ null && ((
         return this.control(controls);
       }
     }
-    static {
-      this.ɵfac = function FormBuilder_Factory(t) {
-        return new (t || FormBuilder)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
-        token: FormBuilder,
-        factory: FormBuilder.ɵfac,
-        providedIn: 'root'
-      });
-    }
   }
+  _FormBuilder = FormBuilder;
+  _FormBuilder.ɵfac = function _FormBuilder_Factory(t) {
+    return new (t || _FormBuilder)();
+  };
+  _FormBuilder.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+    token: _FormBuilder,
+    factory: _FormBuilder.ɵfac,
+    providedIn: 'root'
+  });
   return FormBuilder;
 })()));
 /*#__PURE__*/(() => {
@@ -53414,20 +53372,17 @@ let FormBuilder = /*#__PURE__*/(/* unused pure expression or super */ null && ((
  * @publicApi
  */
 let NonNullableFormBuilder = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
-  class NonNullableFormBuilder {
-    static {
-      this.ɵfac = function NonNullableFormBuilder_Factory(t) {
-        return new (t || NonNullableFormBuilder)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
-        token: NonNullableFormBuilder,
-        factory: () => (() => inject(FormBuilder).nonNullable)(),
-        providedIn: 'root'
-      });
-    }
-  }
+  var _NonNullableFormBuilder;
+  class NonNullableFormBuilder {}
+  _NonNullableFormBuilder = NonNullableFormBuilder;
+  _NonNullableFormBuilder.ɵfac = function _NonNullableFormBuilder_Factory(t) {
+    return new (t || _NonNullableFormBuilder)();
+  };
+  _NonNullableFormBuilder.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+    token: _NonNullableFormBuilder,
+    factory: () => (() => inject(FormBuilder).nonNullable)(),
+    providedIn: 'root'
+  });
   return NonNullableFormBuilder;
 })()));
 /*#__PURE__*/(() => {
@@ -53437,6 +53392,7 @@ let NonNullableFormBuilder = /*#__PURE__*/(/* unused pure expression or super */
  * UntypedFormBuilder is the same as `FormBuilder`, but it provides untyped controls.
  */
 let UntypedFormBuilder = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  var _UntypedFormBuilder;
   class UntypedFormBuilder extends FormBuilder {
     group(controlsConfig, options = null) {
       return super.group(controlsConfig, options);
@@ -53453,22 +53409,19 @@ let UntypedFormBuilder = /*#__PURE__*/(/* unused pure expression or super */ nul
     array(controlsConfig, validatorOrOpts, asyncValidator) {
       return super.array(controlsConfig, validatorOrOpts, asyncValidator);
     }
-    static {
-      this.ɵfac = /* @__PURE__ */(() => {
-        let ɵUntypedFormBuilder_BaseFactory;
-        return function UntypedFormBuilder_Factory(t) {
-          return (ɵUntypedFormBuilder_BaseFactory || (ɵUntypedFormBuilder_BaseFactory = i0.ɵɵgetInheritedFactory(UntypedFormBuilder)))(t || UntypedFormBuilder);
-        };
-      })();
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
-        token: UntypedFormBuilder,
-        factory: UntypedFormBuilder.ɵfac,
-        providedIn: 'root'
-      });
-    }
   }
+  _UntypedFormBuilder = UntypedFormBuilder;
+  _UntypedFormBuilder.ɵfac = /* @__PURE__ */(() => {
+    let ɵ_UntypedFormBuilder_BaseFactory;
+    return function _UntypedFormBuilder_Factory(t) {
+      return (ɵ_UntypedFormBuilder_BaseFactory || (ɵ_UntypedFormBuilder_BaseFactory = i0.ɵɵgetInheritedFactory(_UntypedFormBuilder)))(t || _UntypedFormBuilder);
+    };
+  })();
+  _UntypedFormBuilder.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+    token: _UntypedFormBuilder,
+    factory: _UntypedFormBuilder.ɵfac,
+    providedIn: 'root'
+  });
   return UntypedFormBuilder;
 })()));
 /*#__PURE__*/(() => {
@@ -53495,6 +53448,7 @@ const VERSION = /*#__PURE__*/new core_mjs_.Version('17.3.9');
  * @publicApi
  */
 let FormsModule = /*#__PURE__*/(() => {
+  var _FormsModule;
   class FormsModule {
     /**
      * @description
@@ -53513,22 +53467,17 @@ let FormsModule = /*#__PURE__*/(() => {
         }]
       };
     }
-    static {
-      this.ɵfac = function FormsModule_Factory(t) {
-        return new (t || FormsModule)();
-      };
-    }
-    static {
-      this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-        type: FormsModule
-      });
-    }
-    static {
-      this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-        imports: [ɵInternalFormsSharedModule]
-      });
-    }
   }
+  _FormsModule = FormsModule;
+  _FormsModule.ɵfac = function _FormsModule_Factory(t) {
+    return new (t || _FormsModule)();
+  };
+  _FormsModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: _FormsModule
+  });
+  _FormsModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    imports: [ɵInternalFormsSharedModule]
+  });
   return FormsModule;
 })();
 /*#__PURE__*/(() => {
@@ -53544,6 +53493,7 @@ let FormsModule = /*#__PURE__*/(() => {
  * @publicApi
  */
 let ReactiveFormsModule = /*#__PURE__*/(() => {
+  var _ReactiveFormsModule;
   class ReactiveFormsModule {
     /**
      * @description
@@ -53567,22 +53517,17 @@ let ReactiveFormsModule = /*#__PURE__*/(() => {
         }]
       };
     }
-    static {
-      this.ɵfac = function ReactiveFormsModule_Factory(t) {
-        return new (t || ReactiveFormsModule)();
-      };
-    }
-    static {
-      this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-        type: ReactiveFormsModule
-      });
-    }
-    static {
-      this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
-        imports: [ɵInternalFormsSharedModule]
-      });
-    }
   }
+  _ReactiveFormsModule = ReactiveFormsModule;
+  _ReactiveFormsModule.ɵfac = function _ReactiveFormsModule_Factory(t) {
+    return new (t || _ReactiveFormsModule)();
+  };
+  _ReactiveFormsModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: _ReactiveFormsModule
+  });
+  _ReactiveFormsModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({
+    imports: [ɵInternalFormsSharedModule]
+  });
   return ReactiveFormsModule;
 })();
 /*#__PURE__*/(() => {

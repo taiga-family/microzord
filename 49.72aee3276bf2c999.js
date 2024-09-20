@@ -801,22 +801,20 @@ class BrowserGetTestability {
  * A factory for `HttpXhrBackend` that uses the `XMLHttpRequest` browser API.
  */
 let BrowserXhr = /*#__PURE__*/(() => {
+  var _BrowserXhr;
   class BrowserXhr {
     build() {
       return new XMLHttpRequest();
     }
-    static {
-      this.ɵfac = function BrowserXhr_Factory(t) {
-        return new (t || BrowserXhr)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-        token: BrowserXhr,
-        factory: BrowserXhr.ɵfac
-      });
-    }
   }
+  _BrowserXhr = BrowserXhr;
+  _BrowserXhr.ɵfac = function _BrowserXhr_Factory(t) {
+    return new (t || _BrowserXhr)();
+  };
+  _BrowserXhr.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+    token: _BrowserXhr,
+    factory: _BrowserXhr.ɵfac
+  });
   return BrowserXhr;
 })();
 /*#__PURE__*/(() => {
@@ -836,6 +834,7 @@ const EVENT_MANAGER_PLUGINS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_M
  * @publicApi
  */
 let EventManager = /*#__PURE__*/(() => {
+  var _EventManager;
   class EventManager {
     /**
      * Initializes an instance of the event-manager service.
@@ -881,18 +880,15 @@ let EventManager = /*#__PURE__*/(() => {
       this._eventNameToPlugin.set(eventName, plugin);
       return plugin;
     }
-    static {
-      this.ɵfac = function EventManager_Factory(t) {
-        return new (t || EventManager)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](EVENT_MANAGER_PLUGINS), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone));
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-        token: EventManager,
-        factory: EventManager.ɵfac
-      });
-    }
   }
+  _EventManager = EventManager;
+  _EventManager.ɵfac = function _EventManager_Factory(t) {
+    return new (t || _EventManager)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](EVENT_MANAGER_PLUGINS), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone));
+  };
+  _EventManager.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+    token: _EventManager,
+    factory: _EventManager.ɵfac
+  });
   return EventManager;
 })();
 /*#__PURE__*/(() => {
@@ -916,6 +912,7 @@ class EventManagerPlugin {
 /** The style elements attribute name used to set value of `APP_ID` token. */
 const APP_ID_ATTRIBUTE_NAME = 'ng-app-id';
 let SharedStylesHost = /*#__PURE__*/(() => {
+  var _SharedStylesHost;
   class SharedStylesHost {
     constructor(doc, appId, nonce, platformId = {}) {
       this.doc = doc;
@@ -1048,18 +1045,15 @@ let SharedStylesHost = /*#__PURE__*/(() => {
       // Re-add the head element back since this is the default host.
       hostNodes.add(this.doc.head);
     }
-    static {
-      this.ɵfac = function SharedStylesHost_Factory(t) {
-        return new (t || SharedStylesHost)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.APP_ID), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.CSP_NONCE, 8), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.PLATFORM_ID));
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-        token: SharedStylesHost,
-        factory: SharedStylesHost.ɵfac
-      });
-    }
   }
+  _SharedStylesHost = SharedStylesHost;
+  _SharedStylesHost.ɵfac = function _SharedStylesHost_Factory(t) {
+    return new (t || _SharedStylesHost)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.APP_ID), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.CSP_NONCE, 8), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.PLATFORM_ID));
+  };
+  _SharedStylesHost.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+    token: _SharedStylesHost,
+    factory: _SharedStylesHost.ɵfac
+  });
   return SharedStylesHost;
 })();
 /*#__PURE__*/(() => {
@@ -1102,6 +1096,7 @@ function shimStylesContent(compId, styles) {
   return styles.map(s => s.replace(COMPONENT_REGEX, compId));
 }
 let DomRendererFactory2 = /*#__PURE__*/(() => {
+  var _DomRendererFactory;
   class DomRendererFactory2 {
     constructor(eventManager, sharedStylesHost, appId, removeStylesOnCompDestroy, doc, platformId, ngZone, nonce = null) {
       this.eventManager = eventManager;
@@ -1164,18 +1159,15 @@ let DomRendererFactory2 = /*#__PURE__*/(() => {
     ngOnDestroy() {
       this.rendererByCompId.clear();
     }
-    static {
-      this.ɵfac = function DomRendererFactory2_Factory(t) {
-        return new (t || DomRendererFactory2)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](EventManager), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](SharedStylesHost), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.APP_ID), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](REMOVE_STYLES_ON_COMPONENT_DESTROY), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.PLATFORM_ID), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.CSP_NONCE));
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-        token: DomRendererFactory2,
-        factory: DomRendererFactory2.ɵfac
-      });
-    }
   }
+  _DomRendererFactory = DomRendererFactory2;
+  _DomRendererFactory.ɵfac = function _DomRendererFactory_Factory(t) {
+    return new (t || _DomRendererFactory)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](EventManager), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](SharedStylesHost), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.APP_ID), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](REMOVE_STYLES_ON_COMPONENT_DESTROY), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.PLATFORM_ID), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.CSP_NONCE));
+  };
+  _DomRendererFactory.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+    token: _DomRendererFactory,
+    factory: _DomRendererFactory.ɵfac
+  });
   return DomRendererFactory2;
 })();
 /*#__PURE__*/(() => {
@@ -1422,6 +1414,7 @@ class EmulatedEncapsulationDomRenderer2 extends NoneEncapsulationDomRenderer {
   }
 }
 let DomEventsPlugin = /*#__PURE__*/(() => {
+  var _DomEventsPlugin;
   class DomEventsPlugin extends EventManagerPlugin {
     constructor(doc) {
       super(doc);
@@ -1438,18 +1431,15 @@ let DomEventsPlugin = /*#__PURE__*/(() => {
     removeEventListener(target, eventName, callback) {
       return target.removeEventListener(eventName, callback);
     }
-    static {
-      this.ɵfac = function DomEventsPlugin_Factory(t) {
-        return new (t || DomEventsPlugin)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-        token: DomEventsPlugin,
-        factory: DomEventsPlugin.ɵfac
-      });
-    }
   }
+  _DomEventsPlugin = DomEventsPlugin;
+  _DomEventsPlugin.ɵfac = function _DomEventsPlugin_Factory(t) {
+    return new (t || _DomEventsPlugin)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
+  };
+  _DomEventsPlugin.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+    token: _DomEventsPlugin,
+    factory: _DomEventsPlugin.ɵfac
+  });
   return DomEventsPlugin;
 })();
 /*#__PURE__*/(() => {
@@ -1490,6 +1480,7 @@ const MODIFIER_KEY_GETTERS = {
  * A browser plug-in that provides support for handling of key events in Angular.
  */
 let KeyEventsPlugin = /*#__PURE__*/(() => {
+  var _KeyEventsPlugin;
   class KeyEventsPlugin extends EventManagerPlugin {
     /**
      * Initializes an instance of the browser plug-in.
@@ -1617,18 +1608,15 @@ let KeyEventsPlugin = /*#__PURE__*/(() => {
     static _normalizeKey(keyName) {
       return keyName === 'esc' ? 'escape' : keyName;
     }
-    static {
-      this.ɵfac = function KeyEventsPlugin_Factory(t) {
-        return new (t || KeyEventsPlugin)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-        token: KeyEventsPlugin,
-        factory: KeyEventsPlugin.ɵfac
-      });
-    }
   }
+  _KeyEventsPlugin = KeyEventsPlugin;
+  _KeyEventsPlugin.ɵfac = function _KeyEventsPlugin_Factory(t) {
+    return new (t || _KeyEventsPlugin)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
+  };
+  _KeyEventsPlugin.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+    token: _KeyEventsPlugin,
+    factory: _KeyEventsPlugin.ɵfac
+  });
   return KeyEventsPlugin;
 })();
 /*#__PURE__*/(() => {
@@ -1827,6 +1815,7 @@ const BROWSER_MODULE_PROVIDERS = [{
  * @publicApi
  */
 let BrowserModule = /*#__PURE__*/(/* runtime-dependent pure expression or super */ 792 == __webpack_require__.j ? ((() => {
+  var _BrowserModule;
   class BrowserModule {
     constructor(providersAlreadyPresent) {
       if ((typeof ngDevMode === 'undefined' || ngDevMode) && providersAlreadyPresent) {
@@ -1852,23 +1841,18 @@ let BrowserModule = /*#__PURE__*/(/* runtime-dependent pure expression or super 
         }]
       };
     }
-    static {
-      this.ɵfac = function BrowserModule_Factory(t) {
-        return new (t || BrowserModule)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](BROWSER_MODULE_PROVIDERS_MARKER, 12));
-      };
-    }
-    static {
-      this.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
-        type: BrowserModule
-      });
-    }
-    static {
-      this.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-        providers: [...BROWSER_MODULE_PROVIDERS, ...TESTABILITY_PROVIDERS],
-        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.CommonModule, _angular_core__WEBPACK_IMPORTED_MODULE_0__.ApplicationModule]
-      });
-    }
   }
+  _BrowserModule = BrowserModule;
+  _BrowserModule.ɵfac = function _BrowserModule_Factory(t) {
+    return new (t || _BrowserModule)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](BROWSER_MODULE_PROVIDERS_MARKER, 12));
+  };
+  _BrowserModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+    type: _BrowserModule
+  });
+  _BrowserModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+    providers: [...BROWSER_MODULE_PROVIDERS, ...TESTABILITY_PROVIDERS],
+    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.CommonModule, _angular_core__WEBPACK_IMPORTED_MODULE_0__.ApplicationModule]
+  });
   return BrowserModule;
 })()) : null);
 /*#__PURE__*/(() => {
@@ -1898,6 +1882,7 @@ let BrowserModule = /*#__PURE__*/(/* runtime-dependent pure expression or super 
  * @publicApi
  */
 let Meta = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  var _Meta;
   class Meta {
     constructor(_doc) {
       this._doc = _doc;
@@ -2019,19 +2004,16 @@ let Meta = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
     _getMetaKeyMap(prop) {
       return META_KEYS_MAP[prop] || prop;
     }
-    static {
-      this.ɵfac = function Meta_Factory(t) {
-        return new (t || Meta)(i0.ɵɵinject(DOCUMENT));
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
-        token: Meta,
-        factory: Meta.ɵfac,
-        providedIn: 'root'
-      });
-    }
   }
+  _Meta = Meta;
+  _Meta.ɵfac = function _Meta_Factory(t) {
+    return new (t || _Meta)(i0.ɵɵinject(DOCUMENT));
+  };
+  _Meta.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+    token: _Meta,
+    factory: _Meta.ɵfac,
+    providedIn: 'root'
+  });
   return Meta;
 })()));
 /*#__PURE__*/(() => {
@@ -2055,6 +2037,7 @@ const META_KEYS_MAP = {
  * @publicApi
  */
 let Title = /*#__PURE__*/(() => {
+  var _Title;
   class Title {
     constructor(_doc) {
       this._doc = _doc;
@@ -2072,19 +2055,16 @@ let Title = /*#__PURE__*/(() => {
     setTitle(newTitle) {
       this._doc.title = newTitle || '';
     }
-    static {
-      this.ɵfac = function Title_Factory(t) {
-        return new (t || Title)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-        token: Title,
-        factory: Title.ɵfac,
-        providedIn: 'root'
-      });
-    }
   }
+  _Title = Title;
+  _Title.ɵfac = function _Title_Factory(t) {
+    return new (t || _Title)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
+  };
+  _Title.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+    token: _Title,
+    factory: _Title.ɵfac,
+    providedIn: 'root'
+  });
   return Title;
 })();
 /*#__PURE__*/(() => {
@@ -2299,6 +2279,7 @@ const HAMMER_LOADER = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0_
  * @publicApi
  */
 let HammerGestureConfig = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  var _HammerGestureConfig;
   class HammerGestureConfig {
     constructor() {
       /**
@@ -2344,18 +2325,15 @@ let HammerGestureConfig = /*#__PURE__*/(/* unused pure expression or super */ nu
       }
       return mc;
     }
-    static {
-      this.ɵfac = function HammerGestureConfig_Factory(t) {
-        return new (t || HammerGestureConfig)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
-        token: HammerGestureConfig,
-        factory: HammerGestureConfig.ɵfac
-      });
-    }
   }
+  _HammerGestureConfig = HammerGestureConfig;
+  _HammerGestureConfig.ɵfac = function _HammerGestureConfig_Factory(t) {
+    return new (t || _HammerGestureConfig)();
+  };
+  _HammerGestureConfig.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+    token: _HammerGestureConfig,
+    factory: _HammerGestureConfig.ɵfac
+  });
   return HammerGestureConfig;
 })()));
 /*#__PURE__*/(() => {
@@ -2367,6 +2345,7 @@ let HammerGestureConfig = /*#__PURE__*/(/* unused pure expression or super */ nu
  * @ngModule HammerModule
  */
 let HammerGesturesPlugin = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+  var _HammerGesturesPlugin;
   class HammerGesturesPlugin extends EventManagerPlugin {
     constructor(doc, _config, console, loader) {
       super(doc);
@@ -2450,18 +2429,15 @@ let HammerGesturesPlugin = /*#__PURE__*/(/* unused pure expression or super */ n
     isCustomEvent(eventName) {
       return this._config.events.indexOf(eventName) > -1;
     }
-    static {
-      this.ɵfac = function HammerGesturesPlugin_Factory(t) {
-        return new (t || HammerGesturesPlugin)(i0.ɵɵinject(DOCUMENT), i0.ɵɵinject(HAMMER_GESTURE_CONFIG), i0.ɵɵinject(i0.ɵConsole), i0.ɵɵinject(HAMMER_LOADER, 8));
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
-        token: HammerGesturesPlugin,
-        factory: HammerGesturesPlugin.ɵfac
-      });
-    }
   }
+  _HammerGesturesPlugin = HammerGesturesPlugin;
+  _HammerGesturesPlugin.ɵfac = function _HammerGesturesPlugin_Factory(t) {
+    return new (t || _HammerGesturesPlugin)(i0.ɵɵinject(DOCUMENT), i0.ɵɵinject(HAMMER_GESTURE_CONFIG), i0.ɵɵinject(i0.ɵConsole), i0.ɵɵinject(HAMMER_LOADER, 8));
+  };
+  _HammerGesturesPlugin.ɵprov = /* @__PURE__ */i0.ɵɵdefineInjectable({
+    token: _HammerGesturesPlugin,
+    factory: _HammerGesturesPlugin.ɵfac
+  });
   return HammerGesturesPlugin;
 })()));
 /*#__PURE__*/(() => {
@@ -2479,32 +2455,27 @@ let HammerGesturesPlugin = /*#__PURE__*/(/* unused pure expression or super */ n
  * @publicApi
  */
 let HammerModule = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
-  class HammerModule {
-    static {
-      this.ɵfac = function HammerModule_Factory(t) {
-        return new (t || HammerModule)();
-      };
-    }
-    static {
-      this.ɵmod = /* @__PURE__ */i0.ɵɵdefineNgModule({
-        type: HammerModule
-      });
-    }
-    static {
-      this.ɵinj = /* @__PURE__ */i0.ɵɵdefineInjector({
-        providers: [{
-          provide: EVENT_MANAGER_PLUGINS,
-          useClass: HammerGesturesPlugin,
-          multi: true,
-          deps: [DOCUMENT, HAMMER_GESTURE_CONFIG, ɵConsole, [new Optional(), HAMMER_LOADER]]
-        }, {
-          provide: HAMMER_GESTURE_CONFIG,
-          useClass: HammerGestureConfig,
-          deps: []
-        }]
-      });
-    }
-  }
+  var _HammerModule;
+  class HammerModule {}
+  _HammerModule = HammerModule;
+  _HammerModule.ɵfac = function _HammerModule_Factory(t) {
+    return new (t || _HammerModule)();
+  };
+  _HammerModule.ɵmod = /* @__PURE__ */i0.ɵɵdefineNgModule({
+    type: _HammerModule
+  });
+  _HammerModule.ɵinj = /* @__PURE__ */i0.ɵɵdefineInjector({
+    providers: [{
+      provide: EVENT_MANAGER_PLUGINS,
+      useClass: HammerGesturesPlugin,
+      multi: true,
+      deps: [DOCUMENT, HAMMER_GESTURE_CONFIG, ɵConsole, [new Optional(), HAMMER_LOADER]]
+    }, {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: HammerGestureConfig,
+      deps: []
+    }]
+  });
   return HammerModule;
 })()));
 /*#__PURE__*/(() => {
@@ -2543,34 +2514,32 @@ let HammerModule = /*#__PURE__*/(/* unused pure expression or super */ null && (
  * @publicApi
  */
 let DomSanitizer = /*#__PURE__*/(/* runtime-dependent pure expression or super */ 792 == __webpack_require__.j ? ((() => {
-  class DomSanitizer {
-    static {
-      this.ɵfac = function DomSanitizer_Factory(t) {
-        return new (t || DomSanitizer)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-        token: DomSanitizer,
-        factory: function DomSanitizer_Factory(t) {
-          let r = null;
-          if (t) {
-            r = new (t || DomSanitizer)();
-          } else {
-            r = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](DomSanitizerImpl);
-          }
-          return r;
-        },
-        providedIn: 'root'
-      });
-    }
-  }
+  var _DomSanitizer;
+  class DomSanitizer {}
+  _DomSanitizer = DomSanitizer;
+  _DomSanitizer.ɵfac = function _DomSanitizer_Factory(t) {
+    return new (t || _DomSanitizer)();
+  };
+  _DomSanitizer.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+    token: _DomSanitizer,
+    factory: function _DomSanitizer_Factory(t) {
+      let r = null;
+      if (t) {
+        r = new (t || _DomSanitizer)();
+      } else {
+        r = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](DomSanitizerImpl);
+      }
+      return r;
+    },
+    providedIn: 'root'
+  });
   return DomSanitizer;
 })()) : null);
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 let DomSanitizerImpl = /*#__PURE__*/(/* runtime-dependent pure expression or super */ 792 == __webpack_require__.j ? ((() => {
+  var _DomSanitizerImpl;
   class DomSanitizerImpl extends DomSanitizer {
     constructor(_doc) {
       super();
@@ -2625,19 +2594,16 @@ let DomSanitizerImpl = /*#__PURE__*/(/* runtime-dependent pure expression or sup
     bypassSecurityTrustResourceUrl(value) {
       return (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵbypassSanitizationTrustResourceUrl"])(value);
     }
-    static {
-      this.ɵfac = function DomSanitizerImpl_Factory(t) {
-        return new (t || DomSanitizerImpl)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-        token: DomSanitizerImpl,
-        factory: DomSanitizerImpl.ɵfac,
-        providedIn: 'root'
-      });
-    }
   }
+  _DomSanitizerImpl = DomSanitizerImpl;
+  _DomSanitizerImpl.ɵfac = function _DomSanitizerImpl_Factory(t) {
+    return new (t || _DomSanitizerImpl)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
+  };
+  _DomSanitizerImpl.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+    token: _DomSanitizerImpl,
+    factory: _DomSanitizerImpl.ɵfac,
+    providedIn: 'root'
+  });
   return DomSanitizerImpl;
 })()) : null);
 /*#__PURE__*/(() => {

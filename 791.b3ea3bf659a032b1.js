@@ -699,7 +699,7 @@ class UrlTree {
     }
   }
   get queryParamMap() {
-    this._queryParamMap ??= convertToParamMap(this.queryParams);
+    this._queryParamMap ?? (this._queryParamMap = convertToParamMap(this.queryParams));
     return this._queryParamMap;
   }
   /** @docsNotRequired */
@@ -773,7 +773,7 @@ class UrlSegment {
     this.parameters = parameters;
   }
   get parameterMap() {
-    this._parameterMap ??= convertToParamMap(this.parameters);
+    this._parameterMap ?? (this._parameterMap = convertToParamMap(this.parameters));
     return this._parameterMap;
   }
   /** @docsNotRequired */
@@ -815,20 +815,17 @@ function mapChildrenIntoArray(segment, fn) {
  * @publicApi
  */
 let UrlSerializer = /*#__PURE__*/(() => {
-  class UrlSerializer {
-    static {
-      this.ɵfac = function UrlSerializer_Factory(t) {
-        return new (t || UrlSerializer)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: UrlSerializer,
-        factory: () => (() => new DefaultUrlSerializer())(),
-        providedIn: 'root'
-      });
-    }
-  }
+  var _UrlSerializer;
+  class UrlSerializer {}
+  _UrlSerializer = UrlSerializer;
+  _UrlSerializer.ɵfac = function _UrlSerializer_Factory(t) {
+    return new (t || _UrlSerializer)();
+  };
+  _UrlSerializer.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _UrlSerializer,
+    factory: () => (() => new DefaultUrlSerializer())(),
+    providedIn: 'root'
+  });
   return UrlSerializer;
 })();
 /*#__PURE__*/(() => {
@@ -1431,7 +1428,7 @@ function getOutlets(commands) {
   };
 }
 function updateSegmentGroup(segmentGroup, startIndex, commands) {
-  segmentGroup ??= new UrlSegmentGroup([], {});
+  segmentGroup ?? (segmentGroup = new UrlSegmentGroup([], {}));
   if (segmentGroup.segments.length === 0 && segmentGroup.hasChildren()) {
     return updateSegmentGroupChildren(segmentGroup, startIndex, commands);
   }
@@ -2133,6 +2130,7 @@ class OutletContext {
  * @publicApi
  */
 let ChildrenOutletContexts = /*#__PURE__*/(() => {
+  var _ChildrenOutletContexts;
   class ChildrenOutletContexts {
     constructor() {
       // contexts for child outlets, by name.
@@ -2179,19 +2177,16 @@ let ChildrenOutletContexts = /*#__PURE__*/(() => {
     getContext(childName) {
       return this.contexts.get(childName) || null;
     }
-    static {
-      this.ɵfac = function ChildrenOutletContexts_Factory(t) {
-        return new (t || ChildrenOutletContexts)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: ChildrenOutletContexts,
-        factory: ChildrenOutletContexts.ɵfac,
-        providedIn: 'root'
-      });
-    }
   }
+  _ChildrenOutletContexts = ChildrenOutletContexts;
+  _ChildrenOutletContexts.ɵfac = function _ChildrenOutletContexts_Factory(t) {
+    return new (t || _ChildrenOutletContexts)();
+  };
+  _ChildrenOutletContexts.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _ChildrenOutletContexts,
+    factory: _ChildrenOutletContexts.ɵfac,
+    providedIn: 'root'
+  });
   return ChildrenOutletContexts;
 })();
 /*#__PURE__*/(() => {
@@ -2417,7 +2412,7 @@ class ActivatedRoute {
    * The map supports retrieving single and multiple values from the same parameter.
    */
   get paramMap() {
-    this._paramMap ??= this.params.pipe((0,map/* map */.T)(p => convertToParamMap(p)));
+    this._paramMap ?? (this._paramMap = this.params.pipe((0,map/* map */.T)(p => convertToParamMap(p))));
     return this._paramMap;
   }
   /**
@@ -2425,7 +2420,7 @@ class ActivatedRoute {
    * The map supports retrieving single and multiple values from the query parameter.
    */
   get queryParamMap() {
-    this._queryParamMap ??= this.queryParams.pipe((0,map/* map */.T)(p => convertToParamMap(p)));
+    this._queryParamMap ?? (this._queryParamMap = this.queryParams.pipe((0,map/* map */.T)(p => convertToParamMap(p))));
     return this._queryParamMap;
   }
   toString() {
@@ -2581,11 +2576,11 @@ class ActivatedRouteSnapshot {
     return this._routerState.pathFromRoot(this);
   }
   get paramMap() {
-    this._paramMap ??= convertToParamMap(this.params);
+    this._paramMap ?? (this._paramMap = convertToParamMap(this.params));
     return this._paramMap;
   }
   get queryParamMap() {
-    this._queryParamMap ??= convertToParamMap(this.queryParams);
+    this._queryParamMap ?? (this._queryParamMap = convertToParamMap(this.queryParams));
     return this._queryParamMap;
   }
   toString() {
@@ -2733,6 +2728,7 @@ function hasStaticTitle(config) {
  * @publicApi
  */
 let RouterOutlet = /*#__PURE__*/(() => {
+  var _RouterOutlet;
   class RouterOutlet {
     constructor() {
       this.activated = null;
@@ -2896,30 +2892,27 @@ let RouterOutlet = /*#__PURE__*/(() => {
       this.inputBinder?.bindActivatedRouteToOutletComponent(this);
       this.activateEvents.emit(this.activated.instance);
     }
-    static {
-      this.ɵfac = function RouterOutlet_Factory(t) {
-        return new (t || RouterOutlet)();
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: RouterOutlet,
-        selectors: [["router-outlet"]],
-        inputs: {
-          name: "name"
-        },
-        outputs: {
-          activateEvents: "activate",
-          deactivateEvents: "deactivate",
-          attachEvents: "attach",
-          detachEvents: "detach"
-        },
-        exportAs: ["outlet"],
-        standalone: true,
-        features: [core_mjs_["ɵɵNgOnChangesFeature"]]
-      });
-    }
   }
+  _RouterOutlet = RouterOutlet;
+  _RouterOutlet.ɵfac = function _RouterOutlet_Factory(t) {
+    return new (t || _RouterOutlet)();
+  };
+  _RouterOutlet.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _RouterOutlet,
+    selectors: [["router-outlet"]],
+    inputs: {
+      name: "name"
+    },
+    outputs: {
+      activateEvents: "activate",
+      deactivateEvents: "deactivate",
+      attachEvents: "attach",
+      detachEvents: "detach"
+    },
+    exportAs: ["outlet"],
+    standalone: true,
+    features: [core_mjs_["ɵɵNgOnChangesFeature"]]
+  });
   return RouterOutlet;
 })();
 /*#__PURE__*/(() => {
@@ -2975,6 +2968,7 @@ const INPUT_BINDER = /*#__PURE__*/new core_mjs_.InjectionToken('');
  * the subscriptions are cleaned up.
  */
 let RoutedComponentInputBinder = /*#__PURE__*/(() => {
+  var _RoutedComponentInputBinder;
   class RoutedComponentInputBinder {
     constructor() {
       this.outletDataSubscriptions = new Map();
@@ -3026,18 +3020,15 @@ let RoutedComponentInputBinder = /*#__PURE__*/(() => {
       });
       this.outletDataSubscriptions.set(outlet, dataSubscription);
     }
-    static {
-      this.ɵfac = function RoutedComponentInputBinder_Factory(t) {
-        return new (t || RoutedComponentInputBinder)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: RoutedComponentInputBinder,
-        factory: RoutedComponentInputBinder.ɵfac
-      });
-    }
   }
+  _RoutedComponentInputBinder = RoutedComponentInputBinder;
+  _RoutedComponentInputBinder.ɵfac = function _RoutedComponentInputBinder_Factory(t) {
+    return new (t || _RoutedComponentInputBinder)();
+  };
+  _RoutedComponentInputBinder.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _RoutedComponentInputBinder,
+    factory: _RoutedComponentInputBinder.ɵfac
+  });
   return RoutedComponentInputBinder;
 })();
 /*#__PURE__*/(() => {
@@ -3120,30 +3111,27 @@ function isNavigationCancelingError(error) {
  * to this `EmptyOutletComponent`.
  */
 let ɵEmptyOutletComponent = /*#__PURE__*/(() => {
-  class ɵEmptyOutletComponent {
-    static {
-      this.ɵfac = function ɵEmptyOutletComponent_Factory(t) {
-        return new (t || ɵEmptyOutletComponent)();
-      };
-    }
-    static {
-      this.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
-        type: ɵEmptyOutletComponent,
-        selectors: [["ng-component"]],
-        standalone: true,
-        features: [core_mjs_["ɵɵStandaloneFeature"]],
-        decls: 1,
-        vars: 0,
-        template: function _EmptyOutletComponent_Template(rf, ctx) {
-          if (rf & 1) {
-            core_mjs_["ɵɵelement"](0, "router-outlet");
-          }
-        },
-        dependencies: [RouterOutlet],
-        encapsulation: 2
-      });
-    }
-  }
+  var _ɵEmptyOutletComponent;
+  class ɵEmptyOutletComponent {}
+  _ɵEmptyOutletComponent = ɵEmptyOutletComponent;
+  _ɵEmptyOutletComponent.ɵfac = function _ɵEmptyOutletComponent_Factory(t) {
+    return new (t || _ɵEmptyOutletComponent)();
+  };
+  _ɵEmptyOutletComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
+    type: _ɵEmptyOutletComponent,
+    selectors: [["ng-component"]],
+    standalone: true,
+    features: [core_mjs_["ɵɵStandaloneFeature"]],
+    decls: 1,
+    vars: 0,
+    template: function __EmptyOutletComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵelement"](0, "router-outlet");
+      }
+    },
+    dependencies: [RouterOutlet],
+    encapsulation: 2
+  });
   return ɵEmptyOutletComponent;
 })();
 /*#__PURE__*/(() => {
@@ -4517,6 +4505,7 @@ function switchTap(next) {
  * @see [Page title guide](guide/router#setting-the-page-title)
  */
 let TitleStrategy = /*#__PURE__*/(() => {
+  var _TitleStrategy;
   class TitleStrategy {
     /**
      * @returns The `title` of the deepest primary route.
@@ -4537,19 +4526,16 @@ let TitleStrategy = /*#__PURE__*/(() => {
     getResolvedTitleForRoute(snapshot) {
       return snapshot.data[RouteTitleKey];
     }
-    static {
-      this.ɵfac = function TitleStrategy_Factory(t) {
-        return new (t || TitleStrategy)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: TitleStrategy,
-        factory: () => (() => (0,core_mjs_.inject)(DefaultTitleStrategy))(),
-        providedIn: 'root'
-      });
-    }
   }
+  _TitleStrategy = TitleStrategy;
+  _TitleStrategy.ɵfac = function _TitleStrategy_Factory(t) {
+    return new (t || _TitleStrategy)();
+  };
+  _TitleStrategy.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _TitleStrategy,
+    factory: () => (() => (0,core_mjs_.inject)(DefaultTitleStrategy))(),
+    providedIn: 'root'
+  });
   return TitleStrategy;
 })();
 /*#__PURE__*/(() => {
@@ -4559,6 +4545,7 @@ let TitleStrategy = /*#__PURE__*/(() => {
  * The default `TitleStrategy` used by the router that updates the title using the `Title` service.
  */
 let DefaultTitleStrategy = /*#__PURE__*/(() => {
+  var _DefaultTitleStrategy;
   class DefaultTitleStrategy extends TitleStrategy {
     constructor(title) {
       super();
@@ -4575,19 +4562,16 @@ let DefaultTitleStrategy = /*#__PURE__*/(() => {
         this.title.setTitle(title);
       }
     }
-    static {
-      this.ɵfac = function DefaultTitleStrategy_Factory(t) {
-        return new (t || DefaultTitleStrategy)(core_mjs_["ɵɵinject"](platform_browser/* Title */.hE));
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: DefaultTitleStrategy,
-        factory: DefaultTitleStrategy.ɵfac,
-        providedIn: 'root'
-      });
-    }
   }
+  _DefaultTitleStrategy = DefaultTitleStrategy;
+  _DefaultTitleStrategy.ɵfac = function _DefaultTitleStrategy_Factory(t) {
+    return new (t || _DefaultTitleStrategy)(core_mjs_["ɵɵinject"](platform_browser/* Title */.hE));
+  };
+  _DefaultTitleStrategy.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _DefaultTitleStrategy,
+    factory: _DefaultTitleStrategy.ɵfac,
+    providedIn: 'root'
+  });
   return DefaultTitleStrategy;
 })();
 /*#__PURE__*/(() => {
@@ -4616,6 +4600,7 @@ const ROUTER_CONFIGURATION = /*#__PURE__*/new core_mjs_.InjectionToken(typeof ng
  */
 const ROUTES = /*#__PURE__*/new core_mjs_.InjectionToken(ngDevMode ? 'ROUTES' : '');
 let RouterConfigLoader = /*#__PURE__*/(() => {
+  var _RouterConfigLoader;
   class RouterConfigLoader {
     constructor() {
       this.componentLoaders = new WeakMap();
@@ -4666,19 +4651,16 @@ let RouterConfigLoader = /*#__PURE__*/(() => {
       this.childrenLoaders.set(route, loader);
       return loader;
     }
-    static {
-      this.ɵfac = function RouterConfigLoader_Factory(t) {
-        return new (t || RouterConfigLoader)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: RouterConfigLoader,
-        factory: RouterConfigLoader.ɵfac,
-        providedIn: 'root'
-      });
-    }
   }
+  _RouterConfigLoader = RouterConfigLoader;
+  _RouterConfigLoader.ɵfac = function _RouterConfigLoader_Factory(t) {
+    return new (t || _RouterConfigLoader)();
+  };
+  _RouterConfigLoader.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _RouterConfigLoader,
+    factory: _RouterConfigLoader.ɵfac,
+    providedIn: 'root'
+  });
   return RouterConfigLoader;
 })();
 /*#__PURE__*/(() => {
@@ -4750,20 +4732,17 @@ function maybeUnwrapDefaultExport(input) {
  * @publicApi
  */
 let UrlHandlingStrategy = /*#__PURE__*/(() => {
-  class UrlHandlingStrategy {
-    static {
-      this.ɵfac = function UrlHandlingStrategy_Factory(t) {
-        return new (t || UrlHandlingStrategy)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: UrlHandlingStrategy,
-        factory: () => (() => (0,core_mjs_.inject)(DefaultUrlHandlingStrategy))(),
-        providedIn: 'root'
-      });
-    }
-  }
+  var _UrlHandlingStrategy;
+  class UrlHandlingStrategy {}
+  _UrlHandlingStrategy = UrlHandlingStrategy;
+  _UrlHandlingStrategy.ɵfac = function _UrlHandlingStrategy_Factory(t) {
+    return new (t || _UrlHandlingStrategy)();
+  };
+  _UrlHandlingStrategy.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _UrlHandlingStrategy,
+    factory: () => (() => (0,core_mjs_.inject)(DefaultUrlHandlingStrategy))(),
+    providedIn: 'root'
+  });
   return UrlHandlingStrategy;
 })();
 /*#__PURE__*/(() => {
@@ -4773,6 +4752,7 @@ let UrlHandlingStrategy = /*#__PURE__*/(() => {
  * @publicApi
  */
 let DefaultUrlHandlingStrategy = /*#__PURE__*/(() => {
+  var _DefaultUrlHandlingStrategy;
   class DefaultUrlHandlingStrategy {
     shouldProcessUrl(url) {
       return true;
@@ -4783,19 +4763,16 @@ let DefaultUrlHandlingStrategy = /*#__PURE__*/(() => {
     merge(newUrlPart, wholeUrl) {
       return newUrlPart;
     }
-    static {
-      this.ɵfac = function DefaultUrlHandlingStrategy_Factory(t) {
-        return new (t || DefaultUrlHandlingStrategy)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: DefaultUrlHandlingStrategy,
-        factory: DefaultUrlHandlingStrategy.ɵfac,
-        providedIn: 'root'
-      });
-    }
   }
+  _DefaultUrlHandlingStrategy = DefaultUrlHandlingStrategy;
+  _DefaultUrlHandlingStrategy.ɵfac = function _DefaultUrlHandlingStrategy_Factory(t) {
+    return new (t || _DefaultUrlHandlingStrategy)();
+  };
+  _DefaultUrlHandlingStrategy.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _DefaultUrlHandlingStrategy,
+    factory: _DefaultUrlHandlingStrategy.ɵfac,
+    providedIn: 'root'
+  });
   return DefaultUrlHandlingStrategy;
 })();
 /*#__PURE__*/(() => {
@@ -4859,6 +4836,7 @@ function createRenderPromise(injector) {
   });
 }
 let NavigationTransitions = /*#__PURE__*/(() => {
+  var _NavigationTransitions;
   class NavigationTransitions {
     get hasRequestedNavigation() {
       return this.navigationId !== 0;
@@ -5244,19 +5222,16 @@ let NavigationTransitions = /*#__PURE__*/(() => {
       const extractedBrowserUrl = this.urlHandlingStrategy.extract(this.urlSerializer.parse(this.location.path(true)));
       return extractedBrowserUrl.toString() !== this.currentTransition?.extractedUrl.toString() && !this.currentTransition?.extras.skipLocationChange;
     }
-    static {
-      this.ɵfac = function NavigationTransitions_Factory(t) {
-        return new (t || NavigationTransitions)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: NavigationTransitions,
-        factory: NavigationTransitions.ɵfac,
-        providedIn: 'root'
-      });
-    }
   }
+  _NavigationTransitions = NavigationTransitions;
+  _NavigationTransitions.ɵfac = function _NavigationTransitions_Factory(t) {
+    return new (t || _NavigationTransitions)();
+  };
+  _NavigationTransitions.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _NavigationTransitions,
+    factory: _NavigationTransitions.ɵfac,
+    providedIn: 'root'
+  });
   return NavigationTransitions;
 })();
 /*#__PURE__*/(() => {
@@ -5274,20 +5249,17 @@ function isBrowserTriggeredNavigation(source) {
  * @publicApi
  */
 let RouteReuseStrategy = /*#__PURE__*/(() => {
-  class RouteReuseStrategy {
-    static {
-      this.ɵfac = function RouteReuseStrategy_Factory(t) {
-        return new (t || RouteReuseStrategy)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: RouteReuseStrategy,
-        factory: () => (() => (0,core_mjs_.inject)(DefaultRouteReuseStrategy))(),
-        providedIn: 'root'
-      });
-    }
-  }
+  var _RouteReuseStrategy;
+  class RouteReuseStrategy {}
+  _RouteReuseStrategy = RouteReuseStrategy;
+  _RouteReuseStrategy.ɵfac = function _RouteReuseStrategy_Factory(t) {
+    return new (t || _RouteReuseStrategy)();
+  };
+  _RouteReuseStrategy.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _RouteReuseStrategy,
+    factory: () => (() => (0,core_mjs_.inject)(DefaultRouteReuseStrategy))(),
+    providedIn: 'root'
+  });
   return RouteReuseStrategy;
 })();
 /*#__PURE__*/(() => {
@@ -5340,49 +5312,44 @@ class BaseRouteReuseStrategy {
   }
 }
 let DefaultRouteReuseStrategy = /*#__PURE__*/(() => {
-  class DefaultRouteReuseStrategy extends BaseRouteReuseStrategy {
-    static {
-      this.ɵfac = /* @__PURE__ */(() => {
-        let ɵDefaultRouteReuseStrategy_BaseFactory;
-        return function DefaultRouteReuseStrategy_Factory(t) {
-          return (ɵDefaultRouteReuseStrategy_BaseFactory || (ɵDefaultRouteReuseStrategy_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](DefaultRouteReuseStrategy)))(t || DefaultRouteReuseStrategy);
-        };
-      })();
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: DefaultRouteReuseStrategy,
-        factory: DefaultRouteReuseStrategy.ɵfac,
-        providedIn: 'root'
-      });
-    }
-  }
+  var _DefaultRouteReuseStrategy;
+  class DefaultRouteReuseStrategy extends BaseRouteReuseStrategy {}
+  _DefaultRouteReuseStrategy = DefaultRouteReuseStrategy;
+  _DefaultRouteReuseStrategy.ɵfac = /* @__PURE__ */(() => {
+    let ɵ_DefaultRouteReuseStrategy_BaseFactory;
+    return function _DefaultRouteReuseStrategy_Factory(t) {
+      return (ɵ_DefaultRouteReuseStrategy_BaseFactory || (ɵ_DefaultRouteReuseStrategy_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](_DefaultRouteReuseStrategy)))(t || _DefaultRouteReuseStrategy);
+    };
+  })();
+  _DefaultRouteReuseStrategy.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _DefaultRouteReuseStrategy,
+    factory: _DefaultRouteReuseStrategy.ɵfac,
+    providedIn: 'root'
+  });
   return DefaultRouteReuseStrategy;
 })();
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 let StateManager = /*#__PURE__*/(() => {
-  class StateManager {
-    static {
-      this.ɵfac = function StateManager_Factory(t) {
-        return new (t || StateManager)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: StateManager,
-        factory: () => (() => (0,core_mjs_.inject)(HistoryStateManager))(),
-        providedIn: 'root'
-      });
-    }
-  }
+  var _StateManager;
+  class StateManager {}
+  _StateManager = StateManager;
+  _StateManager.ɵfac = function _StateManager_Factory(t) {
+    return new (t || _StateManager)();
+  };
+  _StateManager.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _StateManager,
+    factory: () => (() => (0,core_mjs_.inject)(HistoryStateManager))(),
+    providedIn: 'root'
+  });
   return StateManager;
 })();
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 let HistoryStateManager = /*#__PURE__*/(() => {
+  var _HistoryStateManager;
   class HistoryStateManager extends StateManager {
     constructor() {
       super(...arguments);
@@ -5549,22 +5516,19 @@ let HistoryStateManager = /*#__PURE__*/(() => {
         navigationId
       };
     }
-    static {
-      this.ɵfac = /* @__PURE__ */(() => {
-        let ɵHistoryStateManager_BaseFactory;
-        return function HistoryStateManager_Factory(t) {
-          return (ɵHistoryStateManager_BaseFactory || (ɵHistoryStateManager_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](HistoryStateManager)))(t || HistoryStateManager);
-        };
-      })();
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: HistoryStateManager,
-        factory: HistoryStateManager.ɵfac,
-        providedIn: 'root'
-      });
-    }
   }
+  _HistoryStateManager = HistoryStateManager;
+  _HistoryStateManager.ɵfac = /* @__PURE__ */(() => {
+    let ɵ_HistoryStateManager_BaseFactory;
+    return function _HistoryStateManager_Factory(t) {
+      return (ɵ_HistoryStateManager_BaseFactory || (ɵ_HistoryStateManager_BaseFactory = core_mjs_["ɵɵgetInheritedFactory"](_HistoryStateManager)))(t || _HistoryStateManager);
+    };
+  })();
+  _HistoryStateManager.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _HistoryStateManager,
+    factory: _HistoryStateManager.ɵfac,
+    providedIn: 'root'
+  });
   return HistoryStateManager;
 })();
 /*#__PURE__*/(() => {
@@ -5632,6 +5596,7 @@ const subsetMatchOptions = {
  * @publicApi
  */
 let Router = /*#__PURE__*/(() => {
+  var _Router;
   class Router {
     get currentUrlTree() {
       return this.stateManager.getCurrentUrlTree();
@@ -5797,13 +5762,13 @@ let Router = /*#__PURE__*/(() => {
       // Don't need to use Zone.wrap any more, because zone.js
       // already patch onPopState, so location change callback will
       // run into ngZone
-      this.nonRouterCurrentEntryChangeSubscription ??= this.stateManager.registerNonRouterCurrentEntryChangeListener((url, state) => {
+      this.nonRouterCurrentEntryChangeSubscription ?? (this.nonRouterCurrentEntryChangeSubscription = this.stateManager.registerNonRouterCurrentEntryChangeListener((url, state) => {
         // The `setTimeout` was added in #12160 and is likely to support Angular/AngularJS
         // hybrid apps.
         setTimeout(() => {
           this.navigateToSyncWithBrowser(url, 'popstate', state);
         }, 0);
-      });
+      }));
     }
     /**
      * Schedules a router navigation to synchronize Router state with the browser state.
@@ -6144,19 +6109,16 @@ let Router = /*#__PURE__*/(() => {
         return Promise.reject(e);
       });
     }
-    static {
-      this.ɵfac = function Router_Factory(t) {
-        return new (t || Router)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: Router,
-        factory: Router.ɵfac,
-        providedIn: 'root'
-      });
-    }
   }
+  _Router = Router;
+  _Router.ɵfac = function _Router_Factory(t) {
+    return new (t || _Router)();
+  };
+  _Router.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _Router,
+    factory: _Router.ɵfac,
+    providedIn: 'root'
+  });
   return Router;
 })();
 /*#__PURE__*/(() => {
@@ -6272,6 +6234,7 @@ function isPublicRouterEvent(e) {
  * @publicApi
  */
 let RouterLink = /*#__PURE__*/(() => {
+  var _RouterLink;
   class RouterLink {
     constructor(router, route, tabIndexAttribute, renderer, el, locationStrategy) {
       this.router = router;
@@ -6426,44 +6389,41 @@ let RouterLink = /*#__PURE__*/(() => {
         preserveFragment: this.preserveFragment
       });
     }
-    static {
-      this.ɵfac = function RouterLink_Factory(t) {
-        return new (t || RouterLink)(core_mjs_["ɵɵdirectiveInject"](Router), core_mjs_["ɵɵdirectiveInject"](ActivatedRoute), core_mjs_["ɵɵinjectAttribute"]('tabindex'), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](common_mjs_.LocationStrategy));
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: RouterLink,
-        selectors: [["", "routerLink", ""]],
-        hostVars: 1,
-        hostBindings: function RouterLink_HostBindings(rf, ctx) {
-          if (rf & 1) {
-            core_mjs_["ɵɵlistener"]("click", function RouterLink_click_HostBindingHandler($event) {
-              return ctx.onClick($event.button, $event.ctrlKey, $event.shiftKey, $event.altKey, $event.metaKey);
-            });
-          }
-          if (rf & 2) {
-            core_mjs_["ɵɵattribute"]("target", ctx.target);
-          }
-        },
-        inputs: {
-          target: "target",
-          queryParams: "queryParams",
-          fragment: "fragment",
-          queryParamsHandling: "queryParamsHandling",
-          state: "state",
-          info: "info",
-          relativeTo: "relativeTo",
-          preserveFragment: [core_mjs_["ɵɵInputFlags"].HasDecoratorInputTransform, "preserveFragment", "preserveFragment", core_mjs_.booleanAttribute],
-          skipLocationChange: [core_mjs_["ɵɵInputFlags"].HasDecoratorInputTransform, "skipLocationChange", "skipLocationChange", core_mjs_.booleanAttribute],
-          replaceUrl: [core_mjs_["ɵɵInputFlags"].HasDecoratorInputTransform, "replaceUrl", "replaceUrl", core_mjs_.booleanAttribute],
-          routerLink: "routerLink"
-        },
-        standalone: true,
-        features: [core_mjs_["ɵɵInputTransformsFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
-      });
-    }
   }
+  _RouterLink = RouterLink;
+  _RouterLink.ɵfac = function _RouterLink_Factory(t) {
+    return new (t || _RouterLink)(core_mjs_["ɵɵdirectiveInject"](Router), core_mjs_["ɵɵdirectiveInject"](ActivatedRoute), core_mjs_["ɵɵinjectAttribute"]('tabindex'), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](common_mjs_.LocationStrategy));
+  };
+  _RouterLink.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _RouterLink,
+    selectors: [["", "routerLink", ""]],
+    hostVars: 1,
+    hostBindings: function _RouterLink_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        core_mjs_["ɵɵlistener"]("click", function _RouterLink_click_HostBindingHandler($event) {
+          return ctx.onClick($event.button, $event.ctrlKey, $event.shiftKey, $event.altKey, $event.metaKey);
+        });
+      }
+      if (rf & 2) {
+        core_mjs_["ɵɵattribute"]("target", ctx.target);
+      }
+    },
+    inputs: {
+      target: "target",
+      queryParams: "queryParams",
+      fragment: "fragment",
+      queryParamsHandling: "queryParamsHandling",
+      state: "state",
+      info: "info",
+      relativeTo: "relativeTo",
+      preserveFragment: [core_mjs_["ɵɵInputFlags"].HasDecoratorInputTransform, "preserveFragment", "preserveFragment", core_mjs_.booleanAttribute],
+      skipLocationChange: [core_mjs_["ɵɵInputFlags"].HasDecoratorInputTransform, "skipLocationChange", "skipLocationChange", core_mjs_.booleanAttribute],
+      replaceUrl: [core_mjs_["ɵɵInputFlags"].HasDecoratorInputTransform, "replaceUrl", "replaceUrl", core_mjs_.booleanAttribute],
+      routerLink: "routerLink"
+    },
+    standalone: true,
+    features: [core_mjs_["ɵɵInputTransformsFeature"], core_mjs_["ɵɵNgOnChangesFeature"]]
+  });
   return RouterLink;
 })();
 /*#__PURE__*/(() => {
@@ -6540,6 +6500,7 @@ let RouterLink = /*#__PURE__*/(() => {
  * @publicApi
  */
 let RouterLinkActive = /*#__PURE__*/(() => {
+  var _RouterLinkActive;
   class RouterLinkActive {
     get isActive() {
       return this._isActive;
@@ -6653,38 +6614,35 @@ let RouterLinkActive = /*#__PURE__*/(() => {
       const isActiveCheckFn = this.isLinkActive(this.router);
       return this.link && isActiveCheckFn(this.link) || this.links.some(isActiveCheckFn);
     }
-    static {
-      this.ɵfac = function RouterLinkActive_Factory(t) {
-        return new (t || RouterLinkActive)(core_mjs_["ɵɵdirectiveInject"](Router), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ChangeDetectorRef), core_mjs_["ɵɵdirectiveInject"](RouterLink, 8));
-      };
-    }
-    static {
-      this.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
-        type: RouterLinkActive,
-        selectors: [["", "routerLinkActive", ""]],
-        contentQueries: function RouterLinkActive_ContentQueries(rf, ctx, dirIndex) {
-          if (rf & 1) {
-            core_mjs_["ɵɵcontentQuery"](dirIndex, RouterLink, 5);
-          }
-          if (rf & 2) {
-            let _t;
-            core_mjs_["ɵɵqueryRefresh"](_t = core_mjs_["ɵɵloadQuery"]()) && (ctx.links = _t);
-          }
-        },
-        inputs: {
-          routerLinkActiveOptions: "routerLinkActiveOptions",
-          ariaCurrentWhenActive: "ariaCurrentWhenActive",
-          routerLinkActive: "routerLinkActive"
-        },
-        outputs: {
-          isActiveChange: "isActiveChange"
-        },
-        exportAs: ["routerLinkActive"],
-        standalone: true,
-        features: [core_mjs_["ɵɵNgOnChangesFeature"]]
-      });
-    }
   }
+  _RouterLinkActive = RouterLinkActive;
+  _RouterLinkActive.ɵfac = function _RouterLinkActive_Factory(t) {
+    return new (t || _RouterLinkActive)(core_mjs_["ɵɵdirectiveInject"](Router), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ElementRef), core_mjs_["ɵɵdirectiveInject"](core_mjs_.Renderer2), core_mjs_["ɵɵdirectiveInject"](core_mjs_.ChangeDetectorRef), core_mjs_["ɵɵdirectiveInject"](RouterLink, 8));
+  };
+  _RouterLinkActive.ɵdir = /* @__PURE__ */core_mjs_["ɵɵdefineDirective"]({
+    type: _RouterLinkActive,
+    selectors: [["", "routerLinkActive", ""]],
+    contentQueries: function _RouterLinkActive_ContentQueries(rf, ctx, dirIndex) {
+      if (rf & 1) {
+        core_mjs_["ɵɵcontentQuery"](dirIndex, RouterLink, 5);
+      }
+      if (rf & 2) {
+        let _t;
+        core_mjs_["ɵɵqueryRefresh"](_t = core_mjs_["ɵɵloadQuery"]()) && (ctx.links = _t);
+      }
+    },
+    inputs: {
+      routerLinkActiveOptions: "routerLinkActiveOptions",
+      ariaCurrentWhenActive: "ariaCurrentWhenActive",
+      routerLinkActive: "routerLinkActive"
+    },
+    outputs: {
+      isActiveChange: "isActiveChange"
+    },
+    exportAs: ["routerLinkActive"],
+    standalone: true,
+    features: [core_mjs_["ɵɵNgOnChangesFeature"]]
+  });
   return RouterLinkActive;
 })();
 /*#__PURE__*/(() => {
@@ -6717,23 +6675,21 @@ class PreloadingStrategy {}
  * @publicApi
  */
 let PreloadAllModules = /*#__PURE__*/(() => {
+  var _PreloadAllModules;
   class PreloadAllModules {
     preload(route, fn) {
       return fn().pipe((0,catchError/* catchError */.W)(() => (0,of.of)(null)));
     }
-    static {
-      this.ɵfac = function PreloadAllModules_Factory(t) {
-        return new (t || PreloadAllModules)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: PreloadAllModules,
-        factory: PreloadAllModules.ɵfac,
-        providedIn: 'root'
-      });
-    }
   }
+  _PreloadAllModules = PreloadAllModules;
+  _PreloadAllModules.ɵfac = function _PreloadAllModules_Factory(t) {
+    return new (t || _PreloadAllModules)();
+  };
+  _PreloadAllModules.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _PreloadAllModules,
+    factory: _PreloadAllModules.ɵfac,
+    providedIn: 'root'
+  });
   return PreloadAllModules;
 })();
 /*#__PURE__*/(() => {
@@ -6749,23 +6705,21 @@ let PreloadAllModules = /*#__PURE__*/(() => {
  * @publicApi
  */
 let NoPreloading = /*#__PURE__*/(() => {
+  var _NoPreloading;
   class NoPreloading {
     preload(route, fn) {
       return (0,of.of)(null);
     }
-    static {
-      this.ɵfac = function NoPreloading_Factory(t) {
-        return new (t || NoPreloading)();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: NoPreloading,
-        factory: NoPreloading.ɵfac,
-        providedIn: 'root'
-      });
-    }
   }
+  _NoPreloading = NoPreloading;
+  _NoPreloading.ɵfac = function _NoPreloading_Factory(t) {
+    return new (t || _NoPreloading)();
+  };
+  _NoPreloading.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _NoPreloading,
+    factory: _NoPreloading.ɵfac,
+    providedIn: 'root'
+  });
   return NoPreloading;
 })();
 /*#__PURE__*/(() => {
@@ -6784,6 +6738,7 @@ let NoPreloading = /*#__PURE__*/(() => {
  * @publicApi
  */
 let RouterPreloader = /*#__PURE__*/(() => {
+  var _RouterPreloader;
   class RouterPreloader {
     constructor(router, compiler, injector, preloadingStrategy, loader) {
       this.router = router;
@@ -6854,19 +6809,16 @@ let RouterPreloader = /*#__PURE__*/(() => {
         }
       });
     }
-    static {
-      this.ɵfac = function RouterPreloader_Factory(t) {
-        return new (t || RouterPreloader)(core_mjs_["ɵɵinject"](Router), core_mjs_["ɵɵinject"](core_mjs_.Compiler), core_mjs_["ɵɵinject"](core_mjs_.EnvironmentInjector), core_mjs_["ɵɵinject"](PreloadingStrategy), core_mjs_["ɵɵinject"](RouterConfigLoader));
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: RouterPreloader,
-        factory: RouterPreloader.ɵfac,
-        providedIn: 'root'
-      });
-    }
   }
+  _RouterPreloader = RouterPreloader;
+  _RouterPreloader.ɵfac = function _RouterPreloader_Factory(t) {
+    return new (t || _RouterPreloader)(core_mjs_["ɵɵinject"](Router), core_mjs_["ɵɵinject"](core_mjs_.Compiler), core_mjs_["ɵɵinject"](core_mjs_.EnvironmentInjector), core_mjs_["ɵɵinject"](PreloadingStrategy), core_mjs_["ɵɵinject"](RouterConfigLoader));
+  };
+  _RouterPreloader.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _RouterPreloader,
+    factory: _RouterPreloader.ɵfac,
+    providedIn: 'root'
+  });
   return RouterPreloader;
 })();
 /*#__PURE__*/(() => {
@@ -6874,6 +6826,7 @@ let RouterPreloader = /*#__PURE__*/(() => {
 })();
 const ROUTER_SCROLLER = /*#__PURE__*/new core_mjs_.InjectionToken('');
 let RouterScroller = /*#__PURE__*/(() => {
+  var _RouterScroller;
   class RouterScroller {
     /** @nodoc */
     constructor(urlSerializer, transitions, viewportScroller, zone, options = {}) {
@@ -6888,8 +6841,8 @@ let RouterScroller = /*#__PURE__*/(() => {
       this.store = {};
       this.environmentInjector = (0,core_mjs_.inject)(core_mjs_.EnvironmentInjector);
       // Default both options to 'disabled'
-      options.scrollPositionRestoration ||= 'disabled';
-      options.anchorScrolling ||= 'disabled';
+      options.scrollPositionRestoration || (options.scrollPositionRestoration = 'disabled');
+      options.anchorScrolling || (options.anchorScrolling = 'disabled');
     }
     init() {
       // we want to disable the automatic scrolling because having two places
@@ -6965,18 +6918,15 @@ let RouterScroller = /*#__PURE__*/(() => {
       this.routerEventsSubscription?.unsubscribe();
       this.scrollEventsSubscription?.unsubscribe();
     }
-    static {
-      this.ɵfac = function RouterScroller_Factory(t) {
-        core_mjs_["ɵɵinvalidFactory"]();
-      };
-    }
-    static {
-      this.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
-        token: RouterScroller,
-        factory: RouterScroller.ɵfac
-      });
-    }
   }
+  _RouterScroller = RouterScroller;
+  _RouterScroller.ɵfac = function _RouterScroller_Factory(t) {
+    core_mjs_["ɵɵinvalidFactory"]();
+  };
+  _RouterScroller.ɵprov = /* @__PURE__ */core_mjs_["ɵɵdefineInjectable"]({
+    token: _RouterScroller,
+    factory: _RouterScroller.ɵfac
+  });
   return RouterScroller;
 })();
 /*#__PURE__*/(() => {
@@ -7578,6 +7528,7 @@ typeof ngDevMode === 'undefined' || ngDevMode ? {
  * @publicApi
  */
 let RouterModule = /*#__PURE__*/(() => {
+  var _RouterModule;
   class RouterModule {
     constructor(guard) {}
     /**
@@ -7641,20 +7592,15 @@ let RouterModule = /*#__PURE__*/(() => {
         }]
       };
     }
-    static {
-      this.ɵfac = function RouterModule_Factory(t) {
-        return new (t || RouterModule)(core_mjs_["ɵɵinject"](ROUTER_FORROOT_GUARD, 8));
-      };
-    }
-    static {
-      this.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
-        type: RouterModule
-      });
-    }
-    static {
-      this.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
-    }
   }
+  _RouterModule = RouterModule;
+  _RouterModule.ɵfac = function _RouterModule_Factory(t) {
+    return new (t || _RouterModule)(core_mjs_["ɵɵinject"](ROUTER_FORROOT_GUARD, 8));
+  };
+  _RouterModule.ɵmod = /* @__PURE__ */core_mjs_["ɵɵdefineNgModule"]({
+    type: _RouterModule
+  });
+  _RouterModule.ɵinj = /* @__PURE__ */core_mjs_["ɵɵdefineInjector"]({});
   return RouterModule;
 })();
 /*#__PURE__*/(() => {
@@ -7815,45 +7761,6 @@ const VERSION = /*#__PURE__*/new core_mjs_.Version('17.3.9');
 
 
 //# sourceMappingURL=router.mjs.map
-
-/***/ }),
-
-/***/ 467:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ _asyncToGenerator)
-/* harmony export */ });
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
-  try {
-    var info = gen[key](arg);
-    var value = info.value;
-  } catch (error) {
-    reject(error);
-    return;
-  }
-  if (info.done) {
-    resolve(value);
-  } else {
-    Promise.resolve(value).then(_next, _throw);
-  }
-}
-function _asyncToGenerator(fn) {
-  return function () {
-    var self = this,
-      args = arguments;
-    return new Promise(function (resolve, reject) {
-      var gen = fn.apply(self, args);
-      function _next(value) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
-      }
-      function _throw(err) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
-      }
-      _next(undefined);
-    });
-  };
-}
 
 /***/ })
 

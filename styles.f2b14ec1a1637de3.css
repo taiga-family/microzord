@@ -218,7 +218,8 @@ next min-width - 60% from 1px (1/16 * 0.6 = 0.0375)
   transition-duration: var(--tui-duration, 300ms);
   transition-timing-function: ease-in-out;
   position: relative;
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
   outline: 0.125rem solid transparent;
   outline-offset: -0.125rem;
 }
@@ -850,6 +851,9 @@ next min-width - 60% from 1px (1/16 * 0.6 = 0.0375)
 [tuiWrapper][data-appearance='icon'][data-appearance='icon']:disabled:disabled,
 [tuiWrapper][data-appearance='icon'][data-appearance='icon'][data-state='disabled'][data-state='disabled'] {
   opacity: calc(0.5 * var(--tui-disabled-opacity));
+}
+[tuiWrapper][data-appearance='icon'][data-appearance='icon'][data-state='readonly'][data-state='readonly'] {
+  pointer-events: none;
 }
 /* stylelint-disable order/order */
 [tuiWrapper][data-appearance='outline'] {
@@ -1659,7 +1663,8 @@ table [tuiWrapper][data-appearance='table']._focused {
   display: block;
   height: 100%;
   width: 100%;
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
   border-radius: inherit;
 }
 [tuiWrapper]:after {
@@ -1761,13 +1766,13 @@ tui-primitive-calendar [data-type='weekend'] {
 
 /* You can add global styles to this file, and also import other style files */
 tui-doc-page section {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 li {
-  margin-top: 8px;
+  margin-top: 0.5rem;
 }
 tui-doc-page {
-  max-width: 1200px;
+  max-inline-size: 75rem;
 }
 

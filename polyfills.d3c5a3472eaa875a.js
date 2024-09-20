@@ -22,7 +22,7 @@
  *
  * Learn more in https://angular.io/guide/browser-support
  */
-/***************************************************************************************************
+/** *************************************************************************************************
  * BROWSER POLYFILLS
  */
 /**
@@ -58,11 +58,11 @@
  *  (window as any).__Zone_enable_cross_context_check = true;
  *
  */
-/***************************************************************************************************
+/** *************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
  // Included with Angular CLI.
-/***************************************************************************************************
+/** *************************************************************************************************
  * APPLICATION IMPORTS
  */
 
@@ -95,11 +95,8 @@ function initZone() {
   }
   mark('Zone');
   let ZoneImpl = /*#__PURE__*/(() => {
+    var _ZoneImpl;
     class ZoneImpl {
-      // tslint:disable-next-line:require-internal-with-underscore
-      static {
-        this.__symbol__ = __symbol__;
-      }
       static assertZonePatched() {
         if (global['Promise'] !== patches['ZoneAwarePromise']) {
           throw new Error('Zone.js has detected that ZoneAwarePromise `(window|global).Promise` ' + 'has been overwritten.\n' + 'Most likely cause is that a Promise polyfill has been loaded ' + 'after Zone.js (Polyfilling Promise api is not necessary when zone.js is loaded. ' + 'If you must load one, do so before loading zone.js.)');
@@ -207,27 +204,34 @@ function initZone() {
         if (task.zone != this) {
           throw new Error('A task can only be run in the zone of creation! (Creation: ' + (task.zone || NO_ZONE).name + '; Execution: ' + this.name + ')');
         }
+        const zoneTask = task;
         // https://github.com/angular/zone.js/issues/778, sometimes eventTask
         // will run in notScheduled(canceled) state, we should not try to
         // run such kind of task but just return
-        if (task.state === notScheduled && (task.type === eventTask || task.type === macroTask)) {
+        const {
+          type,
+          data: {
+            isPeriodic = false,
+            isRefreshable = false
+          } = {}
+        } = task;
+        if (task.state === notScheduled && (type === eventTask || type === macroTask)) {
           return;
         }
         const reEntryGuard = task.state != running;
-        reEntryGuard && task._transitionTo(running, scheduled);
-        task.runCount++;
+        reEntryGuard && zoneTask._transitionTo(running, scheduled);
         const previousTask = _currentTask;
-        _currentTask = task;
+        _currentTask = zoneTask;
         _currentZoneFrame = {
           parent: _currentZoneFrame,
           zone: this
         };
         try {
-          if (task.type == macroTask && task.data && !task.data.isPeriodic) {
+          if (type == macroTask && task.data && !isPeriodic && !isRefreshable) {
             task.cancelFn = undefined;
           }
           try {
-            return this._zoneDelegate.invokeTask(this, task, applyThis, applyArgs);
+            return this._zoneDelegate.invokeTask(this, zoneTask, applyThis, applyArgs);
           } catch (error) {
             if (this._zoneDelegate.handleError(this, error)) {
               throw error;
@@ -236,13 +240,17 @@ function initZone() {
         } finally {
           // if the task's state is notScheduled or unknown, then it has already been cancelled
           // we should not reset the state to scheduled
-          if (task.state !== notScheduled && task.state !== unknown) {
-            if (task.type == eventTask || task.data && task.data.isPeriodic) {
-              reEntryGuard && task._transitionTo(scheduled, running);
+          const state = task.state;
+          if (state !== notScheduled && state !== unknown) {
+            if (type == eventTask || isPeriodic || isRefreshable && state === scheduling) {
+              reEntryGuard && zoneTask._transitionTo(scheduled, running, scheduling);
             } else {
-              task.runCount = 0;
-              this._updateTaskCount(task, -1);
-              reEntryGuard && task._transitionTo(notScheduled, running, notScheduled);
+              const zoneDelegates = zoneTask._zoneDelegates;
+              this._updateTaskCount(zoneTask, -1);
+              reEntryGuard && zoneTask._transitionTo(notScheduled, running, notScheduled);
+              if (isRefreshable) {
+                zoneTask._zoneDelegates = zoneDelegates;
+              }
             }
           }
           _currentZoneFrame = _currentZoneFrame.parent;
@@ -309,7 +317,7 @@ function initZone() {
         }
         this._updateTaskCount(task, -1);
         task._transitionTo(notScheduled, canceling);
-        task.runCount = 0;
+        task.runCount = -1;
         return task;
       }
       _updateTaskCount(task, count) {
@@ -322,6 +330,9 @@ function initZone() {
         }
       }
     }
+    _ZoneImpl = ZoneImpl;
+    // tslint:disable-next-line:require-internal-with-underscore
+    _ZoneImpl.__symbol__ = __symbol__;
     return ZoneImpl;
   })();
   const DELEGATE_ZS = {
@@ -664,6 +675,7 @@ function initZone() {
   return ZoneImpl;
 }
 function loadZone() {
+  var _Zone;
   // if global['Zone'] already exists (maybe zone.js was already loaded or
   // some other lib also registered a global object named Zone), we may need
   // to throw an error, but sometimes user may not want this error.
@@ -679,7 +691,7 @@ function loadZone() {
     throw new Error('Zone already loaded.');
   }
   // Initialize global `Zone` constant.
-  global['Zone'] ??= initZone();
+  global[_Zone = 'Zone'] ?? (global[_Zone] = initZone());
   return global['Zone'];
 }
 
@@ -771,6 +783,7 @@ const isBrowser = !isNode && !isWebWorker && !!(isWindowExists && internalWindow
 // this code.
 const isMix = typeof _global.process !== 'undefined' && _global.process.toString() === '[object process]' && !isWebWorker && !!(isWindowExists && internalWindow['HTMLElement']);
 const zoneSymbolEventNames$1 = {};
+const enableBeforeunloadSymbol = zoneSymbol('enable_beforeunload');
 const wrapFn = function (event) {
   // https://github.com/angular/zone.js/issues/911, in IE, sometimes
   // event will be undefined, so we need to use window.event
@@ -796,7 +809,24 @@ const wrapFn = function (event) {
     }
   } else {
     result = listener && listener.apply(this, arguments);
-    if (result != undefined && !result) {
+    if (
+    // https://github.com/angular/angular/issues/47579
+    // https://www.w3.org/TR/2011/WD-html5-20110525/history.html#beforeunloadevent
+    // This is the only specific case we should check for. The spec defines that the
+    // `returnValue` attribute represents the message to show the user. When the event
+    // is created, this attribute must be set to the empty string.
+    event.type === 'beforeunload' &&
+    // To prevent any breaking changes resulting from this change, given that
+    // it was already causing a significant number of failures in G3, we have hidden
+    // that behavior behind a global configuration flag. Consumers can enable this
+    // flag explicitly if they want the `beforeunload` event to be handled as defined
+    // in the specification.
+    _global[enableBeforeunloadSymbol] &&
+    // The IDL event definition is `attribute DOMString returnValue`, so we check whether
+    // `typeof result` is a string.
+    typeof result === 'string') {
+      event.returnValue = result;
+    } else if (result != undefined && !result) {
       event.preventDefault();
     }
   }
@@ -1053,6 +1083,12 @@ function isIEOrEdge() {
     }
   } catch (error) {}
   return ieOrEdge;
+}
+function isFunction(value) {
+  return typeof value === 'function';
+}
+function isNumber(value) {
+  return typeof value === 'number';
 }
 
 /**
@@ -1759,15 +1795,30 @@ function patchTimer(window, setName, cancelName, nameSuffix) {
     data.args[0] = function () {
       return task.invoke.apply(this, arguments);
     };
-    data.handleId = setNative.apply(window, data.args);
+    const handleOrId = setNative.apply(window, data.args);
+    // Whlist on Node.js when get can the ID by using `[Symbol.toPrimitive]()` we do
+    // to this so that we do not cause potentally leaks when using `setTimeout`
+    // since this can be periodic when using `.refresh`.
+    if (isNumber(handleOrId)) {
+      data.handleId = handleOrId;
+    } else {
+      data.handle = handleOrId;
+      // On Node.js a timeout and interval can be restarted over and over again by using the `.refresh` method.
+      data.isRefreshable = isFunction(handleOrId.refresh);
+    }
     return task;
   }
   function clearTask(task) {
-    return clearNative.call(window, task.data.handleId);
+    const {
+      handle,
+      handleId
+    } = task.data;
+    return clearNative.call(window, handle ?? handleId);
   }
   setNative = patchMethod(window, setName, delegate => function (self, args) {
-    if (typeof args[0] === 'function') {
+    if (isFunction(args[0])) {
       const options = {
+        isRefreshable: false,
         isPeriodic: nameSuffix === 'Interval',
         delay: nameSuffix === 'Timeout' || nameSuffix === 'Interval' ? args[1] || 0 : undefined,
         args: args
@@ -1784,15 +1835,21 @@ function patchTimer(window, setName, cancelName, nameSuffix) {
           // Cleanup tasksByHandleId should be handled before scheduleTask
           // Since some zoneSpec may intercept and doesn't trigger
           // scheduleFn(scheduleTask) provided here.
-          if (!options.isPeriodic) {
-            if (typeof options.handleId === 'number') {
+          const {
+            handle,
+            handleId,
+            isPeriodic,
+            isRefreshable
+          } = options;
+          if (!isPeriodic && !isRefreshable) {
+            if (handleId) {
               // in non-nodejs env, we remove timerId
               // from local cache
-              delete tasksByHandleId[options.handleId];
-            } else if (options.handleId) {
+              delete tasksByHandleId[handleId];
+            } else if (handle) {
               // Node returns complex objects as handleIds
               // we remove task reference from timer object
-              options.handleId[taskSymbol] = null;
+              handle[taskSymbol] = null;
             }
           }
         }
@@ -1802,26 +1859,38 @@ function patchTimer(window, setName, cancelName, nameSuffix) {
         return task;
       }
       // Node.js must additionally support the ref and unref functions.
-      const handle = task.data.handleId;
-      if (typeof handle === 'number') {
+      const {
+        handleId,
+        handle,
+        isRefreshable,
+        isPeriodic
+      } = task.data;
+      if (handleId) {
         // for non nodejs env, we save handleId: task
         // mapping in local cache for clearTimeout
-        tasksByHandleId[handle] = task;
+        tasksByHandleId[handleId] = task;
       } else if (handle) {
         // for nodejs env, we save task
         // reference in timerId Object for clearTimeout
         handle[taskSymbol] = task;
+        if (isRefreshable && !isPeriodic) {
+          const originalRefresh = handle.refresh;
+          handle.refresh = function () {
+            const {
+              zone,
+              state
+            } = task;
+            if (state === 'notScheduled') {
+              task._state = 'scheduled';
+              zone._updateTaskCount(task, 1);
+            } else if (state === 'running') {
+              task._state = 'scheduling';
+            }
+            return originalRefresh.call(this);
+          };
+        }
       }
-      // check whether handle is null, because some polyfill or browser
-      // may return undefined from setTimeout/setInterval/setImmediate/requestAnimationFrame
-      if (handle && handle.ref && handle.unref && typeof handle.ref === 'function' && typeof handle.unref === 'function') {
-        task.ref = handle.ref.bind(handle);
-        task.unref = handle.unref.bind(handle);
-      }
-      if (typeof handle === 'number' || handle) {
-        return handle;
-      }
-      return task;
+      return handle ?? handleId ?? task;
     } else {
       // cause an error by calling it directly.
       return delegate.apply(window, args);
@@ -1830,24 +1899,21 @@ function patchTimer(window, setName, cancelName, nameSuffix) {
   clearNative = patchMethod(window, cancelName, delegate => function (self, args) {
     const id = args[0];
     let task;
-    if (typeof id === 'number') {
+    if (isNumber(id)) {
       // non nodejs env.
       task = tasksByHandleId[id];
+      delete tasksByHandleId[id];
     } else {
-      // nodejs env.
-      task = id && id[taskSymbol];
-      // other environments.
-      if (!task) {
+      // nodejs env ?? other environments.
+      task = id?.[taskSymbol];
+      if (task) {
+        id[taskSymbol] = null;
+      } else {
         task = id;
       }
     }
-    if (task && typeof task.type === 'string') {
-      if (task.state !== 'notScheduled' && (task.cancelFn && task.data.isPeriodic || task.runCount === 0)) {
-        if (typeof id === 'number') {
-          delete tasksByHandleId[id];
-        } else if (id) {
-          id[taskSymbol] = null;
-        }
+    if (task?.type) {
+      if (task.cancelFn) {
         // Do not cancel already canceled functions
         task.zone.cancelTask(task);
       }
@@ -2927,7 +2993,7 @@ patchBrowser(Zone$1);
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + "." + {"49":"f4da48079035ed2e","177":"f36b5845bf5786c2","488":"a6ee06d2bd64d883","525":"34de3a1206e12dc1","626":"1fde27c0f98b74e9","705":"c7c4cee4cd7d08d5","720":"41e2b85852d72d6e","791":"ec557bf73414587a"}[chunkId] + ".js";
+/******/ 			return "" + chunkId + "." + {"49":"72aee3276bf2c999","177":"bf1649f6d126e046","488":"d4372cc1c2a584fd","525":"34de3a1206e12dc1","544":"979c6e1e6072c0a0","626":"ff0b1d6f9d9e0d92","705":"5535f3cbd8af2029","791":"b3ea3bf659a032b1"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -3048,11 +3114,11 @@ patchBrowser(Zone$1);
 /******/ 			var promises = [];
 /******/ 			switch(name) {
 /******/ 				case "default": {
-/******/ 					register("@angular/common/http", "17.3.9", () => (Promise.all([__webpack_require__.e(525), __webpack_require__.e(720), __webpack_require__.e(626)]).then(() => (() => (__webpack_require__(1626))))));
+/******/ 					register("@angular/common/http", "17.3.9", () => (Promise.all([__webpack_require__.e(525), __webpack_require__.e(544), __webpack_require__.e(626)]).then(() => (() => (__webpack_require__(1626))))));
 /******/ 					register("@angular/common", "17.3.9", () => (Promise.all([__webpack_require__.e(525), __webpack_require__.e(177)]).then(() => (() => (__webpack_require__(177))))));
 /******/ 					register("@angular/core/primitives/signals", "17.3.9", () => (__webpack_require__.e(488).then(() => (() => (__webpack_require__(3488))))));
 /******/ 					register("@angular/core", "17.3.9", () => (__webpack_require__.e(705).then(() => (() => (__webpack_require__(7705))))));
-/******/ 					register("@angular/router", "17.3.9", () => (Promise.all([__webpack_require__.e(525), __webpack_require__.e(720), __webpack_require__.e(791), __webpack_require__.e(49)]).then(() => (() => (__webpack_require__(2791))))));
+/******/ 					register("@angular/router", "17.3.9", () => (Promise.all([__webpack_require__.e(525), __webpack_require__.e(544), __webpack_require__.e(791), __webpack_require__.e(49)]).then(() => (() => (__webpack_require__(2791))))));
 /******/ 				}
 /******/ 				break;
 /******/ 			}
@@ -3245,11 +3311,11 @@ patchBrowser(Zone$1);
 /******/ 			"525": [
 /******/ 				6525
 /******/ 			],
+/******/ 			"544": [
+/******/ 				2771
+/******/ 			],
 /******/ 			"705": [
 /******/ 				2350
-/******/ 			],
-/******/ 			"720": [
-/******/ 				2771
 /******/ 			]
 /******/ 		};
 /******/ 		var startedInstallModules = {};
