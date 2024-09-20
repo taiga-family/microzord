@@ -138,7 +138,7 @@
     "lint-staged": "15.2.10",
     "ng-packagr": "17.3.0",
     "nx": "19.3.0",
-    "postcss": "8.4.41",
+    "postcss": "8.4.47",
     "postcss-preset-env": "9.5.14",
     "prettier": "3.3.3",
     "react-refresh": "0.14.2",
