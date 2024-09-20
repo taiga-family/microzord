@@ -1,2 +1,2 @@
-export * from './src/enable-prod-mode';
 export * from './src/create-app';
+export * from './src/enable-prod-mode';

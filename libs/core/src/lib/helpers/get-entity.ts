@@ -1,9 +1,11 @@
-import {Observable, of} from 'rxjs';
+import type {Observable} from 'rxjs';
+import {of} from 'rxjs';
+
+import type {EntityConstructor} from '../models/entity';
 import {loadedEntityRegistry} from '../registry';
-import {EntityConstructor} from '../models/entity';
 
 export function getEntity<T, K>(
-  entityName: string,
+    entityName: string,
 ): Observable<EntityConstructor<T, K> | null> {
-  return of(loadedEntityRegistry.get(entityName) || null);
+    return of(loadedEntityRegistry.get(entityName) || null);
 }
