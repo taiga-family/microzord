@@ -33,7 +33,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   signalUpdateFn: () => (/* binding */ signalUpdateFn)
 /* harmony export */ });
 /**
- * @license Angular v17.3.9
+ * @license Angular v17.3.12
  * (c) 2010-2024 Google LLC. https://angular.io/
  * License: MIT
  */

@@ -108,9 +108,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵparseCookieValue": () => (/* binding */ parseCookieValue),
 /* harmony export */   "ɵsetRootDomAdapter": () => (/* binding */ setRootDomAdapter)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6525);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9131);
 /**
- * @license Angular v17.3.9
+ * @license Angular v17.3.12
  * (c) 2010-2024 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -1120,7 +1120,7 @@ var TranslationWidth = /*#__PURE__*/function (TranslationWidth) {
  */
 var FormatWidth = /*#__PURE__*/function (FormatWidth) {
   /**
-   * For `en-US`, 'M/d/yy, h:mm a'`
+   * For `en-US`, `'M/d/yy, h:mm a'`
    * (Example: `6/15/15, 9:03 AM`)
    */
   FormatWidth[FormatWidth["Short"] = 0] = "Short";
@@ -5527,7 +5527,7 @@ function isPlatformWorkerUi(platformId) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.3.9');
+const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.3.12');
 
 /**
  * Defines a scroll position manager. Implemented by `BrowserViewportScroller`.

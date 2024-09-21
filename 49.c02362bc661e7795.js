@@ -464,7 +464,7 @@ function mergeAll(concurrent = Infinity) {
 
 /***/ }),
 
-/***/ 6791:
+/***/ 9172:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -645,11 +645,11 @@ function mapOneOrManyArgs(fn) {
 /* harmony export */   up: () => (/* binding */ DomSanitizer)
 /* harmony export */ });
 /* unused harmony exports By, EventManager, EventManagerPlugin, HAMMER_GESTURE_CONFIG, HAMMER_LOADER, HammerGestureConfig, HammerModule, HydrationFeatureKind, Meta, REMOVE_STYLES_ON_COMPONENT_DESTROY, TransferState, VERSION, bootstrapApplication, createApplication, disableDebugTools, enableDebugTools, makeStateKey, provideClientHydration, provideProtractorTestingSupport, withHttpTransferCacheOptions, withNoHttpTransferCache, ɵBrowserDomAdapter, ɵBrowserGetTestability, ɵDomEventsPlugin, ɵDomSanitizerImpl, ɵHammerGesturesPlugin, ɵINTERNAL_BROWSER_PLATFORM_PROVIDERS, ɵKeyEventsPlugin, ɵSharedStylesHost, ɵinitDomAdapter */
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6525);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2771);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5697);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9131);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(297);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3721);
 /**
- * @license Angular v17.3.9
+ * @license Angular v17.3.12
  * (c) 2010-2024 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -2747,7 +2747,7 @@ function provideClientHydration(...features) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.3.9');
+const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.3.12');
 
 // Re-export TransferState to the public API of the `platform-browser` for backwards-compatibility.
 /**
