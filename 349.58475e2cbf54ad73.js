@@ -1562,8 +1562,8 @@ var taiga_ui_cdk_utils_dom = __webpack_require__(5001);
 var taiga_ui_cdk_decorators = __webpack_require__(4343);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-miscellaneous.js
 var taiga_ui_cdk_utils_miscellaneous = __webpack_require__(9925);
-// EXTERNAL MODULE: tslib
-var tslib = __webpack_require__(9783);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/node_modules/tslib/tslib.es6.mjs
+var tslib_tslib_es6 = __webpack_require__(9783);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-observables.js
 var taiga_ui_cdk_observables = __webpack_require__(9835);
 ;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/operators/skip.js
@@ -1640,7 +1640,7 @@ let taiga_ui_cdk_directives_active_zone_TuiActiveZoneDirective = /*#__PURE__*/((
     },
     exportAs: ["tuiActiveZone"]
   });
-  (0,tslib/* __decorate */.Cg)([taiga_ui_cdk_decorators/* tuiPure */.PE], TuiActiveZoneDirective.prototype, "setZone", null);
+  (0,tslib_tslib_es6/* __decorate */.Cg)([taiga_ui_cdk_decorators/* tuiPure */.PE], TuiActiveZoneDirective.prototype, "setZone", null);
   return TuiActiveZoneDirective;
 })();
 (() => {
@@ -15877,7 +15877,7 @@ let TuiValueAccessorModule = /*#__PURE__*/(() => {
 
 
 //# sourceMappingURL=taiga-ui-kit-directives-value-accessor.js.map
-;// CONCATENATED MODULE: ./node_modules/@maskito/angular/node_modules/tslib/tslib.es6.mjs
+;// CONCATENATED MODULE: tslib
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
 
@@ -15932,7 +15932,7 @@ function __rest(s, e) {
   return t;
 }
 
-function tslib_es6_decorate(decorators, target, key, desc) {
+function tslib_decorate(decorators, target, key, desc) {
   var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
   if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
   else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -16219,11 +16219,11 @@ function __disposeResources(env) {
   return next();
 }
 
-/* harmony default export */ const tslib_tslib_es6 = ({
+/* harmony default export */ const tslib = ({
   __extends,
   __assign,
   __rest,
-  __decorate: tslib_es6_decorate,
+  __decorate: tslib_decorate,
   __param,
   __metadata,
   __awaiter,
@@ -33594,10 +33594,10 @@ let ResizeObserverModule = /*#__PURE__*/(/* unused pure expression or super */ n
 //# sourceMappingURL=ng-web-apis-resize-observer.js.map
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-miscellaneous.js
 var taiga_ui_cdk_utils_miscellaneous = __webpack_require__(9925);
-// EXTERNAL MODULE: tslib
-var tslib = __webpack_require__(9783);
+// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/node_modules/tslib/tslib.es6.mjs
+var tslib_es6 = __webpack_require__(9783);
 // EXTERNAL MODULE: ./node_modules/tslib/tslib.es6.mjs
-var tslib_es6 = __webpack_require__(1635);
+var tslib_tslib_es6 = __webpack_require__(1635);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/OperatorSubscriber.js
 var OperatorSubscriber = __webpack_require__(4360);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/innerFrom.js
@@ -33611,7 +33611,7 @@ function fromFetch(input, initWithSelector = {}) {
   const {
       selector
     } = initWithSelector,
-    init = (0,tslib_es6/* __rest */.Tt)(initWithSelector, ["selector"]);
+    init = (0,tslib_tslib_es6/* __rest */.Tt)(initWithSelector, ["selector"]);
   return new internal_Observable/* Observable */.c(subscriber => {
     const controller = new AbortController();
     const {
@@ -33982,7 +33982,7 @@ let TuiStaticRequestService = /*#__PURE__*/(() => {
        * TODO: drop after browser support bump
        */
       (0,observable_defer/* defer */.v)(() => (0,from/* from */.H)(fetch(url)));
-      const piped = response$.pipe((0,operators_switchMap/* switchMap */.n)(response => (0,tslib/* __awaiter */.sH)(this, void 0, void 0, function* () {
+      const piped = response$.pipe((0,operators_switchMap/* switchMap */.n)(response => (0,tslib_es6/* __awaiter */.sH)(this, void 0, void 0, function* () {
         if (response.ok) {
           return response.text();
         }
