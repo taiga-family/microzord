@@ -116,7 +116,7 @@ Promise.all(/* import() */[__webpack_require__.e(131), __webpack_require__.e(640
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + (chunkId === 76 ? "common" : chunkId) + "." + {"49":"c02362bc661e7795","76":"8ea0239d2f9a616a","96":"0f75433bfd894b73","108":"e1f77877431a4e0f","117":"b1de9da545466ea1","131":"a3d58c980c706afe","166":"7851e010eadb0fe2","177":"30fbde92a5f7e5e0","254":"4b3f5c8d972c20e3","300":"37956894641796e1","349":"58475e2cbf54ad73","488":"cb83e53b71e69bc5","551":"eccdf51d8af53077","566":"1bc45d5f57222706","626":"f56ea61a41dc71eb","640":"b77da97d3f762e1e","685":"b2be94df70e5d8c6","691":"6b3dd5cb1f1127e9","705":"8d1a46091fc6dfa1","791":"cfb097415d5254eb","806":"79fd8d62ef79c302","835":"2b8ce9a0ef88095f"}[chunkId] + ".js";
+/******/ 			return "" + (chunkId === 76 ? "common" : chunkId) + "." + {"49":"c02362bc661e7795","76":"8ea0239d2f9a616a","96":"0f75433bfd894b73","108":"e1f77877431a4e0f","117":"b1de9da545466ea1","131":"a3d58c980c706afe","166":"7851e010eadb0fe2","177":"30fbde92a5f7e5e0","254":"4b3f5c8d972c20e3","300":"37956894641796e1","349":"c02d45ac88bb4994","488":"cb83e53b71e69bc5","551":"eccdf51d8af53077","566":"1bc45d5f57222706","626":"f56ea61a41dc71eb","640":"b77da97d3f762e1e","685":"b2be94df70e5d8c6","691":"6b3dd5cb1f1127e9","705":"8d1a46091fc6dfa1","791":"cfb097415d5254eb","806":"79fd8d62ef79c302","835":"2b8ce9a0ef88095f"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -301,20 +301,38 @@ Promise.all(/* import() */[__webpack_require__.e(131), __webpack_require__.e(640
 /******/ 			// see webpack/lib/util/semver.js for original code
 /******/ 			if(0 in range){version=parseVersion(version);var e=range[0],r=e<0;r&&(e=-e-1);for(var n=0,i=1,a=!0;;i++,n++){var f,s,g=i<range.length?(typeof range[i])[0]:"";if(n>=version.length||"o"==(s=(typeof(f=version[n]))[0]))return!a||("u"==g?i>e&&!r:""==g!=r);if("u"==s){if(!a||"u"!=g)return!1}else if(a)if(g==s)if(i<=e){if(f!=range[i])return!1}else{if(r?f>range[i]:f<range[i])return!1;f!=range[i]&&(a=!1)}else if("s"!=g&&"n"!=g){if(r||i<=e)return!1;a=!1,i--}else{if(i<=e||s<g!=r)return!1;a=!1}else"s"!=g&&"n"!=g&&(a=!1,i--)}}var t=[],o=t.pop.bind(t);for(n=1;n<range.length;n++){var u=range[n];t.push(1==u?o()|o():2==u?o()&o():u?satisfy(u,version):!o())}return!!o();
 /******/ 		}
-/******/ 		var ensureExistence = (scopeName, key) => {
-/******/ 			var scope = __webpack_require__.S[scopeName];
-/******/ 			if(!scope || !__webpack_require__.o(scope, key)) throw new Error("Shared module " + key + " doesn't exist in shared scope " + scopeName);
-/******/ 			return scope;
+/******/ 		var exists = (scope, key) => {
+/******/ 			return scope && __webpack_require__.o(scope, key);
+/******/ 		}
+/******/ 		var get = (entry) => {
+/******/ 			entry.loaded = 1;
+/******/ 			return entry.get()
 /******/ 		};
-/******/ 		var findVersion = (scope, key) => {
-/******/ 			var versions = scope[key];
+/******/ 		var eagerOnly = (versions) => {
+/******/ 			return Object.keys(versions).reduce((filtered, version) => {
+/******/ 					if (versions[version].eager) {
+/******/ 						filtered[version] = versions[version];
+/******/ 					}
+/******/ 					return filtered;
+/******/ 			}, {});
+/******/ 		};
+/******/ 		var findLatestVersion = (scope, key, eager) => {
+/******/ 			var versions = eager ? eagerOnly(scope[key]) : scope[key];
 /******/ 			var key = Object.keys(versions).reduce((a, b) => {
+/******/ 				return !a || versionLt(a, b) ? b : a;
+/******/ 			}, 0);
+/******/ 			return key && versions[key];
+/******/ 		};
+/******/ 		var findSatisfyingVersion = (scope, key, requiredVersion, eager) => {
+/******/ 			var versions = eager ? eagerOnly(scope[key]) : scope[key];
+/******/ 			var key = Object.keys(versions).reduce((a, b) => {
+/******/ 				if (!satisfy(requiredVersion, b)) return a;
 /******/ 				return !a || versionLt(a, b) ? b : a;
 /******/ 			}, 0);
 /******/ 			return key && versions[key]
 /******/ 		};
-/******/ 		var findSingletonVersionKey = (scope, key) => {
-/******/ 			var versions = scope[key];
+/******/ 		var findSingletonVersionKey = (scope, key, eager) => {
+/******/ 			var versions = eager ? eagerOnly(scope[key]) : scope[key];
 /******/ 			return Object.keys(versions).reduce((a, b) => {
 /******/ 				return !a || (!versions[a].loaded && versionLt(a, b)) ? b : a;
 /******/ 			}, 0);
@@ -322,110 +340,79 @@ Promise.all(/* import() */[__webpack_require__.e(131), __webpack_require__.e(640
 /******/ 		var getInvalidSingletonVersionMessage = (scope, key, version, requiredVersion) => {
 /******/ 			return "Unsatisfied version " + version + " from " + (version && scope[key][version].from) + " of shared singleton module " + key + " (required " + rangeToString(requiredVersion) + ")"
 /******/ 		};
-/******/ 		var getSingleton = (scope, scopeName, key, requiredVersion) => {
-/******/ 			var version = findSingletonVersionKey(scope, key);
-/******/ 			return get(scope[key][version]);
-/******/ 		};
-/******/ 		var getSingletonVersion = (scope, scopeName, key, requiredVersion) => {
-/******/ 			var version = findSingletonVersionKey(scope, key);
-/******/ 			if (!satisfy(requiredVersion, version)) warn(getInvalidSingletonVersionMessage(scope, key, version, requiredVersion));
-/******/ 			return get(scope[key][version]);
-/******/ 		};
-/******/ 		var getStrictSingletonVersion = (scope, scopeName, key, requiredVersion) => {
-/******/ 			var version = findSingletonVersionKey(scope, key);
-/******/ 			if (!satisfy(requiredVersion, version)) throw new Error(getInvalidSingletonVersionMessage(scope, key, version, requiredVersion));
-/******/ 			return get(scope[key][version]);
-/******/ 		};
-/******/ 		var findValidVersion = (scope, key, requiredVersion) => {
+/******/ 		var getInvalidVersionMessage = (scope, scopeName, key, requiredVersion, eager) => {
 /******/ 			var versions = scope[key];
-/******/ 			var key = Object.keys(versions).reduce((a, b) => {
-/******/ 				if (!satisfy(requiredVersion, b)) return a;
-/******/ 				return !a || versionLt(a, b) ? b : a;
-/******/ 			}, 0);
-/******/ 			return key && versions[key]
-/******/ 		};
-/******/ 		var getInvalidVersionMessage = (scope, scopeName, key, requiredVersion) => {
-/******/ 			var versions = scope[key];
-/******/ 			return "No satisfying version (" + rangeToString(requiredVersion) + ") of shared module " + key + " found in shared scope " + scopeName + ".\n" +
+/******/ 			return "No satisfying version (" + rangeToString(requiredVersion) + ")" + (eager ? " for eager consumption" : "") + " of shared module " + key + " found in shared scope " + scopeName + ".\n" +
 /******/ 				"Available versions: " + Object.keys(versions).map((key) => {
 /******/ 				return key + " from " + versions[key].from;
 /******/ 			}).join(", ");
 /******/ 		};
-/******/ 		var getValidVersion = (scope, scopeName, key, requiredVersion) => {
-/******/ 			var entry = findValidVersion(scope, key, requiredVersion);
-/******/ 			if(entry) return get(entry);
-/******/ 			throw new Error(getInvalidVersionMessage(scope, scopeName, key, requiredVersion));
-/******/ 		};
-/******/ 		var warn = (msg) => {
+/******/ 		var fail = (msg) => {
+/******/ 			throw new Error(msg);
+/******/ 		}
+/******/ 		var failAsNotExist = (scopeName, key) => {
+/******/ 			return fail("Shared module " + key + " doesn't exist in shared scope " + scopeName);
+/******/ 		}
+/******/ 		var warn = /*#__PURE__*/ (msg) => {
 /******/ 			if (typeof console !== "undefined" && console.warn) console.warn(msg);
 /******/ 		};
-/******/ 		var warnInvalidVersion = (scope, scopeName, key, requiredVersion) => {
-/******/ 			warn(getInvalidVersionMessage(scope, scopeName, key, requiredVersion));
-/******/ 		};
-/******/ 		var get = (entry) => {
-/******/ 			entry.loaded = 1;
-/******/ 			return entry.get()
-/******/ 		};
-/******/ 		var init = (fn) => (function(scopeName, a, b, c) {
+/******/ 		var init = (fn) => (function(scopeName, key, eager, c, d) {
 /******/ 			var promise = __webpack_require__.I(scopeName);
-/******/ 			if (promise && promise.then) return promise.then(fn.bind(fn, scopeName, __webpack_require__.S[scopeName], a, b, c));
-/******/ 			return fn(scopeName, __webpack_require__.S[scopeName], a, b, c);
+/******/ 			if (promise && promise.then && !eager) {
+/******/ 				return promise.then(fn.bind(fn, scopeName, __webpack_require__.S[scopeName], key, false, c, d));
+/******/ 			}
+/******/ 			return fn(scopeName, __webpack_require__.S[scopeName], key, eager, c, d);
 /******/ 		});
 /******/ 		
-/******/ 		var load = /*#__PURE__*/ init((scopeName, scope, key) => {
-/******/ 			ensureExistence(scopeName, key);
-/******/ 			return get(findVersion(scope, key));
+/******/ 		var useFallback = (scopeName, key, fallback) => {
+/******/ 			return fallback ? fallback() : failAsNotExist(scopeName, key);
+/******/ 		}
+/******/ 		var load = /*#__PURE__*/ init((scopeName, scope, key, eager, fallback) => {
+/******/ 			if (!exists(scope, key)) return useFallback(scopeName, key, fallback);
+/******/ 			return get(findLatestVersion(scope, key, eager));
 /******/ 		});
-/******/ 		var loadFallback = /*#__PURE__*/ init((scopeName, scope, key, fallback) => {
-/******/ 			return scope && __webpack_require__.o(scope, key) ? get(findVersion(scope, key)) : fallback();
+/******/ 		var loadVersion = /*#__PURE__*/ init((scopeName, scope, key, eager, requiredVersion, fallback) => {
+/******/ 			if (!exists(scope, key)) return useFallback(scopeName, key, fallback);
+/******/ 			var satisfyingVersion = findSatisfyingVersion(scope, key, requiredVersion, eager);
+/******/ 			if (satisfyingVersion) return get(satisfyingVersion);
+/******/ 			warn(getInvalidVersionMessage(scope, scopeName, key, requiredVersion, eager))
+/******/ 			return get(findLatestVersion(scope, key, eager));
 /******/ 		});
-/******/ 		var loadVersionCheck = /*#__PURE__*/ init((scopeName, scope, key, version) => {
-/******/ 			ensureExistence(scopeName, key);
-/******/ 			return get(findValidVersion(scope, key, version) || warnInvalidVersion(scope, scopeName, key, version) || findVersion(scope, key));
+/******/ 		var loadStrictVersion = /*#__PURE__*/ init((scopeName, scope, key, eager, requiredVersion, fallback) => {
+/******/ 			if (!exists(scope, key)) return useFallback(scopeName, key, fallback);
+/******/ 			var satisfyingVersion = findSatisfyingVersion(scope, key, requiredVersion, eager);
+/******/ 			if (satisfyingVersion) return get(satisfyingVersion);
+/******/ 			if (fallback) return fallback();
+/******/ 			fail(getInvalidVersionMessage(scope, scopeName, key, requiredVersion, eager));
 /******/ 		});
-/******/ 		var loadSingleton = /*#__PURE__*/ init((scopeName, scope, key) => {
-/******/ 			ensureExistence(scopeName, key);
-/******/ 			return getSingleton(scope, scopeName, key);
+/******/ 		var loadSingleton = /*#__PURE__*/ init((scopeName, scope, key, eager, fallback) => {
+/******/ 			if (!exists(scope, key)) return useFallback(scopeName, key, fallback);
+/******/ 			var version = findSingletonVersionKey(scope, key, eager);
+/******/ 			return get(scope[key][version]);
 /******/ 		});
-/******/ 		var loadSingletonVersionCheck = /*#__PURE__*/ init((scopeName, scope, key, version) => {
-/******/ 			ensureExistence(scopeName, key);
-/******/ 			return getSingletonVersion(scope, scopeName, key, version);
+/******/ 		var loadSingletonVersion = /*#__PURE__*/ init((scopeName, scope, key, eager, requiredVersion, fallback) => {
+/******/ 			if (!exists(scope, key)) return useFallback(scopeName, key, fallback);
+/******/ 			var version = findSingletonVersionKey(scope, key, eager);
+/******/ 			if (!satisfy(requiredVersion, version)) {
+/******/ 				warn(getInvalidSingletonVersionMessage(scope, key, version, requiredVersion));
+/******/ 			}
+/******/ 			return get(scope[key][version]);
 /******/ 		});
-/******/ 		var loadStrictVersionCheck = /*#__PURE__*/ init((scopeName, scope, key, version) => {
-/******/ 			ensureExistence(scopeName, key);
-/******/ 			return getValidVersion(scope, scopeName, key, version);
-/******/ 		});
-/******/ 		var loadStrictSingletonVersionCheck = /*#__PURE__*/ init((scopeName, scope, key, version) => {
-/******/ 			ensureExistence(scopeName, key);
-/******/ 			return getStrictSingletonVersion(scope, scopeName, key, version);
-/******/ 		});
-/******/ 		var loadVersionCheckFallback = /*#__PURE__*/ init((scopeName, scope, key, version, fallback) => {
-/******/ 			if(!scope || !__webpack_require__.o(scope, key)) return fallback();
-/******/ 			return get(findValidVersion(scope, key, version) || warnInvalidVersion(scope, scopeName, key, version) || findVersion(scope, key));
-/******/ 		});
-/******/ 		var loadSingletonFallback = /*#__PURE__*/ init((scopeName, scope, key, fallback) => {
-/******/ 			if(!scope || !__webpack_require__.o(scope, key)) return fallback();
-/******/ 			return getSingleton(scope, scopeName, key);
-/******/ 		});
-/******/ 		var loadSingletonVersionCheckFallback = /*#__PURE__*/ init((scopeName, scope, key, version, fallback) => {
-/******/ 			if(!scope || !__webpack_require__.o(scope, key)) return fallback();
-/******/ 			return getSingletonVersion(scope, scopeName, key, version);
-/******/ 		});
-/******/ 		var loadStrictVersionCheckFallback = /*#__PURE__*/ init((scopeName, scope, key, version, fallback) => {
-/******/ 			var entry = scope && __webpack_require__.o(scope, key) && findValidVersion(scope, key, version);
-/******/ 			return entry ? get(entry) : fallback();
-/******/ 		});
-/******/ 		var loadStrictSingletonVersionCheckFallback = /*#__PURE__*/ init((scopeName, scope, key, version, fallback) => {
-/******/ 			if(!scope || !__webpack_require__.o(scope, key)) return fallback();
-/******/ 			return getStrictSingletonVersion(scope, scopeName, key, version);
+/******/ 		var loadStrictSingletonVersion = /*#__PURE__*/ init((scopeName, scope, key, eager, requiredVersion, fallback) => {
+/******/ 			if (!exists(scope, key)) return useFallback(scopeName, key, fallback);
+/******/ 			var version = findSingletonVersionKey(scope, key, eager);
+/******/ 			if (!satisfy(requiredVersion, version)) {
+/******/ 				fail(getInvalidSingletonVersionMessage(scope, key, version, requiredVersion));
+/******/ 			}
+/******/ 			return get(scope[key][version]);
 /******/ 		});
 /******/ 		var installedModules = {};
 /******/ 		var moduleToHandlerMapping = {
-/******/ 			9131: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/core", [4,17,3,12], () => (__webpack_require__.e(705).then(() => (() => (__webpack_require__(7705))))))),
-/******/ 			297: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/common", [4,17,3,12], () => (__webpack_require__.e(177).then(() => (() => (__webpack_require__(177))))))),
-/******/ 			3721: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/common/http", [4,17,3,12], () => (__webpack_require__.e(626).then(() => (() => (__webpack_require__(1626))))))),
-/******/ 			7397: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/router", [4,17,3,12], () => (__webpack_require__.e(791).then(() => (() => (__webpack_require__(2791))))))),
-/******/ 			1169: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/core/primitives/signals", [4,17,3,12], () => (__webpack_require__.e(488).then(() => (() => (__webpack_require__(3488)))))))
+/******/ 			9131: () => (loadStrictSingletonVersion("default", "@angular/core", false, [4,17,3,12], () => (__webpack_require__.e(705).then(() => (() => (__webpack_require__(7705))))))),
+/******/ 			297: () => (loadStrictSingletonVersion("default", "@angular/common", false, [4,17,3,12], () => (__webpack_require__.e(177).then(() => (() => (__webpack_require__(177))))))),
+/******/ 			3721: () => (loadStrictSingletonVersion("default", "@angular/common/http", false, [4,17,3,12], () => (__webpack_require__.e(626).then(() => (() => (__webpack_require__(1626))))))),
+/******/ 			7397: () => (loadStrictSingletonVersion("default", "@angular/router", false, [4,17,3,12], () => (__webpack_require__.e(791).then(() => (() => (__webpack_require__(2791))))))),
+/******/ 			1169: () => (loadStrictSingletonVersion("default", "@angular/core/primitives/signals", false, [4,17,3,12], () => (__webpack_require__.e(488).then(() => (() => (__webpack_require__(3488)))))))
 /******/ 		};
 /******/ 		// no consumes in initial chunks
 /******/ 		var chunkMapping = {
