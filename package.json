@@ -27,8 +27,7 @@
         "stylelint": "stylelint '**/*.{less,css}' --config package.json",
         "prettier": "prettier !package-lock.json . --ignore-path .gitignore",
         "lint": "eslint .",
-        "prebump": "npx syncer && npx nx run-many -t build -p angular,core,react",
-        "bump": "npx nx run-many -t publish -p angular,core,react"
+        "release": "npx syncer && npx nx run-many -t publish -p angular,core,react"
     },
     "commitlint": {
         "extends": [

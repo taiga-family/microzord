@@ -26,20 +26,18 @@
                 "coverageDirectory": "coverage/{projectName}"
             }
         },
-        "prepublish": {
-            "executor": "nx:run-commands",
-            "options": {
-                "command": "cp ./LICENSE ./README.md ./dist/libs/{projectName}"
-            }
-        },
         "publish": {
             "executor": "nx:run-commands",
             "options": {
-                "command": "npm publish ./dist/libs/{projectName} --ignore-scripts"
+                "parallel": false,
+                "commands": [
+                    "cp ./LICENSE ./README.md ./dist/libs/{projectName}",
+                    "npm publish ./dist/libs/{projectName} --ignore-scripts"
+                ]
             },
             "dependsOn": [
                 {
-                    "target": "prepublish",
+                    "target": "build",
                     "params": "ignore",
                     "dependencies": false
                 }
