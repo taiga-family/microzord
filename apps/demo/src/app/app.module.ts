@@ -2,8 +2,8 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
-import {TUI_DOC_LOGO, TUI_DOC_PAGES, TuiDocMainModule} from '@taiga-ui/addon-doc';
-import {TuiLinkModule} from '@taiga-ui/core';
+import {TUI_DOC_LOGO, TUI_DOC_PAGES, TuiAddonDoc} from '@taiga-ui/addon-doc';
+import {TuiLink} from '@taiga-ui/core';
 import {HIGHLIGHT_OPTIONS, HighlightOptions} from 'ngx-highlightjs';
 
 import {AppComponent} from './app.component';
@@ -26,8 +26,8 @@ export const HIGHLIGHT_OPTIONS_VALUE: HighlightOptions = {
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
-        TuiDocMainModule,
-        TuiLinkModule,
+        ...TuiAddonDoc,
+        TuiLink,
         GettingStartedModule,
         RouterModule.forRoot(ROUTES, {initialNavigation: 'enabledBlocking'}),
     ],

@@ -30,9 +30,9 @@ export class AppComponent {
         console.log(`${event.target?.name}: ${event.type}`);
         this.alertService
             .open(event.type, {
-                hasIcon: false,
+                icon: '',
                 label: event.target?.name,
-                status: 'info',
+                appearance: 'info',
             })
             .subscribe();
         this.cdr.detectChanges();
