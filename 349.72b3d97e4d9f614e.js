@@ -1395,7 +1395,7 @@ var taiga_ui_core_components_button = __webpack_require__(2782);
 // EXTERNAL MODULE: ./node_modules/tslib/tslib.es6.mjs
 var tslib_es6 = __webpack_require__(1635);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-services.js + 2 modules
-var taiga_ui_cdk_services = __webpack_require__(5116);
+var taiga_ui_cdk_services = __webpack_require__(4340);
 ;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-directives-autofilled.js
 
 
@@ -1562,8 +1562,6 @@ var taiga_ui_cdk_utils_dom = __webpack_require__(5001);
 var taiga_ui_cdk_decorators = __webpack_require__(4343);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-miscellaneous.js
 var taiga_ui_cdk_utils_miscellaneous = __webpack_require__(9925);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/node_modules/tslib/tslib.es6.mjs
-var tslib_tslib_es6 = __webpack_require__(9783);
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-observables.js
 var taiga_ui_cdk_observables = __webpack_require__(9835);
 ;// CONCATENATED MODULE: ./node_modules/rxjs/dist/esm/internal/operators/skip.js
@@ -1640,7 +1638,7 @@ let taiga_ui_cdk_directives_active_zone_TuiActiveZoneDirective = /*#__PURE__*/((
     },
     exportAs: ["tuiActiveZone"]
   });
-  (0,tslib_tslib_es6/* __decorate */.Cg)([taiga_ui_cdk_decorators/* tuiPure */.PE], TuiActiveZoneDirective.prototype, "setZone", null);
+  (0,tslib_es6/* __decorate */.Cg)([taiga_ui_cdk_decorators/* tuiPure */.PE], TuiActiveZoneDirective.prototype, "setZone", null);
   return TuiActiveZoneDirective;
 })();
 (() => {
@@ -3920,7 +3918,7 @@ let TuiPrimitiveTextfieldComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [taiga_ui_core_components_svg/* TuiSvgComponent */._Y, TuiValueDecorationComponent, TuiTooltipComponent, common_mjs_.NgIf, taiga_ui_core_directives_wrapper/* TuiWrapperDirective */.l, TuiAutofilledDirective, TuiMaskAccessorDirective, fesm2022_forms/* DefaultValueAccessor */.me, fesm2022_forms/* NgControlStatus */.BC, fesm2022_forms/* NgModel */.vS, TuiFocusableDirective, tinkoff_ng_polymorpheus/* PolymorpheusOutletDirective */.OA, common_mjs_.AsyncPipe],
-    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);position:relative;display:block;text-align:left;border-radius:var(--tui-radius-m);height:var(--tui-height);min-height:var(--tui-height);max-height:var(--tui-height)}[data-size=s][_nghost-%COMP%]{--tui-height: var(--tui-height-s)}[data-size=m][_nghost-%COMP%]{--tui-height: var(--tui-height-m)}[data-size=l][_nghost-%COMP%]{--tui-height: var(--tui-height-l);font:var(--tui-font-text-m);line-height:1.25rem}.t-input[_ngcontent-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);padding:0;margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;width:100%;height:100%;border-style:solid;border-color:transparent;border-inline-start-width:var(--border-start, 0);border-inline-end-width:var(--border-end, 0);text-indent:var(--text-indent);text-align:inherit;box-sizing:border-box;white-space:nowrap;overflow:hidden;text-transform:inherit;resize:none}.t-input[_ngcontent-%COMP%]:-webkit-autofill, .t-input[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-input[_ngcontent-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}.t-input[inputMode=none][_ngcontent-%COMP%]{caret-color:transparent}.t-input[_ngcontent-%COMP%]:-webkit-autofill, .t-input[_ngcontent-%COMP%]:-webkit-autofill:first-line{font-size:inherit;line-height:inherit}.t-input[_ngcontent-%COMP%]::-webkit-caps-lock-indicator, .t-input[_ngcontent-%COMP%]::-webkit-contacts-auto-fill-button, .t-input[_ngcontent-%COMP%]::-webkit-credit-card-auto-fill-button, .t-input[_ngcontent-%COMP%]::-webkit-credentials-auto-fill-button, .t-input[_ngcontent-%COMP%]::-webkit-strong-password-auto-fill-button{content:none!important;position:absolute;left:-62.4375rem;top:-62.4375rem;z-index:-999;display:none!important;background:transparent!important;pointer-events:none!important}.t-input[_ngcontent-%COMP%]::placeholder{color:var(--tui-text-03);opacity:0}._focused[_nghost-%COMP%]:not(._readonly)   .t-input[_ngcontent-%COMP%]::placeholder, tui-primitive-textfield._focused:not(._readonly)[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-primitive-textfield._focused:not(._readonly)   [_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-textarea._focused:not(._readonly)[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-textarea._focused:not(._readonly)   [_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-text-area._focused:not(._readonly)[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-text-area._focused:not(._readonly)   [_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder{opacity:1}[tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]:-webkit-autofill, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]:-webkit-autofill:focus, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:focus, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01-night)!important;border-color:var(--tui-autofill-night);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill-night) inset!important}[tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]::placeholder, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]::placeholder{color:var(--tui-text-03-night)}[data-size=s][_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"s\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), .t-input   tui-textarea[data-size=\"s\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-textarea), .t-input   tui-text-area[data-size=\"s\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-s)}[data-size=m][_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"m\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), .t-input   tui-textarea[data-size=\"m\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-textarea), .t-input   tui-text-area[data-size=\"m\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-m)}[data-size=l][_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"l\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), .t-input   tui-textarea[data-size=\"l\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-textarea), .t-input   tui-text-area[data-size=\"l\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-l)}._disabled[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield._disabled[_nghost-%COMP%], tui-primitive-textfield._disabled   [_nghost-%COMP%], .t-input   tui-textarea._disabled[_nghost-%COMP%], tui-textarea._disabled   [_nghost-%COMP%], .t-input   tui-text-area._disabled[_nghost-%COMP%], tui-text-area._disabled   [_nghost-%COMP%]{pointer-events:none}[data-size=l][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1.25rem}[data-size=m][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1rem}[data-size=l][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%]{padding-top:1.25rem}[data-size=l][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.8156rem;transform:translateY(-.625rem)}[data-size=m][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.69rem;transform:translateY(-.5rem)}._hidden[_nghost-%COMP%]   input.t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield._hidden[_nghost-%COMP%], tui-primitive-textfield._hidden   [_nghost-%COMP%]{opacity:0;text-indent:-10em;-webkit-user-select:none}.t-content[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;box-sizing:border-box;align-items:center;overflow:hidden}[data-size=s][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:0 var(--tui-padding-s)}[data-size=m][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:0 var(--tui-padding-m)}[data-size=l][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:0 var(--tui-padding-l)}.t-wrapper[_ngcontent-%COMP%]{flex:1;min-width:0;-webkit-padding-end:.25rem;padding-inline-end:.25rem}.t-placeholder[_ngcontent-%COMP%]{transition-property:transform,font-size,color,letter-spacing;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;width:100%;-webkit-user-select:none;-moz-user-select:none;user-select:none;font:var(--tui-font-text-s);color:var(--tui-text-02);pointer-events:none;will-change:transform;transform:translateY(0)}@supports (-webkit-hyphens: none){.t-placeholder[_ngcontent-%COMP%]{will-change:unset;transition-property:transform,color,letter-spacing}}.t-placeholder_raised[_ngcontent-%COMP%]{transform:translateY(-.625rem)}[data-size=m][_nghost-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%]{font:var(--tui-font-text-xs);line-height:1.25rem;transform:translateY(-.5rem);letter-spacing:.025rem}._invalid[_nghost-%COMP%]:not(._focused)   .t-placeholder_raised[_ngcontent-%COMP%], ._invalid[_nghost-%COMP%]:not(._focused):hover   .t-placeholder_raised[_ngcontent-%COMP%]{color:var(--tui-error-fill)}._invalid[_nghost-%COMP%]:not(._focused)   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%], ._invalid[_nghost-%COMP%]:not(._focused):hover   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%]{color:var(--tui-error-fill-night)}._focused[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=m]._focused._label-outside[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused._label-outside[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-03)}[data-size=l][_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font:var(--tui-font-text-m);line-height:1.25rem}[data-size=l][_nghost-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%]{font-size:.8156rem}[data-size=m]._focused[_nghost-%COMP%]:not(._label-outside)   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused[_nghost-%COMP%]:not(._label-outside)   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-01)}[tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-02-night)}[data-size=m]._focused[_nghost-%COMP%]:not(._label-outside)   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused[_nghost-%COMP%]:not(._label-outside)   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-01-night)}._focused[_nghost-%COMP%]   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=m]._focused._label-outside[_nghost-%COMP%]   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused._label-outside[_nghost-%COMP%]   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-02-night)}.t-cleaner[_ngcontent-%COMP%]{position:relative;display:flex;width:1.5rem;height:1.5rem;align-items:center;justify-content:center;box-sizing:border-box;cursor:pointer;pointer-events:none;pointer-events:auto}._readonly[_nghost-%COMP%]   .t-cleaner[_ngcontent-%COMP%], ._disabled[_nghost-%COMP%]   .t-cleaner[_ngcontent-%COMP%]{pointer-events:none}.t-icon[_ngcontent-%COMP%]{position:relative;display:flex;width:1.5rem;height:1.5rem;align-items:center;justify-content:center;box-sizing:border-box;cursor:pointer;pointer-events:none}[data-size=s][_nghost-%COMP%]   .t-icon_left[_ngcontent-%COMP%]{-webkit-margin-start:-.375rem;margin-inline-start:-.375rem}[data-size=m][_nghost-%COMP%]   .t-icon_left[_ngcontent-%COMP%]{-webkit-margin-start:-.125rem;margin-inline-start:-.125rem;-webkit-margin-end:.375rem;margin-inline-end:.375rem}[data-size=l][_nghost-%COMP%]   .t-icon_left[_ngcontent-%COMP%]{-webkit-margin-end:.75rem;margin-inline-end:.75rem}.t-icons[_ngcontent-%COMP%]{display:flex;align-items:center}[data-size=m][_nghost-%COMP%]   .t-icons[_ngcontent-%COMP%]{-webkit-margin-end:-.125rem;margin-inline-end:-.125rem}[data-size=s][_nghost-%COMP%]   .t-icons[_ngcontent-%COMP%]{-webkit-margin-end:-.375rem;margin-inline-end:-.375rem}[_nghost-%COMP%]:not([data-size=\"s\"])   .t-icons[_ngcontent-%COMP%] > [_ngcontent-%COMP%]:not(:first-child){-webkit-margin-start:.25rem;margin-inline-start:.25rem}._autofilled[data-size=s][_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], ._autofilled._label-outside[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], ._autofilled[_nghost-%COMP%]   .t-value-decoration[_ngcontent-%COMP%]:not(.t-has-value){visibility:hidden}.t-custom-content[_ngcontent-%COMP%]{position:relative;display:flex;align-items:center;justify-content:center;min-width:2rem;height:2rem;pointer-events:none}.t-custom-icon[_ngcontent-%COMP%]{width:2rem;height:100%}.t-input[_ngcontent-%COMP%]:not(:first-child){display:none}[data-size][_nghost-%COMP%]   .t-input_template[_ngcontent-%COMP%]{display:flex;width:calc(100% - 1rem);max-width:calc(100% - 1rem);align-items:center;pointer-events:none;-webkit-padding-end:0;padding-inline-end:0}.t-text-template[_ngcontent-%COMP%]{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.t-wrapper-value-decoration[_ngcontent-%COMP%]{position:relative;pointer-events:none}"],
+    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);position:relative;display:block;text-align:left;border-radius:var(--tui-radius-m);height:var(--tui-height);min-height:var(--tui-height);max-height:var(--tui-height)}[data-size=s][_nghost-%COMP%]{--tui-height: var(--tui-height-s)}[data-size=m][_nghost-%COMP%]{--tui-height: var(--tui-height-m)}[data-size=l][_nghost-%COMP%]{--tui-height: var(--tui-height-l);font:var(--tui-font-text-m);line-height:1.25rem}.t-input[_ngcontent-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);padding:0;margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;width:100%;height:100%;border-style:solid;border-color:transparent;border-inline-start-width:var(--border-start, 0);border-inline-end-width:var(--border-end, 0);text-indent:var(--text-indent);text-align:inherit;box-sizing:border-box;white-space:nowrap;overflow:hidden;text-transform:inherit;resize:none}.t-input[_ngcontent-%COMP%]:-webkit-autofill, .t-input[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-input[_ngcontent-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}.t-input[inputMode=none][_ngcontent-%COMP%]{caret-color:transparent}.t-input[_ngcontent-%COMP%]:-webkit-autofill, .t-input[_ngcontent-%COMP%]:-webkit-autofill:first-line{font-size:inherit;line-height:inherit}.t-input[_ngcontent-%COMP%]::-webkit-caps-lock-indicator, .t-input[_ngcontent-%COMP%]::-webkit-contacts-auto-fill-button, .t-input[_ngcontent-%COMP%]::-webkit-credit-card-auto-fill-button, .t-input[_ngcontent-%COMP%]::-webkit-credentials-auto-fill-button, .t-input[_ngcontent-%COMP%]::-webkit-strong-password-auto-fill-button{content:none!important;position:absolute;left:-62.4375rem;top:-62.4375rem;z-index:-999;display:none!important;background:transparent!important;pointer-events:none!important}.t-input[_ngcontent-%COMP%]::placeholder{color:var(--tui-text-03);opacity:0}._focused[_nghost-%COMP%]:not(._readonly)   .t-input[_ngcontent-%COMP%]::placeholder, tui-primitive-textfield._focused:not(._readonly)[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-primitive-textfield._focused:not(._readonly)   [_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-textarea._focused:not(._readonly)[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-textarea._focused:not(._readonly)   [_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-text-area._focused:not(._readonly)[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, tui-text-area._focused:not(._readonly)   [_nghost-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder{opacity:1}[tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]:-webkit-autofill, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]:-webkit-autofill:hover, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]:-webkit-autofill:focus, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:focus, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01-night)!important;border-color:var(--tui-autofill-night);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill-night) inset!important}[tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-input[_ngcontent-%COMP%]::placeholder, .t-input   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]::placeholder, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]::placeholder{color:var(--tui-text-03-night)}[data-size=s][_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"s\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), .t-input   tui-textarea[data-size=\"s\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-textarea), .t-input   tui-text-area[data-size=\"s\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-s)}[data-size=m][_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"m\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), .t-input   tui-textarea[data-size=\"m\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-textarea), .t-input   tui-text-area[data-size=\"m\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-m)}[data-size=l][_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"l\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), .t-input   tui-textarea[data-size=\"l\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-textarea), .t-input   tui-text-area[data-size=\"l\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-l)}._disabled[_nghost-%COMP%]   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield._disabled[_nghost-%COMP%], tui-primitive-textfield._disabled   [_nghost-%COMP%], .t-input   tui-textarea._disabled[_nghost-%COMP%], tui-textarea._disabled   [_nghost-%COMP%], .t-input   tui-text-area._disabled[_nghost-%COMP%], tui-text-area._disabled   [_nghost-%COMP%]{pointer-events:none}[data-size=l][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1.25rem}[data-size=m][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1rem}[data-size=l][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%]{padding-top:1.25rem}[data-size=l][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.8156rem;transform:translateY(-.625rem)}[data-size=m][_nghost-%COMP%]:not(._label-outside)   .t-input[_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.69rem;transform:translateY(-.5rem)}._hidden[_nghost-%COMP%]   input.t-input[_ngcontent-%COMP%], .t-input   tui-primitive-textfield._hidden[_nghost-%COMP%], tui-primitive-textfield._hidden   [_nghost-%COMP%]{opacity:0;text-indent:-10em}.t-content[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;box-sizing:border-box;align-items:center;overflow:hidden}[data-size=s][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:0 var(--tui-padding-s)}[data-size=m][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:0 var(--tui-padding-m)}[data-size=l][_nghost-%COMP%]   .t-content[_ngcontent-%COMP%]{padding:0 var(--tui-padding-l)}.t-wrapper[_ngcontent-%COMP%]{flex:1;min-width:0;-webkit-padding-end:.25rem;padding-inline-end:.25rem}.t-placeholder[_ngcontent-%COMP%]{transition-property:transform,font-size,color,letter-spacing;transition-duration:var(--tui-duration, .3s);transition-timing-function:ease-in-out;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;width:100%;-webkit-user-select:none;-moz-user-select:none;user-select:none;font:var(--tui-font-text-s);color:var(--tui-text-02);pointer-events:none;will-change:transform;transform:translateY(0)}@supports (-webkit-hyphens: none){.t-placeholder[_ngcontent-%COMP%]{will-change:unset;transition-property:transform,color,letter-spacing}}.t-placeholder_raised[_ngcontent-%COMP%]{transform:translateY(-.625rem)}[data-size=m][_nghost-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%]{font:var(--tui-font-text-xs);line-height:1.25rem;transform:translateY(-.5rem);letter-spacing:.025rem}._invalid[_nghost-%COMP%]:not(._focused)   .t-placeholder_raised[_ngcontent-%COMP%], ._invalid[_nghost-%COMP%]:not(._focused):hover   .t-placeholder_raised[_ngcontent-%COMP%]{color:var(--tui-error-fill)}._invalid[_nghost-%COMP%]:not(._focused)   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%], ._invalid[_nghost-%COMP%]:not(._focused):hover   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%]{color:var(--tui-error-fill-night)}._focused[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=m]._focused._label-outside[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused._label-outside[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-03)}[data-size=l][_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font:var(--tui-font-text-m);line-height:1.25rem}[data-size=l][_nghost-%COMP%]   .t-placeholder_raised[_ngcontent-%COMP%]{font-size:.8156rem}[data-size=m]._focused[_nghost-%COMP%]:not(._label-outside)   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused[_nghost-%COMP%]:not(._label-outside)   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-01)}[tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-02-night)}[data-size=m]._focused[_nghost-%COMP%]:not(._label-outside)   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused[_nghost-%COMP%]:not(._label-outside)   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-01-night)}._focused[_nghost-%COMP%]   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=m]._focused._label-outside[_nghost-%COMP%]   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%], [data-size=l]._focused._label-outside[_nghost-%COMP%]   [tuiWrapper][data-mode=onDark][_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{color:var(--tui-text-02-night)}.t-cleaner[_ngcontent-%COMP%]{position:relative;display:flex;width:1.5rem;height:1.5rem;align-items:center;justify-content:center;box-sizing:border-box;cursor:pointer;pointer-events:none;pointer-events:auto}._readonly[_nghost-%COMP%]   .t-cleaner[_ngcontent-%COMP%], ._disabled[_nghost-%COMP%]   .t-cleaner[_ngcontent-%COMP%]{pointer-events:none}.t-icon[_ngcontent-%COMP%]{position:relative;display:flex;width:1.5rem;height:1.5rem;align-items:center;justify-content:center;box-sizing:border-box;cursor:pointer;pointer-events:none}[data-size=s][_nghost-%COMP%]   .t-icon_left[_ngcontent-%COMP%]{-webkit-margin-start:-.375rem;margin-inline-start:-.375rem}[data-size=m][_nghost-%COMP%]   .t-icon_left[_ngcontent-%COMP%]{-webkit-margin-start:-.125rem;margin-inline-start:-.125rem;-webkit-margin-end:.375rem;margin-inline-end:.375rem}[data-size=l][_nghost-%COMP%]   .t-icon_left[_ngcontent-%COMP%]{-webkit-margin-end:.75rem;margin-inline-end:.75rem}.t-icons[_ngcontent-%COMP%]{display:flex;align-items:center}[data-size=m][_nghost-%COMP%]   .t-icons[_ngcontent-%COMP%]{-webkit-margin-end:-.125rem;margin-inline-end:-.125rem}[data-size=s][_nghost-%COMP%]   .t-icons[_ngcontent-%COMP%]{-webkit-margin-end:-.375rem;margin-inline-end:-.375rem}[_nghost-%COMP%]:not([data-size=\"s\"])   .t-icons[_ngcontent-%COMP%] > [_ngcontent-%COMP%]:not(:first-child){-webkit-margin-start:.25rem;margin-inline-start:.25rem}._autofilled[data-size=s][_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], ._autofilled._label-outside[_nghost-%COMP%]   .t-placeholder[_ngcontent-%COMP%], ._autofilled[_nghost-%COMP%]   .t-value-decoration[_ngcontent-%COMP%]:not(.t-has-value){visibility:hidden}.t-custom-content[_ngcontent-%COMP%]{position:relative;display:flex;align-items:center;justify-content:center;min-width:2rem;height:2rem;pointer-events:none}.t-custom-icon[_ngcontent-%COMP%]{width:2rem;height:100%}.t-input[_ngcontent-%COMP%]:not(:first-child){display:none}[data-size][_nghost-%COMP%]   .t-input_template[_ngcontent-%COMP%]{display:flex;width:calc(100% - 1rem);max-width:calc(100% - 1rem);align-items:center;pointer-events:none;-webkit-padding-end:0;padding-inline-end:0}.t-text-template[_ngcontent-%COMP%]{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.t-wrapper-value-decoration[_ngcontent-%COMP%]{position:relative;pointer-events:none}"],
     changeDetection: 0
   });
   (0,tslib_es6/* __decorate */.Cg)([taiga_ui_cdk_decorators/* tuiPure */.PE], TuiPrimitiveTextfieldComponent.prototype, "getIndent$", null);
@@ -4002,7 +4000,7 @@ let TuiTextfieldComponent = /*#__PURE__*/(() => {
     decls: 0,
     vars: 0,
     template: function TuiTextfieldComponent_Template(rf, ctx) {},
-    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);padding:0;margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;width:100%;height:100%;border-style:solid;border-color:transparent;border-inline-start-width:var(--border-start, 0);border-inline-end-width:var(--border-end, 0);text-indent:var(--text-indent);text-align:inherit;box-sizing:border-box;white-space:nowrap;overflow:hidden;text-transform:inherit;resize:none}[_nghost-%COMP%]:-webkit-autofill, [_nghost-%COMP%]:-webkit-autofill:hover, [_nghost-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}[inputMode=none][_nghost-%COMP%]{caret-color:transparent}[_nghost-%COMP%]:-webkit-autofill, [_nghost-%COMP%]:-webkit-autofill:first-line{font-size:inherit;line-height:inherit}[_nghost-%COMP%]::-webkit-caps-lock-indicator, [_nghost-%COMP%]::-webkit-contacts-auto-fill-button, [_nghost-%COMP%]::-webkit-credit-card-auto-fill-button, [_nghost-%COMP%]::-webkit-credentials-auto-fill-button, [_nghost-%COMP%]::-webkit-strong-password-auto-fill-button{content:none!important;position:absolute;left:-62.4375rem;top:-62.4375rem;z-index:-999;display:none!important;background:transparent!important;pointer-events:none!important}[_nghost-%COMP%]::placeholder{color:var(--tui-text-03);opacity:0}._focused[_nghost-%COMP%]:not(._readonly)   [_ngcontent-%COMP%]::placeholder, tui-primitive-textfield._focused:not(._readonly)   [_nghost-%COMP%]::placeholder, tui-textarea._focused:not(._readonly)   [_nghost-%COMP%]::placeholder, tui-text-area._focused:not(._readonly)   [_nghost-%COMP%]::placeholder{opacity:1}[tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]:-webkit-autofill, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]:-webkit-autofill:hover, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]:-webkit-autofill:focus, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:focus, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01-night)!important;border-color:var(--tui-autofill-night);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill-night) inset!important}[tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]::placeholder, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]::placeholder, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]::placeholder{color:var(--tui-text-03-night)}[data-size=s][_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"s\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), [_nghost-%COMP%]   tui-textarea[data-size=\"s\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-textarea), [_nghost-%COMP%]   tui-text-area[data-size=\"s\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-s)}[data-size=m][_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"m\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), [_nghost-%COMP%]   tui-textarea[data-size=\"m\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-textarea), [_nghost-%COMP%]   tui-text-area[data-size=\"m\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-m)}[data-size=l][_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"l\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), [_nghost-%COMP%]   tui-textarea[data-size=\"l\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-textarea), [_nghost-%COMP%]   tui-text-area[data-size=\"l\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-l)}._disabled[_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield._disabled[_nghost-%COMP%], tui-primitive-textfield._disabled   [_nghost-%COMP%], [_nghost-%COMP%]   tui-textarea._disabled[_nghost-%COMP%], tui-textarea._disabled   [_nghost-%COMP%], [_nghost-%COMP%]   tui-text-area._disabled[_nghost-%COMP%], tui-text-area._disabled   [_nghost-%COMP%]{pointer-events:none}[data-size=l][_nghost-%COMP%]:not(._label-outside)   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1.25rem}[data-size=m][_nghost-%COMP%]:not(._label-outside)   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1rem}[data-size=l][_nghost-%COMP%]:not(._label-outside)   -shadowcsshost{padding-top:1.25rem}[data-size=l][_nghost-%COMP%]:not(._label-outside)   [_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.8156rem;transform:translateY(-.625rem)}[data-size=m][_nghost-%COMP%]:not(._label-outside)   [_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.69rem;transform:translateY(-.5rem)}._hidden[_nghost-%COMP%]   input[_ngcontent-%COMP%], [_nghost-%COMP%]   tui-primitive-textfield._hidden[_nghost-%COMP%], tui-primitive-textfield._hidden   [_nghost-%COMP%]{opacity:0;text-indent:-10em;-webkit-user-select:none}textarea[_nghost-%COMP%]{white-space:pre-wrap}textarea[_nghost-%COMP%]   tui-textarea._ios[_nghost-%COMP%], tui-textarea._ios   [_nghost-%COMP%], textarea[_nghost-%COMP%]   tui-text-area._ios[_nghost-%COMP%], tui-text-area._ios   [_nghost-%COMP%]{padding-left:.8125rem}"],
+    styles: ["[_nghost-%COMP%]{font:var(--tui-font-text-s);color:var(--tui-text-01);padding:0;margin:0;border-width:0;border-radius:inherit;background:none;font-size:inherit;line-height:inherit;font-weight:inherit;color:inherit;caret-color:currentColor;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;word-break:keep-all;-webkit-text-fill-color:currentColor;position:absolute;top:0;left:0;width:100%;height:100%;border-style:solid;border-color:transparent;border-inline-start-width:var(--border-start, 0);border-inline-end-width:var(--border-end, 0);text-indent:var(--text-indent);text-align:inherit;box-sizing:border-box;white-space:nowrap;overflow:hidden;text-transform:inherit;resize:none}[_nghost-%COMP%]:-webkit-autofill, [_nghost-%COMP%]:-webkit-autofill:hover, [_nghost-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01)!important;border-color:var(--tui-autofill);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill) inset!important}[inputMode=none][_nghost-%COMP%]{caret-color:transparent}[_nghost-%COMP%]:-webkit-autofill, [_nghost-%COMP%]:-webkit-autofill:first-line{font-size:inherit;line-height:inherit}[_nghost-%COMP%]::-webkit-caps-lock-indicator, [_nghost-%COMP%]::-webkit-contacts-auto-fill-button, [_nghost-%COMP%]::-webkit-credit-card-auto-fill-button, [_nghost-%COMP%]::-webkit-credentials-auto-fill-button, [_nghost-%COMP%]::-webkit-strong-password-auto-fill-button{content:none!important;position:absolute;left:-62.4375rem;top:-62.4375rem;z-index:-999;display:none!important;background:transparent!important;pointer-events:none!important}[_nghost-%COMP%]::placeholder{color:var(--tui-text-03);opacity:0}._focused[_nghost-%COMP%]:not(._readonly)   [_ngcontent-%COMP%]::placeholder, tui-primitive-textfield._focused:not(._readonly)   [_nghost-%COMP%]::placeholder, tui-textarea._focused:not(._readonly)   [_nghost-%COMP%]::placeholder, tui-text-area._focused:not(._readonly)   [_nghost-%COMP%]::placeholder{opacity:1}[tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]:-webkit-autofill, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill, [tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]:-webkit-autofill:hover, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:hover, [tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]:-webkit-autofill:focus, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]:-webkit-autofill:focus, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]:-webkit-autofill:focus{caret-color:var(--tui-base-09);border-radius:inherit;color:inherit!important;background-color:transparent!important;-webkit-text-fill-color:var(--tui-text-01-night)!important;border-color:var(--tui-autofill-night);-webkit-box-shadow:0 0 0 100rem var(--tui-autofill-night) inset!important}[tuiWrapper][data-mode=onDark]   [_nghost-%COMP%]::placeholder, [_nghost-%COMP%]   [tuiWrapper][data-mode=\"onDark\"][_nghost-%COMP%]::placeholder, [tuiWrapper][data-mode=\"onDark\"]   [_nghost-%COMP%]::placeholder{color:var(--tui-text-03-night)}[data-size=s][_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"s\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), [_nghost-%COMP%]   tui-textarea[data-size=\"s\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-textarea), [_nghost-%COMP%]   tui-text-area[data-size=\"s\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"s\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-s)}[data-size=m][_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"m\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), [_nghost-%COMP%]   tui-textarea[data-size=\"m\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-textarea), [_nghost-%COMP%]   tui-text-area[data-size=\"m\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"m\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-m)}[data-size=l][_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"l\"][_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-primitive-textfield), [_nghost-%COMP%]   tui-textarea[data-size=\"l\"][_nghost-%COMP%]:not(tui-textarea), tui-textarea[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-textarea), [_nghost-%COMP%]   tui-text-area[data-size=\"l\"][_nghost-%COMP%]:not(tui-text-area), tui-text-area[data-size=\"l\"]   [_nghost-%COMP%]:not(tui-text-area){padding:0 var(--tui-padding-l)}._disabled[_nghost-%COMP%]   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield._disabled[_nghost-%COMP%], tui-primitive-textfield._disabled   [_nghost-%COMP%], [_nghost-%COMP%]   tui-textarea._disabled[_nghost-%COMP%], tui-textarea._disabled   [_nghost-%COMP%], [_nghost-%COMP%]   tui-text-area._disabled[_nghost-%COMP%], tui-text-area._disabled   [_nghost-%COMP%]{pointer-events:none}[data-size=l][_nghost-%COMP%]:not(._label-outside)   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"l\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1.25rem}[data-size=m][_nghost-%COMP%]:not(._label-outside)   -shadowcsshost, [_nghost-%COMP%]   tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)[_nghost-%COMP%]:not(tui-primitive-textfield), tui-primitive-textfield[data-size=\"m\"]:not(._label-outside)   [_nghost-%COMP%]:not(tui-primitive-textfield){padding-top:1rem}[data-size=l][_nghost-%COMP%]:not(._label-outside)   -shadowcsshost{padding-top:1.25rem}[data-size=l][_nghost-%COMP%]:not(._label-outside)   [_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.8156rem;transform:translateY(-.625rem)}[data-size=m][_nghost-%COMP%]:not(._label-outside)   [_ngcontent-%COMP%]:-webkit-autofill + .t-content[_ngcontent-%COMP%]   .t-placeholder[_ngcontent-%COMP%]{font-size:.69rem;transform:translateY(-.5rem)}._hidden[_nghost-%COMP%]   input[_ngcontent-%COMP%], [_nghost-%COMP%]   tui-primitive-textfield._hidden[_nghost-%COMP%], tui-primitive-textfield._hidden   [_nghost-%COMP%]{opacity:0;text-indent:-10em}textarea[_nghost-%COMP%]{white-space:pre-wrap}textarea[_nghost-%COMP%]   tui-textarea._ios[_nghost-%COMP%], tui-textarea._ios   [_nghost-%COMP%], textarea[_nghost-%COMP%]   tui-text-area._ios[_nghost-%COMP%], tui-text-area._ios   [_nghost-%COMP%]{padding-left:.8125rem}"],
     changeDetection: 0
   });
   return TuiTextfieldComponent;
@@ -7539,7 +7537,7 @@ let TuiRootComponent = /*#__PURE__*/(() => {
   TuiRootComponent.ɵcmp = /* @__PURE__ */core_mjs_["ɵɵdefineComponent"]({
     type: TuiRootComponent,
     selectors: [["tui-root"]],
-    hostAttrs: ["data-tui-version", "3.94.0"],
+    hostAttrs: ["data-tui-version", "3.95.1"],
     hostVars: 9,
     hostBindings: function TuiRootComponent_HostBindings(rf, ctx) {
       if (rf & 1) {
@@ -15877,7 +15875,7 @@ let TuiValueAccessorModule = /*#__PURE__*/(() => {
 
 
 //# sourceMappingURL=taiga-ui-kit-directives-value-accessor.js.map
-;// CONCATENATED MODULE: tslib
+;// CONCATENATED MODULE: ./node_modules/@maskito/angular/node_modules/tslib/tslib.es6.mjs
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
 
@@ -15932,7 +15930,7 @@ function __rest(s, e) {
   return t;
 }
 
-function tslib_decorate(decorators, target, key, desc) {
+function tslib_es6_decorate(decorators, target, key, desc) {
   var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
   if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
   else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -16219,11 +16217,11 @@ function __disposeResources(env) {
   return next();
 }
 
-/* harmony default export */ const tslib = ({
+/* harmony default export */ const tslib_tslib_es6 = ({
   __extends,
   __assign,
   __rest,
-  __decorate: tslib_decorate,
+  __decorate: tslib_es6_decorate,
   __param,
   __metadata,
   __awaiter,
@@ -23902,14 +23900,14 @@ Url.prototype.parseHost = function (host) {
 
 ;// CONCATENATED MODULE: ./node_modules/uc.micro/categories/P/regex.mjs
 /* harmony default export */ const regex = (/[!-#%-\*,-\/:;\?@\[-\]_\{\}\xA1\xA7\xAB\xB6\xB7\xBB\xBF\u037E\u0387\u055A-\u055F\u0589\u058A\u05BE\u05C0\u05C3\u05C6\u05F3\u05F4\u0609\u060A\u060C\u060D\u061B\u061D-\u061F\u066A-\u066D\u06D4\u0700-\u070D\u07F7-\u07F9\u0830-\u083E\u085E\u0964\u0965\u0970\u09FD\u0A76\u0AF0\u0C77\u0C84\u0DF4\u0E4F\u0E5A\u0E5B\u0F04-\u0F12\u0F14\u0F3A-\u0F3D\u0F85\u0FD0-\u0FD4\u0FD9\u0FDA\u104A-\u104F\u10FB\u1360-\u1368\u1400\u166E\u169B\u169C\u16EB-\u16ED\u1735\u1736\u17D4-\u17D6\u17D8-\u17DA\u1800-\u180A\u1944\u1945\u1A1E\u1A1F\u1AA0-\u1AA6\u1AA8-\u1AAD\u1B5A-\u1B60\u1B7D\u1B7E\u1BFC-\u1BFF\u1C3B-\u1C3F\u1C7E\u1C7F\u1CC0-\u1CC7\u1CD3\u2010-\u2027\u2030-\u2043\u2045-\u2051\u2053-\u205E\u207D\u207E\u208D\u208E\u2308-\u230B\u2329\u232A\u2768-\u2775\u27C5\u27C6\u27E6-\u27EF\u2983-\u2998\u29D8-\u29DB\u29FC\u29FD\u2CF9-\u2CFC\u2CFE\u2CFF\u2D70\u2E00-\u2E2E\u2E30-\u2E4F\u2E52-\u2E5D\u3001-\u3003\u3008-\u3011\u3014-\u301F\u3030\u303D\u30A0\u30FB\uA4FE\uA4FF\uA60D-\uA60F\uA673\uA67E\uA6F2-\uA6F7\uA874-\uA877\uA8CE\uA8CF\uA8F8-\uA8FA\uA8FC\uA92E\uA92F\uA95F\uA9C1-\uA9CD\uA9DE\uA9DF\uAA5C-\uAA5F\uAADE\uAADF\uAAF0\uAAF1\uABEB\uFD3E\uFD3F\uFE10-\uFE19\uFE30-\uFE52\uFE54-\uFE61\uFE63\uFE68\uFE6A\uFE6B\uFF01-\uFF03\uFF05-\uFF0A\uFF0C-\uFF0F\uFF1A\uFF1B\uFF1F\uFF20\uFF3B-\uFF3D\uFF3F\uFF5B\uFF5D\uFF5F-\uFF65]|\uD800[\uDD00-\uDD02\uDF9F\uDFD0]|\uD801\uDD6F|\uD802[\uDC57\uDD1F\uDD3F\uDE50-\uDE58\uDE7F\uDEF0-\uDEF6\uDF39-\uDF3F\uDF99-\uDF9C]|\uD803[\uDEAD\uDF55-\uDF59\uDF86-\uDF89]|\uD804[\uDC47-\uDC4D\uDCBB\uDCBC\uDCBE-\uDCC1\uDD40-\uDD43\uDD74\uDD75\uDDC5-\uDDC8\uDDCD\uDDDB\uDDDD-\uDDDF\uDE38-\uDE3D\uDEA9]|\uD805[\uDC4B-\uDC4F\uDC5A\uDC5B\uDC5D\uDCC6\uDDC1-\uDDD7\uDE41-\uDE43\uDE60-\uDE6C\uDEB9\uDF3C-\uDF3E]|\uD806[\uDC3B\uDD44-\uDD46\uDDE2\uDE3F-\uDE46\uDE9A-\uDE9C\uDE9E-\uDEA2\uDF00-\uDF09]|\uD807[\uDC41-\uDC45\uDC70\uDC71\uDEF7\uDEF8\uDF43-\uDF4F\uDFFF]|\uD809[\uDC70-\uDC74]|\uD80B[\uDFF1\uDFF2]|\uD81A[\uDE6E\uDE6F\uDEF5\uDF37-\uDF3B\uDF44]|\uD81B[\uDE97-\uDE9A\uDFE2]|\uD82F\uDC9F|\uD836[\uDE87-\uDE8B]|\uD83A[\uDD5E\uDD5F]/);
+;// CONCATENATED MODULE: ./node_modules/uc.micro/categories/S/regex.mjs
+/* harmony default export */ const S_regex = (/[\$\+<->\^`\|~\xA2-\xA6\xA8\xA9\xAC\xAE-\xB1\xB4\xB8\xD7\xF7\u02C2-\u02C5\u02D2-\u02DF\u02E5-\u02EB\u02ED\u02EF-\u02FF\u0375\u0384\u0385\u03F6\u0482\u058D-\u058F\u0606-\u0608\u060B\u060E\u060F\u06DE\u06E9\u06FD\u06FE\u07F6\u07FE\u07FF\u0888\u09F2\u09F3\u09FA\u09FB\u0AF1\u0B70\u0BF3-\u0BFA\u0C7F\u0D4F\u0D79\u0E3F\u0F01-\u0F03\u0F13\u0F15-\u0F17\u0F1A-\u0F1F\u0F34\u0F36\u0F38\u0FBE-\u0FC5\u0FC7-\u0FCC\u0FCE\u0FCF\u0FD5-\u0FD8\u109E\u109F\u1390-\u1399\u166D\u17DB\u1940\u19DE-\u19FF\u1B61-\u1B6A\u1B74-\u1B7C\u1FBD\u1FBF-\u1FC1\u1FCD-\u1FCF\u1FDD-\u1FDF\u1FED-\u1FEF\u1FFD\u1FFE\u2044\u2052\u207A-\u207C\u208A-\u208C\u20A0-\u20C0\u2100\u2101\u2103-\u2106\u2108\u2109\u2114\u2116-\u2118\u211E-\u2123\u2125\u2127\u2129\u212E\u213A\u213B\u2140-\u2144\u214A-\u214D\u214F\u218A\u218B\u2190-\u2307\u230C-\u2328\u232B-\u2426\u2440-\u244A\u249C-\u24E9\u2500-\u2767\u2794-\u27C4\u27C7-\u27E5\u27F0-\u2982\u2999-\u29D7\u29DC-\u29FB\u29FE-\u2B73\u2B76-\u2B95\u2B97-\u2BFF\u2CE5-\u2CEA\u2E50\u2E51\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u2FF0-\u2FFF\u3004\u3012\u3013\u3020\u3036\u3037\u303E\u303F\u309B\u309C\u3190\u3191\u3196-\u319F\u31C0-\u31E3\u31EF\u3200-\u321E\u322A-\u3247\u3250\u3260-\u327F\u328A-\u32B0\u32C0-\u33FF\u4DC0-\u4DFF\uA490-\uA4C6\uA700-\uA716\uA720\uA721\uA789\uA78A\uA828-\uA82B\uA836-\uA839\uAA77-\uAA79\uAB5B\uAB6A\uAB6B\uFB29\uFBB2-\uFBC2\uFD40-\uFD4F\uFDCF\uFDFC-\uFDFF\uFE62\uFE64-\uFE66\uFE69\uFF04\uFF0B\uFF1C-\uFF1E\uFF3E\uFF40\uFF5C\uFF5E\uFFE0-\uFFE6\uFFE8-\uFFEE\uFFFC\uFFFD]|\uD800[\uDD37-\uDD3F\uDD79-\uDD89\uDD8C-\uDD8E\uDD90-\uDD9C\uDDA0\uDDD0-\uDDFC]|\uD802[\uDC77\uDC78\uDEC8]|\uD805\uDF3F|\uD807[\uDFD5-\uDFF1]|\uD81A[\uDF3C-\uDF3F\uDF45]|\uD82F\uDC9C|\uD833[\uDF50-\uDFC3]|\uD834[\uDC00-\uDCF5\uDD00-\uDD26\uDD29-\uDD64\uDD6A-\uDD6C\uDD83\uDD84\uDD8C-\uDDA9\uDDAE-\uDDEA\uDE00-\uDE41\uDE45\uDF00-\uDF56]|\uD835[\uDEC1\uDEDB\uDEFB\uDF15\uDF35\uDF4F\uDF6F\uDF89\uDFA9\uDFC3]|\uD836[\uDC00-\uDDFF\uDE37-\uDE3A\uDE6D-\uDE74\uDE76-\uDE83\uDE85\uDE86]|\uD838[\uDD4F\uDEFF]|\uD83B[\uDCAC\uDCB0\uDD2E\uDEF0\uDEF1]|\uD83C[\uDC00-\uDC2B\uDC30-\uDC93\uDCA0-\uDCAE\uDCB1-\uDCBF\uDCC1-\uDCCF\uDCD1-\uDCF5\uDD0D-\uDDAD\uDDE6-\uDE02\uDE10-\uDE3B\uDE40-\uDE48\uDE50\uDE51\uDE60-\uDE65\uDF00-\uDFFF]|\uD83D[\uDC00-\uDED7\uDEDC-\uDEEC\uDEF0-\uDEFC\uDF00-\uDF76\uDF7B-\uDFD9\uDFE0-\uDFEB\uDFF0]|\uD83E[\uDC00-\uDC0B\uDC10-\uDC47\uDC50-\uDC59\uDC60-\uDC87\uDC90-\uDCAD\uDCB0\uDCB1\uDD00-\uDE53\uDE60-\uDE6D\uDE70-\uDE7C\uDE80-\uDE88\uDE90-\uDEBD\uDEBF-\uDEC5\uDECE-\uDEDB\uDEE0-\uDEE8\uDEF0-\uDEF8\uDF00-\uDF92\uDF94-\uDFCA]/);
 ;// CONCATENATED MODULE: ./node_modules/uc.micro/properties/Any/regex.mjs
 /* harmony default export */ const Any_regex = (/[\0-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]/);
 ;// CONCATENATED MODULE: ./node_modules/uc.micro/categories/Cc/regex.mjs
 /* harmony default export */ const Cc_regex = (/[\0-\x1F\x7F-\x9F]/);
 ;// CONCATENATED MODULE: ./node_modules/uc.micro/categories/Cf/regex.mjs
 /* harmony default export */ const Cf_regex = (/[\xAD\u0600-\u0605\u061C\u06DD\u070F\u0890\u0891\u08E2\u180E\u200B-\u200F\u202A-\u202E\u2060-\u2064\u2066-\u206F\uFEFF\uFFF9-\uFFFB]|\uD804[\uDCBD\uDCCD]|\uD80D[\uDC30-\uDC3F]|\uD82F[\uDCA0-\uDCA3]|\uD834[\uDD73-\uDD7A]|\uDB40[\uDC01\uDC20-\uDC7F]/);
-;// CONCATENATED MODULE: ./node_modules/uc.micro/categories/S/regex.mjs
-/* harmony default export */ const S_regex = (/[\$\+<->\^`\|~\xA2-\xA6\xA8\xA9\xAC\xAE-\xB1\xB4\xB8\xD7\xF7\u02C2-\u02C5\u02D2-\u02DF\u02E5-\u02EB\u02ED\u02EF-\u02FF\u0375\u0384\u0385\u03F6\u0482\u058D-\u058F\u0606-\u0608\u060B\u060E\u060F\u06DE\u06E9\u06FD\u06FE\u07F6\u07FE\u07FF\u0888\u09F2\u09F3\u09FA\u09FB\u0AF1\u0B70\u0BF3-\u0BFA\u0C7F\u0D4F\u0D79\u0E3F\u0F01-\u0F03\u0F13\u0F15-\u0F17\u0F1A-\u0F1F\u0F34\u0F36\u0F38\u0FBE-\u0FC5\u0FC7-\u0FCC\u0FCE\u0FCF\u0FD5-\u0FD8\u109E\u109F\u1390-\u1399\u166D\u17DB\u1940\u19DE-\u19FF\u1B61-\u1B6A\u1B74-\u1B7C\u1FBD\u1FBF-\u1FC1\u1FCD-\u1FCF\u1FDD-\u1FDF\u1FED-\u1FEF\u1FFD\u1FFE\u2044\u2052\u207A-\u207C\u208A-\u208C\u20A0-\u20C0\u2100\u2101\u2103-\u2106\u2108\u2109\u2114\u2116-\u2118\u211E-\u2123\u2125\u2127\u2129\u212E\u213A\u213B\u2140-\u2144\u214A-\u214D\u214F\u218A\u218B\u2190-\u2307\u230C-\u2328\u232B-\u2426\u2440-\u244A\u249C-\u24E9\u2500-\u2767\u2794-\u27C4\u27C7-\u27E5\u27F0-\u2982\u2999-\u29D7\u29DC-\u29FB\u29FE-\u2B73\u2B76-\u2B95\u2B97-\u2BFF\u2CE5-\u2CEA\u2E50\u2E51\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u2FF0-\u2FFF\u3004\u3012\u3013\u3020\u3036\u3037\u303E\u303F\u309B\u309C\u3190\u3191\u3196-\u319F\u31C0-\u31E3\u31EF\u3200-\u321E\u322A-\u3247\u3250\u3260-\u327F\u328A-\u32B0\u32C0-\u33FF\u4DC0-\u4DFF\uA490-\uA4C6\uA700-\uA716\uA720\uA721\uA789\uA78A\uA828-\uA82B\uA836-\uA839\uAA77-\uAA79\uAB5B\uAB6A\uAB6B\uFB29\uFBB2-\uFBC2\uFD40-\uFD4F\uFDCF\uFDFC-\uFDFF\uFE62\uFE64-\uFE66\uFE69\uFF04\uFF0B\uFF1C-\uFF1E\uFF3E\uFF40\uFF5C\uFF5E\uFFE0-\uFFE6\uFFE8-\uFFEE\uFFFC\uFFFD]|\uD800[\uDD37-\uDD3F\uDD79-\uDD89\uDD8C-\uDD8E\uDD90-\uDD9C\uDDA0\uDDD0-\uDDFC]|\uD802[\uDC77\uDC78\uDEC8]|\uD805\uDF3F|\uD807[\uDFD5-\uDFF1]|\uD81A[\uDF3C-\uDF3F\uDF45]|\uD82F\uDC9C|\uD833[\uDF50-\uDFC3]|\uD834[\uDC00-\uDCF5\uDD00-\uDD26\uDD29-\uDD64\uDD6A-\uDD6C\uDD83\uDD84\uDD8C-\uDDA9\uDDAE-\uDDEA\uDE00-\uDE41\uDE45\uDF00-\uDF56]|\uD835[\uDEC1\uDEDB\uDEFB\uDF15\uDF35\uDF4F\uDF6F\uDF89\uDFA9\uDFC3]|\uD836[\uDC00-\uDDFF\uDE37-\uDE3A\uDE6D-\uDE74\uDE76-\uDE83\uDE85\uDE86]|\uD838[\uDD4F\uDEFF]|\uD83B[\uDCAC\uDCB0\uDD2E\uDEF0\uDEF1]|\uD83C[\uDC00-\uDC2B\uDC30-\uDC93\uDCA0-\uDCAE\uDCB1-\uDCBF\uDCC1-\uDCCF\uDCD1-\uDCF5\uDD0D-\uDDAD\uDDE6-\uDE02\uDE10-\uDE3B\uDE40-\uDE48\uDE50\uDE51\uDE60-\uDE65\uDF00-\uDFFF]|\uD83D[\uDC00-\uDED7\uDEDC-\uDEEC\uDEF0-\uDEFC\uDF00-\uDF76\uDF7B-\uDFD9\uDFE0-\uDFEB\uDFF0]|\uD83E[\uDC00-\uDC0B\uDC10-\uDC47\uDC50-\uDC59\uDC60-\uDC87\uDC90-\uDCAD\uDCB0\uDCB1\uDD00-\uDE53\uDE60-\uDE6D\uDE70-\uDE7C\uDE80-\uDE88\uDE90-\uDEBD\uDEBF-\uDEC5\uDECE-\uDEDB\uDEE0-\uDEE8\uDEF0-\uDEF8\uDF00-\uDF92\uDF94-\uDFCA]/);
 ;// CONCATENATED MODULE: ./node_modules/uc.micro/categories/Z/regex.mjs
 /* harmony default export */ const Z_regex = (/[ \xA0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000]/);
 ;// CONCATENATED MODULE: ./node_modules/uc.micro/index.mjs
@@ -25168,7 +25166,7 @@ function isWhiteSpace(code) {
 
 // Currently without astral characters support.
 function isPunctChar(ch) {
-  return regex.test(ch);
+  return regex.test(ch) || S_regex.test(ch);
 }
 
 // Markdown ASCII punctuation characters.
@@ -25333,7 +25331,6 @@ function parseLinkDestination(str, start, max) {
   const result = {
     ok: false,
     pos: 0,
-    lines: 0,
     str: ''
   };
   if (str.charCodeAt(pos) === 0x3C /* < */) {
@@ -25413,50 +25410,66 @@ function parseLinkDestination(str, start, max) {
 //
 
 
-function parseLinkTitle(str, start, max) {
-  let code, marker;
-  let lines = 0;
-  let pos = start;
-  const result = {
-    ok: false,
-    pos: 0,
-    lines: 0,
-    str: ''
-  };
-  if (pos >= max) {
-    return result;
-  }
-  marker = str.charCodeAt(pos);
-  if (marker !== 0x22 /* " */ && marker !== 0x27 /* ' */ && marker !== 0x28 /* ( */) {
-    return result;
-  }
-  pos++;
 
-  // if opening marker is "(", switch it to closing marker ")"
-  if (marker === 0x28) {
-    marker = 0x29;
+// Parse link title within `str` in [start, max] range,
+// or continue previous parsing if `prev_state` is defined (equal to result of last execution).
+//
+function parseLinkTitle(str, start, max, prev_state) {
+  let code;
+  let pos = start;
+  const state = {
+    // if `true`, this is a valid link title
+    ok: false,
+    // if `true`, this link can be continued on the next line
+    can_continue: false,
+    // if `ok`, it's the position of the first character after the closing marker
+    pos: 0,
+    // if `ok`, it's the unescaped title
+    str: '',
+    // expected closing marker character code
+    marker: 0
+  };
+  if (prev_state) {
+    // this is a continuation of a previous parseLinkTitle call on the next line,
+    // used in reference links only
+    state.str = prev_state.str;
+    state.marker = prev_state.marker;
+  } else {
+    if (pos >= max) {
+      return state;
+    }
+    let marker = str.charCodeAt(pos);
+    if (marker !== 0x22 /* " */ && marker !== 0x27 /* ' */ && marker !== 0x28 /* ( */) {
+      return state;
+    }
+    start++;
+    pos++;
+
+    // if opening marker is "(", switch it to closing marker ")"
+    if (marker === 0x28) {
+      marker = 0x29;
+    }
+    state.marker = marker;
   }
   while (pos < max) {
     code = str.charCodeAt(pos);
-    if (code === marker) {
-      result.pos = pos + 1;
-      result.lines = lines;
-      result.str = unescapeAll(str.slice(start + 1, pos));
-      result.ok = true;
-      return result;
-    } else if (code === 0x28 /* ( */ && marker === 0x29 /* ) */) {
-      return result;
-    } else if (code === 0x0A) {
-      lines++;
+    if (code === state.marker) {
+      state.pos = pos + 1;
+      state.str += unescapeAll(str.slice(start, pos));
+      state.ok = true;
+      return state;
+    } else if (code === 0x28 /* ( */ && state.marker === 0x29 /* ) */) {
+      return state;
     } else if (code === 0x5C /* \ */ && pos + 1 < max) {
       pos++;
-      if (str.charCodeAt(pos) === 0x0A) {
-        lines++;
-      }
     }
     pos++;
   }
-  return result;
+
+  // no closing marker found, but this link title may continue on the next line (for references)
+  state.can_continue = true;
+  state.str += unescapeAll(str.slice(start, pos));
+  return state;
 }
 ;// CONCATENATED MODULE: ./node_modules/markdown-it/lib/helpers/index.mjs
 // Just a shortcut for bulk export
@@ -25583,7 +25596,7 @@ function Renderer() {
    * }
    * ```
    *
-   * See [source code](https://github.com/markdown-it/markdown-it/blob/master/lib/renderer.js)
+   * See [source code](https://github.com/markdown-it/markdown-it/blob/master/lib/renderer.mjs)
    * for more details and examples.
    **/
   this.rules = utils_assign({}, default_rules);
@@ -27027,6 +27040,14 @@ StateBlock.prototype.Token = lib_token;
 // GFM table, https://github.github.com/gfm/#tables-extension-
 
 
+
+// Limit the amount of empty autocompleted cells in a table,
+// see https://github.com/markdown-it/markdown-it/issues/1000,
+//
+// Both pulldown-cmark and commonmark-hs limit the number of cells this way to ~200k.
+// We set it to 65k, which can expand user input by a factor of x370
+// (256x256 square is 1.8kB expanded into 650kB).
+const MAX_AUTOCOMPLETED_CELLS = 0x10000;
 function getLine(state, line) {
   const pos = state.bMarks[line] + state.tShift[line];
   const max = state.eMarks[line];
@@ -27178,6 +27199,7 @@ function table(state, startLine, endLine, silent) {
   state.push('tr_close', 'tr', -1);
   state.push('thead_close', 'thead', -1);
   let tbodyLines;
+  let autocompletedCells = 0;
   for (nextLine = startLine + 2; nextLine < endLine; nextLine++) {
     if (state.sCount[nextLine] < state.blkIndent) {
       break;
@@ -27202,6 +27224,13 @@ function table(state, startLine, endLine, silent) {
     columns = escapedSplit(lineText);
     if (columns.length && columns[0] === '') columns.shift();
     if (columns.length && columns[columns.length - 1] === '') columns.pop();
+
+    // note: autocomplete count can be negative if user specifies more columns than header,
+    // but that does not affect intended use (which is limiting expansion)
+    autocompletedCells += columnCount - columns.length;
+    if (autocompletedCells > MAX_AUTOCOMPLETED_CELLS) {
+      break;
+    }
     if (nextLine === startLine + 2) {
       const token_tbo = state.push('tbody_open', 'tbody', 1);
       token_tbo.map = tbodyLines = [startLine + 2, 0];
@@ -27903,7 +27932,6 @@ function list(state, startLine, endLine, silent) {
 ;// CONCATENATED MODULE: ./node_modules/markdown-it/lib/rules_block/reference.mjs
 
 function reference(state, startLine, _endLine, silent) {
-  let lines = 0;
   let pos = state.bMarks[startLine] + state.tShift[startLine];
   let max = state.eMarks[startLine];
   let nextLine = startLine + 1;
@@ -27915,51 +27943,50 @@ function reference(state, startLine, _endLine, silent) {
   if (state.src.charCodeAt(pos) !== 0x5B /* [ */) {
     return false;
   }
-
-  // Simple check to quickly interrupt scan on [link](url) at the start of line.
-  // Can be useful on practice: https://github.com/markdown-it/markdown-it/issues/54
-  while (++pos < max) {
-    if (state.src.charCodeAt(pos) === 0x5D /* ] */ && state.src.charCodeAt(pos - 1) !== 0x5C /* \ */) {
-      if (pos + 1 === max) {
-        return false;
-      }
-      if (state.src.charCodeAt(pos + 1) !== 0x3A /* : */) {
-        return false;
-      }
-      break;
+  function getNextLine(nextLine) {
+    const endLine = state.lineMax;
+    if (nextLine >= endLine || state.isEmpty(nextLine)) {
+      // empty line or end of input
+      return null;
     }
-  }
-  const endLine = state.lineMax;
+    let isContinuation = false;
 
-  // jump line-by-line until empty one or EOF
-  const terminatorRules = state.md.block.ruler.getRules('reference');
-  const oldParentType = state.parentType;
-  state.parentType = 'reference';
-  for (; nextLine < endLine && !state.isEmpty(nextLine); nextLine++) {
     // this would be a code block normally, but after paragraph
     // it's considered a lazy continuation regardless of what's there
     if (state.sCount[nextLine] - state.blkIndent > 3) {
-      continue;
+      isContinuation = true;
     }
 
     // quirk for blockquotes, this line should already be checked by that rule
     if (state.sCount[nextLine] < 0) {
-      continue;
+      isContinuation = true;
     }
+    if (!isContinuation) {
+      const terminatorRules = state.md.block.ruler.getRules('reference');
+      const oldParentType = state.parentType;
+      state.parentType = 'reference';
 
-    // Some tags can terminate paragraph without empty line.
-    let terminate = false;
-    for (let i = 0, l = terminatorRules.length; i < l; i++) {
-      if (terminatorRules[i](state, nextLine, endLine, true)) {
-        terminate = true;
-        break;
+      // Some tags can terminate paragraph without empty line.
+      let terminate = false;
+      for (let i = 0, l = terminatorRules.length; i < l; i++) {
+        if (terminatorRules[i](state, nextLine, endLine, true)) {
+          terminate = true;
+          break;
+        }
+      }
+      state.parentType = oldParentType;
+      if (terminate) {
+        // terminated by another block
+        return null;
       }
     }
-    if (terminate) {
-      break;
-    }
+    const pos = state.bMarks[nextLine] + state.tShift[nextLine];
+    const max = state.eMarks[nextLine];
+
+    // max + 1 explicitly includes the newline
+    return state.src.slice(pos, max + 1);
   }
-  const str = state.getLines(startLine, nextLine, state.blkIndent, false).trim();
+  let str = state.src.slice(pos, max + 1);
   max = str.length;
   let labelEnd = -1;
   for (pos = 1; pos < max; pos++) {
@@ -27970,11 +27997,21 @@ function reference(state, startLine, _endLine, silent) {
       labelEnd = pos;
       break;
     } else if (ch === 0x0A /* \n */) {
-      lines++;
+      const lineContent = getNextLine(nextLine);
+      if (lineContent !== null) {
+        str += lineContent;
+        max = str.length;
+        nextLine++;
+      }
     } else if (ch === 0x5C /* \ */) {
       pos++;
       if (pos < max && str.charCodeAt(pos) === 0x0A) {
-        lines++;
+        const lineContent = getNextLine(nextLine);
+        if (lineContent !== null) {
+          str += lineContent;
+          max = str.length;
+          nextLine++;
+        }
       }
     }
   }
@@ -27987,7 +28024,12 @@ function reference(state, startLine, _endLine, silent) {
   for (pos = labelEnd + 2; pos < max; pos++) {
     const ch = str.charCodeAt(pos);
     if (ch === 0x0A) {
-      lines++;
+      const lineContent = getNextLine(nextLine);
+      if (lineContent !== null) {
+        str += lineContent;
+        max = str.length;
+        nextLine++;
+      }
     } else if (isSpace(ch)) {
       /* eslint no-empty:0 */
     } else {
@@ -28006,11 +28048,10 @@ function reference(state, startLine, _endLine, silent) {
     return false;
   }
   pos = destRes.pos;
-  lines += destRes.lines;
 
   // save cursor state, we could require to rollback later
   const destEndPos = pos;
-  const destEndLineNo = lines;
+  const destEndLineNo = nextLine;
 
   // [label]:   destination   'title'
   //                       ^^^ skipping those spaces
@@ -28018,7 +28059,12 @@ function reference(state, startLine, _endLine, silent) {
   for (; pos < max; pos++) {
     const ch = str.charCodeAt(pos);
     if (ch === 0x0A) {
-      lines++;
+      const lineContent = getNextLine(nextLine);
+      if (lineContent !== null) {
+        str += lineContent;
+        max = str.length;
+        nextLine++;
+      }
     } else if (isSpace(ch)) {
       /* eslint no-empty:0 */
     } else {
@@ -28028,16 +28074,24 @@ function reference(state, startLine, _endLine, silent) {
 
   // [label]:   destination   'title'
   //                          ^^^^^^^ parse this
-  const titleRes = state.md.helpers.parseLinkTitle(str, pos, max);
+  let titleRes = state.md.helpers.parseLinkTitle(str, pos, max);
+  while (titleRes.can_continue) {
+    const lineContent = getNextLine(nextLine);
+    if (lineContent === null) break;
+    str += lineContent;
+    pos = max;
+    max = str.length;
+    nextLine++;
+    titleRes = state.md.helpers.parseLinkTitle(str, pos, max, titleRes);
+  }
   let title;
   if (pos < max && start !== pos && titleRes.ok) {
     title = titleRes.str;
     pos = titleRes.pos;
-    lines += titleRes.lines;
   } else {
     title = '';
     pos = destEndPos;
-    lines = destEndLineNo;
+    nextLine = destEndLineNo;
   }
 
   // skip trailing spaces until the rest of the line
@@ -28054,7 +28108,7 @@ function reference(state, startLine, _endLine, silent) {
       // but it could still be a valid reference if we roll back
       title = '';
       pos = destEndPos;
-      lines = destEndLineNo;
+      nextLine = destEndLineNo;
       while (pos < max) {
         const ch = str.charCodeAt(pos);
         if (!isSpace(ch)) {
@@ -28088,15 +28142,14 @@ function reference(state, startLine, _endLine, silent) {
       href
     };
   }
-  state.parentType = oldParentType;
-  state.line = startLine + lines + 1;
+  state.line = nextLine;
   return true;
 }
 ;// CONCATENATED MODULE: ./node_modules/markdown-it/lib/common/html_blocks.mjs
 // List of valid html blocks names, according to commonmark spec
 // https://spec.commonmark.org/0.30/#html-blocks
 
-/* harmony default export */ const html_blocks = (['address', 'article', 'aside', 'base', 'basefont', 'blockquote', 'body', 'caption', 'center', 'col', 'colgroup', 'dd', 'details', 'dialog', 'dir', 'div', 'dl', 'dt', 'fieldset', 'figcaption', 'figure', 'footer', 'form', 'frame', 'frameset', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'hr', 'html', 'iframe', 'legend', 'li', 'link', 'main', 'menu', 'menuitem', 'nav', 'noframes', 'ol', 'optgroup', 'option', 'p', 'param', 'section', 'source', 'summary', 'table', 'tbody', 'td', 'tfoot', 'th', 'thead', 'title', 'tr', 'track', 'ul']);
+/* harmony default export */ const html_blocks = (['address', 'article', 'aside', 'base', 'basefont', 'blockquote', 'body', 'caption', 'center', 'col', 'colgroup', 'dd', 'details', 'dialog', 'dir', 'div', 'dl', 'dt', 'fieldset', 'figcaption', 'figure', 'footer', 'form', 'frame', 'frameset', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'hr', 'html', 'iframe', 'legend', 'li', 'link', 'main', 'menu', 'menuitem', 'nav', 'noframes', 'ol', 'optgroup', 'option', 'p', 'param', 'search', 'section', 'summary', 'table', 'tbody', 'td', 'tfoot', 'th', 'thead', 'title', 'tr', 'track', 'ul']);
 ;// CONCATENATED MODULE: ./node_modules/markdown-it/lib/common/html_re.mjs
 // Regexps to match html elements
 
@@ -28108,9 +28161,9 @@ const attr_value = '(?:' + unquoted + '|' + single_quoted + '|' + double_quoted 
 const attribute = '(?:\\s+' + attr_name + '(?:\\s*=\\s*' + attr_value + ')?)';
 const open_tag = '<[A-Za-z][A-Za-z0-9\\-]*' + attribute + '*\\s*\\/?>';
 const close_tag = '<\\/[A-Za-z][A-Za-z0-9\\-]*\\s*>';
-const comment = '<!---->|<!--(?:-?[^>-])(?:-?[^-])*-->';
+const comment = '<!---?>|<!--(?:[^-]|-[^-]|--[^>])*-->';
 const processing = '<[?][\\s\\S]*?[?]>';
-const declaration = '<![A-Z]+\\s+[^>]*>';
+const declaration = '<![A-Za-z][^>]*>';
 const cdata = '<!\\[CDATA\\[[\\s\\S]*?\\]\\]>';
 const HTML_TAG_RE = new RegExp('^(?:' + open_tag + '|' + close_tag + '|' + comment + '|' + processing + '|' + declaration + '|' + cdata + ')');
 const HTML_OPEN_CLOSE_TAG_RE = new RegExp('^(?:' + open_tag + '|' + close_tag + ')');
@@ -28558,9 +28611,6 @@ StateInline.prototype.push = function (type, tag, nesting) {
 //  - canSplitWord - determine if these markers can be found inside a word
 //
 StateInline.prototype.scanDelims = function (start, canSplitWord) {
-  let can_open, can_close;
-  let left_flanking = true;
-  let right_flanking = true;
   const max = this.posMax;
   const marker = this.src.charCodeAt(start);
 
@@ -28578,27 +28628,10 @@ StateInline.prototype.scanDelims = function (start, canSplitWord) {
   const isNextPunctChar = isMdAsciiPunct(nextChar) || isPunctChar(String.fromCharCode(nextChar));
   const isLastWhiteSpace = isWhiteSpace(lastChar);
   const isNextWhiteSpace = isWhiteSpace(nextChar);
-  if (isNextWhiteSpace) {
-    left_flanking = false;
-  } else if (isNextPunctChar) {
-    if (!(isLastWhiteSpace || isLastPunctChar)) {
-      left_flanking = false;
-    }
-  }
-  if (isLastWhiteSpace) {
-    right_flanking = false;
-  } else if (isLastPunctChar) {
-    if (!(isNextWhiteSpace || isNextPunctChar)) {
-      right_flanking = false;
-    }
-  }
-  if (!canSplitWord) {
-    can_open = left_flanking && (!right_flanking || isLastPunctChar);
-    can_close = right_flanking && (!left_flanking || isNextPunctChar);
-  } else {
-    can_open = left_flanking;
-    can_close = right_flanking;
-  }
+  const left_flanking = !isNextWhiteSpace && (!isNextPunctChar || isLastWhiteSpace || isLastPunctChar);
+  const right_flanking = !isLastWhiteSpace && (!isLastPunctChar || isNextWhiteSpace || isNextPunctChar);
+  const can_open = left_flanking && (canSplitWord || !right_flanking || isLastPunctChar);
+  const can_close = right_flanking && (canSplitWord || !left_flanking || isNextPunctChar);
   return {
     can_open,
     can_close,
@@ -28668,7 +28701,7 @@ function text_text(state, silent) {
 // Alternative implementation, for memory.
 //
 // It costs 10% of performance, but allows extend terminators list, if place it
-// to `ParcerInline` property. Probably, will switch to it sometime, such
+// to `ParserInline` property. Probably, will switch to it sometime, such
 // flexibility required.
 
 /*
@@ -31214,12 +31247,12 @@ function normalizeLinkText(url) {
  * MarkdownIt provides named presets as a convenience to quickly
  * enable/disable active syntax rules and options for common use cases.
  *
- * - ["commonmark"](https://github.com/markdown-it/markdown-it/blob/master/lib/presets/commonmark.js) -
+ * - ["commonmark"](https://github.com/markdown-it/markdown-it/blob/master/lib/presets/commonmark.mjs) -
  *   configures parser to strict [CommonMark](http://commonmark.org/) mode.
- * - [default](https://github.com/markdown-it/markdown-it/blob/master/lib/presets/default.js) -
+ * - [default](https://github.com/markdown-it/markdown-it/blob/master/lib/presets/default.mjs) -
  *   similar to GFM, used when no preset name given. Enables all available rules,
  *   but still without html, typographer & autolinker.
- * - ["zero"](https://github.com/markdown-it/markdown-it/blob/master/lib/presets/zero.js) -
+ * - ["zero"](https://github.com/markdown-it/markdown-it/blob/master/lib/presets/zero.mjs) -
  *   all rules disabled. Useful to quickly setup your config via `.enable()`.
  *   For example, when you need only `bold` and `italic` markup and nothing else.
  *
@@ -31236,7 +31269,7 @@ function normalizeLinkText(url) {
  *   Can be useful for external highlighters.
  * - __linkify__ - `false`. Set `true` to autoconvert URL-like text to links.
  * - __typographer__  - `false`. Set `true` to enable [some language-neutral
- *   replacement](https://github.com/markdown-it/markdown-it/blob/master/lib/rules_core/replacements.js) +
+ *   replacement](https://github.com/markdown-it/markdown-it/blob/master/lib/rules_core/replacements.mjs) +
  *   quotes beautification (smartquotes).
  * - __quotes__ - `“”‘’`, String or Array. Double + single quotes replacement
  *   pairs, when typographer enabled and smartquotes on. For example, you can
@@ -31361,7 +31394,7 @@ function MarkdownIt(presetName, options) {
    * md.renderer.rules['my_token'] = myToken
    * ```
    *
-   * See [[Renderer]] docs and [source code](https://github.com/markdown-it/markdown-it/blob/master/lib/renderer.js).
+   * See [[Renderer]] docs and [source code](https://github.com/markdown-it/markdown-it/blob/master/lib/renderer.mjs).
    **/
   this.renderer = new renderer();
 
@@ -31369,7 +31402,7 @@ function MarkdownIt(presetName, options) {
    * MarkdownIt#linkify -> LinkifyIt
    *
    * [linkify-it](https://github.com/markdown-it/linkify-it) instance.
-   * Used by [linkify](https://github.com/markdown-it/markdown-it/blob/master/lib/rules_core/linkify.js)
+   * Used by [linkify](https://github.com/markdown-it/markdown-it/blob/master/lib/rules_core/linkify.mjs)
    * rule.
    **/
   this.linkify = new linkify_it();
@@ -31938,7 +31971,7 @@ function tuiTypeReferenceParser(types) {
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(3294);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(5558);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(6977);
-/* harmony import */ var _taiga_ui_cdk_services__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(5116);
+/* harmony import */ var _taiga_ui_cdk_services__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(4340);
 /* harmony import */ var _taiga_ui_cdk_exceptions__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(6651);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(297);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_1__);
@@ -32739,7 +32772,7 @@ const CHAR_ZERO_WIDTH_SPACE = '\u200B';
  * Array of icons used in taiga-ui components
  */
 const TUI_USED_ICONS = (/* unused pure expression or super */ null && (['tuiIconMirMono', 'tuiIconVisaMono', 'tuiIconElectronMono', 'tuiIconMastercard', 'tuiIconMaestro', 'tuiIconAmex', 'tuiIconDinersClub', 'tuiIconDiscover', 'tuiIconHumo', 'tuiIconJCB', 'tuiIconRuPay', 'tuiIconUnionPay', 'tuiIconUzcard', 'tuiIconVerve', 'tuiIconCopyLarge', 'tuiIconCheckLarge', 'tuiIconLink', 'tuiIconSearch', 'tuiIconSun', 'tuiIconMoon', 'tuiIconCode', 'tuiIconMenuLarge', 'tuiIconRotate', 'tuiIconArrowLeft', 'tuiIconArrowRight', 'tuiIconPlus', 'tuiIconMinus', 'tuiIconMinimize', 'tuiIconEye', 'tuiIconEyeOff', 'tuiIconDrag', 'tuiIconSortAscending', 'tuiIconSortDescending', 'tuiIconSortOff', 'tuiIconCheck', 'tuiIconMinusLarge', 'tuiIconChevronUp', 'tuiIconHelpCircle', 'tuiIconClose', 'tuiIconAlertCircle', 'tuiIconChevronRight', 'tuiIconInfo', 'tuiIconCheckCircle', 'tuiIconXCircle', 'tuiIconChevronLeft', 'tuiIconStarLarge', 'tuiIconChevronDown', 'tuiIconChevronDownLarge', 'tuiIconFileLarge', 'tuiIconCheckCircleLarge', 'tuiIconAlertCircleLarge', 'tuiIconTrashLarge', 'tuiIconCopy', 'tuiIconEyeOffLarge', 'tuiIconEyeLarge', 'tuiIconClock', 'tuiIconClockLarge', 'tuiIconToggleOff', 'tuiIconToggleOffLarge', 'tuiIconToggleOn', 'tuiIconToggleOnLarge', 'tuiIconCalendar', 'tuiIconCalendarLarge']));
-const TUI_VERSION = '3.94.0';
+const TUI_VERSION = '3.95.1';
 
 /**
  * Generated bundle index. Do not edit.
@@ -33399,7 +33432,7 @@ function tuiZoneOptimized(zone) {
 
 /***/ }),
 
-/***/ 5116:
+/***/ 4340:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -33468,7 +33501,7 @@ var taiga_ui_cdk_constants = __webpack_require__(2287);
 var taiga_ui_cdk_utils_dom = __webpack_require__(5001);
 // EXTERNAL MODULE: consume shared module (default) @angular/common@=17.3.12 (strict) (singleton) (fallback: ./node_modules/@angular/common/fesm2022/common.mjs)
 var common_mjs_ = __webpack_require__(297);
-;// CONCATENATED MODULE: ./node_modules/@taiga-ui/cdk/node_modules/@ng-web-apis/resize-observer/fesm2015/ng-web-apis-resize-observer.js
+;// CONCATENATED MODULE: ./node_modules/@ng-web-apis/resize-observer/fesm2015/ng-web-apis-resize-observer.js
 
 
 
@@ -33523,10 +33556,6 @@ let ResizeObserverService = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
-/**
- * @deprecated View Engine legacy
- * TODO: use arrow function for `useFactory` and delete this exported function in future major release
- */
 // TODO switch to Attribute once https://github.com/angular/angular/issues/36479 is fixed
 function boxExtractor({
   nativeElement
@@ -33534,10 +33563,6 @@ function boxExtractor({
   const attribute = nativeElement.getAttribute('waResizeBox');
   return boxFactory(attribute);
 }
-/**
- * @deprecated View Engine legacy
- * TODO: use arrow function for `useFactory` and delete this exported function in future major release
- */
 function boxFactory(box) {
   return box || RESIZE_OPTION_BOX_DEFAULT;
 }
@@ -33594,10 +33619,8 @@ let ResizeObserverModule = /*#__PURE__*/(/* unused pure expression or super */ n
 //# sourceMappingURL=ng-web-apis-resize-observer.js.map
 // EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/fesm2015/taiga-ui-cdk-utils-miscellaneous.js
 var taiga_ui_cdk_utils_miscellaneous = __webpack_require__(9925);
-// EXTERNAL MODULE: ./node_modules/@taiga-ui/cdk/node_modules/tslib/tslib.es6.mjs
-var tslib_es6 = __webpack_require__(9783);
 // EXTERNAL MODULE: ./node_modules/tslib/tslib.es6.mjs
-var tslib_tslib_es6 = __webpack_require__(1635);
+var tslib_es6 = __webpack_require__(1635);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/operators/OperatorSubscriber.js
 var OperatorSubscriber = __webpack_require__(4360);
 // EXTERNAL MODULE: ./node_modules/rxjs/dist/esm/internal/observable/innerFrom.js
@@ -33611,7 +33634,7 @@ function fromFetch(input, initWithSelector = {}) {
   const {
       selector
     } = initWithSelector,
-    init = (0,tslib_tslib_es6/* __rest */.Tt)(initWithSelector, ["selector"]);
+    init = (0,tslib_es6/* __rest */.Tt)(initWithSelector, ["selector"]);
   return new internal_Observable/* Observable */.c(subscriber => {
     const controller = new AbortController();
     const {
@@ -35455,7 +35478,7 @@ function tuiSvgLinearGradientProcessor(svg, salt = makeRandomSalt()) {
 /* unused harmony export tuiFallbackAccessor */
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9131);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5116);
+/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4340);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(683);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1985);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7786);
@@ -35619,7 +35642,7 @@ function tuiAsRectAccessor(useExisting) {
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(683);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(8529);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(1410);
-/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(5116);
+/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(4340);
 /* harmony import */ var _taiga_ui_core_directives__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(8323);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(983);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9172);
@@ -35867,7 +35890,7 @@ let TuiButtonModule = /*#__PURE__*/(() => {
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9835);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(2287);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8529);
-/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(5116);
+/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(4340);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(1410);
 /* harmony import */ var _taiga_ui_core_providers__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(7291);
 /* harmony import */ var _taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8502);
@@ -36406,7 +36429,7 @@ let TuiNotificationModule = /*#__PURE__*/(() => {
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9925);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(4489);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(5001);
-/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(5116);
+/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(4340);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(1410);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(4343);
 /* harmony import */ var _taiga_ui_core_constants__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(8048);
@@ -37154,7 +37177,7 @@ function tuiWatchedControllerFactory(controller, cdr, destroy$) {
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9835);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(1410);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(2287);
-/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(5116);
+/* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(4340);
 /* harmony import */ var _taiga_ui_cdk__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(4489);
 /* harmony import */ var _taiga_ui_core_tokens__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8502);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1985);
@@ -53560,388 +53583,6 @@ let ReactiveFormsModule = /*#__PURE__*/(() => {
 
 
 //# sourceMappingURL=forms.mjs.map
-
-/***/ }),
-
-/***/ 9783:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Cg: () => (/* binding */ __decorate),
-/* harmony export */   sH: () => (/* binding */ __awaiter)
-/* harmony export */ });
-/* unused harmony exports __extends, __assign, __rest, __param, __esDecorate, __runInitializers, __propKey, __setFunctionName, __metadata, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __spreadArray, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet, __classPrivateFieldIn, __addDisposableResource, __disposeResources */
-/******************************************************************************
-Copyright (c) Microsoft Corporation.
-
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.
-***************************************************************************** */
-/* global Reflect, Promise, SuppressedError, Symbol */
-
-var extendStatics = function(d, b) {
-  extendStatics = Object.setPrototypeOf ||
-      ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-      function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-  return extendStatics(d, b);
-};
-
-function __extends(d, b) {
-  if (typeof b !== "function" && b !== null)
-      throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-  extendStatics(d, b);
-  function __() { this.constructor = d; }
-  d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-}
-
-var __assign = function() {
-  __assign = Object.assign || function __assign(t) {
-      for (var s, i = 1, n = arguments.length; i < n; i++) {
-          s = arguments[i];
-          for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-      return t;
-  }
-  return __assign.apply(this, arguments);
-}
-
-function __rest(s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-      t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function")
-      for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-          if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-              t[p[i]] = s[p[i]];
-      }
-  return t;
-}
-
-function __decorate(decorators, target, key, desc) {
-  var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-  if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-  else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  return c > 3 && r && Object.defineProperty(target, key, r), r;
-}
-
-function __param(paramIndex, decorator) {
-  return function (target, key) { decorator(target, key, paramIndex); }
-}
-
-function __esDecorate(ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
-  function accept(f) { if (f !== void 0 && typeof f !== "function") throw new TypeError("Function expected"); return f; }
-  var kind = contextIn.kind, key = kind === "getter" ? "get" : kind === "setter" ? "set" : "value";
-  var target = !descriptorIn && ctor ? contextIn["static"] ? ctor : ctor.prototype : null;
-  var descriptor = descriptorIn || (target ? Object.getOwnPropertyDescriptor(target, contextIn.name) : {});
-  var _, done = false;
-  for (var i = decorators.length - 1; i >= 0; i--) {
-      var context = {};
-      for (var p in contextIn) context[p] = p === "access" ? {} : contextIn[p];
-      for (var p in contextIn.access) context.access[p] = contextIn.access[p];
-      context.addInitializer = function (f) { if (done) throw new TypeError("Cannot add initializers after decoration has completed"); extraInitializers.push(accept(f || null)); };
-      var result = (0, decorators[i])(kind === "accessor" ? { get: descriptor.get, set: descriptor.set } : descriptor[key], context);
-      if (kind === "accessor") {
-          if (result === void 0) continue;
-          if (result === null || typeof result !== "object") throw new TypeError("Object expected");
-          if (_ = accept(result.get)) descriptor.get = _;
-          if (_ = accept(result.set)) descriptor.set = _;
-          if (_ = accept(result.init)) initializers.unshift(_);
-      }
-      else if (_ = accept(result)) {
-          if (kind === "field") initializers.unshift(_);
-          else descriptor[key] = _;
-      }
-  }
-  if (target) Object.defineProperty(target, contextIn.name, descriptor);
-  done = true;
-};
-
-function __runInitializers(thisArg, initializers, value) {
-  var useValue = arguments.length > 2;
-  for (var i = 0; i < initializers.length; i++) {
-      value = useValue ? initializers[i].call(thisArg, value) : initializers[i].call(thisArg);
-  }
-  return useValue ? value : void 0;
-};
-
-function __propKey(x) {
-  return typeof x === "symbol" ? x : "".concat(x);
-};
-
-function __setFunctionName(f, name, prefix) {
-  if (typeof name === "symbol") name = name.description ? "[".concat(name.description, "]") : "";
-  return Object.defineProperty(f, "name", { configurable: true, value: prefix ? "".concat(prefix, " ", name) : name });
-};
-
-function __metadata(metadataKey, metadataValue) {
-  if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
-}
-
-function __awaiter(thisArg, _arguments, P, generator) {
-  function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-  return new (P || (P = Promise))(function (resolve, reject) {
-      function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-      function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-      function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-      step((generator = generator.apply(thisArg, _arguments || [])).next());
-  });
-}
-
-function __generator(thisArg, body) {
-  var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-  return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-  function verb(n) { return function (v) { return step([n, v]); }; }
-  function step(op) {
-      if (f) throw new TypeError("Generator is already executing.");
-      while (g && (g = 0, op[0] && (_ = 0)), _) try {
-          if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-          if (y = 0, t) op = [op[0] & 2, t.value];
-          switch (op[0]) {
-              case 0: case 1: t = op; break;
-              case 4: _.label++; return { value: op[1], done: false };
-              case 5: _.label++; y = op[1]; op = [0]; continue;
-              case 7: op = _.ops.pop(); _.trys.pop(); continue;
-              default:
-                  if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                  if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                  if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                  if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                  if (t[2]) _.ops.pop();
-                  _.trys.pop(); continue;
-          }
-          op = body.call(thisArg, _);
-      } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-      if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-  }
-}
-
-var __createBinding = Object.create ? (function(o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  var desc = Object.getOwnPropertyDescriptor(m, k);
-  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-  }
-  Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  o[k2] = m[k];
-});
-
-function __exportStar(m, o) {
-  for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding(o, m, p);
-}
-
-function __values(o) {
-  var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
-  if (m) return m.call(o);
-  if (o && typeof o.length === "number") return {
-      next: function () {
-          if (o && i >= o.length) o = void 0;
-          return { value: o && o[i++], done: !o };
-      }
-  };
-  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
-}
-
-function __read(o, n) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator];
-  if (!m) return o;
-  var i = m.call(o), r, ar = [], e;
-  try {
-      while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-  }
-  catch (error) { e = { error: error }; }
-  finally {
-      try {
-          if (r && !r.done && (m = i["return"])) m.call(i);
-      }
-      finally { if (e) throw e.error; }
-  }
-  return ar;
-}
-
-/** @deprecated */
-function __spread() {
-  for (var ar = [], i = 0; i < arguments.length; i++)
-      ar = ar.concat(__read(arguments[i]));
-  return ar;
-}
-
-/** @deprecated */
-function __spreadArrays() {
-  for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-  for (var r = Array(s), k = 0, i = 0; i < il; i++)
-      for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-          r[k] = a[j];
-  return r;
-}
-
-function __spreadArray(to, from, pack) {
-  if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-      if (ar || !(i in from)) {
-          if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-          ar[i] = from[i];
-      }
-  }
-  return to.concat(ar || Array.prototype.slice.call(from));
-}
-
-function __await(v) {
-  return this instanceof __await ? (this.v = v, this) : new __await(v);
-}
-
-function __asyncGenerator(thisArg, _arguments, generator) {
-  if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-  var g = generator.apply(thisArg, _arguments || []), i, q = [];
-  return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
-  function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
-  function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
-  function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
-  function fulfill(value) { resume("next", value); }
-  function reject(value) { resume("throw", value); }
-  function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
-}
-
-function __asyncDelegator(o) {
-  var i, p;
-  return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
-  function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: false } : f ? f(v) : v; } : f; }
-}
-
-function __asyncValues(o) {
-  if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-  var m = o[Symbol.asyncIterator], i;
-  return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
-  function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
-  function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
-}
-
-function __makeTemplateObject(cooked, raw) {
-  if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-  return cooked;
-};
-
-var __setModuleDefault = Object.create ? (function(o, v) {
-  Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-  o["default"] = v;
-};
-
-function __importStar(mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-  __setModuleDefault(result, mod);
-  return result;
-}
-
-function __importDefault(mod) {
-  return (mod && mod.__esModule) ? mod : { default: mod };
-}
-
-function __classPrivateFieldGet(receiver, state, kind, f) {
-  if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
-  if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
-  return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
-}
-
-function __classPrivateFieldSet(receiver, state, value, kind, f) {
-  if (kind === "m") throw new TypeError("Private method is not writable");
-  if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
-  if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
-  return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
-}
-
-function __classPrivateFieldIn(state, receiver) {
-  if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
-  return typeof state === "function" ? receiver === state : state.has(receiver);
-}
-
-function __addDisposableResource(env, value, async) {
-  if (value !== null && value !== void 0) {
-    if (typeof value !== "object" && typeof value !== "function") throw new TypeError("Object expected.");
-    var dispose;
-    if (async) {
-        if (!Symbol.asyncDispose) throw new TypeError("Symbol.asyncDispose is not defined.");
-        dispose = value[Symbol.asyncDispose];
-    }
-    if (dispose === void 0) {
-        if (!Symbol.dispose) throw new TypeError("Symbol.dispose is not defined.");
-        dispose = value[Symbol.dispose];
-    }
-    if (typeof dispose !== "function") throw new TypeError("Object not disposable.");
-    env.stack.push({ value: value, dispose: dispose, async: async });
-  }
-  else if (async) {
-    env.stack.push({ async: true });
-  }
-  return value;
-}
-
-var _SuppressedError = typeof SuppressedError === "function" ? SuppressedError : function (error, suppressed, message) {
-  var e = new Error(message);
-  return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
-};
-
-function __disposeResources(env) {
-  function fail(e) {
-    env.error = env.hasError ? new _SuppressedError(e, env.error, "An error was suppressed during disposal.") : e;
-    env.hasError = true;
-  }
-  function next() {
-    while (env.stack.length) {
-      var rec = env.stack.pop();
-      try {
-        var result = rec.dispose && rec.dispose.call(rec.value);
-        if (rec.async) return Promise.resolve(result).then(next, function(e) { fail(e); return next(); });
-      }
-      catch (e) {
-          fail(e);
-      }
-    }
-    if (env.hasError) throw env.error;
-  }
-  return next();
-}
-
-/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = ({
-  __extends,
-  __assign,
-  __rest,
-  __decorate,
-  __param,
-  __metadata,
-  __awaiter,
-  __generator,
-  __createBinding,
-  __exportStar,
-  __values,
-  __read,
-  __spread,
-  __spreadArrays,
-  __spreadArray,
-  __await,
-  __asyncGenerator,
-  __asyncDelegator,
-  __asyncValues,
-  __makeTemplateObject,
-  __importStar,
-  __importDefault,
-  __classPrivateFieldGet,
-  __classPrivateFieldSet,
-  __classPrivateFieldIn,
-  __addDisposableResource,
-  __disposeResources,
-});
-
 
 /***/ })
 
