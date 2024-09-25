@@ -120,7 +120,7 @@
         "@babel/preset-react": "7.24.7",
         "@babel/preset-typescript": "7.24.7",
         "@ng-web-apis/common": "3.2.3",
-        "@ngneat/spectator": "17.1.0",
+        "@ngneat/spectator": "19.0.0",
         "@nx/angular": "19.3.0",
         "@nx/cypress": "19.3.0",
         "@nx/jest": "19.3.0",
