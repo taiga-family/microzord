@@ -8,14 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.1.7
-      - uses: taiga-family/ci/actions/setup/variables@v1.85.0
-      - uses: taiga-family/ci/actions/setup/node@v1.85.0
+      - uses: taiga-family/ci/actions/setup/variables@v1.89.0
+      - uses: taiga-family/ci/actions/setup/node@v1.89.0
       - run: npx nx run demo:build-gh-pages
-      - uses: taiga-family/ci/actions/deploy/github-pages@v1.85.0
+      - uses: taiga-family/ci/actions/deploy/github-pages@v1.89.0
         with:
           token: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
           folder: dist/apps/demo
 
 concurrency:
-  group: deploy-${{ github.head_ref }}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
