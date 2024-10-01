@@ -187,7 +187,7 @@
         "tslib": "2.7.0",
         "typescript": "5.2.2",
         "url-loader": "4.1.1",
-        "webpack": "5.94.0"
+        "webpack": "5.95.0"
     },
     "authors": [
         "Igor Katsuba <katsuba.igor@gmail.ru>",
