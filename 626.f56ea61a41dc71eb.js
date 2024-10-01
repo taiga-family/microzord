@@ -76,7 +76,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(297);
 
 /**
- * @license Angular v17.3.10
+ * @license Angular v17.3.12
  * (c) 2010-2024 Google LLC. https://angular.io/
  * License: MIT
  */
