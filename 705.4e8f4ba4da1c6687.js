@@ -1673,7 +1673,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1594);
 
 /**
- * @license Angular v17.3.12
+ * @license Angular v17.3.10
  * (c) 2010-2024 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -17278,7 +17278,7 @@ function createRootComponent(componentView, rootComponentDef, rootDirectives, ho
 function setRootNodeAttributes(hostRenderer, componentDef, hostRNode, rootSelectorOrNode) {
   if (rootSelectorOrNode) {
     // The placeholder will be replaced with the actual version at build time.
-    setUpAttributes(hostRenderer, hostRNode, ['ng-version', '17.3.12']);
+    setUpAttributes(hostRenderer, hostRNode, ['ng-version', '17.3.10']);
   } else {
     // If host element is created as a part of this function call (i.e. `rootSelectorOrNode`
     // is not defined), also apply attributes and classes extracted from component selector.
@@ -30823,7 +30823,7 @@ class Version {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new Version('17.3.12');
+const VERSION = /*#__PURE__*/new Version('17.3.10');
 let Console = /*#__PURE__*/(() => {
   var _Console;
   class Console {

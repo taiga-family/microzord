@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9131);
 /**
- * @license Angular v17.3.12
+ * @license Angular v17.3.10
  * (c) 2010-2024 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -5527,7 +5527,7 @@ function isPlatformWorkerUi(platformId) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.3.12');
+const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('17.3.10');
 
 /**
  * Defines a scroll position manager. Implemented by `BrowserViewportScroller`.

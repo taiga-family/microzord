@@ -176,7 +176,7 @@ var browser = __webpack_require__(8008);
 var common_mjs_ = __webpack_require__(297);
 ;// CONCATENATED MODULE: ./node_modules/@angular/platform-browser/fesm2022/animations.mjs
 /**
- * @license Angular v17.3.12
+ * @license Angular v17.3.10
  * (c) 2010-2024 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -40083,7 +40083,7 @@ const dateTimestampProvider = {
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(297);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9131);
 /**
- * @license Angular v17.3.12
+ * @license Angular v17.3.10
  * (c) 2010-2024 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -41556,7 +41556,7 @@ const ɵPRE_STYLE = '!';
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9131);
 var _AnimationDriver, _SpecialCasedStyles;
 /**
- * @license Angular v17.3.12
+ * @license Angular v17.3.10
  * (c) 2010-2024 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -46134,7 +46134,7 @@ function forkJoin(...args) {
 var map = __webpack_require__(6354);
 ;// CONCATENATED MODULE: ./node_modules/@angular/forms/fesm2022/forms.mjs
 /**
- * @license Angular v17.3.12
+ * @license Angular v17.3.10
  * (c) 2010-2024 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -53459,7 +53459,7 @@ let UntypedFormBuilder = /*#__PURE__*/(/* unused pure expression or super */ nul
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new core_mjs_.Version('17.3.12');
+const VERSION = /*#__PURE__*/new core_mjs_.Version('17.3.10');
 
 /**
  * Exports the required providers and directives for template-driven forms,
