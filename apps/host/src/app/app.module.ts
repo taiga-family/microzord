@@ -1,10 +1,11 @@
+import { NG_EVENT_PLUGINS } from "@taiga-ui/event-plugins";
 import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
 import {MicrozordHostModule} from '@microzord/angular';
-import {TuiAlertModule, TuiRootModule} from '@taiga-ui/core';
+import { TuiRoot, TuiAlert } from '@taiga-ui/core';
 
 import {AppComponent} from './app.component';
 
@@ -14,8 +15,8 @@ import {AppComponent} from './app.component';
         BrowserAnimationsModule,
         RouterModule.forRoot([], {initialNavigation: 'enabledBlocking'}),
         HttpClientModule,
-        TuiRootModule,
-        TuiAlertModule,
+        TuiRoot,
+        TuiAlert,
         MicrozordHostModule.register({
             modules: [
                 {
@@ -42,7 +43,7 @@ import {AppComponent} from './app.component';
         }),
     ],
     declarations: [AppComponent],
-    providers: [{provide: 'some-token', useValue: 'true'}],
+    providers: [{provide: 'some-token', useValue: 'true'}, NG_EVENT_PLUGINS],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

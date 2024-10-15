@@ -1,10 +1,9 @@
+import { TuiNotification } from "@taiga-ui/core";
 import {NgModule} from '@angular/core';
-import {TuiNotificationModule} from '@taiga-ui/core';
-
 import {HostChildWarningComponent} from './host-child-warning.component';
 
 @NgModule({
-    imports: [TuiNotificationModule],
+    imports: [TuiNotification],
     declarations: [HostChildWarningComponent],
     exports: [HostChildWarningComponent],
 })
