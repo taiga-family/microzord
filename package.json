@@ -119,7 +119,7 @@
         "@babel/preset-env": "7.25.7",
         "@babel/preset-react": "7.25.7",
         "@babel/preset-typescript": "7.25.7",
-        "@ng-web-apis/common": "3.2.3",
+        "@ng-web-apis/common": "4.11.1",
         "@ngneat/spectator": "17.1.0",
         "@nx/angular": "19.3.0",
         "@nx/cypress": "19.3.0",
