@@ -26,7 +26,7 @@ jobs:
 
       - run: npx nx run-many -t build --all
       - run: npx nx run-many -t test --all
-      - uses: codecov/codecov-action@v4
+      - uses: codecov/codecov-action@v5
       - uses: taiga-family/ci/actions/auto/push@v1.102.0
         with:
           token: ${{ secrets.TAIGA_FAMILY_BOT_PAT }}
