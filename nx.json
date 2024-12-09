@@ -29,6 +29,17 @@
                     "codeCoverage": true
                 }
             }
+        },
+        "@nx/webpack:webpack": {
+            "cache": true,
+            "inputs": [
+                "production",
+                "^production",
+                {
+                    "env": "NX_MF_DEV_REMOTES"
+                }
+            ],
+            "dependsOn": ["^build"]
         }
     },
     "namedInputs": {
