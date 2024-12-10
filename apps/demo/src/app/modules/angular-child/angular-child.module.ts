@@ -1,15 +1,14 @@
+import { TuiLink } from "@taiga-ui/core";
+import { TuiAddonDoc } from "@taiga-ui/addon-doc";
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
-import {TuiAddonDocModule, tuiGenerateRoutes} from '@taiga-ui/addon-doc';
-import {TuiLinkModule} from '@taiga-ui/core';
-
 import {AngularChildComponent} from './angular-child.component';
 
 @NgModule({
     imports: [
-        TuiLinkModule,
-        TuiAddonDocModule,
-        RouterModule.forChild(tuiGenerateRoutes(AngularChildComponent)),
+        TuiLink,
+        ...TuiAddonDoc,
+        RouterModule,
     ],
     declarations: [AngularChildComponent],
     exports: [AngularChildComponent],
