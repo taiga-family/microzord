@@ -151,7 +151,7 @@
         "@taiga-ui/release-it-config": "0.219.0",
         "@taiga-ui/stylelint-config": "0.219.0",
         "@taiga-ui/syncer": "0.219.0",
-        "@testing-library/react": "16.0.1",
+        "@testing-library/react": "16.2.0",
         "@types/jest": "29.5.14",
         "@types/node": "20.17.17",
         "@types/react": "18.3.18",
