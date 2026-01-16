@@ -4,6 +4,16 @@ import type {ReactElement} from 'react';
 import type {Root} from 'react-dom/client';
 import {createRoot} from 'react-dom/client';
 
+const requestIdle =
+    window.requestIdleCallback ||
+    function (cb) {
+        return setTimeout(() => {
+            cb({
+                didTimeout: false,
+                timeRemaining: () => 0,
+            });
+        }, 0);
+    };
 export function createApp<P>(name: string, element: ReactElement<P>): ApplicationConstructor {
     class ReactApplication extends Application {
         private root: Root | undefined;
@@ -15,7 +25,7 @@ export function createApp<P>(name: string, element: ReactElement<P>): Applicatio
 
             this.root.render(element);
             // https://github.com/reactwg/react-18/discussions/5#discussioncomment-796012
-            requestIdleCallback(() => {
+            requestIdle(() => {
                 this.emitHook(MicrozordLifecycleEvent.bootstrapped());
             });
         }
