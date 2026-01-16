@@ -1,7 +1,14 @@
 # Changelog
 
 All notable changes to this project will be documented in this file. See
-[standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+[`conventional commits`](https://www.conventionalcommits.org/) guidelines.
+
+### [2.2.1](https://github.com/taiga-family/microzord/compare/v2.2.0...v2.2.1) (2026-01-16)
+
+### 🐞 Bug Fixes
+
+- **react**: idle callback in safari is not available (#830)
+  [(0c469a6)](https://github.com/taiga-family/microzord/commit/0c469a629aee73c93825bdd3d5560e0203665159)
 
 ### [2.2.0](https://github.com/taiga-family/microzord/compare/2.1.0...v2.2.0) (2024-09-20)
 
