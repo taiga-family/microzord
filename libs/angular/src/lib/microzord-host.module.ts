@@ -1,16 +1,11 @@
-import {Inject, ModuleWithProviders, NgModule, Type} from '@angular/core';
-import {AppRegistrationOptions, EntityRegistrationOptions} from '@microzord/core';
+import {Inject, ModuleWithProviders, NgModule} from '@angular/core';
+import {AppRegistrationOptions} from '@microzord/core';
 
 import {MicrozordAppModule} from './microzord-app/microzord-app.module';
 import {MicrozordNgModuleModule} from './microzord-module/microzord-ng-module.module';
 import {RegistryService} from './services/registry.service';
 import {MICROZORD_APPS, MICROZORD_NG_MODULES} from './tokens/microzord-apps';
-import {NgModuleRegistrationOptions} from './types/ng-module';
-
-export interface MicrozordHostModuleOptions {
-    apps?: AppRegistrationOptions[];
-    modules?: Array<EntityRegistrationOptions<Type<unknown>>>;
-}
+import {MicrozordHostOptions, NgModuleRegistrationOptions} from './types/ng-module';
 
 @NgModule({
     exports: [MicrozordAppModule, MicrozordNgModuleModule],
@@ -28,7 +23,7 @@ export class MicrozordHostModule {
     public static register({
         apps,
         modules,
-    }: MicrozordHostModuleOptions): ModuleWithProviders<MicrozordHostModule> {
+    }: MicrozordHostOptions): ModuleWithProviders<MicrozordHostModule> {
         return {
             ngModule: MicrozordHostModule,
             providers: [

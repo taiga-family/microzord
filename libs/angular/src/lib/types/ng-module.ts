@@ -1,5 +1,5 @@
 import type {Type} from '@angular/core';
-import type {EntityRegistrationOptions} from '@microzord/core';
+import type {AppRegistrationOptions, EntityRegistrationOptions} from '@microzord/core';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface EntryPoint {
@@ -13,3 +13,8 @@ export interface MicrozordNgModule<T extends EntryPoint = EntryPoint> {
 export type NgModuleRegistrationOptions = EntityRegistrationOptions<
     Type<MicrozordNgModule>
 >;
+
+export interface MicrozordHostOptions {
+    apps?: AppRegistrationOptions[];
+    modules?: Array<EntityRegistrationOptions<Type<unknown>>>;
+}
