@@ -3,12 +3,12 @@ import {ENVIRONMENT_INITIALIZER, inject, makeEnvironmentProviders} from '@angula
 
 import {RegistryService} from './services/registry.service';
 import {MICROZORD_APPS, MICROZORD_NG_MODULES} from './tokens/microzord-apps';
-import type {MicrozordHostOptions} from './types/ng-module';
+import type {MicrozordOptions} from './types/ng-module';
 
 export function provideMicrozord({
     apps,
     modules,
-}: MicrozordHostOptions = {}): EnvironmentProviders {
+}: MicrozordOptions = {}): EnvironmentProviders {
     return makeEnvironmentProviders([
         ...(apps
             ? [

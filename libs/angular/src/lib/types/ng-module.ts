@@ -14,7 +14,12 @@ export type NgModuleRegistrationOptions = EntityRegistrationOptions<
     Type<MicrozordNgModule>
 >;
 
-export interface MicrozordHostOptions {
+/**
+ * @deprecated use `MicrozordHostModuleOptions` instead
+ */
+export interface MicrozordHostModuleOptions {
     apps?: AppRegistrationOptions[];
     modules?: Array<EntityRegistrationOptions<Type<unknown>>>;
 }
+
+export type MicrozordOptions = MicrozordHostModuleOptions;

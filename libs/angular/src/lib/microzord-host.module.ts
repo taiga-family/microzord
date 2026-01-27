@@ -5,8 +5,11 @@ import {MicrozordAppModule} from './microzord-app/microzord-app.module';
 import {MicrozordNgModuleModule} from './microzord-module/microzord-ng-module.module';
 import {RegistryService} from './services/registry.service';
 import {MICROZORD_APPS, MICROZORD_NG_MODULES} from './tokens/microzord-apps';
-import {MicrozordHostOptions, NgModuleRegistrationOptions} from './types/ng-module';
+import {MicrozordHostModuleOptions, NgModuleRegistrationOptions} from './types/ng-module';
 
+/**
+ * @deprecated use `provideMicrozord` instead
+ */
 @NgModule({
     exports: [MicrozordAppModule, MicrozordNgModuleModule],
 })
@@ -23,7 +26,7 @@ export class MicrozordHostModule {
     public static register({
         apps,
         modules,
-    }: MicrozordHostOptions): ModuleWithProviders<MicrozordHostModule> {
+    }: MicrozordHostModuleOptions): ModuleWithProviders<MicrozordHostModule> {
         return {
             ngModule: MicrozordHostModule,
             providers: [
