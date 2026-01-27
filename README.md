@@ -31,37 +31,45 @@ An extensive demo is coming soon...
 
 ### An example of usage external apps in Angular app
 
-app.module.ts
+app.config.ts
 
 ```ts
-@NgModule({
-  imports: [
-    MicrozordHostModule.register({
+export const appConfig: ApplicationConfig = {
+  providers: [
+    // ...
+    provideMicrozordHost({
       apps: [
         {
-          name: 'react-menu',
+          name: 'remote-header',
+          load: () => import('my-app-in-react').then((m) => m.MyHeader),
         },
         {
-          name: 'vue-footer-app',
+          name: 'remote-footer',
+          load: () => import('my-app-in-angular').then((m) => m.MyFooter),
         },
       ],
     }),
   ],
-})
-export class AppModule {}
+};
 ```
 
 Usage in application:
 
+```ts
+import {Component} from '@angular/core';
+import {MicrozordAppModule} from '@microzord/angular';
+
+@Component({
+  selector: 'app-root',
+  imports: [MicrozordAppModule],
+})
+export class App {}
+```
+
 ```html
-<header microzordApp="react-menu"></header>
+<header [microzordApp]="'remote-header'"></header>
 
-<div>Any content</div>
-
-<footer
-  microzordApp="vue-footer-app"
-  (hook)="onFooterLifecycleEvent($event)"
-></footer>
+<footer [microzordApp]="'remote-footer'"></footer>
 ```
 
 ## Core team

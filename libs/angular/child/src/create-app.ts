@@ -1,5 +1,5 @@
 import type {CompilerOptions, NgModuleRef} from '@angular/core';
-import {InjectFlags, InjectionToken} from '@angular/core';
+import {InjectionToken} from '@angular/core';
 import {Router} from '@angular/router';
 import type {ApplicationConstructor, MicrozordMessageEvent} from '@microzord/core';
 import {Application, MicrozordLifecycleEvent} from '@microzord/core';
@@ -46,7 +46,7 @@ export function createApp<
             containerElement.appendChild(rootElement);
 
             this.ngModule = await bootstrapFn(props);
-            this.router = this.ngModule.injector.get(Router, null, InjectFlags.Optional);
+            this.router = this.ngModule.injector.get(Router, null, {optional: true});
 
             await super.bootstrap(container, props);
 
