@@ -22,7 +22,7 @@ for host application to get all the benefits!
 
 | Microzord Version | Angular version |
 | ----------------- | --------------- |
-| v2.x              | 16              |
+| v2.x              | 16+             |
 | v1.x              | 12 - 15         |
 
 ## Installation and usage
