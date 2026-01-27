@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [`conventional commits`](https://www.conventionalcommits.org/) guidelines.
 
+### [2.3.0](https://github.com/taiga-family/microzord/compare/v2.2.1...v2.3.0) (2026-01-27)
+
+### 🚀 Features
+
+- **angular**: support angular 21 (#831)
+  [(cecf131)](https://github.com/taiga-family/microzord/commit/cecf1310abb6321b8b45c247831d06ce7838bd46)
+
 ### [2.2.1](https://github.com/taiga-family/microzord/compare/v2.2.0...v2.2.1) (2026-01-16)
 
 ### 🐞 Bug Fixes
