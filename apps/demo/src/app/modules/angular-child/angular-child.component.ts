@@ -11,6 +11,7 @@ export const myRemoteApp = createApp(
 `;
 
 @Component({
+    standalone: false,
     selector: 'angular-child',
     templateUrl: './angular-child.template.html',
     changeDetection: ChangeDetectionStrategy.OnPush,

@@ -25,7 +25,7 @@ describe('MicrozordAppDirective', () => {
     });
 
     beforeEach(async () => {
-        spectator = createDirective(`<div [microzordApp]='name'></div>`, {
+        spectator = createDirective("<div [microzordApp]='name'></div>", {
             hostProps: {
                 name: 'name',
             },

@@ -1,5 +1,9 @@
 import type {EnvironmentProviders} from '@angular/core';
-import {ENVIRONMENT_INITIALIZER, inject, makeEnvironmentProviders} from '@angular/core';
+import {
+    inject,
+    makeEnvironmentProviders,
+    provideEnvironmentInitializer,
+} from '@angular/core';
 
 import {RegistryService} from './services/registry.service';
 import {MICROZORD_APPS, MICROZORD_NG_MODULES} from './tokens/microzord-apps';
@@ -30,17 +34,13 @@ export function provideMicrozord({
               ]
             : []),
 
-        {
-            provide: ENVIRONMENT_INITIALIZER,
-            multi: true,
-            useValue: () => {
-                const allApps = inject(MICROZORD_APPS, {optional: true}) ?? [];
-                const allModules = inject(MICROZORD_NG_MODULES, {optional: true}) ?? [];
-                const registry = inject(RegistryService);
+        provideEnvironmentInitializer(() => {
+            const allApps = inject(MICROZORD_APPS, {optional: true}) ?? [];
+            const allModules = inject(MICROZORD_NG_MODULES, {optional: true}) ?? [];
+            const registry = inject(RegistryService);
 
-                allApps.forEach((apps) => registry.registerMany(apps));
-                allModules.forEach((modules) => registry.registerMany(modules));
-            },
-        },
+            allApps.forEach((apps) => registry.registerMany(apps));
+            allModules.forEach((modules) => registry.registerMany(modules));
+        }),
     ]);
 }

@@ -1,15 +1,15 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
-import {TuiAddonDocModule, tuiGenerateRoutes} from '@taiga-ui/addon-doc';
-import {TuiLinkModule} from '@taiga-ui/core';
+import {TuiAddonDoc} from '@taiga-ui/addon-doc';
+import {TuiLink} from '@taiga-ui/core';
 
 import {ReactChildComponent} from './react-child.component';
 
 @NgModule({
     imports: [
-        TuiLinkModule,
-        TuiAddonDocModule,
-        RouterModule.forChild(tuiGenerateRoutes(ReactChildComponent)),
+        TuiLink,
+        ...TuiAddonDoc,
+        RouterModule /* use tuiProvideRoutePageTab in provideRouter */,
     ],
     declarations: [ReactChildComponent],
     exports: [ReactChildComponent],

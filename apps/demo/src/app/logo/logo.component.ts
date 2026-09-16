@@ -1,7 +1,8 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {PolymorpheusComponent} from '@tinkoff/ng-polymorpheus';
+import {PolymorpheusComponent} from '@taiga-ui/polymorpheus';
 
 @Component({
+    standalone: false,
     selector: 'logo',
     templateUrl: './logo.template.html',
     styleUrls: ['./logo.style.less'],

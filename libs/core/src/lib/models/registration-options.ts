@@ -8,7 +8,8 @@ export interface EntityRegistrationOptions<T> {
     load: () => Observable<T> | PromiseLike<T> | T;
 }
 
-export interface AppRegistrationOptions<T extends DefaultPropsType = DefaultPropsType>
-    extends EntityRegistrationOptions<ApplicationConstructor<T>> {
+export interface AppRegistrationOptions<
+    T extends DefaultPropsType = DefaultPropsType,
+> extends EntityRegistrationOptions<ApplicationConstructor<T>> {
     props?: T;
 }

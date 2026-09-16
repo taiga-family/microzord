@@ -36,6 +36,7 @@ const ADDING_INTO_TEMPLATE = `<header microzord="my-header"></header>
 <footer microzord="new-footer" (hook)="onFooterLifecycleEvent($event)"></footer>`;
 
 @Component({
+    standalone: false,
     selector: 'angular-host',
     templateUrl: './angular-host.template.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
