@@ -1,9 +1,10 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component} from '@angular/core';
 import {Application, MicrozordLifecycleEvent} from '@microzord/core';
-import {TuiAlertService} from '@taiga-ui/core';
+import {TuiNotificationService} from '@taiga-ui/core';
 import {BehaviorSubject} from 'rxjs';
 
 @Component({
+    standalone: false,
     selector: 'host-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.less'],
@@ -15,7 +16,7 @@ export class AppComponent {
 
     constructor(
         private readonly cdr: ChangeDetectorRef,
-        private readonly alertService: TuiAlertService,
+        private readonly alertService: TuiNotificationService,
     ) {}
 
     public toggleApps(): void {
@@ -30,9 +31,9 @@ export class AppComponent {
         console.log(`${event.target?.name}: ${event.type}`);
         this.alertService
             .open(event.type, {
-                hasIcon: false,
+                icon: '',
                 label: event.target?.name,
-                status: 'info',
+                appearance: 'info',
             })
             .subscribe();
         this.cdr.detectChanges();

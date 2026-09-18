@@ -11,12 +11,14 @@
 
         <p>It can give you more flexability in interaction between complex apps if needed.</p>
 
-        <tui-notification
-            status="warning"
+        <div
+            appearance="warning"
+            size="m"
+            tuiNotification
             class="tui-space_top-8"
         >
             Be careful, if you need this in your not native application, something probably is going wrong.
-        </tui-notification>
+        </div>
 
         <section>
             <h2>How to get the entity</h2>
@@ -64,11 +66,11 @@
     </ng-template>
 
     <ng-template pageTab="Props & methods">
-        <tui-doc-documentation [showValues]="false">
-            <ng-template
-                documentationPropertyMode="property"
-                documentationPropertyName="isBootstrapped"
-                documentationPropertyType="boolean"
+        <table tuiDocAPI>
+            <tr
+                name="isBootstrapped"
+                tuiDocAPIItem
+                type="boolean"
             >
                 Application was rendered at least once.
 
@@ -76,11 +78,11 @@
                     <code>false</code>
                     by default.
                 </p>
-            </ng-template>
-            <ng-template
-                documentationPropertyMode="property"
-                documentationPropertyName="isDestroyed"
-                documentationPropertyType="boolean"
+            </tr>
+            <tr
+                name="isDestroyed"
+                tuiDocAPIItem
+                type="boolean"
             >
                 Application is not on the page.
 
@@ -88,21 +90,21 @@
                     <code>true</code>
                     by default.
                 </p>
-            </ng-template>
-            <ng-template
-                documentationPropertyMode="property"
-                documentationPropertyName="container"
-                documentationPropertyType="Element | string"
+            </tr>
+            <tr
+                name="container"
+                tuiDocAPIItem
+                type="Element | string"
             >
                 DOM element or selector string of DOM element with an application
-            </ng-template>
-            <ng-template
-                documentationPropertyMode="property"
-                documentationPropertyName="name"
-                documentationPropertyType="string"
+            </tr>
+            <tr
+                name="name"
+                tuiDocAPIItem
+                type="string"
             >
                 Readonly unique name of the application
-            </ng-template>
+            </tr>
             <!-- <ng-template
         documentationPropertyName="props"
         documentationPropertyMode="property"
@@ -110,41 +112,41 @@
       >
         TODO: design Application props
       </ng-template> -->
-            <ng-template
-                documentationPropertyMode="method"
-                documentationPropertyName="onMessage(fn: Listener<MicrozordMessageEvent>)"
-                documentationPropertyType="() => void"
+            <tr
+                name="onMessage(fn: Listener<MicrozordMessageEvent>)"
+                tuiDocAPIItem
+                type="() => void"
             >
                 Register a callback to be called when an application gets a message
-            </ng-template>
-            <ng-template
-                documentationPropertyMode="method"
-                documentationPropertyName="emitMessage(event: MicrozordMessageEvent)"
-                documentationPropertyType="void"
+            </tr>
+            <tr
+                name="emitMessage(event: MicrozordMessageEvent)"
+                tuiDocAPIItem
+                type="void"
             >
                 Emit message to call all onMessage listeners
-            </ng-template>
-            <ng-template
-                documentationPropertyMode="method"
-                documentationPropertyName="onHook(fn: Listener<MicrozordMessageEvent>)"
-                documentationPropertyType="() => void"
+            </tr>
+            <tr
+                name="onHook(fn: Listener<MicrozordMessageEvent>)"
+                tuiDocAPIItem
+                type="() => void"
             >
                 Register a callback to be called when an application changes state emitting life cycle event
-            </ng-template>
-            <ng-template
-                documentationPropertyMode="method"
-                documentationPropertyName="emitHook(event: MicrozordMessageEvent)"
-                documentationPropertyType="void"
+            </tr>
+            <tr
+                name="emitHook(event: MicrozordMessageEvent)"
+                tuiDocAPIItem
+                type="void"
             >
                 Emit life cycle event of the application to call all onHook listeners
-            </ng-template>
-            <ng-template
-                documentationPropertyMode="method"
-                documentationPropertyName="destroy()"
-                documentationPropertyType="void"
+            </tr>
+            <tr
+                name="destroy()"
+                tuiDocAPIItem
+                type="void"
             >
                 Destroy an application, remove all listeners
-            </ng-template>
-        </tui-doc-documentation>
+            </tr>
+        </table>
     </ng-template>
 </tui-doc-page>

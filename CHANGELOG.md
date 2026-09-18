@@ -32,7 +32,7 @@ All notable changes to this project will be documented in this file. See
 
 - bump version [(8fa25a7)](https://github.com/taiga-family/microzord/commit/8fa25a736457649b4b7c2b308729ee14a3dced32)
 
-### [2.1.0]() (2024-09-20)
+### [2.1.0](<>) (2024-09-20)
 
 ### 🚀 Features
 

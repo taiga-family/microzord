@@ -1,6 +1,7 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 @Component({
+    standalone: false,
     selector: 'microzord-remote-module',
     templateUrl: './remote-module.component.html',
     styleUrls: ['./remote-module.component.css'],

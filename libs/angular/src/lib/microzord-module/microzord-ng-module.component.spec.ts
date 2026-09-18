@@ -38,7 +38,7 @@ describe('MicrozordModuleDirective', () => {
     });
 
     beforeEach(async () => {
-        spectator = createDirective(`<div [microzordNgModule]='name'></div>`, {
+        spectator = createDirective("<div [microzordNgModule]='name'></div>", {
             hostProps: {
                 name: 'name',
             },

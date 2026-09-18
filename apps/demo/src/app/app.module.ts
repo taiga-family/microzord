@@ -2,9 +2,9 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
-import {TUI_DOC_LOGO, TUI_DOC_PAGES, TuiDocMainModule} from '@taiga-ui/addon-doc';
-import {TuiLinkModule} from '@taiga-ui/core';
-import {HIGHLIGHT_OPTIONS, HighlightOptions} from 'ngx-highlightjs';
+import {TUI_DOC_LOGO, TUI_DOC_PAGES, TuiAddonDoc} from '@taiga-ui/addon-doc';
+import {TuiLink} from '@taiga-ui/core';
+import {HIGHLIGHT_OPTIONS, HighlightJSOptions} from 'ngx-highlightjs';
 
 import {AppComponent} from './app.component';
 import {GettingStartedModule} from './getting-started/getting-started.module';
@@ -12,9 +12,9 @@ import {LOGO_CONTENT} from './logo/logo.component';
 import {pages} from './pages';
 import {ROUTES} from './routes';
 
-export const HIGHLIGHT_OPTIONS_VALUE: HighlightOptions = {
+export const HIGHLIGHT_OPTIONS_VALUE: HighlightJSOptions = {
     coreLibraryLoader: async () => import('highlight.js/lib/core'),
-    lineNumbersLoader: async () => import('highlightjs-line-numbers.js' as string),
+    lineNumbersLoader: async () => import('highlightjs-line-numbers.js'),
     languages: {
         typescript: async () => import('highlight.js/lib/languages/typescript'),
         less: async () => import('highlight.js/lib/languages/less'),
@@ -26,8 +26,8 @@ export const HIGHLIGHT_OPTIONS_VALUE: HighlightOptions = {
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
-        TuiDocMainModule,
-        TuiLinkModule,
+        ...TuiAddonDoc,
+        TuiLink,
         GettingStartedModule,
         RouterModule.forRoot(ROUTES, {initialNavigation: 'enabledBlocking'}),
     ],

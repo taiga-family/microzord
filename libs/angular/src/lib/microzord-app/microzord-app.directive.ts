@@ -18,9 +18,7 @@ import {catchError, shareReplay, switchMap, takeUntil, tap} from 'rxjs/operators
 
 import {complete} from '../operators/complete';
 
-@Directive({
-    selector: '[microzordApp]:not(ng-container)',
-})
+@Directive({standalone: false, selector: '[microzordApp]:not(ng-container)'})
 export class MicrozordAppDirective implements OnDestroy {
     @Output()
     public hook: Observable<MicrozordLifecycleEvent>;

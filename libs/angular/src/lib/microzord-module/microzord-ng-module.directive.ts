@@ -17,6 +17,7 @@ import {EntryPoint, MicrozordNgModule} from '../types/ng-module';
 import {MicrozordNgCompilerService} from './microzord-ng-compiler.service';
 
 @Directive({
+    standalone: false,
     selector: '[microzordNgModule]',
     providers: [MicrozordNgCompilerService],
 })
