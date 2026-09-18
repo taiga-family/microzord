@@ -10,7 +10,7 @@ import {ApplicationComponent} from './application.component';
         TuiLink,
         ...TuiAddonDoc,
         ...TuiNotification,
-        RouterModule /* use tuiProvideRoutePageTab in provideRouter */,
+        RouterModule.forChild([{path: '', component: ApplicationComponent}]),
     ],
     declarations: [ApplicationComponent],
     exports: [ApplicationComponent],

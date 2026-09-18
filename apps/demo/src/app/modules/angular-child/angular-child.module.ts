@@ -9,7 +9,7 @@ import {AngularChildComponent} from './angular-child.component';
     imports: [
         TuiLink,
         ...TuiAddonDoc,
-        RouterModule /* use tuiProvideRoutePageTab in provideRouter */,
+        RouterModule.forChild([{path: '', component: AngularChildComponent}]),
     ],
     declarations: [AngularChildComponent],
     exports: [AngularChildComponent],
