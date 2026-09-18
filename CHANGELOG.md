@@ -3,15 +3,6 @@
 All notable changes to this project will be documented in this file. See
 [`conventional commits`](https://www.conventionalcommits.org/) guidelines.
 
-### [2.3.1](https://github.com/taiga-family/microzord/compare/v2.3.0...v2.3.1) (2026-09-18)
-
-### 🐞 Bug Fixes
-
-- **ci**: migrate taiga-family/ci actions to taiga-family/actions (#839)
-  [(f5955e3)](https://github.com/taiga-family/microzord/commit/f5955e32982ef8170d513c80ca021b43b91e7726)
-- **core**: export DefaultPropsType from public API (#838)
-  [(13c2801)](https://github.com/taiga-family/microzord/commit/13c2801fe5c6890cc896582e1cfe5815464c7a68)
-
 ### [2.3.0](https://github.com/taiga-family/microzord/compare/v2.2.1...v2.3.0) (2026-01-27)
 
 ### 🚀 Features
