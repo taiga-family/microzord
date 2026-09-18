@@ -10,7 +10,7 @@ sharedMappings.register(path.join(__dirname, '../../tsconfig.json'), [
 module.exports = {
     output: {
         uniqueName: 'demo',
-        publicPath: 'auto',
+        publicPath: '/',
     },
     optimization: {
         runtimeChunk: false,

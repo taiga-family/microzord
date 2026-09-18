@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
 import {TUI_DOC_LOGO, TUI_DOC_PAGES, TuiAddonDoc} from '@taiga-ui/addon-doc';
-import {TuiLink} from '@taiga-ui/core';
+import {provideTaiga, TuiLink, TuiRoot} from '@taiga-ui/core';
 import {HIGHLIGHT_OPTIONS, HighlightJSOptions} from 'ngx-highlightjs';
 
 import {AppComponent} from './app.component';
@@ -26,6 +26,7 @@ export const HIGHLIGHT_OPTIONS_VALUE: HighlightJSOptions = {
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
+        TuiRoot,
         ...TuiAddonDoc,
         TuiLink,
         GettingStartedModule,
@@ -45,6 +46,7 @@ export const HIGHLIGHT_OPTIONS_VALUE: HighlightJSOptions = {
             provide: HIGHLIGHT_OPTIONS,
             useValue: HIGHLIGHT_OPTIONS_VALUE,
         },
+        provideTaiga(),
     ],
     bootstrap: [AppComponent],
 })
