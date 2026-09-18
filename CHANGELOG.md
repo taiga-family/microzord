@@ -3,6 +3,8 @@
 All notable changes to this project will be documented in this file. See
 [`conventional commits`](https://www.conventionalcommits.org/) guidelines.
 
+### [2.5.0](https://github.com/taiga-family/microzord/compare/v2.4.0...v2.5.0) (2026-09-18)
+
 ### [2.4.0](https://github.com/taiga-family/microzord/compare/v2.3.1...v2.4.0) (2026-09-18)
 
 ### 🐞 Bug Fixes
