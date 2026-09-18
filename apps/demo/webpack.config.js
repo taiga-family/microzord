@@ -7,21 +7,32 @@ sharedMappings.register(path.join(__dirname, '../../tsconfig.json'), [
     /* mapped paths to share */
 ]);
 
-module.exports = {
-    output: {
+module.exports = (config) => {
+    const isProduction = config.mode === 'production';
+
+    config.output = {
+        ...config.output,
         uniqueName: 'demo',
-        publicPath: '/',
-    },
-    optimization: {
+        // 'auto' resolves lazy chunks under deploy sub-paths (e.g. GitHub Pages); '/' avoids import.meta issues in dev.
+        publicPath: isProduction ? 'auto' : '/',
+    };
+
+    config.optimization = {
+        ...config.optimization,
         runtimeChunk: false,
         minimize: false,
-    },
-    resolve: {
+    };
+
+    config.resolve = {
+        ...config.resolve,
         alias: {
+            ...config.resolve?.alias,
             ...sharedMappings.getAliases(),
         },
-    },
-    plugins: [
+    };
+
+    config.plugins = [
+        ...(config.plugins ?? []),
         new ModuleFederationPlugin({
             name: 'demo',
             filename: 'remoteEntry.js',
@@ -51,5 +62,7 @@ module.exports = {
             }),
         }),
         sharedMappings.getPlugin(),
-    ],
+    ];
+
+    return config;
 };
