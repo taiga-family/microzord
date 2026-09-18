@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file. See
 [`conventional commits`](https://www.conventionalcommits.org/) guidelines.
 
+### [2.4.0](https://github.com/taiga-family/microzord/compare/v2.3.1...v2.4.0) (2026-09-18)
+
+### 🐞 Bug Fixes
+
+- **demo**: restore auto public path for production so GitHub Pages chunks resolve (#844)
+  [(8d3ac6b)](https://github.com/taiga-family/microzord/commit/8d3ac6b73d595ce23a27e27d9a874f72b6dc5312)
+- **demo**: restore lazy route tabs, drop redundant tui-root & line-numbers (#843)
+  [(fcad200)](https://github.com/taiga-family/microzord/commit/fcad200b933135b40c0e83fb05470c147db932d0)
+- **demo**: resolve runtime console errors after Taiga v5 migration (#842)
+  [(8712981)](https://github.com/taiga-family/microzord/commit/8712981bfca884cd3cefc4d5bde46a2122cffd02)
+
 ### [2.3.1](https://github.com/taiga-family/microzord/compare/v2.3.0...v2.3.1) (2026-09-18)
 
 ### 🐞 Bug Fixes
