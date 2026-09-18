@@ -59,6 +59,5 @@
             "!{projectRoot}/src/test-setup.[jt]s"
         ]
     },
-    "defaultBase": "origin/main",
-    "useLegacyCache": true
+    "defaultBase": "origin/main"
 }
