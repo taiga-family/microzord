@@ -3057,7 +3057,7 @@ module.exports = toPrimitive, module.exports.__esModule = true, module.exports["
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + (chunkId === 76 ? "common" : chunkId) + "." + {"56":"6caff5099f3874b0","76":"66235b9866b7933b","218":"3891aacad9b59e63","274":"d1e9049589d484d0","301":"71c03b00c5d36428","305":"4087872be89bcf8d","353":"f18c8dad611f1a4b","485":"d02b190bd5092f00","488":"d4f315914ec62669","716":"6781746b464ed359","837":"e425619586b5e11d","922":"b3ffafc49f792af8","986":"8a46f8525e1f1911","998":"94fe1315ae622241"}[chunkId] + ".js";
+/******/ 			return "" + (chunkId === 76 ? "common" : chunkId) + "." + {"56":"6caff5099f3874b0","76":"66235b9866b7933b","218":"f345ac82282c6d78","274":"d1e9049589d484d0","301":"71c03b00c5d36428","305":"4087872be89bcf8d","353":"f18c8dad611f1a4b","485":"d02b190bd5092f00","488":"d4f315914ec62669","716":"6781746b464ed359","837":"e425619586b5e11d","922":"b3ffafc49f792af8","986":"8a46f8525e1f1911","998":"94fe1315ae622241"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -3217,13 +3217,7 @@ module.exports = toPrimitive, module.exports.__esModule = true, module.exports["
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		var scriptUrl;
-/******/ 		if (typeof import.meta.url === "string") scriptUrl = import.meta.url
-/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
-/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
-/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
-/******/ 		scriptUrl = scriptUrl.replace(/^blob:/, "").replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
-/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 		__webpack_require__.p = "/";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/consumes */

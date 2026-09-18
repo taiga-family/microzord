@@ -5,10 +5,11 @@
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   W8: () => (/* binding */ Meta),
 /* harmony export */   hE: () => (/* binding */ Title),
 /* harmony export */   up: () => (/* binding */ DomSanitizer)
 /* harmony export */ });
-/* unused harmony exports By, HAMMER_GESTURE_CONFIG, HAMMER_LOADER, HammerGestureConfig, HammerModule, HydrationFeatureKind, Meta, VERSION, disableDebugTools, enableDebugTools, provideClientHydration, withEventReplay, withHttpTransferCacheOptions, withI18nSupport, withIncrementalHydration, withNoHttpTransferCache, ɵDomSanitizerImpl, ɵHammerGesturesPlugin */
+/* unused harmony exports By, HAMMER_GESTURE_CONFIG, HAMMER_LOADER, HammerGestureConfig, HammerModule, HydrationFeatureKind, VERSION, disableDebugTools, enableDebugTools, provideClientHydration, withEventReplay, withHttpTransferCacheOptions, withI18nSupport, withIncrementalHydration, withNoHttpTransferCache, ɵDomSanitizerImpl, ɵHammerGesturesPlugin */
 /* harmony import */ var _home_runner_work_microzord_microzord_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9842);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8254);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1316);
@@ -51,14 +52,14 @@
  *
  * @publicApi
  */
-let Meta = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
+let Meta = /*#__PURE__*/(/* runtime-dependent pure expression or super */ 792 == __webpack_require__.j ? ((() => {
   var _Meta;
   class Meta {
     constructor(_doc) {
-      _defineProperty(this, "_doc", void 0);
-      _defineProperty(this, "_dom", void 0);
+      (0,_home_runner_work_microzord_microzord_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(this, "_doc", void 0);
+      (0,_home_runner_work_microzord_microzord_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(this, "_dom", void 0);
       this._doc = _doc;
-      this._dom = _getDOM();
+      this._dom = (0,_angular_common__WEBPACK_IMPORTED_MODULE_1__["ɵgetDOM"])();
     }
     /**
      * Retrieves or creates a specific `<meta>` tag element in the current HTML document.
@@ -178,16 +179,16 @@ let Meta = /*#__PURE__*/(/* unused pure expression or super */ null && ((() => {
     }
   }
   _Meta = Meta;
-  _defineProperty(Meta, "\u0275fac", function _Meta_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _Meta)(i0.ɵɵinject(DOCUMENT));
+  (0,_home_runner_work_microzord_microzord_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(Meta, "\u0275fac", function _Meta_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _Meta)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
   });
-  _defineProperty(Meta, "\u0275prov", /* @__PURE__ */i0.ɵɵdefineInjectable({
+  (0,_home_runner_work_microzord_microzord_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(Meta, "\u0275prov", /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
     token: _Meta,
     factory: _Meta.ɵfac,
     providedIn: 'root'
   }));
   return Meta;
-})()));
+})()) : null);
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
