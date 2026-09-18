@@ -9,7 +9,7 @@ import {ReactInstallationComponent} from './react-installation.component';
     imports: [
         TuiLink,
         ...TuiAddonDoc,
-        RouterModule /* use tuiProvideRoutePageTab in provideRouter */,
+        RouterModule.forChild([{path: '', component: ReactInstallationComponent}]),
     ],
     declarations: [ReactInstallationComponent],
     exports: [ReactInstallationComponent],

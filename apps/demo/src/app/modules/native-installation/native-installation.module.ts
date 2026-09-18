@@ -9,7 +9,7 @@ import {NativeInstallationComponent} from './native-installation.component';
     imports: [
         TuiLink,
         ...TuiAddonDoc,
-        RouterModule /* use tuiProvideRoutePageTab in provideRouter */,
+        RouterModule.forChild([{path: '', component: NativeInstallationComponent}]),
     ],
     declarations: [NativeInstallationComponent],
     exports: [NativeInstallationComponent],

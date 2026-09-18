@@ -11,7 +11,7 @@ import {AngularInstallationComponent} from './angular-installation.component';
         TuiLink,
         ...TuiAddonDoc,
         HostChildWarningModule,
-        RouterModule /* use tuiProvideRoutePageTab in provideRouter */,
+        RouterModule.forChild([{path: '', component: AngularInstallationComponent}]),
     ],
     declarations: [AngularInstallationComponent],
     exports: [AngularInstallationComponent],

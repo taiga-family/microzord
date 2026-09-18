@@ -9,7 +9,7 @@ import {AngularHostComponent} from './angular-host.component';
     imports: [
         TuiLink,
         ...TuiAddonDoc,
-        RouterModule /* use tuiProvideRoutePageTab in provideRouter */,
+        RouterModule.forChild([{path: '', component: AngularHostComponent}]),
     ],
     declarations: [AngularHostComponent],
     exports: [AngularHostComponent],

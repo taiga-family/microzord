@@ -9,7 +9,7 @@ import {ReactChildComponent} from './react-child.component';
     imports: [
         TuiLink,
         ...TuiAddonDoc,
-        RouterModule /* use tuiProvideRoutePageTab in provideRouter */,
+        RouterModule.forChild([{path: '', component: ReactChildComponent}]),
     ],
     declarations: [ReactChildComponent],
     exports: [ReactChildComponent],

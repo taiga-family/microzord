@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
 import {TUI_DOC_LOGO, TUI_DOC_PAGES, TuiAddonDoc} from '@taiga-ui/addon-doc';
-import {provideTaiga, TuiLink, TuiRoot} from '@taiga-ui/core';
+import {provideTaiga, TuiLink} from '@taiga-ui/core';
 import {HIGHLIGHT_OPTIONS, HighlightJSOptions} from 'ngx-highlightjs';
 
 import {AppComponent} from './app.component';
@@ -14,7 +14,6 @@ import {ROUTES} from './routes';
 
 export const HIGHLIGHT_OPTIONS_VALUE: HighlightJSOptions = {
     coreLibraryLoader: async () => import('highlight.js/lib/core'),
-    lineNumbersLoader: async () => import('highlightjs-line-numbers.js'),
     languages: {
         typescript: async () => import('highlight.js/lib/languages/typescript'),
         less: async () => import('highlight.js/lib/languages/less'),
@@ -26,7 +25,6 @@ export const HIGHLIGHT_OPTIONS_VALUE: HighlightJSOptions = {
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
-        TuiRoot,
         ...TuiAddonDoc,
         TuiLink,
         GettingStartedModule,
