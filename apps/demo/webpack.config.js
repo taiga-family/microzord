@@ -13,7 +13,7 @@ module.exports = (config) => {
     config.output = {
         ...config.output,
         uniqueName: 'demo',
-        // 'auto' resolves lazy chunks under deploy sub-paths (e.g. GitHub Pages); '/' avoids import.meta issues in dev.
+        // 'auto': chunk base for gh-pages sub-path; '/': no import.meta in dev
         publicPath: isProduction ? 'auto' : '/',
     };
 
