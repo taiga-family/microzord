@@ -154,7 +154,11 @@ let ApplicationModule = /*#__PURE__*/(() => {
   _ApplicationModule.ɵinj = /*@__PURE__*/core_mjs_["ɵɵdefineInjector"]({
     imports: [taiga_ui_addon_doc_components/* TuiDocAPI */.mh, taiga_ui_addon_doc_components/* TuiDocAPIItem */.sN, taiga_ui_addon_doc_components/* TuiDocCopy */.ye, taiga_ui_addon_doc_components/* TuiDocTab */.mg, taiga_ui_addon_doc_components/* TuiDocDemo */.aD, taiga_ui_addon_doc_components/* TuiDocCode */.MN, taiga_ui_addon_doc_components/* TuiDocExample */.FS, taiga_ui_addon_doc_components/* TuiDocPage */.e3, taiga_ui_addon_doc_components/* TuiDocNavigation */.pz, taiga_ui_addon_doc_components/* TuiDocMain */.gf, router_mjs_.RouterModule.forChild([{
       path: '',
-      component: ApplicationComponent
+      component: ApplicationComponent,
+      children: [{
+        path: ':tab',
+        component: ApplicationComponent
+      }]
     }])]
   });
   return ApplicationModule;

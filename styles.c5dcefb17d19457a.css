@@ -1610,11 +1610,11 @@ input[type='radio'][data-appearance='secondary'] {
 
 /* You can add global styles to this file, and also import other style files */
 tui-doc-page section {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+  margin-block-start: 2.5rem;
+  margin-block-end: 2.5rem;
 }
 li {
-  margin-top: 0.5rem;
+  margin-block-start: 0.5rem;
 }
 tui-doc-page {
   max-inline-size: 75rem;

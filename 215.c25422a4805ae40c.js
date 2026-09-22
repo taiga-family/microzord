@@ -31500,7 +31500,7 @@ let LogoComponent = /*#__PURE__*/(() => {
         core_mjs_["ɵɵtext"](1, "\nmicrozord\n");
       }
     },
-    styles: ["\n\n\n\n[_nghost-%COMP%] {\n  display: flex;\n  align-items: center;\n}\n@media screen and (max-width: 767.4px) {\n  [_nghost-%COMP%] {\n    font-size: 0;\n  }\n}\n.logo[_ngcontent-%COMP%] {\n  inline-size: 1.875rem;\n  margin-right: 0.625rem;\n}"],
+    styles: ["\n\n\n\n[_nghost-%COMP%] {\n  display: flex;\n  align-items: center;\n}\n@media screen and (max-width: 767.4px) {\n  [_nghost-%COMP%] {\n    font-size: 0;\n  }\n}\n.logo[_ngcontent-%COMP%] {\n  inline-size: 1.875rem;\n  margin-inline-end: 0.625rem;\n}"],
     changeDetection: 0
   });
   return LogoComponent;
@@ -31920,7 +31920,7 @@ let GettingStartedComponent = /*#__PURE__*/(() => {
       }
     },
     dependencies: [taiga_ui_addon_doc_components/* TuiDocPage */.e3, taiga_ui_core_components_link/* TuiLink */.Jc, router_mjs_.RouterLink, taiga_ui_core_components_notification/* TuiNotificationDirective */.xb, TuiCardLarge],
-    styles: [".about[_ngcontent-%COMP%] {\n  display: flex;\n  margin-top: 1.25rem;\n  margin-bottom: 1.25rem;\n}\n.about__benefit[_ngcontent-%COMP%] {\n  flex: 1;\n  margin-right: 2rem;\n}"],
+    styles: [".about[_ngcontent-%COMP%] {\n  display: flex;\n  margin-block-start: 1.25rem;\n  margin-block-end: 1.25rem;\n}\n.about__benefit[_ngcontent-%COMP%] {\n  flex: 1;\n  margin-inline-end: 2rem;\n}"],
     changeDetection: 0
   });
   return GettingStartedComponent;
