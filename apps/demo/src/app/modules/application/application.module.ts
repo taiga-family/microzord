@@ -10,7 +10,13 @@ import {ApplicationComponent} from './application.component';
         TuiLink,
         ...TuiAddonDoc,
         ...TuiNotification,
-        RouterModule.forChild([{path: '', component: ApplicationComponent}]),
+        RouterModule.forChild([
+            {
+                path: '',
+                component: ApplicationComponent,
+                children: [{path: ':tab', component: ApplicationComponent}],
+            },
+        ]),
     ],
     declarations: [ApplicationComponent],
     exports: [ApplicationComponent],

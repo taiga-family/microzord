@@ -94,6 +94,9 @@
             "@taiga-ui/stylelint-config"
         ]
     },
+    "overrides": {
+        "webpack": "5.101.3"
+    },
     "dependencies": {
         "@angular/common": "19.2.9",
         "@angular/core": "19.2.9",
@@ -142,8 +145,8 @@
         "@swc/helpers": "0.5.23",
         "@taiga-ui/addon-doc": "5.24.0",
         "@taiga-ui/addon-mobile": "5.24.0",
-        "@taiga-ui/auto-changelog-config": "0.219.0",
-        "@taiga-ui/browserslist-config": "0.219.0",
+        "@taiga-ui/auto-changelog-config": "0.300.0",
+        "@taiga-ui/browserslist-config": "0.300.0",
         "@taiga-ui/cdk": "5.24.0",
         "@taiga-ui/core": "5.24.0",
         "@taiga-ui/eslint-plugin-experience": "0.219.0",
@@ -155,11 +158,11 @@
         "@taiga-ui/layout": "5.24.0",
         "@taiga-ui/legacy": "5.24.0",
         "@taiga-ui/polymorpheus": "5.0.1",
-        "@taiga-ui/prettier-config": "0.219.0",
-        "@taiga-ui/release-it-config": "0.219.0",
-        "@taiga-ui/stylelint-config": "0.219.0",
+        "@taiga-ui/prettier-config": "0.300.0",
+        "@taiga-ui/release-it-config": "0.300.0",
+        "@taiga-ui/stylelint-config": "0.300.0",
         "@taiga-ui/styles": "5.24.0",
-        "@taiga-ui/syncer": "0.219.0",
+        "@taiga-ui/syncer": "0.300.0",
         "@testing-library/react": "16.1.0",
         "@types/jest": "29.5.14",
         "@types/markdown-it": "14.2.0",
@@ -207,9 +210,6 @@
         "Igor Katsuba <katsuba.igor@gmail.ru>",
         "Roman Sedov <79601794011@ya.ru>"
     ],
-    "overrides": {
-        "webpack": "5.101.3"
-    },
     "syncer": {
         "includePaths": [
             "./libs",
