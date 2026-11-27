@@ -2,7 +2,7 @@ import type {ModuleFederationConfig} from '@nx/webpack/src/utils/module-federati
 
 const config: ModuleFederationConfig = {
     name: 'host',
-    remotes: ['remote', ['remote-react', 'http://localhost:4203/remoteEntry.js']],
+    remotes: ['remote', ['remote-react', 'http://localhost:4203/remoteEntry.mjs']],
 };
 
 module.exports = config;
