@@ -5,6 +5,7 @@ import {
     Injectable,
     Injector,
     NgModuleRef,
+    NgZone,
     Optional,
     Type,
     ViewContainerRef,
@@ -17,6 +18,7 @@ export class MicrozordNgCompilerService {
     constructor(
         private readonly compiler: Compiler,
         private readonly componentFactoryResolver: ComponentFactoryResolver,
+        private readonly ngZone: NgZone,
         @Optional()
         private readonly injector: Injector,
         @Optional()
@@ -46,12 +48,18 @@ export class MicrozordNgCompilerService {
 
         viewContainerRef.clear();
 
-        return viewContainerRef.createComponent(
-            componentFactory,
-            undefined,
-            injector,
-            [],
-            moduleRef,
+        // Creating the entry point inside the Angular zone (like bootstrapApplication
+        // does internally) makes its event listeners register within the zone. Otherwise,
+        // in zone change detection mode their notifications are dropped and the view
+        // is never refreshed.
+        return this.ngZone.run(() =>
+            viewContainerRef.createComponent(
+                componentFactory,
+                undefined,
+                injector,
+                [],
+                moduleRef,
+            ),
         );
     }
 
