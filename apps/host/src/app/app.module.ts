@@ -33,6 +33,20 @@ import {AppComponent} from './app.component';
                         ),
                 },
                 {
+                    name: 'remote-standalone-app',
+                    load: () =>
+                        import('remote-standalone/standalone-app-bootstrap').then(
+                            (m) => m.standaloneAppBootstrap,
+                        ),
+                },
+                {
+                    name: 'remote-standalone-zoneless-app',
+                    load: () =>
+                        import('remote-standalone-zoneless/standalone-app-bootstrap').then(
+                            (m) => m.standaloneAppBootstrap,
+                        ),
+                },
+                {
                     name: 'remote-react',
                     load: () =>
                         import('remote-react/remote-react-app').then((x) => x.default),

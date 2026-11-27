@@ -8,6 +8,16 @@ declare module 'remote/remote-app-bootstrap' {
         Record<string, unknown>
     >;
 }
+declare module 'remote-standalone/standalone-app-bootstrap' {
+    export const standaloneAppBootstrap: import('@microzord/core').ApplicationConstructor<
+        Record<string, unknown>
+    >;
+}
+declare module 'remote-standalone-zoneless/standalone-app-bootstrap' {
+    export const standaloneAppBootstrap: import('@microzord/core').ApplicationConstructor<
+        Record<string, unknown>
+    >;
+}
 declare module 'remote-react/remote-react-app' {
     const x: import('@microzord/core').ApplicationConstructor<Record<string, unknown>>;
     export default x;

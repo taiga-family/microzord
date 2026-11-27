@@ -1,0 +1,110 @@
+{
+    "name": "remote-standalone",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+    "sourceRoot": "apps/remote-standalone/src",
+    "prefix": "microzord",
+    "tags": [],
+    "targets": {
+        "build": {
+            "executor": "@nx/angular:webpack-browser",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/apps/remote-standalone",
+                "index": "apps/remote-standalone/src/index.html",
+                "main": "apps/remote-standalone/src/main.ts",
+                "polyfills": "apps/remote-standalone/src/polyfills.ts",
+                "tsConfig": "apps/remote-standalone/tsconfig.app.json",
+                "inlineStyleLanguage": "less",
+                "assets": [],
+                "styles": [],
+                "scripts": [],
+                "customWebpackConfig": {
+                    "path": "apps/remote-standalone/webpack.config.js"
+                }
+            },
+            "configurations": {
+                "production": {
+                    "budgets": [
+                        {
+                            "type": "initial",
+                            "maximumWarning": "500kb",
+                            "maximumError": "1mb"
+                        },
+                        {
+                            "type": "anyComponentStyle",
+                            "maximumWarning": "2kb",
+                            "maximumError": "4kb"
+                        }
+                    ],
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/remote-standalone/src/environments/environment.ts",
+                            "with": "apps/remote-standalone/src/environments/environment.prod.ts"
+                        }
+                    ],
+                    "outputHashing": "all",
+                    "customWebpackConfig": {
+                        "path": "apps/remote-standalone/webpack.prod.config.js"
+                    }
+                },
+                "development": {
+                    "buildOptimizer": false,
+                    "optimization": false,
+                    "vendorChunk": true,
+                    "extractLicenses": false,
+                    "sourceMap": true,
+                    "namedChunks": true
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "serve": {
+            "executor": "@nx/angular:webpack-dev-server",
+            "configurations": {
+                "production": {
+                    "buildTarget": "remote-standalone:build:production"
+                },
+                "development": {
+                    "buildTarget": "remote-standalone:build:development"
+                }
+            },
+            "defaultConfiguration": "development",
+            "options": {
+                "port": 4204,
+                "publicHost": "http://localhost:4204"
+            }
+        },
+        "extract-i18n": {
+            "executor": "@angular-devkit/build-angular:extract-i18n",
+            "options": {
+                "buildTarget": "remote-standalone:build"
+            }
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/coverage/remote-standalone"],
+            "options": {
+                "jestConfig": "apps/remote-standalone/jest.config.ts",
+                "coverageDirectory": "coverage/remote-standalone"
+            }
+        },
+        "serve-static": {
+            "executor": "@nx/web:file-server",
+            "defaultConfiguration": "production",
+            "options": {
+                "buildTarget": "remote-standalone:build",
+                "port": 4204,
+                "watch": false
+            },
+            "configurations": {
+                "development": {
+                    "buildTarget": "remote-standalone:build:development"
+                },
+                "production": {
+                    "buildTarget": "remote-standalone:build:production"
+                }
+            }
+        }
+    }
+}

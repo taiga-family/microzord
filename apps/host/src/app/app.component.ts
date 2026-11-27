@@ -12,7 +12,12 @@ import {BehaviorSubject} from 'rxjs';
 })
 export class AppComponent {
     public moduleName$$ = new BehaviorSubject<string | null>('remote-module');
-    public apps$ = new BehaviorSubject<string[]>(['remote-app', 'remote-react']);
+    public apps$ = new BehaviorSubject<string[]>([
+        'remote-app',
+        'remote-standalone-app',
+        'remote-standalone-zoneless-app',
+        'remote-react',
+    ]);
 
     constructor(
         private readonly cdr: ChangeDetectorRef,
@@ -20,7 +25,16 @@ export class AppComponent {
     ) {}
 
     public toggleApps(): void {
-        this.apps$.next(this.apps$.value.length ? [] : ['remote-app', 'remote-react']);
+        this.apps$.next(
+            this.apps$.value.length
+                ? []
+                : [
+                      'remote-app',
+                      'remote-standalone-app',
+                      'remote-standalone-zoneless-app',
+                      'remote-react',
+                  ],
+        );
     }
 
     public appLoaded(event: Application<Record<string, unknown>> | null): void {
