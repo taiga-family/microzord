@@ -1,6 +1,17 @@
 <tui-doc-page header="React Child">
     <p>Here you can read how to setup your application to be inserted into another app.</p>
 
+    <p>
+        A React application can be hosted by any microzord host, for example an
+        <a
+            routerLink="/angular-host"
+            tuiLink
+        >
+            Angular one
+        </a>
+        .
+    </p>
+
     <section>
         <h2>Installation</h2>
 
@@ -11,5 +22,90 @@
         >
             React package installation
         </a>
+    </section>
+
+    <section>
+        <h2>Child application entry point</h2>
+
+        <p>
+            You should create file with an application and expose it via module federation. Microzord provides
+            <code>createApp</code>
+            helper which wraps a React element into a microzord child application.
+        </p>
+
+        <tui-doc-code
+            filename="my-remote-app.tsx"
+            [code]="code"
+        />
+
+        <p>
+            On bootstrap the element is rendered with
+            <code>react-dom/client</code>
+            into the container provided by the host, on destroy it is unmounted. Lifecycle hooks (
+            <code>bootstrapped</code>
+            ,
+            <code>destroyed</code>
+            ) are emitted as for children of other frameworks.
+        </p>
+    </section>
+
+    <section>
+        <h2>Expose via module federation</h2>
+
+        <p>Expose the file with your application so that a host can load it:</p>
+
+        <tui-doc-code
+            filename="module-federation.config.js"
+            [code]="exposeCode"
+        />
+
+        <p>
+            If the host consumes remotes as ES modules (like an Angular app built by Nx module federation), make the
+            remote emit an ESM entry:
+        </p>
+
+        <tui-doc-code
+            filename="webpack.config.js"
+            [code]="webpackCode"
+        />
+    </section>
+
+    <section>
+        <h2>Register on the host</h2>
+
+        <p>On the host side register the application with the same load function as for any other child:</p>
+
+        <tui-doc-code
+            filename="app.module.ts"
+            [code]="hostCode"
+        />
+    </section>
+
+    <section>
+        <h2>Examples</h2>
+
+        <ul>
+            <li>
+                <a
+                    href="https://github.com/taiga-family/microzord/tree/main/apps/remote-react"
+                    target="_blank"
+                    tuiLink
+                >
+                    apps/remote-react
+                </a>
+                — React child with a counter
+            </li>
+
+            <li>
+                <a
+                    href="https://github.com/taiga-family/microzord/tree/main/apps/host"
+                    target="_blank"
+                    tuiLink
+                >
+                    apps/host
+                </a>
+                — an Angular host that registers React and Angular children side by side
+            </li>
+        </ul>
     </section>
 </tui-doc-page>

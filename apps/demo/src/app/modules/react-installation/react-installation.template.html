@@ -1,4 +1,9 @@
 <tui-doc-page header="React Installation">
+    <p>
+        <strong>microzord</strong>
+        has an ideomatic React wrapper which turns any React element into a child application.
+    </p>
+
     <section>
         <h2>Package installation</h2>
 
@@ -6,8 +11,48 @@
 
         <code>npm i &#64;microzord/core</code>
 
-        <p>Install React package for simplifying working with React:</p>
+        <p>Install React package for ideomatic working with React (React 18 and later are supported):</p>
 
         <code>npm i &#64;microzord/react</code>
+    </section>
+
+    <section>
+        <h2>What is next</h2>
+
+        <p>
+            The React package covers the child side: follow
+            <a
+                routerLink="/react-child"
+                tuiLink
+            >
+                React as a child
+            </a>
+            to prepare your application to be inserted in another app.
+        </p>
+
+        <p>
+            To render other applications inside a React app, use the
+            <a
+                routerLink="/native-installation"
+                tuiLink
+            >
+                core package
+            </a>
+            API directly.
+        </p>
+
+        <host-child-warning class="tui-space_top-4" />
+    </section>
+
+    <section>
+        <h2>See also</h2>
+
+        <a
+            href="https://github.com/taiga-family/microzord/tree/main/libs/react"
+            target="_blank"
+            tuiLink
+        >
+            React library source code
+        </a>
     </section>
 </tui-doc-page>

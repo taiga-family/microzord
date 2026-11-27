@@ -1,9 +1,9 @@
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {platformBrowser} from '@angular/platform-browser';
 import {createApp} from '@microzord/angular/child';
 
 import {AppModule} from './app.module';
 
 export const remoteAppBootstrap = createApp(
-    async (opts) => platformBrowserDynamic().bootstrapModule(AppModule, opts),
+    async (opts) => platformBrowser().bootstrapModule(AppModule, opts),
     'remote-app',
 );

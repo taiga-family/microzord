@@ -34,7 +34,7 @@ export const pages: TuiDocRoutePages = [
     {
         section: 'Angular',
         title: 'Angular — Child',
-        keywords: 'angular, spa, child',
+        keywords: 'angular, spa, child, standalone, zoneless',
         route: 'angular-child',
     },
     {
@@ -46,7 +46,7 @@ export const pages: TuiDocRoutePages = [
     {
         section: 'React',
         title: 'React — Child',
-        keywords: 'react, spa, child',
+        keywords: 'react, spa, child, remote, module federation',
         route: 'react-child',
     },
 ];
