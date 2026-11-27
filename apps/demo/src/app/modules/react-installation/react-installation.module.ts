@@ -3,12 +3,14 @@ import {RouterModule} from '@angular/router';
 import {TuiAddonDoc} from '@taiga-ui/addon-doc';
 import {TuiLink} from '@taiga-ui/core';
 
+import {HostChildWarningModule} from '../../shared/host-child-warning/host-child-warning.module';
 import {ReactInstallationComponent} from './react-installation.component';
 
 @NgModule({
     imports: [
         TuiLink,
         ...TuiAddonDoc,
+        HostChildWarningModule,
         RouterModule.forChild([{path: '', component: ReactInstallationComponent}]),
     ],
     declarations: [ReactInstallationComponent],

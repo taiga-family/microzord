@@ -24,7 +24,7 @@
     </section>
 
     <section>
-        <h2>Replace the platform</h2>
+        <h2>Child application entry point</h2>
 
         <p>
             You should create file with an application and expose it via module federation. Microzord provides
@@ -42,5 +42,165 @@
             <strong>microzord.json</strong>
             assets map.
         </p>
+    </section>
+
+    <section>
+        <h2>Expose via module federation</h2>
+
+        <p>Expose the file with your application so that a host can load it:</p>
+
+        <tui-doc-code
+            filename="module-federation.config.js"
+            [code]="exposeCode"
+        />
+    </section>
+
+    <section>
+        <h2>Standalone approach</h2>
+
+        <p>
+            If your application is built with standalone components, you can skip root modules entirely: pass your root
+            component to the
+            <code>createStandaloneApp</code>
+            helper instead of converting an
+            <code>NgModule</code>
+            with
+            <code>createApp</code>
+            .
+        </p>
+
+        <tui-doc-code
+            filename="my-remote-app.ts"
+            [code]="standaloneCode"
+        />
+
+        <p>
+            The helper accepts the root component, its selector and optional providers which are used during
+            <code>bootstrapApplication()</code>
+            : a router, change detection configuration, anything else your app needs. From the host point of view both
+            helpers are interchangeable, so a host can register module-based and standalone children side by side.
+        </p>
+    </section>
+
+    <section>
+        <h2>Zoneless change detection</h2>
+
+        <p>
+            A standalone child can work without zone.js at all: add
+            <code>provideExperimentalZonelessChangeDetection()</code>
+            to the providers and drop the zone.js polyfill from the child build.
+        </p>
+
+        <tui-doc-code
+            filename="my-zoneless-remote-app.ts"
+            [code]="zonelessCode"
+        />
+
+        <p>
+            Such a child schedules its own change detection via
+            <code>ApplicationRef</code>
+            , so it coexists with a host that still uses zone.js.
+        </p>
+
+        <div
+            appearance="warning"
+            size="m"
+            tuiNotification
+            class="tui-space_top-4"
+        >
+            Zoneless change detection reacts to signals,
+            <code>markForCheck()</code>
+            and scheduled
+            <code>ApplicationRef.tick()</code>
+            calls. Plain asynchronous state updates won't re-render the view unless you touch one of these.
+        </div>
+    </section>
+
+    <section>
+        <h2>Lazy modules</h2>
+
+        <p>
+            Besides a full application a child can expose a plain Angular module: a lighter fragment that is created
+            inside the host application itself, so it uses the host dependency injection, zone and change detection
+            without a separate bootstrap.
+        </p>
+
+        <p>Expose a file that exports the module:</p>
+
+        <tui-doc-code
+            filename="remote-module.ts"
+            [code]="moduleCode"
+        />
+
+        <p>
+            On the host register it in the
+            <code>modules</code>
+            list of
+            <code>MicrozordHostModule.register()</code>
+            and render with the
+            <code>[microzordNgModule]</code>
+            directive. Its input is the registration name and it is reactive, so modules can be swapped at runtime:
+        </p>
+
+        <tui-doc-code
+            filename="app.module.ts"
+            [code]="moduleHostCode"
+        />
+
+        <tui-doc-code
+            filename="some.component.html"
+            [code]="moduleTemplateCode"
+        />
+    </section>
+
+    <section>
+        <h2>Examples</h2>
+
+        <ul>
+            <li>
+                <a
+                    href="https://github.com/taiga-family/microzord/tree/main/apps/remote"
+                    target="_blank"
+                    tuiLink
+                >
+                    apps/remote
+                </a>
+                — module-based child with a lazy module and an app
+            </li>
+
+            <li>
+                <a
+                    href="https://github.com/taiga-family/microzord/tree/main/apps/remote-standalone"
+                    target="_blank"
+                    tuiLink
+                >
+                    apps/remote-standalone
+                </a>
+                — standalone child bootstrapped with
+                <code>createStandaloneApp</code>
+            </li>
+
+            <li>
+                <a
+                    href="https://github.com/taiga-family/microzord/tree/main/apps/remote-standalone-zoneless"
+                    target="_blank"
+                    tuiLink
+                >
+                    apps/remote-standalone-zoneless
+                </a>
+                — the same child without zone.js
+            </li>
+
+            <li>
+                <a
+                    href="https://github.com/taiga-family/microzord/tree/main/apps/host"
+                    target="_blank"
+                    tuiLink
+                >
+                    apps/host
+                </a>
+                — a host that registers all sample children at once
+            </li>
+        </ul>
     </section>
 </tui-doc-page>
